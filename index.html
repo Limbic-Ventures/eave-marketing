@@ -568,8 +568,25 @@
     .stat-source { font-size: 10px; color: var(--dim); margin-top: 48px; font-style: italic; }
 
     /* ─────────────────────────────────────────────
+       PROBLEM compact
+    ───────────────────────────────────────────── */
+    #problem { padding: 64px 0; }
+
+    /* Sacramento "Eave" inline in Bungee label */
+    .label-eave {
+      font-family: 'Sacramento', cursive;
+      font-size: 24px;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--jade);
+      vertical-align: middle;
+      line-height: 1;
+    }
+
+    /* ─────────────────────────────────────────────
        SOLUTION
     ───────────────────────────────────────────── */
+    #solution .section-head > p { font-size: 17px; line-height: 1.65; }
     .pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -740,6 +757,40 @@
     }
     .memory-item-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .08em; color: var(--jade); text-transform: uppercase; margin-bottom: 4px; }
     .memory-item-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ─── Plan section ─── */
+    .plan-phone-inner { padding: 12px 10px; display: flex; flex-direction: column; gap: 8px; }
+    .plan-season-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 8px; border-bottom: 1px solid var(--stone);
+    }
+    .plan-season-name { font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em; color: var(--jade); }
+    .plan-season-meta { font-size: 9px; color: var(--muted); }
+    .plan-task-row {
+      display: flex; align-items: flex-start; gap: 6px;
+      padding: 6px 8px; background: var(--bg); background-image: var(--scanline);
+      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 5px 100%, 0% calc(100% - 5px));
+    }
+    .plan-task-date { font-size: 8px; color: var(--dim); min-width: 30px; padding-top: 1px; }
+    .plan-task-body { flex: 1; }
+    .plan-task-title { font-size: 9px; color: var(--ink); font-weight: 500; line-height: 1.3; }
+    .plan-task-cat { font-size: 8px; color: var(--muted); }
+    .plan-task-amt { font-family: 'Bungee', sans-serif; font-size: 9px; color: var(--jade); min-width: 30px; text-align: right; }
+    .plan-task-status {
+      font-family: 'Bungee', sans-serif; font-size: 7px; padding: 2px 5px; letter-spacing: .04em;
+    }
+    .plan-status-sched { background: rgba(46,100,100,.1); color: var(--jade); }
+    .plan-status-pend  { background: rgba(138,132,128,.12); color: var(--dim); }
+    .plan-status-prog  { background: rgba(192,120,64,.1); color: var(--amber); }
+    .plan-budget-wrap {
+      margin-top: 4px; padding: 8px 8px 6px;
+      background: var(--surface); background-image: var(--scanline);
+      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 5px 100%, 0% calc(100% - 5px));
+    }
+    .plan-budget-label { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .08em; color: var(--muted); margin-bottom: 5px; }
+    .plan-budget-bar-wrap { height: 5px; background: var(--stone); border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
+    .plan-budget-fill { height: 100%; background: var(--jade); width: 70%; border-radius: 2px; }
+    .plan-budget-nums { display: flex; justify-content: space-between; font-size: 8px; color: var(--muted); }
 
     /* Intelligence */
     .intel-cards { display: flex; flex-direction: column; gap: 14px; }
@@ -1546,7 +1597,6 @@
   <section id="problem" class="alt">
     <div class="container">
       <div class="fade-in">
-        <p class="label">The Problem</p>
         <div class="section-head">
           <h2>You own a home.<br>Nobody told you it<br>would feel like this.</h2>
           <p>Something's dripping. Something's creaking. The furnace filter's been on the list for three months. You know there are things you should be doing — you just don't know which ones, in what order, or who to call.</p>
@@ -1575,7 +1625,7 @@
   <section id="solution">
     <div class="container">
       <div class="fade-in">
-        <p class="label">Introducing Eave</p>
+        <p class="label">Introducing <span class="label-eave">Eave</span></p>
         <div class="section-head">
           <h2>One place for<br>everything your<br>home needs.</h2>
           <p>Eave tracks your projects, contractors, and seasonal maintenance in one place — so keeping up with your home is finally easy. You capture, Eave organizes. Nothing slips through the cracks.</p>
@@ -1631,6 +1681,83 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="fade-in">
+        <p class="label">How It Works</p>
+        <div class="section-head">
+          <h2>Set up in minutes.<br>Your home knows<br>the rest.</h2>
+        </div>
+      </div>
+      <div class="steps fade-in" style="transition-delay:.1s;">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">Tell Eave about your home</div>
+          <div class="step-desc">Enter your address. Eave pulls your home's year built, square footage, and property details automatically — no manual data entry.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">Capture your first project</div>
+          <div class="step-desc">Speak, snap, or type something you've been meaning to deal with. See Eave structure it in real time.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Connect your accounts</div>
+          <div class="step-desc">Link Gmail, Home Depot, or your smart home apps. Eave surfaces what it finds for your review — nothing saves without your say.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Follow your action queue</div>
+          <div class="step-desc">Each week, Eave tells you what your home needs — ranked by urgency, with a one-liner on why each item matters now. Each season, a personalized prep plan. Your home gets smarter over time.</div>
+        </div>
+      </div>
+
+      <!-- Tablet: onboarding flow -->
+      <div class="hiw-tablet-wrap fade-in" style="transition-delay:.15s;">
+        <div class="tablet-outer">
+          <div class="tablet-screen-area" style="width:480px;height:220px;">
+            <div class="tablet-onboard-content">
+              <div class="tablet-onboard-header">YOUR HOME</div>
+              <div class="tablet-onboard-sub">Let's get to know your property</div>
+              <div class="tablet-address-field">
+                <span class="tablet-address-icon">📍</span>
+                <span class="tablet-address-text">124 Maple Ridge Dr, Austin TX 78701</span>
+              </div>
+              <div class="tablet-auto-badge">✓ DATA AUTO-FILLED</div>
+              <div class="tablet-property-card">
+                <div class="tablet-property-grid">
+                  <div class="tablet-property-item">
+                    <div class="tablet-property-val">1998</div>
+                    <div class="tablet-property-key">Built</div>
+                  </div>
+                  <div class="tablet-property-item">
+                    <div class="tablet-property-val">2,240</div>
+                    <div class="tablet-property-key">Sq Ft</div>
+                  </div>
+                  <div class="tablet-property-item">
+                    <div class="tablet-property-val">0.18ac</div>
+                    <div class="tablet-property-key">Lot</div>
+                  </div>
+                  <div class="tablet-property-item">
+                    <div class="tablet-property-val">4</div>
+                    <div class="tablet-property-key">Beds</div>
+                  </div>
+                  <div class="tablet-property-item">
+                    <div class="tablet-property-val">2.5</div>
+                    <div class="tablet-property-key">Baths</div>
+                  </div>
+                </div>
+              </div>
+              <div class="tablet-cta-btn">LOOKS RIGHT? CONTINUE →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1853,6 +1980,95 @@
     </div>
   </section>
 
+  <!-- ═══ PLAN ═══ -->
+  <section id="plan" class="alt">
+    <div class="container">
+      <div class="feature-grid">
+
+        <div class="feature-copy fade-in">
+          <p class="label">Plan</p>
+          <h2>Seasonal prep.<br>Project timelines.<br>Budget in view.</h2>
+          <p>Eave turns your home's data into a living plan. See what's coming each season, map out multi-step projects with milestones, and set a budget so every decision has a number behind it. No spreadsheet. No sticky notes. One view that keeps the whole year in focus.</p>
+          <ul style="margin-top:20px;list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;gap:10px;align-items:flex-start;">
+              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
+              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Seasonal Windows</strong> — Spring, Summer, Fall, Winter task views built from your home's age, systems, and location</span>
+            </li>
+            <li style="display:flex;gap:10px;align-items:flex-start;">
+              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
+              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Project Milestones</strong> — break big projects into dated steps so nothing stalls mid-way</span>
+            </li>
+            <li style="display:flex;gap:10px;align-items:flex-start;">
+              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
+              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Annual Budget</strong> — set a yearly home maintenance budget and track spend vs. plan in real time</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: phone mockup showing Plan view -->
+        <div class="phone-wrap fade-in" style="display:flex;justify-content:center;transition-delay:.1s;">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="plan-phone-inner">
+                <div class="plan-season-header">
+                  <span class="plan-season-name">🌱 SPRING 2026</span>
+                  <span class="plan-season-meta">4 tasks · $725 budgeted</span>
+                </div>
+                <div class="plan-task-row">
+                  <div class="plan-task-date">Apr 15</div>
+                  <div class="plan-task-body">
+                    <div class="plan-task-title">HVAC spring service</div>
+                    <div class="plan-task-cat">Mechanical</div>
+                  </div>
+                  <div class="plan-task-amt">$120</div>
+                  <div class="plan-task-status plan-status-sched">SCHED</div>
+                </div>
+                <div class="plan-task-row">
+                  <div class="plan-task-date">Apr 28</div>
+                  <div class="plan-task-body">
+                    <div class="plan-task-title">Reseed front lawn</div>
+                    <div class="plan-task-cat">Exterior</div>
+                  </div>
+                  <div class="plan-task-amt">$85</div>
+                  <div class="plan-task-status plan-status-pend">PEND</div>
+                </div>
+                <div class="plan-task-row">
+                  <div class="plan-task-date">May 12</div>
+                  <div class="plan-task-body">
+                    <div class="plan-task-title">Deck seal &amp; stain</div>
+                    <div class="plan-task-cat">Exterior · 2 milestones</div>
+                  </div>
+                  <div class="plan-task-amt">$340</div>
+                  <div class="plan-task-status plan-status-prog">PROG</div>
+                </div>
+                <div class="plan-task-row">
+                  <div class="plan-task-date">Jun 5</div>
+                  <div class="plan-task-body">
+                    <div class="plan-task-title">Pressure wash driveway</div>
+                    <div class="plan-task-cat">Exterior</div>
+                  </div>
+                  <div class="plan-task-amt">$180</div>
+                  <div class="plan-task-status plan-status-pend">PEND</div>
+                </div>
+                <div class="plan-budget-wrap">
+                  <div class="plan-budget-label">SPRING BUDGET</div>
+                  <div class="plan-budget-bar-wrap">
+                    <div class="plan-budget-fill"></div>
+                  </div>
+                  <div class="plan-budget-nums">
+                    <span>$505 spent</span>
+                    <span>$220 remaining</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══ INTELLIGENCE ═══ -->
   <section id="intelligence" class="alt">
     <div class="container">
@@ -1862,7 +2078,7 @@
           <p class="label">Intelligence</p>
           <h2>Know your score.<br>Act on your queue.<br>Stay a season ahead.</h2>
           <p>Your Upkeep Score is always on — free, live, and calculated across four dimensions: maintenance completion, project backlog health, preventive vs. reactive ratio, and how consistently you're using the app. It updates whenever you log work, complete a task, or clear a project. No manual entry needed.</p>
-          <p>Upgrade to Eave Intelligence and the score becomes the foundation for AI-driven action: a ranked project queue that tells you what to do next and why, a personalized seasonal prep plan for your specific property, and a 12-month care plan built from your home's actual data.</p>
+          <p>Upgrade to Eave Intelligence and the score becomes the foundation for AI-driven action: a ranked project queue that tells you what to do next and why, a risk assessment for every deferred task, a personalized seasonal prep plan, and a 12-month care plan built from your home's actual data.</p>
         </div>
 
         <div class="intel-cards fade-in" style="transition-delay:.1s;">
@@ -1883,10 +2099,18 @@
 
           <div class="intel-card card">
             <div class="intel-card-header">
+              <span class="intel-card-label">Risk Assessment</span>
+              <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
+            </div>
+            <div class="intel-card-desc">Every deferred task gets a risk profile: estimated cost escalation over 30/60/90 days, cascade damage potential (what else breaks if this doesn't get fixed), safety flags, and whether the seasonal window is closing. Know the real cost of waiting.</div>
+          </div>
+
+          <div class="intel-card card">
+            <div class="intel-card-header">
               <span class="intel-card-label">AI Project Queue</span>
               <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
             </div>
-            <div class="intel-card-desc">Every open project ranked by urgency, with a one-sentence "why now" and a consequence-of-delay assessment. Seasonal timing, cascade risk, safety flags, and upcoming life events all factor in.</div>
+            <div class="intel-card-desc">Every open project ranked by urgency, with a one-sentence "why now" reason. Seasonal timing, cascade risk, safety flags, and risk assessment all factor into the ranking — so the most important task is always at the top.</div>
           </div>
 
           <div class="intel-card card">
@@ -1932,7 +2156,7 @@
                 <span class="intel-queue-rank">01</span>
                 <div class="intel-queue-content">
                   <div class="intel-queue-title">Seal deck before rain season</div>
-                  <div class="intel-queue-why">Fall rain window opens in 12 days</div>
+                  <div class="intel-queue-why">Fall rain window opens in 12 days · cost +$200 if delayed</div>
                 </div>
                 <span class="intel-queue-score">94</span>
               </div>
@@ -1940,7 +2164,7 @@
                 <span class="intel-queue-rank">02</span>
                 <div class="intel-queue-content">
                   <div class="intel-queue-title">Replace HVAC filter</div>
-                  <div class="intel-queue-why">3 months overdue, system strain risk</div>
+                  <div class="intel-queue-why">3 months overdue · system strain risk</div>
                 </div>
                 <span class="intel-queue-score">78</span>
               </div>
@@ -1956,83 +2180,6 @@
                 <div class="intel-seasonal-head">FALL IS 14 DAYS OUT</div>
                 <div class="intel-seasonal-sub">4 tasks generated for your home →</div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══ HOW IT WORKS ═══ -->
-  <section id="how-it-works">
-    <div class="container">
-      <div class="fade-in">
-        <p class="label">How It Works</p>
-        <div class="section-head">
-          <h2>Set up in minutes.<br>Your home knows<br>the rest.</h2>
-        </div>
-      </div>
-      <div class="steps fade-in" style="transition-delay:.1s;">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title">Tell Eave about your home</div>
-          <div class="step-desc">Enter your address. Eave pulls your home's year built, square footage, and property details automatically — no manual data entry.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title">Capture your first project</div>
-          <div class="step-desc">Speak, snap, or type something you've been meaning to deal with. See Eave structure it in real time.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title">Connect your accounts</div>
-          <div class="step-desc">Link Gmail, Home Depot, or your smart home apps. Eave surfaces what it finds for your review — nothing saves without your say.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-title">Follow your action queue</div>
-          <div class="step-desc">Each week, Eave tells you what your home needs — ranked by urgency, with a one-liner on why each item matters now. Each season, a personalized prep plan. Your home gets smarter over time.</div>
-        </div>
-      </div>
-
-      <!-- Tablet: onboarding flow -->
-      <div class="hiw-tablet-wrap fade-in" style="transition-delay:.15s;">
-        <div class="tablet-outer">
-          <div class="tablet-screen-area" style="width:480px;height:220px;">
-            <div class="tablet-onboard-content">
-              <div class="tablet-onboard-header">YOUR HOME</div>
-              <div class="tablet-onboard-sub">Let's get to know your property</div>
-              <div class="tablet-address-field">
-                <span class="tablet-address-icon">📍</span>
-                <span class="tablet-address-text">124 Maple Ridge Dr, Austin TX 78701</span>
-              </div>
-              <div class="tablet-auto-badge">✓ DATA AUTO-FILLED</div>
-              <div class="tablet-property-card">
-                <div class="tablet-property-grid">
-                  <div class="tablet-property-item">
-                    <div class="tablet-property-val">1998</div>
-                    <div class="tablet-property-key">Built</div>
-                  </div>
-                  <div class="tablet-property-item">
-                    <div class="tablet-property-val">2,240</div>
-                    <div class="tablet-property-key">Sq Ft</div>
-                  </div>
-                  <div class="tablet-property-item">
-                    <div class="tablet-property-val">0.18ac</div>
-                    <div class="tablet-property-key">Lot</div>
-                  </div>
-                  <div class="tablet-property-item">
-                    <div class="tablet-property-val">4</div>
-                    <div class="tablet-property-key">Beds</div>
-                  </div>
-                  <div class="tablet-property-item">
-                    <div class="tablet-property-val">2.5</div>
-                    <div class="tablet-property-key">Baths</div>
-                  </div>
-                </div>
-              </div>
-              <div class="tablet-cta-btn">LOOKS RIGHT? CONTINUE →</div>
             </div>
           </div>
         </div>
