@@ -804,10 +804,53 @@
     /* Tier comparison grid */
     .tier-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2px;
       margin-top: 48px;
     }
+
+    /* Pro subsection inside dark pricing */
+    .pro-pricing-divider {
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(237,229,213,.1);
+    }
+    .pro-pricing-eyebrow {
+      font-family: 'Bungee', sans-serif;
+      font-size: 9px;
+      letter-spacing: .16em;
+      color: rgba(237,229,213,.4);
+      margin-bottom: 10px;
+    }
+    .pro-pricing-desc {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      color: rgba(237,229,213,.55);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 0;
+    }
+    /* Dark overrides for pro-grid cards inside #pricing */
+    #pricing .pro-card {
+      background: rgba(237,229,213,.04);
+      border: 1px solid rgba(237,229,213,.08);
+      box-shadow: none;
+      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+    }
+    #pricing .pro-card-title { color: var(--bg); }
+    #pricing .pro-price-row { color: rgba(237,229,213,.45); }
+    #pricing .pro-price-amount { color: var(--jade); }
+    #pricing .pro-commitment { background: rgba(46,100,100,.18); color: var(--jade); }
+    #pricing .pro-desc { color: rgba(237,229,213,.5); }
+    #pricing .pro-arrives-strip {
+      background: rgba(237,229,213,.03);
+      border-left-color: rgba(46,100,100,.6);
+      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+    }
+    #pricing .pro-arrives-heading { color: var(--jade); }
+    #pricing .pro-arrives-body { color: rgba(237,229,213,.5); }
+    #pricing .pro-tag { color: var(--jade); border-color: rgba(46,100,100,.25); background: rgba(46,100,100,.1); }
+    #pricing .pro-cta-wrap { text-align: center; margin-top: 40px; }
     .tier-card {
       background: rgba(237,229,213,.04);
       border: 1px solid rgba(237,229,213,.08);
@@ -1869,159 +1912,6 @@
     </div>
   </section>
 
-  <!-- ═══ INTELLIGENCE PRICING ═══ -->
-  <section id="pricing">
-    <div class="container">
-      <div class="fade-in">
-        <p class="label">Pricing</p>
-        <div class="section-head">
-          <h2>Start free.<br>Upgrade when<br>you're ready.</h2>
-          <p>Eave is free for one property — mobile, desktop, and web. Intelligence adds AI when you want it. Pro adds real people when you need them.</p>
-        </div>
-      </div>
-
-      <div class="tier-grid fade-in" style="transition-delay:.1s;">
-
-        <!-- FREE -->
-        <div class="tier-card tier-free">
-          <div class="tier-eyebrow tier-eyebrow-free">EAVE — FREE</div>
-          <div class="tier-price-line">
-            <span class="tier-price-big">$0</span>
-          </div>
-          <div class="tier-price-note">free forever · 1 property · mobile + desktop + web</div>
-          <div class="tier-divider"></div>
-          <div class="tier-checklist">
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Projects &amp; Tasks</strong> — capture, track, and close everything</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Appliances</strong> — track model, warranty, and service history</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Spaces</strong> — map every room with dimensions and finishes</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Budget Tracking</strong> — estimate vs. actual across every project</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Contractors</strong> — your trusted network, not cold leads</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Upkeep Score</strong> — your live 0–100 home health score</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail, Home Depot, Lowe's, smart home</span>
-            </div>
-          </div>
-          <div class="tier-cta-wrap">
-            <a href="#download" class="tier-btn-free">GET EARLY ACCESS →</a>
-          </div>
-        </div>
-
-        <!-- INTELLIGENCE -->
-        <div class="tier-card tier-intel">
-          <div class="tier-eyebrow tier-eyebrow-intel">EAVE INTELLIGENCE — OPTIONAL UPGRADE</div>
-          <div class="tier-price-line">
-            <span class="tier-price-big" style="font-size:32px;line-height:1.2;">from</span>
-            <span class="tier-price-big">$2.99</span>
-            <span class="tier-price-small">/mo</span>
-          </div>
-          <div class="tier-price-note">makes Eave smarter and more automatic</div>
-          <div class="tier-divider"></div>
-          <div class="intel-options">
-            <div class="intel-option">
-              <div>
-                <div class="intel-option-label">MONTHLY</div>
-                <div class="intel-option-note">cancel anytime</div>
-              </div>
-              <div class="intel-option-price">$2.99<span style="font-size:10px;color:rgba(237,229,213,.35);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
-            </div>
-            <div class="intel-option intel-option-best">
-              <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
-              <div>
-                <div class="intel-option-label">ANNUAL</div>
-                <div class="intel-option-note">~$2/month</div>
-              </div>
-              <div class="intel-option-price">$24<span style="font-size:10px;color:rgba(237,229,213,.35);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
-            </div>
-            <div class="intel-option">
-              <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
-              <div>
-                <div class="intel-option-label">LIFETIME</div>
-                <div class="intel-option-note">never pay again</div>
-              </div>
-              <div class="intel-option-price">$49</div>
-            </div>
-          </div>
-          <div class="tier-checklist">
-            <div class="tier-check-item">
-              <span class="tier-check-icon-intel">✦</span>
-              <span class="tier-check-text"><strong>AI Project Queue</strong> — every project ranked by urgency with "why now" reasoning</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-intel">✦</span>
-              <span class="tier-check-text"><strong>12-Month Upkeep Plan</strong> — AI-generated care schedule for your specific property</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-intel">✦</span>
-              <span class="tier-check-text"><strong>Seasonal Prep Digest</strong> — personalized 4-task prep list 14 days before each season</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-intel">✦</span>
-              <span class="tier-check-text"><strong>Materials Estimates &amp; Vendor Research</strong> — scoped to your home's specs</span>
-            </div>
-          </div>
-          <div class="tier-cta-wrap">
-            <button class="tier-btn-disabled">COMING SOON</button>
-          </div>
-        </div>
-
-        <!-- PRO -->
-        <div class="tier-card tier-pro">
-          <div class="tier-eyebrow tier-eyebrow-pro">EAVE PRO — PROFESSIONAL SERVICES</div>
-          <div class="tier-price-line">
-            <span class="tier-price-big" style="font-size:24px;line-height:1.4;color:rgba(237,229,213,.5);">from</span>
-            <span class="tier-price-big">$499</span>
-          </div>
-          <div class="tier-price-note">one-time audit · or $149/mo ongoing · or fully managed</div>
-          <div class="tier-divider"></div>
-          <div class="tier-checklist">
-            <div class="tier-check-item">
-              <span class="tier-check-icon-pro">✦</span>
-              <span class="tier-check-text"><strong>Home Audit</strong> — a licensed inspector visits, full report added to your Eave profile ($499–799 one-time)</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-pro">✦</span>
-              <span class="tier-check-text"><strong>Seasonal Manager</strong> — a pro coordinates and schedules vendors each season ($149/mo)</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-pro">✦</span>
-              <span class="tier-check-text"><strong>Home Manager</strong> — full hands-off upkeep management, budget synced to Eave ($249–499/mo)</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-pro">✦</span>
-              <span class="tier-check-text">Your Pro <em>arrives informed</em> — they see your full home profile before day one</span>
-            </div>
-          </div>
-          <div class="tier-cta-wrap">
-            <a href="#pro" class="tier-btn-outline">SEE PRO PLANS →</a>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="pricing-fine fade-in" style="transition-delay:.2s;">All core features are free forever — no credit card required, no trial expiry.<br>Intelligence and Pro are optional. You decide if and when you want more.</p>
-
-    </div>
-  </section>
-
   <!-- ═══ HOW IT WORKS ═══ -->
   <section id="how-it-works">
     <div class="container">
@@ -2099,18 +1989,131 @@
     </div>
   </section>
 
-  <!-- ═══ PRO ═══ -->
-  <section id="pro" class="alt">
+  <!-- ═══ PRICING ═══ -->
+  <section id="pricing">
     <div class="container">
+
       <div class="fade-in">
-        <p class="label">Eave Pro</p>
+        <p class="label">Pricing</p>
         <div class="section-head">
-          <h2>Want someone else<br>to handle it?</h2>
-          <p>Eave Pro pairs your home's data with a certified professional who already knows your property before they arrive. Start with a licensed home inspection, add seasonal vendor coordination, or hand your upkeep over entirely.</p>
+          <h2>Start free.<br>Upgrade when<br>you're ready.</h2>
+          <p>Eave is free for one property — mobile, desktop, and web. Intelligence adds AI when you want it. Pro adds real people when you need them.</p>
         </div>
       </div>
 
-      <div class="pro-grid fade-in" style="transition-delay:.1s;">
+      <!-- 2-col: Eave Free | Eave Intelligence -->
+      <div class="tier-grid fade-in" style="transition-delay:.1s;">
+
+        <!-- FREE -->
+        <div class="tier-card tier-free">
+          <div class="tier-eyebrow tier-eyebrow-free">EAVE — FREE</div>
+          <div class="tier-price-line">
+            <span class="tier-price-big">$0</span>
+          </div>
+          <div class="tier-price-note">free forever · 1 property · mobile + desktop + web</div>
+          <div class="tier-divider"></div>
+          <div class="tier-checklist">
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Projects &amp; Tasks</strong> — capture, track, and close everything</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Appliances</strong> — track model, warranty, and service history</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Spaces</strong> — map every room with dimensions and finishes</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Budget Tracking</strong> — estimate vs. actual across every project</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Contractors</strong> — your trusted network, not cold leads</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Upkeep Score</strong> — your live 0–100 home health score</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail, Home Depot, Lowe's, smart home</span>
+            </div>
+          </div>
+          <div class="tier-cta-wrap">
+            <a href="#download" class="tier-btn-free">GET EARLY ACCESS →</a>
+          </div>
+        </div>
+
+        <!-- INTELLIGENCE -->
+        <div class="tier-card tier-intel">
+          <div class="tier-eyebrow tier-eyebrow-intel">EAVE INTELLIGENCE — OPTIONAL UPGRADE</div>
+          <div class="tier-price-line">
+            <span class="tier-price-big" style="font-size:32px;line-height:1.2;">from</span>
+            <span class="tier-price-big">$2.99</span>
+            <span class="tier-price-small">/mo</span>
+          </div>
+          <div class="tier-price-note">makes Eave smarter and more automatic</div>
+          <div class="tier-divider"></div>
+          <div class="intel-options">
+            <div class="intel-option">
+              <div>
+                <div class="intel-option-label">MONTHLY</div>
+                <div class="intel-option-note">cancel anytime</div>
+              </div>
+              <div class="intel-option-price">$2.99<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
+            </div>
+            <div class="intel-option intel-option-best">
+              <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
+              <div>
+                <div class="intel-option-label">ANNUAL</div>
+                <div class="intel-option-note">~$2/month</div>
+              </div>
+              <div class="intel-option-price">$24<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
+            </div>
+            <div class="intel-option">
+              <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
+              <div>
+                <div class="intel-option-label">LIFETIME</div>
+                <div class="intel-option-note">never pay again</div>
+              </div>
+              <div class="intel-option-price">$49</div>
+            </div>
+          </div>
+          <div class="tier-checklist">
+            <div class="tier-check-item">
+              <span class="tier-check-icon-intel">✦</span>
+              <span class="tier-check-text"><strong>AI Project Queue</strong> — every project ranked by urgency with "why now" reasoning</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-intel">✦</span>
+              <span class="tier-check-text"><strong>12-Month Upkeep Plan</strong> — AI-generated care schedule for your specific property</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-intel">✦</span>
+              <span class="tier-check-text"><strong>Seasonal Prep Digest</strong> — personalized 4-task prep list 14 days before each season</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-intel">✦</span>
+              <span class="tier-check-text"><strong>Materials Estimates &amp; Vendor Research</strong> — scoped to your home's specs</span>
+            </div>
+          </div>
+          <div class="tier-cta-wrap">
+            <button class="tier-btn-disabled">COMING SOON</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Eave Pro subsection -->
+      <div id="pro" class="pro-pricing-divider fade-in" style="transition-delay:.15s;">
+        <div class="pro-pricing-eyebrow">EAVE PRO — PROFESSIONAL SERVICES</div>
+        <p class="pro-pricing-desc">Want someone else to handle it? Eave Pro pairs your home's data with a certified professional who already knows your property before they arrive. Start with a licensed inspection, add seasonal coordination, or hand upkeep over entirely.</p>
+      </div>
+
+      <div class="pro-grid fade-in" style="transition-delay:.2s;">
 
         <div class="pro-card card">
           <div class="pro-card-title">Home Audit</div>
@@ -2167,7 +2170,7 @@
       </div>
 
       <!-- Your Pro Arrives Informed strip -->
-      <div class="pro-arrives-strip fade-in" style="transition-delay:.15s;">
+      <div class="pro-arrives-strip fade-in" style="transition-delay:.25s;">
         <div class="pro-arrives-heading">YOUR PRO ARRIVES INFORMED</div>
         <div class="pro-arrives-body">Unlike a contractor found cold on Angi, your Eave Pro sees your full home profile before the first conversation — inspection report, project backlog, maintenance history, appliance records, spaces, and budget — all in one place.</div>
         <div class="pro-tag-row">
@@ -2180,9 +2183,11 @@
         </div>
       </div>
 
-      <div class="pro-cta-wrap fade-in" style="transition-delay:.2s;">
-        <a href="mailto:support@limbicventures.com?subject=Eave Pro Waitlist" class="btn btn-jade">Join the Pro waitlist →</a>
+      <div class="pro-cta-wrap fade-in" style="transition-delay:.3s;">
+        <a href="mailto:support@limbicventures.com?subject=Eave Pro Waitlist" class="btn btn-jade" style="margin-right:16px;">Join the Pro waitlist →</a>
       </div>
+
+      <p class="pricing-fine fade-in" style="transition-delay:.35s;">All core features are free forever — no credit card required, no trial expiry.<br>Intelligence and Pro are optional. You decide if and when you want more.</p>
 
     </div>
   </section>
