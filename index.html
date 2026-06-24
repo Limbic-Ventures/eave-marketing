@@ -684,7 +684,7 @@
     .capture-modes { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
     .capture-mode { background: var(--surface); background-image: var(--scanline); padding: 14px 16px; }
     .capture-mode-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-    .capture-mode-icon { font-size: 14px; }
+    .capture-mode-icon { display: flex; align-items: center; }
     .capture-mode-title { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; }
     .capture-quote { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
     .capture-result { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--jade); }
@@ -1807,8 +1807,8 @@
       <div class="steps fade-in" style="transition-delay:.1s;">
         <div class="step">
           <div class="step-num">01</div>
-          <div class="step-title">Tell Eave about your home</div>
-          <div class="step-desc">Enter your address. Eave pulls your home's year built, square footage, and property details automatically — no manual data entry.</div>
+          <div class="step-title">Eave learns your home</div>
+          <div class="step-desc">Give Eave your address. It finds your home's age, size, and structure automatically — then layers in local context that shapes your care plan: climate zone, frost dates, storm season timing, and typical maintenance windows for your area. Your upkeep plan starts specific to your home from day one.</div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
@@ -1886,7 +1886,13 @@
           <div class="capture-modes">
             <div class="capture-mode card">
               <div class="capture-mode-header">
-                <span class="capture-mode-icon">🎤</span>
+                <span class="capture-mode-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" x2="12" y1="19" y2="22"/>
+                  </svg>
+                </span>
                 <span class="capture-mode-title">Speak it</span>
               </div>
               <p class="capture-quote">"The master bathroom toilet keeps running — probably a flapper, maybe $150"</p>
@@ -1894,7 +1900,12 @@
             </div>
             <div class="capture-mode card">
               <div class="capture-mode-header">
-                <span class="capture-mode-icon">📷</span>
+                <span class="capture-mode-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                    <circle cx="12" cy="13" r="3"/>
+                  </svg>
+                </span>
                 <span class="capture-mode-title">Snap it</span>
               </div>
               <p class="capture-quote">Point at the problem. Eave's vision AI diagnoses the issue and generates the project record.</p>
@@ -1902,7 +1913,11 @@
             </div>
             <div class="capture-mode card">
               <div class="capture-mode-header">
-                <span class="capture-mode-icon">⌨️</span>
+                <span class="capture-mode-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                  </svg>
+                </span>
                 <span class="capture-mode-title">Type it</span>
               </div>
               <p class="capture-quote">Free-form notes in plain English. No forms, no menus.</p>
