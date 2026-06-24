@@ -3032,7 +3032,7 @@
         const p = document.querySelector('.cap-panel-' + feature);
         if (p) p.classList.add('active');
       });
-    }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
     document.querySelectorAll('[data-cap-feature]').forEach(el => capObserver.observe(el));
 
     // Memory scroll highlight
@@ -3054,7 +3054,7 @@
         const btn = document.querySelector('.mem-laptop-action');
         if (btn && labels[feature]) btn.textContent = labels[feature];
       });
-    }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
     document.querySelectorAll('[data-mem-feature]').forEach(el => memObserver.observe(el));
     // Set initial sidebar nav state
     const firstMemNav = document.querySelector('.mem-nav-item[data-mem-nav="spaces"]');
@@ -3071,7 +3071,7 @@
         const panel = document.querySelector('.intel-panel-' + feature);
         if (panel) panel.classList.add('active');
       });
-    }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
     document.querySelectorAll('.intel-feature-item').forEach(el => intelObserver.observe(el));
 
     const hamburger = document.getElementById('hamburger');
