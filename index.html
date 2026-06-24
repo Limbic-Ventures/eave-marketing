@@ -2101,11 +2101,11 @@
             <p class="intel-feature-desc">Every major system tracked with model, install date, warranty expiry, and service history. Eave flags overdue service and upcoming warranty expirations before they catch you off guard.</p>
           </div>
 
-          <div class="intel-feature-item" data-mem-feature="budget">
+          <div class="intel-feature-item" data-mem-feature="materials">
             <div class="intel-feature-header">
-              <span class="intel-feature-name">Budget Tracking</span>
+              <span class="intel-feature-name">Tools &amp; Materials</span>
             </div>
-            <p class="intel-feature-desc">Log estimates and actuals for every project. See your total home spend by category, room, or year — so you always know what your home has cost and where your money goes.</p>
+            <p class="intel-feature-desc">Track every finish, material, and spec used in your home — paint colors with brand and code, tile dimensions, grout color, lumber sizing, hardware finishes. Never wonder what paint a room is or what tile was used in the bathroom.</p>
           </div>
 
           <div class="intel-feature-item" data-mem-feature="contractors">
@@ -2140,7 +2140,7 @@
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="spaces">Spaces</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="rooms">Rooms</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="appliances">Appliances</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="budget">Budget</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="materials">Materials</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="contractors">Contractors</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="connected">Sources</div>
                   </div>
@@ -2207,37 +2207,31 @@
                       </div>
                     </div>
 
-                    <!-- Panel: budget -->
-                    <div class="mem-panel mem-panel-budget">
-                      <div class="laptop-section-title">BUDGET · 2024</div>
-                      <div style="display:flex;flex-direction:column;gap:5px;">
-                        <div class="mem-budget-row">
-                          <span class="mem-budget-cat">Mechanical</span>
-                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:72%;background:var(--amber);"></div></div>
-                          <span class="mem-budget-amt">$2,140</span>
+                    <!-- Panel: materials -->
+                    <div class="mem-panel mem-panel-materials">
+                      <div class="laptop-section-title">TOOLS &amp; MATERIALS</div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Living Room Paint</span>
+                          <span class="mem-space-detail">Benjamin Moore HC-170 · Revere Pewter · Eggshell</span>
                         </div>
-                        <div class="mem-budget-row">
-                          <span class="mem-budget-cat">Exterior</span>
-                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:55%;background:var(--jade);"></div></div>
-                          <span class="mem-budget-amt">$1,620</span>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Kitchen Backsplash</span>
+                          <span class="mem-space-detail">Merola Tile 3×6 Subway · Glossy White</span>
                         </div>
-                        <div class="mem-budget-row">
-                          <span class="mem-budget-cat">Plumbing</span>
-                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:28%;background:var(--jade);"></div></div>
-                          <span class="mem-budget-amt">$830</span>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Master Bath Grout</span>
+                          <span class="mem-space-detail">Custom Building Products · Platinum Gray</span>
                         </div>
-                        <div class="mem-budget-row">
-                          <span class="mem-budget-cat">Interior</span>
-                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:18%;background:var(--jade);"></div></div>
-                          <span class="mem-budget-amt">$540</span>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Deck Stain</span>
+                          <span class="mem-space-detail">Ready Seal 525 · Dark Walnut · Applied May 2023</span>
                         </div>
-                        <div class="mem-budget-row">
-                          <span class="mem-budget-cat">Safety</span>
-                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:8%;background:var(--jade);"></div></div>
-                          <span class="mem-budget-amt">$230</span>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Attic Insulation</span>
+                          <span class="mem-space-detail">R-38 Fiberglass Batt · Installed 2019</span>
                         </div>
                       </div>
-                      <div style="margin-top:8px;font-size:7px;color:var(--dim);font-family:'Bungee',sans-serif;letter-spacing:.06em;">TOTAL SPENT: $5,360</div>
                     </div>
 
                     <!-- Panel: contractors -->
@@ -3056,7 +3050,7 @@
         const nav = document.querySelector('.mem-nav-item[data-mem-nav="' + feature + '"]');
         if (nav) nav.classList.add('active');
         // Update action button label
-        const labels = { spaces:'+ Add Structure', rooms:'+ Add Room', appliances:'+ Add Appliance', budget:'+ Log Spend', contractors:'+ Add Contractor', connected:'+ Add Source' };
+        const labels = { spaces:'+ Add Structure', rooms:'+ Add Room', appliances:'+ Add Appliance', materials:'+ Add Material', contractors:'+ Add Contractor', connected:'+ Add Source' };
         const btn = document.querySelector('.mem-laptop-action');
         if (btn && labels[feature]) btn.textContent = labels[feature];
       });
