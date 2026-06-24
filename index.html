@@ -841,6 +841,52 @@
     .intel-seasonal-head { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .07em; color: var(--ink); margin-bottom: 2px; }
     .intel-seasonal-sub { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--muted); }
 
+    /* Shared scroll panel base (capture + memory + intelligence) */
+    .cap-panel, .mem-panel {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+      overflow-y: auto;
+      background: var(--bg);
+    }
+    .cap-panel.active, .mem-panel.active { opacity: 1; pointer-events: auto; }
+
+    /* Memory laptop panels */
+    .mem-laptop-screen { position: relative; }
+    .laptop-main { position: relative; overflow: hidden; }
+
+    /* Memory room list */
+    .mem-room-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 8px; background: var(--bg); background-image: var(--scanline); }
+    .mem-room-name { font-size: 8.5px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+    .mem-room-tag { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .04em; }
+
+    /* Memory spaces list */
+    .mem-space-row { display: flex; flex-direction: column; gap: 1px; padding: 4px 8px; background: var(--bg); background-image: var(--scanline); }
+    .mem-space-name { font-size: 8.5px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+    .mem-space-detail { font-size: 7.5px; color: var(--muted); }
+
+    /* Memory budget bars */
+    .mem-budget-row { display: flex; align-items: center; gap: 5px; }
+    .mem-budget-cat { font-size: 8px; color: var(--muted); min-width: 56px; }
+    .mem-budget-bar-wrap { flex: 1; height: 5px; background: var(--stone); border-radius: 2px; overflow: hidden; }
+    .mem-budget-bar { height: 100%; border-radius: 2px; }
+    .mem-budget-amt { font-family: 'Bungee', sans-serif; font-size: 7.5px; color: var(--ink); min-width: 32px; text-align: right; }
+
+    /* Memory contractor cards */
+    .mem-contractor-card { padding: 5px 8px; background: var(--bg); background-image: var(--scanline); clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%); }
+    .mem-contractor-name { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .04em; color: var(--jade); margin-bottom: 2px; }
+    .mem-contractor-meta { font-size: 7.5px; color: var(--muted); }
+
+    /* Memory connected sources */
+    .mem-source-row { display: flex; align-items: center; gap: 7px; padding: 5px 0; border-bottom: 1px solid var(--stone); }
+    .mem-source-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .mem-source-info { flex: 1; }
+    .mem-source-name { font-size: 8px; color: var(--ink); font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+    .mem-source-status { font-size: 7.5px; color: var(--muted); }
+    .mem-source-badge { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .04em; flex-shrink: 0; }
+
     /* Intelligence scroll layout */
     .intel-scroll-layout {
       display: grid;
@@ -1875,108 +1921,144 @@
   <!-- ═══ CAPTURE ═══ -->
   <section id="capture" class="alt">
     <div class="container">
-      <div class="feature-grid">
+      <div class="fade-in" style="margin-bottom:48px;">
+        <p class="label">Capture</p>
+        <h2>Notice something?<br>Just say it.</h2>
+      </div>
 
-        <!-- Left: copy + capture mode cards -->
-        <div class="feature-copy fade-in">
-          <p class="label">Capture</p>
-          <h2>Notice something?<br>Just say it.</h2>
-          <p>Most home management apps make you navigate menus and fill forms. Eave starts with you. Speak a problem out loud, snap a photo, or type what you're thinking. Eave's AI parses it, structures it into a project — and shows it to you for review before saving anything.</p>
-          <p style="font-family:'Bungee',sans-serif;font-size:11px;color:var(--jade);letter-spacing:.06em;">From thought to filed project: under 5 seconds.</p>
-          <div class="capture-modes">
-            <div class="capture-mode card">
-              <div class="capture-mode-header">
-                <span class="capture-mode-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                    <line x1="12" x2="12" y1="19" y2="22"/>
-                  </svg>
-                </span>
-                <span class="capture-mode-title">Speak it</span>
-              </div>
-              <p class="capture-quote">"The master bathroom toilet keeps running — probably a flapper, maybe $150"</p>
-              <p class="capture-result">→ Project created. Room: Master Bath. Category: Plumbing. Est: $150–200.</p>
+      <div class="intel-scroll-layout">
+
+        <div class="intel-scroll-left">
+
+          <div class="intel-feature-item active" data-cap-feature="speak">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name" style="display:flex;align-items:center;gap:7px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                Speak it
+              </span>
             </div>
-            <div class="capture-mode card">
-              <div class="capture-mode-header">
-                <span class="capture-mode-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-                    <circle cx="12" cy="13" r="3"/>
-                  </svg>
-                </span>
-                <span class="capture-mode-title">Snap it</span>
-              </div>
-              <p class="capture-quote">Point at the problem. Eave's vision AI diagnoses the issue and generates the project record.</p>
-              <p class="capture-result">→ Photo analyzed. Cracked caulk detected. Category: Bathroom. Priority: Medium.</p>
-            </div>
-            <div class="capture-mode card">
-              <div class="capture-mode-header">
-                <span class="capture-mode-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
-                  </svg>
-                </span>
-                <span class="capture-mode-title">Type it</span>
-              </div>
-              <p class="capture-quote">Free-form notes in plain English. No forms, no menus.</p>
-              <p class="capture-result">→ Parsed: deck boards loose near steps. Priority: High (safety).</p>
-            </div>
+            <p class="intel-feature-desc">Say a problem out loud in plain English. Eave's AI parses your words into a structured project — room, category, estimated cost, and priority — in seconds. No forms, no tapping through menus.</p>
+            <p class="intel-feature-sub">"The master bathroom toilet keeps running — probably a flapper, maybe $150"</p>
           </div>
+
+          <div class="intel-feature-item" data-cap-feature="snap">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name" style="display:flex;align-items:center;gap:7px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                Snap it
+              </span>
+            </div>
+            <p class="intel-feature-desc">Point your camera at the problem. Eave's vision AI identifies the issue, estimates severity, and generates the project record automatically — no description needed.</p>
+            <p class="intel-feature-sub">→ Photo analyzed. Cracked caulk detected. Category: Bathroom. Priority: Medium.</p>
+          </div>
+
+          <div class="intel-feature-item" data-cap-feature="type">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name" style="display:flex;align-items:center;gap:7px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>
+                Type it
+              </span>
+            </div>
+            <p class="intel-feature-desc">Free-form notes in plain English. No fields, no dropdowns. Just write what you noticed — Eave structures it into a filed project ready for review.</p>
+            <p class="intel-feature-sub">→ Parsed: deck boards loose near steps. Priority: High (safety).</p>
+          </div>
+
+          <p class="fade-in" style="padding-left:20px;margin-top:12px;font-family:'Bungee',sans-serif;font-size:10px;color:var(--jade);letter-spacing:.06em;">From thought to filed project: under 5 seconds.</p>
+
         </div>
 
-        <!-- Right: phone mockup showing AI parse result -->
-        <div class="phone-wrap fade-in" style="display:flex;justify-content:center;transition-delay:.1s;">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="capture-phone-inner">
-                <div class="capture-phone-label">QUICK CAPTURE</div>
-                <div class="capture-voice-bar">
-                  <div class="capture-voice-mic">
-                    <div class="capture-voice-mic-dot"></div>
-                  </div>
-                  <div class="capture-voice-text">"The master bath toilet keeps running..."</div>
-                  <div class="capture-wave">
-                    <span style="height:8px;"></span>
-                    <span style="height:14px;"></span>
-                    <span style="height:10px;"></span>
-                    <span style="height:16px;"></span>
-                    <span style="height:8px;"></span>
-                    <span style="height:12px;"></span>
-                  </div>
-                </div>
-                <div class="capture-confirm-card">
-                  <div class="capture-confirm-title">AI PARSED THIS PROJECT</div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">TITLE</span>
-                    <span class="capture-field-value">Master Bath — Running Toilet</span>
-                  </div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">ROOM</span>
-                    <span class="capture-field-value">Master Bathroom</span>
-                  </div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">CATEGORY</span>
-                    <span class="capture-field-value">Plumbing</span>
-                  </div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">EST. COST</span>
-                    <span class="capture-field-value">$80–$150</span>
-                  </div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">PRIORITY</span>
-                    <span class="capture-field-value">Medium</span>
-                  </div>
-                  <div class="capture-field-row">
-                    <span class="capture-field-label">NOTES</span>
-                    <span class="capture-field-value" style="font-style:italic;font-size:7.5px;">"Probably a flapper — cheap DIY fix"</span>
-                  </div>
-                  <div class="capture-btn-row">
-                    <div class="capture-btn-edit">EDIT</div>
-                    <div class="capture-btn-save">SAVE PROJECT →</div>
+        <div class="intel-scroll-right">
+          <div class="intel-phone-sticky">
+            <div class="phone">
+              <div class="phone-screen">
+
+                <!-- Panel: speak -->
+                <div class="cap-panel cap-panel-speak active">
+                  <div class="intel-panel-inner">
+                    <div class="intel-pnl-label">QUICK CAPTURE</div>
+                    <div class="capture-voice-bar" style="margin:8px 12px;">
+                      <div class="capture-voice-mic"><div class="capture-voice-mic-dot"></div></div>
+                      <div class="capture-voice-text">"The master bath toilet keeps running..."</div>
+                      <div class="capture-wave">
+                        <span style="height:8px;"></span><span style="height:14px;"></span>
+                        <span style="height:10px;"></span><span style="height:16px;"></span>
+                        <span style="height:8px;"></span><span style="height:12px;"></span>
+                      </div>
+                    </div>
+                    <div class="capture-confirm-card" style="margin:0 12px;">
+                      <div class="capture-confirm-title">AI PARSED THIS PROJECT</div>
+                      <div class="capture-field-row"><span class="capture-field-label">TITLE</span><span class="capture-field-value">Master Bath — Running Toilet</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">ROOM</span><span class="capture-field-value">Master Bathroom</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">CATEGORY</span><span class="capture-field-value">Plumbing</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">EST. COST</span><span class="capture-field-value">$80–$150</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">PRIORITY</span><span class="capture-field-value">Medium</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">NOTES</span><span class="capture-field-value" style="font-style:italic;font-size:7.5px;">"Probably a flapper — cheap DIY fix"</span></div>
+                      <div class="capture-btn-row">
+                        <div class="capture-btn-edit">EDIT</div>
+                        <div class="capture-btn-save">SAVE PROJECT →</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Panel: snap -->
+                <div class="cap-panel cap-panel-snap">
+                  <div class="intel-panel-inner">
+                    <div class="intel-pnl-label">QUICK CAPTURE</div>
+                    <div style="margin:8px 12px 10px;background:#1A2840;border-radius:6px;height:110px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+                      <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.03) 3px 4px);"></div>
+                      <div style="position:absolute;top:6px;left:6px;width:14px;height:14px;border-top:2px solid rgba(126,200,200,.7);border-left:2px solid rgba(126,200,200,.7);"></div>
+                      <div style="position:absolute;top:6px;right:6px;width:14px;height:14px;border-top:2px solid rgba(126,200,200,.7);border-right:2px solid rgba(126,200,200,.7);"></div>
+                      <div style="position:absolute;bottom:6px;left:6px;width:14px;height:14px;border-bottom:2px solid rgba(126,200,200,.7);border-left:2px solid rgba(126,200,200,.7);"></div>
+                      <div style="position:absolute;bottom:6px;right:6px;width:14px;height:14px;border-bottom:2px solid rgba(126,200,200,.7);border-right:2px solid rgba(126,200,200,.7);"></div>
+                      <div style="text-align:center;">
+                        <div style="font-family:'Bungee',sans-serif;font-size:8px;letter-spacing:.1em;color:rgba(126,200,200,.8);margin-bottom:4px;">ANALYZING PHOTO</div>
+                        <div style="display:flex;gap:3px;justify-content:center;">
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.8);animation:none;"></span>
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.5);"></span>
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.3);"></span>
+                        </div>
+                      </div>
+                      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(46,100,100,.6);border:1px solid rgba(126,200,200,.3);padding:3px 10px;font-family:'Bungee',sans-serif;font-size:7px;letter-spacing:.06em;color:rgba(126,200,200,.9);white-space:nowrap;">ISSUE DETECTED</div>
+                    </div>
+                    <div class="capture-confirm-card" style="margin:0 12px;">
+                      <div class="capture-confirm-title">AI PHOTO ANALYSIS</div>
+                      <div class="capture-field-row"><span class="capture-field-label">ISSUE</span><span class="capture-field-value">Cracked caulk — tub surround</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">ROOM</span><span class="capture-field-value">Master Bathroom</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">CATEGORY</span><span class="capture-field-value">Waterproofing</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">SEVERITY</span><span class="capture-field-value">Moderate — act within 60 days</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">EST. COST</span><span class="capture-field-value">$20–$60 DIY</span></div>
+                      <div class="capture-btn-row">
+                        <div class="capture-btn-edit">EDIT</div>
+                        <div class="capture-btn-save">SAVE PROJECT →</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Panel: type -->
+                <div class="cap-panel cap-panel-type">
+                  <div class="intel-panel-inner">
+                    <div class="intel-pnl-label">QUICK CAPTURE</div>
+                    <div style="margin:8px 12px 10px;background:var(--surface);background-image:var(--scanline);border-radius:4px;padding:10px;border:1px solid var(--stone);">
+                      <div style="font-size:9px;color:var(--muted);margin-bottom:6px;font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;">WHAT DID YOU NOTICE?</div>
+                      <div style="font-size:11px;color:var(--ink);line-height:1.5;font-family:'IBM Plex Mono',monospace;">deck boards loose near steps — a couple feel spongy when you step on them<span style="display:inline-block;width:1px;height:11px;background:var(--jade);vertical-align:middle;margin-left:1px;"></span></div>
+                    </div>
+                    <div class="capture-confirm-card" style="margin:0 12px;">
+                      <div class="capture-confirm-title">AI PARSED THIS PROJECT</div>
+                      <div class="capture-field-row"><span class="capture-field-label">TITLE</span><span class="capture-field-value">Deck — Loose &amp; Spongy Boards</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">LOCATION</span><span class="capture-field-value">Deck · Near Steps</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">CATEGORY</span><span class="capture-field-value">Structural / Exterior</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">PRIORITY</span><span class="capture-field-value" style="color:#C05050;font-weight:700;">HIGH — safety</span></div>
+                      <div class="capture-field-row"><span class="capture-field-label">EST. COST</span><span class="capture-field-value">$200–$600</span></div>
+                      <div class="capture-btn-row">
+                        <div class="capture-btn-edit">EDIT</div>
+                        <div class="capture-btn-save">SAVE PROJECT →</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1989,120 +2071,240 @@
   <!-- ═══ MEMORY ═══ -->
   <section id="memory">
     <div class="container">
-      <div class="feature-grid reverse">
-
-        <div class="feature-copy fade-in">
-          <p class="label">Memory</p>
-          <h2>Your home<br>has a history.<br>Eave keeps it.</h2>
-          <p>Every room. Every space. Every appliance. Every contractor you've ever used. Every repair you've made — what it cost, who did it, when it was done, and every dollar tracked. Eave builds a complete, searchable record of your home over time, enriched by photos, receipts, and connected data sources.</p>
-          <p>Connect your Gmail and Eave quietly finds past Home Depot orders, appliance purchases, and service receipts — and pre-populates your home history for your review.</p>
-        </div>
-
-        <div class="memory-features fade-in" style="transition-delay:.1s;">
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Room Inventory</div>
-              <div class="memory-item-desc">Snap a room, Eave documents the floors, walls, finishes, and fixtures with AI confidence scores.</div>
-            </div>
-          </div>
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Spaces</div>
-              <div class="memory-item-desc">Map every room in your home. Capture dimensions, finishes, fixtures, and linked appliances — a permanent floor-by-floor record.</div>
-            </div>
-          </div>
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Appliance Registry</div>
-              <div class="memory-item-desc">Track every major system with model, purchase date, warranty expiry, and service intervals.</div>
-            </div>
-          </div>
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Budget Tracking</div>
-              <div class="memory-item-desc">Log estimates vs. actuals for every project. See your total spend by category, room, or year.</div>
-            </div>
-          </div>
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Contractor Directory</div>
-              <div class="memory-item-desc">Photograph a business card and Eave saves the contact. Your personal, trusted network — not cold lead-gen.</div>
-            </div>
-          </div>
-          <div class="memory-item card">
-            <div>
-              <div class="memory-item-label">Connected Sources</div>
-              <div class="memory-item-desc">Link Gmail, Home Depot, Lowe's, Amazon, and smart home platforms to auto-populate your home history.</div>
-            </div>
-          </div>
-        </div>
-
+      <div class="fade-in" style="margin-bottom:48px;">
+        <p class="label">Memory</p>
+        <h2>Your home<br>has a history.<br>Eave keeps it.</h2>
       </div>
 
-      <!-- Laptop mockup — Appliances tab -->
-      <div class="fade-in" style="margin-top:56px;transition-delay:.15s;">
-        <div class="laptop-outer" style="max-width:560px;margin:0 auto;">
-          <div class="laptop-screen-area" style="height:240px;">
-            <div class="laptop-topbar">
-              <span class="laptop-topbar-brand">eave</span>
-              <div style="display:flex;align-items:center;gap:8px;">
-                <span class="laptop-add-btn">+ Add Appliance</span>
-                <span style="width:20px;height:20px;background:var(--stone);border-radius:50%;display:inline-block;"></span>
-              </div>
+      <div class="intel-scroll-layout">
+
+        <div class="intel-scroll-left">
+
+          <div class="intel-feature-item active" data-mem-feature="rooms">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Room Inventory</span>
             </div>
-            <div class="laptop-body" style="height:calc(240px - 29px);">
-              <div class="laptop-sidebar" style="width:90px;">
-                <div class="laptop-nav-item">Home</div>
-                <div class="laptop-nav-item">Projects</div>
-                <div class="laptop-nav-item">Maintenance</div>
-                <div class="laptop-nav-item active">Appliances</div>
-                <div class="laptop-nav-item">Spaces</div>
-                <div class="laptop-nav-item">Budget</div>
-                <div class="laptop-nav-item">Contractors</div>
-              </div>
-              <div class="laptop-main">
-                <div class="laptop-section-title">APPLIANCES</div>
-                <div class="laptop-appliance-grid">
-                  <div class="laptop-appliance-card">
-                    <div class="laptop-appliance-name">HVAC SYSTEM</div>
-                    <div class="laptop-appliance-meta">Carrier · Installed Jun 2019<br>Warranty: Expired</div>
-                    <div class="laptop-appliance-status">
-                      <div class="laptop-appliance-status-dot" style="background:var(--amber);"></div>
-                      <span class="laptop-appliance-status-text" style="color:var(--amber);">SERVICE OVERDUE</span>
-                    </div>
+            <p class="intel-feature-desc">Snap a room and Eave documents it — floors, walls, finishes, and fixtures captured with AI confidence scores. A permanent visual and structural record of every room in your home.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="spaces">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Spaces</span>
+            </div>
+            <p class="intel-feature-desc">Map your home room by room. Capture dimensions, finishes, fixtures, and linked appliances for each space — a floor-by-floor record that stays accurate as your home changes.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="appliances">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Appliance Registry</span>
+            </div>
+            <p class="intel-feature-desc">Every major system tracked with model, install date, warranty expiry, and service history. Eave flags overdue service and upcoming warranty expirations before they catch you off guard.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="budget">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Budget Tracking</span>
+            </div>
+            <p class="intel-feature-desc">Log estimates and actuals for every project. See your total home spend by category, room, or year — so you always know what your home has cost and where your money goes.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="contractors">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Contractor Directory</span>
+            </div>
+            <p class="intel-feature-desc">Photograph a business card and Eave saves the contact — tied to the project they worked on, the date, and what you paid. Your personal trusted network, built over time.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="connected">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Connected Sources</span>
+            </div>
+            <p class="intel-feature-desc">Link your email, home improvement accounts, and smart home platforms. Eave surfaces appliance purchases, service receipts, and order history for your review — pre-populating your home record without any manual entry.</p>
+          </div>
+
+        </div>
+
+        <div class="intel-scroll-right">
+          <div>
+            <div class="laptop-outer" style="width:340px;">
+              <div class="laptop-screen-area mem-laptop-screen" style="height:220px;">
+                <div class="laptop-topbar">
+                  <span class="laptop-topbar-brand">eave</span>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span class="mem-laptop-action laptop-add-btn">+ Add Room</span>
+                    <span style="width:18px;height:18px;background:var(--stone);border-radius:50%;display:inline-block;"></span>
                   </div>
-                  <div class="laptop-appliance-card">
-                    <div class="laptop-appliance-name">WATER HEATER</div>
-                    <div class="laptop-appliance-meta">Rheem 50-gal · Installed Mar 2021<br>Warranty: 2028</div>
-                    <div class="laptop-appliance-status">
-                      <div class="laptop-appliance-status-dot" style="background:var(--jade);"></div>
-                      <span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span>
-                    </div>
+                </div>
+                <div class="laptop-body" style="height:calc(220px - 29px);">
+                  <div class="laptop-sidebar" style="width:80px;">
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="rooms">Rooms</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="spaces">Spaces</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="appliances">Appliances</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="budget">Budget</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="contractors">Contractors</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="connected">Sources</div>
                   </div>
-                  <div class="laptop-appliance-card">
-                    <div class="laptop-appliance-name">REFRIGERATOR</div>
-                    <div class="laptop-appliance-meta">Samsung · Purchased Jan 2020<br>Warranty: Expired</div>
-                    <div class="laptop-appliance-status">
-                      <div class="laptop-appliance-status-dot" style="background:var(--amber);"></div>
-                      <span class="laptop-appliance-status-text" style="color:var(--amber);">FILTER REPLACE</span>
+                  <div class="laptop-main" style="position:relative;overflow:hidden;">
+
+                    <!-- Panel: rooms -->
+                    <div class="mem-panel mem-panel-rooms active">
+                      <div class="laptop-section-title">ROOM INVENTORY</div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <div class="mem-room-row"><span class="mem-room-name">Master Bedroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
+                        <div class="mem-room-row"><span class="mem-room-name">Master Bathroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
+                        <div class="mem-room-row"><span class="mem-room-name">Living Room</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
+                        <div class="mem-room-row"><span class="mem-room-name">Kitchen</span><span class="mem-room-tag" style="color:var(--amber);">PARTIAL</span></div>
+                        <div class="mem-room-row"><span class="mem-room-name">Guest Bedroom</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
+                        <div class="mem-room-row"><span class="mem-room-name">Garage</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="laptop-appliance-card">
-                    <div class="laptop-appliance-name">DISHWASHER</div>
-                    <div class="laptop-appliance-meta">Bosch · Purchased Apr 2022<br>Warranty: 2026</div>
-                    <div class="laptop-appliance-status">
-                      <div class="laptop-appliance-status-dot" style="background:var(--jade);"></div>
-                      <span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span>
+
+                    <!-- Panel: spaces -->
+                    <div class="mem-panel mem-panel-spaces">
+                      <div class="laptop-section-title">SPACES</div>
+                      <div style="display:flex;flex-direction:column;gap:3px;">
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Master Bedroom</span>
+                          <span class="mem-space-detail">14×16 · Hardwood · 3 appliances</span>
+                        </div>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Master Bath</span>
+                          <span class="mem-space-detail">9×11 · Tile · 2 fixtures</span>
+                        </div>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Living Room</span>
+                          <span class="mem-space-detail">18×22 · Hardwood · Gas fireplace</span>
+                        </div>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Kitchen</span>
+                          <span class="mem-space-detail">12×14 · Tile · 5 appliances</span>
+                        </div>
+                        <div class="mem-space-row">
+                          <span class="mem-space-name">Deck</span>
+                          <span class="mem-space-detail">12×20 · Cedar · Exterior</span>
+                        </div>
+                      </div>
                     </div>
+
+                    <!-- Panel: appliances -->
+                    <div class="mem-panel mem-panel-appliances">
+                      <div class="laptop-section-title">APPLIANCES</div>
+                      <div class="laptop-appliance-grid">
+                        <div class="laptop-appliance-card">
+                          <div class="laptop-appliance-name">HVAC SYSTEM</div>
+                          <div class="laptop-appliance-meta">Carrier · Jun 2019<br>Warranty: Expired</div>
+                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--amber);"></div><span class="laptop-appliance-status-text" style="color:var(--amber);">SERVICE OVERDUE</span></div>
+                        </div>
+                        <div class="laptop-appliance-card">
+                          <div class="laptop-appliance-name">WATER HEATER</div>
+                          <div class="laptop-appliance-meta">Rheem 50-gal · Mar 2021<br>Warranty: 2028</div>
+                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--jade);"></div><span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span></div>
+                        </div>
+                        <div class="laptop-appliance-card">
+                          <div class="laptop-appliance-name">REFRIGERATOR</div>
+                          <div class="laptop-appliance-meta">Samsung · Jan 2020<br>Warranty: Expired</div>
+                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--amber);"></div><span class="laptop-appliance-status-text" style="color:var(--amber);">FILTER REPLACE</span></div>
+                        </div>
+                        <div class="laptop-appliance-card">
+                          <div class="laptop-appliance-name">DISHWASHER</div>
+                          <div class="laptop-appliance-meta">Bosch · Apr 2022<br>Warranty: 2026</div>
+                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--jade);"></div><span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Panel: budget -->
+                    <div class="mem-panel mem-panel-budget">
+                      <div class="laptop-section-title">BUDGET · 2024</div>
+                      <div style="display:flex;flex-direction:column;gap:5px;">
+                        <div class="mem-budget-row">
+                          <span class="mem-budget-cat">Mechanical</span>
+                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:72%;background:var(--amber);"></div></div>
+                          <span class="mem-budget-amt">$2,140</span>
+                        </div>
+                        <div class="mem-budget-row">
+                          <span class="mem-budget-cat">Exterior</span>
+                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:55%;background:var(--jade);"></div></div>
+                          <span class="mem-budget-amt">$1,620</span>
+                        </div>
+                        <div class="mem-budget-row">
+                          <span class="mem-budget-cat">Plumbing</span>
+                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:28%;background:var(--jade);"></div></div>
+                          <span class="mem-budget-amt">$830</span>
+                        </div>
+                        <div class="mem-budget-row">
+                          <span class="mem-budget-cat">Interior</span>
+                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:18%;background:var(--jade);"></div></div>
+                          <span class="mem-budget-amt">$540</span>
+                        </div>
+                        <div class="mem-budget-row">
+                          <span class="mem-budget-cat">Safety</span>
+                          <div class="mem-budget-bar-wrap"><div class="mem-budget-bar" style="width:8%;background:var(--jade);"></div></div>
+                          <span class="mem-budget-amt">$230</span>
+                        </div>
+                      </div>
+                      <div style="margin-top:8px;font-size:7px;color:var(--dim);font-family:'Bungee',sans-serif;letter-spacing:.06em;">TOTAL SPENT: $5,360</div>
+                    </div>
+
+                    <!-- Panel: contractors -->
+                    <div class="mem-panel mem-panel-contractors">
+                      <div class="laptop-section-title">CONTRACTORS</div>
+                      <div style="display:flex;flex-direction:column;gap:4px;">
+                        <div class="mem-contractor-card">
+                          <div class="mem-contractor-name">APEX HVAC SERVICES</div>
+                          <div class="mem-contractor-meta">HVAC · Last used Jun 2023 · $380</div>
+                        </div>
+                        <div class="mem-contractor-card">
+                          <div class="mem-contractor-name">MIKE'S PLUMBING</div>
+                          <div class="mem-contractor-meta">Plumbing · Last used Feb 2024 · $210</div>
+                        </div>
+                        <div class="mem-contractor-card">
+                          <div class="mem-contractor-name">PRECISION EXTERIORS</div>
+                          <div class="mem-contractor-meta">Exterior · Last used Aug 2023 · $1,400</div>
+                        </div>
+                        <div class="mem-contractor-card">
+                          <div class="mem-contractor-name">BRIGHTSIDE ELECTRIC</div>
+                          <div class="mem-contractor-meta">Electrical · Last used Jan 2024 · $320</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Panel: connected -->
+                    <div class="mem-panel mem-panel-connected">
+                      <div class="laptop-section-title">CONNECTED SOURCES</div>
+                      <div style="display:flex;flex-direction:column;gap:5px;">
+                        <div class="mem-source-row">
+                          <div class="mem-source-dot" style="background:var(--jade);"></div>
+                          <div class="mem-source-info"><div class="mem-source-name">Email Account</div><div class="mem-source-status">14 receipts imported</div></div>
+                          <span class="mem-source-badge" style="color:var(--jade);">ACTIVE</span>
+                        </div>
+                        <div class="mem-source-row">
+                          <div class="mem-source-dot" style="background:var(--jade);"></div>
+                          <div class="mem-source-info"><div class="mem-source-name">Home Improvement Store</div><div class="mem-source-status">23 purchases found</div></div>
+                          <span class="mem-source-badge" style="color:var(--jade);">ACTIVE</span>
+                        </div>
+                        <div class="mem-source-row">
+                          <div class="mem-source-dot" style="background:var(--amber);"></div>
+                          <div class="mem-source-info"><div class="mem-source-name">Smart Home Platform</div><div class="mem-source-status">Connect to import devices</div></div>
+                          <span class="mem-source-badge" style="color:var(--amber);">CONNECT</span>
+                        </div>
+                        <div class="mem-source-row">
+                          <div class="mem-source-dot" style="background:var(--stone);"></div>
+                          <div class="mem-source-info"><div class="mem-source-name">Online Retailer</div><div class="mem-source-status">Not connected</div></div>
+                          <span class="mem-source-badge" style="color:var(--dim);">ADD</span>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
             </div>
+            <div class="laptop-chin" style="width:340px;"></div>
           </div>
         </div>
-        <div class="laptop-chin" style="max-width:560px;margin:0 auto;"></div>
-      </div>
 
+      </div>
     </div>
   </section>
 
@@ -2830,6 +3032,45 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Capture scroll highlight
+    const capObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const feature = entry.target.dataset.capFeature;
+        document.querySelectorAll('[data-cap-feature]').forEach(el => el.classList.remove('active'));
+        entry.target.classList.add('active');
+        document.querySelectorAll('.cap-panel').forEach(el => el.classList.remove('active'));
+        const p = document.querySelector('.cap-panel-' + feature);
+        if (p) p.classList.add('active');
+      });
+    }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+    document.querySelectorAll('[data-cap-feature]').forEach(el => capObserver.observe(el));
+
+    // Memory scroll highlight
+    const memObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const feature = entry.target.dataset.memFeature;
+        document.querySelectorAll('[data-mem-feature]').forEach(el => el.classList.remove('active'));
+        entry.target.classList.add('active');
+        document.querySelectorAll('.mem-panel').forEach(el => el.classList.remove('active'));
+        const p = document.querySelector('.mem-panel-' + feature);
+        if (p) p.classList.add('active');
+        // Highlight matching sidebar nav item
+        document.querySelectorAll('.mem-nav-item').forEach(el => el.classList.remove('active'));
+        const nav = document.querySelector('.mem-nav-item[data-mem-nav="' + feature + '"]');
+        if (nav) nav.classList.add('active');
+        // Update action button label
+        const labels = { rooms:'+ Add Room', spaces:'+ Add Space', appliances:'+ Add Appliance', budget:'+ Log Spend', contractors:'+ Add Contractor', connected:'+ Add Source' };
+        const btn = document.querySelector('.mem-laptop-action');
+        if (btn && labels[feature]) btn.textContent = labels[feature];
+      });
+    }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
+    document.querySelectorAll('[data-mem-feature]').forEach(el => memObserver.observe(el));
+    // Set initial sidebar nav state
+    const firstMemNav = document.querySelector('.mem-nav-item[data-mem-nav="rooms"]');
+    if (firstMemNav) firstMemNav.classList.add('active');
 
     // Intelligence scroll highlight
     const intelObserver = new IntersectionObserver((entries) => {
