@@ -2080,18 +2080,18 @@
 
         <div class="intel-scroll-left">
 
-          <div class="intel-feature-item active" data-mem-feature="rooms">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Room Inventory</span>
-            </div>
-            <p class="intel-feature-desc">Snap a room and Eave documents it — floors, walls, finishes, and fixtures captured with AI confidence scores. A permanent visual and structural record of every room in your home.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="spaces">
+          <div class="intel-feature-item active" data-mem-feature="spaces">
             <div class="intel-feature-header">
               <span class="intel-feature-name">Spaces</span>
             </div>
-            <p class="intel-feature-desc">Map your home room by room. Capture dimensions, finishes, fixtures, and linked appliances for each space — a floor-by-floor record that stays accurate as your home changes.</p>
+            <p class="intel-feature-desc">Spaces is your full property map — Structures (your main house, garage, or any outbuilding) and Grounds (yard, garden, pool area, orchard). Every structure contains its rooms; every ground area gets its own record. Your entire property, organized in one place.</p>
+          </div>
+
+          <div class="intel-feature-item" data-mem-feature="rooms">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Rooms</span>
+            </div>
+            <p class="intel-feature-desc">Inside each structure, document every room — finishes, materials, dimensions, fixtures, and linked appliances. Snap a photo and Eave fills in what it can. A searchable record of every surface and system in your home, room by room.</p>
           </div>
 
           <div class="intel-feature-item" data-mem-feature="appliances">
@@ -2137,8 +2137,8 @@
                 </div>
                 <div class="laptop-body" style="height:calc(220px - 29px);">
                   <div class="laptop-sidebar" style="width:80px;">
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="rooms">Rooms</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="spaces">Spaces</div>
+                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="rooms">Rooms</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="appliances">Appliances</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="budget">Budget</div>
                     <div class="laptop-nav-item mem-nav-item" data-mem-nav="contractors">Contractors</div>
@@ -2146,9 +2146,30 @@
                   </div>
                   <div class="laptop-main" style="position:relative;overflow:hidden;">
 
+                    <!-- Panel: spaces -->
+                    <div class="mem-panel mem-panel-spaces active">
+                      <div class="laptop-section-title">SPACES</div>
+                      <div style="font-size:7.5px;color:var(--muted);margin-bottom:6px;">Structures have rooms. Grounds have areas.</div>
+                      <div style="display:flex;flex-direction:column;gap:4px;">
+                        <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0;">STRUCTURES</div>
+                        <div class="mem-space-row" style="padding-left:8px;">
+                          <span class="mem-space-name">Main House <span style="font-family:'Bungee',sans-serif;font-size:6.5px;padding:1px 4px;border:1px solid var(--jade);color:var(--jade);margin-left:4px;">PRIMARY</span></span>
+                          <span class="mem-space-detail">has rooms</span>
+                        </div>
+                        <div class="mem-space-row" style="padding-left:8px;">
+                          <span class="mem-space-name">Detached Garage</span>
+                          <span class="mem-space-detail">has rooms</span>
+                        </div>
+                        <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0 3px;">GROUNDS</div>
+                        <div class="mem-space-row" style="padding-left:8px;font-style:italic;">
+                          <span class="mem-space-detail" style="color:var(--dim);">No outdoor zones added yet.</span>
+                        </div>
+                      </div>
+                    </div>
+
                     <!-- Panel: rooms -->
-                    <div class="mem-panel mem-panel-rooms active">
-                      <div class="laptop-section-title">ROOM INVENTORY</div>
+                    <div class="mem-panel mem-panel-rooms">
+                      <div class="laptop-section-title">ROOMS · MAIN HOUSE</div>
                       <div style="display:flex;flex-direction:column;gap:3px;">
                         <div class="mem-room-row"><span class="mem-room-name">Master Bedroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
                         <div class="mem-room-row"><span class="mem-room-name">Master Bathroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
@@ -2156,33 +2177,6 @@
                         <div class="mem-room-row"><span class="mem-room-name">Kitchen</span><span class="mem-room-tag" style="color:var(--amber);">PARTIAL</span></div>
                         <div class="mem-room-row"><span class="mem-room-name">Guest Bedroom</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
                         <div class="mem-room-row"><span class="mem-room-name">Garage</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
-                      </div>
-                    </div>
-
-                    <!-- Panel: spaces -->
-                    <div class="mem-panel mem-panel-spaces">
-                      <div class="laptop-section-title">SPACES</div>
-                      <div style="display:flex;flex-direction:column;gap:3px;">
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Master Bedroom</span>
-                          <span class="mem-space-detail">14×16 · Hardwood · 3 appliances</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Master Bath</span>
-                          <span class="mem-space-detail">9×11 · Tile · 2 fixtures</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Living Room</span>
-                          <span class="mem-space-detail">18×22 · Hardwood · Gas fireplace</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Kitchen</span>
-                          <span class="mem-space-detail">12×14 · Tile · 5 appliances</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Deck</span>
-                          <span class="mem-space-detail">12×20 · Cedar · Exterior</span>
-                        </div>
                       </div>
                     </div>
 
@@ -3062,14 +3056,14 @@
         const nav = document.querySelector('.mem-nav-item[data-mem-nav="' + feature + '"]');
         if (nav) nav.classList.add('active');
         // Update action button label
-        const labels = { rooms:'+ Add Room', spaces:'+ Add Space', appliances:'+ Add Appliance', budget:'+ Log Spend', contractors:'+ Add Contractor', connected:'+ Add Source' };
+        const labels = { spaces:'+ Add Structure', rooms:'+ Add Room', appliances:'+ Add Appliance', budget:'+ Log Spend', contractors:'+ Add Contractor', connected:'+ Add Source' };
         const btn = document.querySelector('.mem-laptop-action');
         if (btn && labels[feature]) btn.textContent = labels[feature];
       });
     }, { threshold: 0.4, rootMargin: '-15% 0px -15% 0px' });
     document.querySelectorAll('[data-mem-feature]').forEach(el => memObserver.observe(el));
     // Set initial sidebar nav state
-    const firstMemNav = document.querySelector('.mem-nav-item[data-mem-nav="rooms"]');
+    const firstMemNav = document.querySelector('.mem-nav-item[data-mem-nav="spaces"]');
     if (firstMemNav) firstMemNav.classList.add('active');
 
     // Intelligence scroll highlight
