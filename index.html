@@ -851,6 +851,58 @@
     #pricing .pro-arrives-body { color: rgba(237,229,213,.5); }
     #pricing .pro-tag { color: var(--jade); border-color: rgba(46,100,100,.25); background: rgba(46,100,100,.1); }
     #pricing .pro-cta-wrap { text-align: center; margin-top: 40px; }
+
+    /* ── ADA contrast overrides for #pricing dark section ──
+       Background is #1A2840. WCAG AA requires 4.5:1 for normal text.
+       rgba(237,229,213, X) needs X ≥ ~0.50 to pass; we use 0.75+ for comfort.
+       var(--jade)=#2E6464 and var(--amber)=#C07840 both fail (~2.2:1 and ~4.4:1)
+       on dark; replaced with light variants #7EC8C8 (8:1) and #E0A870 (7.3:1). */
+
+    /* Label / section header */
+    #pricing .label { color: rgba(237,229,213,.65); }
+    #pricing .section-head p { color: rgba(237,229,213,.8); }
+
+    /* Tier eyebrows — force readable regardless of their class color */
+    #pricing .tier-eyebrow-free  { color: #7EC8C8; }
+    #pricing .tier-eyebrow-intel { color: #E0A870; }
+    #pricing .tier-eyebrow-pro   { color: rgba(237,229,213,.7); }
+
+    /* Tier price line */
+    #pricing .tier-price-note  { color: rgba(237,229,213,.8); font-size: 12px; }
+    #pricing .tier-price-small { color: rgba(237,229,213,.8); }
+
+    /* Tier checklist */
+    #pricing .tier-check-icon-free  { color: #7EC8C8; }
+    #pricing .tier-check-icon-intel { color: #E0A870; }
+    #pricing .tier-check-icon-pro   { color: rgba(237,229,213,.6); }
+    #pricing .tier-check-text       { color: rgba(237,229,213,.85); font-size: 13px; }
+    #pricing .tier-check-text strong { color: rgba(237,229,213,.95); }
+
+    /* Intelligence sub-options */
+    #pricing .intel-option-label { color: rgba(237,229,213,.8); font-size: 11px; }
+    #pricing .intel-option-note  { color: rgba(237,229,213,.7); font-size: 11px; }
+    #pricing .intel-option-price { color: rgba(237,229,213,.95); }
+    #pricing .intel-option-flag-jade  { background: #7EC8C8; color: #1A2840; }
+    #pricing .intel-option-flag-amber { background: #E0A870; color: #1A2840; }
+
+    /* Pro divider header */
+    #pricing .pro-pricing-eyebrow { color: rgba(237,229,213,.7); font-size: 10px; }
+    #pricing .pro-pricing-desc    { color: rgba(237,229,213,.8); }
+
+    /* Pro cards */
+    #pricing .pro-card-title    { color: rgba(237,229,213,.95); }
+    #pricing .pro-price-row     { color: rgba(237,229,213,.8); font-size: 12px; }
+    #pricing .pro-price-amount  { color: #7EC8C8; }
+    #pricing .pro-commitment    { background: rgba(126,200,200,.12); color: #7EC8C8; border: 1px solid rgba(126,200,200,.22); }
+    #pricing .pro-desc          { color: rgba(237,229,213,.78); font-size: 13px; }
+
+    /* Arrives Informed strip */
+    #pricing .pro-arrives-heading { color: #7EC8C8; }
+    #pricing .pro-arrives-body    { color: rgba(237,229,213,.8); }
+    #pricing .pro-tag             { color: #7EC8C8; border-color: rgba(126,200,200,.28); background: rgba(126,200,200,.07); }
+
+    /* Fine print */
+    #pricing .pricing-fine { color: rgba(237,229,213,.65); font-size: 12px; }
     .tier-card {
       background: rgba(237,229,213,.04);
       border: 1px solid rgba(237,229,213,.08);
