@@ -1770,6 +1770,7 @@
           <h1 class="hero-headline">The easy way<br>to keep up<br>with your home.</h1>
           <p class="hero-sub">Eave remembers your projects, contractors, and maintenance so you don't have to. Speak it, snap it, or type it — Eave handles the rest.</p>
           <form class="waitlist-form" id="hero-waitlist" style="margin-top:28px;">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
             <div class="waitlist-row">
               <input type="email" class="waitlist-input" placeholder="your@email.com" required autocomplete="email">
               <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
@@ -3269,6 +3270,7 @@
         </div>
 
         <form class="waitlist-form" id="download-waitlist" style="margin:32px auto 0;max-width:440px;">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
           <div class="waitlist-row">
             <input type="email" class="waitlist-input waitlist-input-dark" placeholder="your@email.com" required autocomplete="email">
             <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
@@ -3410,6 +3412,8 @@
       if (!form) return;
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const honeypot = form.querySelector('input[name="website"]');
+        if (honeypot && honeypot.value) return;
         const email = form.querySelector('input[type="email"]').value.trim();
         const btn = form.querySelector('button[type="submit"]');
         const success = document.getElementById(successId);
