@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eavehome.app/sitemap.xml

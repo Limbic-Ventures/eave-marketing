@@ -8,6 +8,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Bungee&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Eave",
+    "description": "Home upkeep without the overwhelm. Track projects, appliances, contractors, and maintenance in one place.",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "iOS, Android, Web",
+    "url": "https://eavehome.app",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Limbic Ventures",
+      "email": "support@limbicventures.com"
+    }
+  }
+  </script>
   <style>
     :root {
       --bg:      #EDE5D5;
@@ -841,7 +862,18 @@
     .intel-seasonal-head { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .07em; color: var(--ink); margin-bottom: 2px; }
     .intel-seasonal-sub { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--muted); }
 
-    /* Shared scroll panel base (capture + memory + intelligence) */
+    /* Shared scroll panel base (capture + memory + intelligence + plan) */
+    .plan-panel {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .4s ease;
+      pointer-events: none;
+      overflow-y: auto;
+      background: var(--bg);
+    }
+    .plan-panel.active { opacity: 1; pointer-events: auto; }
+
     .cap-panel, .mem-panel {
       position: absolute;
       inset: 0;
@@ -1173,6 +1205,18 @@
       transition: opacity .2s; cursor: pointer; border: none;
     }
     .tier-btn-free:hover { opacity: .85; }
+    .tier-waitlist-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: rgba(237,229,213,.5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .tier-waitlist-link:hover { color: rgba(237,229,213,.85); }
+
     .tier-btn-disabled {
       display: block; width: 100%; text-align: center;
       padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
@@ -1565,6 +1609,48 @@
       .pillars { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+
+      /* ── Scroll sections: stack device above list ── */
+      .intel-scroll-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .intel-scroll-right {
+        position: relative;
+        top: auto;
+        order: -1;
+        justify-content: center;
+      }
+      .intel-scroll-left { order: 1; }
+
+      /* All feature items fully visible on mobile (no dim) */
+      .intel-feature-item {
+        opacity: 1 !important;
+        border-left-color: var(--jade) !important;
+        padding: 16px 0 16px 16px;
+      }
+
+      /* Memory laptop: constrain to screen width */
+      .intel-scroll-right .laptop-outer {
+        width: 100% !important;
+        max-width: 320px;
+      }
+      .mem-laptop-screen {
+        height: 200px !important;
+      }
+      .laptop-body { height: calc(200px - 29px) !important; }
+
+      /* Capture/Intelligence phone: center properly */
+      .intel-phone-sticky { display: flex; justify-content: center; }
+
+      /* Multi-Property pricing: single column */
+      .multiprop-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 380px !important;
+      }
+
+      /* Plan section phone: center */
+      .phone-wrap { justify-content: center; }
     }
   </style>
 </head>
@@ -1661,7 +1747,9 @@
                 <div style="margin-top:10px;">
                   <div class="phone-section-label">QUICK CAPTURE</div>
                   <div style="display:flex;align-items:center;gap:6px;padding:7px 8px;background:var(--surface);background-image:var(--scanline);">
-                    <div style="font-size:9px;">🎤</div>
+                    <div style="display:flex;align-items:center;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                    </div>
                     <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--dim);flex:1;">Speak, snap, or type anything…</div>
                     <div style="width:20px;height:20px;background:var(--jade);border-radius:50%;display:flex;align-items:center;justify-content:center;">
                       <div style="width:6px;height:6px;background:white;border-radius:50%;"></div>
@@ -1785,7 +1873,7 @@
           <div class="pillar-body">Speak it, snap it, or type it. Eave turns raw input into structured projects in seconds.</div>
           <div class="pillar-callout">
             <div class="pc-bar">
-              <span style="font-size:10px;">🎤</span>
+              <span style="display:flex;align-items:center;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--jade)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
               <span class="pc-bar-text">The downstairs bathroom faucet is dripping...</span>
               <span class="pc-bar-btn">GO</span>
             </div>
@@ -2299,83 +2387,155 @@
   <!-- ═══ PLAN ═══ -->
   <section id="plan" class="alt">
     <div class="container">
-      <div class="feature-grid">
+      <div class="fade-in" style="margin-bottom:48px;">
+        <p class="label">Plan</p>
+        <h2>Seasonal prep.<br>Project timelines.<br>Budget in view.</h2>
+      </div>
 
-        <div class="feature-copy fade-in">
-          <p class="label">Plan</p>
-          <h2>Seasonal prep.<br>Project timelines.<br>Budget in view.</h2>
-          <p>Eave turns your home's data into a living plan. See what's coming each season, map out multi-step projects with milestones, and set a budget so every decision has a number behind it. No spreadsheet. No sticky notes. One view that keeps the whole year in focus.</p>
-          <ul style="margin-top:20px;list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
-              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Seasonal Windows</strong> — Spring, Summer, Fall, Winter task views built from your home's age, systems, and location</span>
-            </li>
-            <li style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
-              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Project Milestones</strong> — break big projects into dated steps so nothing stalls mid-way</span>
-            </li>
-            <li style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="font-family:'Bungee',sans-serif;font-size:9px;color:var(--jade);padding-top:2px;">▸</span>
-              <span style="font-size:13px;color:var(--muted);line-height:1.5;"><strong style="color:var(--ink);">Annual Budget</strong> — set a yearly home maintenance budget and track spend vs. plan in real time</span>
-            </li>
-          </ul>
+      <div class="intel-scroll-layout">
+
+        <div class="intel-scroll-left">
+
+          <div class="intel-feature-item active" data-plan-feature="seasonal">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Seasonal Windows</span>
+            </div>
+            <p class="intel-feature-desc">Spring, Summer, Fall, Winter — each season gets its own task view built from your home's age, systems, and location. Eave knows what needs doing before the window closes, and surfaces it at the right time.</p>
+          </div>
+
+          <div class="intel-feature-item" data-plan-feature="milestones">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Project Milestones</span>
+            </div>
+            <p class="intel-feature-desc">Break big projects into dated steps so nothing stalls mid-way. Each milestone has a due date, status, and cost — so you can see at a glance where every project stands without chasing anyone for an update.</p>
+          </div>
+
+          <div class="intel-feature-item" data-plan-feature="budget">
+            <div class="intel-feature-header">
+              <span class="intel-feature-name">Annual Budget</span>
+            </div>
+            <p class="intel-feature-desc">Set a yearly home maintenance budget and track spend vs. plan in real time. See what you've spent by category — mechanical, exterior, plumbing, interior — so every decision has a number behind it.</p>
+          </div>
+
         </div>
 
-        <!-- Right: phone mockup showing Plan view -->
-        <div class="phone-wrap fade-in" style="display:flex;justify-content:center;transition-delay:.1s;">
-          <div class="phone">
-            <div class="phone-screen">
-              <div class="plan-phone-inner">
-                <div class="plan-season-header">
-                  <span class="plan-season-name">🌱 SPRING 2026</span>
-                  <span class="plan-season-meta">4 tasks · $725 budgeted</span>
-                </div>
-                <div class="plan-task-row">
-                  <div class="plan-task-date">Apr 15</div>
-                  <div class="plan-task-body">
-                    <div class="plan-task-title">HVAC spring service</div>
-                    <div class="plan-task-cat">Mechanical</div>
-                  </div>
-                  <div class="plan-task-amt">$120</div>
-                  <div class="plan-task-status plan-status-sched">SCHED</div>
-                </div>
-                <div class="plan-task-row">
-                  <div class="plan-task-date">Apr 28</div>
-                  <div class="plan-task-body">
-                    <div class="plan-task-title">Reseed front lawn</div>
-                    <div class="plan-task-cat">Exterior</div>
-                  </div>
-                  <div class="plan-task-amt">$85</div>
-                  <div class="plan-task-status plan-status-pend">PEND</div>
-                </div>
-                <div class="plan-task-row">
-                  <div class="plan-task-date">May 12</div>
-                  <div class="plan-task-body">
-                    <div class="plan-task-title">Deck seal &amp; stain</div>
-                    <div class="plan-task-cat">Exterior · 2 milestones</div>
-                  </div>
-                  <div class="plan-task-amt">$340</div>
-                  <div class="plan-task-status plan-status-prog">PROG</div>
-                </div>
-                <div class="plan-task-row">
-                  <div class="plan-task-date">Jun 5</div>
-                  <div class="plan-task-body">
-                    <div class="plan-task-title">Pressure wash driveway</div>
-                    <div class="plan-task-cat">Exterior</div>
-                  </div>
-                  <div class="plan-task-amt">$180</div>
-                  <div class="plan-task-status plan-status-pend">PEND</div>
-                </div>
-                <div class="plan-budget-wrap">
-                  <div class="plan-budget-label">SPRING BUDGET</div>
-                  <div class="plan-budget-bar-wrap">
-                    <div class="plan-budget-fill"></div>
-                  </div>
-                  <div class="plan-budget-nums">
-                    <span>$505 spent</span>
-                    <span>$220 remaining</span>
+        <div class="intel-scroll-right">
+          <div class="intel-phone-sticky">
+            <div class="phone">
+              <div class="phone-screen">
+
+                <!-- Panel: seasonal -->
+                <div class="plan-panel plan-panel-seasonal active">
+                  <div class="plan-phone-inner">
+                    <div class="plan-season-header">
+                      <span class="plan-season-name">🌱 SPRING 2026</span>
+                      <span class="plan-season-meta">4 tasks · $725 budgeted</span>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">Apr 15</div>
+                      <div class="plan-task-body"><div class="plan-task-title">HVAC spring service</div><div class="plan-task-cat">Mechanical</div></div>
+                      <div class="plan-task-amt">$120</div>
+                      <div class="plan-task-status plan-status-sched">SCHED</div>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">Apr 28</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Reseed front lawn</div><div class="plan-task-cat">Exterior</div></div>
+                      <div class="plan-task-amt">$85</div>
+                      <div class="plan-task-status plan-status-pend">PEND</div>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">May 12</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Deck seal &amp; stain</div><div class="plan-task-cat">Exterior · 2 milestones</div></div>
+                      <div class="plan-task-amt">$340</div>
+                      <div class="plan-task-status plan-status-prog">PROG</div>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">Jun 5</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Pressure wash driveway</div><div class="plan-task-cat">Exterior</div></div>
+                      <div class="plan-task-amt">$180</div>
+                      <div class="plan-task-status plan-status-pend">PEND</div>
+                    </div>
+                    <div class="plan-budget-wrap">
+                      <div class="plan-budget-label">SPRING BUDGET</div>
+                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill"></div></div>
+                      <div class="plan-budget-nums"><span>$505 spent</span><span>$220 remaining</span></div>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Panel: milestones -->
+                <div class="plan-panel plan-panel-milestones">
+                  <div class="plan-phone-inner">
+                    <div class="plan-season-header">
+                      <span class="plan-season-name">DECK SEAL &amp; STAIN</span>
+                      <span class="plan-season-meta">4 milestones · May 12</span>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">May 8</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Power wash deck surface</div><div class="plan-task-cat">Step 1 of 4</div></div>
+                      <div class="plan-task-status plan-status-sched" style="background:rgba(46,100,100,.1);color:var(--jade);">DONE</div>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">May 10</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Let dry 48 hours</div><div class="plan-task-cat">Step 2 of 4</div></div>
+                      <div class="plan-task-status plan-status-sched" style="background:rgba(46,100,100,.1);color:var(--jade);">DONE</div>
+                    </div>
+                    <div class="plan-task-row">
+                      <div class="plan-task-date">May 12</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Apply first coat of stain</div><div class="plan-task-cat">Step 3 of 4</div></div>
+                      <div class="plan-task-status plan-status-prog">PROG</div>
+                    </div>
+                    <div class="plan-task-row" style="opacity:.5;">
+                      <div class="plan-task-date">May 15</div>
+                      <div class="plan-task-body"><div class="plan-task-title">Second coat &amp; final inspect</div><div class="plan-task-cat">Step 4 of 4</div></div>
+                      <div class="plan-task-status plan-status-pend">PEND</div>
+                    </div>
+                    <div class="plan-budget-wrap">
+                      <div class="plan-budget-label">PROJECT BUDGET</div>
+                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill" style="width:50%;"></div></div>
+                      <div class="plan-budget-nums"><span>$170 of $340</span><span>2 steps left</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Panel: budget -->
+                <div class="plan-panel plan-panel-budget">
+                  <div class="plan-phone-inner">
+                    <div class="plan-season-header">
+                      <span class="plan-season-name">2026 BUDGET</span>
+                      <span class="plan-season-meta">$4,800 annual</span>
+                    </div>
+                    <div class="plan-budget-wrap" style="margin-bottom:8px;">
+                      <div class="plan-budget-label">TOTAL SPEND</div>
+                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill" style="width:45%;"></div></div>
+                      <div class="plan-budget-nums"><span>$2,140 spent</span><span>$2,660 left</span></div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:5px;padding:0 2px;">
+                      <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px;">BY CATEGORY</div>
+                      <div class="plan-task-row" style="padding:5px 8px;">
+                        <div class="plan-task-body"><div class="plan-task-title">Exterior</div></div>
+                        <div class="plan-task-amt">$1,200</div>
+                        <div class="plan-task-status plan-status-prog">56%</div>
+                      </div>
+                      <div class="plan-task-row" style="padding:5px 8px;">
+                        <div class="plan-task-body"><div class="plan-task-title">Mechanical</div></div>
+                        <div class="plan-task-amt">$620</div>
+                        <div class="plan-task-status plan-status-sched">29%</div>
+                      </div>
+                      <div class="plan-task-row" style="padding:5px 8px;">
+                        <div class="plan-task-body"><div class="plan-task-title">Plumbing</div></div>
+                        <div class="plan-task-amt">$210</div>
+                        <div class="plan-task-status plan-status-pend">10%</div>
+                      </div>
+                      <div class="plan-task-row" style="padding:5px 8px;">
+                        <div class="plan-task-body"><div class="plan-task-title">Interior</div></div>
+                        <div class="plan-task-amt">$110</div>
+                        <div class="plan-task-status plan-status-pend">5%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -2835,6 +2995,7 @@
           </div>
           <div class="tier-cta-wrap">
             <button class="tier-btn-disabled">COMING SOON</button>
+            <a href="mailto:support@limbicventures.com?subject=Eave%20Intelligence%20Waitlist" class="tier-waitlist-link">Get notified when it's ready →</a>
           </div>
         </div>
 
@@ -2847,7 +3008,7 @@
       </div>
 
       <div class="fade-in" style="transition-delay:.14s;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto 8px;">
+        <div class="multiprop-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto 8px;">
 
           <!-- 2–5 Properties -->
           <div class="tier-card tier-intel" style="padding:20px 18px;">
@@ -2880,6 +3041,7 @@
             </div>
             <div class="tier-cta-wrap" style="margin-top:0;">
               <button class="tier-btn-disabled">COMING SOON</button>
+              <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" class="tier-waitlist-link">Get notified →</a>
             </div>
           </div>
 
@@ -2914,6 +3076,7 @@
             </div>
             <div class="tier-cta-wrap" style="margin-top:0;">
               <button class="tier-btn-disabled">COMING SOON</button>
+              <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" class="tier-waitlist-link">Get notified →</a>
             </div>
           </div>
 
@@ -3154,6 +3317,20 @@
       });
     }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
     document.querySelectorAll('.intel-feature-item').forEach(el => intelObserver.observe(el));
+
+    // Plan scroll highlight
+    const planObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const feature = entry.target.dataset.planFeature;
+        document.querySelectorAll('[data-plan-feature]').forEach(el => el.classList.remove('active'));
+        entry.target.classList.add('active');
+        document.querySelectorAll('.plan-panel').forEach(el => el.classList.remove('active'));
+        const panel = document.querySelector('.plan-panel-' + feature);
+        if (panel) panel.classList.add('active');
+      });
+    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
+    document.querySelectorAll('[data-plan-feature]').forEach(el => planObserver.observe(el));
 
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
