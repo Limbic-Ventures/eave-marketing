@@ -283,6 +283,36 @@
       gap: 12px;
       align-items: center;
     }
+    /* ── Waitlist email capture form ── */
+    .waitlist-form { width: 100%; max-width: 480px; }
+    .waitlist-row { display: flex; gap: 8px; }
+    .waitlist-input {
+      flex: 1;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1.5px solid var(--stone);
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s;
+      min-width: 0;
+    }
+    .waitlist-input:focus { border-color: var(--jade); }
+    .waitlist-input::placeholder { color: var(--dim); }
+    .waitlist-input-dark {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(237,229,213,.15);
+      color: var(--bg);
+    }
+    .waitlist-input-dark:focus { border-color: rgba(237,229,213,.4); }
+    .waitlist-input-dark::placeholder { color: rgba(237,229,213,.35); }
+    .waitlist-success { font-size: 13px; color: var(--jade); margin-top: 12px; display: none; }
+    .waitlist-success-dark { color: #7EC8C8; }
+    @media (max-width: 560px) {
+      .waitlist-row { flex-direction: column; }
+    }
+
     .hero-web-link {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -1739,23 +1769,14 @@
           <p class="hero-eyebrow">HOME UPKEEP WITHOUT THE OVERWHELM</p>
           <h1 class="hero-headline">The easy way<br>to keep up<br>with your home.</h1>
           <p class="hero-sub">Eave remembers your projects, contractors, and maintenance so you don't have to. Speak it, snap it, or type it — Eave handles the rest.</p>
-          <div class="hero-ctas">
-            <a href="#" data-cta="ios" class="btn btn-dark">
-              <span style="font-size:16px;">&#xf8ff;</span>
-              <span>
-                <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(237,229,213,.5);display:block;letter-spacing:.08em;">DOWNLOAD ON THE</span>
-                <span style="font-size:13px;">App Store</span>
-              </span>
-            </a>
-            <a href="#" data-cta="android" class="btn btn-dark">
-              <span style="font-size:16px;">▶</span>
-              <span>
-                <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:rgba(237,229,213,.5);display:block;letter-spacing:.08em;">GET IT ON</span>
-                <span style="font-size:13px;">Google Play</span>
-              </span>
-            </a>
-          </div>
-          <div style="margin-top:16px;">
+          <form class="waitlist-form" id="hero-waitlist" style="margin-top:28px;">
+            <div class="waitlist-row">
+              <input type="email" class="waitlist-input" placeholder="your@email.com" required autocomplete="email">
+              <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
+            </div>
+            <p class="waitlist-success" id="hero-success">You're on the list. We'll be in touch soon.</p>
+          </form>
+          <div style="margin-top:14px;">
             <a href="https://app.eavehome.app" class="hero-web-link">Or use Eave on the web →</a>
           </div>
         </div>
@@ -3247,22 +3268,13 @@
           </div>
         </div>
 
-        <div class="download-ctas">
-          <a href="#" data-cta="ios" class="app-badge">
-            <span style="font-size:24px;">&#xf8ff;</span>
-            <div>
-              <div class="badge-store">Download on the</div>
-              <div class="badge-name">App Store</div>
-            </div>
-          </a>
-          <a href="#" data-cta="android" class="app-badge">
-            <span style="font-size:22px;font-family:sans-serif;">▶</span>
-            <div>
-              <div class="badge-store">Get it on</div>
-              <div class="badge-name">Google Play</div>
-            </div>
-          </a>
-        </div>
+        <form class="waitlist-form" id="download-waitlist" style="margin:32px auto 0;max-width:440px;">
+          <div class="waitlist-row">
+            <input type="email" class="waitlist-input waitlist-input-dark" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
+          </div>
+          <p class="waitlist-success waitlist-success-dark" id="download-success">You're on the list. We'll be in touch soon.</p>
+        </form>
 
         <div>
           <a href="https://app.eavehome.app" class="web-app-link">Use Eave on the web →</a>
@@ -3391,6 +3403,40 @@
       });
     }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
     document.querySelectorAll('[data-plan-feature]').forEach(el => planObserver.observe(el));
+
+    // Waitlist form handler
+    function initWaitlist(formId, successId, source) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const btn = form.querySelector('button[type="submit"]');
+        const success = document.getElementById(successId);
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const res = await fetch('https://app.eavehome.app/api/waitlist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source })
+          });
+          if (res.ok) {
+            form.querySelector('.waitlist-row').style.display = 'none';
+            success.style.display = 'block';
+          } else {
+            btn.textContent = 'Try again →';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Try again →';
+          btn.disabled = false;
+        }
+      });
+    }
+    initWaitlist('hero-waitlist', 'hero-success', 'hero');
+    initWaitlist('download-waitlist', 'download-success', 'download');
 
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
