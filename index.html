@@ -1285,6 +1285,22 @@
       clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
       cursor: not-allowed; border: none;
     }
+    .tier-btn-intel {
+      display: block; width: 100%; text-align: center;
+      padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
+      background: var(--amber); color: var(--bg); text-decoration: none;
+      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      transition: opacity .2s; cursor: pointer; border: none;
+    }
+    .tier-btn-intel:hover { opacity: .85; }
+    .tier-plan-alts {
+      display: flex; justify-content: center; gap: 20px; margin-top: 10px;
+    }
+    .tier-plan-alts a {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      color: rgba(237,229,213,.45); text-decoration: none; transition: color .2s;
+    }
+    .tier-plan-alts a:hover { color: rgba(237,229,213,.8); }
     .tier-btn-outline {
       display: block; width: 100%; text-align: center;
       padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
@@ -3061,8 +3077,11 @@
             </div>
           </div>
           <div class="tier-cta-wrap">
-            <button class="tier-btn-disabled">COMING SOON</button>
-            <a href="mailto:support@limbicventures.com?subject=Eave%20Intelligence%20Waitlist" class="tier-waitlist-link">Get notified when it's ready →</a>
+            <a href="https://app.eavehome.app/?plan=intelligence_annual" class="tier-btn-intel">GET STARTED — ANNUAL ✦</a>
+            <div class="tier-plan-alts">
+              <a href="https://app.eavehome.app/?plan=intelligence_monthly">Monthly $2.99/mo</a>
+              <a href="https://app.eavehome.app/?plan=intelligence_lifetime">Lifetime $49</a>
+            </div>
           </div>
         </div>
 
