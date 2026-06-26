@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Eave</title>
+  <meta name="description" content="FAQs, guides, tutorials, and a direct line to the Eave team. Real humans read every message.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/support">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Support — Eave">
+  <meta property="og:description" content="Answers, guides, and a direct line to the team.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Bungee&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:      #EDE5D5;
+      --surface: #DDD0C4;
+      --stone:   #CAC4BC;
+      --jade:    #2E6464;
+      --amber:   #C07840;
+      --ink:     #1A2840;
+      --muted:   #5A7070;
+      --dim:     #8A8480;
+      --chamfer: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .label {
+      font-family: 'Bungee', sans-serif;
+      font-size: 10px;
+      letter-spacing: .15em;
+      color: var(--jade);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .wordmark {
+      font-family: 'Sacramento', cursive;
+      font-size: 34px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    h1, h2, h3 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-family: 'Bungee', sans-serif;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .85; }
+    .btn-jade {
+      background: var(--jade);
+      color: var(--bg);
+      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--stone);
+      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(237,229,213,.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--stone);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--ink);
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px; left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--stone);
+      padding: 24px 32px;
+      z-index: 99;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── SUB-NAV ── */
+    .sub-nav {
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+      background: rgba(237,229,213,.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--stone);
+    }
+    .sub-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .sub-nav-inner::-webkit-scrollbar { display: none; }
+    .sub-nav-inner a {
+      font-family: 'Bungee', sans-serif;
+      font-size: 9px;
+      letter-spacing: .12em;
+      color: var(--dim);
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 0 20px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--stone);
+      transition: color .2s, background .2s;
+    }
+    .sub-nav-inner a:first-child { padding-left: 0; }
+    .sub-nav-inner a:hover { color: var(--jade); }
+    .sub-nav-inner a.active { color: var(--jade); }
+
+    /* ── HERO ── */
+    .support-hero {
+      padding: 120px 0 60px;
+      border-bottom: 1px solid var(--stone);
+    }
+    .support-hero h1 { font-size: clamp(28px, 4vw, 48px); margin-bottom: 16px; }
+    .support-hero p { font-size: 14px; color: var(--muted); max-width: 560px; }
+
+    /* ── SECTIONS ── */
+    .support-section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+    .support-section:last-child { border-bottom: none; }
+    .section-header { margin-bottom: 40px; }
+    .section-header h2 { font-size: 22px; margin-top: 8px; }
+
+    /* ── FAQ ACCORDION ── */
+    .faq-group { margin-bottom: 40px; }
+    .faq-group:last-child { margin-bottom: 0; }
+    .faq-group-label {
+      font-family: 'Bungee', sans-serif;
+      font-size: 9px;
+      letter-spacing: .14em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--stone);
+    }
+    .faq-item { border-bottom: 1px solid var(--stone); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .faq-trigger:hover { color: var(--jade); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      transition: transform .25s ease;
+      stroke: var(--dim);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body {
+      display: none;
+      padding: 0 0 16px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+    .faq-item.open .faq-body { display: block; }
+
+    /* ── KNOWLEDGE BASE ── */
+    .kb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .kb-card {
+      background: var(--surface);
+      border: 1px solid var(--stone);
+      overflow: hidden;
+    }
+    .kb-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .kb-card.open .kb-card-header { border-bottom-color: var(--stone); }
+    .kb-card-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--jade);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+    }
+    .kb-card-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      flex: 1;
+    }
+    .kb-chevron {
+      width: 14px;
+      height: 14px;
+      stroke: var(--dim);
+      transition: transform .25s;
+      flex-shrink: 0;
+    }
+    .kb-card.open .kb-chevron { transform: rotate(180deg); }
+    .kb-articles {
+      display: none;
+      padding: 12px 20px 16px;
+    }
+    .kb-card.open .kb-articles { display: block; }
+    .kb-article {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+    .kb-article:last-child { border-bottom: none; }
+    .kb-article-title {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .kb-article-body {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── TUTORIALS ── */
+    .tutorial-list { display: flex; flex-direction: column; gap: 32px; }
+    .tutorial-card {
+      background: var(--surface);
+      border: 1px solid var(--stone);
+      overflow: hidden;
+    }
+    .tutorial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s;
+    }
+    .tutorial-card.open .tutorial-header { border-bottom-color: var(--stone); }
+    .tutorial-num {
+      font-family: 'Bungee', sans-serif;
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--jade);
+      flex-shrink: 0;
+    }
+    .tutorial-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      flex: 1;
+    }
+    .tutorial-chevron {
+      width: 14px;
+      height: 14px;
+      stroke: var(--dim);
+      transition: transform .25s;
+    }
+    .tutorial-card.open .tutorial-chevron { transform: rotate(180deg); }
+    .tutorial-body {
+      display: none;
+      padding: 24px;
+    }
+    .tutorial-card.open .tutorial-body { display: block; }
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: var(--stone);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: var(--dim);
+    }
+    .video-placeholder svg { opacity: .5; }
+    .video-placeholder span {
+      font-size: 11px;
+      font-family: 'Bungee', sans-serif;
+      letter-spacing: .1em;
+      color: var(--dim);
+    }
+    .tutorial-steps {
+      list-style: none;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tutorial-steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .tutorial-steps li::before {
+      content: counter(steps);
+      font-family: 'Bungee', sans-serif;
+      font-size: 10px;
+      color: var(--jade);
+      min-width: 20px;
+      padding-top: 3px;
+    }
+
+    /* ── SUPPORT FORM ── */
+    .support-form-wrap { max-width: 640px; }
+    .form-intro { font-size: 13px; color: var(--muted); margin-bottom: 32px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-label {
+      font-family: 'Bungee', sans-serif;
+      font-size: 8px;
+      letter-spacing: .14em;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+    .form-input, .form-select, .form-textarea {
+      background: var(--surface);
+      border: 1px solid var(--stone);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      padding: 10px 14px;
+      outline: none;
+      width: 100%;
+      transition: border-color .2s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--jade);
+    }
+    .form-select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238A8480' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .form-consent input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--jade); }
+    .form-actions { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
+    .form-error { font-size: 12px; color: #c0392b; display: none; }
+    .form-success {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--jade);
+      padding: 20px 24px;
+      font-size: 13px;
+      color: var(--jade);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-social { display: flex; flex-direction: column; gap: 12px; }
+    .footer-social-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--dim); margin-bottom: 4px; }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-social a:hover { color: var(--jade); }
+    .footer-social a:hover svg { stroke: var(--jade); }
+    .footer-tagline { font-size: 12px; color: var(--dim); margin-top: 8px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--jade); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy { font-size: 11px; color: var(--dim); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 11px; color: var(--dim); text-decoration: none; transition: color .2s; }
+    .footer-legal a:hover { color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-right .btn { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+      .kb-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: 1; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .support-hero { padding: 100px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/#capture">Features</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#pro">Pro</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="/#download" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Get early access →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
+    <a href="/#capture" onclick="closeMobile()">Features</a>
+    <a href="/#pricing" onclick="closeMobile()">Pricing</a>
+    <a href="/#pro" onclick="closeMobile()">Pro</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="/#download" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Get early access →</a>
+  </div>
+
+  <!-- ── SUB-NAV ── -->
+  <div class="sub-nav">
+    <div class="sub-nav-inner">
+      <a href="#faqs" class="active">FAQs</a>
+      <a href="#knowledge-base">Knowledge Base</a>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#submit">Submit an Issue</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="support-hero">
+    <div class="container">
+      <p class="label">Support</p>
+      <h1>How can we help?</h1>
+      <p>Answers, guides, and a direct line to the team. Eave is built and supported by a small crew — real humans read every message.</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SECTION 1: FAQs                           -->
+  <!-- ══════════════════════════════════════════ -->
+  <section id="faqs" class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+          FAQs
+        </p>
+        <h2>Common questions</h2>
+      </div>
+
+      <!-- Getting Started -->
+      <div class="faq-group">
+        <div class="faq-group-label">Getting Started</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            What is Eave?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Eave is your home's memory. It tracks your property, appliances, rooms, projects, and maintenance in one place, and uses AI to turn a quick note or photo into organized, actionable home records.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Do I need to download an app?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">No. Eave runs in your browser at app.eavehome.app — phone, tablet, or desktop. Native apps are on the roadmap.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How much does Eave cost?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Eave is free to start. A Pro tier (multi-property, exports, and more) is coming. See the Pricing page for current details.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Is Eave available outside the US?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">The core app works anywhere. Some data enrichment (property records, risk data) is US-only for now.</div>
+        </div>
+      </div>
+
+      <!-- Using Eave -->
+      <div class="faq-group">
+        <div class="faq-group-label">Using Eave</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How does AI Capture work?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Speak or type a project description in the Capture tab. Eave's AI extracts the title, room, category, priority, estimated cost, and whether a permit is likely required — then adds it to your project queue for review.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How does photo scanning work?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">In the Memory tab, open any room and tap Scan Room. The photo uploads to secure storage, then AI analyzes it and auto-fills floor material, wall color, ceiling height, and flags visible issues. You can edit anything it gets wrong.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            What's the difference between a Space and a Room?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">A Space is a distinct structure on your property — Main House, Detached Garage, ADU. Rooms live inside Spaces. The Memory Builder documents every room within each space.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How do Connected Sources work?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Once you connect a source (like Gmail or a retailer), Eave scans for home-related emails and purchases. Nothing saves automatically — you review and confirm each imported item first.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Can I add more than one property?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Multi-property support is coming in the Pro tier. The data model already supports it.</div>
+        </div>
+      </div>
+
+      <!-- Data & Privacy -->
+      <div class="faq-group">
+        <div class="faq-group-label">Data &amp; Privacy</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Is my data private?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Can I export my home data?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How do I delete my account?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Go to Settings → Account → Delete Account, or email us and we'll handle it. Deletion removes all your records permanently.</div>
+        </div>
+      </div>
+
+      <!-- Billing -->
+      <div class="faq-group">
+        <div class="faq-group-label">Billing</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How do I manage my subscription?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">Settings → Membership shows your plan and billing. You can upgrade, downgrade, or cancel anytime.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Do you offer refunds?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-body">If something's not right, email us within 14 days of a charge and we'll make it right.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SECTION 2: Knowledge Base                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <section id="knowledge-base" class="support-section" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Knowledge Base
+        </p>
+        <h2>Help articles by topic</h2>
+      </div>
+
+      <div class="kb-grid">
+
+        <!-- Setting Up Your Home -->
+        <div class="kb-card">
+          <div class="kb-card-header" onclick="toggleKb(this)">
+            <div class="kb-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE5D5" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <span class="kb-card-title">Setting Up Your Home</span>
+            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="kb-articles">
+            <div class="kb-article">
+              <div class="kb-article-title">Creating your property profile</div>
+              <div class="kb-article-body">After signing in, tap "Add Property" and enter your address. Eave pre-fills public data like square footage and year built — review and correct anything that looks off before saving.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Adding Spaces and Rooms</div>
+              <div class="kb-article-body">In Memory, tap "+ Add Space" to create a structure (Main House, Garage, ADU). Inside each Space, tap "+ Add Room" and choose a room type to start documenting.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Documenting appliances and systems</div>
+              <div class="kb-article-body">Open any room and scroll to Appliances. Tap "+ Add" and enter the make, model, and install year. Eave uses this for maintenance reminders and warranty tracking.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Understanding your Home Score</div>
+              <div class="kb-article-body">Your Home Score reflects documentation completeness and maintenance posture. It improves as you add rooms, log maintenance, and resolve open projects.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Features -->
+        <div class="kb-card">
+          <div class="kb-card-header" onclick="toggleKb(this)">
+            <div class="kb-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE5D5" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <span class="kb-card-title">AI Features</span>
+            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="kb-articles">
+            <div class="kb-article">
+              <div class="kb-article-title">How AI Capture turns notes into projects</div>
+              <div class="kb-article-body">Type or speak a description in the Capture tab. Eave's AI parses it into structured fields — title, room, category, priority, estimated cost, and permit flag — then queues it for your review.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Scanning rooms with photo analysis</div>
+              <div class="kb-article-body">Open a room in Memory and tap "Scan Room." Your photo is uploaded and analyzed. AI fills in flooring, wall color, ceiling height, and flags visible issues. Everything is editable.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Reviewing and correcting AI suggestions</div>
+              <div class="kb-article-body">AI suggestions appear in a review queue before saving. Tap any field to edit. Corrections help Eave improve over time.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Generating shopping lists from projects</div>
+              <div class="kb-article-body">On any project, tap "Generate List." Eave produces a materials and tools list based on the project description. You can edit, copy, or export it.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Connected Sources -->
+        <div class="kb-card">
+          <div class="kb-card-header" onclick="toggleKb(this)">
+            <div class="kb-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE5D5" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <span class="kb-card-title">Connected Sources</span>
+            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="kb-articles">
+            <div class="kb-article">
+              <div class="kb-article-title">Connecting Gmail for receipt and warranty detection</div>
+              <div class="kb-article-body">Go to Connected Sources and tap "Connect Gmail." Authorize read-only access. Eave scans for home-related emails — receipts, warranties, contractor confirmations.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Importing past purchases</div>
+              <div class="kb-article-body">After connecting a source, detected items appear in your review queue. Tap "Add to Eave" on any item to save it. Nothing imports without your confirmation.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">What Eave does and doesn't read</div>
+              <div class="kb-article-body">Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maintenance & Projects -->
+        <div class="kb-card">
+          <div class="kb-card-header" onclick="toggleKb(this)">
+            <div class="kb-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE5D5" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <span class="kb-card-title">Maintenance &amp; Projects</span>
+            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="kb-articles">
+            <div class="kb-article">
+              <div class="kb-article-title">Seasonal maintenance tracker</div>
+              <div class="kb-article-body">The Maintenance tab shows a checklist of seasonal tasks based on your property type and location. Check off tasks as you complete them — Eave logs the date automatically.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Project statuses, priorities, and filters</div>
+              <div class="kb-article-body">Projects can be New, In Progress, or Done. Priority levels are Low, Medium, High, and Urgent. Use filters in the Intelligence tab to sort and surface what needs attention.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Resolution paths: DIY, Learn, or Hire</div>
+              <div class="kb-article-body">Each project has a resolution path. DIY means you're handling it. Learn shows relevant guides. Hire surfaces contractors from your directory or the Eave network.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">The contractor directory</div>
+              <div class="kb-article-body">Add contractors you've used under Contacts. Include specialty, notes, and rating. When a project needs a hire, Eave surfaces relevant contacts from your directory first.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account & Billing -->
+        <div class="kb-card">
+          <div class="kb-card-header" onclick="toggleKb(this)">
+            <div class="kb-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EDE5D5" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="kb-card-title">Account &amp; Billing</span>
+            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="kb-articles">
+            <div class="kb-article">
+              <div class="kb-article-title">Managing your membership</div>
+              <div class="kb-article-body">Go to Settings → Membership to view your current plan, next billing date, and payment method. You can upgrade or cancel from there at any time.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Privacy, data ownership, and security</div>
+              <div class="kb-article-body">Your data is stored with row-level security — only your account can access it. We don't sell or share your data. See our Privacy Policy for full details.</div>
+            </div>
+            <div class="kb-article">
+              <div class="kb-article-title">Exporting or deleting your data</div>
+              <div class="kb-article-body">Export is on the roadmap. To delete your account and all associated data, go to Settings → Account → Delete Account, or contact us directly.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SECTION 3: Tutorials                      -->
+  <!-- ══════════════════════════════════════════ -->
+  <section id="tutorials" class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Tutorials
+        </p>
+        <h2>Step-by-step guides</h2>
+      </div>
+
+      <div class="tutorial-list">
+
+        <div class="tutorial-card">
+          <div class="tutorial-header" onclick="toggleTutorial(this)">
+            <span class="tutorial-num">01</span>
+            <span class="tutorial-title">Your first 10 minutes in Eave</span>
+            <svg class="tutorial-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="tutorial-body">
+            <div class="video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CAC4BC" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Video walkthrough coming soon</span>
+            </div>
+            <ol class="tutorial-steps">
+              <li>Sign up at app.eavehome.app using your email or Google account.</li>
+              <li>When prompted, tap "Add Property" and enter your address. Review the pre-filled details and save.</li>
+              <li>Open the Memory tab and tap "+ Add Space." Choose "Main House" and save.</li>
+              <li>Inside Main House, tap "+ Add Room," pick a room type (e.g. Kitchen), and save.</li>
+              <li>Open the Capture tab, type or speak a project description (e.g. "fix the leaky kitchen faucet"), and tap Capture.</li>
+              <li>Review the AI-parsed fields — title, room, priority, estimated cost. Edit anything that's off, then tap "Add to Queue."</li>
+              <li>Head to the Intelligence tab to see your new project in the queue.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tutorial-card">
+          <div class="tutorial-header" onclick="toggleTutorial(this)">
+            <span class="tutorial-num">02</span>
+            <span class="tutorial-title">Turning a photo into a room record</span>
+            <svg class="tutorial-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="tutorial-body">
+            <div class="video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CAC4BC" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Video walkthrough coming soon</span>
+            </div>
+            <ol class="tutorial-steps">
+              <li>Open the Memory tab and navigate to the room you want to document.</li>
+              <li>Tap "Scan Room" at the top of the room screen.</li>
+              <li>Take a photo or upload one from your camera roll. Try to capture as much of the room as possible in a single shot.</li>
+              <li>Wait a moment while Eave's AI analyzes the photo — this usually takes 10–20 seconds.</li>
+              <li>Review the suggested fields: floor material, wall color, ceiling height, and any flagged issues.</li>
+              <li>Edit anything that looks incorrect. Corrections help improve future scans.</li>
+              <li>Tap Save. The room record is now updated with the scanned details.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tutorial-card">
+          <div class="tutorial-header" onclick="toggleTutorial(this)">
+            <span class="tutorial-num">03</span>
+            <span class="tutorial-title">Capturing a project by voice or text</span>
+            <svg class="tutorial-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="tutorial-body">
+            <div class="video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CAC4BC" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Video walkthrough coming soon</span>
+            </div>
+            <ol class="tutorial-steps">
+              <li>Tap the Capture tab at the bottom of the screen.</li>
+              <li>Type a description of the project in plain language — or tap the microphone icon and speak it. Don't worry about format; just describe what needs to happen.</li>
+              <li>Tap "Capture." Eave's AI parses the description and fills in the structured fields.</li>
+              <li>Review the parsed result: title, room assignment, category, priority, estimated cost, and permit flag.</li>
+              <li>Edit any field that's off. You can also add notes or change the room assignment here.</li>
+              <li>Tap "Add to Queue." The project appears in your Intelligence tab, ready for triage.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tutorial-card">
+          <div class="tutorial-header" onclick="toggleTutorial(this)">
+            <span class="tutorial-num">04</span>
+            <span class="tutorial-title">Connecting Gmail to auto-find receipts</span>
+            <svg class="tutorial-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="tutorial-body">
+            <div class="video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CAC4BC" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Video walkthrough coming soon</span>
+            </div>
+            <ol class="tutorial-steps">
+              <li>Go to Settings → Connected Sources.</li>
+              <li>Tap "Connect Gmail" and sign in with your Google account.</li>
+              <li>Grant read-only access when prompted. Eave only reads emails — it cannot send or delete anything.</li>
+              <li>Eave scans for home-related emails: receipts, warranties, contractor confirmations, appliance purchases.</li>
+              <li>Detected items appear in your review queue. Tap any item to see the full email context.</li>
+              <li>Tap "Add to Eave" to save an item, or "Skip" to dismiss it. Nothing saves without your confirmation.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tutorial-card">
+          <div class="tutorial-header" onclick="toggleTutorial(this)">
+            <span class="tutorial-num">05</span>
+            <span class="tutorial-title">Setting up seasonal maintenance</span>
+            <svg class="tutorial-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="tutorial-body">
+            <div class="video-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#CAC4BC" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Video walkthrough coming soon</span>
+            </div>
+            <ol class="tutorial-steps">
+              <li>Open the Maintenance tab.</li>
+              <li>Eave generates a seasonal checklist based on your property type, region, and current month.</li>
+              <li>Review the list. Each task shows what it involves and why it matters for your home type.</li>
+              <li>Tap any task to expand it and see steps or notes.</li>
+              <li>When you complete a task, tap the checkbox. Eave logs the completion date automatically.</li>
+              <li>Completed tasks roll over to the next season's history so you always have a maintenance record.</li>
+            </ol>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SECTION 4: Submit an Issue                -->
+  <!-- ══════════════════════════════════════════ -->
+  <section id="submit" class="support-section" style="background:var(--surface);">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Submit an Issue
+        </p>
+        <h2>Send it straight to the team</h2>
+      </div>
+
+      <div class="support-form-wrap">
+        <p class="form-intro">Found a bug, have a feature request, or stuck on something? Real humans read every message.</p>
+
+        <div class="form-success" id="form-success"></div>
+        <p class="form-error" id="form-error">Something went wrong. Please try again.</p>
+
+        <form id="support-form">
+          <!-- Honeypot -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label class="form-label" for="s-name">Name *</label>
+              <input class="form-input" type="text" id="s-name" name="name" required autocomplete="name">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="s-email">Email *</label>
+              <input class="form-input" type="email" id="s-email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="s-category">Category *</label>
+              <select class="form-select" id="s-category" name="category" required>
+                <option value="" disabled selected>Select one…</option>
+                <option value="Bug">Bug</option>
+                <option value="Feature Request">Feature Request</option>
+                <option value="Account / Billing">Account / Billing</option>
+                <option value="Data / Privacy">Data / Privacy</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label" for="s-subject">Subject *</label>
+              <input class="form-input" type="text" id="s-subject" name="subject" required>
+            </div>
+
+            <div class="form-field full">
+              <label class="form-label" for="s-message">Message *</label>
+              <textarea class="form-textarea" id="s-message" name="message" required minlength="20" placeholder="Describe what happened, what you expected, and any steps to reproduce…"></textarea>
+            </div>
+
+            <div class="form-field full">
+              <label class="form-label" for="s-page-url">Page or URL where this happened (optional)</label>
+              <input class="form-input" type="text" id="s-page-url" name="pageUrl" placeholder="e.g. app.eavehome.app/memory">
+            </div>
+
+            <div class="form-field full">
+              <label class="form-consent">
+                <input type="checkbox" id="s-consent" name="consent" required>
+                I understand the team may email me back about this.
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions" style="margin-top:24px;">
+            <button type="submit" class="btn btn-jade" id="support-submit">Send message →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home upkeep without the overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/#capture">Features</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#pro">Pro</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><a href="#" data-cta="ios">App Store</a></li>
+          <li><a href="#" data-cta="android">Google Play</a></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // Sub-nav active state on scroll
+    const sections = ['faqs', 'knowledge-base', 'tutorials', 'submit'];
+    const subLinks = document.querySelectorAll('.sub-nav-inner a');
+    const subNavObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          subLinks.forEach(a => a.classList.remove('active'));
+          const link = document.querySelector(`.sub-nav-inner a[href="#${entry.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) subNavObserver.observe(el);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+
+    // KB expand
+    function toggleKb(header) {
+      header.closest('.kb-card').classList.toggle('open');
+    }
+
+    // Tutorial expand
+    function toggleTutorial(header) {
+      header.closest('.tutorial-card').classList.toggle('open');
+    }
+
+    // Support form
+    document.getElementById('support-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const honeypot = form.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value) return;
+
+      const btn = document.getElementById('support-submit');
+      const errorEl = document.getElementById('form-error');
+      const successEl = document.getElementById('form-success');
+      const email = document.getElementById('s-email').value.trim();
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('https://app.eavehome.app/api/support', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: document.getElementById('s-name').value.trim(),
+            email,
+            category: document.getElementById('s-category').value,
+            subject: document.getElementById('s-subject').value.trim(),
+            message: document.getElementById('s-message').value.trim(),
+            pageUrl: document.getElementById('s-page-url').value.trim() || undefined,
+            source: 'marketing-support'
+          })
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successEl.innerHTML = `Thanks — we've got it. You'll hear back at <strong>${email}</strong>.`;
+          successEl.style.display = 'block';
+        } else {
+          throw new Error('non-ok');
+        }
+      } catch {
+        errorEl.style.display = 'block';
+        btn.textContent = 'Try again →';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
