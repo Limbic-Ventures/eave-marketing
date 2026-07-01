@@ -1795,6 +1795,68 @@
     .cap2-foot-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); line-height: 1; margin-top: 3px; }
     .cap2-save { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; background: var(--jade); color: var(--bg); padding: 9px 15px; border-radius: 12px; }
     .cap2-kicker { text-align: center; margin: 22px auto 0; max-width: 420px; font-size: 12px; color: var(--muted); font-family: 'IBM Plex Mono', monospace; line-height: 1.6; }
+
+    /* ── Memory v2: a central record screen surrounded by four callout points ── */
+    .mem2-stage {
+      display: grid;
+      grid-template-columns: 1fr minmax(240px, 300px) 1fr;
+      grid-template-rows: auto auto;
+      gap: 30px 44px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .mem2-node {
+      background: var(--surface); border: 1.5px solid var(--stone); border-radius: 16px;
+      padding: 16px 18px; cursor: pointer; position: relative;
+      transition: border-color .2s, background .2s, transform .2s, filter .2s;
+    }
+    .mem2-node:hover { border-color: var(--jade); }
+    .mem2-node.active { border-color: var(--jade); background: var(--bg); filter: drop-shadow(1px 3px 10px rgba(31,58,82,.10)); transform: translateY(-2px); }
+    .mem2-node-num { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--jade); margin-bottom: 6px; }
+    .mem2-node-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 5px; }
+    .mem2-node-desc { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.55; }
+    .mem2-node.nw { grid-column: 1; grid-row: 1; }
+    .mem2-node.ne { grid-column: 3; grid-row: 1; }
+    .mem2-node.sw { grid-column: 1; grid-row: 2; }
+    .mem2-node.se { grid-column: 3; grid-row: 2; }
+    /* connector dot pointing toward the center screen */
+    .mem2-node::after {
+      content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%;
+      background: var(--stone); border: 2px solid var(--bg); transition: background .2s;
+      top: 50%; transform: translateY(-50%);
+    }
+    .mem2-node.active::after { background: var(--jade); }
+    .mem2-node.nw::after, .mem2-node.sw::after { right: -26px; }
+    .mem2-node.ne::after, .mem2-node.se::after { left: -26px; }
+
+    .mem2-screen { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    .mem2-device {
+      background: var(--bg); border: 1.5px solid var(--stone); border-radius: 20px;
+      padding: 18px 18px 20px; min-height: 296px;
+      filter: drop-shadow(2px 4px 14px rgba(31,58,82,.10)); position: relative; overflow: hidden;
+    }
+    .mem2-device::before { content: ''; position: absolute; inset: 0; background-image: var(--scanline); pointer-events: none; }
+    .mem2-rec { display: none; position: relative; }
+    .mem2-rec.active { display: block; animation: cap2fade .3s ease; }
+    .mem2-rec-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .14em; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
+    .mem2-rec-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 14px; line-height: 1.25; }
+    .mem2-field { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--stone); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+    .mem2-field:last-of-type { border-bottom: none; }
+    .mem2-field-k { color: var(--dim); white-space: nowrap; }
+    .mem2-field-v { color: var(--ink); text-align: right; }
+    .mem2-chip { display: inline-block; margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 20px; }
+    .mem2-chip-amber { background: rgba(224,168,61,.16); color: #9A6B1E; }
+    .mem2-chip-sky { background: rgba(111,168,201,.16); color: #2E6B93; }
+    .mem2-chip-moss { background: rgba(79,140,107,.16); color: #3F7357; }
+    .mem2-swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px; vertical-align: middle; margin-right: 5px; border: 1px solid rgba(31,58,82,.15); }
+
+    @media (max-width: 860px) {
+      .mem2-stage { grid-template-columns: 1fr; grid-template-rows: none; gap: 14px; max-width: 460px; }
+      .mem2-node.nw, .mem2-node.ne, .mem2-node.sw, .mem2-node.se { grid-column: 1; grid-row: auto; }
+      .mem2-screen { grid-column: 1; grid-row: auto; order: -1; }
+      .mem2-node::after { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -2191,225 +2253,81 @@
   <!-- ═══ MEMORY ═══ -->
   <section id="memory">
     <div class="container">
-      <div class="fade-in" style="margin-bottom:48px;">
+      <div class="fade-in" style="margin-bottom:48px;max-width:620px;">
         <p class="label">Memory</p>
         <h2>Every record about<br>your home — in one place<br>you'll actually find later.</h2>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">Two years from now, when you can't remember the last time the HVAC was serviced or which plumber you liked — Eave has it. Everything you capture stays attached to your property, not lost in a notes app.</p>
       </div>
 
-      <div class="intel-scroll-layout">
+      <div class="mem2-stage fade-in" style="transition-delay:.1s;">
 
-        <div class="intel-scroll-left">
-
-          <div class="intel-feature-item active" data-mem-feature="spaces">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Spaces</span>
-            </div>
-            <p class="intel-feature-desc">Spaces is your full property map — Structures (your main house, garage, or any outbuilding) and Grounds (yard, garden, pool area, orchard). Every structure contains its rooms; every ground area gets its own record. Your entire property, organized in one place.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="rooms">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Rooms</span>
-            </div>
-            <p class="intel-feature-desc">Inside each structure, document every room — finishes, materials, dimensions, fixtures, and linked appliances. Snap a photo and Eave fills in what it can. A searchable record of every surface and system in your home, room by room.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="appliances">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Appliance Registry</span>
-            </div>
-            <p class="intel-feature-desc">Every major system tracked with model, install date, warranty expiry, and service history. Eave goes past flagging what's overdue — it forecasts when an appliance is likely to need replacing and when a warranty will lapse, while you can still plan for it.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="materials">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Tools &amp; Materials</span>
-            </div>
-            <p class="intel-feature-desc">Track every finish, material, and spec used in your home — paint colors with brand and code, tile dimensions, grout color, lumber sizing, hardware finishes. Never wonder what paint a room is or what tile was used in the bathroom.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="contractors">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Contractor Directory</span>
-            </div>
-            <p class="intel-feature-desc">Photograph a business card and Eave saves the contact — tied to the project they worked on, the date, and what you paid. Your personal trusted network, built over time.</p>
-          </div>
-
-          <div class="intel-feature-item" data-mem-feature="connected">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Connected Sources</span>
-            </div>
-            <p class="intel-feature-desc">Link your email, home improvement accounts, and smart home platforms. Eave surfaces appliance purchases, service receipts, and order history for your review — pre-populating your home record without any manual entry.</p>
-          </div>
-
+        <div class="mem2-node nw active" data-mem2="spaces">
+          <div class="mem2-node-num">01</div>
+          <div class="mem2-node-title">Spaces &amp; rooms</div>
+          <div class="mem2-node-desc">Snap a room and Eave fills in the materials, an approximate wall color, ceiling height, and flags any visible issues.</div>
         </div>
 
-        <div class="intel-scroll-right">
-          <div>
-            <div class="laptop-outer" style="width:340px;">
-              <div class="laptop-screen-area mem-laptop-screen" style="height:220px;">
-                <div class="laptop-topbar">
-                  <span class="laptop-topbar-brand">eave</span>
-                  <div style="display:flex;align-items:center;gap:8px;">
-                    <span class="mem-laptop-action laptop-add-btn">+ Add Room</span>
-                    <span style="width:18px;height:18px;background:var(--stone);border-radius:50%;display:inline-block;"></span>
-                  </div>
-                </div>
-                <div class="laptop-body" style="height:calc(220px - 29px);">
-                  <div class="laptop-sidebar" style="width:80px;">
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="spaces">Spaces</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="rooms">Rooms</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="appliances">Appliances</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="materials">Materials</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="contractors">Contractors</div>
-                    <div class="laptop-nav-item mem-nav-item" data-mem-nav="connected">Sources</div>
-                  </div>
-                  <div class="laptop-main" style="position:relative;overflow:hidden;">
+        <div class="mem2-node ne" data-mem2="appliances">
+          <div class="mem2-node-num">02</div>
+          <div class="mem2-node-title">Appliances &amp; warranties</div>
+          <div class="mem2-node-desc">Model, install date, warranty, and service history — plus a forecast of when it'll need replacing.</div>
+        </div>
 
-                    <!-- Panel: spaces -->
-                    <div class="mem-panel mem-panel-spaces active">
-                      <div class="laptop-section-title">SPACES</div>
-                      <div style="font-size:7.5px;color:var(--muted);margin-bottom:6px;">Structures have rooms. Grounds have areas.</div>
-                      <div style="display:flex;flex-direction:column;gap:4px;">
-                        <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0;">STRUCTURES</div>
-                        <div class="mem-space-row" style="padding-left:8px;">
-                          <span class="mem-space-name">Main House <span style="font-family:'Space Grotesk', sans-serif;font-size:6.5px;padding:1px 4px;border:1px solid var(--jade);color:var(--jade);margin-left:4px;">PRIMARY</span></span>
-                          <span class="mem-space-detail">has rooms</span>
-                        </div>
-                        <div class="mem-space-row" style="padding-left:8px;">
-                          <span class="mem-space-name">Detached Garage</span>
-                          <span class="mem-space-detail">has rooms</span>
-                        </div>
-                        <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0 3px;">GROUNDS</div>
-                        <div class="mem-space-row" style="padding-left:8px;font-style:italic;">
-                          <span class="mem-space-detail" style="color:var(--dim);">No outdoor zones added yet.</span>
-                        </div>
-                      </div>
-                    </div>
+        <div class="mem2-screen">
+          <div class="mem2-device">
 
-                    <!-- Panel: rooms -->
-                    <div class="mem-panel mem-panel-rooms">
-                      <div class="laptop-section-title">ROOMS · MAIN HOUSE</div>
-                      <div style="display:flex;flex-direction:column;gap:3px;">
-                        <div class="mem-room-row"><span class="mem-room-name">Master Bedroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
-                        <div class="mem-room-row"><span class="mem-room-name">Master Bathroom</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
-                        <div class="mem-room-row"><span class="mem-room-name">Living Room</span><span class="mem-room-tag" style="color:var(--jade);">DOCUMENTED</span></div>
-                        <div class="mem-room-row"><span class="mem-room-name">Kitchen</span><span class="mem-room-tag" style="color:var(--amber);">PARTIAL</span></div>
-                        <div class="mem-room-row"><span class="mem-room-name">Guest Bedroom</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
-                        <div class="mem-room-row"><span class="mem-room-name">Garage</span><span class="mem-room-tag" style="color:var(--dim);">PENDING</span></div>
-                      </div>
-                    </div>
-
-                    <!-- Panel: appliances -->
-                    <div class="mem-panel mem-panel-appliances">
-                      <div class="laptop-section-title">APPLIANCES</div>
-                      <div class="laptop-appliance-grid">
-                        <div class="laptop-appliance-card">
-                          <div class="laptop-appliance-name">HVAC SYSTEM</div>
-                          <div class="laptop-appliance-meta">Carrier · Jun 2019<br>Warranty: Expired</div>
-                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--amber);"></div><span class="laptop-appliance-status-text" style="color:var(--amber);">SERVICE OVERDUE</span></div>
-                        </div>
-                        <div class="laptop-appliance-card">
-                          <div class="laptop-appliance-name">WATER HEATER</div>
-                          <div class="laptop-appliance-meta">Rheem 50-gal · Mar 2021<br>Warranty: 2028</div>
-                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--jade);"></div><span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span></div>
-                        </div>
-                        <div class="laptop-appliance-card">
-                          <div class="laptop-appliance-name">REFRIGERATOR</div>
-                          <div class="laptop-appliance-meta">Samsung · Jan 2020<br>Warranty: Expired</div>
-                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--amber);"></div><span class="laptop-appliance-status-text" style="color:var(--amber);">FILTER REPLACE</span></div>
-                        </div>
-                        <div class="laptop-appliance-card">
-                          <div class="laptop-appliance-name">DISHWASHER</div>
-                          <div class="laptop-appliance-meta">Bosch · Apr 2022<br>Warranty: 2026</div>
-                          <div class="laptop-appliance-status"><div class="laptop-appliance-status-dot" style="background:var(--jade);"></div><span class="laptop-appliance-status-text" style="color:var(--jade);">ON TRACK</span></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Panel: materials -->
-                    <div class="mem-panel mem-panel-materials">
-                      <div class="laptop-section-title">TOOLS &amp; MATERIALS</div>
-                      <div style="display:flex;flex-direction:column;gap:3px;">
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Living Room Paint</span>
-                          <span class="mem-space-detail">Benjamin Moore HC-170 · Revere Pewter · Eggshell</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Kitchen Backsplash</span>
-                          <span class="mem-space-detail">Merola Tile 3×6 Subway · Glossy White</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Master Bath Grout</span>
-                          <span class="mem-space-detail">Custom Building Products · Platinum Gray</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Deck Stain</span>
-                          <span class="mem-space-detail">Ready Seal 525 · Dark Walnut · Applied May 2023</span>
-                        </div>
-                        <div class="mem-space-row">
-                          <span class="mem-space-name">Attic Insulation</span>
-                          <span class="mem-space-detail">R-38 Fiberglass Batt · Installed 2019</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Panel: contractors -->
-                    <div class="mem-panel mem-panel-contractors">
-                      <div class="laptop-section-title">CONTRACTORS</div>
-                      <div style="display:flex;flex-direction:column;gap:4px;">
-                        <div class="mem-contractor-card">
-                          <div class="mem-contractor-name">APEX HVAC SERVICES</div>
-                          <div class="mem-contractor-meta">HVAC · Last used Jun 2023 · $380</div>
-                        </div>
-                        <div class="mem-contractor-card">
-                          <div class="mem-contractor-name">MIKE'S PLUMBING</div>
-                          <div class="mem-contractor-meta">Plumbing · Last used Feb 2024 · $210</div>
-                        </div>
-                        <div class="mem-contractor-card">
-                          <div class="mem-contractor-name">PRECISION EXTERIORS</div>
-                          <div class="mem-contractor-meta">Exterior · Last used Aug 2023 · $1,400</div>
-                        </div>
-                        <div class="mem-contractor-card">
-                          <div class="mem-contractor-name">BRIGHTSIDE ELECTRIC</div>
-                          <div class="mem-contractor-meta">Electrical · Last used Jan 2024 · $320</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Panel: connected -->
-                    <div class="mem-panel mem-panel-connected">
-                      <div class="laptop-section-title">CONNECTED SOURCES</div>
-                      <div style="display:flex;flex-direction:column;gap:5px;">
-                        <div class="mem-source-row">
-                          <div class="mem-source-dot" style="background:var(--jade);"></div>
-                          <div class="mem-source-info"><div class="mem-source-name">Email Account</div><div class="mem-source-status">14 receipts imported</div></div>
-                          <span class="mem-source-badge" style="color:var(--jade);">ACTIVE</span>
-                        </div>
-                        <div class="mem-source-row">
-                          <div class="mem-source-dot" style="background:var(--jade);"></div>
-                          <div class="mem-source-info"><div class="mem-source-name">Home Improvement Store</div><div class="mem-source-status">23 purchases found</div></div>
-                          <span class="mem-source-badge" style="color:var(--jade);">ACTIVE</span>
-                        </div>
-                        <div class="mem-source-row">
-                          <div class="mem-source-dot" style="background:var(--amber);"></div>
-                          <div class="mem-source-info"><div class="mem-source-name">Smart Home Platform</div><div class="mem-source-status">Connect to import devices</div></div>
-                          <span class="mem-source-badge" style="color:var(--amber);">CONNECT</span>
-                        </div>
-                        <div class="mem-source-row">
-                          <div class="mem-source-dot" style="background:var(--stone);"></div>
-                          <div class="mem-source-info"><div class="mem-source-name">Online Retailer</div><div class="mem-source-status">Not connected</div></div>
-                          <span class="mem-source-badge" style="color:var(--dim);">ADD</span>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+            <div class="mem2-rec active" data-mem2-rec="spaces">
+              <div class="mem2-rec-label">Room record</div>
+              <div class="mem2-rec-title">Living Room</div>
+              <div class="mem2-field"><span class="mem2-field-k">Floor</span><span class="mem2-field-v">White oak · good</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Wall color</span><span class="mem2-field-v"><span class="mem2-swatch" style="background:#E8E0D5;"></span>~ warm white</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Ceiling</span><span class="mem2-field-v">~9 ft</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Windows</span><span class="mem2-field-v">2 · double-hung</span></div>
+              <span class="mem2-chip mem2-chip-amber">1 issue flagged · hairline ceiling crack</span>
             </div>
-            <div class="laptop-chin" style="width:340px;"></div>
+
+            <div class="mem2-rec" data-mem2-rec="appliances">
+              <div class="mem2-rec-label">Appliance</div>
+              <div class="mem2-rec-title">Furnace — Carrier 59TP6</div>
+              <div class="mem2-field"><span class="mem2-field-k">Installed</span><span class="mem2-field-v">2019</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Warranty</span><span class="mem2-field-v">through 2029</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Last service</span><span class="mem2-field-v">Oct 2025</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Filter</span><span class="mem2-field-v">16×25×1 · MERV 11</span></div>
+              <span class="mem2-chip mem2-chip-sky">Forecast · likely replace ~2038</span>
+            </div>
+
+            <div class="mem2-rec" data-mem2-rec="contractors">
+              <div class="mem2-rec-label">Contractor</div>
+              <div class="mem2-rec-title">Rivera Plumbing</div>
+              <div class="mem2-field"><span class="mem2-field-k">Added from</span><span class="mem2-field-v">business card</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Used on</span><span class="mem2-field-v">Water heater swap</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Paid</span><span class="mem2-field-v">$1,400 · Mar 2026</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Rating</span><span class="mem2-field-v">★★★★★</span></div>
+              <span class="mem2-chip mem2-chip-moss">Your own vetted list</span>
+            </div>
+
+            <div class="mem2-rec" data-mem2-rec="connected">
+              <div class="mem2-rec-label">Connected sources</div>
+              <div class="mem2-rec-title">3 accounts linked</div>
+              <div class="mem2-field"><span class="mem2-field-k">Gmail</span><span class="mem2-field-v">connected</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Home Depot</span><span class="mem2-field-v">connected</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Lowe's</span><span class="mem2-field-v">connected</span></div>
+              <span class="mem2-chip mem2-chip-amber">12 receipts found · review pending</span>
+            </div>
+
           </div>
+        </div>
+
+        <div class="mem2-node sw" data-mem2="contractors">
+          <div class="mem2-node-num">03</div>
+          <div class="mem2-node-title">Contractors you've used</div>
+          <div class="mem2-node-desc">Photograph a business card and Eave files it against the job it did, the date, and what you paid.</div>
+        </div>
+
+        <div class="mem2-node se" data-mem2="connected">
+          <div class="mem2-node-num">04</div>
+          <div class="mem2-node-title">Connected accounts</div>
+          <div class="mem2-node-desc">Link your email and your Amazon, Home Depot, or Lowe's accounts; receipts and purchases import for your review.</div>
         </div>
 
       </div>
@@ -3319,30 +3237,17 @@
       });
     });
 
-    // Memory scroll highlight
-    const memObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const feature = entry.target.dataset.memFeature;
-        document.querySelectorAll('[data-mem-feature]').forEach(el => el.classList.remove('active'));
-        entry.target.classList.add('active');
-        document.querySelectorAll('.mem-panel').forEach(el => el.classList.remove('active'));
-        const p = document.querySelector('.mem-panel-' + feature);
-        if (p) p.classList.add('active');
-        // Highlight matching sidebar nav item
-        document.querySelectorAll('.mem-nav-item').forEach(el => el.classList.remove('active'));
-        const nav = document.querySelector('.mem-nav-item[data-mem-nav="' + feature + '"]');
-        if (nav) nav.classList.add('active');
-        // Update action button label
-        const labels = { spaces:'+ Add Structure', rooms:'+ Add Room', appliances:'+ Add Appliance', materials:'+ Add Material', contractors:'+ Add Contractor', connected:'+ Add Source' };
-        const btn = document.querySelector('.mem-laptop-action');
-        if (btn && labels[feature]) btn.textContent = labels[feature];
+    // Memory: click a surrounding callout to swap the center record screen
+    document.querySelectorAll('.mem2-node').forEach(node => {
+      node.addEventListener('click', () => {
+        const key = node.dataset.mem2;
+        document.querySelectorAll('.mem2-node').forEach(n => n.classList.remove('active'));
+        node.classList.add('active');
+        document.querySelectorAll('.mem2-rec').forEach(r => r.classList.remove('active'));
+        const rec = document.querySelector('.mem2-rec[data-mem2-rec="' + key + '"]');
+        if (rec) rec.classList.add('active');
       });
-    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
-    document.querySelectorAll('[data-mem-feature]').forEach(el => memObserver.observe(el));
-    // Set initial sidebar nav state
-    const firstMemNav = document.querySelector('.mem-nav-item[data-mem-nav="spaces"]');
-    if (firstMemNav) firstMemNav.classList.add('active');
+    });
 
     // Intelligence scroll highlight
     const intelObserver = new IntersectionObserver((entries) => {
