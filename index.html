@@ -1857,6 +1857,57 @@
       .mem2-screen { grid-column: 1; grid-row: auto; order: -1; }
       .mem2-node::after { display: none; }
     }
+
+    /* ── What's Next: score + action-queue dashboard, season timeline below ── */
+    .wn-tag { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+    .wn-tag-free { background: rgba(79,140,107,.16); color: #3F7357; }
+    .wn-tag-intel { background: rgba(111,168,201,.16); color: #2E6B93; }
+
+    .wn-hero { display: grid; grid-template-columns: 320px 1fr; gap: 18px; max-width: 940px; margin: 0 auto; align-items: stretch; }
+    .wn-score { background: var(--ink); border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .wn-score::before { content: ''; position: absolute; inset: 0; background-image: var(--scanline); opacity: .5; pointer-events: none; }
+    .wn-score > * { position: relative; }
+    .wn-score-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 1; color: #C8E89A; margin-top: 14px; }
+    .wn-score-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,239,230,.6); margin-top: 4px; }
+    .wn-score-delta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #C8E89A; margin-top: 14px; }
+    .wn-score-div { height: 1px; background: rgba(244,239,230,.12); margin: 16px 0; }
+    .wn-score-proj-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,239,230,.45); margin-bottom: 6px; }
+    .wn-score-proj { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--bg); line-height: 1.55; }
+    .wn-score-proj b { color: #C8E89A; font-weight: 700; }
+
+    .wn-queue { background: var(--surface); border: 1.5px solid var(--stone); border-radius: 20px; padding: 20px 24px; }
+    .wn-queue-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .wn-queue-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); }
+    .wn-qitem { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--stone); }
+    .wn-qitem:last-child { border-bottom: none; }
+    .wn-qrank { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--jade); min-width: 18px; }
+    .wn-qbody { flex: 1; }
+    .wn-qname { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 3px; }
+    .wn-qwhy { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.5; }
+    .wn-qwhy b { color: var(--palace); font-weight: 700; }
+
+    .wn-timeline { max-width: 940px; margin: 18px auto 0; background: var(--bg); border: 1.5px solid var(--stone); border-radius: 20px; padding: 22px 24px 24px; }
+    .wn-tl-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .wn-tl-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); }
+    .wn-tl-track { display: flex; gap: 6px; }
+    .wn-tl-seg { flex: 1; text-align: center; padding: 12px 6px; border-radius: 12px; background: var(--surface); border: 1.5px solid transparent; }
+    .wn-tl-seg.now { border-color: var(--jade); background: var(--bg); }
+    .wn-tl-seg.next { border-color: var(--amber); }
+    .wn-tl-season { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+    .wn-tl-months { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--dim); margin-top: 3px; }
+    .wn-tl-badge { display: inline-block; margin-top: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; }
+    .wn-tl-badge-now { background: rgba(111,168,201,.16); color: #2E6B93; }
+    .wn-tl-badge-next { background: rgba(224,168,61,.18); color: #9A6B1E; }
+    .wn-tl-prep { margin-top: 18px; background: var(--surface); border-radius: 14px; padding: 16px 18px; display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+    .wn-tl-prep-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); white-space: nowrap; }
+    .wn-tl-prep-list { flex: 1; min-width: 220px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink); line-height: 1.7; }
+    .wn-tl-foot { margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+
+    @media (max-width: 760px) {
+      .wn-hero { grid-template-columns: 1fr; }
+      .wn-tl-track { flex-wrap: wrap; }
+      .wn-tl-seg { min-width: calc(50% - 3px); }
+    }
   </style>
 </head>
 <body>
@@ -2334,501 +2385,89 @@
     </div>
   </section>
 
-  <!-- ═══ PLAN ═══ -->
-  <section id="plan" class="alt">
+  <!-- ═══ WHAT'S NEXT (Plan + Intelligence, merged) ═══ -->
+  <section id="whats-next" class="alt">
     <div class="container">
-      <div class="fade-in" style="margin-bottom:48px;">
-        <p class="label">Plan</p>
-        <h2>Seasonal prep.<br>Project timelines.<br>Budget in view.</h2>
+      <div class="fade-in" style="text-align:center;max-width:640px;margin:0 auto 44px;">
+        <p class="label">What's Next</p>
+        <h2>Eave tells you what to do next, and why it matters now.</h2>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">A live Upkeep Score tracks how your home is really doing across maintenance, backlog, and prevention. Underneath it, a ranked queue gives you the one thing to handle this week — with the reason attached, so you're never guessing whether it can wait.</p>
       </div>
 
-      <div class="intel-scroll-layout">
+      <div class="wn-hero fade-in" style="transition-delay:.1s;">
 
-        <div class="intel-scroll-left">
-
-          <div class="intel-feature-item active" data-plan-feature="seasonal">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Seasonal Windows</span>
-            </div>
-            <p class="intel-feature-desc">Spring, Summer, Fall, Winter — each season gets its own task view built from your home's age, systems, and location. Eave knows what needs doing before the window closes, and surfaces it at the right time.</p>
-          </div>
-
-          <div class="intel-feature-item" data-plan-feature="milestones">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Project Milestones</span>
-            </div>
-            <p class="intel-feature-desc">Break big projects into dated steps so nothing stalls mid-way. Each milestone has a due date, status, and cost — so you can see at a glance where every project stands.</p>
-          </div>
-
-          <div class="intel-feature-item" data-plan-feature="budget">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Annual Budget</span>
-            </div>
-            <p class="intel-feature-desc">Set a yearly home maintenance budget and track spend vs. plan in real time. See what you've spent by category — mechanical, exterior, plumbing, interior — so every decision has a number behind it.</p>
-          </div>
-
+        <div class="wn-score">
+          <span class="wn-tag wn-tag-free" style="align-self:flex-start;">Free</span>
+          <div class="wn-score-num">74</div>
+          <div class="wn-score-label">Upkeep Score</div>
+          <div class="wn-score-delta">▲ +3 in the last 7 days</div>
+          <div class="wn-score-div"></div>
+          <div class="wn-score-proj-label">If you finish one thing</div>
+          <div class="wn-score-proj">Seal the deck <b>→ 79</b><br>See what any task does to your score before you lift a finger.</div>
         </div>
 
-        <div class="intel-scroll-right">
-          <div class="intel-phone-sticky">
-            <div class="phone">
-              <div class="phone-screen">
-
-                <!-- Panel: seasonal -->
-                <div class="plan-panel plan-panel-seasonal active">
-                  <div class="plan-phone-inner">
-                    <div class="plan-season-header">
-                      <span class="plan-season-name">🌱 SPRING 2026</span>
-                      <span class="plan-season-meta">4 tasks · $725 budgeted</span>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">Apr 15</div>
-                      <div class="plan-task-body"><div class="plan-task-title">HVAC spring service</div><div class="plan-task-cat">Mechanical</div></div>
-                      <div class="plan-task-amt">$120</div>
-                      <div class="plan-task-status plan-status-sched">SCHED</div>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">Apr 28</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Reseed front lawn</div><div class="plan-task-cat">Exterior</div></div>
-                      <div class="plan-task-amt">$85</div>
-                      <div class="plan-task-status plan-status-pend">PEND</div>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">May 12</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Deck seal &amp; stain</div><div class="plan-task-cat">Exterior · 2 milestones</div></div>
-                      <div class="plan-task-amt">$340</div>
-                      <div class="plan-task-status plan-status-prog">PROG</div>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">Jun 5</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Pressure wash driveway</div><div class="plan-task-cat">Exterior</div></div>
-                      <div class="plan-task-amt">$180</div>
-                      <div class="plan-task-status plan-status-pend">PEND</div>
-                    </div>
-                    <div class="plan-budget-wrap">
-                      <div class="plan-budget-label">SPRING BUDGET</div>
-                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill"></div></div>
-                      <div class="plan-budget-nums"><span>$505 spent</span><span>$220 remaining</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel: milestones -->
-                <div class="plan-panel plan-panel-milestones">
-                  <div class="plan-phone-inner">
-                    <div class="plan-season-header">
-                      <span class="plan-season-name">DECK SEAL &amp; STAIN</span>
-                      <span class="plan-season-meta">4 milestones · May 12</span>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">May 8</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Power wash deck surface</div><div class="plan-task-cat">Step 1 of 4</div></div>
-                      <div class="plan-task-status plan-status-sched" style="background:rgba(111,168,201,.1);color:var(--jade);">DONE</div>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">May 10</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Let dry 48 hours</div><div class="plan-task-cat">Step 2 of 4</div></div>
-                      <div class="plan-task-status plan-status-sched" style="background:rgba(111,168,201,.1);color:var(--jade);">DONE</div>
-                    </div>
-                    <div class="plan-task-row">
-                      <div class="plan-task-date">May 12</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Apply first coat of stain</div><div class="plan-task-cat">Step 3 of 4</div></div>
-                      <div class="plan-task-status plan-status-prog">PROG</div>
-                    </div>
-                    <div class="plan-task-row" style="opacity:.5;">
-                      <div class="plan-task-date">May 15</div>
-                      <div class="plan-task-body"><div class="plan-task-title">Second coat &amp; final inspect</div><div class="plan-task-cat">Step 4 of 4</div></div>
-                      <div class="plan-task-status plan-status-pend">PEND</div>
-                    </div>
-                    <div class="plan-budget-wrap">
-                      <div class="plan-budget-label">PROJECT BUDGET</div>
-                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill" style="width:50%;"></div></div>
-                      <div class="plan-budget-nums"><span>$170 of $340</span><span>2 steps left</span></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel: budget -->
-                <div class="plan-panel plan-panel-budget">
-                  <div class="plan-phone-inner">
-                    <div class="plan-season-header">
-                      <span class="plan-season-name">2026 BUDGET</span>
-                      <span class="plan-season-meta">$4,800 annual</span>
-                    </div>
-                    <div class="plan-budget-wrap" style="margin-bottom:8px;">
-                      <div class="plan-budget-label">TOTAL SPEND</div>
-                      <div class="plan-budget-bar-wrap"><div class="plan-budget-fill" style="width:45%;"></div></div>
-                      <div class="plan-budget-nums"><span>$2,140 spent</span><span>$2,660 left</span></div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;gap:5px;padding:0 2px;">
-                      <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px;">BY CATEGORY</div>
-                      <div class="plan-task-row" style="padding:5px 8px;">
-                        <div class="plan-task-body"><div class="plan-task-title">Exterior</div></div>
-                        <div class="plan-task-amt">$1,200</div>
-                        <div class="plan-task-status plan-status-prog">56%</div>
-                      </div>
-                      <div class="plan-task-row" style="padding:5px 8px;">
-                        <div class="plan-task-body"><div class="plan-task-title">Mechanical</div></div>
-                        <div class="plan-task-amt">$620</div>
-                        <div class="plan-task-status plan-status-sched">29%</div>
-                      </div>
-                      <div class="plan-task-row" style="padding:5px 8px;">
-                        <div class="plan-task-body"><div class="plan-task-title">Plumbing</div></div>
-                        <div class="plan-task-amt">$210</div>
-                        <div class="plan-task-status plan-status-pend">10%</div>
-                      </div>
-                      <div class="plan-task-row" style="padding:5px 8px;">
-                        <div class="plan-task-body"><div class="plan-task-title">Interior</div></div>
-                        <div class="plan-task-amt">$110</div>
-                        <div class="plan-task-status plan-status-pend">5%</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+        <div class="wn-queue">
+          <div class="wn-queue-head">
+            <span class="wn-queue-title">This week's queue</span>
+            <span class="wn-tag wn-tag-intel">Intelligence</span>
+          </div>
+          <div class="wn-qitem">
+            <span class="wn-qrank">1</span>
+            <div class="wn-qbody">
+              <div class="wn-qname">Seal the deck before rain season</div>
+              <div class="wn-qwhy">Window closes in 12 days · <b>+$240 if you wait</b></div>
+            </div>
+          </div>
+          <div class="wn-qitem">
+            <span class="wn-qrank">2</span>
+            <div class="wn-qbody">
+              <div class="wn-qname">Replace the HVAC filter</div>
+              <div class="wn-qwhy">3 months overdue · airflow and efficiency dropping</div>
+            </div>
+          </div>
+          <div class="wn-qitem">
+            <span class="wn-qrank">3</span>
+            <div class="wn-qbody">
+              <div class="wn-qname">Book the furnace tune-up</div>
+              <div class="wn-qwhy">Get ahead of the first freeze · easier to schedule now</div>
             </div>
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ═══ INTELLIGENCE ═══ -->
-  <section id="intelligence" class="alt">
-    <div class="container">
-      <div class="fade-in" style="margin-bottom:48px;">
-        <p class="label">Intelligence</p>
-        <h2>Eave tells you what to<br>do next, and why it<br>matters now.</h2>
-      </div>
-
-      <div class="intel-scroll-layout">
-
-        <!-- Left: scrollable feature list -->
-        <div class="intel-scroll-left">
-
-          <div class="intel-feature-item active" data-feature="score">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Upkeep Score</span>
-              <span class="intel-tier-badge intel-tier-free">FREE</span>
-            </div>
-            <p class="intel-feature-desc">A live 0–100 score calculated across four dimensions: maintenance completion, project backlog health, preventive vs. reactive ratio, and engagement consistency. Five tiers from Neglected to Excellent — always on, no manual entry needed.</p>
-            <p class="intel-feature-sub">See your 7-day delta and a projection of what completing any single task will do to your score.</p>
-          </div>
-
-          <div class="intel-feature-item" data-feature="risk">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Risk Assessment</span>
-              <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
-            </div>
-            <p class="intel-feature-desc">Every deferred task gets a risk profile: cost escalation over 30, 60, and 90 days; cascade damage potential — what else breaks if this isn't fixed; safety flags; and whether a seasonal window is closing. Know the real cost of waiting.</p>
-          </div>
-
-          <div class="intel-feature-item" data-feature="queue">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">AI Project Queue</span>
-              <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
-            </div>
-            <p class="intel-feature-desc">Every open project ranked by urgency, with a one-sentence "why now" reason. Seasonal timing, cascade risk, safety flags, and risk assessment all factor in — so the most important task is always at the top.</p>
-          </div>
-
-          <div class="intel-feature-item" data-feature="seasonal">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">Seasonal Prep Digest</span>
-              <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
-            </div>
-            <p class="intel-feature-desc">14 days before each season, Eave generates a personalized prep list for your home — not a generic checklist. Each task includes a reason, estimated hours, DIY vs. hire recommendation, and urgency level. Built from your actual appliances, history, and location.</p>
-          </div>
-
-          <div class="intel-feature-item" data-feature="plan">
-            <div class="intel-feature-header">
-              <span class="intel-feature-name">12-Month Upkeep Plan</span>
-              <span class="intel-tier-badge intel-tier-paid">INTELLIGENCE</span>
-            </div>
-            <p class="intel-feature-desc">Your home's full year, mapped out by AI. Month-by-month care tasks, seasonal prep windows, and project milestones — all generated from your Eave data and refreshed when your situation changes.</p>
-          </div>
-
+      <div class="wn-timeline fade-in" style="transition-delay:.15s;">
+        <div class="wn-tl-head">
+          <span class="wn-tl-title">The season ahead</span>
+          <span class="wn-tag wn-tag-intel">Intelligence</span>
         </div>
-
-        <!-- Right: sticky phone -->
-        <div class="intel-scroll-right">
-          <div class="intel-phone-sticky">
-            <div class="phone">
-              <div class="phone-screen">
-
-                <!-- Panel 1: Upkeep Score -->
-                <div class="intel-panel intel-panel-score active">
-                  <div class="intel-panel-inner">
-                    <div class="intel-pnl-label">UPKEEP SCORE</div>
-                    <div class="score-ring-wrap" style="padding:16px 0 12px;">
-                      <svg width="100" height="100" viewBox="0 0 110 110" style="display:block;margin:0 auto;">
-                        <circle cx="55" cy="55" r="44" fill="none" stroke="var(--stone)" stroke-width="7"/>
-                        <circle cx="55" cy="55" r="44" fill="none" stroke="var(--jade)" stroke-width="7"
-                          stroke-dasharray="204.8 276.5" stroke-linecap="round"
-                          transform="rotate(-90 55 55)"/>
-                        <text x="55" y="60" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" fill="#1F3A52">74</text>
-                      </svg>
-                      <div class="score-ring-tier">WELL-MAINTAINED</div>
-                      <div class="score-ring-delta">+3 this week</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;gap:6px;padding:0 12px;">
-                      <div class="intel-dim-row">
-                        <span class="intel-dim-label">Maintenance</span>
-                        <div class="intel-dim-bar-wrap"><div class="intel-dim-bar" style="width:82%;"></div></div>
-                        <span class="intel-dim-val">82</span>
-                      </div>
-                      <div class="intel-dim-row">
-                        <span class="intel-dim-label">Backlog</span>
-                        <div class="intel-dim-bar-wrap"><div class="intel-dim-bar" style="width:68%;"></div></div>
-                        <span class="intel-dim-val">68</span>
-                      </div>
-                      <div class="intel-dim-row">
-                        <span class="intel-dim-label">Preventive</span>
-                        <div class="intel-dim-bar-wrap"><div class="intel-dim-bar" style="width:71%;"></div></div>
-                        <span class="intel-dim-val">71</span>
-                      </div>
-                      <div class="intel-dim-row">
-                        <span class="intel-dim-label">Consistency</span>
-                        <div class="intel-dim-bar-wrap"><div class="intel-dim-bar" style="width:76%;"></div></div>
-                        <span class="intel-dim-val">76</span>
-                      </div>
-                    </div>
-                    <div style="margin:12px 12px 0;padding:8px 10px;background:rgba(111,168,201,.08);border-left:2px solid var(--jade);">
-                      <div style="font-family:'Space Grotesk', sans-serif;font-size:8px;letter-spacing:.06em;color:var(--jade);margin-bottom:3px;">NEXT IMPACT</div>
-                      <div style="font-size:8px;color:var(--muted);">Complete "Replace HVAC filter" → score +4</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel 2: Risk Assessment -->
-                <div class="intel-panel intel-panel-risk">
-                  <div class="intel-panel-inner">
-                    <div class="intel-pnl-label">RISK ASSESSMENT</div>
-                    <div style="padding:10px 12px 0;">
-                      <div style="font-family:'Space Grotesk', sans-serif;font-size:9px;letter-spacing:.06em;color:var(--ink);margin-bottom:2px;">SEAL DECK BEFORE RAIN</div>
-                      <div style="font-size:8px;color:var(--muted);margin-bottom:10px;">Exterior · Deferred 6 weeks</div>
-                      <div class="intel-risk-section-label">COST IF YOU WAIT</div>
-                      <div class="intel-risk-row">
-                        <span class="intel-risk-period">30 days</span>
-                        <div class="intel-risk-bar-wrap"><div class="intel-risk-bar" style="width:35%;background:var(--jade);"></div></div>
-                        <span class="intel-risk-cost" style="color:var(--jade);">+$80</span>
-                      </div>
-                      <div class="intel-risk-row">
-                        <span class="intel-risk-period">60 days</span>
-                        <div class="intel-risk-bar-wrap"><div class="intel-risk-bar" style="width:65%;background:var(--amber);"></div></div>
-                        <span class="intel-risk-cost" style="color:var(--amber);">+$240</span>
-                      </div>
-                      <div class="intel-risk-row">
-                        <span class="intel-risk-period">90 days</span>
-                        <div class="intel-risk-bar-wrap"><div class="intel-risk-bar" style="width:90%;background:#C05050;"></div></div>
-                        <span class="intel-risk-cost" style="color:#C05050;">+$650</span>
-                      </div>
-                      <div class="intel-risk-section-label" style="margin-top:10px;">CASCADE RISK</div>
-                      <div class="intel-risk-flag">
-                        <span class="intel-risk-flag-icon" style="color:var(--amber);">▲</span>
-                        <span>Water intrusion → subfloor rot potential</span>
-                      </div>
-                      <div class="intel-risk-flag">
-                        <span class="intel-risk-flag-icon" style="color:var(--amber);">▲</span>
-                        <span>Fastener rust → structural loosening</span>
-                      </div>
-                      <div class="intel-risk-section-label" style="margin-top:10px;">WINDOW</div>
-                      <div class="intel-risk-flag">
-                        <span class="intel-risk-flag-icon" style="color:#C05050;">!</span>
-                        <span>Rain season opens in 12 days — act now</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel 3: AI Project Queue -->
-                <div class="intel-panel intel-panel-queue">
-                  <div class="intel-panel-inner">
-                    <div class="intel-pnl-label">AI PROJECT QUEUE</div>
-                    <div class="intel-queue-label-row" style="margin-bottom:6px;">
-                      <span class="intel-queue-label">THIS WEEK · 3 URGENT</span>
-                      <span class="intel-queue-tier-badge">INTELLIGENCE</span>
-                    </div>
-                    <div class="intel-queue-item">
-                      <span class="intel-queue-rank">01</span>
-                      <div class="intel-queue-content">
-                        <div class="intel-queue-title">Seal deck before rain season</div>
-                        <div class="intel-queue-why">Window closes in 12 days · +$240 if delayed</div>
-                      </div>
-                      <span class="intel-queue-score">94</span>
-                    </div>
-                    <div class="intel-queue-item">
-                      <span class="intel-queue-rank">02</span>
-                      <div class="intel-queue-content">
-                        <div class="intel-queue-title">Replace HVAC filter</div>
-                        <div class="intel-queue-why">3 months overdue · system strain risk</div>
-                      </div>
-                      <span class="intel-queue-score">78</span>
-                    </div>
-                    <div class="intel-queue-item">
-                      <span class="intel-queue-rank">03</span>
-                      <div class="intel-queue-content">
-                        <div class="intel-queue-title">Schedule furnace tune-up</div>
-                        <div class="intel-queue-why">Winter prep — book before Oct rush</div>
-                      </div>
-                      <span class="intel-queue-score">61</span>
-                    </div>
-                    <div class="intel-queue-item" style="opacity:.55;">
-                      <span class="intel-queue-rank">04</span>
-                      <div class="intel-queue-content">
-                        <div class="intel-queue-title">Caulk master bath surround</div>
-                        <div class="intel-queue-why">Mold risk · low urgency this week</div>
-                      </div>
-                      <span class="intel-queue-score">44</span>
-                    </div>
-                    <div class="intel-queue-item" style="opacity:.35;">
-                      <span class="intel-queue-rank">05</span>
-                      <div class="intel-queue-content">
-                        <div class="intel-queue-title">Repaint garage door</div>
-                        <div class="intel-queue-why">Cosmetic — no urgency signal</div>
-                      </div>
-                      <span class="intel-queue-score">18</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel 4: Seasonal Prep Digest -->
-                <div class="intel-panel intel-panel-seasonal">
-                  <div class="intel-panel-inner">
-                    <div class="intel-pnl-label">SEASONAL PREP</div>
-                    <div class="intel-seasonal-teaser" style="margin:8px 12px 10px;padding:8px 10px;">
-                      <div class="intel-seasonal-head">🍂 FALL PREP · 14 DAYS OUT</div>
-                      <div class="intel-seasonal-sub">4 tasks for your home</div>
-                    </div>
-                    <div style="display:flex;flex-direction:column;gap:5px;padding:0 12px;">
-                      <div class="intel-season-task">
-                        <div class="intel-season-task-top">
-                          <span class="intel-season-task-name">Furnace tune-up</span>
-                          <span class="intel-season-tag intel-tag-hire">HIRE</span>
-                        </div>
-                        <div class="intel-season-task-why">Your system is 5 yrs old — pre-season service prevents cold-snap failures</div>
-                        <div class="intel-season-task-meta">~2 hrs · URGENT</div>
-                      </div>
-                      <div class="intel-season-task">
-                        <div class="intel-season-task-top">
-                          <span class="intel-season-task-name">Winterize hose bibs</span>
-                          <span class="intel-season-tag intel-tag-diy">DIY</span>
-                        </div>
-                        <div class="intel-season-task-why">Frost risk by Oct 20 — burst pipe prevention</div>
-                        <div class="intel-season-task-meta">~30 min · HIGH</div>
-                      </div>
-                      <div class="intel-season-task">
-                        <div class="intel-season-task-top">
-                          <span class="intel-season-task-name">Clean gutters</span>
-                          <span class="intel-season-tag intel-tag-diy">DIY</span>
-                        </div>
-                        <div class="intel-season-task-why">Leaf buildup → ice dams in January</div>
-                        <div class="intel-season-task-meta">~2 hrs · MEDIUM</div>
-                      </div>
-                      <div class="intel-season-task">
-                        <div class="intel-season-task-top">
-                          <span class="intel-season-task-name">Test smoke detectors</span>
-                          <span class="intel-season-tag intel-tag-diy">DIY</span>
-                        </div>
-                        <div class="intel-season-task-why">Annual check — last logged 11 months ago</div>
-                        <div class="intel-season-task-meta">~15 min · STANDARD</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Panel 5: 12-Month Plan -->
-                <div class="intel-panel intel-panel-plan">
-                  <div class="intel-panel-inner">
-                    <div class="intel-pnl-label">12-MONTH UPKEEP PLAN</div>
-                    <div style="padding:8px 12px 0;font-size:8px;color:var(--muted);">Generated from your home data · refreshes automatically</div>
-                    <div class="intel-year-grid">
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">JAN</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">2</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">FEB</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">1</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">MAR</div>
-                        <div class="intel-month-dot" style="background:var(--jade);"></div>
-                        <div class="intel-month-count" style="color:var(--jade);">4</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">APR</div>
-                        <div class="intel-month-dot" style="background:var(--jade);"></div>
-                        <div class="intel-month-count" style="color:var(--jade);">5</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">MAY</div>
-                        <div class="intel-month-dot" style="background:var(--jade);"></div>
-                        <div class="intel-month-count" style="color:var(--jade);">3</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">JUN</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">2</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">JUL</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">1</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">AUG</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">2</div>
-                      </div>
-                      <div class="intel-month-cell intel-month-now">
-                        <div class="intel-month-name">SEP</div>
-                        <div class="intel-month-dot" style="background:var(--amber);"></div>
-                        <div class="intel-month-count" style="color:var(--amber);">3 ←</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">OCT</div>
-                        <div class="intel-month-dot" style="background:var(--jade);"></div>
-                        <div class="intel-month-count" style="color:var(--jade);">4</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">NOV</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">2</div>
-                      </div>
-                      <div class="intel-month-cell">
-                        <div class="intel-month-name">DEC</div>
-                        <div class="intel-month-dot" style="background:var(--stone);"></div>
-                        <div class="intel-month-count" style="color:var(--dim);">1</div>
-                      </div>
-                    </div>
-                    <div style="padding:0 12px;">
-                      <div style="font-family:'Space Grotesk', sans-serif;font-size:8px;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">SEPTEMBER TASKS</div>
-                      <div class="intel-plan-task-row">
-                        <div class="intel-plan-task-dot" style="background:var(--amber);"></div>
-                        <span>Seal deck before rain season</span>
-                      </div>
-                      <div class="intel-plan-task-row">
-                        <div class="intel-plan-task-dot" style="background:var(--jade);"></div>
-                        <span>Schedule furnace tune-up</span>
-                      </div>
-                      <div class="intel-plan-task-row">
-                        <div class="intel-plan-task-dot" style="background:var(--jade);"></div>
-                        <span>Clean gutters</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+        <div class="wn-tl-track">
+          <div class="wn-tl-seg">
+            <div class="wn-tl-season">Spring</div>
+            <div class="wn-tl-months">Mar–May</div>
+          </div>
+          <div class="wn-tl-seg now">
+            <div class="wn-tl-season">Summer</div>
+            <div class="wn-tl-months">Jun–Aug</div>
+            <span class="wn-tl-badge wn-tl-badge-now">You are here</span>
+          </div>
+          <div class="wn-tl-seg next">
+            <div class="wn-tl-season">Fall</div>
+            <div class="wn-tl-months">Sep–Nov</div>
+            <span class="wn-tl-badge wn-tl-badge-next">Prep in ~2 wks</span>
+          </div>
+          <div class="wn-tl-seg">
+            <div class="wn-tl-season">Winter</div>
+            <div class="wn-tl-months">Dec–Feb</div>
           </div>
         </div>
-
+        <div class="wn-tl-prep">
+          <span class="wn-tl-prep-label">Your fall prep</span>
+          <div class="wn-tl-prep-list">Clear the gutters before leaf-fall&nbsp;&nbsp;·&nbsp;&nbsp;Service the furnace before the first freeze&nbsp;&nbsp;·&nbsp;&nbsp;Seal the deck ahead of the rain</div>
+        </div>
+        <div class="wn-tl-foot">Built from your actual appliances, history, and location — not a generic checklist. Zoom out for the full 12-month plan, refreshed as things change.</div>
       </div>
+
     </div>
   </section>
 
@@ -3248,34 +2887,6 @@
         if (rec) rec.classList.add('active');
       });
     });
-
-    // Intelligence scroll highlight
-    const intelObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const feature = entry.target.dataset.feature;
-        document.querySelectorAll('.intel-feature-item').forEach(el => el.classList.remove('active'));
-        entry.target.classList.add('active');
-        document.querySelectorAll('.intel-panel').forEach(el => el.classList.remove('active'));
-        const panel = document.querySelector('.intel-panel-' + feature);
-        if (panel) panel.classList.add('active');
-      });
-    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
-    document.querySelectorAll('.intel-feature-item').forEach(el => intelObserver.observe(el));
-
-    // Plan scroll highlight
-    const planObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const feature = entry.target.dataset.planFeature;
-        document.querySelectorAll('[data-plan-feature]').forEach(el => el.classList.remove('active'));
-        entry.target.classList.add('active');
-        document.querySelectorAll('.plan-panel').forEach(el => el.classList.remove('active'));
-        const panel = document.querySelector('.plan-panel-' + feature);
-        if (panel) panel.classList.add('active');
-      });
-    }, { threshold: 0, rootMargin: '-30% 0px -48% 0px' });
-    document.querySelectorAll('[data-plan-feature]').forEach(el => planObserver.observe(el));
 
     // Waitlist form handler
     function initWaitlist(formId, successId, source) {
