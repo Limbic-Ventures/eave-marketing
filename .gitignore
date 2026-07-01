@@ -3,3 +3,7 @@
 .env*.local
 .DS_Store
 Thumbs.db
+
+# Source imagery — heavy originals stay local; only images/opt/ (optimized WebP) is committed
+images/*
+!images/opt/

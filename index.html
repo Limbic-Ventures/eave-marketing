@@ -38,6 +38,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/images/opt/hero-home-1600.webp" imagesrcset="/images/opt/hero-home-900.webp 900w, /images/opt/hero-home-1600.webp 1600w" imagesizes="(max-width: 1024px) 440px, 420px" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
@@ -309,8 +310,24 @@
     /* Device Group */
     .device-group {
       position: relative;
-      height: 530px;
+      height: 540px;
       overflow: visible;
+    }
+    /* Lifestyle photo backdrop behind the floating phone */
+    .hero-photo {
+      position: absolute;
+      top: 8px; right: 0;
+      width: 420px; height: 292px;
+      border-radius: 20px;
+      overflow: hidden;
+      z-index: 1;
+      filter: drop-shadow(0 24px 48px rgba(31,58,82,.20));
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(31,58,82,0) 50%, rgba(31,58,82,.30) 100%);
     }
 
     /* ── Phone ── */
@@ -1121,8 +1138,9 @@
     @media (max-width: 1024px) {
       .hero-grid { grid-template-columns: 1fr; }
       .device-group { height: auto; display: flex; flex-direction: column; gap: 24px; }
-      .phone-fg { position: relative !important; left: auto !important; top: auto !important; }
+      .phone-fg { position: relative !important; left: auto !important; top: auto !important; bottom: auto !important; margin: 0 auto; }
       .laptop-hero-pos { position: relative !important; right: auto !important; top: auto !important; }
+      .hero-photo { position: relative !important; top: auto !important; right: auto !important; width: 100% !important; max-width: 440px; height: 220px !important; margin: 0 auto; }
       .feature-grid { grid-template-columns: 1fr; gap: 40px; }
       .feature-grid.reverse { direction: ltr; }
       .steps { grid-template-columns: repeat(2, 1fr); }
@@ -1372,7 +1390,7 @@
         <!-- Device Group: Phone + Laptop -->
         <div class="device-group fade-in" style="transition-delay:.15s;">
           <!-- Phone (foreground) -->
-          <div class="phone phone-fg" style="position:absolute;left:0;top:0;z-index:2;">
+          <div class="phone phone-fg" style="position:absolute;left:0;bottom:0;z-index:3;">
             <div class="phone-screen">
               <div class="phone-hero-img">
                 <div class="phone-score-badge">
@@ -1414,63 +1432,15 @@
             </div>
           </div>
 
-          <!-- Laptop (background) -->
-          <div class="laptop-hero-pos" style="position:absolute;right:-20px;top:55px;z-index:1;width:300px;">
-            <div class="laptop-outer">
-              <div class="laptop-screen-area" style="height:195px;">
-                <div class="laptop-topbar">
-                  <span class="laptop-topbar-brand">eave</span>
-                  <span class="laptop-topbar-addr">124 Maple Ridge Dr</span>
-                </div>
-                <div class="laptop-body" style="height:calc(195px - 29px);">
-                  <div class="laptop-sidebar" style="width:80px;">
-                    <div class="laptop-nav-item">Home</div>
-                    <div class="laptop-nav-item active">Projects</div>
-                    <div class="laptop-nav-item">Maintenance</div>
-                    <div class="laptop-nav-item">Appliances</div>
-                    <div class="laptop-nav-item">Spaces</div>
-                    <div class="laptop-nav-item">Budget</div>
-                    <div class="laptop-nav-item">Contractors</div>
-                  </div>
-                  <div class="laptop-main">
-                    <div class="laptop-section-title">PROJECTS</div>
-                    <div class="laptop-filter-row">
-                      <div class="laptop-filter-tag active">ALL</div>
-                      <div class="laptop-filter-tag">IN PROGRESS</div>
-                      <div class="laptop-filter-tag">PENDING</div>
-                      <div class="laptop-filter-tag">COMPLETE</div>
-                    </div>
-                    <div class="laptop-row">
-                      <div class="laptop-row-dot" style="background:var(--amber);"></div>
-                      <div class="laptop-row-title">Kitchen renovation</div>
-                      <div class="laptop-row-room">Kitchen</div>
-                      <div class="laptop-row-badge" style="background:rgba(224,168,61,.15);color:var(--amber);">HIGH</div>
-                    </div>
-                    <div class="laptop-row">
-                      <div class="laptop-row-dot" style="background:var(--jade);"></div>
-                      <div class="laptop-row-title">Deck board repair</div>
-                      <div class="laptop-row-room">Exterior</div>
-                      <div class="laptop-row-badge" style="background:rgba(111,168,201,.15);color:var(--jade);">MED</div>
-                    </div>
-                    <div class="laptop-row">
-                      <div class="laptop-row-dot" style="background:var(--dim);"></div>
-                      <div class="laptop-row-title">Repaint living room</div>
-                      <div class="laptop-row-room">Living Room</div>
-                      <div class="laptop-row-badge" style="background:rgba(138,132,128,.12);color:var(--dim);">LOW</div>
-                    </div>
-                    <div class="laptop-row">
-                      <div class="laptop-row-dot" style="background:var(--jade);"></div>
-                      <div class="laptop-row-title">Replace water heater</div>
-                      <div class="laptop-row-room">Utility</div>
-                      <div class="laptop-row-badge" style="background:rgba(111,168,201,.15);color:var(--jade);">MED</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="laptop-chin"></div>
+          <!-- Lifestyle photo backdrop -->
+          <div class="hero-photo">
+            <img src="/images/opt/hero-home-1600.webp"
+                 srcset="/images/opt/hero-home-900.webp 900w, /images/opt/hero-home-1600.webp 1600w"
+                 sizes="(max-width: 1024px) 440px, 420px"
+                 width="1600" height="873"
+                 alt="A well-kept suburban home on a bright summer afternoon"
+                 fetchpriority="high" decoding="async">
           </div>
-        </div>
 
       </div>
     </div>
