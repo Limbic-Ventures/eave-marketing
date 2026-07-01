@@ -38,7 +38,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Bungee&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,16 +62,16 @@
   </script>
   <style>
     :root {
-      --bg:      #EDE5D5;
-      --surface: #DDD0C4;
-      --stone:   #CAC4BC;
-      --jade:    #2E6464;
-      --amber:   #C07840;
-      --palace:  #6B2035;
-      --ink:     #1A2840;
-      --muted:   #5A7070;
+      --bg:      #F4EFE6;
+      --surface: #EAE2D2;
+      --stone:   #DCD2BD;
+      --jade:    #6FA8C9;
+      --amber:   #E0A83D;
+      --palace:  #A8442F;
+      --ink:     #1F3A52;
+      --muted:   #5C6A73;
       --dim:     #8A8480;
-      --chamfer: 8px;
+      --radius:  16px;
       --scanline: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.018) 2px 3px);
     }
 
@@ -88,18 +88,13 @@
     }
 
     .card {
-      clip-path: polygon(
-        var(--chamfer) 0%, calc(100% - var(--chamfer)) 0%,
-        100% var(--chamfer), 100% calc(100% - var(--chamfer)),
-        calc(100% - var(--chamfer)) 100%, var(--chamfer) 100%,
-        0% calc(100% - var(--chamfer)), 0% var(--chamfer)
-      );
+      border-radius: var(--radius);
     }
 
     .scanline { background-image: var(--scanline); }
 
     .label {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 10px;
       letter-spacing: .15em;
       color: var(--jade);
@@ -116,10 +111,11 @@
     }
 
     h1, h2, h3 {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       line-height: 1.2;
       color: var(--ink);
+      letter-spacing: -.01em;
     }
 
     .container {
@@ -144,7 +140,7 @@
       align-items: center;
       gap: 8px;
       padding: 12px 24px;
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 11px;
       letter-spacing: .1em;
       text-decoration: none;
@@ -156,18 +152,18 @@
     .btn-jade {
       background: var(--jade);
       color: var(--bg);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
     }
     .btn-dark {
       background: var(--ink);
       color: var(--bg);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
     }
     .btn-outline {
       background: transparent;
       color: var(--ink);
       border: 1.5px solid var(--stone);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
     }
 
     /* ── NAV ── */
@@ -175,7 +171,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(237,229,213,.88);
+      background: rgba(244,239,230,.88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--stone);
@@ -255,7 +251,7 @@
       gap: 60px;
     }
     .hero-eyebrow {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 10px;
       letter-spacing: .18em;
       color: var(--jade);
@@ -263,10 +259,11 @@
       text-transform: uppercase;
     }
     .hero-headline {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(36px, 4.5vw, 58px);
       font-weight: 700;
       line-height: 1.1;
+      letter-spacing: -.01em;
       color: var(--ink);
       margin-bottom: 24px;
     }
@@ -293,6 +290,7 @@
       padding: 12px 14px;
       background: var(--surface);
       border: 1.5px solid var(--stone);
+      border-radius: 10px;
       color: var(--ink);
       outline: none;
       transition: border-color .2s;
@@ -302,13 +300,13 @@
     .waitlist-input::placeholder { color: var(--dim); }
     .waitlist-input-dark {
       background: rgba(255,255,255,.07);
-      border-color: rgba(237,229,213,.15);
+      border-color: rgba(244,239,230,.15);
       color: var(--bg);
     }
-    .waitlist-input-dark:focus { border-color: rgba(237,229,213,.4); }
-    .waitlist-input-dark::placeholder { color: rgba(237,229,213,.35); }
+    .waitlist-input-dark:focus { border-color: rgba(244,239,230,.4); }
+    .waitlist-input-dark::placeholder { color: rgba(244,239,230,.35); }
     .waitlist-success { font-size: 13px; color: var(--jade); margin-top: 12px; display: none; }
-    .waitlist-success-dark { color: #7EC8C8; }
+    .waitlist-success-dark { color: #A9D2E8; }
     @media (max-width: 560px) {
       .waitlist-row { flex-direction: column; }
     }
@@ -339,7 +337,7 @@
       border-radius: 38px;
       border: 3px solid #2A3040;
       box-shadow:
-        0 40px 80px rgba(26,40,64,.22),
+        0 40px 80px rgba(31,58,82,.22),
         inset 0 0 0 1px rgba(255,255,255,.06);
       position: relative;
       overflow: hidden;
@@ -384,7 +382,7 @@
       gap: 8px;
     }
     .score-num {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 22px;
       color: #C8E89A;
       line-height: 1;
@@ -403,7 +401,7 @@
       margin-bottom: 10px;
     }
     .phone-section-label {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       letter-spacing: .12em;
       color: var(--jade);
@@ -417,7 +415,7 @@
       background: var(--surface);
       background-image: var(--scanline);
       margin-bottom: 4px;
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 0% 100%);
+      border-radius: 10px;
     }
     .phone-dot {
       width: 6px;
@@ -435,11 +433,11 @@
       white-space: nowrap;
     }
     .phone-badge {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 6px;
       letter-spacing: .06em;
       padding: 2px 5px;
-      clip-path: polygon(0% 0%, calc(100% - 3px) 0%, 100% 3px, 100% 100%, 0% 100%);
+      border-radius: 6px;
     }
 
     /* ── Laptop ── */
@@ -447,7 +445,7 @@
       background: #C0C0C4;
       border-radius: 10px 10px 0 0;
       padding: 8px 8px 0;
-      box-shadow: 0 24px 56px rgba(26,40,64,.18);
+      box-shadow: 0 24px 56px rgba(31,58,82,.18);
     }
     .laptop-screen-area {
       background: var(--bg);
@@ -517,7 +515,7 @@
       overflow: hidden;
     }
     .laptop-section-title {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 8px;
       letter-spacing: .1em;
       color: var(--ink);
@@ -529,7 +527,7 @@
       margin-bottom: 6px;
     }
     .laptop-filter-tag {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 6px;
       letter-spacing: .06em;
       padding: 2px 5px;
@@ -545,12 +543,12 @@
       background: var(--surface);
       background-image: var(--scanline);
       margin-bottom: 3px;
-      clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%);
+      border-radius: 8px;
     }
     .laptop-row-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
     .laptop-row-title { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--ink); flex: 1; }
     .laptop-row-room { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: var(--muted); margin-right: 4px; }
-    .laptop-row-badge { font-family: 'Bungee', sans-serif; font-size: 6px; padding: 1px 4px; }
+    .laptop-row-badge { font-family: 'Space Grotesk', sans-serif; font-size: 6px; padding: 1px 4px; }
 
     /* Memory Laptop — appliances */
     .laptop-appliance-grid {
@@ -562,10 +560,10 @@
       background: var(--surface);
       background-image: var(--scanline);
       padding: 8px;
-      clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%);
+      border-radius: 8px;
     }
     .laptop-appliance-name {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 8px;
       letter-spacing: .05em;
       color: var(--ink);
@@ -584,9 +582,9 @@
       margin-top: 5px;
     }
     .laptop-appliance-status-dot { width: 5px; height: 5px; border-radius: 50%; }
-    .laptop-appliance-status-text { font-family: 'Bungee', sans-serif; font-size: 6.5px; color: var(--muted); }
+    .laptop-appliance-status-text { font-family: 'Space Grotesk', sans-serif; font-size: 6.5px; color: var(--muted); }
     .laptop-add-btn {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       padding: 3px 8px;
       background: var(--jade);
@@ -600,7 +598,7 @@
       background: #18181C;
       border-radius: 16px;
       padding: 10px;
-      box-shadow: 0 24px 56px rgba(26,40,64,.2);
+      box-shadow: 0 24px 56px rgba(31,58,82,.2);
       position: relative;
       display: inline-block;
     }
@@ -635,7 +633,7 @@
       border-left: 3px solid var(--jade);
     }
     .stat-num {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 28px;
       color: var(--ink);
       line-height: 1;
@@ -654,7 +652,7 @@
     ───────────────────────────────────────────── */
     #problem { padding: 64px 0; }
 
-    /* Sacramento "Eave" inline in Bungee label */
+    /* Sacramento "Eave" inline in Space Grotesk label */
     .label-eave {
       font-family: 'Sacramento', cursive;
       font-size: 29px;
@@ -682,7 +680,7 @@
     }
     .pillar-icon { margin-bottom: 14px; display: flex; align-items: center; }
     .pillar-title {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 11px;
       letter-spacing: .08em;
       color: var(--jade);
@@ -704,7 +702,7 @@
     }
     .pc-bar-text { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--dim); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .pc-bar-btn {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       padding: 2px 6px;
       background: var(--jade);
@@ -720,15 +718,15 @@
       background-image: var(--scanline);
       padding: 7px 8px;
       margin-bottom: 5px;
-      clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%);
+      border-radius: 8px;
     }
     .pc-mini-title { font-family: 'IBM Plex Mono', monospace; font-size: 9px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
     .pc-mini-meta { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--muted); }
     .pc-mini-badge {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       padding: 1px 5px;
-      background: rgba(46,100,100,.12);
+      background: rgba(111,168,201,.12);
       color: var(--jade);
       display: inline-block;
       margin-top: 3px;
@@ -746,7 +744,7 @@
     .pc-queue-item:last-child { border-bottom: none; }
     .pc-queue-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
     .pc-queue-text { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); flex: 1; }
-    .pc-queue-score { font-family: 'Bungee', sans-serif; font-size: 9px; color: var(--ink); }
+    .pc-queue-score { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: var(--ink); }
 
     /* ─────────────────────────────────────────────
        FEATURE SECTIONS
@@ -767,19 +765,19 @@
     .capture-mode { background: var(--surface); background-image: var(--scanline); padding: 14px 16px; }
     .capture-mode-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
     .capture-mode-icon { display: flex; align-items: center; }
-    .capture-mode-title { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; }
+    .capture-mode-title { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; }
     .capture-quote { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 6px; }
     .capture-result { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--jade); }
 
     /* Capture phone screen */
     .capture-phone-inner { padding: 30px 10px 10px; }
-    .capture-phone-label { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .12em; color: var(--jade); margin-bottom: 8px; }
+    .capture-phone-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .12em; color: var(--jade); margin-bottom: 8px; }
     .capture-voice-bar {
       display: flex;
       align-items: center;
       gap: 6px;
       padding: 8px 10px;
-      background: #1A2840;
+      background: #1F3A52;
       border-radius: 4px;
       margin-bottom: 10px;
     }
@@ -791,16 +789,16 @@
       flex-shrink: 0;
     }
     .capture-voice-mic-dot { width: 6px; height: 6px; background: white; border-radius: 50%; }
-    .capture-voice-text { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: rgba(237,229,213,.65); flex: 1; font-style: italic; }
+    .capture-voice-text { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: rgba(244,239,230,.65); flex: 1; font-style: italic; }
     .capture-wave { display: flex; gap: 2px; align-items: center; flex-shrink: 0; }
     .capture-wave span { display: block; width: 2px; background: var(--jade); border-radius: 1px; }
     .capture-confirm-card {
       background: var(--surface);
       background-image: var(--scanline);
       padding: 10px;
-      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      border-radius: 12px;
     }
-    .capture-confirm-title { font-family: 'Bungee', sans-serif; font-size: 7.5px; letter-spacing: .08em; color: var(--jade); margin-bottom: 8px; }
+    .capture-confirm-title { font-family: 'Space Grotesk', sans-serif; font-size: 7.5px; letter-spacing: .08em; color: var(--jade); margin-bottom: 8px; }
     .capture-field-row {
       display: flex;
       justify-content: space-between;
@@ -809,21 +807,21 @@
       border-bottom: 1px solid rgba(202,196,188,.3);
     }
     .capture-field-row:last-of-type { border-bottom: none; }
-    .capture-field-label { font-family: 'Bungee', sans-serif; font-size: 6.5px; letter-spacing: .07em; color: var(--dim); }
+    .capture-field-label { font-family: 'Space Grotesk', sans-serif; font-size: 6.5px; letter-spacing: .07em; color: var(--dim); }
     .capture-field-value { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--ink); text-align: right; }
     .capture-btn-row { display: flex; gap: 6px; margin-top: 8px; }
     .capture-btn-edit {
-      font-family: 'Bungee', sans-serif; font-size: 7px;
+      font-family: 'Space Grotesk', sans-serif; font-size: 7px;
       padding: 4px 8px;
       border: 1px solid var(--stone);
       color: var(--ink); background: transparent; flex: 1; text-align: center;
     }
     .capture-btn-save {
-      font-family: 'Bungee', sans-serif; font-size: 7px;
+      font-family: 'Space Grotesk', sans-serif; font-size: 7px;
       padding: 4px 8px;
       background: var(--jade); color: var(--bg);
       flex: 2; text-align: center;
-      clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%);
+      border-radius: 8px;
     }
 
     /* Memory */
@@ -837,7 +835,7 @@
       background-image: var(--scanline);
       border-left: 2px solid var(--stone);
     }
-    .memory-item-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .08em; color: var(--jade); text-transform: uppercase; margin-bottom: 4px; }
+    .memory-item-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .08em; color: var(--jade); text-transform: uppercase; margin-bottom: 4px; }
     .memory-item-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
     /* ─── Plan section ─── */
@@ -846,30 +844,30 @@
       display: flex; justify-content: space-between; align-items: center;
       padding-bottom: 8px; border-bottom: 1px solid var(--stone);
     }
-    .plan-season-name { font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em; color: var(--jade); }
+    .plan-season-name { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em; color: var(--jade); }
     .plan-season-meta { font-size: 9px; color: var(--muted); }
     .plan-task-row {
       display: flex; align-items: flex-start; gap: 6px;
       padding: 6px 8px; background: var(--bg); background-image: var(--scanline);
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 5px 100%, 0% calc(100% - 5px));
+      border-radius: 10px;
     }
     .plan-task-date { font-size: 8px; color: var(--dim); min-width: 30px; padding-top: 1px; }
     .plan-task-body { flex: 1; }
     .plan-task-title { font-size: 9px; color: var(--ink); font-weight: 500; line-height: 1.3; }
     .plan-task-cat { font-size: 8px; color: var(--muted); }
-    .plan-task-amt { font-family: 'Bungee', sans-serif; font-size: 9px; color: var(--jade); min-width: 30px; text-align: right; }
+    .plan-task-amt { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: var(--jade); min-width: 30px; text-align: right; }
     .plan-task-status {
-      font-family: 'Bungee', sans-serif; font-size: 7px; padding: 2px 5px; letter-spacing: .04em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 7px; padding: 2px 5px; letter-spacing: .04em;
     }
-    .plan-status-sched { background: rgba(46,100,100,.1); color: var(--jade); }
+    .plan-status-sched { background: rgba(111,168,201,.1); color: var(--jade); }
     .plan-status-pend  { background: rgba(138,132,128,.12); color: var(--dim); }
-    .plan-status-prog  { background: rgba(192,120,64,.1); color: var(--amber); }
+    .plan-status-prog  { background: rgba(224,168,61,.1); color: var(--amber); }
     .plan-budget-wrap {
       margin-top: 4px; padding: 8px 8px 6px;
       background: var(--surface); background-image: var(--scanline);
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 5px 100%, 0% calc(100% - 5px));
+      border-radius: 10px;
     }
-    .plan-budget-label { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .08em; color: var(--muted); margin-bottom: 5px; }
+    .plan-budget-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .08em; color: var(--muted); margin-bottom: 5px; }
     .plan-budget-bar-wrap { height: 5px; background: var(--stone); border-radius: 2px; overflow: hidden; margin-bottom: 4px; }
     .plan-budget-fill { height: 100%; background: var(--jade); width: 70%; border-radius: 2px; }
     .plan-budget-nums { display: flex; justify-content: space-between; font-size: 8px; color: var(--muted); }
@@ -878,26 +876,26 @@
     .intel-cards { display: flex; flex-direction: column; gap: 14px; }
     .intel-card { background: var(--surface); background-image: var(--scanline); padding: 20px 18px; }
     .intel-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-    .intel-card-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .1em; color: var(--jade); text-transform: uppercase; }
-    .intel-tier-badge { font-family: 'Bungee', sans-serif; font-size: 7px; padding: 2px 6px; letter-spacing: .05em; }
-    .intel-tier-free { background: rgba(46,100,100,.12); color: var(--jade); }
-    .intel-tier-paid { background: rgba(192,120,64,.12); color: var(--amber); }
+    .intel-card-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; color: var(--jade); text-transform: uppercase; }
+    .intel-tier-badge { font-family: 'Space Grotesk', sans-serif; font-size: 7px; padding: 2px 6px; letter-spacing: .05em; }
+    .intel-tier-free { background: rgba(111,168,201,.12); color: var(--jade); }
+    .intel-tier-paid { background: rgba(224,168,61,.12); color: var(--amber); }
     .intel-card-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
     .intel-card-sub { font-size: 11px; color: var(--dim); line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--stone); }
     .intel-score-row { display: flex; align-items: center; gap: 16px; margin-top: 6px; }
-    .intel-score-big { font-family: 'Bungee', sans-serif; font-size: 48px; color: var(--jade); line-height: 1; }
+    .intel-score-big { font-family: 'Space Grotesk', sans-serif; font-size: 48px; color: var(--jade); line-height: 1; }
     .intel-score-right {}
-    .intel-score-tier { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .08em; color: var(--amber); margin-bottom: 4px; }
+    .intel-score-tier { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .08em; color: var(--amber); margin-bottom: 4px; }
 
     /* Intelligence phone mockup content */
     .intel-phone-inner { padding: 30px 12px 12px; }
     .score-ring-wrap { text-align: center; margin-bottom: 12px; }
-    .score-ring-number { font-family: 'Bungee', sans-serif; font-size: 30px; color: var(--jade); line-height: 1; margin-top: -72px; }
-    .score-ring-tier { font-family: 'Bungee', sans-serif; font-size: 7.5px; letter-spacing: .08em; color: var(--amber); margin-top: 2px; }
+    .score-ring-number { font-family: 'Space Grotesk', sans-serif; font-size: 30px; color: var(--jade); line-height: 1; margin-top: -72px; }
+    .score-ring-tier { font-family: 'Space Grotesk', sans-serif; font-size: 7.5px; letter-spacing: .08em; color: var(--amber); margin-top: 2px; }
     .score-ring-delta { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--jade); margin-top: 2px; }
     .intel-queue-label-row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
-    .intel-queue-label { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .1em; color: var(--jade); }
-    .intel-queue-tier-badge { font-family: 'Bungee', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(192,120,64,.15); color: var(--amber); }
+    .intel-queue-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; color: var(--jade); }
+    .intel-queue-tier-badge { font-family: 'Space Grotesk', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(224,168,61,.15); color: var(--amber); }
     .intel-queue-item {
       display: flex;
       align-items: flex-start;
@@ -906,21 +904,21 @@
       background: var(--surface);
       background-image: var(--scanline);
       margin-bottom: 3px;
-      clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%);
+      border-radius: 8px;
     }
-    .intel-queue-rank { font-family: 'Bungee', sans-serif; font-size: 9px; color: var(--jade); flex-shrink: 0; min-width: 20px; }
+    .intel-queue-rank { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: var(--jade); flex-shrink: 0; min-width: 20px; }
     .intel-queue-content { flex: 1; }
     .intel-queue-title { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--ink); font-weight: 700; margin-bottom: 1px; }
     .intel-queue-why { font-family: 'IBM Plex Mono', monospace; font-size: 7.5px; color: var(--muted); font-style: italic; }
-    .intel-queue-score { font-family: 'Bungee', sans-serif; font-size: 10px; color: var(--ink); flex-shrink: 0; }
+    .intel-queue-score { font-family: 'Space Grotesk', sans-serif; font-size: 10px; color: var(--ink); flex-shrink: 0; }
     .intel-seasonal-teaser {
       background: var(--surface);
       background-image: var(--scanline);
       padding: 7px 8px;
       margin-top: 8px;
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 0% 100%);
+      border-radius: 10px;
     }
-    .intel-seasonal-head { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .07em; color: var(--ink); margin-bottom: 2px; }
+    .intel-seasonal-head { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .07em; color: var(--ink); margin-bottom: 2px; }
     .intel-seasonal-sub { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--muted); }
 
     /* Shared scroll panel base (capture + memory + intelligence + plan) */
@@ -953,7 +951,7 @@
     /* Memory room list */
     .mem-room-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 8px; background: var(--bg); background-image: var(--scanline); }
     .mem-room-name { font-size: 8.5px; color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
-    .mem-room-tag { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .04em; }
+    .mem-room-tag { font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .04em; }
 
     /* Memory spaces list */
     .mem-space-row { display: flex; flex-direction: column; gap: 1px; padding: 4px 8px; background: var(--bg); background-image: var(--scanline); }
@@ -965,11 +963,11 @@
     .mem-budget-cat { font-size: 8px; color: var(--muted); min-width: 56px; }
     .mem-budget-bar-wrap { flex: 1; height: 5px; background: var(--stone); border-radius: 2px; overflow: hidden; }
     .mem-budget-bar { height: 100%; border-radius: 2px; }
-    .mem-budget-amt { font-family: 'Bungee', sans-serif; font-size: 7.5px; color: var(--ink); min-width: 32px; text-align: right; }
+    .mem-budget-amt { font-family: 'Space Grotesk', sans-serif; font-size: 7.5px; color: var(--ink); min-width: 32px; text-align: right; }
 
     /* Memory contractor cards */
-    .mem-contractor-card { padding: 5px 8px; background: var(--bg); background-image: var(--scanline); clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%); }
-    .mem-contractor-name { font-family: 'Bungee', sans-serif; font-size: 8px; letter-spacing: .04em; color: var(--jade); margin-bottom: 2px; }
+    .mem-contractor-card { padding: 5px 8px; background: var(--bg); background-image: var(--scanline); border-radius: 8px; }
+    .mem-contractor-name { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .04em; color: var(--jade); margin-bottom: 2px; }
     .mem-contractor-meta { font-size: 7.5px; color: var(--muted); }
 
     /* Memory connected sources */
@@ -978,7 +976,7 @@
     .mem-source-info { flex: 1; }
     .mem-source-name { font-size: 8px; color: var(--ink); font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
     .mem-source-status { font-size: 7.5px; color: var(--muted); }
-    .mem-source-badge { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .04em; flex-shrink: 0; }
+    .mem-source-badge { font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .04em; flex-shrink: 0; }
 
     /* Intelligence scroll layout */
     .intel-scroll-layout {
@@ -1009,7 +1007,7 @@
       margin-bottom: 10px;
     }
     .intel-feature-name {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 11px;
       letter-spacing: .08em;
       color: var(--jade);
@@ -1031,7 +1029,7 @@
     .intel-panel.active { opacity: 1; pointer-events: auto; }
     .intel-panel-inner { padding: 30px 0 12px; }
     .intel-pnl-label {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 8px;
       letter-spacing: .12em;
       color: var(--jade);
@@ -1044,32 +1042,32 @@
     .intel-dim-label { font-size: 8px; color: var(--muted); min-width: 64px; }
     .intel-dim-bar-wrap { flex: 1; height: 4px; background: var(--stone); border-radius: 2px; overflow: hidden; }
     .intel-dim-bar { height: 100%; background: var(--jade); border-radius: 2px; }
-    .intel-dim-val { font-family: 'Bungee', sans-serif; font-size: 8px; color: var(--jade); min-width: 20px; text-align: right; }
+    .intel-dim-val { font-family: 'Space Grotesk', sans-serif; font-size: 8px; color: var(--jade); min-width: 20px; text-align: right; }
 
     /* Risk panel */
-    .intel-risk-section-label { font-family: 'Bungee', sans-serif; font-size: 7.5px; letter-spacing: .1em; color: var(--muted); margin-bottom: 5px; }
+    .intel-risk-section-label { font-family: 'Space Grotesk', sans-serif; font-size: 7.5px; letter-spacing: .1em; color: var(--muted); margin-bottom: 5px; }
     .intel-risk-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
     .intel-risk-period { font-size: 8px; color: var(--dim); min-width: 44px; }
     .intel-risk-bar-wrap { flex: 1; height: 5px; background: var(--stone); border-radius: 2px; overflow: hidden; }
     .intel-risk-bar { height: 100%; border-radius: 2px; }
-    .intel-risk-cost { font-family: 'Bungee', sans-serif; font-size: 8px; min-width: 34px; text-align: right; }
+    .intel-risk-cost { font-family: 'Space Grotesk', sans-serif; font-size: 8px; min-width: 34px; text-align: right; }
     .intel-risk-flag { display: flex; align-items: flex-start; gap: 5px; font-size: 8px; color: var(--muted); margin-bottom: 4px; line-height: 1.4; }
     .intel-risk-flag-icon { font-size: 9px; flex-shrink: 0; margin-top: 1px; }
 
     /* Seasonal panel */
-    .intel-season-task { background: var(--surface); background-image: var(--scanline); padding: 7px 8px; clip-path: polygon(0% 0%, calc(100% - 4px) 0%, 100% 4px, 100% 100%, 0% 100%); }
+    .intel-season-task { background: var(--surface); background-image: var(--scanline); padding: 7px 8px; border-radius: 8px; }
     .intel-season-task-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
     .intel-season-task-name { font-family: 'IBM Plex Mono', monospace; font-size: 8px; font-weight: 700; color: var(--ink); }
     .intel-season-task-why { font-size: 7.5px; color: var(--muted); line-height: 1.4; margin-bottom: 3px; }
-    .intel-season-task-meta { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .05em; color: var(--dim); }
-    .intel-tag-hire { font-family: 'Bungee', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(192,120,64,.12); color: var(--amber); }
-    .intel-tag-diy { font-family: 'Bungee', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(46,100,100,.1); color: var(--jade); }
+    .intel-season-task-meta { font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .05em; color: var(--dim); }
+    .intel-tag-hire { font-family: 'Space Grotesk', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(224,168,61,.12); color: var(--amber); }
+    .intel-tag-diy { font-family: 'Space Grotesk', sans-serif; font-size: 6.5px; padding: 1px 5px; background: rgba(111,168,201,.1); color: var(--jade); }
 
     /* 12-month plan panel */
     .intel-year-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 10px 12px 12px; }
     .intel-month-cell { display: flex; flex-direction: column; align-items: center; gap: 3px; }
     .intel-month-cell.intel-month-now .intel-month-name { color: var(--amber); }
-    .intel-month-name { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .05em; color: var(--dim); }
+    .intel-month-name { font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .05em; color: var(--dim); }
     .intel-month-dot { width: 8px; height: 8px; border-radius: 50%; }
     .intel-month-count { font-family: 'IBM Plex Mono', monospace; font-size: 7px; }
     .intel-plan-task-row { display: flex; align-items: center; gap: 6px; font-size: 8px; color: var(--muted); margin-bottom: 5px; }
@@ -1082,9 +1080,9 @@
       background: var(--ink);
       background-image: var(--scanline);
     }
-    #pricing .label { color: rgba(237,229,213,.4); }
+    #pricing .label { color: rgba(244,239,230,.4); }
     #pricing h2 { color: var(--bg); }
-    #pricing .section-head p { color: rgba(237,229,213,.6); }
+    #pricing .section-head p { color: rgba(244,239,230,.6); }
 
     /* Tier comparison grid */
     .tier-grid {
@@ -1098,125 +1096,125 @@
     .pro-pricing-divider {
       margin-top: 64px;
       padding-top: 48px;
-      border-top: 1px solid rgba(237,229,213,.1);
+      border-top: 1px solid rgba(244,239,230,.1);
     }
     .pro-pricing-eyebrow {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 9px;
       letter-spacing: .16em;
-      color: rgba(237,229,213,.4);
+      color: rgba(244,239,230,.4);
       margin-bottom: 10px;
     }
     .pro-pricing-desc {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 15px;
-      color: rgba(237,229,213,.55);
+      color: rgba(244,239,230,.55);
       line-height: 1.7;
       max-width: 560px;
       margin-bottom: 0;
     }
     /* Dark overrides for pro-grid cards inside #pricing */
     #pricing .pro-card {
-      background: rgba(237,229,213,.04);
-      border: 1px solid rgba(237,229,213,.08);
+      background: rgba(244,239,230,.04);
+      border: 1px solid rgba(244,239,230,.08);
       box-shadow: none;
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
     }
     #pricing .pro-card-title { color: var(--bg); }
-    #pricing .pro-price-row { color: rgba(237,229,213,.45); }
+    #pricing .pro-price-row { color: rgba(244,239,230,.45); }
     #pricing .pro-price-amount { color: var(--jade); }
-    #pricing .pro-commitment { background: rgba(46,100,100,.18); color: var(--jade); }
-    #pricing .pro-desc { color: rgba(237,229,213,.5); }
+    #pricing .pro-commitment { background: rgba(111,168,201,.18); color: var(--jade); }
+    #pricing .pro-desc { color: rgba(244,239,230,.5); }
     #pricing .pro-arrives-strip {
-      background: rgba(237,229,213,.03);
-      border-left-color: rgba(46,100,100,.6);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      background: rgba(244,239,230,.03);
+      border-left-color: rgba(111,168,201,.6);
+      border-radius: 16px;
     }
     #pricing .pro-arrives-heading { color: var(--jade); }
-    #pricing .pro-arrives-body { color: rgba(237,229,213,.5); }
-    #pricing .pro-tag { color: var(--jade); border-color: rgba(46,100,100,.25); background: rgba(46,100,100,.1); }
+    #pricing .pro-arrives-body { color: rgba(244,239,230,.5); }
+    #pricing .pro-tag { color: var(--jade); border-color: rgba(111,168,201,.25); background: rgba(111,168,201,.1); }
     #pricing .pro-cta-wrap { text-align: center; margin-top: 40px; }
 
     /* ── ADA contrast overrides for #pricing dark section ──
-       Background is #1A2840. WCAG AA requires 4.5:1 for normal text.
-       rgba(237,229,213, X) needs X ≥ ~0.50 to pass; we use 0.75+ for comfort.
-       var(--jade)=#2E6464 and var(--amber)=#C07840 both fail (~2.2:1 and ~4.4:1)
-       on dark; replaced with light variants #7EC8C8 (8:1) and #E0A870 (7.3:1). */
+       Background is #1F3A52. WCAG AA requires 4.5:1 for normal text.
+       rgba(244,239,230, X) needs X ≥ ~0.50 to pass; we use 0.75+ for comfort.
+       var(--jade)=#6FA8C9 and var(--amber)=#E0A83D both fail (~2.2:1 and ~4.4:1)
+       on dark; replaced with light variants #A9D2E8 (8:1) and #EABE6B (7.3:1). */
 
     /* Label / section header */
-    #pricing .label { color: rgba(237,229,213,.65); }
-    #pricing .section-head p { color: rgba(237,229,213,.8); }
+    #pricing .label { color: rgba(244,239,230,.65); }
+    #pricing .section-head p { color: rgba(244,239,230,.8); }
 
     /* Tier eyebrows — force readable regardless of their class color */
-    #pricing .tier-eyebrow-free  { color: #7EC8C8; }
-    #pricing .tier-eyebrow-intel { color: #E0A870; }
-    #pricing .tier-eyebrow-pro   { color: rgba(237,229,213,.7); }
+    #pricing .tier-eyebrow-free  { color: #A9D2E8; }
+    #pricing .tier-eyebrow-intel { color: #EABE6B; }
+    #pricing .tier-eyebrow-pro   { color: rgba(244,239,230,.7); }
 
     /* Tier price line */
-    #pricing .tier-price-note  { color: rgba(237,229,213,.8); font-size: 12px; }
-    #pricing .tier-price-small { color: rgba(237,229,213,.8); }
+    #pricing .tier-price-note  { color: rgba(244,239,230,.8); font-size: 12px; }
+    #pricing .tier-price-small { color: rgba(244,239,230,.8); }
 
     /* Tier checklist */
-    #pricing .tier-check-icon-free  { color: #7EC8C8; }
-    #pricing .tier-check-icon-intel { color: #E0A870; }
-    #pricing .tier-check-icon-pro   { color: rgba(237,229,213,.6); }
-    #pricing .tier-check-text       { color: rgba(237,229,213,.85); font-size: 13px; }
-    #pricing .tier-check-text strong { color: rgba(237,229,213,.95); }
+    #pricing .tier-check-icon-free  { color: #A9D2E8; }
+    #pricing .tier-check-icon-intel { color: #EABE6B; }
+    #pricing .tier-check-icon-pro   { color: rgba(244,239,230,.6); }
+    #pricing .tier-check-text       { color: rgba(244,239,230,.85); font-size: 13px; }
+    #pricing .tier-check-text strong { color: rgba(244,239,230,.95); }
 
     /* Intelligence sub-options */
-    #pricing .intel-option-label { color: rgba(237,229,213,.8); font-size: 11px; }
-    #pricing .intel-option-note  { color: rgba(237,229,213,.7); font-size: 11px; }
-    #pricing .intel-option-price { color: rgba(237,229,213,.95); }
-    #pricing .intel-option-flag-jade  { background: #7EC8C8; color: #1A2840; }
-    #pricing .intel-option-flag-amber { background: #E0A870; color: #1A2840; }
+    #pricing .intel-option-label { color: rgba(244,239,230,.8); font-size: 11px; }
+    #pricing .intel-option-note  { color: rgba(244,239,230,.7); font-size: 11px; }
+    #pricing .intel-option-price { color: rgba(244,239,230,.95); }
+    #pricing .intel-option-flag-jade  { background: #A9D2E8; color: #1F3A52; }
+    #pricing .intel-option-flag-amber { background: #EABE6B; color: #1F3A52; }
 
     /* Pro divider header */
-    #pricing .pro-pricing-eyebrow { color: rgba(237,229,213,.7); font-size: 10px; }
-    #pricing .pro-pricing-desc    { color: rgba(237,229,213,.8); }
+    #pricing .pro-pricing-eyebrow { color: rgba(244,239,230,.7); font-size: 10px; }
+    #pricing .pro-pricing-desc    { color: rgba(244,239,230,.8); }
 
     /* Pro cards */
-    #pricing .pro-card-title    { color: rgba(237,229,213,.95); }
-    #pricing .pro-price-row     { color: rgba(237,229,213,.8); font-size: 12px; }
-    #pricing .pro-price-amount  { color: #7EC8C8; }
-    #pricing .pro-commitment    { background: rgba(126,200,200,.12); color: #7EC8C8; border: 1px solid rgba(126,200,200,.22); }
-    #pricing .pro-desc          { color: rgba(237,229,213,.78); font-size: 13px; }
+    #pricing .pro-card-title    { color: rgba(244,239,230,.95); }
+    #pricing .pro-price-row     { color: rgba(244,239,230,.8); font-size: 12px; }
+    #pricing .pro-price-amount  { color: #A9D2E8; }
+    #pricing .pro-commitment    { background: rgba(169,210,232,.12); color: #A9D2E8; border: 1px solid rgba(169,210,232,.22); }
+    #pricing .pro-desc          { color: rgba(244,239,230,.78); font-size: 13px; }
 
     /* Arrives Informed strip */
-    #pricing .pro-arrives-heading { color: #7EC8C8; }
-    #pricing .pro-arrives-body    { color: rgba(237,229,213,.8); }
-    #pricing .pro-tag             { color: #7EC8C8; border-color: rgba(126,200,200,.28); background: rgba(126,200,200,.07); }
+    #pricing .pro-arrives-heading { color: #A9D2E8; }
+    #pricing .pro-arrives-body    { color: rgba(244,239,230,.8); }
+    #pricing .pro-tag             { color: #A9D2E8; border-color: rgba(169,210,232,.28); background: rgba(169,210,232,.07); }
 
     /* Fine print */
-    #pricing .pricing-fine { color: rgba(237,229,213,.65); font-size: 12px; }
+    #pricing .pricing-fine { color: rgba(244,239,230,.65); font-size: 12px; }
     .tier-card {
-      background: rgba(237,229,213,.04);
-      border: 1px solid rgba(237,229,213,.08);
+      background: rgba(244,239,230,.04);
+      border: 1px solid rgba(244,239,230,.08);
       padding: 32px 28px 28px;
       position: relative;
       display: flex;
       flex-direction: column;
     }
     .tier-card.tier-free {
-      background: rgba(46,100,100,.14);
-      border-color: rgba(46,100,100,.4);
+      background: rgba(111,168,201,.14);
+      border-color: rgba(111,168,201,.4);
     }
     .tier-card.tier-intel {
-      background: rgba(237,229,213,.04);
-      border-color: rgba(237,229,213,.12);
+      background: rgba(244,239,230,.04);
+      border-color: rgba(244,239,230,.12);
     }
     .tier-card.tier-pro {
-      background: rgba(237,229,213,.02);
-      border-color: rgba(237,229,213,.07);
+      background: rgba(244,239,230,.02);
+      border-color: rgba(244,239,230,.07);
     }
     .tier-eyebrow {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 9px;
       letter-spacing: .16em;
       margin-bottom: 10px;
     }
     .tier-eyebrow-free { color: var(--jade); }
     .tier-eyebrow-intel { color: var(--amber); }
-    .tier-eyebrow-pro { color: rgba(237,229,213,.55); }
+    .tier-eyebrow-pro { color: rgba(244,239,230,.55); }
     .tier-price-line {
       display: flex;
       align-items: baseline;
@@ -1224,7 +1222,7 @@
       margin-bottom: 4px;
     }
     .tier-price-big {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 48px;
       color: var(--bg);
       line-height: 1;
@@ -1232,37 +1230,37 @@
     .tier-price-small {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 13px;
-      color: rgba(237,229,213,.55);
+      color: rgba(244,239,230,.55);
     }
     .tier-price-note {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      color: rgba(237,229,213,.55);
+      color: rgba(244,239,230,.55);
       margin-bottom: 24px;
     }
     .tier-divider {
       height: 1px;
-      background: rgba(237,229,213,.08);
+      background: rgba(244,239,230,.08);
       margin: 20px 0;
     }
     .tier-checklist { display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .tier-check-item { display: flex; align-items: flex-start; gap: 8px; }
     .tier-check-icon-free { color: var(--jade); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
     .tier-check-icon-intel { color: var(--amber); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
-    .tier-check-icon-pro { color: rgba(237,229,213,.3); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+    .tier-check-icon-pro { color: rgba(244,239,230,.3); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
     .tier-check-text {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
-      color: rgba(237,229,213,.55);
+      color: rgba(244,239,230,.55);
       line-height: 1.5;
     }
-    .tier-check-text strong { color: rgba(237,229,213,.8); font-weight: 700; }
+    .tier-check-text strong { color: rgba(244,239,230,.8); font-weight: 700; }
     .tier-cta-wrap { margin-top: 28px; }
     .tier-btn-free {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
       background: var(--jade); color: var(--bg); text-decoration: none;
-      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      border-radius: 12px;
       transition: opacity .2s; cursor: pointer; border: none;
     }
     .tier-btn-free:hover { opacity: .85; }
@@ -1272,24 +1270,24 @@
       margin-top: 10px;
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      color: rgba(237,229,213,.5);
+      color: rgba(244,239,230,.5);
       text-decoration: none;
       transition: color .2s;
     }
-    .tier-waitlist-link:hover { color: rgba(237,229,213,.85); }
+    .tier-waitlist-link:hover { color: rgba(244,239,230,.85); }
 
     .tier-btn-disabled {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
-      background: rgba(202,196,188,.08); color: rgba(237,229,213,.25);
-      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
+      background: rgba(202,196,188,.08); color: rgba(244,239,230,.25);
+      border-radius: 12px;
       cursor: not-allowed; border: none;
     }
     .tier-btn-intel {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
       background: var(--amber); color: var(--bg); text-decoration: none;
-      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      border-radius: 12px;
       transition: opacity .2s; cursor: pointer; border: none;
     }
     .tier-btn-intel:hover { opacity: .85; }
@@ -1298,38 +1296,38 @@
     }
     .tier-plan-alts a {
       font-family: 'IBM Plex Mono', monospace; font-size: 11px;
-      color: rgba(237,229,213,.45); text-decoration: none; transition: color .2s;
+      color: rgba(244,239,230,.45); text-decoration: none; transition: color .2s;
     }
-    .tier-plan-alts a:hover { color: rgba(237,229,213,.8); }
+    .tier-plan-alts a:hover { color: rgba(244,239,230,.8); }
     .tier-btn-outline {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .1em;
-      background: transparent; color: rgba(237,229,213,.5); text-decoration: none;
-      border: 1px solid rgba(237,229,213,.18);
-      clip-path: polygon(0% 0%, calc(100% - 6px) 0%, 100% 6px, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
+      background: transparent; color: rgba(244,239,230,.5); text-decoration: none;
+      border: 1px solid rgba(244,239,230,.18);
+      border-radius: 12px;
       transition: color .2s, border-color .2s;
     }
-    .tier-btn-outline:hover { color: var(--bg); border-color: rgba(237,229,213,.4); }
+    .tier-btn-outline:hover { color: var(--bg); border-color: rgba(244,239,230,.4); }
 
     /* Intelligence sub-options (inside the intel tier card) */
     .intel-options { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
     .intel-option {
       display: flex; justify-content: space-between; align-items: center;
       padding: 8px 10px;
-      background: rgba(237,229,213,.04);
-      border: 1px solid rgba(237,229,213,.08);
+      background: rgba(244,239,230,.04);
+      border: 1px solid rgba(244,239,230,.08);
       position: relative;
     }
     .intel-option.intel-option-best {
-      background: rgba(46,100,100,.12);
-      border-color: rgba(46,100,100,.3);
+      background: rgba(111,168,201,.12);
+      border-color: rgba(111,168,201,.3);
     }
-    .intel-option-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .1em; color: rgba(237,229,213,.45); }
-    .intel-option-price { font-family: 'Bungee', sans-serif; font-size: 16px; color: var(--bg); }
-    .intel-option-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(237,229,213,.3); }
+    .intel-option-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; color: rgba(244,239,230,.45); }
+    .intel-option-price { font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: var(--bg); }
+    .intel-option-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(244,239,230,.3); }
     .intel-option-flag {
       position: absolute; top: -1px; right: 8px;
-      font-family: 'Bungee', sans-serif; font-size: 6px; padding: 2px 6px; letter-spacing: .05em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 6px; padding: 2px 6px; letter-spacing: .05em;
     }
     .intel-option-flag-jade { background: var(--jade); color: var(--bg); }
     .intel-option-flag-amber { background: var(--amber); color: var(--bg); }
@@ -1337,7 +1335,7 @@
     .pricing-fine {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      color: rgba(237,229,213,.28);
+      color: rgba(244,239,230,.28);
       margin-top: 32px;
       line-height: 1.7;
       text-align: center;
@@ -1346,30 +1344,30 @@
     /* Intelligence pricing tablet */
     .pricing-tablet-wrap { display: flex; justify-content: center; margin-top: 56px; }
     .tablet-pricing-content { padding: 14px; }
-    .tablet-pricing-header { font-family: 'Bungee', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); margin-bottom: 10px; }
+    .tablet-pricing-header { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); margin-bottom: 10px; }
     .tablet-pricing-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
     .tablet-price-card {
       background: var(--surface);
       background-image: var(--scanline);
       padding: 10px;
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 0% 100%);
+      border-radius: 10px;
       position: relative;
     }
     .tablet-price-flag {
       position: absolute;
       top: 0; right: 6px;
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 6px;
       padding: 2px 5px;
       background: var(--amber);
       color: var(--bg);
       letter-spacing: .04em;
     }
-    .tablet-price-title { font-family: 'Bungee', sans-serif; font-size: 7px; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
-    .tablet-price-num { font-family: 'Bungee', sans-serif; font-size: 24px; color: var(--amber); line-height: 1; margin-bottom: 2px; }
+    .tablet-price-title { font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .08em; color: var(--muted); margin-bottom: 4px; }
+    .tablet-price-num { font-family: 'Space Grotesk', sans-serif; font-size: 24px; color: var(--amber); line-height: 1; margin-bottom: 2px; }
     .tablet-price-sub { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: var(--muted); margin-bottom: 6px; }
     .tablet-coming-soon {
-      font-family: 'Bungee', sans-serif; font-size: 7px;
+      font-family: 'Space Grotesk', sans-serif; font-size: 7px;
       padding: 3px 6px;
       background: var(--stone);
       color: var(--dim);
@@ -1401,7 +1399,7 @@
     }
     .step { position: relative; text-align: center; }
     .step-num {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 28px;
       color: var(--jade);
       line-height: 1;
@@ -1413,13 +1411,13 @@
       padding: 0 8px;
     }
     .alt .step-num { background: var(--surface); }
-    .step-title { font-family: 'Bungee', sans-serif; font-size: 10px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
+    .step-title { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
     .step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
     /* How It Works tablet */
     .hiw-tablet-wrap { display: flex; justify-content: center; margin-top: 48px; }
     .tablet-onboard-content { padding: 14px; }
-    .tablet-onboard-header { font-family: 'Bungee', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); margin-bottom: 2px; }
+    .tablet-onboard-header { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); margin-bottom: 2px; }
     .tablet-onboard-sub { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); margin-bottom: 10px; }
     .tablet-address-field {
       display: flex;
@@ -1437,10 +1435,10 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       padding: 2px 7px;
-      background: rgba(46,100,100,.1);
+      background: rgba(111,168,201,.1);
       color: var(--jade);
       letter-spacing: .06em;
       margin-bottom: 8px;
@@ -1453,16 +1451,16 @@
     }
     .tablet-property-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
     .tablet-property-item { text-align: center; }
-    .tablet-property-val { font-family: 'Bungee', sans-serif; font-size: 12px; color: var(--ink); line-height: 1; margin-bottom: 2px; }
+    .tablet-property-val { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--ink); line-height: 1; margin-bottom: 2px; }
     .tablet-property-key { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
     .tablet-cta-btn {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 9px;
       padding: 8px;
       background: var(--jade);
       color: var(--bg);
       display: block; text-align: center; letter-spacing: .08em;
-      clip-path: polygon(0% 0%, calc(100% - 5px) 0%, 100% 5px, 100% 100%, 5px 100%, 0% calc(100% - 5px));
+      border-radius: 10px;
     }
 
     /* ─────────────────────────────────────────────
@@ -1478,18 +1476,18 @@
       background: var(--bg);
       background-image: var(--scanline);
       padding: 28px 24px;
-      box-shadow: 0 4px 20px rgba(26,40,64,.06);
+      box-shadow: 0 4px 20px rgba(31,58,82,.06);
     }
-    .pro-card-title { font-family: 'Bungee', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; margin-bottom: 14px; }
+    .pro-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; margin-bottom: 14px; }
     .pro-price-rows { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
     .pro-price-row { display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
     .pro-price-amount { color: var(--jade); font-weight: 700; }
     .pro-commitment {
-      font-family: 'Bungee', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 7px;
       letter-spacing: .06em;
       padding: 2px 7px;
-      background: rgba(46,100,100,.1);
+      background: rgba(111,168,201,.1);
       color: var(--jade);
       display: inline-block;
       margin-bottom: 14px;
@@ -1504,9 +1502,9 @@
       background: var(--surface);
       background-image: var(--scanline);
       border-left: 3px solid var(--jade);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
     }
-    .pro-arrives-heading { font-family: 'Bungee', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); text-transform: uppercase; margin-bottom: 12px; }
+    .pro-arrives-heading { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); text-transform: uppercase; margin-bottom: 12px; }
     .pro-arrives-body { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; max-width: 700px; }
     .pro-tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .pro-tag {
@@ -1514,8 +1512,8 @@
       font-size: 11px;
       color: var(--jade);
       padding: 4px 10px;
-      border: 1px solid rgba(46,100,100,.22);
-      background: rgba(46,100,100,.06);
+      border: 1px solid rgba(111,168,201,.22);
+      background: rgba(111,168,201,.06);
     }
 
     /* ─────────────────────────────────────────────
@@ -1526,9 +1524,9 @@
       background-image: var(--scanline);
       padding: 100px 0;
     }
-    #download .label { color: rgba(237,229,213,.4); }
+    #download .label { color: rgba(244,239,230,.4); }
     #download h2 { color: var(--bg); }
-    #download p { color: rgba(237,229,213,.6); }
+    #download p { color: rgba(244,239,230,.6); }
     .download-inner { text-align: center; max-width: 560px; margin: 0 auto; }
     .download-ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
     .app-badge {
@@ -1537,18 +1535,18 @@
       gap: 10px;
       padding: 12px 20px;
       background: var(--bg);
-      clip-path: polygon(0% 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, 8px 100%, 0% calc(100% - 8px));
+      border-radius: 16px;
       text-decoration: none;
       transition: opacity .2s;
     }
     .app-badge:hover { opacity: .88; }
     .badge-store { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; line-height: 1; }
-    .badge-name { font-family: 'Bungee', sans-serif; font-size: 13px; color: var(--ink); line-height: 1; }
-    .download-fine { font-size: 11px; color: rgba(237,229,213,.35); margin-top: 28px; line-height: 1.7; }
+    .badge-name { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--ink); line-height: 1; }
+    .download-fine { font-size: 11px; color: rgba(244,239,230,.35); margin-top: 28px; line-height: 1.7; }
     .web-app-link {
-      color: rgba(237,229,213,.5);
+      color: rgba(244,239,230,.5);
       text-decoration: none;
-      border-bottom: 1px solid rgba(237,229,213,.2);
+      border-bottom: 1px solid rgba(244,239,230,.2);
       font-size: 12px;
       display: inline-block;
       margin-top: 16px;
@@ -1568,8 +1566,8 @@
     .di-caption { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--dim); letter-spacing: .04em; }
     .di-phone {
       width: 38px; height: 66px;
-      background: rgba(237,229,213,.07);
-      border: 1.5px solid rgba(237,229,213,.14);
+      background: rgba(244,239,230,.07);
+      border: 1.5px solid rgba(244,239,230,.14);
       border-radius: 7px;
       position: relative;
       display: flex; align-items: center; justify-content: center;
@@ -1580,14 +1578,14 @@
       top: 5px; left: 50%;
       transform: translateX(-50%);
       width: 13px; height: 3px;
-      background: rgba(237,229,213,.14);
+      background: rgba(244,239,230,.14);
       border-radius: 2px;
     }
     .di-phone-screen { width: 28px; height: 44px; background: var(--jade); border-radius: 3px; opacity: .28; margin-top: 4px; }
     .di-tablet {
       width: 80px; height: 58px;
-      background: rgba(237,229,213,.07);
-      border: 1.5px solid rgba(237,229,213,.14);
+      background: rgba(244,239,230,.07);
+      border: 1.5px solid rgba(244,239,230,.14);
       border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
       position: relative;
@@ -1598,23 +1596,23 @@
       right: -5px; top: 50%;
       transform: translateY(-50%);
       width: 3px; height: 14px;
-      background: rgba(237,229,213,.1);
+      background: rgba(244,239,230,.1);
       border-radius: 2px;
     }
     .di-tablet-screen { width: 64px; height: 44px; background: var(--jade); border-radius: 3px; opacity: .28; }
     .di-laptop { display: flex; flex-direction: column; align-items: center; }
     .di-laptop-lid {
       width: 90px; height: 56px;
-      background: rgba(237,229,213,.07);
-      border: 1.5px solid rgba(237,229,213,.14);
+      background: rgba(244,239,230,.07);
+      border: 1.5px solid rgba(244,239,230,.14);
       border-radius: 4px 4px 0 0;
       display: flex; align-items: center; justify-content: center;
     }
     .di-laptop-screen { width: 74px; height: 44px; background: var(--jade); border-radius: 2px; opacity: .28; }
     .di-laptop-base {
       width: 96px; height: 8px;
-      background: rgba(237,229,213,.05);
-      border: 1.5px solid rgba(237,229,213,.1);
+      background: rgba(244,239,230,.05);
+      border: 1.5px solid rgba(244,239,230,.1);
       border-top: none;
       border-radius: 0 0 3px 3px;
     }
@@ -1636,7 +1634,7 @@
       margin-bottom: 32px;
     }
     .footer-social { display: flex; flex-direction: column; gap: 12px; }
-    .footer-social-label { font-family: 'Bungee', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--dim); margin-bottom: 4px; }
+    .footer-social-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--dim); margin-bottom: 4px; }
     .footer-social a {
       display: flex;
       align-items: center;
@@ -1815,12 +1813,12 @@
                 <div class="phone-item">
                   <div class="phone-dot" style="background:var(--amber);"></div>
                   <div class="phone-item-text">HVAC filter overdue · 3 months</div>
-                  <div class="phone-badge" style="background:rgba(192,120,64,.15);color:var(--amber);">HIGH</div>
+                  <div class="phone-badge" style="background:rgba(224,168,61,.15);color:var(--amber);">HIGH</div>
                 </div>
                 <div class="phone-item">
                   <div class="phone-dot" style="background:var(--jade);"></div>
                   <div class="phone-item-text">Deck boards loose near steps</div>
-                  <div class="phone-badge" style="background:rgba(46,100,100,.15);color:var(--jade);">MED</div>
+                  <div class="phone-badge" style="background:rgba(111,168,201,.15);color:var(--jade);">MED</div>
                 </div>
                 <div class="phone-item">
                   <div class="phone-dot" style="background:var(--dim);"></div>
@@ -1873,13 +1871,13 @@
                       <div class="laptop-row-dot" style="background:var(--amber);"></div>
                       <div class="laptop-row-title">Kitchen renovation</div>
                       <div class="laptop-row-room">Kitchen</div>
-                      <div class="laptop-row-badge" style="background:rgba(192,120,64,.15);color:var(--amber);">HIGH</div>
+                      <div class="laptop-row-badge" style="background:rgba(224,168,61,.15);color:var(--amber);">HIGH</div>
                     </div>
                     <div class="laptop-row">
                       <div class="laptop-row-dot" style="background:var(--jade);"></div>
                       <div class="laptop-row-title">Deck board repair</div>
                       <div class="laptop-row-room">Exterior</div>
-                      <div class="laptop-row-badge" style="background:rgba(46,100,100,.15);color:var(--jade);">MED</div>
+                      <div class="laptop-row-badge" style="background:rgba(111,168,201,.15);color:var(--jade);">MED</div>
                     </div>
                     <div class="laptop-row">
                       <div class="laptop-row-dot" style="background:var(--dim);"></div>
@@ -1891,7 +1889,7 @@
                       <div class="laptop-row-dot" style="background:var(--jade);"></div>
                       <div class="laptop-row-title">Replace water heater</div>
                       <div class="laptop-row-room">Utility</div>
-                      <div class="laptop-row-badge" style="background:rgba(46,100,100,.15);color:var(--jade);">MED</div>
+                      <div class="laptop-row-badge" style="background:rgba(111,168,201,.15);color:var(--jade);">MED</div>
                     </div>
                   </div>
                 </div>
@@ -2134,7 +2132,7 @@
             <p class="intel-feature-sub">→ Parsed: deck boards loose near steps. Priority: High (safety).</p>
           </div>
 
-          <p class="fade-in" style="padding-left:20px;margin-top:12px;font-family:'Bungee',sans-serif;font-size:10px;color:var(--jade);letter-spacing:.06em;">From thought to filed project: under 5 seconds.</p>
+          <p class="fade-in" style="padding-left:20px;margin-top:12px;font-family:'Space Grotesk', sans-serif;font-size:10px;color:var(--jade);letter-spacing:.06em;">From thought to filed project: under 5 seconds.</p>
 
         </div>
 
@@ -2176,21 +2174,21 @@
                 <div class="cap-panel cap-panel-snap">
                   <div class="intel-panel-inner">
                     <div class="intel-pnl-label">QUICK CAPTURE</div>
-                    <div style="margin:8px 12px 10px;background:#1A2840;border-radius:6px;height:110px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+                    <div style="margin:8px 12px 10px;background:#1F3A52;border-radius:6px;height:110px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
                       <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.03) 3px 4px);"></div>
-                      <div style="position:absolute;top:6px;left:6px;width:14px;height:14px;border-top:2px solid rgba(126,200,200,.7);border-left:2px solid rgba(126,200,200,.7);"></div>
-                      <div style="position:absolute;top:6px;right:6px;width:14px;height:14px;border-top:2px solid rgba(126,200,200,.7);border-right:2px solid rgba(126,200,200,.7);"></div>
-                      <div style="position:absolute;bottom:6px;left:6px;width:14px;height:14px;border-bottom:2px solid rgba(126,200,200,.7);border-left:2px solid rgba(126,200,200,.7);"></div>
-                      <div style="position:absolute;bottom:6px;right:6px;width:14px;height:14px;border-bottom:2px solid rgba(126,200,200,.7);border-right:2px solid rgba(126,200,200,.7);"></div>
+                      <div style="position:absolute;top:6px;left:6px;width:14px;height:14px;border-top:2px solid rgba(169,210,232,.7);border-left:2px solid rgba(169,210,232,.7);"></div>
+                      <div style="position:absolute;top:6px;right:6px;width:14px;height:14px;border-top:2px solid rgba(169,210,232,.7);border-right:2px solid rgba(169,210,232,.7);"></div>
+                      <div style="position:absolute;bottom:6px;left:6px;width:14px;height:14px;border-bottom:2px solid rgba(169,210,232,.7);border-left:2px solid rgba(169,210,232,.7);"></div>
+                      <div style="position:absolute;bottom:6px;right:6px;width:14px;height:14px;border-bottom:2px solid rgba(169,210,232,.7);border-right:2px solid rgba(169,210,232,.7);"></div>
                       <div style="text-align:center;">
-                        <div style="font-family:'Bungee',sans-serif;font-size:8px;letter-spacing:.1em;color:rgba(126,200,200,.8);margin-bottom:4px;">ANALYZING PHOTO</div>
+                        <div style="font-family:'Space Grotesk', sans-serif;font-size:8px;letter-spacing:.1em;color:rgba(169,210,232,.8);margin-bottom:4px;">ANALYZING PHOTO</div>
                         <div style="display:flex;gap:3px;justify-content:center;">
-                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.8);animation:none;"></span>
-                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.5);"></span>
-                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(126,200,200,.3);"></span>
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(169,210,232,.8);animation:none;"></span>
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(169,210,232,.5);"></span>
+                          <span style="width:5px;height:5px;border-radius:50%;background:rgba(169,210,232,.3);"></span>
                         </div>
                       </div>
-                      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(46,100,100,.6);border:1px solid rgba(126,200,200,.3);padding:3px 10px;font-family:'Bungee',sans-serif;font-size:7px;letter-spacing:.06em;color:rgba(126,200,200,.9);white-space:nowrap;">ISSUE DETECTED</div>
+                      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(111,168,201,.6);border:1px solid rgba(169,210,232,.3);padding:3px 10px;font-family:'Space Grotesk', sans-serif;font-size:7px;letter-spacing:.06em;color:rgba(169,210,232,.9);white-space:nowrap;">ISSUE DETECTED</div>
                     </div>
                     <div class="capture-confirm-card" style="margin:0 12px;">
                       <div class="capture-confirm-title">AI PHOTO ANALYSIS</div>
@@ -2212,7 +2210,7 @@
                   <div class="intel-panel-inner">
                     <div class="intel-pnl-label">QUICK CAPTURE</div>
                     <div style="margin:8px 12px 10px;background:var(--surface);background-image:var(--scanline);border-radius:4px;padding:10px;border:1px solid var(--stone);">
-                      <div style="font-size:9px;color:var(--muted);margin-bottom:6px;font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;">WHAT DID YOU NOTICE?</div>
+                      <div style="font-size:9px;color:var(--muted);margin-bottom:6px;font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.06em;">WHAT DID YOU NOTICE?</div>
                       <div style="font-size:11px;color:var(--ink);line-height:1.5;font-family:'IBM Plex Mono',monospace;">deck boards loose near steps — a couple feel spongy when you step on them<span style="display:inline-block;width:1px;height:11px;background:var(--jade);vertical-align:middle;margin-left:1px;"></span></div>
                     </div>
                     <div class="capture-confirm-card" style="margin:0 12px;">
@@ -2322,16 +2320,16 @@
                       <div class="laptop-section-title">SPACES</div>
                       <div style="font-size:7.5px;color:var(--muted);margin-bottom:6px;">Structures have rooms. Grounds have areas.</div>
                       <div style="display:flex;flex-direction:column;gap:4px;">
-                        <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0;">STRUCTURES</div>
+                        <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0;">STRUCTURES</div>
                         <div class="mem-space-row" style="padding-left:8px;">
-                          <span class="mem-space-name">Main House <span style="font-family:'Bungee',sans-serif;font-size:6.5px;padding:1px 4px;border:1px solid var(--jade);color:var(--jade);margin-left:4px;">PRIMARY</span></span>
+                          <span class="mem-space-name">Main House <span style="font-family:'Space Grotesk', sans-serif;font-size:6.5px;padding:1px 4px;border:1px solid var(--jade);color:var(--jade);margin-left:4px;">PRIMARY</span></span>
                           <span class="mem-space-detail">has rooms</span>
                         </div>
                         <div class="mem-space-row" style="padding-left:8px;">
                           <span class="mem-space-name">Detached Garage</span>
                           <span class="mem-space-detail">has rooms</span>
                         </div>
-                        <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0 3px;">GROUNDS</div>
+                        <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.06em;color:var(--jade);padding:3px 0 3px;">GROUNDS</div>
                         <div class="mem-space-row" style="padding-left:8px;font-style:italic;">
                           <span class="mem-space-detail" style="color:var(--dim);">No outdoor zones added yet.</span>
                         </div>
@@ -2556,12 +2554,12 @@
                     <div class="plan-task-row">
                       <div class="plan-task-date">May 8</div>
                       <div class="plan-task-body"><div class="plan-task-title">Power wash deck surface</div><div class="plan-task-cat">Step 1 of 4</div></div>
-                      <div class="plan-task-status plan-status-sched" style="background:rgba(46,100,100,.1);color:var(--jade);">DONE</div>
+                      <div class="plan-task-status plan-status-sched" style="background:rgba(111,168,201,.1);color:var(--jade);">DONE</div>
                     </div>
                     <div class="plan-task-row">
                       <div class="plan-task-date">May 10</div>
                       <div class="plan-task-body"><div class="plan-task-title">Let dry 48 hours</div><div class="plan-task-cat">Step 2 of 4</div></div>
-                      <div class="plan-task-status plan-status-sched" style="background:rgba(46,100,100,.1);color:var(--jade);">DONE</div>
+                      <div class="plan-task-status plan-status-sched" style="background:rgba(111,168,201,.1);color:var(--jade);">DONE</div>
                     </div>
                     <div class="plan-task-row">
                       <div class="plan-task-date">May 12</div>
@@ -2594,7 +2592,7 @@
                       <div class="plan-budget-nums"><span>$2,140 spent</span><span>$2,660 left</span></div>
                     </div>
                     <div style="display:flex;flex-direction:column;gap:5px;padding:0 2px;">
-                      <div style="font-family:'Bungee',sans-serif;font-size:7.5px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px;">BY CATEGORY</div>
+                      <div style="font-family:'Space Grotesk', sans-serif;font-size:7.5px;letter-spacing:.08em;color:var(--muted);margin-bottom:2px;">BY CATEGORY</div>
                       <div class="plan-task-row" style="padding:5px 8px;">
                         <div class="plan-task-body"><div class="plan-task-title">Exterior</div></div>
                         <div class="plan-task-amt">$1,200</div>
@@ -2700,7 +2698,7 @@
                         <circle cx="55" cy="55" r="44" fill="none" stroke="var(--jade)" stroke-width="7"
                           stroke-dasharray="204.8 276.5" stroke-linecap="round"
                           transform="rotate(-90 55 55)"/>
-                        <text x="55" y="60" text-anchor="middle" font-family="Bungee, sans-serif" font-size="28" fill="#1A2840">74</text>
+                        <text x="55" y="60" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="28" fill="#1F3A52">74</text>
                       </svg>
                       <div class="score-ring-tier">WELL-MAINTAINED</div>
                       <div class="score-ring-delta">+3 this week</div>
@@ -2727,8 +2725,8 @@
                         <span class="intel-dim-val">76</span>
                       </div>
                     </div>
-                    <div style="margin:12px 12px 0;padding:8px 10px;background:rgba(46,100,100,.08);border-left:2px solid var(--jade);">
-                      <div style="font-family:'Bungee',sans-serif;font-size:8px;letter-spacing:.06em;color:var(--jade);margin-bottom:3px;">NEXT IMPACT</div>
+                    <div style="margin:12px 12px 0;padding:8px 10px;background:rgba(111,168,201,.08);border-left:2px solid var(--jade);">
+                      <div style="font-family:'Space Grotesk', sans-serif;font-size:8px;letter-spacing:.06em;color:var(--jade);margin-bottom:3px;">NEXT IMPACT</div>
                       <div style="font-size:8px;color:var(--muted);">Complete "Replace HVAC filter" → score +4</div>
                     </div>
                   </div>
@@ -2739,7 +2737,7 @@
                   <div class="intel-panel-inner">
                     <div class="intel-pnl-label">RISK ASSESSMENT</div>
                     <div style="padding:10px 12px 0;">
-                      <div style="font-family:'Bungee',sans-serif;font-size:9px;letter-spacing:.06em;color:var(--ink);margin-bottom:2px;">SEAL DECK BEFORE RAIN</div>
+                      <div style="font-family:'Space Grotesk', sans-serif;font-size:9px;letter-spacing:.06em;color:var(--ink);margin-bottom:2px;">SEAL DECK BEFORE RAIN</div>
                       <div style="font-size:8px;color:var(--muted);margin-bottom:10px;">Exterior · Deferred 6 weeks</div>
                       <div class="intel-risk-section-label">COST IF YOU WAIT</div>
                       <div class="intel-risk-row">
@@ -2939,7 +2937,7 @@
                       </div>
                     </div>
                     <div style="padding:0 12px;">
-                      <div style="font-family:'Bungee',sans-serif;font-size:8px;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">SEPTEMBER TASKS</div>
+                      <div style="font-family:'Space Grotesk', sans-serif;font-size:8px;letter-spacing:.06em;color:var(--muted);margin-bottom:6px;">SEPTEMBER TASKS</div>
                       <div class="intel-plan-task-row">
                         <div class="intel-plan-task-dot" style="background:var(--amber);"></div>
                         <span>Seal deck before rain season</span>
@@ -3039,7 +3037,7 @@
                 <div class="intel-option-label">MONTHLY</div>
                 <div class="intel-option-note">cancel anytime</div>
               </div>
-              <div class="intel-option-price">$2.99<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
+              <div class="intel-option-price">$2.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
             </div>
             <div class="intel-option intel-option-best">
               <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
@@ -3047,7 +3045,7 @@
                 <div class="intel-option-label">ANNUAL</div>
                 <div class="intel-option-note">~$2/month</div>
               </div>
-              <div class="intel-option-price">$24<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
+              <div class="intel-option-price">$24<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
             </div>
             <div class="intel-option">
               <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
@@ -3106,7 +3104,7 @@
                   <div class="intel-option-label">MONTHLY</div>
                   <div class="intel-option-note">cancel anytime</div>
                 </div>
-                <div class="intel-option-price">+$4.99<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
+                <div class="intel-option-price">+$4.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
               </div>
               <div class="intel-option intel-option-best">
                 <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
@@ -3114,7 +3112,7 @@
                   <div class="intel-option-label">ANNUAL</div>
                   <div class="intel-option-note">~$3.25/month</div>
                 </div>
-                <div class="intel-option-price">+$39<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
+                <div class="intel-option-price">+$39<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
               </div>
               <div class="intel-option">
                 <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
@@ -3141,7 +3139,7 @@
                   <div class="intel-option-label">MONTHLY</div>
                   <div class="intel-option-note">cancel anytime</div>
                 </div>
-                <div class="intel-option-price">+$9.99<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
+                <div class="intel-option-price">+$9.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
               </div>
               <div class="intel-option intel-option-best">
                 <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
@@ -3149,7 +3147,7 @@
                   <div class="intel-option-label">ANNUAL</div>
                   <div class="intel-option-note">~$6.60/month</div>
                 </div>
-                <div class="intel-option-price">+$79<span style="font-size:10px;color:rgba(237,229,213,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
+                <div class="intel-option-price">+$79<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
               </div>
               <div class="intel-option">
                 <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
