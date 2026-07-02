@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Eave — Home upkeep without the overwhelm</title>
-  <meta name="description" content="Notice something at home? Tell Eave by voice, photo, or note and it comes back with a plan — cost, materials, and whether to DIY or hire.">
+  <meta name="description" content="Eave is your home's memory. Snap anything — a furnace, a leak, a receipt — and it keeps the specs, schedules the upkeep, and reminds you before it matters. Free for one home, works in any browser.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -45,7 +45,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Eave",
-    "description": "Home upkeep without the overwhelm. Track projects, appliances, contractors, and maintenance in one place.",
+    "description": "Home upkeep without the overwhelm. Eave is your home's memory: capture projects by voice or photo, track systems and appliances with auto-researched specs and warranty alerts, and get reminders with one-tap actions before things matter. Free for one home; Eave Intelligence adds an AI upkeep plan, seasonal prep, and ranked priorities.",
     "applicationCategory": "LifestyleApplication",
     "operatingSystem": "iOS, Android, Web",
     "url": "https://eavehome.app",
@@ -276,6 +276,20 @@
     }    /* ── Waitlist email capture form ── */
     .waitlist-form { width: 100%; max-width: 480px; }
     .waitlist-row { display: flex; gap: 8px; }
+    /* App-store "coming soon" badges + browser-first CTA */
+    .store-badges { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 16px 8px 12px;
+      background: var(--ink); border-radius: 10px;
+      opacity: .82; cursor: default; user-select: none;
+    }
+    .store-badge svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .store-badge-text { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+    .store-badge-soon { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .08em; color: rgba(244,239,230,.55); text-transform: uppercase; }
+    .store-badge-name { font-size: 13px; font-weight: 600; color: var(--bg); }
+    .store-badges-dark .store-badge { background: rgba(255,255,255,.1); border: 1px solid rgba(244,239,230,.18); }
+    .cta-fine { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--slate); margin-top: 10px; }
     .waitlist-input {
       flex: 1;
       font-family: 'IBM Plex Mono', monospace;
@@ -1106,7 +1120,7 @@
   <!-- ═══ NAV ═══ -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="wordmark">eave</a>
+      <a href="/" class="wordmark">eave</a>
       <ul class="nav-links">
         <li><a href="#how-it-works">How it works</a></li>
         <li><a href="#capture">Features</a></li>
@@ -1115,7 +1129,7 @@
       </ul>
       <div class="nav-right">
         <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="#download" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Get early access →</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -1129,7 +1143,7 @@
     <a href="#pricing" onclick="closeMobile()">Pricing</a>
     <a href="#pro" onclick="closeMobile()">Pro</a>
     <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
-    <a href="#download" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Get early access →</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
 
   <!-- ═══ HERO ═══ -->
@@ -1148,16 +1162,19 @@
           <p class="hero-eyebrow">HOME UPKEEP WITHOUT THE OVERWHELM</p>
           <h1 class="hero-headline">The easy way<br>to keep up<br>with your home.</h1>
           <p class="hero-sub">Eave is your home upkeep assistant. It makes it easy to capture and remember the details behind every maintenance job and improvement project — and it always knows what needs doing next.</p>
-          <form class="waitlist-form" id="hero-waitlist" style="margin-top:28px;">
-            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
-            <div class="waitlist-row">
-              <input type="email" class="waitlist-input" placeholder="your@email.com" required autocomplete="email">
-              <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
+          <div style="margin-top:28px;">
+            <a href="https://app.eavehome.app" class="btn btn-jade" style="font-size:14px;padding:14px 28px;">Start free in your browser →</a>
+            <p class="cta-fine">No credit card. Your first capture takes about five seconds.</p>
+            <div class="store-badges" aria-label="Native apps coming soon">
+              <span class="store-badge" title="iOS app coming soon">
+                <svg viewBox="0 0 24 24" fill="#F4EFE6" aria-hidden="true"><path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.34-1.96-3.43-2.23-4.18-2.26-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.76-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.44-.06 1.99-.93 3.73-.93 1.74 0 2.23.93 3.76.9 1.55-.03 2.53-1.41 3.48-2.8 1.09-1.61 1.54-3.17 1.57-3.25-.03-.02-3.01-1.16-3.03-4.6zM14.16 4.06c.8-.96 1.33-2.3 1.18-3.64-1.14.05-2.53.76-3.35 1.72-.74.85-1.38 2.21-1.21 3.52 1.28.1 2.58-.65 3.38-1.6z"/></svg>
+                <span class="store-badge-text"><span class="store-badge-soon">Coming soon</span><span class="store-badge-name">App Store</span></span>
+              </span>
+              <span class="store-badge" title="Android app coming soon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#F4EFE6" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1z"/><path fill="#CFC6B8" d="M16.8 15.7l-3.3-3.3v-.2l3.3-3.3.1 0 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2-.1.1z"/><path fill="#E8E1D4" d="M16.9 15.6L13.5 12.2 3.6 22.2c.4.4 1 .4 1.7 0l11.6-6.6z"/><path fill="#FFFFFF" d="M16.9 8.8L5.3 2.2c-.7-.4-1.3-.3-1.7 0l9.9 10 3.4-3.4z" opacity=".9"/></svg>
+                <span class="store-badge-text"><span class="store-badge-soon">Coming soon</span><span class="store-badge-name">Google Play</span></span>
+              </span>
             </div>
-            <p class="waitlist-success" id="hero-success">You're on the list. We'll be in touch soon.</p>
-          </form>
-          <div style="margin-top:14px;">
-            <a href="https://app.eavehome.app" class="hero-web-link">Or use Eave on the web →</a>
           </div>
         </div>
 
@@ -1592,7 +1609,7 @@
         <p class="label">Pricing</p>
         <div class="section-head">
           <h2>Start free.<br>Upgrade when<br>you're ready.</h2>
-          <p>Eave is free for one property — mobile, desktop, and web. Intelligence adds AI when you want it. Pro adds real people when you need them.</p>
+          <p>Eave is free for one property — mobile, desktop, and web. Intelligence is for when you're done worrying: it watches the calendar, the seasons, and your home's parts inventory, and hands you one-tap actions to get your home what it needs.</p>
         </div>
       </div>
 
@@ -1614,7 +1631,7 @@
             </div>
             <div class="tier-check-item">
               <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Appliances</strong> — track model, warranty, and service history</span>
+              <span class="tier-check-text"><strong>Systems &amp; Appliances</strong> — specs auto-researched, warranty alerts, service history</span>
             </div>
             <div class="tier-check-item">
               <span class="tier-check-icon-free">✓</span>
@@ -1634,7 +1651,7 @@
             </div>
             <div class="tier-check-item">
               <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail, Home Depot, Lowe's, smart home</span>
+              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail &amp; calendar today; store &amp; smart-home accounts rolling out</span>
             </div>
           </div>
           <div class="tier-cta-wrap">
@@ -1650,7 +1667,7 @@
             <span class="tier-price-big">$2.99</span>
             <span class="tier-price-small">/mo</span>
           </div>
-          <div class="tier-price-note">makes Eave smarter and more automatic</div>
+          <div class="tier-price-note">the peace of mind of never wondering what's next</div>
           <div class="tier-divider"></div>
           <div class="intel-options">
             <div class="intel-option">
@@ -1792,7 +1809,7 @@
       <!-- Eave Pro subsection -->
       <div id="pro" class="pro-pricing-divider fade-in" style="transition-delay:.15s;">
         <div class="pro-pricing-eyebrow">EAVE PRO — PROFESSIONAL SERVICES</div>
-        <p class="pro-pricing-desc">Want someone else to handle it? Eave Pro pairs your home's data with a certified professional who already knows your property before they arrive. Start with a licensed inspection, add seasonal coordination, or hand upkeep over entirely.</p>
+        <p class="pro-pricing-desc">Want someone else to handle it? Eave Pro pairs your home's data with a certified professional who already knows your property before they arrive — starting with a licensed Home Audit.</p>
       </div>
 
       <div class="pro-grid fade-in" style="transition-delay:.2s;">
@@ -1818,35 +1835,8 @@
         </div>
 
         <div class="pro-card card" style="border-top:3px solid var(--jade);">
-          <div class="pro-card-title">Seasonal Manager</div>
-          <div class="pro-price-rows">
-            <div class="pro-price-row">
-              <span>Annual commitment</span>
-              <span class="pro-price-amount">$149/mo</span>
-            </div>
-          </div>
-          <div class="pro-commitment">MOST POPULAR</div>
-          <div class="pro-desc">Four seasonal check-ins per year. A pro coordinates and schedules local vendors each season. Direct message access. Zero logistics for you.</div>
-        </div>
-
-        <div class="pro-card card">
-          <div class="pro-card-title">Home Manager</div>
-          <div class="pro-price-rows">
-            <div class="pro-price-row">
-              <span>Up to 8 spaces</span>
-              <span class="pro-price-amount">$249/mo</span>
-            </div>
-            <div class="pro-price-row">
-              <span>9 – 15 spaces</span>
-              <span class="pro-price-amount">$349/mo</span>
-            </div>
-            <div class="pro-price-row">
-              <span>16+ spaces</span>
-              <span class="pro-price-amount">$499/mo</span>
-            </div>
-          </div>
-          <div class="pro-commitment">ANNUAL · $599 SETUP FEE</div>
-          <div class="pro-desc">A dedicated pro manages your home's maintenance entirely. Monthly spend recap syncs to your Eave Budget. You set a budget; they execute. $599 setup fee includes a full Home Audit.</div>
+          <div class="pro-card-title">More on the way</div>
+          <div class="pro-desc" style="margin-top:12px;">Seasonal coordination and full home management — a pro who schedules the vendors, handles the logistics, and keeps your budget synced — are coming after Home Audits roll out. Join the waitlist to hear first.</div>
         </div>
 
       </div>
@@ -1886,7 +1876,7 @@
       <div class="download-inner fade-in">
         <p class="label">Get Eave</p>
         <h2 style="font-size:clamp(30px,3.4vw,44px);color:var(--bg);">Start with the one thing<br>that's been nagging you.</h2>
-        <p style="margin-top:16px;">Works in any browser today — native iOS and Android apps are coming soon. Free to start; capture your first project in under a minute.</p>
+        <p style="margin-top:16px;">Works in any browser today — native iOS and Android apps are coming soon. Free to start; capture your first project in under a minute, and let Eave do the remembering from there.</p>
 
         <!-- Real app screens -->
         <div class="cta-phones">
@@ -1904,17 +1894,18 @@
           </div>
         </div>
 
-        <form class="waitlist-form" id="download-waitlist" style="margin:32px auto 0;max-width:440px;">
-          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
-          <div class="waitlist-row">
-            <input type="email" class="waitlist-input waitlist-input-dark" placeholder="your@email.com" required autocomplete="email">
-            <button type="submit" class="btn btn-jade" style="white-space:nowrap;">Get early access →</button>
+        <div style="margin:32px auto 0;">
+          <a href="https://app.eavehome.app" class="btn btn-jade" style="font-size:14px;padding:14px 28px;">Start free in your browser →</a>
+          <div class="store-badges store-badges-dark" style="justify-content:center;" aria-label="Native apps coming soon">
+            <span class="store-badge" title="iOS app coming soon">
+              <svg viewBox="0 0 24 24" fill="#F4EFE6" aria-hidden="true"><path d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.34-1.96-3.43-2.23-4.18-2.26-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.76-1-1.94.03-3.72 1.13-4.72 2.86-2.01 3.49-.51 8.66 1.45 11.49.96 1.39 2.1 2.94 3.6 2.88 1.44-.06 1.99-.93 3.73-.93 1.74 0 2.23.93 3.76.9 1.55-.03 2.53-1.41 3.48-2.8 1.09-1.61 1.54-3.17 1.57-3.25-.03-.02-3.01-1.16-3.03-4.6zM14.16 4.06c.8-.96 1.33-2.3 1.18-3.64-1.14.05-2.53.76-3.35 1.72-.74.85-1.38 2.21-1.21 3.52 1.28.1 2.58-.65 3.38-1.6z"/></svg>
+              <span class="store-badge-text"><span class="store-badge-soon">Coming soon</span><span class="store-badge-name">App Store</span></span>
+            </span>
+            <span class="store-badge" title="Android app coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#F4EFE6" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1z"/><path fill="#CFC6B8" d="M16.8 15.7l-3.3-3.3v-.2l3.3-3.3.1 0 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2-.1.1z"/><path fill="#E8E1D4" d="M16.9 15.6L13.5 12.2 3.6 22.2c.4.4 1 .4 1.7 0l11.6-6.6z"/><path fill="#FFFFFF" d="M16.9 8.8L5.3 2.2c-.7-.4-1.3-.3-1.7 0l9.9 10 3.4-3.4z" opacity=".9"/></svg>
+              <span class="store-badge-text"><span class="store-badge-soon">Coming soon</span><span class="store-badge-name">Google Play</span></span>
+            </span>
           </div>
-          <p class="waitlist-success waitlist-success-dark" id="download-success">You're on the list. We'll be in touch soon.</p>
-        </form>
-
-        <div>
-          <a href="https://app.eavehome.app" class="web-app-link">Use Eave on the web →</a>
         </div>
 
         <p class="download-fine">Free forever: projects, tasks, appliances, spaces, budget tracking, contractor contacts, and your Upkeep Score.<br>Eave Intelligence unlocks AI-powered features — from $2.99/month.</p>
@@ -1927,7 +1918,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="#" class="wordmark" style="font-size:24px;">eave</a>
+          <a href="/" class="wordmark" style="font-size:24px;">eave</a>
           <p class="footer-tagline">Built for homeowners.</p>
         </div>
         <ul class="footer-links">
@@ -2031,8 +2022,8 @@
         }
       });
     }
-    initWaitlist('hero-waitlist', 'hero-success', 'hero');
-    initWaitlist('download-waitlist', 'download-success', 'download');
+    // Waitlist forms replaced by direct app CTAs (store badges are coming-soon placeholders);
+    // initWaitlist stays for any future gated launches.
 
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');

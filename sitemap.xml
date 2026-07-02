@@ -2,8 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eavehome.app/</loc>
+    <lastmod>2026-07-02</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/privacy</loc>
