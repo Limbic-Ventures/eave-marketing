@@ -243,6 +243,12 @@
       background: linear-gradient(90deg, rgba(244,239,230,.70) 0%, rgba(244,239,230,.50) 52%, rgba(244,239,230,.30) 100%);
     }
     #hero .container { position: relative; z-index: 2; }
+    /* Frosted lifestyle backdrops for content sections */
+    .section-photo { position: relative; overflow: hidden; }
+    .section-photo-bg { position: absolute; inset: -24px; z-index: 0; }
+    .section-photo-bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(5px); transform: scale(1.04); }
+    .section-frost { position: absolute; inset: 0; z-index: 1; background: rgba(244,239,230,.90); }
+    .section-photo > .container { position: relative; z-index: 2; }
 
     .hero-grid {
       display: grid;
@@ -1198,7 +1204,11 @@
   </section>
 
   <!-- ═══ PROBLEM ═══ -->
-  <section id="problem" class="alt">
+  <section id="problem" class="alt section-photo">
+    <div class="section-photo-bg" aria-hidden="true">
+      <img src="/images/opt/problem-bg-1400.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="section-frost"></div>
     <div class="container">
       <div class="fade-in">
         <div class="section-head">
@@ -1429,7 +1439,11 @@
   </section>
 
   <!-- ═══ MEMORY ═══ -->
-  <section id="memory">
+  <section id="memory" class="section-photo">
+    <div class="section-photo-bg" aria-hidden="true">
+      <img src="/images/opt/memory-bg-1400.jpg" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="section-frost"></div>
     <div class="container">
       <div class="fade-in" style="margin-bottom:48px;max-width:620px;">
         <p class="label">Memory</p>
@@ -1441,21 +1455,21 @@
 
         <div class="mem2-node nw active" data-mem2="spaces">
           <div class="mem2-node-num">01</div>
-          <div class="mem2-node-title">Spaces &amp; rooms</div>
-          <div class="mem2-node-desc">Snap a room and Eave fills in the materials, an approximate wall color, ceiling height, and flags any visible issues.</div>
+          <div class="mem2-node-title">Spaces &amp; Areas</div>
+          <div class="mem2-node-desc">Structures, yards, and every room inside them. Snap a room and Eave fills in the materials, wall color, ceiling height — and flags visible issues.</div>
         </div>
 
         <div class="mem2-node ne" data-mem2="appliances">
           <div class="mem2-node-num">02</div>
-          <div class="mem2-node-title">Appliances &amp; warranties</div>
-          <div class="mem2-node-desc">Model, install date, warranty, and service history — plus a forecast of when it'll need replacing.</div>
+          <div class="mem2-node-title">Systems &amp; Appliances</div>
+          <div class="mem2-node-desc">Snap a data plate: specs auto-researched (down to the filter size), warranty alerts, service history, and a replacement forecast.</div>
         </div>
 
         <div class="mem2-screen">
           <div class="mem2-device">
 
             <div class="mem2-rec active" data-mem2-rec="spaces">
-              <div class="mem2-rec-label">Room record</div>
+              <div class="mem2-rec-label">Area record · Main House</div>
               <div class="mem2-rec-title">Living Room</div>
               <div class="mem2-field"><span class="mem2-field-k">Floor</span><span class="mem2-field-v">White oak · good</span></div>
               <div class="mem2-field"><span class="mem2-field-k">Wall color</span><span class="mem2-field-v"><span class="mem2-swatch" style="background:#E8E0D5;"></span>~ warm white</span></div>
@@ -1465,7 +1479,7 @@
             </div>
 
             <div class="mem2-rec" data-mem2-rec="appliances">
-              <div class="mem2-rec-label">Appliance</div>
+              <div class="mem2-rec-label">System record · Utility closet</div>
               <div class="mem2-rec-title">Furnace — Carrier 59TP6</div>
               <div class="mem2-field"><span class="mem2-field-k">Installed</span><span class="mem2-field-v">2019</span></div>
               <div class="mem2-field"><span class="mem2-field-k">Warranty</span><span class="mem2-field-v">through 2029</span></div>
@@ -1475,22 +1489,23 @@
             </div>
 
             <div class="mem2-rec" data-mem2-rec="contractors">
-              <div class="mem2-rec-label">Contractor</div>
-              <div class="mem2-rec-title">Rivera Plumbing</div>
-              <div class="mem2-field"><span class="mem2-field-k">Added from</span><span class="mem2-field-v">business card</span></div>
-              <div class="mem2-field"><span class="mem2-field-k">Used on</span><span class="mem2-field-v">Water heater swap</span></div>
-              <div class="mem2-field"><span class="mem2-field-k">Paid</span><span class="mem2-field-v">$1,400 · Mar 2026</span></div>
-              <div class="mem2-field"><span class="mem2-field-k">Rating</span><span class="mem2-field-v">★★★★★</span></div>
-              <span class="mem2-chip mem2-chip-moss">Your own vetted list</span>
+              <div class="mem2-rec-label">Tool kit · Garage</div>
+              <div class="mem2-rec-title">Painting Kit</div>
+              <div class="mem2-field"><span class="mem2-field-k">Items</span><span class="mem2-field-v">12 · 9 in stock</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Linked to</span><span class="mem2-field-v">Hallway repaint</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Missing</span><span class="mem2-field-v">2&quot; angled brush +2</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Last used</span><span class="mem2-field-v">Apr 2026</span></div>
+              <span class="mem2-chip mem2-chip-amber">3 missing items → shopping list</span>
             </div>
 
             <div class="mem2-rec" data-mem2-rec="connected">
-              <div class="mem2-rec-label">Connected sources</div>
-              <div class="mem2-rec-title">3 accounts linked</div>
-              <div class="mem2-field"><span class="mem2-field-k">Gmail</span><span class="mem2-field-v">connected</span></div>
-              <div class="mem2-field"><span class="mem2-field-k">Home Depot</span><span class="mem2-field-v">connected</span></div>
-              <div class="mem2-field"><span class="mem2-field-k">Lowe's</span><span class="mem2-field-v">connected</span></div>
-              <span class="mem2-chip mem2-chip-amber">12 receipts found · review pending</span>
+              <div class="mem2-rec-label">Project record · Kitchen</div>
+              <div class="mem2-rec-title">Kitchen Reno</div>
+              <div class="mem2-field"><span class="mem2-field-k">Status</span><span class="mem2-field-v">In progress</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Budget</span><span class="mem2-field-v">$2,400 est · $1,850 so far</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Photos</span><span class="mem2-field-v">6 attached</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Contractor</span><span class="mem2-field-v">Rivera Plumbing</span></div>
+              <span class="mem2-chip mem2-chip-sky">Feeds 2 recurring tasks this fall</span>
             </div>
 
           </div>
@@ -1498,14 +1513,14 @@
 
         <div class="mem2-node sw" data-mem2="contractors">
           <div class="mem2-node-num">03</div>
-          <div class="mem2-node-title">Contractors you've used</div>
-          <div class="mem2-node-desc">Photograph a business card and Eave files it against the job it did, the date, and what you paid.</div>
+          <div class="mem2-node-title">Tools &amp; Materials</div>
+          <div class="mem2-node-desc">The gear and stock you own — power tools, kits, leftover paint — so you know what you already have before you buy it twice.</div>
         </div>
 
         <div class="mem2-node se" data-mem2="connected">
           <div class="mem2-node-num">04</div>
-          <div class="mem2-node-title">Connected accounts</div>
-          <div class="mem2-node-desc">Link your email and your Amazon, Home Depot, or Lowe's accounts; receipts and purchases import for your review.</div>
+          <div class="mem2-node-title">Projects &amp; Tasks</div>
+          <div class="mem2-node-desc">Every job you've captured, with photos, budget versus actual, and the recurring upkeep it feeds back into your plan.</div>
         </div>
 
       </div>
@@ -1724,95 +1739,29 @@
       </div>
 
       <!-- Eave Intelligence + Multi-Property add-on -->
-      <div class="pro-pricing-divider fade-in" style="transition-delay:.13s;">
-        <div class="pro-pricing-eyebrow">EAVE INTELLIGENCE + MULTI-PROPERTY — ADD-ON</div>
-        <p class="pro-pricing-desc">Already on Intelligence? Add additional properties to your plan. Each property gets its own full Eave experience — projects, memory, upkeep score, and AI features — all under one account.</p>
-      </div>
-
-      <div class="fade-in" style="transition-delay:.14s;">
-        <div class="multiprop-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto 8px;">
-
-          <!-- 2–5 Properties -->
-          <div class="tier-card tier-intel" style="padding:20px 18px;">
-            <div class="tier-eyebrow tier-eyebrow-intel" style="margin-bottom:10px;">2–5 PROPERTIES</div>
-            <div class="tier-price-note" style="margin-bottom:14px;">per additional property</div>
-            <div class="intel-options">
-              <div class="intel-option">
-                <div>
-                  <div class="intel-option-label">MONTHLY</div>
-                  <div class="intel-option-note">cancel anytime</div>
-                </div>
-                <div class="intel-option-price">+$4.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
-              </div>
-              <div class="intel-option intel-option-best">
-                <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
-                <div>
-                  <div class="intel-option-label">ANNUAL</div>
-                  <div class="intel-option-note">~$3.25/month</div>
-                </div>
-                <div class="intel-option-price">+$39<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
-              </div>
-              <div class="intel-option">
-                <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
-                <div>
-                  <div class="intel-option-label">LIFETIME</div>
-                  <div class="intel-option-note">never pay again</div>
-                </div>
-                <div class="intel-option-price">+$69</div>
-              </div>
-            </div>
-            <div class="tier-cta-wrap" style="margin-top:0;">
-              <button class="tier-btn-disabled">COMING SOON</button>
-              <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" class="tier-waitlist-link">Get notified →</a>
-            </div>
-          </div>
-
-          <!-- 6+ Properties -->
-          <div class="tier-card tier-intel" style="padding:20px 18px;">
-            <div class="tier-eyebrow tier-eyebrow-intel" style="margin-bottom:10px;">6+ PROPERTIES</div>
-            <div class="tier-price-note" style="margin-bottom:14px;">per additional property</div>
-            <div class="intel-options">
-              <div class="intel-option">
-                <div>
-                  <div class="intel-option-label">MONTHLY</div>
-                  <div class="intel-option-note">cancel anytime</div>
-                </div>
-                <div class="intel-option-price">+$9.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
-              </div>
-              <div class="intel-option intel-option-best">
-                <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
-                <div>
-                  <div class="intel-option-label">ANNUAL</div>
-                  <div class="intel-option-note">~$6.60/month</div>
-                </div>
-                <div class="intel-option-price">+$79<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
-              </div>
-              <div class="intel-option">
-                <div class="intel-option-flag intel-option-flag-amber">BEST DEAL</div>
-                <div>
-                  <div class="intel-option-label">LIFETIME</div>
-                  <div class="intel-option-note">never pay again</div>
-                </div>
-                <div class="intel-option-price">+$129</div>
-              </div>
-            </div>
-            <div class="tier-cta-wrap" style="margin-top:0;">
-              <button class="tier-btn-disabled">COMING SOON</button>
-              <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" class="tier-waitlist-link">Get notified →</a>
-            </div>
-          </div>
-
-        </div>
-        <p class="pricing-fine fade-in" style="text-align:center;margin-top:8px;transition-delay:.14s;">Requires an active Eave Intelligence subscription · pricing is per additional property, billed at the same interval as Intelligence</p>
-      </div>
-
-      <!-- Eave Pro subsection -->
+      <!-- Add-ons: Multi-Property + Eave Pro, one block -->
       <div id="pro" class="pro-pricing-divider fade-in" style="transition-delay:.15s;">
-        <div class="pro-pricing-eyebrow">EAVE PRO — PROFESSIONAL SERVICES</div>
-        <p class="pro-pricing-desc">Want someone else to handle it? Eave Pro pairs your home's data with a certified professional who already knows your property before they arrive — starting with a licensed Home Audit.</p>
+        <div class="pro-pricing-eyebrow">ADD-ONS — MULTI-PROPERTY &amp; EAVE PRO SERVICES</div>
+        <p class="pro-pricing-desc">Grow Eave when your life does. Add more properties to your Intelligence plan, or pair your home's data with a certified professional who already knows your property before they arrive — starting with a licensed Home Audit.</p>
       </div>
 
       <div class="pro-grid fade-in" style="transition-delay:.2s;">
+
+        <div class="pro-card card">
+          <div class="pro-card-title">Multi-Property</div>
+          <div class="pro-price-rows">
+            <div class="pro-price-row">
+              <span>2–5 properties · each</span>
+              <span class="pro-price-amount">+$39/yr</span>
+            </div>
+            <div class="pro-price-row">
+              <span>6+ properties · each</span>
+              <span class="pro-price-amount">+$79/yr</span>
+            </div>
+          </div>
+          <div class="pro-commitment">ADD-ON TO INTELLIGENCE · COMING SOON</div>
+          <div class="pro-desc">Every property gets its own full Eave — projects, memory, upkeep score, and AI — under one account. Monthly and lifetime options at launch. <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" style="color:var(--jade);">Get notified →</a></div>
+        </div>
 
         <div class="pro-card card">
           <div class="pro-card-title">Home Audit</div>
