@@ -366,197 +366,7 @@
       overflow: hidden;
       background: var(--bg);
     }
-    .phone-screen > img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-    .phone-hero-img {
-      width: 100%;
-      height: 160px;
-      background:
-        linear-gradient(180deg, rgba(14,21,32,.2) 0%, rgba(14,21,32,.6) 100%),
-        linear-gradient(135deg, #7C9E8A 0%, #5A7868 30%, #4A6858 60%, #6B8A6A 100%);
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 12px;
-    }
-    .phone-score-badge {
-      background: rgba(14,21,32,.75);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 6px;
-      padding: 6px 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .score-num {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 22px;
-      color: #C8E89A;
-      line-height: 1;
-    }
-    .score-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 8px;
-      color: rgba(255,255,255,.65);
-      line-height: 1.3;
-    }
-    .phone-body { padding: 10px 10px 0; }
-    .phone-address {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .phone-section-label {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 7px;
-      letter-spacing: .12em;
-      color: var(--jade);
-      margin-bottom: 6px;
-    }
-    .phone-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 8px;
-      background: var(--surface);
-      background-image: var(--scanline);
-      margin-bottom: 4px;
-      border-radius: 10px;
-    }
-    .phone-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .phone-item-text {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 8.5px;
-      color: var(--ink);
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .phone-badge {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 6px;
-      letter-spacing: .06em;
-      padding: 2px 5px;
-      border-radius: 6px;
-    }
-
-    /* ── Laptop ── */
-    .laptop-outer {
-      background: #C0C0C4;
-      border-radius: 10px 10px 0 0;
-      padding: 8px 8px 0;
-      box-shadow: 0 24px 56px rgba(31,58,82,.18);
-    }
-    .laptop-screen-area {
-      background: var(--bg);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .laptop-chin {
-      background: #ADADB1;
-      height: 16px;
-      border-radius: 0 0 8px 8px;
-      position: relative;
-    }
-    .laptop-chin::after {
-      content: '';
-      position: absolute;
-      bottom: 3px; left: 50%;
-      transform: translateX(-50%);
-      width: 48px; height: 4px;
-      background: #9A9A9E;
-      border-radius: 2px;
-    }
-    .laptop-topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 10px;
-      background: var(--surface);
-      background-image: var(--scanline);
-      border-bottom: 1px solid var(--stone);
-    }
-    .laptop-topbar-brand {
-      font-family: 'Sacramento', cursive;
-      font-size: 13px;
-      color: var(--ink);
-    }
-    .laptop-topbar-addr {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 7px;
-      color: var(--muted);
-    }
-    .laptop-body {
-      display: flex;
-    }
-    .laptop-sidebar {
-      background: var(--surface);
-      background-image: var(--scanline);
-      border-right: 1px solid var(--stone);
-      padding: 8px 0;
-      flex-shrink: 0;
-    }
-    .laptop-nav-item {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 8px;
-      color: var(--muted);
-      padding: 5px 10px;
-      white-space: nowrap;
-    }
-    .laptop-nav-item.active {
-      background: var(--bg);
-      color: var(--ink);
-      border-left: 2px solid var(--jade);
-      font-weight: 700;
-    }
-    .laptop-main {
-      flex: 1;
-      padding: 8px;
-      overflow: hidden;
-    }
-    .laptop-section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 8px;
-      letter-spacing: .1em;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    .laptop-filter-row {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 6px;
-    }
-    .laptop-filter-tag {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 6px;
-      letter-spacing: .06em;
-      padding: 2px 5px;
-      background: var(--stone);
-      color: var(--ink);
-    }
-    .laptop-filter-tag.active { background: var(--jade); color: var(--bg); }
-    .laptop-row {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 6px;
-      background: var(--surface);
-      background-image: var(--scanline);
-      margin-bottom: 3px;
-      border-radius: 8px;
-    }
-    .laptop-row-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
-    .laptop-row-title { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--ink); flex: 1; }
-    .laptop-row-room { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: var(--muted); margin-right: 4px; }
-    .laptop-row-badge { font-family: 'Space Grotesk', sans-serif; font-size: 6px; padding: 1px 4px; }
-    /* ── Tablet ── */
+    .phone-screen > img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }    /* ── Tablet ── */
     .tablet-outer {
       background: #18181C;
       border-radius: 16px;
@@ -617,8 +427,7 @@
     /* ─────────────────────────────────────────────
        SOLUTION
     ───────────────────────────────────────────── */
-    #solution .section-head > p { font-size: 17px; line-height: 1.65; }    .laptop-main { position: relative; overflow: hidden; }
-    /* ─────────────────────────────────────────────
+    #solution .section-head > p { font-size: 17px; line-height: 1.65; }    /* ─────────────────────────────────────────────
        PRICING (unified)
     ───────────────────────────────────────────── */
     #pricing {
@@ -1024,7 +833,8 @@
     #download .label { color: rgba(244,239,230,.55); }
     #download h2 { color: var(--bg); }
     #download p { color: rgba(244,239,230,.6); }
-    .download-inner { text-align: center; max-width: 560px; margin: 0 auto; }    .download-fine { font-size: 11px; color: rgba(244,239,230,.35); margin-top: 28px; line-height: 1.7; }
+    .download-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+    .download-fine { font-size: 11px; color: rgba(244,239,230,.35); margin-top: 28px; line-height: 1.7; }
     .web-app-link {
       color: rgba(244,239,230,.5);
       text-decoration: none;
@@ -1035,70 +845,6 @@
       transition: color .2s, border-color .2s;
     }
     .web-app-link:hover { color: var(--bg); border-color: var(--bg); }
-
-    /* Device icons */
-    .device-icons-row {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 24px;
-      margin: 32px 0 8px;
-    }
-    .di-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .di-caption { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--dim); letter-spacing: .04em; }
-    .di-phone {
-      width: 38px; height: 66px;
-      background: rgba(244,239,230,.07);
-      border: 1.5px solid rgba(244,239,230,.14);
-      border-radius: 7px;
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .di-phone::before {
-      content: '';
-      position: absolute;
-      top: 5px; left: 50%;
-      transform: translateX(-50%);
-      width: 13px; height: 3px;
-      background: rgba(244,239,230,.14);
-      border-radius: 2px;
-    }
-    .di-phone-screen { width: 28px; height: 44px; background: var(--jade); border-radius: 3px; opacity: .28; margin-top: 4px; }
-    .di-tablet {
-      width: 80px; height: 58px;
-      background: rgba(244,239,230,.07);
-      border: 1.5px solid rgba(244,239,230,.14);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-    }
-    .di-tablet::after {
-      content: '';
-      position: absolute;
-      right: -5px; top: 50%;
-      transform: translateY(-50%);
-      width: 3px; height: 14px;
-      background: rgba(244,239,230,.1);
-      border-radius: 2px;
-    }
-    .di-tablet-screen { width: 64px; height: 44px; background: var(--jade); border-radius: 3px; opacity: .28; }
-    .di-laptop { display: flex; flex-direction: column; align-items: center; }
-    .di-laptop-lid {
-      width: 90px; height: 56px;
-      background: rgba(244,239,230,.07);
-      border: 1.5px solid rgba(244,239,230,.14);
-      border-radius: 4px 4px 0 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .di-laptop-screen { width: 74px; height: 44px; background: var(--jade); border-radius: 2px; opacity: .28; }
-    .di-laptop-base {
-      width: 96px; height: 8px;
-      background: rgba(244,239,230,.05);
-      border: 1.5px solid rgba(244,239,230,.1);
-      border-top: none;
-      border-radius: 0 0 3px 3px;
-    }
-
     /* ─────────────────────────────────────────────
        FOOTER
     ───────────────────────────────────────────── */
@@ -1178,8 +924,7 @@
       .stat-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
-      .footer-grid > div:first-child { grid-column: 1 / -1; }      .laptop-body { height: calc(200px - 29px) !important; }
-
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
       /* Multi-Property pricing: single column */
       .multiprop-grid {
         grid-template-columns: 1fr !important;
@@ -2140,7 +1885,7 @@
     <div class="container">
       <div class="download-inner fade-in">
         <p class="label">Get Eave</p>
-        <h2 style="font-size:clamp(32px,4vw,52px);color:var(--bg);">Start with the one thing<br>that's been nagging you.</h2>
+        <h2 style="font-size:clamp(30px,3.4vw,44px);color:var(--bg);">Start with the one thing<br>that's been nagging you.</h2>
         <p style="margin-top:16px;">Works in any browser today — native iOS and Android apps are coming soon. Free to start; capture your first project in under a minute.</p>
 
         <!-- Real app screens -->
