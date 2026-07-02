@@ -1099,9 +1099,12 @@
     .wn-tl-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .wn-tl-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); }
     .wn-tl-track { display: flex; gap: 6px; }
-    .wn-tl-seg { flex: 1; text-align: center; padding: 12px 6px; border-radius: 12px; background: var(--surface); border: 1.5px solid transparent; }
+    .wn-tl-seg { flex: 1; text-align: center; padding: 12px 6px; border-radius: 12px; background: var(--surface); border: 1.5px solid transparent; cursor: pointer; transition: border-color .18s, background .18s, transform .18s; }
+    .wn-tl-seg:hover { transform: translateY(-2px); }
     .wn-tl-seg.now { border-color: var(--jade); background: var(--bg); }
     .wn-tl-seg.next { border-color: var(--amber); }
+    .wn-tl-seg.active { border-color: var(--ink); background: var(--bg); box-shadow: 0 6px 18px rgba(31,58,82,.10); }
+    .wn-tl-prep { transition: opacity .18s; }
     .wn-tl-season { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
     .wn-tl-months { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--dim); margin-top: 3px; }
     .wn-tl-badge { display: inline-block; margin-top: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; }
@@ -1584,30 +1587,30 @@
           <span class="wn-tag wn-tag-intel">Intelligence</span>
         </div>
         <div class="wn-tl-track">
-          <div class="wn-tl-seg">
+          <div class="wn-tl-seg" data-season="spring" role="button" tabindex="0" aria-label="Show spring prep">
             <div class="wn-tl-season">Spring</div>
             <div class="wn-tl-months">Mar–May</div>
           </div>
-          <div class="wn-tl-seg now">
+          <div class="wn-tl-seg now" data-season="summer" role="button" tabindex="0" aria-label="Show summer prep">
             <div class="wn-tl-season">Summer</div>
             <div class="wn-tl-months">Jun–Aug</div>
             <span class="wn-tl-badge wn-tl-badge-now">You are here</span>
           </div>
-          <div class="wn-tl-seg next">
+          <div class="wn-tl-seg next active" data-season="fall" role="button" tabindex="0" aria-label="Show fall prep">
             <div class="wn-tl-season">Fall</div>
             <div class="wn-tl-months">Sep–Nov</div>
             <span class="wn-tl-badge wn-tl-badge-next">Prep in ~2 wks</span>
           </div>
-          <div class="wn-tl-seg">
+          <div class="wn-tl-seg" data-season="winter" role="button" tabindex="0" aria-label="Show winter prep">
             <div class="wn-tl-season">Winter</div>
             <div class="wn-tl-months">Dec–Feb</div>
           </div>
         </div>
-        <div class="wn-tl-prep">
-          <img class="wn-tl-prep-photo" src="/images/opt/season-fall.webp" width="520" height="299" alt="A home in autumn" loading="lazy" decoding="async">
+        <div class="wn-tl-prep" id="wn-tl-prep">
+          <img class="wn-tl-prep-photo" id="wn-tl-prep-photo" src="/images/opt/season-fall.webp" width="520" height="299" alt="A home in autumn" loading="lazy" decoding="async">
           <div class="wn-tl-prep-body">
-            <span class="wn-tl-prep-label">Your fall prep</span>
-            <div class="wn-tl-prep-list">Clear the gutters before leaf-fall&nbsp;&nbsp;·&nbsp;&nbsp;Service the furnace before the first freeze&nbsp;&nbsp;·&nbsp;&nbsp;Seal the deck ahead of the rain</div>
+            <span class="wn-tl-prep-label" id="wn-tl-prep-label">Your fall prep</span>
+            <div class="wn-tl-prep-list" id="wn-tl-prep-list">Clear the gutters before leaf-fall&nbsp;&nbsp;·&nbsp;&nbsp;Service the furnace before the first freeze&nbsp;&nbsp;·&nbsp;&nbsp;Seal the deck ahead of the rain</div>
           </div>
         </div>
         <div class="wn-tl-foot">Built from your actual appliances, history, and location — not a generic checklist. Zoom out for the full 12-month plan, refreshed as things change.</div>
@@ -1936,6 +1939,38 @@
         const rec = document.querySelector('.mem2-rec[data-mem2-rec="' + key + '"]');
         if (rec) rec.classList.add('active');
       });
+    });
+
+    // Season timeline switcher
+    const SEASON_PREP = {
+      spring: { label: 'Your spring prep', photo: '/images/opt/season-spring-520.jpg', alt: 'A home in spring',
+        list: 'Spring-start the irrigation and walk every zone&nbsp;&nbsp;·&nbsp;&nbsp;Service the AC before the first heat wave&nbsp;&nbsp;·&nbsp;&nbsp;Check the roof and foundation after winter' },
+      summer: { label: 'Your summer prep', photo: '/images/opt/season-summer-520.jpg', alt: 'A home in summer',
+        list: 'Flush the water heater&nbsp;&nbsp;·&nbsp;&nbsp;Deep-clean the dryer vent&nbsp;&nbsp;·&nbsp;&nbsp;Re-caulk and touch up exterior paint in the dry window' },
+      fall: { label: 'Your fall prep', photo: '/images/opt/season-fall.webp', alt: 'A home in autumn',
+        list: 'Clear the gutters before leaf-fall&nbsp;&nbsp;·&nbsp;&nbsp;Service the furnace before the first freeze&nbsp;&nbsp;·&nbsp;&nbsp;Seal the deck ahead of the rain' },
+      winter: { label: 'Your winter prep', photo: '/images/opt/season-winter-520.jpg', alt: 'A home in winter',
+        list: 'Test GFCI breakers and smoke detectors&nbsp;&nbsp;·&nbsp;&nbsp;Watch gutters and rooflines after storms&nbsp;&nbsp;·&nbsp;&nbsp;Line up next year&#8217;s big projects while pros still have openings' }
+    };
+    document.querySelectorAll('.wn-tl-seg').forEach(seg => {
+      const activate = () => {
+        const s = SEASON_PREP[seg.dataset.season];
+        if (!s) return;
+        document.querySelectorAll('.wn-tl-seg').forEach(x => x.classList.remove('active'));
+        seg.classList.add('active');
+        const prep = document.getElementById('wn-tl-prep');
+        prep.style.opacity = '0';
+        setTimeout(() => {
+          const photo = document.getElementById('wn-tl-prep-photo');
+          photo.src = s.photo;
+          photo.alt = s.alt;
+          document.getElementById('wn-tl-prep-label').textContent = s.label;
+          document.getElementById('wn-tl-prep-list').innerHTML = s.list;
+          prep.style.opacity = '1';
+        }, 180);
+      };
+      seg.addEventListener('click', activate);
+      seg.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); } });
     });
 
     // Waitlist form handler
