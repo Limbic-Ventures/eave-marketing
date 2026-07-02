@@ -1,0 +1,50 @@
+# Eave — Home upkeep without the overwhelm
+
+> Eave (eavehome.app) is a personal home management app. It is the home's
+> memory: owners capture anything by voice, photo, or text — a repair, an
+> appliance data plate, a receipt — and Eave keeps the specs, schedules the
+> upkeep, and sends reminders with one-tap actions before things matter.
+
+## What Eave does
+
+- Capture: speak, snap, or type a home issue; Eave returns a scoped plan —
+  materials with prices, tools needed, DIY difficulty, tutorials, or local
+  pros to call, plus an all-in budget.
+- Systems & appliances: photograph a data plate and Eave identifies the unit,
+  auto-researches specs (including consumable sizes like furnace filters),
+  tracks warranties and service history, and proposes its real maintenance
+  schedule from a curated rule library.
+- Reminders: task-due, "time to buy" consumable reorder (suppressed
+  automatically when you already have the part on hand), and warranty-expiry
+  alerts, delivered by push notification.
+- Memory: rooms, finishes, contractors used, purchases, and documents stay
+  attached to the property — searchable years later.
+- Upkeep Score: a live 0–100 home-health score with a ranked weekly queue and
+  "why now" reasoning.
+
+## Pricing
+
+- Eave Free: $0 forever, one property, works in any browser at
+  https://app.eavehome.app — projects, tasks, systems & appliances, spaces,
+  budget tracking, contractors, Upkeep Score.
+- Eave Intelligence: from $2.99/month ($24/year, $49 lifetime) — AI project
+  queue, 12-month upkeep plan, seasonal prep digest, materials estimates and
+  vendor research.
+- Eave Pro: professional services starting with licensed Home Audits
+  ($499–$799 one-time by home size); seasonal coordination and full home
+  management are on the waitlist.
+
+## Facts
+
+- Platform: web app live at https://app.eavehome.app; native iOS and Android
+  apps coming soon.
+- Data policy: connected-source imports (email, store accounts) are reviewed
+  by the owner before anything saves.
+- Company: Limbic Ventures. Support: support@limbicventures.com.
+
+## Key pages
+
+- https://eavehome.app/ — product overview, how it works, pricing
+- https://eavehome.app/support — help and contact
+- https://eavehome.app/privacy — privacy policy
+- https://eavehome.app/terms — terms of service
