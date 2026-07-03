@@ -45,6 +45,14 @@
 ## Key pages
 
 - https://eavehome.app/ — product overview, how it works, pricing
-- https://eavehome.app/support — help and contact
+- https://eavehome.app/support — support hub: help topics, tutorials, contact
+- https://eavehome.app/support/getting-started — what Eave is, what it costs,
+  and setting up your home (property profile, spaces, appliances, Home Score)
+- https://eavehome.app/support/using-eave — AI Capture, room scanning,
+  connected sources, shopping lists, seasonal maintenance, projects
+- https://eavehome.app/support/data-privacy — what Eave reads and doesn't,
+  row-level security, data ownership, export and deletion
+- https://eavehome.app/support/billing — plans, subscription management,
+  refunds
 - https://eavehome.app/privacy — privacy policy
 - https://eavehome.app/terms — terms of service
