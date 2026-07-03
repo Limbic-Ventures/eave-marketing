@@ -242,6 +242,63 @@
     .section-header { margin-bottom: 40px; }
     .section-header h2 { font-size: 22px; margin-top: 8px; }
 
+    /* ── TOPIC CARDS ── */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .topic-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--stone);
+      border-radius: var(--chamfer);
+      padding: 26px 28px;
+      text-decoration: none;
+      transition: border-color .2s, transform .2s;
+    }
+    .topic-card:hover { border-color: var(--jade); transform: translateY(-2px); }
+    .topic-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .topic-card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .topic-card-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .topic-card-links li {
+      font-size: 12px;
+      color: var(--muted);
+      padding-left: 14px;
+      position: relative;
+    }
+    .topic-card-links li::before {
+      content: "·";
+      position: absolute;
+      left: 2px;
+      color: var(--jade);
+    }
+    .topic-card-more {
+      margin-top: auto;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: var(--jade);
+    }
+
     /* ── FAQ ACCORDION ── */
     .faq-group { margin-bottom: 40px; }
     .faq-group:last-child { margin-bottom: 0; }
@@ -595,8 +652,7 @@
   <!-- ── SUB-NAV ── -->
   <div class="sub-nav">
     <div class="sub-nav-inner">
-      <a href="#faqs" class="active">FAQs</a>
-      <a href="#knowledge-base">Knowledge Base</a>
+      <a href="#topics" class="active">Help Topics</a>
       <a href="#tutorials">Tutorials</a>
       <a href="#submit">Submit an Issue</a>
     </div>
@@ -612,304 +668,67 @@
   </div>
 
   <!-- ══════════════════════════════════════════ -->
-  <!-- SECTION 1: FAQs                           -->
+  <!-- SECTION 1: Help Topics                    -->
   <!-- ══════════════════════════════════════════ -->
-  <section id="faqs" class="support-section">
+  <section id="topics" class="support-section">
     <div class="container">
       <div class="section-header">
         <p class="label">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-          FAQs
+          Help Topics
         </p>
-        <h2>Common questions</h2>
+        <h2>Browse by topic</h2>
       </div>
 
-      <!-- Getting Started -->
-      <div class="faq-group">
-        <div class="faq-group-label">Getting Started</div>
+      <div class="topic-grid">
 
-        <div class="faq-item">
-          <button class="faq-trigger">
-            What is Eave?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Eave is your home's memory. It tracks your property, appliances, rooms, projects, and maintenance in one place, and uses AI to turn a quick note or photo into organized, actionable home records.</div>
-        </div>
+        <a class="topic-card" href="/support/getting-started">
+          <div class="topic-card-title">Getting Started</div>
+          <p class="topic-card-desc">What Eave is, what it costs, and setting up your home — property profile, spaces and rooms, appliances, and your Home Score.</p>
+          <ul class="topic-card-links">
+            <li>What is Eave?</li>
+            <li>Do I need to download an app?</li>
+            <li>How much does Eave cost?</li>
+            <li>Creating your property profile</li>
+          </ul>
+          <span class="topic-card-more">View all →</span>
+        </a>
 
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Do I need to download an app?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">No. Eave runs in your browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon.</div>
-        </div>
+        <a class="topic-card" href="/support/using-eave">
+          <div class="topic-card-title">Using Eave</div>
+          <p class="topic-card-desc">AI Capture, room scanning, connected sources, shopping lists, seasonal maintenance, and managing projects.</p>
+          <ul class="topic-card-links">
+            <li>How does AI Capture work?</li>
+            <li>How does photo scanning work?</li>
+            <li>How do Connected Sources work?</li>
+            <li>Resolution paths: DIY, Learn, or Hire</li>
+          </ul>
+          <span class="topic-card-more">View all →</span>
+        </a>
 
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How much does Eave cost?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Eave is free for one property, forever. Eave Intelligence — the AI upkeep plan, seasonal prep, and ranked priorities — starts at $2.99/month ($24/year, or $49 lifetime). Eave Pro adds professional services like licensed Home Audits. See <a href="/#pricing">Pricing</a> for current details.</div>
-        </div>
+        <a class="topic-card" href="/support/data-privacy">
+          <div class="topic-card-title">Data &amp; Privacy</div>
+          <p class="topic-card-desc">What Eave reads (and refuses to read), how your records are protected, and how to export or delete everything.</p>
+          <ul class="topic-card-links">
+            <li>Is my data private?</li>
+            <li>What does Eave read from my email?</li>
+            <li>Can I export my home data?</li>
+            <li>How do I delete my account?</li>
+          </ul>
+          <span class="topic-card-more">View all →</span>
+        </a>
 
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Is Eave available outside the US?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">The core app works anywhere. Some data enrichment (property records, risk data) is US-only for now.</div>
-        </div>
-      </div>
-
-      <!-- Using Eave -->
-      <div class="faq-group">
-        <div class="faq-group-label">Using Eave</div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How does AI Capture work?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Speak or type a project description in the Capture tab. Eave's AI extracts the title, room, category, priority, estimated cost, and whether a permit is likely required — then adds it to your project queue for review.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How does photo scanning work?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">In the Memory tab, open any room and tap Scan Room. The photo uploads to secure storage, then AI analyzes it and auto-fills floor material, wall color, ceiling height, and flags visible issues. You can edit anything it gets wrong.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            What's the difference between a Space and a Room?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">A Space is a distinct structure on your property — Main House, Detached Garage, ADU. Rooms live inside Spaces. The Memory Builder documents every room within each space.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How do Connected Sources work?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Once you connect a source (like Gmail or a retailer), Eave scans for home-related emails and purchases. Nothing saves automatically — you review and confirm each imported item first.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Can I add more than one property?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Multi-property is coming soon as an add-on to Eave Intelligence — each additional property (2–5) gets its own full Eave at +$39/yr, and 6+ properties is Eave Commercial. <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist">Get notified</a> when it launches.</div>
-        </div>
-      </div>
-
-      <!-- Data & Privacy -->
-      <div class="faq-group">
-        <div class="faq-group-label">Data &amp; Privacy</div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Is my data private?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Can I export my home data?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How do I delete my account?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Go to Settings → Account → Delete Account, or email us and we'll handle it. Deletion removes all your records permanently.</div>
-        </div>
-      </div>
-
-      <!-- Billing -->
-      <div class="faq-group">
-        <div class="faq-group-label">Billing</div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            How do I manage my subscription?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">Settings → Membership shows your plan and billing. You can upgrade, downgrade, or cancel anytime.</div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-trigger">
-            Do you offer refunds?
-            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-body">If something's not right, email us within 14 days of a charge and we'll make it right.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════ -->
-  <!-- SECTION 2: Knowledge Base                 -->
-  <!-- ══════════════════════════════════════════ -->
-  <section id="knowledge-base" class="support-section" style="background:var(--surface);">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          Knowledge Base
-        </p>
-        <h2>Help articles by topic</h2>
-      </div>
-
-      <div class="kb-grid">
-
-        <!-- Setting Up Your Home -->
-        <div class="kb-card">
-          <div class="kb-card-header" onclick="toggleKb(this)">
-            <div class="kb-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <span class="kb-card-title">Setting Up Your Home</span>
-            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="kb-articles">
-            <div class="kb-article">
-              <div class="kb-article-title">Creating your property profile</div>
-              <div class="kb-article-body">After signing in, tap "Add Property" and enter your address. Eave pre-fills public data like square footage and year built — review and correct anything that looks off before saving.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Adding Spaces and Rooms</div>
-              <div class="kb-article-body">In Memory, tap "+ Add Space" to create a structure (Main House, Garage, ADU). Inside each Space, tap "+ Add Room" and choose a room type to start documenting.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Documenting appliances and systems</div>
-              <div class="kb-article-body">Open any room and scroll to Appliances. Tap "+ Add" and enter the make, model, and install year. Eave uses this for maintenance reminders and warranty tracking.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Understanding your Home Score</div>
-              <div class="kb-article-body">Your Home Score reflects documentation completeness and maintenance posture. It improves as you add rooms, log maintenance, and resolve open projects.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- AI Features -->
-        <div class="kb-card">
-          <div class="kb-card-header" onclick="toggleKb(this)">
-            <div class="kb-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-            </div>
-            <span class="kb-card-title">AI Features</span>
-            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="kb-articles">
-            <div class="kb-article">
-              <div class="kb-article-title">How AI Capture turns notes into projects</div>
-              <div class="kb-article-body">Type or speak a description in the Capture tab. Eave's AI parses it into structured fields — title, room, category, priority, estimated cost, and permit flag — then queues it for your review.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Scanning rooms with photo analysis</div>
-              <div class="kb-article-body">Open a room in Memory and tap "Scan Room." Your photo is uploaded and analyzed. AI fills in flooring, wall color, ceiling height, and flags visible issues. Everything is editable.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Reviewing and correcting AI suggestions</div>
-              <div class="kb-article-body">AI suggestions appear in a review queue before saving. Tap any field to edit. Corrections help Eave improve over time.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Generating shopping lists from projects</div>
-              <div class="kb-article-body">On any project, tap "Generate List." Eave produces a materials and tools list based on the project description. You can edit, copy, or export it.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Connected Sources -->
-        <div class="kb-card">
-          <div class="kb-card-header" onclick="toggleKb(this)">
-            <div class="kb-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            </div>
-            <span class="kb-card-title">Connected Sources</span>
-            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="kb-articles">
-            <div class="kb-article">
-              <div class="kb-article-title">Connecting Gmail for receipt and warranty detection</div>
-              <div class="kb-article-body">Go to Connected Sources and tap "Connect Gmail." Authorize read-only access. Eave scans for home-related emails — receipts, warranties, contractor confirmations.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Importing past purchases</div>
-              <div class="kb-article-body">After connecting a source, detected items appear in your review queue. Tap "Add to Eave" on any item to save it. Nothing imports without your confirmation.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">What Eave does and doesn't read</div>
-              <div class="kb-article-body">Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Maintenance & Projects -->
-        <div class="kb-card">
-          <div class="kb-card-header" onclick="toggleKb(this)">
-            <div class="kb-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-            </div>
-            <span class="kb-card-title">Maintenance &amp; Projects</span>
-            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="kb-articles">
-            <div class="kb-article">
-              <div class="kb-article-title">Seasonal maintenance tracker</div>
-              <div class="kb-article-body">The Maintenance tab shows a checklist of seasonal tasks based on your property type and location. Check off tasks as you complete them — Eave logs the date automatically.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Project statuses, priorities, and filters</div>
-              <div class="kb-article-body">Projects can be New, In Progress, or Done. Priority levels are Low, Medium, High, and Urgent. Use filters in the Intelligence tab to sort and surface what needs attention.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Resolution paths: DIY, Learn, or Hire</div>
-              <div class="kb-article-body">Each project has a resolution path. DIY means you're handling it. Learn shows relevant guides. Hire surfaces contractors from your directory or the Eave network.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">The contractor directory</div>
-              <div class="kb-article-body">Add contractors you've used under Contacts. Include specialty, notes, and rating. When a project needs a hire, Eave surfaces relevant contacts from your directory first.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Account & Billing -->
-        <div class="kb-card">
-          <div class="kb-card-header" onclick="toggleKb(this)">
-            <div class="kb-card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4EFE6" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <span class="kb-card-title">Account &amp; Billing</span>
-            <svg class="kb-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="kb-articles">
-            <div class="kb-article">
-              <div class="kb-article-title">Managing your membership</div>
-              <div class="kb-article-body">Go to Settings → Membership to view your current plan, next billing date, and payment method. You can upgrade or cancel from there at any time.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Privacy, data ownership, and security</div>
-              <div class="kb-article-body">Your data is stored with row-level security — only your account can access it. We don't sell or share your data. See our Privacy Policy for full details.</div>
-            </div>
-            <div class="kb-article">
-              <div class="kb-article-title">Exporting or deleting your data</div>
-              <div class="kb-article-body">Export is on the roadmap. To delete your account and all associated data, go to Settings → Account → Delete Account, or contact us directly.</div>
-            </div>
-          </div>
-        </div>
+        <a class="topic-card" href="/support/billing">
+          <div class="topic-card-title">Billing</div>
+          <p class="topic-card-desc">What each plan includes, how to manage your subscription, and how refunds work.</p>
+          <ul class="topic-card-links">
+            <li>What plans does Eave offer?</li>
+            <li>How do I manage my subscription?</li>
+            <li>Do you offer refunds?</li>
+            <li>Canceling without losing your data</li>
+          </ul>
+          <span class="topic-card-more">View all →</span>
+        </a>
 
       </div>
     </div>
@@ -1180,7 +999,7 @@
     function closeMobile() { mobileMenu.classList.remove('open'); }
 
     // Sub-nav active state on scroll
-    const sections = ['faqs', 'knowledge-base', 'tutorials', 'submit'];
+    const sections = ['topics', 'tutorials', 'submit'];
     const subLinks = document.querySelectorAll('.sub-nav-inner a');
     const subNavObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
