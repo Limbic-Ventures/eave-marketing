@@ -12,18 +12,18 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data &amp; Privacy in Eave — Support</title>
-  <meta name="description" content="How Eave protects your home data: what connected sources do and don't read, row-level security, data ownership, export, and account deletion.">
-  <link rel="canonical" href="https://eavehome.app/support/data-privacy">
+  <title>Connecting Gmail to auto-find receipts — Eave Guides</title>
+  <meta name="description" content="How to connect Gmail to Eave: grant read-only access and Eave finds home-related receipts, warranties, and contractor emails — nothing saves without your confirmation.">
+  <link rel="canonical" href="https://eavehome.app/guides/connecting-gmail-for-receipts">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eavehome.app/support/data-privacy">
+  <meta property="og:url" content="https://eavehome.app/guides/connecting-gmail-for-receipts">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Data &amp; Privacy in Eave — Support">
-  <meta property="og:description" content="What Eave reads, how your data is protected, and how to export or delete it.">
+  <meta property="og:title" content="Connecting Gmail to auto-find receipts — Eave Guides">
+  <meta property="og:description" content="How to connect Gmail to Eave: grant read-only access and Eave finds home-related receipts, warranties, and contractor emails — nothing saves without your confirmation.">
   <meta property="og:image" content="https://eavehome.app/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,39 +34,39 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@type": "HowTo",
+    "name": "Connecting Gmail to auto-find receipts",
+    "description": "Give Eave read-only access to Gmail and it surfaces home-related receipts, warranties, and contractor emails for your review.",
+    "step": [
       {
-        "@type": "Question",
-        "name": "Is my data private in Eave?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold."
-        }
+        "@type": "HowToStep",
+        "position": 1,
+        "text": "Go to Settings \u2192 Connected Sources."
       },
       {
-        "@type": "Question",
-        "name": "Can I export my home data from Eave?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you."
-        }
+        "@type": "HowToStep",
+        "position": 2,
+        "text": "Tap \"Connect Gmail\" and sign in with your Google account."
       },
       {
-        "@type": "Question",
-        "name": "How do I delete my Eave account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Go to Settings → Account → Delete Account, or email us and we'll handle it. Deletion removes all your records permanently."
-        }
+        "@type": "HowToStep",
+        "position": 3,
+        "text": "Grant read-only access when prompted. Eave only reads emails \u2014 it cannot send or delete anything."
       },
       {
-        "@type": "Question",
-        "name": "What does Eave read from my connected email?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category."
-        }
+        "@type": "HowToStep",
+        "position": 4,
+        "text": "Eave scans for home-related emails: receipts, warranties, contractor confirmations, appliance purchases."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "text": "Detected items appear in your review queue. Tap any item to see the full email context."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "text": "Tap \"Add to Eave\" to save an item, or \"Skip\" to dismiss it. Nothing saves without your confirmation."
       }
     ]
   }
@@ -76,9 +76,24 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://eavehome.app/support" },
-      { "@type": "ListItem", "position": 3, "name": "Data & Privacy", "item": "https://eavehome.app/support/data-privacy" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://eavehome.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://eavehome.app/guides"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Connecting Gmail to auto-find receipts",
+        "item": "https://eavehome.app/guides/connecting-gmail-for-receipts"
+      }
     ]
   }
   </script>
@@ -119,12 +134,13 @@
   <!-- ── SUB-NAV ── -->
   <div class="sub-nav">
     <div class="sub-nav-inner">
-      <a href="/support/getting-started">Getting Started</a>
-      <a href="/support/using-eave">Using Eave</a>
-      <a href="/support/data-privacy" class="active">Data &amp; Privacy</a>
-      <a href="/support/billing">Billing</a>
-      <a href="/support#tutorials">Tutorials</a>
-      <a href="/support#submit">Submit an Issue</a>
+      <a href="/guides">All Guides</a>
+      <a href="/guides/first-10-minutes-in-eave">First 10 Minutes</a>
+      <a href="/guides/scanning-a-room-with-photos">Room Scanning</a>
+      <a href="/guides/capturing-a-project-by-voice-or-text">Voice Capture</a>
+      <a href="/guides/connecting-gmail-for-receipts" class="active">Gmail Receipts</a>
+      <a href="/guides/seasonal-maintenance-setup">Seasonal Setup</a>
+      <a href="/support">Support</a>
     </div>
   </div>
 
@@ -133,8 +149,8 @@
     <div class="container">
       <ol>
         <li><a href="/">Home</a></li>
-        <li><a href="/support">Support</a></li>
-        <li><span aria-current="page">Data &amp; Privacy</span></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><span aria-current="page">Connecting Gmail to auto-find receipts</span></li>
       </ol>
     </div>
   </div>
@@ -142,99 +158,62 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Support · Data &amp; Privacy</p>
-      <h1>Your home's data stays yours</h1>
-      <p>What Eave reads (and refuses to read), how your records are protected, and how to export or delete everything.</p>
+      <p class="label">Guide 04</p>
+      <h1>Connecting Gmail to auto-find receipts</h1>
+      <p>Connected sources do the record-keeping you'd never do by hand. Access is read-only — Eave can't send or delete anything — and nothing saves to your home's record without your confirmation.</p>
     </div>
   </div>
 
-  <!-- ── FAQS ── -->
-  <section class="support-section" id="faqs">
+  <!-- ── STEPS ── -->
+  <section class="support-section" id="steps">
     <div class="container">
       <div class="section-header">
-        <p class="label">FAQs</p>
-        <h2>Common questions</h2>
+        <p class="label">Step by Step</p>
+        <h2>How to do it</h2>
       </div>
-
-      <div class="qa-item" id="is-data-private">
-        <h3>Is my data private?</h3>
-        <p>Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold.</p>
-      </div>
-
-      <div class="qa-item" id="export-data">
-        <h3>Can I export my home data?</h3>
-        <p>Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you.</p>
-      </div>
-
-      <div class="qa-item" id="delete-account">
-        <h3>How do I delete my account?</h3>
-        <p>Go to Settings → Account → Delete Account, or <a href="mailto:support@eavehome.app">email us</a> and we'll handle it. Deletion removes all your records permanently.</p>
-      </div>
-
-      <div class="qa-item" id="what-eave-reads">
-        <h3>What does Eave read from my connected email?</h3>
-        <p>Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category.</p>
+      <ol class="guide-steps">
+        <li>Go to Settings → Connected Sources.</li>
+        <li>Tap "Connect Gmail" and sign in with your Google account.</li>
+        <li>Grant read-only access when prompted. Eave only reads emails — it cannot send or delete anything.</li>
+        <li>Eave scans for home-related emails: receipts, warranties, contractor confirmations, appliance purchases.</li>
+        <li>Detected items appear in your review queue. Tap any item to see the full email context.</li>
+        <li>Tap "Add to Eave" to save an item, or "Skip" to dismiss it. Nothing saves without your confirmation.</li>
+      </ol>
+      <div class="contact-strip" style="margin-top:40px;">
+        <p><strong>Ready to try it?</strong> Eave is free for one home and runs in any browser — your first capture takes about five seconds.</p>
+        <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
       </div>
     </div>
   </section>
 
-  <!-- ── IN DEPTH ── -->
-  <section class="support-section" id="details">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">In Depth</p>
-        <h2>How your data is handled</h2>
-      </div>
-
-      <div class="article-block" id="review-before-save">
-        <h3>You review everything before it saves</h3>
-        <p>Connected-source imports (email, store accounts) always land in a review queue first. Nothing saves to your home's record without your confirmation — you approve, edit, or dismiss each item.</p>
-      </div>
-
-      <div class="article-block" id="security">
-        <h3>Privacy, data ownership, and security</h3>
-        <p>Your data is stored with row-level security — only your account can access it. We don't sell or share your data. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
-      </div>
-
-      <div class="article-block" id="export-delete">
-        <h3>Exporting or deleting your data</h3>
-        <p>Export is on the roadmap. To delete your account and all associated data, go to Settings → Account → Delete Account, or contact us directly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── MORE SUPPORT ── -->
+  <!-- ── MORE GUIDES ── -->
   <section class="support-section">
     <div class="container">
       <div class="section-header">
-        <p class="label">More Support</p>
-        <h2>Keep exploring</h2>
+        <p class="label">More Guides</p>
+        <h2>Keep going</h2>
       </div>
       <div class="xlink-grid">
-        <a class="xlink-card" href="/support/getting-started">
-          <div class="xlink-title">Getting Started</div>
-          <div class="xlink-desc">What Eave is, what it costs, and setting up your home.</div>
+        <a class="xlink-card" href="/guides/first-10-minutes-in-eave">
+          <div class="xlink-title">Your first 10 minutes in Eave</div>
+          <div class="xlink-desc">Set up your property, add your first room, and capture your first project — a complete Eave setup in about ten minutes.</div>
         </a>
-        <a class="xlink-card" href="/support/using-eave">
-          <div class="xlink-title">Using Eave</div>
-          <div class="xlink-desc">AI Capture, room scanning, connected sources, and managing projects.</div>
+        <a class="xlink-card" href="/guides/scanning-a-room-with-photos">
+          <div class="xlink-title">Turning a photo into a room record</div>
+          <div class="xlink-desc">Snap one photo of a room and let Eave fill in the floor material, wall color, ceiling height, and any visible issues.</div>
         </a>
-        <a class="xlink-card" href="/support/billing">
-          <div class="xlink-title">Billing</div>
-          <div class="xlink-desc">Plans, subscriptions, upgrades, and refunds.</div>
+        <a class="xlink-card" href="/guides/capturing-a-project-by-voice-or-text">
+          <div class="xlink-title">Capturing a project by voice or text</div>
+          <div class="xlink-desc">Describe a home project in plain language — spoken or typed — and Eave structures it into a scoped, prioritized project.</div>
         </a>
-        <a class="xlink-card" href="/guides">
-          <div class="xlink-title">Guides</div>
-          <div class="xlink-desc">Step-by-step walkthroughs, from first setup to seasonal maintenance.</div>
+        <a class="xlink-card" href="/guides/seasonal-maintenance-setup">
+          <div class="xlink-title">Setting up seasonal maintenance</div>
+          <div class="xlink-desc">Let Eave generate a seasonal checklist for your property type and region, then log completions with one tap.</div>
         </a>
         <a class="xlink-card" href="/support">
           <div class="xlink-title">Support home</div>
-          <div class="xlink-desc">Tutorials, step-by-step guides, and a direct line to the team.</div>
+          <div class="xlink-desc">Help topics, FAQs, and a direct line to the team.</div>
         </a>
-      </div>
-      <div class="contact-strip" style="margin-top:32px;">
-        <p><strong>Still stuck?</strong> Eave is built and supported by a small crew — real humans read every message.</p>
-        <a href="/support#submit" class="btn btn-jade">Contact the team →</a>
       </div>
     </div>
   </section>
