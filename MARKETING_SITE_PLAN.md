@@ -1,144 +1,174 @@
-# eavehome.app — Site Audit & Improvement Plan
+# eavehome.app — Marketing Site Plan v2
 
-**Date:** July 2, 2026
-**Context:** The product just shipped its biggest capability upgrade — the home knowledge graph (unified asset registry, curated upkeep templates, inventory-aware reminders, warranty/replacement forecasting) is live in production on web, and iOS is in TestFlight. This plan audits the current site against what the product *now actually does* and prioritizes updates, with emphasis on value proposition and story-driven conversion.
+**Date:** July 3, 2026 (supersedes the July 2 plan)
+**Context:** The knowledge-graph launch audit produced a 4-phase plan on July 2. Phases 1 (truth pass) and the original narrow Phase 4 (on-page SEO) are largely shipped. This v2 re-baselines what's left, folds in the audit findings from the July 3 review, and expands Phase 4 into a full SEO/AI-GEO site-architecture build-out (multi-page support, guides hub, topic landing pages) agreed in planning session.
 
 ---
 
-## 1. Audit summary
+## 1. Status of the original plan (July 2 → now)
 
-| Dimension | Grade | Notes |
+### Shipped ✅ (commits `bfd8b85` → `963d898`)
+
+- Primary CTAs → "Start free in your browser →" + "No credit card" microcopy
+- Connected Sources claim corrected ("Gmail & calendar today; store & smart-home rolling out")
+- Systems & Appliances bullet upgraded (specs auto-researched, warranty alerts, service history)
+- Dead `href="#"` links removed
+- Pricing copy reworked, Intelligence-led headline, Eave Commercial contact row
+- Semantic `<h1>`/`<h2>` on every section
+- `SoftwareApplication` + `Offer` schema on homepage
+- Meta description rewritten to the "memory" pitch
+- Sitemap covers `/`, `/support`, `/privacy`, `/terms` with lastmod
+- Images optimized (webp, dimensions, lazy-loading)
+- Footer tagline fixed → "Home Upkeep Without the Overwhelm."
+- Interactive season timeline (story-extension adjacent)
+- Furnace *content* landed inside the Memory section (Carrier card: filter size, warranty, forecast) — but not as the standalone story module
+
+### Still open from v1 ❌
+
+| Item | Original phase | Notes |
 |---|---|---|
-| Problem framing | **A** | The "mental backlog, notes-app graveyard" narrative + 92%/$5,600/68% stats is genuinely strong. Keep. |
-| Show-don't-tell | **A−** | The interactive capture demo (running toilet → scoped plan) is the best thing on the page. But it's the *only* story module. |
-| Value proposition | **B−** | Leads with "upkeep without the overwhelm" (a relief promise every competitor makes). The differentiated promise — *your home's memory, and memory that acts* — is buried in section 3. |
-| Product accuracy | **B−** | Several claims lag or lead the shipped product (details in §3). The strongest shipped capability isn't mentioned at all. |
-| CTA strategy | **B−** | "Get early access →" links to a live, open app — underclaims and adds fake friction. Two dead `href="#"` links. |
-| Trust & proof | **B** | Stats and "nothing saves without your say" are good. No social proof, no founder note, no data-ownership promise. |
-| Technical SEO | **C** | Only 8 real `<h*>` tags on the entire page — section titles are styled `div`s, invisible to search and screen readers. No structured data. Thin sitemap. |
-
-**The one-sentence verdict:** the site sells a very good to-do app; the product is now a home memory that acts on your behalf — and the single most convincing story it can tell (the furnace flow) isn't on the page.
+| "GET EARLY ACCESS →" button on Free tier (`index.html` ~line 1676) | 1 | Last surviving instance of the string Phase 1 was meant to kill |
+| iOS TestFlight decision ("coming soon" vs "beta is live — join TestFlight") | 1/6 | **Garrett's call.** Currently defaulted to "coming soon" in 3+ places |
+| Furnace/SYSTEMS story module | 2 | The flagship item. Not built |
+| Two-notification mock (🛒 buy vs ✓ already-have) | 2/5 | Most shareable artifact; also wanted as an OG-image variant |
+| Hero headline sharpening ("memory that acts") | 4 (§4 v1) | Hero still "The easy way to keep up with your home"; sub was upgraded but headline is generic |
+| "Your first week with Eave" 5-beat timeline | 3 | Not started |
+| Before/after "notes graveyard → ranked queue" strip | 3 | Not started |
+| Founder note | 3/6 | Not started |
+| CTA microcopy story-voice pass | 3 | Partially done (hero fine-copy is good); not systematic |
+| FAQ section on homepage + `FAQPage` schema | 4 | Superseded — FAQ strategy moves to the new support architecture (§3); homepage gets a slim FAQ that links out |
+| `<h3>` on cards | 4 | Cards still `div`s |
+| Data-ownership promise near Connected Sources | 6 | One sentence; cheap |
+| Testimonials / TestFlight badge | 6 | Blocked on real users / TestFlight decision |
 
 ---
 
-## 2. The headline gap: tell the furnace story
+## 2. The build phases (v2)
 
-The product's flagship flow is live and no competitor matches it end-to-end:
+Priorities reordered per July 3 session: **SEO/GEO architecture first**, then the furnace story, then story extensions.
 
-> Snap a photo of your furnace → Eave identifies it, files it in the right room, and **remembers the filter size forever** → suggests its maintenance schedule (you confirm with one tap) → reminds you a week before each task → checks your inventory and either says **"time to buy a 16×25×1 — here's where"** or **"you already have two in the garage."** When the receipt hits your email, the stock count updates and the next alert quietly suppresses itself.
+### PHASE A — SEO/AI-GEO architecture (expanded old Phase 4)
 
-Reminders apps nag. Eave *knows the filter size, checks the shelf, and closes the loop.* This deserves a full story module with the same treatment as the capture demo.
+The core finding: `/support` is already deep (4 FAQ groups, 16 KB articles, 5 step-by-step guides) but it's a single-URL accordion — invisible to search and AI answer engines, not linked from top nav, and stale in places. Meanwhile GEO rewards exactly what we have but haven't structured: answer-shaped content at individual URLs with `FAQPage`/`HowTo` schema and an llms.txt that itemizes them.
 
-### Proposed new section: "YOUR SYSTEMS" (place directly after CAPTURE)
+**Decisions locked (July 3):** split into real pages · "Support" added at end of top nav · build both a guides hub and topic landing pages.
 
-Mirror the capture demo's mock-UI pattern:
+#### Target URL architecture
 
 ```
-SYSTEMS
-Your furnace has a filter size. You'll never need to know it.
-
-Snap the data plate on any appliance or system. Eave identifies it,
-looks up the specs, and proposes its real maintenance schedule —
-you approve with one tap.
-
-  [mock: photo frame → asset card]
-  GAS FURNACE — CARRIER          UTILITY CLOSET
-  Filter: 16×25×1 MERV 11        Installed 2015 · serviced Oct
-  SUGGESTED UPKEEP
-   ▢ Replace filter — every 3 months
-   ▢ Annual service — each fall (pro)
-  [ ADD TO PLAN → ]
-
-  [mock: two push notifications, side by side]
-  🛒 Time to buy: 16×25×1 filter        ✓ You already have 2
-  Filter change due in 2 weeks —        Filter change due in 2 weeks —
-  you're out of stock. [Buy now]        they're in the garage.
-
-From one photo: the specs, the schedule, the reminders, and a
-one-tap reorder — or the quiet satisfaction of already having the part.
+/                                    homepage (existing)
+/support                             hub/index — links out, no longer holds all content
+/support/getting-started             FAQ group page
+/support/using-eave                  FAQ group page
+/support/data-privacy                FAQ group page
+/support/billing                     FAQ group page
+/guides                              guides hub
+/guides/first-10-minutes-in-eave
+/guides/scanning-a-room-with-photos
+/guides/documenting-a-furnace-and-appliances
+/guides/connecting-gmail-for-receipts
+/guides/seasonal-maintenance-setup
+/furnace-filter-size                 topic landing page (high-intent query)
+/home-maintenance-checklist-by-season  topic landing page
+/how-to-track-home-warranties        topic landing page
+/when-to-replace-water-heater        topic landing page (forecasting showcase)
+/privacy, /terms                     unchanged
 ```
 
-This section does triple duty: it's the most concrete differentiation on the page, it demonstrates "memory" (the brand) rather than asserting it, and it naturally sells Intelligence (the reminders/plan machinery).
+Rationale: category pages (not one page per question) keep each URL substantial enough to rank; the meaty how-tos get promoted to full guides; the 16 short KB articles become supporting content *within* their category page. Topic pages answer real searches the product literally solves, with an above-the-fold direct answer (AI-citable) then an "Eave already knows this for your home" pivot + CTA. Hold topic pages at 3–4 and expand based on traffic.
 
----
+#### Schema plan
 
-## 3. Accuracy fixes (do these regardless of anything else)
+- `FAQPage` on each `/support/*` category page (generated from the same accordion markup)
+- `HowTo` on each `/guides/*` page (existing numbered steps map directly)
+- `Article`/`WebPage` on topic landing pages
+- `BreadcrumbList` on all subpages
 
-| Current claim | Reality | Fix |
+#### Navigation
+
+- Top nav (+ mobile menu): How it works · Features · Pricing · Pro · **Support**
+- Guides/topic pages stay out of primary nav (reachable via `/support` hub, footer, organic/AI search) — nav stays conversion-focused
+- Footer already links `/support` ✓; add a second footer column for Guides once the hub exists
+
+#### GEO files
+
+- `llms.txt`: add every new URL with a one-line description under "Key pages" (cheapest, highest-leverage GEO fix)
+- `sitemap.xml`: all new URLs — 0.6 guides, 0.5 support categories, 0.4 topic pages; keep lastmod current
+
+#### Sub-steps & effort
+
+| Step | Scope | Effort |
 |---|---|---|
-| "Get early access →" (7 instances) | App is live and open at app.eavehome.app | **"Start free →"** (+ "no card required" microcopy near the primary CTA). Keeps the existing sign-in link for returning users. |
-| Free tier bullet: "Connected Sources — Gmail, Home Depot, Lowe's, smart home" | Live today: Gmail, Google Calendar, Apple iCal, service marketplaces. HD/Lowe's/Amazon/smart-home are coming-soon in-app | "Connected Sources — Gmail & calendar today; store and smart-home accounts rolling out." Overstating here creates a day-one disappointment for the exact users who convert on it. |
-| "native iOS and Android apps are coming soon" | iOS is in TestFlight now | **Decision for Garrett:** either keep as-is until App Store launch, or upgrade to "iOS beta is live — join the TestFlight" (a working beta is stronger social proof than "coming soon"). |
-| Appliances bullet: "track model, warranty, and service history" | Also live now: AI spec enrichment, warranty *alerts*, replacement forecasting, suggested maintenance per asset | Upgrade the bullet: "Systems & Appliances — specs auto-researched, warranty alerts, replacement forecasting." |
-| Two `href="#"` dead links | — | Point somewhere real or remove. |
-| Pricing figures ($2.99/mo, $24/yr, $49 lifetime; Pro tiers) | Assumed current | **Verify against the live app's Membership page before touching** — the site may already be the source of truth; just confirm they match. |
+| **A1** | Nav link (desktop + mobile) + truth-pass stale `/support` copy (multi-property "coming" vs already-sold; "native apps on roadmap" wording; verify pricing lines) + kill the "GET EARLY ACCESS" button on the homepage while in there | ~30 min |
+| **A2** | Split FAQ into 4 category pages + `FAQPage` schema; `/support` becomes a hub | ~2–3 hrs |
+| **A3** | `/guides` hub + 5 guide pages with `HowTo` schema (reuse existing step content) | ~2–3 hrs |
+| **A4** | 3–4 topic landing pages (net-new writing) | ~half day |
+| **A5** | `llms.txt` + `sitemap.xml` + cross-links + slim homepage FAQ that links into `/support/*` | ~30 min |
+
+Shared-template note: subpages should reuse the existing design system (same fonts/colors/chamfer, nav, footer). Build one clean subpage template in A2 and every later page (A3, A4, and future Phase C pages) inherits it — this is the "more room for the rest of the phases" payoff.
+
+### PHASE B — The furnace story (old Phase 2, unchanged in substance)
+
+1. **New "SYSTEMS" story section** directly after CAPTURE, mirroring the capture demo's mock-UI pattern:
+   - Headline: *"Your furnace has a filter size. You'll never need to know it."*
+   - Mock: photo frame → asset card (GAS FURNACE — CARRIER · filter 16×25×1 MERV 11 · suggested upkeep · ADD TO PLAN →)
+   - **Two-notification mock**: "🛒 Time to buy: 16×25×1 — you're out of stock [Buy now]" vs "✓ You already have 2 — they're in the garage." Build as reusable art; also export an OG-image variant.
+   - Closer: *"From one photo: the specs, the schedule, the reminders, and a one-tap reorder — or the quiet satisfaction of already having the part."*
+2. **Hero decision** (Garrett picks one):
+   1. "Your home's memory — with a to-do list." *(recommended)*
+   2. "The home app that remembers the filter size."
+   3. Keep headline, current upgraded sub stands.
+   - The "HOME UPKEEP WITHOUT THE OVERWHELM" eyebrow stays either way.
+3. Reconcile with the existing Memory-section furnace card so the page doesn't say "furnace" five times — Systems section = *the loop closing* (notification pair, reorder); Memory section = *the record keeping*.
+
+Effort: ~1 day incl. design polish.
+
+### PHASE C — Story extensions & trust (old Phases 3 + 6)
+
+1. "Your first week with Eave" 5-beat horizontal timeline (Day 1 address + photos → Day 2 profile & score → Day 3 first reminder → Day 7 the weekend queue)
+2. Before/after strip: faded notes-app graveyard → same items as ranked queue with why-now lines
+3. CTA microcopy story-voice pass at every CTA (post-Systems: *"Snap your furnace. See what Eave finds."*)
+4. Founder note: 3 sentences + photo/signature
+5. Data-ownership promise sentence near Connected Sources
+6. TestFlight badge — **if** the iOS-beta decision lands yes
+7. When real users exist: testimonial carousel replaces third stat
+
+Effort: ~1 day.
+
+### PHASE D — Homepage polish leftovers
+
+1. `<h3>` on cards (finish semantic-heading work)
+2. Homepage slim FAQ section (5–6 questions, `FAQPage` schema, links into `/support/*`) — depends on A2
+3. OG-image refresh using the notification-pair art — depends on B
+4. Performance re-audit once new pages exist (shared CSS extraction is optional; single-file-per-page is fine at this scale)
+
+Effort: ~half day.
 
 ---
 
-## 4. Value proposition sharpening (hero)
+## 3. Open decisions for Garrett
 
-Current hero: *"HOME UPKEEP WITHOUT THE OVERWHELM / The easy way to keep up with your home."* Fine, but generic — every home app promises relief. The brand tagline ("Your home's memory") and the shipped product both point at a sharper claim: **memory that acts.**
-
-Three hero options, in order of recommendation:
-
-1. **"Your home's memory — with a to-do list."**
-   Sub: *Eave remembers every detail about your home — the filter sizes, the warranties, the paint colors, who fixed what — and tells you what needs doing next, and why.*
-   (Leads with the moat; the sub delivers the relief promise the current hero makes.)
-
-2. **"The home app that remembers the filter size."**
-   Sub: *Snap it once. Eave keeps the specs, schedules the upkeep, and reminds you before it matters — with a one-tap reorder when you're out.*
-   (Concrete and ownable; pairs perfectly with the new Systems section.)
-
-3. **Keep the current headline, upgrade the sub:**
-   *Eave is your home's memory: capture anything in five seconds, and it comes back with specs, schedules, budgets, and what to do next.*
-
-Whichever wins, the kicker line "HOME UPKEEP WITHOUT THE OVERWHELM" can stay — it's the emotional register; the headline should carry the differentiation.
-
----
-
-## 5. More story-type actions (the conversion engine)
-
-The capture demo works because visitors *watch the product think.* Extend that pattern:
-
-1. **The Systems/furnace module** (§2) — highest priority.
-2. **"Your first week with Eave" timeline** — a horizontal 5-beat strip: *Day 1: address + 3 photos → Day 2: your home's profile & upkeep score → Day 3: first reminder lands → Day 7: the queue tells you the one thing to do this weekend, and why.* Converts "how it works" from setup mechanics into a felt experience of the payoff cadence.
-3. **Make the reminder itself the proof.** The two-notification mock (buy vs. already-have) is the single most shareable artifact on the future page. Also reuse it as a social/OG image variant.
-4. **Before/after strip** — left: screenshot-style "notes app graveyard" (faded `flapper?? call plumber, gutters!!`); right: the same items as a ranked queue with why-now lines. Cheap to build, lands the core transformation.
-5. **CTA microcopy in the story voice.** "Start with the one thing that's been nagging you" is excellent — repeat that pattern at every CTA: hero → *"Start free — capture your first fix in 5 seconds"*; post-systems section → *"Snap your furnace. See what Eave finds."*
-
----
-
-## 6. Trust & proof upgrades
-
-- **Founder note** (3 sentences + photo/signature): why a homeowner built this. Early-stage honesty beats absent testimonials.
-- **Data ownership promise** near Connected Sources: *"Your records are yours — review everything before it saves, export everything whenever you want."* (The exportable home history is on the roadmap; the review-before-save behavior is live and already stated — elevate it.)
-- **TestFlight badge** (if the iOS-beta decision lands yes) — a live beta is proof of momentum.
-- When real users exist: replace the stats row's third stat with a testimonial carousel; until then the stats are doing honest work.
-
----
-
-## 7. Technical & SEO
-
-1. **Semantic headings.** One `<h1>` (hero), `<h2>` per section, `<h3>` per card. Currently ~8 heading tags total; sections are styled `div`s. This is the biggest SEO lever on the page and costs nothing visually (keep the classes, change the tags).
-2. **Structured data:** `SoftwareApplication` + `Offer` (free tier, Intelligence pricing) + `FAQPage` schema.
-3. **Add an FAQ section** (SEO long-tail + objection handling): "Is Eave really free?", "What happens to my data?", "Do I need the app or can I use the browser?", "What's the difference between Intelligence and Pro?", "What size furnace filter do I need?" (the last one is a top-of-funnel search Eave *literally answers*).
-4. **Meta description:** current one is capture-only. Test: *"Eave is your home's memory — snap anything and it keeps the specs, schedules the upkeep, and reminds you before it matters. Free for one home."*
-5. **Sitemap:** add `/support`, `/privacy`, `/terms` if missing; set `lastmod`.
-6. **Performance:** single-file page is fine; audit `images/` for dimensions/lazy-loading while touching the page.
-
----
-
-## 8. Suggested sequencing
-
-| Phase | Scope | Effort |
+| Decision | Options | Blocking |
 |---|---|---|
-| **1 — Truth pass** | §3 accuracy fixes + CTA rename + dead links | ~1 hr, ship same day |
-| **2 — The furnace story** | New SYSTEMS section with mock UI + notification pair; hero decision from §4 | ~1 day incl. design polish |
-| **3 — Story extensions** | Week-one timeline, before/after strip, CTA microcopy pass, founder note | ~1 day |
-| **4 — SEO pass** | Semantic headings, schema, FAQ, meta/sitemap | ~half day |
-
-Phases 1–2 carry most of the conversion value. Everything here is achievable within the existing single-page static architecture — no framework change needed.
+| iOS TestFlight messaging | Keep "coming soon" until App Store launch · or "iOS beta is live — join the TestFlight" + badge | Phase A1 wording, Phase C item 6 |
+| Hero headline | Option 1 "Your home's memory — with a to-do list." (rec) · Option 2 filter-size hook · Option 3 keep current | Phase B |
+| Topic-page list | Confirm the 4 proposed, or swap (`/furnace-filter-size`, `/home-maintenance-checklist-by-season`, `/how-to-track-home-warranties`, `/when-to-replace-water-heater`) | Phase A4 |
 
 ---
 
-*Product-side facts referenced in this plan (asset registry, templates, inventory-aware reminders, forecasting, TestFlight) are documented in the app repo: `docs/DATA_ARCHITECTURE.md` and `docs/OPERATIONS.md`.*
+## 4. Sequencing summary
+
+| Order | Phase | Scope | Effort |
+|---|---|---|---|
+| 1 | **A1** | Nav + support truth pass + last CTA fix | ~30 min, ship same day |
+| 2 | **A2–A3** | Support split + guides hub (page template established here) | ~1 day |
+| 3 | **A4–A5** | Topic pages + GEO files | ~half day + writing |
+| 4 | **B** | Furnace story + hero | ~1 day |
+| 5 | **C** | Story extensions + trust | ~1 day |
+| 6 | **D** | Polish leftovers | ~half day |
+
+Phases A and B are independent — B can start any time if writing for A4 stalls. Everything stays within the static-HTML architecture; the A2 subpage template is the only new structural work.
+
+---
+
+*Product-side facts referenced (asset registry, templates, inventory-aware reminders, forecasting, TestFlight) are documented in the app repo: `docs/DATA_ARCHITECTURE.md` and `docs/OPERATIONS.md`. The July 2 v1 plan is preserved in git history (`daa3f2d`).*
