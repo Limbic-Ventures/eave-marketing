@@ -54,5 +54,11 @@
   row-level security, data ownership, export and deletion
 - https://eavehome.app/support/billing — plans, subscription management,
   refunds
+- https://eavehome.app/guides — step-by-step guides hub
+- https://eavehome.app/guides/first-10-minutes-in-eave — full first-time setup
+- https://eavehome.app/guides/scanning-a-room-with-photos — photo room scanning
+- https://eavehome.app/guides/capturing-a-project-by-voice-or-text — AI capture
+- https://eavehome.app/guides/connecting-gmail-for-receipts — Gmail connection
+- https://eavehome.app/guides/seasonal-maintenance-setup — seasonal checklist
 - https://eavehome.app/privacy — privacy policy
 - https://eavehome.app/terms — terms of service

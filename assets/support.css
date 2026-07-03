@@ -267,6 +267,101 @@ nav {
 .article-block p + p { margin-top: 10px; }
 .article-block a { color: var(--jade); text-decoration: underline; }
 
+/* ── TOPIC CARDS ── */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--stone);
+  border-radius: var(--chamfer);
+  padding: 26px 28px;
+  text-decoration: none;
+  transition: border-color .2s, transform .2s;
+}
+.topic-card:hover { border-color: var(--jade); transform: translateY(-2px); }
+.topic-card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.topic-card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.topic-card-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.topic-card-links li {
+  font-size: 12px;
+  color: var(--muted);
+  padding-left: 14px;
+  position: relative;
+}
+.topic-card-links li::before {
+  content: "·";
+  position: absolute;
+  left: 2px;
+  color: var(--jade);
+}
+.topic-card-more {
+  margin-top: auto;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--jade);
+}
+
+/* ── GUIDE STEPS ── */
+.guide-steps {
+  list-style: none;
+  counter-reset: step;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.guide-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 20px 0 20px 56px;
+  border-bottom: 1px solid var(--stone);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.guide-steps li:last-child { border-bottom: none; }
+.guide-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--jade);
+  border: 1px solid var(--stone);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+}
+
 /* ── CROSS-LINK CARDS ── */
 .xlink-grid {
   display: grid;
