@@ -102,26 +102,29 @@ Rationale: category pages (not one page per question) keep each URL substantial 
 | **A1** | Nav link (desktop + mobile) + truth-pass stale `/support` copy (multi-property "coming" vs already-sold; "native apps on roadmap" wording; verify pricing lines) + kill the "GET EARLY ACCESS" button on the homepage while in there | ~30 min |
 | **A2** | Split FAQ into 4 category pages + `FAQPage` schema; `/support` becomes a hub | ~2–3 hrs |
 | **A3** | `/guides` hub + 5 guide pages with `HowTo` schema (reuse existing step content) | ~2–3 hrs |
-| **A4** | 3–4 topic landing pages (net-new writing) | ~half day |
+| **A4** | ~~3–4 standalone topic landing pages~~ **DROPPED (July 3).** Topic-search content (furnace filter size, water-heater timing, warranty tracking, seasonal checklists) now lives as illustrative **anecdotes woven into the feature pages** (Phase E), not standalone URLs — see Phase B. | — |
 | **A5** | `llms.txt` + `sitemap.xml` + cross-links + slim homepage FAQ that links into `/support/*` | ~30 min |
 
 Shared-template note: subpages should reuse the existing design system (same fonts/colors/chamfer, nav, footer). Build one clean subpage template in A2 and every later page (A3, A4, and future Phase C pages) inherits it — this is the "more room for the rest of the phases" payoff.
 
-### PHASE B — The furnace story (old Phase 2, unchanged in substance)
+### PHASE B — Furnace story & topic anecdotes (REVISED July 3)
 
-1. **New "SYSTEMS" story section** directly after CAPTURE, mirroring the capture demo's mock-UI pattern:
-   - Headline: *"Your furnace has a filter size. You'll never need to know it."*
-   - Mock: photo frame → asset card (GAS FURNACE — CARRIER · filter 16×25×1 MERV 11 · suggested upkeep · ADD TO PLAN →)
-   - **Two-notification mock**: "🛒 Time to buy: 16×25×1 — you're out of stock [Buy now]" vs "✓ You already have 2 — they're in the garage." Build as reusable art; also export an OG-image variant.
-   - Closer: *"From one photo: the specs, the schedule, the reminders, and a one-tap reorder — or the quiet satisfaction of already having the part."*
-2. **Hero decision** (Garrett picks one):
+**Direction change:** the furnace story is NOT a standalone homepage "SYSTEMS" module, and the A4 topic pages are NOT standalone URLs. Both become **illustrative anecdotes interspersed within the Phase E feature pages** — placeholder scenarios that get **swapped for real customer stories** once we have them. This keeps the search keywords on-page, avoids maintaining thin standalone pages, and gives every feature page a concrete "in practice" moment.
+
+**Implemented (July 3):** a reusable `.anecdote` block (`In practice` label + question headline + 2 short paras, marked in HTML with `<!-- ANECDOTE (placeholder … swap for a real customer story) -->` so they're easy to find and replace). Three shipped:
+- `/features/home-knowledge-base` → **furnace filter** anecdote ("What size furnace filter do I need?" — Carrier 59TP6, 16×25×1 MERV 11, forecast ~2038). Absorbs the old furnace story AND the `/furnace-filter-size` topic.
+- `/features/intelligence` → **water heater / seasonal checklist** anecdote ("When do I flush the water heater — and when should I replace it?"). Absorbs `/when-to-replace-water-heater` + `/home-maintenance-checklist-by-season`.
+- `/features/connected-sources` → **warranty tracking** anecdote ("How do I keep track of home warranties?"). Absorbs `/how-to-track-home-warranties`.
+
+**Still open — hero decision** (decoupled from the furnace module, which no longer exists as a standalone). Homepage headline is currently "The easy way to keep up with your home." Options if we want to sharpen toward "memory that acts":
    1. "Your home's memory — with a to-do list." *(recommended)*
    2. "The home app that remembers the filter size."
-   3. Keep headline, current upgraded sub stands.
-   - The "HOME UPKEEP WITHOUT THE OVERWHELM" eyebrow stays either way.
-3. Reconcile with the existing Memory-section furnace card so the page doesn't say "furnace" five times — Systems section = *the loop closing* (notification pair, reorder); Memory section = *the record keeping*.
+   3. Keep headline, keep the upgraded sub.
+   The "HOME UPKEEP WITHOUT THE OVERWHELM" eyebrow stays either way.
 
-Effort: ~1 day incl. design polish.
+Future: when real customer stories exist, replace the placeholder anecdotes in place (same `.anecdote` markup) and optionally add a two-notification "buy vs already-have" visual as reusable art / OG variant.
+
+Effort: anecdotes done; hero decision is a ~15-min swap once chosen.
 
 ### PHASE C — Story extensions & trust (old Phases 3 + 6)
 
@@ -218,8 +221,8 @@ Content note: E1–E4 are net-new copy grounded in the marketing brief's feature
 | Decision | Options | Blocking |
 |---|---|---|
 | iOS TestFlight messaging | Keep "coming soon" until App Store launch · or "iOS beta is live — join the TestFlight" + badge | Phase A1 wording, Phase C item 6 |
-| Hero headline | Option 1 "Your home's memory — with a to-do list." (rec) · Option 2 filter-size hook · Option 3 keep current | Phase B |
-| Topic-page list | Confirm the 4 proposed, or swap (`/furnace-filter-size`, `/home-maintenance-checklist-by-season`, `/how-to-track-home-warranties`, `/when-to-replace-water-heater`) | Phase A4 |
+| Hero headline | Option 1 "Your home's memory — with a to-do list." (rec) · Option 2 filter-size hook · Option 3 keep current | Homepage (decoupled from B) |
+| ~~Topic-page list~~ | **Resolved July 3:** no standalone topic pages. Content folded into `.anecdote` blocks on feature pages, to be swapped for real customer stories later. | — |
 
 ---
 
@@ -231,13 +234,15 @@ Content note: E1–E4 are net-new copy grounded in the marketing brief's feature
 | 2 | **A2** | Support split into category pages + FAQPage schema | ~half day | ✅ shipped |
 | 3 | **A3** | Guides hub + 5 HowTo guide pages | ~half day | ✅ shipped |
 | — | (nav) | Guides in top nav, Features anchor removed | — | ✅ shipped |
-| 4 | **A4–A5** | Topic landing pages + GEO files + homepage slim FAQ | ~half day + writing | todo |
-| 5 | **E1–E5** | Product feature pages + audience pages + /why-eave | ~3–4 days | todo (this session's plan) |
-| 6 | **B** | Furnace story + hero | ~1 day | todo |
-| 7 | **C** | Story extensions + trust | ~1 day | todo |
-| 8 | **D** | Polish leftovers | ~half day | todo |
+| 4 | **E1–E5** | Product feature pages + audience pages + /why-eave | ~3–4 days | ✅ shipped |
+| — | (nav) | "Product" added to nav/footer site-wide | — | ✅ shipped |
+| 5 | **B** | Furnace + topic anecdotes woven into feature pages | — | ✅ shipped (hero decision still open) |
+| — | **A4** | Standalone topic pages | — | ❌ dropped → folded into B anecdotes |
+| 6 | **A5** | Homepage slim FAQ into `/support/*` | ~30 min | todo |
+| 7 | **C** | Story extensions + trust (founder note, before/after, week-one) | ~1 day | todo |
+| 8 | **D** | Polish leftovers (h3 on homepage cards, OG refresh) | ~half day | todo |
 
-Phases A/E (SEO/content infrastructure) and B/C (homepage story) are independent tracks. Everything stays within the static-HTML architecture; the A2 subpage template (`/assets/support.css`) carries every new page in A3, A4, and E. Recommended next: **E1** (features hub + home-knowledge-base) since it's the roadmap centerpiece and unblocks the "Product" nav item, or **A4** if you'd rather finish the informational-search layer first.
+Everything stays within the static-HTML architecture; the shared template (`/assets/support.css`) carries every subpage. Topic-search content now lives as swappable `.anecdote` blocks inside the feature pages rather than standalone URLs. Recommended next: **C** (homepage story extensions + founder note) or the quick **hero-headline** decision.
 
 ---
 

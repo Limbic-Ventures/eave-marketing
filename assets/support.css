@@ -421,6 +421,34 @@ nav {
 }
 .xlink-card .xlink-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
+/* ── ANECDOTE (illustrative scenario; swap for real customer story later) ── */
+.anecdote {
+  max-width: 760px;
+  background: var(--surface);
+  border: 1px solid var(--stone);
+  border-left: 3px solid var(--jade);
+  border-radius: var(--chamfer);
+  padding: 26px 30px;
+}
+.anecdote-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--jade);
+  margin-bottom: 10px;
+}
+.anecdote-q {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.anecdote p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+.anecdote p + p { margin-top: 12px; }
+.anecdote strong { color: var(--ink); font-weight: 700; }
+
 /* ── CONTACT CTA STRIP ── */
 .contact-strip {
   background: var(--surface);
