@@ -362,6 +362,40 @@ nav {
   background: var(--surface);
 }
 
+/* ── SCREENSHOTS ── */
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.shot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--stone);
+  box-shadow: 0 12px 40px rgba(31,58,82,.10);
+}
+.shot-phone { max-width: 280px; margin: 0 auto; }
+.shot-caption {
+  font-size: 11px;
+  color: var(--dim);
+  margin-top: 10px;
+  text-align: center;
+}
+.feature-split {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 48px;
+  align-items: center;
+}
+.feature-split.reverse > :first-child { order: 2; }
+@media (max-width: 768px) {
+  .feature-split { grid-template-columns: 1fr; gap: 28px; }
+  .feature-split.reverse > :first-child { order: 0; }
+}
+
 /* ── CROSS-LINK CARDS ── */
 .xlink-grid {
   display: grid;

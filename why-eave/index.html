@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Eave — How much would you pay to actually know? — Eave</title>
+  <meta name="description" content="Most people can't answer basic questions about the home they live in. See why a home maintenance app is worth it, what not-knowing costs, and how a home records system closes the gap.">
+  <link rel="canonical" href="https://eavehome.app/why-eave">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/why-eave">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Why Eave — How much would you pay to actually know? — Eave">
+  <meta property="og:description" content="The calm case for a home knowledge base: what not-knowing your own home actually costs, and how eave closes the gap. Free to start.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"WebPage","name":"Why Eave — How much would you pay to actually know?","description":"Most people can't answer basic questions about the home they live in. See why a home maintenance app is worth it, what not-knowing costs, and how a home records system closes the gap.","url":"https://eavehome.app/why-eave","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
+  </script>
+  <script type="application/ld+json">
+  { "@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://eavehome.app/"},
+    {"@type":"ListItem","position":2,"name":"Why Eave","item":"https://eavehome.app/why-eave"}
+  ]}
+  </script>
+
+  <style>
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 32px 0 12px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--stone);
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .stat-figure {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .stat-label {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    .stat-source {
+      font-size: 12px;
+      color: var(--dim);
+      margin-top: 4px;
+    }
+    .know-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 32px;
+    }
+    .know-list li {
+      position: relative;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .know-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--jade);
+    }
+    @media (max-width: 720px) {
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .know-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/features">Product</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#pro">Pro</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
+    <a href="/features" onclick="closeMobile()">Product</a>
+    <a href="/#pricing" onclick="closeMobile()">Pricing</a>
+    <a href="/#pro" onclick="closeMobile()">Pro</a>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">Why Eave</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">Why Eave</p>
+      <h1>How much would you pay to actually know?</h1>
+      <p>Ask most people a plain question about the home they live in and the answer is a pause. Eave is the memory that closes the gap between what your home needs and what you can actually remember about it.</p>
+    </div>
+  </div>
+
+  <!-- ── THE NOT-KNOWING PROBLEM ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The problem</p>
+        <h2>You live there. You still can't answer the question.</h2>
+      </div>
+      <div class="article-block">
+        <p>What size filter does the furnace take? When was the water heater installed, and is it still under warranty? Who fixed the roof last time, and did they ever come back? What paint is on the hallway walls? These are not trick questions. They are the ordinary details of a home you know well — and almost nobody can answer them without digging through a drawer, a group text, or a memory that has already moved on.</p>
+        <p>It is not a failure of caring. The persona we hear most is capable but overwhelmed: someone who owns a home, looks after it, and still never has a clear picture of what it needs. As one homeowner put it, "I don't even know what I don't know." The information exists. It is just scattered across receipts, inboxes, contractor voicemails, and the sticker on the side of an appliance in the basement.</p>
+      </div>
+      <ul class="know-list">
+        <li>The furnace filter size — a number you need twice a year and remember never.</li>
+        <li>When the water heater went in, and when the warranty runs out.</li>
+        <li>Who fixed the roof, what it cost, and whether it's still guaranteed.</li>
+        <li>The paint in the hallway, down to the finish and the code.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── THE COST OF NOT-KNOWING ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The cost</p>
+        <h2>Not-knowing isn't free. It's just billed later.</h2>
+      </div>
+      <div class="article-block">
+        <p>A missing detail is quiet right up until it isn't. The small fix you never logged becomes the emergency you can't schedule. The warranty you forgot lapses two months before the part fails. And when it's time to sell, insure, or refinance, the questions arrive all at once — and every gap in the record turns into a delay, a lower number, or an awkward "I'm not sure."</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-figure">92%</div>
+          <div class="stat-label">of homeowners have outstanding repairs on their list</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-figure">$5,600</div>
+          <div class="stat-label">average cost of a deferred repair once it turns urgent</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-figure">68%</div>
+          <div class="stat-label">feel overwhelmed or stressed about home maintenance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-figure">$8,808</div>
+          <div class="stat-label">average spent on home maintenance every year</div>
+        </div>
+      </div>
+      <p class="stat-source">Sources: industry surveys, 2025–2026.</p>
+      <div class="article-block" style="margin-top:24px;">
+        <p>That is the real math of not-knowing: a $150 flapper you meant to deal with becomes a $5,600 repair once the damage spreads. Nearly all of the money — the $8,808 a year — is already being spent. The problem was never the budget. It was that no one kept the record that would have made the money land in the right place, at the right time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE SHIFT ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The shift</p>
+        <h2>Capture once. Get it back when you need it.</h2>
+      </div>
+      <div class="feature-split">
+        <div>
+          <div class="article-block">
+            <p>Eave is the memory that closes the gap. You capture the home once — by speaking, snapping a photo, or typing a note — and the specs, the schedule, the budget, and the history come back the moment you need them. Nothing has to be filed perfectly, because Eave does the filing.</p>
+            <p>The <a href="/features/home-knowledge-base">Home Knowledge Base</a> holds every room, appliance, contractor, and repair as a searchable record — a furnace becomes "Carrier 59TP6, installed 2015, warranty through 2029, filter 16×25×1 MERV 11" instead of a shrug. And Eave <a href="/features/intelligence">Intelligence</a> turns that record into direction: what needs attention now, ranked and reasoned, before it becomes the expensive kind of surprise.</p>
+          </div>
+        </div>
+        <div>
+          <img class="shot shot-phone"
+               src="/images/opt/home-mobile.webp"
+               alt="Eave home dashboard showing active projects and upkeep tasks due"
+               loading="lazy" decoding="async">
+          <p class="shot-caption">One home, one memory: projects, tasks due, and the record behind each one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE ANSWER ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The answer</p>
+        <h2>So — how much would you pay to actually know?</h2>
+      </div>
+      <div class="article-block">
+        <p>It's a fair question, and it has an unfair answer: nothing, to start. Eave is free for one property, forever, and runs in any browser. Your first capture takes about five seconds, and from then on the home remembers itself.</p>
+        <p>Which turns the title question around. The real question was never whether knowing is worth it — the money, the stress, and the surprises already made that case. The real question is why you'd keep living in a home you can't answer for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEEP EXPLORING + CTA ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Keep exploring</p>
+        <h2>See how it actually works</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/features">
+          <div class="xlink-title">The product →</div>
+          <div class="xlink-desc">The five parts of Eave, from the knowledge base to the ranked action queue.</div>
+        </a>
+        <a class="xlink-card" href="/#pricing">
+          <div class="xlink-title">Pricing →</div>
+          <div class="xlink-desc">Free for one property, forever. Eave Intelligence from $2.99/mo when you want more.</div>
+        </a>
+        <a class="xlink-card" href="/for/new-homeowners">
+          <div class="xlink-title">New homeowners →</div>
+          <div class="xlink-desc">Nobody hands you a manual when you buy a house. Eave builds one as you go.</div>
+        </a>
+      </div>
+      <div class="contact-strip" style="margin-top:32px;">
+        <p><strong>See it on your own home.</strong> Eave is free for one property and runs in any browser — your first capture takes about five seconds.</p>
+        <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/features">Product</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#pro">Pro</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+
+</body>
+</html>

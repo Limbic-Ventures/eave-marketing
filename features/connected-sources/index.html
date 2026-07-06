@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connected Sources — import your home's history — Eave</title>
+  <meta name="description" content="Connect Gmail to find home receipts and warranties automatically. Eave's warranty tracking reads your inbox read-only and imports home purchases — nothing saves until you review.">
+  <link rel="canonical" href="https://eavehome.app/features/connected-sources">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/features/connected-sources">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Connected Sources — import your home's history — Eave">
+  <meta property="og:description" content="Connect Gmail and calendar today. Eave surfaces home receipts, warranties, and contractor confirmations, read-only — and nothing saves without your review.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Connected Sources — import your home's history",
+    "description": "Connect Gmail to find home receipts and warranties automatically. Eave's warranty tracking reads your inbox read-only and imports home purchases — nothing saves until you review.",
+    "url": "https://eavehome.app/features/connected-sources",
+    "isPartOf": { "@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Product", "item": "https://eavehome.app/features" },
+      { "@type": "ListItem", "position": 3, "name": "Connected Sources", "item": "https://eavehome.app/features/connected-sources" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can I connect to Eave today?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Today you can connect Gmail and your calendar. From there, Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in your inbox and schedule. Store accounts like Home Depot, Lowe's, and Amazon, along with smart-home connections, are rolling out and not live yet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Eave read from my email?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eave connects to Gmail with read-only access and looks only for home-related items — purchase receipts, warranty registrations, and contractor or service confirmations. It surfaces those for you rather than combing through personal mail. It never sends email on your behalf and never changes anything in your inbox."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does anything save automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Nothing saves to your home records without your review first. Eave surfaces what it finds — a receipt, a warranty expiry, a contractor — and you decide what to keep and where it goes. Review-before-save is a core part of how Eave works: nothing saves without your say."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/features">Product</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/#pro">Pro</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
+    <a href="/features" onclick="closeMobile()">Product</a>
+    <a href="/#pricing" onclick="closeMobile()">Pricing</a>
+    <a href="/#pro" onclick="closeMobile()">Pro</a>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/features">Product</a></li>
+        <li><span aria-current="page">Connected Sources</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">Product · Connected Sources</p>
+      <h1>Your inbox already has your home's history. Eave finds it.</h1>
+      <p>The receipts, warranties, and contractor confirmations that make up your home's record are already scattered across your email and calendar. Connect Gmail and Eave surfaces the home-related pieces for you — read-only, and nothing saves until you review it.</p>
+    </div>
+  </div>
+
+  <!-- ── WHAT YOU CAN CONNECT ── -->
+  <section class="support-section" id="connect-today">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">What connects today</p>
+        <h2>Gmail and calendar, live now</h2>
+      </div>
+      <div class="feature-split">
+        <div>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Today you can connect Gmail and your calendar. That's usually all it takes to start filling in your home's history, because the important records tend to already be there — an appliance receipt, a warranty registration, a confirmation from the plumber you booked last spring.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Once connected, Eave watches for the home-related items among them and pulls them out: a receipt gets matched to the right appliance, a warranty date gets logged, a contractor confirmation becomes a contact in your directory. The work of hunting through old email disappears.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Store accounts — Home Depot, Lowe's, Amazon — and smart-home connections are rolling out. They're not live yet, so we won't pretend otherwise; when they land, they'll extend the same idea to your purchase and device history.</p>
+        </div>
+        <div>
+          <img src="/images/opt/sources-desktop.webp"
+               class="shot"
+               loading="lazy" decoding="async"
+               alt="Eave connected sources on desktop showing linked Gmail and calendar and the home items found in them">
+          <p class="shot-caption">Connected sources on the desktop app: Gmail and calendar link today, with store and smart-home connections rolling out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT EAVE READS ── -->
+  <section class="support-section" id="what-eave-reads">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">What Eave reads</p>
+        <h2>Read-only, and only your home</h2>
+      </div>
+      <div class="feature-split reverse">
+        <div>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Access is read-only. Eave never sends email on your behalf and never changes anything in your inbox or calendar. It looks, it surfaces, and that's the extent of it.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">It also looks for one thing: your home. Eave surfaces home-related receipts, warranty registrations, and contractor or service confirmations — not personal correspondence, not everything you've ever received. The goal is a fuller home record, not a full read of your mail.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">If you want the specifics on how that access works and how your data is handled, our <a href="/support/data-privacy">data and privacy</a> page covers it in plain terms.</p>
+        </div>
+        <div>
+          <img src="/images/opt/connected-mobile.webp"
+               class="shot shot-phone"
+               loading="lazy" decoding="async"
+               alt="Eave connected sources on a phone showing home receipts and warranties surfaced from a linked inbox">
+          <p class="shot-caption">On mobile, Eave surfaces the home items it found — each one waiting for you to review before it's saved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NOTHING SAVES AUTOMATICALLY ── -->
+  <section class="support-section" id="review-first">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">You review first</p>
+        <h2>Nothing saves without your say</h2>
+      </div>
+      <div class="article-block">
+        <h3>Eave surfaces, you decide</h3>
+        <p>Connecting a source doesn't hand Eave the keys to your records. It surfaces what it finds — a receipt, a warranty expiry, a contractor's confirmation — and holds it for your review. You choose what to keep, correct anything that's off, and decide where it belongs. Nothing lands in your home knowledge base until you say so.</p>
+      </div>
+      <div class="article-block">
+        <h3>Why it works this way</h3>
+        <p>Your home's record is only useful if it's accurate, and the fastest way to erode trust in it is to let a system save things you never checked. Review-before-save keeps you in control and keeps the record clean — the same principle applies whether you capture something by voice, by photo, or from a connected inbox.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="support-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Questions</p>
+        <h2>About connected sources</h2>
+      </div>
+      <div class="qa-item">
+        <h3>What can I connect to Eave today?</h3>
+        <p>Today you can connect Gmail and your calendar. From there, Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in your inbox and schedule. Store accounts like Home Depot, Lowe's, and Amazon, along with smart-home connections, are rolling out and not live yet.</p>
+      </div>
+      <div class="qa-item">
+        <h3>What does Eave read from my email?</h3>
+        <p>Eave connects to Gmail with read-only access and looks only for home-related items — purchase receipts, warranty registrations, and contractor or service confirmations. It surfaces those for you rather than combing through personal mail. It never sends email on your behalf and never changes anything in your inbox.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does anything save automatically?</h3>
+        <p>No. Nothing saves to your home records without your review first. Eave surfaces what it finds — a receipt, a warranty expiry, a contractor — and you decide what to keep and where it goes. Review-before-save is a core part of how Eave works: nothing saves without your say.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEEP EXPLORING ── -->
+  <section class="support-section" id="keep-exploring">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Keep exploring</p>
+        <h2>Where connected sources lead</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/features/home-knowledge-base">
+          <div class="xlink-title">Home Knowledge Base</div>
+          <div class="xlink-desc">The searchable record connected sources fill in — rooms, appliances, contractors, and repairs.</div>
+        </a>
+        <a class="xlink-card" href="/support/data-privacy">
+          <div class="xlink-title">Data and privacy</div>
+          <div class="xlink-desc">How read-only access works, what Eave looks at, and how your data is handled — in plain terms.</div>
+        </a>
+        <a class="xlink-card" href="/guides/connecting-gmail-for-receipts">
+          <div class="xlink-title">Connecting Gmail for receipts</div>
+          <div class="xlink-desc">A step-by-step walkthrough for linking Gmail and reviewing the home items Eave surfaces.</div>
+        </a>
+      </div>
+      <div class="contact-strip" style="margin-top:32px;">
+        <p><strong>See it on your own home.</strong> Eave is free for one property and runs in any browser — your first capture takes about five seconds.</p>
+        <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/features">Product</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#pro">Pro</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+
+</body>
+</html>

@@ -45,6 +45,17 @@
 ## Key pages
 
 - https://eavehome.app/ — product overview, how it works, pricing
+- https://eavehome.app/features — product overview hub
+- https://eavehome.app/features/home-knowledge-base — the home knowledge
+  base: room inventory, appliance registry, contractors, receipts
+- https://eavehome.app/features/upkeep-score — the live 0–100 home health score
+- https://eavehome.app/features/capture — speak / snap / type project capture
+- https://eavehome.app/features/intelligence — seasonal prep + weekly action queue
+- https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
+- https://eavehome.app/for/new-homeowners — for first-time / new homeowners
+- https://eavehome.app/for/landlords — multi-property owners and landlords
+- https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
+- https://eavehome.app/why-eave — why a home knowledge base is worth it
 - https://eavehome.app/support — support hub: help topics, tutorials, contact
 - https://eavehome.app/support/getting-started — what Eave is, what it costs,
   and setting up your home (property profile, spaces, appliances, Home Score)
