@@ -144,6 +144,73 @@ Effort: ~1 day.
 
 Effort: ~half day.
 
+### PHASE E — Product & audience pages (product knowledge base + GEO expansion)
+
+**Decided July 3 (planning session).** Everything indexable so far is support/how-to. This phase adds the *product marketing* layer: deep, screenshot-rich capability pages and persona pages, arranged as a search funnel that feeds Pricing and app signup. Reuses the `/assets/support.css` template — no new structural work.
+
+**Decisions locked:** build both feature and audience pages · single "Product" nav link to a `/features` hub · audiences = new homeowners, landlords/multi-property, DIY homeowners (selling/moving deferred) · value framing lives on a standalone `/why-eave` page.
+
+#### The funnel (why these pages, by search intent)
+
+| Layer | Pages | Intent example |
+|---|---|---|
+| Informational (top) | `/furnace-filter-size`, `/when-to-replace-water-heater` (Phase A4) | "what size furnace filter" |
+| Product category (mid) | `/features/*` | "home inventory app", "home maintenance score" |
+| Audience (mid) | `/for/*` | "app for new homeowners", "landlord maintenance app" |
+| Value / decision | `/why-eave`, Pricing, `/support` | "why use a home maintenance app", "eave pricing" |
+
+Feature pages link to the audiences they serve + the guides that show them; audience pages recombine 3–4 features into that persona's story. Cross-linking compounds authority.
+
+#### Target URL architecture
+
+```
+/features                              product hub (lists all capability pages)
+/features/home-knowledge-base          THE roadmap centerpiece — asset registry,
+                                       room inventory, appliance registry, contractors
+/features/upkeep-score                 live 0–100 score (high-value SEO term)
+/features/capture                      speak / snap / type → structured project
+/features/intelligence                 seasonal prep + weekly action queue
+/features/connected-sources            Gmail / receipts / warranty detection
+/for/new-homeowners                    primary persona (79% want a home manual)
+/for/landlords                         multi-property + Eave Commercial tie-in
+/for/diy-homeowners                    capable owner tracking own work + budgets
+/why-eave                              "How Much Would You Pay to Actually Know?"
+                                       value manifesto (from Pricing V2 framing)
+```
+
+#### Screenshots — PII-critical
+
+Use ONLY the redacted set in `images/UI/redacted/` (address shown as fictional "124 Maple Ridge Dr, Austin, TX"). The raw `images/UI/*.png` show the real address (1282 Woodside Dr, San Luis Obispo) and must NEVER ship. Available redacted assets: `home-mobile`, `maintenance-mobile`, `connected-mobile`, `projects-desktop`, `sources-desktop`, `pro-mobile`, `more-mobile`. Optimize to `.webp` in `images/opt/` with width/height + lazy-loading before use. Re-scan any NEW screenshot for PII (address, name, geolocation) before publishing — see [[screenshot-pii-check]].
+
+#### Schema plan
+
+- `/features/*`: each maps to a real capability — `WebPage` + `BreadcrumbList`, plus a short `FAQPage` where natural (e.g. "How does the Upkeep Score work?").
+- `/for/*`: `WebPage` + `BreadcrumbList`; `FAQPage` for persona objections.
+- `/why-eave`: `WebPage`; consider `Product`/`Offer` cross-reference to Pricing.
+- `/features` hub: `ItemList` of the capability pages (like `/guides`).
+
+#### Navigation
+
+- Top nav gains one item → **How it works · Product · Pricing · Pro · Guides · Support** (6 items; watch mobile wrap). "Product" → `/features` hub. Audience pages + `/why-eave` stay out of primary nav (reached via hub, homepage, footer, cross-links, and organic/AI search).
+- Footer: add a "Product" column linking the feature pages; add `/why-eave`.
+
+#### GEO files
+
+- `sitemap.xml`: add each URL **as its page ships** (not before — avoids crawler 404s). Priority 0.7 features hub + home-knowledge-base, 0.6 other features, 0.5 audience pages, 0.6 `/why-eave`.
+- `llms.txt`: itemize the feature/audience/why-eave URLs under Key pages once live.
+
+#### Sub-steps & effort
+
+| Step | Scope | Effort |
+|---|---|---|
+| **E1** | `/features` hub + `/features/home-knowledge-base` (flagship, redacted screenshots) + "Product" nav item on all pages + optimize needed screenshots to webp | ~half day |
+| **E2** | Remaining feature pages: `/features/upkeep-score`, `/features/capture`, `/features/intelligence`, `/features/connected-sources` | ~1 day |
+| **E3** | Audience pages: `/for/new-homeowners`, `/for/landlords`, `/for/diy-homeowners` | ~1 day |
+| **E4** | `/why-eave` value page (adapts the "How Much Would You Pay to Actually Know?" framing) | ~half day |
+| **E5** | Cross-link pass (features ↔ audiences ↔ guides ↔ pricing), footer Product column, sitemap + llms.txt for all shipped URLs | ~half day |
+
+Content note: E1–E4 are net-new copy grounded in the marketing brief's feature list (§6–7) and proof points (§2). Draft, then verify each product claim against the shipped app before publishing (same truth-pass discipline as A1).
+
 ---
 
 ## 3. Open decisions for Garrett
@@ -158,16 +225,19 @@ Effort: ~half day.
 
 ## 4. Sequencing summary
 
-| Order | Phase | Scope | Effort |
-|---|---|---|---|
-| 1 | **A1** | Nav + support truth pass + last CTA fix | ~30 min, ship same day |
-| 2 | **A2–A3** | Support split + guides hub (page template established here) | ~1 day |
-| 3 | **A4–A5** | Topic pages + GEO files | ~half day + writing |
-| 4 | **B** | Furnace story + hero | ~1 day |
-| 5 | **C** | Story extensions + trust | ~1 day |
-| 6 | **D** | Polish leftovers | ~half day |
+| Order | Phase | Scope | Effort | Status |
+|---|---|---|---|---|
+| 1 | **A1** | Nav + support truth pass + last CTA fix | ~30 min | ✅ shipped |
+| 2 | **A2** | Support split into category pages + FAQPage schema | ~half day | ✅ shipped |
+| 3 | **A3** | Guides hub + 5 HowTo guide pages | ~half day | ✅ shipped |
+| — | (nav) | Guides in top nav, Features anchor removed | — | ✅ shipped |
+| 4 | **A4–A5** | Topic landing pages + GEO files + homepage slim FAQ | ~half day + writing | todo |
+| 5 | **E1–E5** | Product feature pages + audience pages + /why-eave | ~3–4 days | todo (this session's plan) |
+| 6 | **B** | Furnace story + hero | ~1 day | todo |
+| 7 | **C** | Story extensions + trust | ~1 day | todo |
+| 8 | **D** | Polish leftovers | ~half day | todo |
 
-Phases A and B are independent — B can start any time if writing for A4 stalls. Everything stays within the static-HTML architecture; the A2 subpage template is the only new structural work.
+Phases A/E (SEO/content infrastructure) and B/C (homepage story) are independent tracks. Everything stays within the static-HTML architecture; the A2 subpage template (`/assets/support.css`) carries every new page in A3, A4, and E. Recommended next: **E1** (features hub + home-knowledge-base) since it's the roadmap centerpiece and unblocks the "Product" nav item, or **A4** if you'd rather finish the informational-search layer first.
 
 ---
 
