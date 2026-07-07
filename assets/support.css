@@ -257,6 +257,18 @@ nav {
 .qa-item ul, .qa-item ol { padding-left: 20px; margin-top: 8px; }
 .qa-item a { color: var(--jade); text-decoration: underline; }
 
+/* ── DOC ARTICLE PROSE (help-center pages) ── */
+.doc { max-width: 760px; }
+.doc h2 { font-size: 19px; margin: 36px 0 12px; }
+.doc h2:first-child { margin-top: 0; }
+.doc h3 { font-size: 15px; margin: 24px 0 8px; }
+.doc p { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+.doc ul, .doc ol { margin: 0 0 14px 22px; }
+.doc li { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 7px; }
+.doc a { color: var(--jade); text-decoration: underline; }
+.doc strong { color: var(--ink); font-weight: 700; }
+.doc code { font-family: 'IBM Plex Mono', monospace; font-size: 13px; background: var(--surface); padding: 1px 5px; border-radius: 4px; }
+
 /* ── ARTICLE BLOCKS (in-depth) ── */
 .article-block {
   max-width: 760px;

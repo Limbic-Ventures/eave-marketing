@@ -12,18 +12,18 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Billing: subscribing, canceling, and refunds — Eave Support</title>
-  <meta name="description" content="How to subscribe through Stripe, manage or cancel your plan, and request a refund.">
-  <link rel="canonical" href="https://eavehome.app/support/billing">
+  <title>Your Upkeep Score, explained — Eave Support</title>
+  <meta name="description" content="What the free 0–100 home-health score measures and how to move it up.">
+  <link rel="canonical" href="https://eavehome.app/support/upkeep-score">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eavehome.app/support/billing">
+  <meta property="og:url" content="https://eavehome.app/support/upkeep-score">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Billing: subscribing, canceling, and refunds — Eave Support">
-  <meta property="og:description" content="How to subscribe through Stripe, manage or cancel your plan, and request a refund.">
+  <meta property="og:title" content="Your Upkeep Score, explained — Eave Support">
+  <meta property="og:description" content="What the free 0–100 home-health score measures and how to move it up.">
   <meta property="og:image" content="https://eavehome.app/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,22 +32,21 @@
   <link rel="stylesheet" href="/assets/support.css">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Billing: subscribing, canceling, and refunds — Eave Support","description":"How to subscribe through Stripe, manage or cancel your plan, and request a refund.","url":"https://eavehome.app/support/billing","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Your Upkeep Score, explained — Eave Support","description":"What the free 0–100 home-health score measures and how to move it up.","url":"https://eavehome.app/support/upkeep-score","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://eavehome.app/"},
     {"@type":"ListItem","position":2,"name":"Support","item":"https://eavehome.app/support"},
-    {"@type":"ListItem","position":3,"name":"Billing: subscribing, canceling, and refunds","item":"https://eavehome.app/support/billing"}
+    {"@type":"ListItem","position":3,"name":"Your Upkeep Score, explained","item":"https://eavehome.app/support/upkeep-score"}
   ]}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-      {"@type": "Question", "name": "Can I switch between monthly and annual?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — use **Manage Billing** to change your plan in the Stripe portal."}},
-      {"@type": "Question", "name": "Where are my receipts?", "acceptedAnswer": {"@type": "Answer", "text": "In the Stripe Customer Portal, under your billing history, via **Manage Billing**."}},
-      {"@type": "Question", "name": "I subscribed on my phone.", "acceptedAnswer": {"@type": "Answer", "text": "Purchases made through a mobile app store are managed in that store's subscription settings rather than the Stripe portal."}},
-      {"@type": "Question", "name": "Does canceling delete my home?", "acceptedAnswer": {"@type": "Answer", "text": "No. Canceling only ends Intelligence. Your home's data stays put, and you can export everything anytime from **My Account**."}},
-      {"@type": "Question", "name": "Will I lose my data if I go back to Free?", "acceptedAnswer": {"@type": "Answer", "text": "No. You keep all your free features; only the Intelligence-only features (like your AI Upkeep Plan) pause until you resubscribe. Still stuck? Reach us anytime at **support@limbicventures.com**."}}
+      {"@type": "Question", "name": "Is a lower score bad?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's just a snapshot of where things stand. A dip usually means a task or two slipped, and it recovers as you catch up."}},
+      {"@type": "Question", "name": "How exactly is the number calculated?", "acceptedAnswer": {"@type": "Answer", "text": "It's a weighted blend of the areas above, not a single formula you need to memorize. In short: it goes down when tasks are overdue or projects pile up, and up as you complete them."}},
+      {"@type": "Question", "name": "Do I have to pay for it?", "acceptedAnswer": {"@type": "Answer", "text": "No. The Upkeep Score is included free, alongside your projects, tasks, appliances, spaces, budget, and contractors."}},
+      {"@type": "Question", "name": "How often does it update?", "acceptedAnswer": {"@type": "Answer", "text": "It reflects your home as it stands now, so it moves as you complete tasks, close out projects, and handle reminders."}}
   ]}
   </script>
 </head>
@@ -88,7 +87,7 @@
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/support">Support</a></li>
-        <li><span aria-current="page">Billing: subscribing, canceling, and refunds</span></li>
+        <li><span aria-current="page">Your Upkeep Score, explained</span></li>
       </ol>
     </div>
   </div>
@@ -96,9 +95,9 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Support · Plans &amp; billing</p>
-      <h1>Billing: subscribing, canceling, and refunds</h1>
-      <p>How to subscribe through Stripe, manage or cancel your plan, and request a refund.</p>
+      <p class="label">Support · Your home &amp; capture</p>
+      <h1>Your Upkeep Score, explained</h1>
+      <p>What the free 0–100 home-health score measures and how to move it up.</p>
     </div>
   </div>
 
@@ -106,25 +105,18 @@
   <section class="support-section">
     <div class="container">
       <div class="doc">
-      <p>Eave Intelligence is an optional upgrade that unlocks your AI-generated upkeep plan and a few other planning features. Here's how to subscribe, change your plan, and handle billing questions — all from one place.</p>
-      <h2>Where billing lives</h2>
-      <p>Open your profile menu (your avatar, bottom-left) and choose <strong>Membership</strong>. This page shows your current plan and every billing action.</p>
-      <h2>How to subscribe</h2>
-      <ol><li>Go to <strong>Membership</strong>.</li><li>Pick the plan that fits you:</li></ol>
-      <ul><li><strong>Monthly — $2.99/mo</strong></li><li><strong>Annual — $24/yr</strong> (about $2/mo)</li><li><strong>Lifetime — $49 one-time</strong> (never expires)</li></ul>
-      <ol><li>You'll be taken to <strong>Stripe Checkout</strong> to enter payment details.</li><li>After payment, you're returned to Eave with Intelligence already active.</li></ol>
-      <p>Your free features — projects, tasks, appliances, spaces, budgets, contractors, and your Upkeep Score — stay free and are never affected by upgrading.</p>
-      <h2>How to manage or cancel</h2>
-      <p>On the <strong>Membership</strong> page, choose <strong>Manage Billing</strong>. This opens the <strong>Stripe Customer Portal</strong>, where you can:</p>
-      <ul><li>cancel your subscription</li><li>update your card</li><li>view and download past invoices</li></ul>
-      <p>When you cancel, your plan returns to Free. If a payment fails, you keep Intelligence during a short grace period before anything changes, so a temporary card hiccup won't lock you out.</p>
-      <p>Lifetime is a one-time purchase — there's nothing to cancel and it never expires.</p>
-      <h2>Promo codes</h2>
-      <p>If you have a promo code, enter it on the payment screen in Stripe Checkout. The discount is applied before you confirm, so you'll see the adjusted price before paying.</p>
-      <h2>How refunds work</h2>
-      <p>Eave doesn't have a self-serve refund button. If you'd like a refund, email us at <strong>support@limbicventures.com</strong> and we'll take care of it directly. Please include the email address on your account so we can find your billing record.</p>
-      <h2>A note on Eave Pro</h2>
-      <p><strong>Eave Pro</strong> (hands-on concierge services like a Home Audit or Seasonal Manager) is a separate, waitlist-only offering. Its buttons say <strong>Join Waitlist</strong> — there's no automated checkout, and it's billed and arranged by our team, not through the steps above.</p>
+      <p>Your Upkeep Score is a single number, from 0 to 100, that reflects how well your home is being kept up. Think of it as a quick health check for your home. You'll find it on your Home page and on your Upkeep Plan.</p>
+      <h2>What the score measures</h2>
+      <p>The score looks at a few things together and blends them into one number:</p>
+      <ul><li><strong>Whether maintenance is getting done on time.</strong> Seasonal tasks completed within their season count in your favor. Letting a whole season slip by pulls the score down.</li><li><strong>How healthy your project backlog is.</strong> A few open projects are normal. Projects that sit unfinished for a long time with no activity start to weigh on the score.</li><li><strong>How on top of things your home is overall.</strong> Overdue appliance reminders and warranties about to lapse also nudge the number down.</li></ul>
+      <p>You don't need to do anything to turn it on. The Upkeep Score is a free feature, included on every plan.</p>
+      <h2>What moves it up</h2>
+      <ul><li>Completing maintenance tasks within their season</li><li>Finishing or updating projects instead of letting them stall</li><li>Handling appliance reminders (like a filter swap) when they come due</li><li>Keeping warranties and coverage current</li></ul>
+      <h2>What moves it down</h2>
+      <ul><li>Maintenance tasks going overdue</li><li>High-priority projects left unfinished</li><li>Appliance reminders you've passed</li><li>Missing an entire season of upkeep</li><li>Warranties expiring soon without action</li></ul>
+      <p>The score has a floor of 30 and a ceiling of 100, so it won't swing to zero and it won't punish you forever for one busy month.</p>
+      <h2>How to improve it</h2>
+      <ol><li><strong>Open your Home page</strong> and glance at what's flagged as overdue.</li><li><strong>Clear the quick wins first</strong> — check off maintenance tasks you've already done, and knock out any short appliance reminders.</li><li><strong>Pick one High-priority project</strong> and either move it forward or mark it complete.</li><li><strong>Stay in the current season.</strong> Doing this season's tasks before it ends is the single biggest thing that keeps the score steady.</li><li><strong>Check back over time.</strong> As you keep up, the number climbs on its own — no need to chase it daily.</li></ol>
       </div>
     </div>
   </section>
@@ -134,24 +126,20 @@
     <div class="container">
       <div class="section-header"><p class="label">Common questions</p><h2>Quick answers</h2></div>
       <div class="qa-item">
-        <h3>Can I switch between monthly and annual?</h3>
-        <p>Yes — use <strong>Manage Billing</strong> to change your plan in the Stripe portal.</p>
+        <h3>Is a lower score bad?</h3>
+        <p>No. It's just a snapshot of where things stand. A dip usually means a task or two slipped, and it recovers as you catch up.</p>
       </div>
       <div class="qa-item">
-        <h3>Where are my receipts?</h3>
-        <p>In the Stripe Customer Portal, under your billing history, via <strong>Manage Billing</strong>.</p>
+        <h3>How exactly is the number calculated?</h3>
+        <p>It's a weighted blend of the areas above, not a single formula you need to memorize. In short: it goes down when tasks are overdue or projects pile up, and up as you complete them.</p>
       </div>
       <div class="qa-item">
-        <h3>I subscribed on my phone.</h3>
-        <p>Purchases made through a mobile app store are managed in that store's subscription settings rather than the Stripe portal.</p>
+        <h3>Do I have to pay for it?</h3>
+        <p>No. The Upkeep Score is included free, alongside your projects, tasks, appliances, spaces, budget, and contractors.</p>
       </div>
       <div class="qa-item">
-        <h3>Does canceling delete my home?</h3>
-        <p>No. Canceling only ends Intelligence. Your home's data stays put, and you can export everything anytime from <strong>My Account</strong>.</p>
-      </div>
-      <div class="qa-item">
-        <h3>Will I lose my data if I go back to Free?</h3>
-        <p>No. You keep all your free features; only the Intelligence-only features (like your AI Upkeep Plan) pause until you resubscribe. Still stuck? Reach us anytime at <strong>support@limbicventures.com</strong>.</p>
+        <h3>How often does it update?</h3>
+        <p>It reflects your home as it stands now, so it moves as you complete tasks, close out projects, and handle reminders.</p>
       </div>
     </div>
   </section>
@@ -159,11 +147,23 @@
   <!-- ── RELATED ── -->
   <section class="support-section">
     <div class="container">
-      <div class="section-header"><p class="label">More in Plans &amp; billing</p><h2>Keep reading</h2></div>
+      <div class="section-header"><p class="label">More in Your home &amp; capture</p><h2>Keep reading</h2></div>
       <div class="xlink-grid">
-        <a class="xlink-card" href="/support/intelligence-vs-free">
-          <div class="xlink-title">Eave Free vs Eave Intelligence</div>
-          <div class="xlink-desc">Exactly what&#x27;s included in each plan today, and what Intelligence adds.</div>
+        <a class="xlink-card" href="/support/systems-and-appliances">
+          <div class="xlink-title">Systems &amp; appliances</div>
+          <div class="xlink-desc">Track your equipment, let Eave research specs with Enrich with AI, and turn suggestions into upkeep.</div>
+        </a>
+        <a class="xlink-card" href="/support/reminders-and-buy-links">
+          <div class="xlink-title">Reminders and one-tap buy links</div>
+          <div class="xlink-desc">How nightly reminders work and how buy links pre-fill a retailer search for the exact part you need.</div>
+        </a>
+        <a class="xlink-card" href="/support/care-plan">
+          <div class="xlink-title">Your 12-month care plan</div>
+          <div class="xlink-desc">An AI-generated 12-month upkeep schedule built from your real home profile (an Intelligence feature).</div>
+        </a>
+        <a class="xlink-card" href="/support/contractors-and-hire-it-out">
+          <div class="xlink-title">Contractors and Hire It Out</div>
+          <div class="xlink-desc">Keep your trusted pros in one place and use AI Vendor Research to find new ones.</div>
         </a>
         <a class="xlink-card" href="/support">
           <div class="xlink-title">All help topics</div>

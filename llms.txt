@@ -57,14 +57,25 @@
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
-- https://eavehome.app/support — support hub: help topics, tutorials, contact
-- https://eavehome.app/support/getting-started — what Eave is, what it costs,
+- https://eavehome.app/support — help center hub (15 articles, 5 groups)
+- https://eavehome.app/support/getting-started
+- https://eavehome.app/support/capturing-your-home
+- https://eavehome.app/support/spaces-and-properties
+- https://eavehome.app/support/systems-and-appliances
+- https://eavehome.app/support/reminders-and-buy-links
+- https://eavehome.app/support/care-plan
+- https://eavehome.app/support/upkeep-score
+- https://eavehome.app/support/contractors-and-hire-it-out
+- https://eavehome.app/support/inspection-import
+- https://eavehome.app/support/manuals-and-insurance-import
+- https://eavehome.app/support/connected-sources
+- https://eavehome.app/support/intelligence-vs-free
+- https://eavehome.app/support/billing
+- https://eavehome.app/support/data-privacy
+- https://eavehome.app/support/troubleshooting-uploads
   and setting up your home (property profile, spaces, appliances, Home Score)
-- https://eavehome.app/support/using-eave — AI Capture, room scanning,
   connected sources, shopping lists, seasonal maintenance, projects
-- https://eavehome.app/support/data-privacy — what Eave reads and doesn't,
   row-level security, data ownership, export and deletion
-- https://eavehome.app/support/billing — plans, subscription management,
   refunds
 - https://eavehome.app/guides — step-by-step guides hub
 - https://eavehome.app/guides/first-10-minutes-in-eave — full first-time setup

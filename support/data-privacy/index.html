@@ -12,8 +12,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Data &amp; Privacy in Eave — Support</title>
-  <meta name="description" content="How Eave protects your home data: what connected sources do and don't read, row-level security, data ownership, export, and account deletion.">
+  <title>Your data and privacy — Eave Support</title>
+  <meta name="description" content="What Eave reads, how AI processing works, and how to export or delete everything you own.">
   <link rel="canonical" href="https://eavehome.app/support/data-privacy">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -22,8 +22,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eavehome.app/support/data-privacy">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Data &amp; Privacy in Eave — Support">
-  <meta property="og:description" content="What Eave reads, how your data is protected, and how to export or delete it.">
+  <meta property="og:title" content="Your data and privacy — Eave Support">
+  <meta property="og:description" content="What Eave reads, how AI processing works, and how to export or delete everything you own.">
   <meta property="og:image" content="https://eavehome.app/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,55 +32,22 @@
   <link rel="stylesheet" href="/assets/support.css">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is my data private in Eave?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I export my home data from Eave?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I delete my Eave account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Go to Settings → Account → Delete Account, or email us and we'll handle it. Deletion removes all your records permanently."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does Eave read from my connected email?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category."
-        }
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"WebPage","name":"Your data and privacy — Eave Support","description":"What Eave reads, how AI processing works, and how to export or delete everything you own.","url":"https://eavehome.app/support/data-privacy","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://eavehome.app/support" },
-      { "@type": "ListItem", "position": 3, "name": "Data & Privacy", "item": "https://eavehome.app/support/data-privacy" }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://eavehome.app/"},
+    {"@type":"ListItem","position":2,"name":"Support","item":"https://eavehome.app/support"},
+    {"@type":"ListItem","position":3,"name":"Your data and privacy","item":"https://eavehome.app/support/data-privacy"}
+  ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type": "Question", "name": "Does Eave store my Home Depot, Lowe's, or Amazon password?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never asks for a store login. Retail purchases come from your order-confirmation emails through the Gmail connection, from receipt photos, or from an order-history file you export yourself."}},
+      {"@type": "Question", "name": "Is my email scanned automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. You start each Gmail scan yourself, and you confirm each receipt before it's saved."}},
+      {"@type": "Question", "name": "Can I get a copy of everything before I delete my account?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the data export in My Account first — it's a single downloadable file."}},
+      {"@type": "Question", "name": "Who do I contact with a privacy question?", "acceptedAnswer": {"@type": "Answer", "text": "Email us at support@limbicventures.com and we'll help."}}
+  ]}
   </script>
 </head>
 <body>
@@ -99,9 +66,7 @@
       <div class="nav-right">
         <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
         <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -116,25 +81,13 @@
     <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
 
-  <!-- ── SUB-NAV ── -->
-  <div class="sub-nav">
-    <div class="sub-nav-inner">
-      <a href="/support/getting-started">Getting Started</a>
-      <a href="/support/using-eave">Using Eave</a>
-      <a href="/support/data-privacy" class="active">Data &amp; Privacy</a>
-      <a href="/support/billing">Billing</a>
-      <a href="/support#tutorials">Tutorials</a>
-      <a href="/support#submit">Submit an Issue</a>
-    </div>
-  </div>
-
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
     <div class="container">
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/support">Support</a></li>
-        <li><span aria-current="page">Data &amp; Privacy</span></li>
+        <li><span aria-current="page">Your data and privacy</span></li>
       </ol>
     </div>
   </div>
@@ -142,94 +95,73 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Support · Data &amp; Privacy</p>
-      <h1>Your home's data stays yours</h1>
-      <p>What Eave reads (and refuses to read), how your records are protected, and how to export or delete everything.</p>
+      <p class="label">Support · Privacy &amp; troubleshooting</p>
+      <h1>Your data and privacy</h1>
+      <p>What Eave reads, how AI processing works, and how to export or delete everything you own.</p>
     </div>
   </div>
 
-  <!-- ── FAQS ── -->
-  <section class="support-section" id="faqs">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">FAQs</p>
-        <h2>Common questions</h2>
-      </div>
-
-      <div class="qa-item" id="is-data-private">
-        <h3>Is my data private?</h3>
-        <p>Yes. Your data is stored with Row-Level Security so only you can access it. Photos go to a private storage bucket. Nothing is shared or sold.</p>
-      </div>
-
-      <div class="qa-item" id="export-data">
-        <h3>Can I export my home data?</h3>
-        <p>Full export (for resale packages, insurance, or refinance) is on the roadmap. Your data always belongs to you.</p>
-      </div>
-
-      <div class="qa-item" id="delete-account">
-        <h3>How do I delete my account?</h3>
-        <p>Go to Settings → Account → Delete Account, or <a href="mailto:support@eavehome.app">email us</a> and we'll handle it. Deletion removes all your records permanently.</p>
-      </div>
-
-      <div class="qa-item" id="what-eave-reads">
-        <h3>What does Eave read from my connected email?</h3>
-        <p>Eave reads emails that match home-related patterns (receipts, appliance purchases, contractor invoices). It does not read personal correspondence, financial accounts, or anything outside the home category.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── IN DEPTH ── -->
-  <section class="support-section" id="details">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">In Depth</p>
-        <h2>How your data is handled</h2>
-      </div>
-
-      <div class="article-block" id="review-before-save">
-        <h3>You review everything before it saves</h3>
-        <p>Connected-source imports (email, store accounts) always land in a review queue first. Nothing saves to your home's record without your confirmation — you approve, edit, or dismiss each item.</p>
-      </div>
-
-      <div class="article-block" id="security">
-        <h3>Privacy, data ownership, and security</h3>
-        <p>Your data is stored with row-level security — only your account can access it. We don't sell or share your data. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
-      </div>
-
-      <div class="article-block" id="export-delete">
-        <h3>Exporting or deleting your data</h3>
-        <p>Export is on the roadmap. To delete your account and all associated data, go to Settings → Account → Delete Account, or contact us directly.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── MORE SUPPORT ── -->
+  <!-- ── ARTICLE ── -->
   <section class="support-section">
     <div class="container">
-      <div class="section-header">
-        <p class="label">More Support</p>
-        <h2>Keep exploring</h2>
+      <div class="doc">
+      <p>Eave is your home's memory, so it only reads what you give it access to, and your records stay yours. Here's exactly what that means.</p>
+      <h2>What Eave reads</h2>
+      <p>Eave works with the things you connect or upload:</p>
+      <ul><li><strong>Email receipts</strong> — when you connect Gmail from the Sources tab, Eave scans for appliance receipts, contractor invoices, warranty emails, and purchase history. Scans run only when you start them, and each detected receipt is shown for you to confirm or skip before anything is saved.</li><li><strong>Documents</strong> — inspection reports, appliance manuals, warranties, and insurance declaration pages that you upload. Eave pulls out the useful details (specs, warranty terms, renewal dates) and shows you a review step first.</li><li><strong>Photos</strong> — pictures you snap to capture a project, a spec plate, or a room.</li></ul>
+      <p>Nothing from a connected source is written to your home without you seeing a summary and confirming it.</p>
+      <h2>How AI processing works</h2>
+      <p>Eave uses <strong>Google Gemini</strong> to read your receipts, documents, and photos and turn them into organized records. That's the only AI provider Eave uses. For some tasks — like checking an appliance for active recalls or researching local pros — Eave also runs a live Google Search to bring back current information.</p>
+      <p>If you import your device list from SmartThings, that connection uses a one-time token to read your devices and nothing is stored.</p>
+      <h2>You keep and own your records</h2>
+      <p>Everything you build in Eave is yours. You can download all of it at any time:</p>
+      <ol><li>Open the profile menu and go to <strong>My Account</strong>.</li><li>Choose the <strong>data export</strong> option.</li><li>Eave gives you a single JSON file — <code>eave-export-YYYY-MM-DD.json</code> — with your properties, spaces, projects, tasks, appliances, contractors, purchase records, documents, reminders, and more.</li></ol>
+      <p>Export is available at every tier, including Free.</p>
+      <h2>Deleting your account</h2>
+      <p>You can delete your account whenever you want:</p>
+      <ol><li>Go to <strong>My Account</strong> from the profile menu.</li><li>Choose to delete your account and type to confirm.</li></ol>
+      <p>This removes your stored photos and cascades through everything tied to your home — projects, spaces, tasks, appliances, inventory, purchases, connected sources, and your sign-in itself. Deletion is permanent and can't be undone, so export your data first if you'd like to keep a copy.</p>
+      <h2>Retention basics</h2>
+      <p>Eave holds onto your records so your home's history is there when you need it — that's the whole point of a home's memory. Your data stays in your account until you remove it, either by deleting individual items or by deleting your account. Connected-source access (like Gmail) stays in place until you disconnect that source.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header"><p class="label">Common questions</p><h2>Quick answers</h2></div>
+      <div class="qa-item">
+        <h3>Does Eave store my Home Depot, Lowe&#x27;s, or Amazon password?</h3>
+        <p>No. Eave never asks for a store login. Retail purchases come from your order-confirmation emails through the Gmail connection, from receipt photos, or from an order-history file you export yourself.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Is my email scanned automatically?</h3>
+        <p>No. You start each Gmail scan yourself, and you confirm each receipt before it's saved.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Can I get a copy of everything before I delete my account?</h3>
+        <p>Yes. Use the data export in My Account first — it's a single downloadable file.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Who do I contact with a privacy question?</h3>
+        <p>Email us at support@limbicventures.com and we'll help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RELATED ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header"><p class="label">More in Privacy &amp; troubleshooting</p><h2>Keep reading</h2></div>
       <div class="xlink-grid">
-        <a class="xlink-card" href="/support/getting-started">
-          <div class="xlink-title">Getting Started</div>
-          <div class="xlink-desc">What Eave is, what it costs, and setting up your home.</div>
-        </a>
-        <a class="xlink-card" href="/support/using-eave">
-          <div class="xlink-title">Using Eave</div>
-          <div class="xlink-desc">AI Capture, room scanning, connected sources, and managing projects.</div>
-        </a>
-        <a class="xlink-card" href="/support/billing">
-          <div class="xlink-title">Billing</div>
-          <div class="xlink-desc">Plans, subscriptions, upgrades, and refunds.</div>
-        </a>
-        <a class="xlink-card" href="/guides">
-          <div class="xlink-title">Guides</div>
-          <div class="xlink-desc">Step-by-step walkthroughs, from first setup to seasonal maintenance.</div>
+        <a class="xlink-card" href="/support/troubleshooting-uploads">
+          <div class="xlink-title">Troubleshooting: photo &amp; PDF uploads</div>
+          <div class="xlink-desc">Fix uploads that won&#x27;t go through — almost always a file-size issue with a quick fix.</div>
         </a>
         <a class="xlink-card" href="/support">
-          <div class="xlink-title">Support home</div>
-          <div class="xlink-desc">Tutorials, step-by-step guides, and a direct line to the team.</div>
+          <div class="xlink-title">All help topics</div>
+          <div class="xlink-desc">Browse every article in the Eave help center.</div>
         </a>
       </div>
       <div class="contact-strip" style="margin-top:32px;">
@@ -250,9 +182,9 @@
         <ul class="footer-links">
           <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/features">Features</a></li>
-            <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/support">Support</a></li>
+          <li><a href="/pricing">Pricing</a></li>
           <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
         </ul>
         <ul class="footer-links">
           <li><span style="color:var(--dim);">App Store — soon</span></li>
@@ -261,26 +193,14 @@
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
-          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-            Instagram
-          </a>
-          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            Facebook
-          </a>
-          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
-        <div class="footer-legal">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-        </div>
+        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
       </div>
     </div>
   </footer>
@@ -289,9 +209,7 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    document.addEventListener('click', (e) => {
-      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
-    });
+    document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open'); });
     function closeMobile() { mobileMenu.classList.remove('open'); }
   </script>
 
