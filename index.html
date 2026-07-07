@@ -124,6 +124,9 @@
 
     section { padding: 70px 0; }
     section.alt { background: var(--surface); }
+    /* Deep link to a capability page */
+    .deep-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--jade); text-decoration: none; transition: gap .2s; }
+    .deep-link:hover { gap: 11px; }
 
     .fade-in {
       opacity: 0;
@@ -1134,7 +1137,6 @@
         <li><a href="#how-it-works">How it works</a></li>
         <li><a href="/features">Product</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#pro">Pro</a></li>
         <li><a href="/guides">Guides</a></li>
         <li><a href="/support">Support</a></li>
       </ul>
@@ -1152,7 +1154,6 @@
     <a href="#how-it-works" onclick="closeMobile()">How it works</a>
     <a href="/features" onclick="closeMobile()">Product</a>
     <a href="#pricing" onclick="closeMobile()">Pricing</a>
-    <a href="#pro" onclick="closeMobile()">Pro</a>
     <a href="/guides" onclick="closeMobile()">Guides</a>
     <a href="/support" onclick="closeMobile()">Support</a>
     <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
@@ -1248,6 +1249,7 @@
       <div class="fade-in">
         <div class="section-head" style="text-align:center;max-width:760px;margin:0 auto;">
           <p style="font-size:clamp(18px,2.2vw,24px);color:var(--ink);line-height:1.5;">Eave is one place for your projects, your home's records, and what needs doing next. Here's how it works.</p>
+          <a href="/features" class="deep-link" style="margin-top:24px;">EXPLORE ALL FIVE CAPABILITIES →</a>
         </div>
       </div>
     </div>
@@ -1337,6 +1339,7 @@
         <p class="label">Capture</p>
         <h2>Noticed something? Get a plan, not just a reminder.</h2>
         <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">Say it, snap it, or type a half-sentence. In seconds Eave scopes the whole job: the tools you already own versus the few to buy, a materials list with prices and where to get them, and how to tackle it — DIY with tutorials, or three local pros to call. Plus an all-in budget. A note becomes something you can act on this afternoon.</p>
+        <a href="/features/capture" class="deep-link">LEARN MORE ABOUT CAPTURE →</a>
       </div>
 
       <div class="cap2-wrap fade-in" style="transition-delay:.1s;">
@@ -1456,6 +1459,7 @@
         <p class="label">Memory</p>
         <h2>Every record about<br>your home — in one place<br>you'll actually find later.</h2>
         <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">Two years from now, when you can't remember the last time the HVAC was serviced or which plumber you liked — Eave has it. Everything you capture stays attached to your property, not lost in a notes app.</p>
+        <a href="/features/home-knowledge-base" class="deep-link">EXPLORE THE HOME KNOWLEDGE BASE →</a>
       </div>
 
       <div class="mem2-stage fade-in" style="transition-delay:.1s;">
@@ -1541,6 +1545,7 @@
         <p class="label">What's Next</p>
         <h2>Eave tells you what to do next, and why it matters now.</h2>
         <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">A live Upkeep Score tracks how your home is really doing across maintenance, backlog, and prevention. Underneath it, a ranked queue gives you the one thing to handle this week — with the reason attached, so you're never guessing whether it can wait.</p>
+        <a href="/features/intelligence" class="deep-link">SEE HOW INTELLIGENCE WORKS →</a>
       </div>
 
       <div class="wn-hero fade-in" style="transition-delay:.1s;">
@@ -1745,77 +1750,7 @@
 
       </div>
 
-      <!-- Eave Intelligence + Multi-Property add-on -->
-      <!-- Add-ons: Multi-Property + Eave Pro, one block -->
-      <div id="pro" class="pro-pricing-divider fade-in" style="transition-delay:.15s;">
-        <div class="pro-pricing-eyebrow">ADD-ONS — MULTI-PROPERTY &amp; EAVE PRO SERVICES</div>
-        <p class="pro-pricing-desc">Grow Eave when your life does. Add more properties to your Intelligence plan, or pair your home's data with a certified professional who already knows your property before they arrive — starting with a licensed Home Audit.</p>
-      </div>
-
-      <div class="pro-grid fade-in" style="transition-delay:.2s;">
-
-        <div class="pro-card card">
-          <div class="pro-card-title">Multi-Property</div>
-          <div class="pro-price-rows">
-            <div class="pro-price-row">
-              <span>2–5 properties · each</span>
-              <span class="pro-price-amount">+$39/yr</span>
-            </div>
-            <div class="pro-price-row">
-              <span>6+ properties</span>
-              <span class="pro-price-amount"><a href="mailto:support@limbicventures.com?subject=Eave%20Commercial%20Pricing" style="color:inherit;text-decoration:underline;">Contact us</a></span>
-            </div>
-          </div>
-          <div class="pro-commitment">ADD-ON TO INTELLIGENCE · COMING SOON</div>
-          <div class="pro-desc">Every property gets its own full Eave — projects, memory, upkeep score, and AI — under one account. Monthly and lifetime options at launch. <a href="mailto:support@limbicventures.com?subject=Eave%20Multi-Property%20Waitlist" style="color:var(--jade);">Get notified →</a></div>
-        </div>
-
-        <div class="pro-card card">
-          <div class="pro-card-title">Home Audit</div>
-          <div class="pro-price-rows">
-            <div class="pro-price-row">
-              <span>Up to 1,500 sq ft</span>
-              <span class="pro-price-amount">$499</span>
-            </div>
-            <div class="pro-price-row">
-              <span>1,500 – 3,000 sq ft</span>
-              <span class="pro-price-amount">$649</span>
-            </div>
-            <div class="pro-price-row">
-              <span>3,000+ sq ft</span>
-              <span class="pro-price-amount">$799</span>
-            </div>
-          </div>
-          <div class="pro-commitment">ONE-TIME · NO SUBSCRIPTION</div>
-          <div class="pro-desc">A licensed inspector comes to your home. Full report added to your Eave profile. AI-generated 12-month care plan from the findings.</div>
-        </div>
-
-        <div class="pro-card card" style="border-top:3px solid var(--jade);">
-          <div class="pro-card-title">More on the way</div>
-          <div class="pro-desc" style="margin-top:12px;">Seasonal coordination and full home management — a pro who schedules the vendors, handles the logistics, and keeps your budget synced — are coming after Home Audits roll out. Join the waitlist to hear first.</div>
-        </div>
-
-      </div>
-
-      <!-- Your Pro Arrives Informed strip -->
-      <div class="pro-arrives-strip fade-in" style="transition-delay:.25s;">
-        <div class="pro-arrives-heading">YOUR PRO ARRIVES INFORMED</div>
-        <div class="pro-arrives-body">Unlike a contractor found cold on Angi, your Eave Pro sees your full home profile before the first conversation — inspection report, project backlog, maintenance history, appliance records, spaces, and budget — all in one place.</div>
-        <div class="pro-tag-row">
-          <span class="pro-tag">Inspection report</span>
-          <span class="pro-tag">Project backlog</span>
-          <span class="pro-tag">Maintenance history</span>
-          <span class="pro-tag">Appliance records</span>
-          <span class="pro-tag">Spaces</span>
-          <span class="pro-tag">Budget</span>
-        </div>
-      </div>
-
-      <div class="pro-cta-wrap fade-in" style="transition-delay:.3s;">
-        <a href="mailto:support@limbicventures.com?subject=Eave Pro Waitlist" class="btn btn-jade" style="margin-right:16px;">Join the Pro waitlist →</a>
-      </div>
-
-      <p class="pricing-fine fade-in" style="transition-delay:.35s;">All core features are free forever — no credit card required, no trial expiry.<br>Intelligence and Pro are optional. You decide if and when you want more.</p>
+      <p class="pricing-fine fade-in" style="transition-delay:.15s;">All core features are free forever — no credit card required, no trial expiry. Eave Intelligence is an optional upgrade. Multi-property and Eave Pro services are on the way — <a href="/support/billing" style="color:var(--jade);">see all plans</a>.</p>
 
     </div>
   </section>
@@ -1881,7 +1816,6 @@
           <li><a href="#how-it-works">How it works</a></li>
           <li><a href="/features">Product</a></li>
             <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#pro">Pro</a></li>
           <li><a href="/support">Support</a></li>
           <li><a href="/guides">Guides</a></li>
         </ul>
