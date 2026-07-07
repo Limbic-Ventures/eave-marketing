@@ -19,13 +19,79 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://eavehome.app/support/getting-started</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>https://eavehome.app/support/capturing-your-home</loc>
+    <lastmod>2026-07-06</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://eavehome.app/support/using-eave</loc>
+    <loc>https://eavehome.app/support/spaces-and-properties</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/systems-and-appliances</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/reminders-and-buy-links</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/care-plan</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/upkeep-score</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/contractors-and-hire-it-out</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/inspection-import</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/manuals-and-insurance-import</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/connected-sources</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/intelligence-vs-free</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/troubleshooting-uploads</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/getting-started</loc>
     <lastmod>2026-07-03</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
