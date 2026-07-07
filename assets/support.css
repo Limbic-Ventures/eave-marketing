@@ -384,6 +384,30 @@ nav {
   box-shadow: 0 12px 40px rgba(31,58,82,.10);
 }
 .shot-phone { max-width: 280px; margin: 0 auto; }
+/* Labeled placeholder while awaiting a real screenshot */
+.shot-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px dashed var(--stone);
+  border-radius: 14px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 24px;
+}
+.shot-placeholder .ph-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--jade);
+}
+.shot-placeholder .ph-note { font-size: 12px; color: var(--dim); line-height: 1.5; }
+.shot-placeholder.phone { aspect-ratio: 3 / 4; max-width: 280px; margin: 0 auto; }
 .shot-caption {
   font-size: 11px;
   color: var(--dim);
