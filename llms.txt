@@ -40,7 +40,7 @@
   apps coming soon.
 - Data policy: connected-source imports (email, store accounts) are reviewed
   by the owner before anything saves.
-- Company: Limbic Ventures. Support: support@limbicventures.com.
+- Company: Limbic Ventures. Support: support@eavehome.app.
 
 ## Key pages
 
