@@ -45,6 +45,7 @@
 ## Key pages
 
 - https://eavehome.app/ — product overview, how it works, pricing
+- https://eavehome.app/pricing — full pricing: Free, Intelligence, Multi-Property & Eave Pro
 - https://eavehome.app/features — product overview hub
 - https://eavehome.app/features/home-knowledge-base — the home knowledge
   base: room inventory, appliance registry, contractors, receipts
