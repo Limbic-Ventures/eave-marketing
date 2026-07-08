@@ -145,6 +145,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://eavehome.app/about</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://eavehome.app/features</loc>
     <lastmod>2026-07-03</lastmod>
     <priority>0.7</priority>
