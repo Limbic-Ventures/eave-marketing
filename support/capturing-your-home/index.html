@@ -7,7 +7,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-E28P3WD3XB');
+    gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
+    // Cross-domain + conversion: fire a GA4 event on any click through to the app
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
+      if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
+    });
   </script>
 
   <meta charset="UTF-8">
