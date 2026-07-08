@@ -7,3 +7,10 @@ Thumbs.db
 # Source imagery — heavy originals stay local; only images/opt/ (optimized WebP) is committed
 images/*
 !images/opt/
+
+# Internal planning/strategy docs — keep local, never deploy
+MARKETING_SITE_PLAN.md
+SECURITY_AUDIT_marketing_website.md
+eave-marketing-brief.md
+eave-homepage-*.md
+*.docx
