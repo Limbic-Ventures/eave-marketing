@@ -744,7 +744,7 @@
       padding: 0 8px;
     }
     .alt .step-num { background: var(--surface); }
-    .step-title { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
+    .step-title { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 10px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
     .step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
     /* How It Works tablet */
@@ -1144,7 +1144,35 @@
       .wn-tl-track { flex-wrap: wrap; }
       .wn-tl-seg { min-width: calc(50% - 3px); }
     }
+
+    /* ── TRUST / FOUNDER ── */
+    .founder-note { max-width: 720px; }
+    .founder-note p { font-size: 16px; color: var(--muted); line-height: 1.8; }
+    .founder-note p + p { margin-top: 14px; }
+    .founder-sign { font-family: 'Sacramento', cursive; font-size: 30px; color: var(--ink); margin-top: 18px; }
+    .trust-badges { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 36px; }
+    .trust-badge { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .04em; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
+    .trust-badge .tb-check { color: var(--jade); font-weight: 700; }
+    .trust-fine { max-width: 720px; margin-top: 24px; font-size: 12px; color: var(--dim); line-height: 1.7; }
+    .trust-fine a { color: var(--jade); text-decoration: none; }
+    /* ── HOME FAQ ── */
+    .home-faq-list { max-width: 780px; margin-top: 8px; }
+    .home-faq-item { border-top: 1px solid var(--stone); padding: 22px 0; }
+    .home-faq-item:last-child { border-bottom: 1px solid var(--stone); }
+    .home-faq-q { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-bottom: 8px; }
+    .home-faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .home-faq-a a { color: var(--jade); text-decoration: none; }
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is Eave really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade from $2.99/mo."}},
+    {"@type":"Question","name":"Do I need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon."}},
+    {"@type":"Question","name":"How does Eave capture what my home needs?","acceptedAnswer":{"@type":"Answer","text":"Speak it, snap a photo, or type a few words. Eave turns it into a scoped project — the room, the category, the priority, and an estimated cost."}},
+    {"@type":"Question","name":"Is my home data private?","acceptedAnswer":{"@type":"Answer","text":"Your data is yours. Nothing saves until you review it, it is stored with row-level security, and you can export or delete everything at any time."}},
+    {"@type":"Question","name":"What does Eave Intelligence add?","acceptedAnswer":{"@type":"Answer","text":"A 12-month upkeep plan built for your home, a ranked why-now queue, and seasonal prep — the planning layer on top of your free records."}},
+    {"@type":"Question","name":"Can I manage more than one home?","acceptedAnswer":{"@type":"Answer","text":"One property is covered today. Multi-property support (up to five) is coming soon as an add-on to Eave Intelligence."}}
+  ]}
+  </script>
 </head>
 <body>
 
@@ -1286,22 +1314,22 @@
       <div class="steps fade-in" style="transition-delay:.1s;">
         <div class="step">
           <div class="step-num">01</div>
-          <div class="step-title">Eave learns your home</div>
+          <h3 class="step-title">Eave learns your home</h3>
           <div class="step-desc">Give Eave your address. It pulls your home's age, size, and structure automatically, then tailors the plan to your climate and local maintenance windows.</div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <div class="step-title">Capture your first project</div>
+          <h3 class="step-title">Capture your first project</h3>
           <div class="step-desc">Speak, snap, or type something you've been meaning to deal with. See Eave structure it in real time.</div>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <div class="step-title">Connect your accounts</div>
+          <h3 class="step-title">Connect your accounts</h3>
           <div class="step-desc">Link your email, home improvement store accounts, or smart home platforms. Eave surfaces what it finds for your review — nothing saves without your say.</div>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <div class="step-title">Follow your action queue</div>
+          <h3 class="step-title">Follow your action queue</h3>
           <div class="step-desc">Each week, Eave tells you what to handle — ranked by urgency, with a one-liner on why each item matters now. Each season, a prep plan built from your home's specifics.</div>
         </div>
       </div>
@@ -1485,13 +1513,13 @@
 
         <div class="mem2-node nw active" data-mem2="spaces">
           <div class="mem2-node-num">01</div>
-          <div class="mem2-node-title">Spaces &amp; Areas</div>
+          <h3 class="mem2-node-title">Spaces &amp; Areas</h3>
           <div class="mem2-node-desc">Structures, yards, and every room inside them. Snap a room and Eave fills in the materials, wall color, ceiling height — and flags visible issues.</div>
         </div>
 
         <div class="mem2-node ne" data-mem2="appliances">
           <div class="mem2-node-num">02</div>
-          <div class="mem2-node-title">Systems &amp; Appliances</div>
+          <h3 class="mem2-node-title">Systems &amp; Appliances</h3>
           <div class="mem2-node-desc">Snap a data plate: specs auto-researched (down to the filter size), warranty alerts, service history, and a replacement forecast.</div>
         </div>
 
@@ -1543,13 +1571,13 @@
 
         <div class="mem2-node sw" data-mem2="contractors">
           <div class="mem2-node-num">03</div>
-          <div class="mem2-node-title">Tools &amp; Materials</div>
+          <h3 class="mem2-node-title">Tools &amp; Materials</h3>
           <div class="mem2-node-desc">The gear and stock you own — power tools, kits, leftover paint — so you know what you already have before you buy it twice.</div>
         </div>
 
         <div class="mem2-node se" data-mem2="connected">
           <div class="mem2-node-num">04</div>
-          <div class="mem2-node-title">Projects &amp; Tasks</div>
+          <h3 class="mem2-node-title">Projects &amp; Tasks</h3>
           <div class="mem2-node-desc">Every job you've captured, with photos, budget versus actual, and the recurring upkeep it feeds back into your plan.</div>
         </div>
 
@@ -1779,6 +1807,45 @@
 
       <p class="pricing-fine fade-in" style="transition-delay:.15s;">All core features are free forever — no credit card required, no trial expiry. Eave Intelligence is an optional upgrade. Multi-property and Eave Pro services are on the way — <a href="/pricing" style="color:var(--jade);">see full pricing &amp; Pro services</a>.</p>
 
+    </div>
+  </section>
+
+  <!-- ═══ TRUST / FOUNDER ═══ -->
+  <section id="trust">
+    <div class="container">
+      <div class="fade-in">
+        <p class="label">Why we built Eave</p>
+        <div class="section-head"><h2>Nobody hands you a manual<br>for your home.</h2></div>
+        <div class="founder-note">
+          <p>A home is the biggest thing most of us will ever own, and it comes with no instructions. We built Eave because we were tired of the mental backlog: the filter size you can never remember, the warranty you can't find, the repair you keep putting off until it gets expensive.</p>
+          <p>Eave is the memory we wanted. Capture anything in a few seconds, and it comes back exactly when it matters — with the specs, the schedule, and what to do next.</p>
+          <p class="founder-sign">— Garrett, founder</p>
+        </div>
+        <div class="trust-badges">
+          <span class="trust-badge"><span class="tb-check">&#10003;</span> Nothing saves without your say</span>
+          <span class="trust-badge"><span class="tb-check">&#10003;</span> Export everything, anytime &mdash; on any plan</span>
+          <span class="trust-badge"><span class="tb-check">&#10003;</span> Free for one home, forever</span>
+        </div>
+        <p class="trust-fine">Your records are yours. Eave shows you what it finds before anything is saved, and you can download all of it &mdash; every project, appliance, and document &mdash; as a single file whenever you want. <a href="/support/data-privacy">How your data is handled &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq" class="alt">
+    <div class="container">
+      <div class="fade-in">
+        <p class="label">FAQ</p>
+        <div class="section-head"><h2>Questions, answered.</h2></div>
+      </div>
+      <div class="home-faq-list fade-in" style="transition-delay:.1s;">
+        <div class="home-faq-item"><h3 class="home-faq-q">Is Eave really free?</h3><div class="home-faq-a">Yes &mdash; free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade from $2.99/mo. <a href="/pricing">See full pricing &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Do I need to download an app?</h3><div class="home-faq-a">No. Eave runs in any browser at app.eavehome.app &mdash; phone, tablet, or desktop. Native iOS and Android apps are coming soon. <a href="/support/getting-started">Getting started &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">How does Eave capture what my home needs?</h3><div class="home-faq-a">Speak it, snap a photo, or type a few words. Eave turns it into a scoped project &mdash; the room, the category, the priority, and an estimated cost. <a href="/features/capture">More on Capture &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Is my home data private?</h3><div class="home-faq-a">Your data is yours. Nothing saves until you review it, it's stored with row-level security, and you can export or delete everything at any time. <a href="/support/data-privacy">Data &amp; privacy &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">What does Eave Intelligence add?</h3><div class="home-faq-a">A 12-month upkeep plan built for your home, a ranked &ldquo;why-now&rdquo; queue, and seasonal prep &mdash; the planning layer on top of your free records. <a href="/features/intelligence">More on Intelligence &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Can I manage more than one home?</h3><div class="home-faq-a">One property is covered today. Multi-property support (up to five) is coming soon as an add-on to Eave Intelligence. <a href="/support/spaces-and-properties">Spaces &amp; properties &rarr;</a></div></div>
+      </div>
     </div>
   </section>
 
