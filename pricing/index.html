@@ -169,6 +169,10 @@
     .pr-arrives p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
     .pr-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .pr-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--jade); padding: 4px 10px; border: 1px solid rgba(111,168,201,.25); background: rgba(111,168,201,.07); border-radius: 6px; }
+    .bundle-callout { background: var(--surface); border: 1px dashed rgba(111,168,201,.4); border-radius: var(--chamfer); padding: 20px 26px; margin-top: 18px; max-width: 620px; }
+    .bundle-callout h3 { font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: var(--jade); margin-bottom: 8px; }
+    .bundle-callout p { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+    .bundle-callout .btn { padding: 9px 18px; font-size: 11px; }
     @media (max-width: 768px) {
       .pr-grid, .pr-grid3, .pr-services { grid-template-columns: 1fr; }
     }
@@ -424,6 +428,15 @@ about a twelfth of one insurance premium.</p>
 
       </div>
 
+      <div class="bundle-callout">
+        <h3>Turn your audit into ongoing protection</h3>
+        <p>A Home Audit gives your home's memory a running start — a licensed
+           inspector's full walkthrough, captured straight into your graph. Add
+           Guardian's first year and that snapshot never goes stale. $649 total:
+           your audit, plus a full year of active protection.</p>
+        <a class="btn btn-outline" href="mailto:support@eavehome.app?subject=Audit%20%2B%20Guardian%20bundle">Add Guardian to my audit</a>
+      </div>
+
       <div class="pr-footnotes">
         <p>Annual billing is the default. The monthly price shown is roughly 3x the
         annual-equivalent rate and exists as a reference point, not a discount trick.</p>
@@ -509,6 +522,7 @@ about a twelfth of one insurance premium.</p>
           <h3>Home Audit</h3>
           <div class="pr-svc-price">Waitlist</div>
           <p>A licensed inspector comes to your home. The full report is added to your Eave profile, and Eave generates a 12-month care plan from the findings. Arranged directly by our team — join the waitlist for availability and pricing.</p>
+          <p>Already have Guardian? Bundle your audit with a full year of Guardian for $649 total — see the <a href="#plans" style="color:var(--jade);">bundle offer above</a>.</p>
         </div>
         <div class="pr-service">
           <h3>Seasonal Manager</h3>
