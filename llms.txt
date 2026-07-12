@@ -52,6 +52,7 @@
 - https://eavehome.app/features/upkeep-score — the live 0–100 home health score
 - https://eavehome.app/features/capture — speak / snap / type project capture
 - https://eavehome.app/features/intelligence — seasonal prep + weekly action queue
+- https://eavehome.app/features/guardian — evidence vault, claim packets, capex forecast, protection tier
 - https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
 - https://eavehome.app/for/new-homeowners — for first-time / new homeowners
 - https://eavehome.app/for/landlords — multi-property owners and landlords

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
+    // Cross-domain + conversion: fire a GA4 event on any click through to the app
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
+      if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eave Guardian — active protection for your home — Eave</title>
+  <meta name="description" content="Eave Guardian ($24.99/mo · $199/yr): evidence vault, one-tap claim packets, 10-year capex forecast, and carrier-discount documentation for your home.">
+  <link rel="canonical" href="https://eavehome.app/features/guardian">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/features/guardian">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Eave Guardian — active protection for your home — Eave">
+  <meta property="og:description" content="Eave Guardian ($24.99/mo · $199/yr): evidence vault, one-tap claim packets, 10-year capex forecast, and carrier-discount documentation for your home.">
+  <meta property="og:image" content="https://eavehome.app/og/features-guardian.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Eave Guardian — active protection for your home — Eave">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Eave Guardian — active protection for your home — Eave">
+  <meta name="twitter:description" content="Eave Guardian ($24.99/mo · $199/yr): evidence vault, one-tap claim packets, 10-year capex forecast, and carrier-discount documentation for your home.">
+  <meta name="twitter:image" content="https://eavehome.app/og/features-guardian.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+  <style>
+    .cost-module { padding: 40px 0 48px; border-bottom: 1px solid var(--stone); }
+    .cost-rows { display: flex; flex-direction: column; gap: 10px; max-width: 640px; margin: 0 auto 30px; }
+    .cost-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; background: var(--surface); border: 1px solid var(--stone); border-radius: var(--chamfer); }
+    .cost-row span:first-child { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--ink); }
+    .cost-row span:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 700; color: var(--dim); white-space: nowrap; }
+    .cost-row span:last-child { font-size: 12px; color: var(--dim); text-align: right; }
+    .cost-row.is-eave { background: rgba(111,168,201,.08); border-color: var(--jade); }
+    .cost-row.is-eave span:first-child { color: var(--jade); font-weight: 700; }
+    .cost-row.is-eave span:nth-child(2) { color: var(--jade); }
+    .cost-row.is-eave span:last-child { color: var(--ink); }
+    .cost-stat { max-width: 640px; margin: 0 auto 12px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .cost-stat:last-child { margin-bottom: 0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Eave Guardian — active protection for your home",
+    "description": "Eave Guardian ($24.99/mo · $199/yr): evidence vault, one-tap claim packets, 10-year capex forecast, and carrier-discount documentation for your home.",
+    "url": "https://eavehome.app/features/guardian",
+    "isPartOf": { "@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://eavehome.app/features" },
+      { "@type": "ListItem", "position": 3, "name": "Guardian", "item": "https://eavehome.app/features/guardian" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's in the evidence vault?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The evidence vault holds the records that prove your home's condition and upkeep over time: dated photos, receipts, contractor invoices, warranty documents, and the maintenance history behind them. It's the material an insurer or warranty provider actually asks for when something goes wrong, already organized and ready before you need it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do claim packets work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One tap assembles a claim packet from your evidence vault — the photos, receipts, and maintenance records relevant to the claim, organized into a single document. Guardian documents and assembles your evidence; your insurer and your policy decide coverage. Guardian doesn't file the claim or negotiate on your behalf, and it isn't a guarantee of payout — it's the paperwork done ahead of time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does \"rolling out\" mean for telemetry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Telemetry fusion — pulling in leak, electrical, solar, and thermostat sensor data — is an active part of the Guardian roadmap and is rolling out in phases rather than available to every home on day one. Guardian subscribers get it as it ships, at no added cost, alongside the capabilities that are already live: the evidence vault, claim packets, the capex forecast, the carrier-discount checklist, the annual virtual audit, and priority support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Guardian vs Intelligence — what's the difference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Eave Intelligence is $2.99/mo or $24/yr and stays available — it's the planning layer, telling you what to do next with a seasonal prep digest and a ranked weekly action queue. Eave Guardian is $24.99/mo or $199/yr and adds the protection layer on top: an evidence vault with one-tap claim packets, a 10-year capex forecast, a carrier-discount checklist, an annual virtual audit review, telemetry fusion (rolling out), and priority support."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
+    <a href="/features" onclick="closeMobile()">Features</a>
+    <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><span aria-current="page">Guardian</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">Your home's memory</p>
+      <h1>More active than insurance — protection for the home you already have.</h1>
+      <p>Homeowners insurance pays you after something breaks, and only if the paperwork holds up. Eave Guardian works before: an evidence vault ready for every claim, a 10-year forecast for what's coming, and the documentation insurers actually ask for — so nothing is scrambled together the day you need it.</p>
+    </div>
+  </div>
+
+  <!-- ── CAPABILITY 1: EVIDENCE VAULT & CLAIM PACKETS ── -->
+  <section class="support-section" id="evidence-vault">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Evidence vault</p>
+        <h2>One tap assembles the claim packet — before you need it</h2>
+      </div>
+      <div class="feature-split">
+        <div>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Every photo, receipt, contractor invoice, and warranty document you've added to Eave lives in the evidence vault — dated, organized, and tied to the room or system it belongs to. It's the record insurers and warranty providers ask for when something goes wrong, built up automatically instead of dug up in a panic.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">When you need to file, one tap assembles a claim packet: the relevant photos, receipts, and maintenance history pulled together into a single document. Guardian documents and assembles your evidence; your insurer and your policy decide coverage.</p>
+        </div>
+        <div>
+          <img src="/images/opt/projects-desktop.webp"
+               class="shot"
+               loading="lazy" decoding="async"
+               alt="Eave web app showing a home's records and documents organized by room and system">
+          <p class="shot-caption">The evidence vault keeps every receipt, photo, and warranty tied to the system it belongs to.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY 2: 10-YEAR CAPEX FORECAST ── -->
+  <section class="support-section" id="capex-forecast">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Capex forecast</p>
+        <h2>Know what's coming before it's an emergency</h2>
+      </div>
+      <div class="feature-split reverse">
+        <div>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Every major system in your home has a lifespan — a roof, a water heater, an HVAC unit. Guardian's 10-year capex forecast reads the age and condition of your systems and lays out roughly when each one is likely to need replacement, so the big expenses show up on a timeline instead of a doorstep.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">That's the difference between budgeting for a new water heater two years out and finding out the morning of a cold shower. The forecast turns "someday" into a plan you can actually save for.</p>
+        </div>
+        <div>
+          <img src="/images/opt/upkeep-score.webp"
+               class="shot"
+               loading="lazy" decoding="async"
+               alt="Eave home health view showing system age and upcoming replacement timing">
+          <p class="shot-caption">The forecast reads your home's systems and lays out what's likely to need replacing, and roughly when.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY 3: CARRIER-DISCOUNT CHECKLIST ── -->
+  <section class="support-section" id="carrier-discount">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Carrier-discount checklist</p>
+        <h2>The documentation insurers actually ask for</h2>
+      </div>
+      <div class="feature-split">
+        <div>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Many insurers offer discounts for homes with documented upgrades — new roofs, updated electrical, monitored systems — but only if you can prove it. Guardian's carrier-discount checklist lays out what that proof typically looks like, so the paperwork is ready when you ask your carrier what you qualify for.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">It's a checklist, not a quote or a guarantee — what you qualify for is between you and your carrier. Guardian's job is making sure the documentation isn't the reason you miss out.</p>
+        </div>
+        <div>
+          <img src="/images/opt/home-mobile.webp"
+               class="shot shot-phone"
+               loading="lazy" decoding="async"
+               alt="Eave home dashboard on a phone showing documented upgrades and records">
+          <p class="shot-caption">Documented upgrades, ready to hand your carrier when you ask about a discount.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY 4: ANNUAL VIRTUAL AUDIT REVIEW ── -->
+  <section class="support-section" id="virtual-audit">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Annual virtual audit review</p>
+        <h2>A yearly checkpoint so your snapshot never goes stale</h2>
+      </div>
+      <div class="article-block">
+        <h3>A standing checkpoint, not a one-time capture</h3>
+        <p>Once a year, Guardian reviews your home's records against what's changed — new systems, completed projects, updated warranties — and flags what needs a refresh. It's the difference between a snapshot taken once and a record that stays current as your home does.</p>
+      </div>
+      <div class="article-block">
+        <h3>Built for the moments that matter</h3>
+        <p>An up-to-date record is worth the most exactly when you need it most: filing a claim, selling the home, or shopping for a new policy. The annual review keeps the evidence vault ready for those moments instead of years out of date.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY 5: TELEMETRY FUSION (ROLLING OUT) ── -->
+  <section class="support-section" id="telemetry-fusion">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Telemetry fusion <span class="pr-soon" style="font-family:'Space Grotesk',sans-serif;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);border:1px solid rgba(224,168,61,.45);border-radius:4px;padding:2px 7px;margin-left:6px;vertical-align:middle;">Rolling out</span></p>
+        <h2>Sensor data, fused into the same record</h2>
+      </div>
+      <div class="article-block">
+        <h3>Leak, electrical, solar, and thermostat sensors</h3>
+        <p>Guardian is rolling out telemetry fusion — pulling in data from leak sensors, electrical monitors, solar systems, and smart thermostats and folding it into the same home record as your photos and receipts. Instead of a separate app per device, one picture of what your home's systems are actually doing.</p>
+      </div>
+      <div class="article-block">
+        <h3>What "rolling out" means here</h3>
+        <p>Telemetry fusion is shipping in phases rather than available to every home on day one. Guardian subscribers get it as it ships, at no added cost, alongside the capabilities that are already live today: the evidence vault, claim packets, the capex forecast, the carrier-discount checklist, the annual virtual audit, and priority support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CAPABILITY 6: PRIORITY SUPPORT ── -->
+  <section class="support-section" id="priority-support">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Priority support</p>
+        <h2>A faster line to the team when it counts</h2>
+      </div>
+      <div class="article-block">
+        <p>Guardian subscribers get priority support — a faster response when you're pulling together a claim packet, reviewing your capex forecast, or just have a question about what's in your evidence vault. Reach the team anytime at <a href="mailto:support@eavehome.app" style="color:var(--jade);">support@eavehome.app</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COST OF NOT KNOWING ── -->
+  <section class="cost-module" aria-label="The cost of not knowing">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The cost of not knowing</p>
+        <h2>Insurance pays you after. A warranty argues with you during. Guardian works before.</h2>
+      </div>
+      <div class="cost-rows">
+        <div class="cost-row"><span>Your insurer</span><span>~$2,400/yr</span><span>pays you after.</span></div>
+        <div class="cost-row"><span>Your home warranty</span><span>~$800/yr</span><span>argues with you during.</span></div>
+        <div class="cost-row is-eave"><span>Eave Guardian</span><span>$199/yr</span><span>works before.</span></div>
+      </div>
+      <p class="cost-stat">The average deferred repair costs $5,600. Eave exists so you never have one.</p>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <section class="support-section" id="start-guardian">
+    <div class="container">
+      <div class="contact-strip">
+        <p><strong>Protect the home you already have.</strong> Eave Guardian is $24.99/mo or $199/yr, with annual billing as the default.</p>
+        <a href="https://app.eavehome.app/?plan=guardian_annual" class="btn btn-jade">Start Guardian →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="support-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Questions</p>
+        <h2>About Eave Guardian</h2>
+      </div>
+      <div class="qa-item">
+        <h3>What's in the evidence vault?</h3>
+        <p>The evidence vault holds the records that prove your home's condition and upkeep over time: dated photos, receipts, contractor invoices, warranty documents, and the maintenance history behind them. It's the material an insurer or warranty provider actually asks for when something goes wrong, already organized and ready before you need it.</p>
+      </div>
+      <div class="qa-item">
+        <h3>How do claim packets work?</h3>
+        <p>One tap assembles a claim packet from your evidence vault — the photos, receipts, and maintenance records relevant to the claim, organized into a single document. Guardian documents and assembles your evidence; your insurer and your policy decide coverage. Guardian doesn't file the claim or negotiate on your behalf, and it isn't a guarantee of payout — it's the paperwork done ahead of time.</p>
+      </div>
+      <div class="qa-item">
+        <h3>What does "rolling out" mean for telemetry?</h3>
+        <p>Telemetry fusion — pulling in leak, electrical, solar, and thermostat sensor data — is an active part of the Guardian roadmap and is rolling out in phases rather than available to every home on day one. Guardian subscribers get it as it ships, at no added cost, alongside the capabilities that are already live: the evidence vault, claim packets, the capex forecast, the carrier-discount checklist, the annual virtual audit, and priority support.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Guardian vs Intelligence — what's the difference?</h3>
+        <p>Eave Intelligence is $2.99/mo or $24/yr and stays available — it's the planning layer, telling you what to do next with a seasonal prep digest and a ranked weekly action queue. Eave Guardian is $24.99/mo or $199/yr and adds the protection layer on top: an evidence vault with one-tap claim packets, a 10-year capex forecast, a carrier-discount checklist, an annual virtual audit review, telemetry fusion (rolling out), and priority support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEEP EXPLORING ── -->
+  <section class="support-section" id="keep-exploring">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Keep exploring</p>
+        <h2>Where the evidence comes from</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/features/intelligence">
+          <div class="xlink-title">Intelligence</div>
+          <div class="xlink-desc">The planning layer — a seasonal prep digest and ranked weekly action queue that Guardian's forecast builds on.</div>
+        </a>
+        <a class="xlink-card" href="/features/home-knowledge-base">
+          <div class="xlink-title">Home Knowledge Base</div>
+          <div class="xlink-desc">The records — rooms, appliances, warranties — that fill the evidence vault in the first place.</div>
+        </a>
+        <a class="xlink-card" href="/pricing">
+          <div class="xlink-title">Pricing</div>
+          <div class="xlink-desc">Compare Guardian against Intelligence and Eave's free tier, plus multi-property plans.</div>
+        </a>
+      </div>
+      <div class="contact-strip" style="margin-top:32px;">
+        <p><strong>See it on your own home.</strong> Eave is free for one property and runs in any browser — your first capture takes about five seconds.</p>
+        <a href="https://app.eavehome.app/?plan=guardian_annual" class="btn btn-jade">Start Guardian →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+
+</body>
+</html>
