@@ -75,7 +75,8 @@
       { "@type": "Offer", "name": "Eave Free", "price": "0", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" },
       { "@type": "Offer", "name": "Eave Intelligence — Monthly", "price": "2.99", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" },
       { "@type": "Offer", "name": "Eave Intelligence — Annual", "price": "24", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" },
-      { "@type": "Offer", "name": "Eave Intelligence — Lifetime", "price": "49", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" }
+      { "@type": "Offer", "name": "Eave Guardian — Monthly", "price": "24.99", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" },
+      { "@type": "Offer", "name": "Eave Guardian — Annual", "price": "199", "priceCurrency": "USD", "url": "https://eavehome.app/pricing" }
     ]
   }
   </script>
@@ -84,11 +85,11 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Is Eave really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Eave is free for one property, forever — no credit card and no trial expiry. Eave Intelligence and Eave Pro are optional add-ons you choose only if you want more." } },
-      { "@type": "Question", "name": "What's the difference between Free and Eave Intelligence?", "acceptedAnswer": { "@type": "Answer", "text": "Free gives you the records and tools: projects, systems and appliances, spaces, budget tracking, contractors, your Upkeep Score, and connected sources. Intelligence adds the AI project queue, a 12-month upkeep plan, the seasonal prep digest, and materials estimates — the machinery that turns your records into a ranked plan." } },
-      { "@type": "Question", "name": "How much does Eave Intelligence cost?", "acceptedAnswer": { "@type": "Answer", "text": "Eave Intelligence is $2.99/month or $24/year. Eave Guardian, which adds the evidence vault, claim packets, and 10-year capex forecast, is $24.99/month or $199/year. Annual billing is the default." } },
-      { "@type": "Question", "name": "When will Multi-Property and Eave Pro be available?", "acceptedAnswer": { "@type": "Answer", "text": "Both are coming soon. Multi-property will be a separate add-on to Eave Intelligence for up to five properties — every plan covers one today. Eave Pro is a waitlist-only concierge offering, starting with a Home Audit and Seasonal Manager, arranged directly by our team. Pricing for both will be shared when they are available. Join the waitlist to hear first." } },
-      { "@type": "Question", "name": "Can I cancel Intelligence anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can cancel anytime from Settings → Membership, and your home's records stay in the free tier — canceling never deletes your data." } }
+      { "@type": "Question", "name": "Is Eave really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Eave is free for one home, forever — no credit card and no trial expiry. Your records export at every tier, including Free." } },
+      { "@type": "Question", "name": "What does Guardian add over Intelligence?", "acceptedAnswer": { "@type": "Answer", "text": "Guardian adds the evidence vault with one-tap insurance and warranty claim packets, a 10-year capex forecast, the carrier-discount checklist, an annual virtual audit review, telemetry fusion for leak, electrical, solar, and thermostat sensors (rolling out), and priority support." } },
+      { "@type": "Question", "name": "How much does Eave cost?", "acceptedAnswer": { "@type": "Answer", "text": "Eave Intelligence is $2.99/month or $24/year. Eave Guardian is $24.99/month or $199/year. Multi-Property is $7.99/property/month or $69/property/year, and Portfolio (6+ properties) is available by talking to our team. Annual billing is the default across every tier." } },
+      { "@type": "Question", "name": "I bought the $49 lifetime — what happens?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing changes. Early Members keep Intelligence forever. New pricing applies to new signups only." } },
+      { "@type": "Question", "name": "Can I cancel anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Cancel anytime from Settings → Membership, and your home's records stay in the free tier — canceling never deletes your data." } }
     ]
   }
   </script>
@@ -108,7 +109,9 @@
     .cost-stat { max-width: 640px; margin: 0 auto 12px; font-size: 13px; color: var(--muted); line-height: 1.6; }
     .cost-stat:last-child { margin-bottom: 0; }
     .pr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .pr-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
     .pr-card {
+      position: relative;
       background: var(--surface);
       border: 1px solid var(--stone);
       border-radius: var(--chamfer);
@@ -117,9 +120,14 @@
       flex-direction: column;
     }
     .pr-card.featured { border-color: var(--jade); box-shadow: 0 12px 40px rgba(31,58,82,.08); }
+    .pr-badge { position: absolute; top: -11px; left: 24px; font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: var(--jade); color: var(--bg); }
+    .pr-tagline { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .pr-footnotes { max-width: 820px; margin: 34px auto 0; display: flex; flex-direction: column; gap: 14px; }
+    .pr-footnotes p { font-size: 12px; color: var(--dim); line-height: 1.6; }
     .pr-plan-eyebrow { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px; }
     .pr-plan-eyebrow.free { color: var(--jade); }
     .pr-plan-eyebrow.intel { color: var(--amber); }
+    .pr-plan-eyebrow.guardian { color: var(--jade); font-weight: 700; }
     .pr-price { display: flex; align-items: baseline; gap: 6px; }
     .pr-price .amt { font-family: 'Space Grotesk', sans-serif; font-size: 46px; color: var(--ink); line-height: 1; }
     .pr-price .pre { font-family: 'Space Grotesk', sans-serif; font-size: 24px; color: var(--ink); }
@@ -162,7 +170,7 @@
     .pr-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .pr-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--jade); padding: 4px 10px; border: 1px solid rgba(111,168,201,.25); background: rgba(111,168,201,.07); border-radius: 6px; }
     @media (max-width: 768px) {
-      .pr-grid, .pr-services { grid-template-columns: 1fr; }
+      .pr-grid, .pr-grid3, .pr-services { grid-template-columns: 1fr; }
     }
     /* Portfolio (6+) waitlist */
     .pr-multi-waitlist { background: var(--surface); border: 1px solid var(--stone); border-radius: var(--chamfer); padding: 26px 30px; margin-top: 20px; max-width: 620px; }
@@ -255,111 +263,146 @@ about a twelfth of one insurance premium.</p>
     <div class="container">
       <div class="section-header">
         <p class="label">Plans</p>
-        <h2>Free forever, Intelligence when you're ready</h2>
+        <h2>Guardian-led protection, or start free</h2>
       </div>
-      <div class="pr-grid">
+      <div class="pr-grid3">
 
-        <!-- FREE -->
-        <div class="pr-card">
-          <div class="pr-plan-eyebrow free">Eave — Free</div>
-          <div class="pr-price"><span class="amt">$0</span></div>
-          <div class="pr-note">free forever · 1 property · works in any browser</div>
+        <!-- GUARDIAN -->
+        <div class="pr-card featured" id="guardian">
+          <div class="pr-badge">Most protective</div>
+          <div class="pr-plan-eyebrow guardian">Eave Guardian</div>
+          <div class="pr-price"><span class="amt">$24.99</span><span class="per">/mo</span></div>
+          <div class="pr-note">$199/yr · annual billing is the default</div>
           <div class="pr-div"></div>
+          <p class="pr-tagline">More active than insurance — protection for the home you already have.</p>
           <ul class="pr-list">
-            <li><span><strong>AI Capture</strong> — snap a photo, speak, or type; Eave builds the record for you, with no manual data entry</span></li>
-            <li><span><strong>Projects &amp; Tasks</strong> — capture, track, and close everything</span></li>
-            <li><span><strong>Systems &amp; Appliances</strong> — specs auto-researched, warranty alerts, service history</span></li>
-            <li><span><strong>Spaces</strong> — map every room with dimensions and finishes</span></li>
-            <li><span><strong>Budget Tracking</strong> — estimate vs. actual across every project</span></li>
-            <li><span><strong>Contractors</strong> — your trusted network, not cold leads</span></li>
-            <li><span><strong>Upkeep Score</strong> — your live 0–100 home health score</span></li>
-            <li><span><strong>Connected Sources</strong> — Gmail &amp; calendar today; store &amp; smart-home rolling out</span></li>
+            <li><span>Evidence vault with one-tap insurance and warranty claim packets</span></li>
+            <li><span>10-year capex forecast — know what's coming before it's an emergency</span></li>
+            <li><span>Carrier-discount checklist — the documentation insurers actually ask for</span></li>
+            <li><span>Annual virtual audit review</span></li>
+            <li><span>Telemetry fusion for leak, electrical, solar, and thermostat sensors <span class="pr-soon">Rolling out</span></span></li>
+            <li><span>Priority support</span></li>
           </ul>
           <div class="pr-cta">
-            <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
+            <a href="https://app.eavehome.app/?plan=guardian_annual" class="btn btn-jade">Start Guardian</a>
+            <div class="pr-plan-alts">
+              <a href="https://app.eavehome.app/?plan=guardian_monthly">Monthly $24.99/mo</a>
+            </div>
           </div>
         </div>
 
         <!-- INTELLIGENCE -->
-        <div class="pr-card featured">
-          <div class="pr-plan-eyebrow intel">Eave Intelligence — optional upgrade</div>
-          <div class="pr-price"><span class="pre">from</span><span class="amt">$2.99</span><span class="per">/mo</span></div>
-          <div class="pr-note">the peace of mind of never wondering what's next</div>
-          <div class="pr-options">
-            <div class="pr-option">
-              <div><div class="pr-option-label">MONTHLY</div><div class="pr-option-note">cancel anytime</div></div>
-              <div class="pr-option-price">$2.99<span style="font-size:11px;color:var(--dim);">/mo</span></div>
-            </div>
-            <div class="pr-option best">
-              <div class="pr-flag jade">BEST VALUE</div>
-              <div><div class="pr-option-label">ANNUAL</div><div class="pr-option-note">~$2/month</div></div>
-              <div class="pr-option-price">$24<span style="font-size:11px;color:var(--dim);">/yr</span></div>
-            </div>
-            <div class="pr-option">
-              <div class="pr-flag amber">BEST DEAL</div>
-              <div><div class="pr-option-label">LIFETIME</div><div class="pr-option-note">never pay again</div></div>
-              <div class="pr-option-price">$49</div>
-            </div>
-          </div>
+        <div class="pr-card">
+          <div class="pr-plan-eyebrow intel">Eave Intelligence</div>
+          <div class="pr-price"><span class="amt">$2.99</span><span class="per">/mo</span></div>
+          <div class="pr-note">$24/yr · annual billing is the default</div>
+          <div class="pr-div"></div>
+          <p class="pr-tagline">Always knows what's next.</p>
           <ul class="pr-list intel">
-            <li><span><strong>A 12-month plan made for your home</strong> — Eave reads your home's age, systems, climate, and history and builds a month-by-month care schedule, not a generic checklist.</span></li>
-            <li><span><strong>A ranked "why-now" queue</strong> — every project and task sorted by what actually matters this week, each with the reason attached.</span></li>
-            <li><span><strong>Seasonal prep before the season turns</strong> — a personalized prep list 14 days ahead, with why each task matters and how long it takes.</span></li>
-            <li><span><strong>Materials estimates &amp; vendor research</strong> — a DIY cost breakdown per project, plus local pros found for the specific job.</span></li>
-            <li><span><strong>Video walkthrough capture</strong> <span class="pr-soon">Coming soon</span> — narrate one walk through your home and Eave builds the whole inventory for you.</span></li>
-            <li><span><strong>Seasonal recapture</strong> <span class="pr-soon">Coming soon</span> — a quick refresh each season; Eave diffs it against your history and flags what changed.</span></li>
+            <li><span>Auto-researched specs for every system and appliance</span></li>
+            <li><span>Warranty alerts before coverage lapses</span></li>
+            <li><span>Upkeep Score, tracked over time</span></li>
+            <li><span>Connected sources (email, retail accounts, smart home)</span></li>
+            <li><span>AI-prioritized project queue + 12-month plan</span></li>
+            <li><span>Seasonal maintenance digest</span></li>
           </ul>
           <div class="pr-cta">
-            <a href="https://app.eavehome.app/?plan=intelligence_annual" class="btn btn-jade">Get started — Annual ✦</a>
+            <a href="https://app.eavehome.app/?plan=intelligence_annual" class="btn btn-jade">Start Intelligence</a>
             <div class="pr-plan-alts">
               <a href="https://app.eavehome.app/?plan=intelligence_monthly">Monthly $2.99/mo</a>
-              <a href="https://app.eavehome.app/?plan=intelligence_lifetime">Lifetime $49</a>
             </div>
           </div>
         </div>
 
+        <!-- FREE -->
+        <div class="pr-card" id="free">
+          <div class="pr-plan-eyebrow free">Eave — Free</div>
+          <div class="pr-price"><span class="amt">$0</span></div>
+          <div class="pr-note">free forever · 1 property</div>
+          <div class="pr-div"></div>
+          <p class="pr-tagline">Start your home's memory.</p>
+          <ul class="pr-list">
+            <li><span>Quick Capture for projects and tasks</span></li>
+            <li><span>Spaces and budget tracking</span></li>
+            <li><span>Contractors, saved once and reused</span></li>
+            <li><span>Manual asset records</span></li>
+            <li><span>Full export, always</span></li>
+          </ul>
+          <div class="pr-cta">
+            <a href="https://app.eavehome.app/" class="btn btn-jade">Start free</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pr-footnotes">
+        <p>Annual billing is the default. The monthly price shown is roughly 3x the
+        annual-equivalent rate and exists as a reference point, not a discount trick.</p>
+        <p>No lifetime option above Intelligence — Guardian and every tier above it are
+        subscription-only, because the AI and monitoring behind them run continuously.</p>
+        <p>Your records export at every tier, including Free. Your home's memory is
+        never held hostage.</p>
+        <p>Existing users keep everything they have today, grandfathered as an
+        "Early Member." New pricing and gating apply to new signups only.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── MULTI-PROPERTY ── -->
+  <!-- ── LANDLORDS & PORTFOLIOS ── -->
   <section class="support-section" id="multi-property">
     <div class="container">
       <div class="section-header">
-        <p class="label">Add-on · Multi-Property</p>
+        <p class="label">For landlords and portfolios</p>
         <h2>More than one home</h2>
       </div>
-      <span class="pr-coming">Coming soon</span>
-      <div class="pr-services">
-        <div class="pr-service">
-          <h3>Up to 5 properties</h3>
-          <div class="pr-svc-price">Coming soon</div>
-          <p>Every plan covers one property today. Multi-property is coming soon as a separate add-on to Eave Intelligence, letting you manage up to five homes under one account — each with its own projects, memory, upkeep score, and AI.</p>
-        </div>
-        <div class="pr-service">
-          <h3>Get notified</h3>
-          <div class="pr-svc-price">Waitlist</div>
-          <p>Pricing will be shared when it's available. <a href="mailto:support@eavehome.app?subject=Eave%20Multi-Property%20Waitlist" style="color:var(--jade);">Join the waitlist</a> and we'll tell you the moment it's live.</p>
-        </div>
-      </div>
-      <div class="pr-multi-waitlist">
-        <h3>Six or more properties</h3>
-        <p>We're building Eave Portfolio for owners running 6+ properties —
-           a rollup dashboard, exception feed, and the same building memory
-           for every door. Tell us you're interested and help shape it.</p>
-        <form data-capture data-source="portfolio-waitlist"
-              data-success="You're on the Portfolio list — we'll be in touch soon."
-              novalidate>
-          <div class="wl-row">
-            <input class="wl-input" type="email" name="email" required
-                   autocomplete="email" placeholder="you@email.com"
-                   aria-label="Email address">
-            <button type="submit" class="btn btn-jade wl-btn">Join the Portfolio waitlist</button>
+      <div class="pr-grid">
+
+        <!-- MULTI-PROPERTY -->
+        <div class="pr-card">
+          <div class="pr-plan-eyebrow intel">Multi-Property · 2–5 properties</div>
+          <div class="pr-price"><span class="amt">$7.99</span><span class="per">/property/mo</span></div>
+          <div class="pr-note">$69/property/yr · annual billing is the default</div>
+          <div class="pr-div"></div>
+          <p class="pr-tagline">One avoided turnover pays for this for years.</p>
+          <ul class="pr-list">
+            <li><span>Full Eave — capture, protection, and forecasting — for every property</span></li>
+            <li><span>Move-in/out condition reports, signed and stored as PDF</span></li>
+            <li><span>Tenant issue-intake link, so requests land in your queue, not your inbox</span></li>
+            <li><span>Seats stay free — add co-owners or a property manager at no extra cost</span></li>
+          </ul>
+          <div class="pr-cta">
+            <a href="https://app.eavehome.app/" class="btn btn-jade">Add a property</a>
           </div>
-          <input class="wl-hp" type="text" name="website" tabindex="-1"
-                 autocomplete="off" aria-hidden="true">
-          <p class="wl-status" data-capture-status role="status" aria-live="polite"></p>
-        </form>
+        </div>
+
+        <!-- PORTFOLIO -->
+        <div class="pr-card">
+          <div class="pr-plan-eyebrow intel">Portfolio · 6+ properties</div>
+          <div class="pr-price"><span class="amt" style="font-size:22px;">6+ properties: talk to us</span></div>
+          <div class="pr-div"></div>
+          <p class="pr-tagline">The whole building layer, not just a ticket queue.</p>
+          <ul class="pr-list">
+            <li><span>Portfolio rollup dashboard across every door <span class="pr-soon">Coming</span></span></li>
+            <li><span>Exception feed for what actually needs your attention <span class="pr-soon">Coming</span></span></li>
+            <li><span>The same building memory, extended to your whole portfolio <span class="pr-soon">Coming</span></span></li>
+          </ul>
+          <div class="pr-cta">
+            <form data-capture data-source="portfolio-waitlist"
+                  data-success="You're on the Portfolio list — we'll be in touch soon."
+                  novalidate>
+              <div class="wl-row">
+                <input class="wl-input" type="email" name="email" required
+                       autocomplete="email" placeholder="you@email.com"
+                       aria-label="Email address">
+                <button type="submit" class="btn btn-jade wl-btn">Join the Portfolio waitlist</button>
+              </div>
+              <input class="wl-hp" type="text" name="website" tabindex="-1"
+                     autocomplete="off" aria-hidden="true">
+              <p class="wl-status" data-capture-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -414,23 +457,23 @@ about a twelfth of one insurance premium.</p>
       </div>
       <div class="qa-item">
         <h3>Is Eave really free?</h3>
-        <p>Yes. Eave is free for one property, forever — no credit card and no trial expiry. Eave Intelligence and Eave Pro are optional add-ons you choose only if you want more.</p>
+        <p>Yes. Eave is free for one home, forever — no credit card and no trial expiry. Your records export at every tier, including Free.</p>
       </div>
       <div class="qa-item">
-        <h3>What's the difference between Free and Eave Intelligence?</h3>
-        <p>Free gives you the records and tools: projects, systems and appliances, spaces, budget tracking, contractors, your Upkeep Score, and connected sources. Intelligence adds the AI project queue, a 12-month upkeep plan, the seasonal prep digest, and materials estimates — the machinery that turns your records into a ranked plan.</p>
+        <h3>What does Guardian add over Intelligence?</h3>
+        <p>Guardian adds the evidence vault with one-tap insurance and warranty claim packets, a 10-year capex forecast, the carrier-discount checklist, an annual virtual audit review, telemetry fusion for leak, electrical, solar, and thermostat sensors (rolling out), and priority support.</p>
       </div>
       <div class="qa-item">
-        <h3>How much does Eave Intelligence cost?</h3>
-        <p>Eave Intelligence is $2.99/month, $24/year (about $2/month), or $49 once for lifetime access.</p>
+        <h3>How much does Eave cost?</h3>
+        <p>Eave Intelligence is $2.99/month or $24/year. Eave Guardian is $24.99/month or $199/year. Multi-Property is $7.99/property/month or $69/property/year, and Portfolio (6+ properties) is available by talking to our team. Annual billing is the default across every tier.</p>
       </div>
       <div class="qa-item">
-        <h3>When will Multi-Property and Eave Pro be available?</h3>
-        <p>Both are coming soon. Multi-property will be a separate add-on to Eave Intelligence for up to five properties — every plan covers one today. Eave Pro is a waitlist-only concierge offering, starting with a Home Audit and Seasonal Manager, arranged directly by our team. Pricing for both will be shared when they are available. <a href="mailto:support@eavehome.app?subject=Eave%20Pro%20Waitlist">Join the waitlist</a> to hear first.</p>
+        <h3>I bought the $49 lifetime — what happens?</h3>
+        <p>Nothing changes. Early Members keep Intelligence forever. New pricing applies to new signups only.</p>
       </div>
       <div class="qa-item">
-        <h3>Can I cancel Intelligence anytime?</h3>
-        <p>Yes. You can cancel anytime from Settings → Membership, and your home's records stay in the free tier — canceling never deletes your data. See <a href="/support/billing">Billing</a> for details.</p>
+        <h3>Can I cancel anytime?</h3>
+        <p>Yes. Cancel anytime from Settings → Membership, and your home's records stay in the free tier — canceling never deletes your data. See <a href="/support/billing">Billing</a> for details.</p>
       </div>
     </div>
   </section>
