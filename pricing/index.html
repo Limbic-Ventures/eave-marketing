@@ -151,6 +151,17 @@
     @media (max-width: 768px) {
       .pr-grid, .pr-services { grid-template-columns: 1fr; }
     }
+    /* Portfolio (6+) waitlist */
+    .pr-multi-waitlist { background: var(--surface); border: 1px solid var(--stone); border-radius: var(--chamfer); padding: 26px 30px; margin-top: 20px; max-width: 620px; }
+    .pr-multi-waitlist h3 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; margin-bottom: 4px; }
+    .pr-multi-waitlist p { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+    .wl-input::placeholder { color: var(--dim); }
+    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-btn { flex: 0 0 auto; white-space: nowrap; }
+    .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
   </style>
 </head>
 <body>
@@ -297,6 +308,25 @@
           <p>Pricing will be shared when it's available. <a href="mailto:support@eavehome.app?subject=Eave%20Multi-Property%20Waitlist" style="color:var(--jade);">Join the waitlist</a> and we'll tell you the moment it's live.</p>
         </div>
       </div>
+      <div class="pr-multi-waitlist">
+        <h3>Six or more properties</h3>
+        <p>We're building Eave Portfolio for owners running 6+ properties —
+           a rollup dashboard, exception feed, and the same building memory
+           for every door. Tell us you're interested and help shape it.</p>
+        <form data-capture data-source="portfolio-waitlist"
+              data-success="You're on the Portfolio list — we'll be in touch soon."
+              novalidate>
+          <div class="wl-row">
+            <input class="wl-input" type="email" name="email" required
+                   autocomplete="email" placeholder="you@email.com"
+                   aria-label="Email address">
+            <button type="submit" class="btn btn-jade wl-btn">Join the Portfolio waitlist</button>
+          </div>
+          <input class="wl-hp" type="text" name="website" tabindex="-1"
+                 autocomplete="off" aria-hidden="true">
+          <p class="wl-status" data-capture-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -427,6 +457,7 @@
     });
     function closeMobile() { mobileMenu.classList.remove('open'); }
   </script>
+  <script src="/assets/capture.js" defer></script>
 
 </body>
 </html>
