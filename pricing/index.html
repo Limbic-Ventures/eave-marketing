@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pricing — Eave</title>
-  <meta name="description" content="Eave pricing in full: free for one home forever, Eave Intelligence from $2.99/mo ($24/yr, $49 lifetime), plus coming-soon Multi-Property and Eave Pro concierge services.">
+  <meta name="description" content="Eave pricing: start free for one home, forever. Eave Guardian ($199/yr) is the active-protection layer — evidence vault, claim packets, and a 10-year forecast. Intelligence $24/yr. Multi-property from $69/property/yr.">
   <link rel="canonical" href="https://eavehome.app/pricing">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -28,7 +28,7 @@
   <meta property="og:url" content="https://eavehome.app/pricing">
   <meta property="og:site_name" content="Eave">
   <meta property="og:title" content="Pricing — Eave">
-  <meta property="og:description" content="Free for one home forever. Eave Intelligence from $2.99/mo. Multi-property and Eave Pro services coming soon.">
+  <meta property="og:description" content="Eave pricing: start free for one home, forever. Eave Guardian ($199/yr) is the active-protection layer — evidence vault, claim packets, and a 10-year forecast. Intelligence $24/yr. Multi-property from $69/property/yr.">
   <meta property="og:image" content="https://eavehome.app/og/pricing.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -36,7 +36,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pricing — Eave">
-  <meta name="twitter:description" content="Free for one home forever. Eave Intelligence from $2.99/mo. Multi-property and Eave Pro services coming soon.">
+  <meta name="twitter:description" content="Eave pricing: start free for one home, forever. Eave Guardian ($199/yr) is the active-protection layer — evidence vault, claim packets, and a 10-year forecast. Intelligence $24/yr. Multi-property from $69/property/yr.">
   <meta name="twitter:image" content="https://eavehome.app/og/pricing.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,7 +49,7 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Pricing — Eave",
-    "description": "Eave pricing: free for one home, Intelligence from $2.99/mo, plus coming-soon Multi-Property and Eave Pro services.",
+    "description": "Eave pricing: start free for one home, forever. Eave Guardian ($199/yr) is the active-protection layer — evidence vault, claim packets, and a 10-year forecast. Intelligence $24/yr. Multi-property from $69/property/yr.",
     "url": "https://eavehome.app/pricing",
     "isPartOf": { "@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/" }
   }
@@ -86,7 +86,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "Is Eave really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Eave is free for one property, forever — no credit card and no trial expiry. Eave Intelligence and Eave Pro are optional add-ons you choose only if you want more." } },
       { "@type": "Question", "name": "What's the difference between Free and Eave Intelligence?", "acceptedAnswer": { "@type": "Answer", "text": "Free gives you the records and tools: projects, systems and appliances, spaces, budget tracking, contractors, your Upkeep Score, and connected sources. Intelligence adds the AI project queue, a 12-month upkeep plan, the seasonal prep digest, and materials estimates — the machinery that turns your records into a ranked plan." } },
-      { "@type": "Question", "name": "How much does Eave Intelligence cost?", "acceptedAnswer": { "@type": "Answer", "text": "Eave Intelligence is $2.99/month, $24/year (about $2/month), or $49 once for lifetime access." } },
+      { "@type": "Question", "name": "How much does Eave Intelligence cost?", "acceptedAnswer": { "@type": "Answer", "text": "Eave Intelligence is $2.99/month or $24/year. Eave Guardian, which adds the evidence vault, claim packets, and 10-year capex forecast, is $24.99/month or $199/year. Annual billing is the default." } },
       { "@type": "Question", "name": "When will Multi-Property and Eave Pro be available?", "acceptedAnswer": { "@type": "Answer", "text": "Both are coming soon. Multi-property will be a separate add-on to Eave Intelligence for up to five properties — every plan covers one today. Eave Pro is a waitlist-only concierge offering, starting with a Home Audit and Seasonal Manager, arranged directly by our team. Pricing for both will be shared when they are available. Join the waitlist to hear first." } },
       { "@type": "Question", "name": "Can I cancel Intelligence anytime?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can cancel anytime from Settings → Membership, and your home's records stay in the free tier — canceling never deletes your data." } }
     ]
@@ -94,6 +94,19 @@
   </script>
 
   <style>
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+    .cost-module { padding: 40px 0 48px; border-bottom: 1px solid var(--stone); }
+    .cost-rows { display: flex; flex-direction: column; gap: 10px; max-width: 640px; margin: 0 auto 30px; }
+    .cost-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; background: var(--surface); border: 1px solid var(--stone); border-radius: var(--chamfer); }
+    .cost-row span:first-child { font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--ink); }
+    .cost-row span:nth-child(2) { font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 700; color: var(--dim); white-space: nowrap; }
+    .cost-row span:last-child { font-size: 12px; color: var(--dim); text-align: right; }
+    .cost-row.is-eave { background: rgba(111,168,201,.08); border-color: var(--jade); }
+    .cost-row.is-eave span:first-child { color: var(--jade); font-weight: 700; }
+    .cost-row.is-eave span:nth-child(2) { color: var(--jade); }
+    .cost-row.is-eave span:last-child { color: var(--ink); }
+    .cost-stat { max-width: 640px; margin: 0 auto 12px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .cost-stat:last-child { margin-bottom: 0; }
     .pr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
     .pr-card {
       background: var(--surface);
@@ -210,11 +223,32 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Pricing</p>
-      <h1>Start free. Add more only when you want it.</h1>
-      <p>Eave is free for one home, forever. Eave Intelligence is an optional upgrade, and Multi-Property and Eave Pro services are on the way. Here's everything, in full.</p>
+      <p class="label">Your home's memory</p>
+      <h1>Homeowners insurance pays you after. Eave works before.</h1>
+      <p>Eave Guardian is the active-protection layer for the home
+you already own — evidence ready for every claim, a forecast for what's
+coming, and a plan before the $5,600 repair happens. From $199/yr. That's
+about a twelfth of one insurance premium.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-jade" href="#guardian">See how Guardian protects your home</a>
+        <a class="btn btn-outline" href="#free">Start free with Eave</a>
+      </div>
     </div>
   </div>
+
+  <!-- ── COST OF NOT KNOWING ── -->
+  <section class="cost-module" aria-label="The cost of not knowing">
+    <div class="container">
+      <div class="cost-rows">
+        <div class="cost-row"><span>Your insurer</span><span>~$2,400/yr</span><span>pays you after.</span></div>
+        <div class="cost-row"><span>Your home warranty</span><span>~$800/yr</span><span>argues with you during.</span></div>
+        <div class="cost-row is-eave"><span>Eave Guardian</span><span>$199/yr</span><span>works before.</span></div>
+      </div>
+      <p class="cost-stat">The average deferred repair costs $5,600. Eave exists so you never have one.</p>
+      <p class="cost-stat">The average water-damage claim runs $13,954 — most start as a small leak nobody was watching for.</p>
+      <p class="cost-stat">Every $1 spent on prevention returns about $4 in avoided repair cost (U.S. Department of Energy).</p>
+    </div>
+  </section>
 
   <!-- ── PLANS ── -->
   <section class="support-section" id="plans">
