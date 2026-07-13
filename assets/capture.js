@@ -17,7 +17,7 @@
 (function () {
   'use strict';
 
-  var LOOPS_ENDPOINT = 'REPLACE_WITH_LOOPS_FORM_ENDPOINT';
+  var LOOPS_ENDPOINT = 'https://app.loops.so/api/newsletter-form/cmrjqhlwn030f0jxjzlq2cm8m';
 
   function attribution() {
     try {
