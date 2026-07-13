@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
+    // Cross-domain + conversion: fire a GA4 event on any click through to the app
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
+      if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eave Commercial — building memory for businesses, HOAs & organizations — Eave</title>
+  <meta name="description" content="Eave Commercial brings the same building memory and intelligence to businesses, HOAs and condos, churches and nonprofits, and property operators — commercial from door one. Editions launching soon; join the waitlist.">
+  <link rel="canonical" href="https://eavehome.app/commercial">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/commercial">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Eave Commercial — building memory for businesses, HOAs & organizations — Eave">
+  <meta property="og:description" content="Eave Commercial brings the same building memory and intelligence to businesses, HOAs and condos, churches and nonprofits, and property operators — commercial from door one. Editions launching soon; join the waitlist.">
+  <meta property="og:image" content="https://eavehome.app/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Eave Commercial — Eave">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Eave Commercial — building memory for businesses, HOAs & organizations — Eave">
+  <meta name="twitter:description" content="Eave Commercial brings the same building memory and intelligence to businesses, HOAs and condos, churches and nonprofits, and property operators — commercial from door one. Editions launching soon; join the waitlist.">
+  <meta name="twitter:image" content="https://eavehome.app/og-cover.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Eave Commercial",
+    "description": "Eave Commercial brings the same building memory and intelligence to businesses, HOAs and condos, churches and nonprofits, and property operators — commercial from door one. Editions launching soon; join the waitlist.",
+    "url": "https://eavehome.app/commercial",
+    "isPartOf": { "@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Eave Commercial", "item": "https://eavehome.app/commercial" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Commercial waitlist form — pattern copied from for/landlords & pricing */
+    .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+    .wl-input::placeholder { color: var(--dim); }
+    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-btn { flex: 0 0 auto; white-space: nowrap; }
+    .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/pricing">Eave Residential</a></li>
+            <li><a href="/commercial">Eave Commercial</a></li>
+            <li><a href="/features/guardian">Eave Guardian</a></li>
+            <li><a href="/pricing#pro">Home Audit &amp; Eave Pro</a></li>
+          </ul>
+        </li>
+        <li><a href="/#how-it-works">How it works</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/support">Support</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-label">Products</div>
+    <a href="/pricing" onclick="closeMobile()">Eave Residential</a>
+    <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
+    <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
+    <a href="/pricing#pro" onclick="closeMobile()">Home Audit &amp; Eave Pro</a>
+    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
+    <a href="/features" onclick="closeMobile()">Features</a>
+    <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">Eave Commercial</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">Eave Commercial</p>
+      <h1>The building's memory — for the people who run buildings.</h1>
+      <p>Eave brings the same capture-to-intelligence layer homeowners love to the organizations that steward property: businesses, HOAs and condo boards, churches and nonprofits, and small multifamily operators. Commercial from door one — not property-management software, not a CMMS.</p>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="support-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">How it works</p>
+        <h2>One graph, however you steward property</h2>
+      </div>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;">Eave's data model <em>is</em> the building — rooms, systems, contractors, projects, and history, all tied to the structure itself. That means the same <a href="/features" style="color:var(--jade);">capture-to-intelligence layer</a> that serves a single-family home also serves a storefront, an HOA's clubhouse, a church, or a 20-unit building. Nothing about the underlying model changes; only the roles, reports, and reasoning layered on top do.</p>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;margin-top:16px;">Seats are always free — Eave Commercial is priced by the door or the location, never per user. Invite your whole board, staff, or maintenance team without a per-seat bill.</p>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;margin-top:16px;">For leases, compliance, and tax questions, Eave documents and assembles the record — it never gives legal, tax, or insurance advice.</p>
+    </div>
+  </section>
+
+  <!-- ── EDITIONS ── -->
+  <section class="support-section" id="editions">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Editions</p>
+        <h2>Five editions, one core</h2>
+      </div>
+      <div class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-card-title">Mission</div>
+          <p class="topic-card-desc"><strong>For:</strong> Tax-exempt organizations — churches, service nonprofits, community centers.</p>
+          <p class="topic-card-desc"><strong>Signature:</strong> A stewardship report and a 990 occupancy-allocation report, plus donated-work and volunteer-hours capture.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Associations</div>
+          <p class="topic-card-desc"><strong>For:</strong> Self-managed HOA and condo boards.</p>
+          <p class="topic-card-desc"><strong>Signature:</strong> A living reserve study that updates as your buildings age, with board roles and term handoff.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Business</div>
+          <p class="topic-card-desc"><strong>For:</strong> A single location — shop, café, clinic, or office.</p>
+          <p class="topic-card-desc"><strong>Signature:</strong> A lease responsibility matrix that documents who-fixes-what from your actual lease, plus a compliance calendar.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Business Multi-Site</div>
+          <p class="topic-card-desc"><strong>For:</strong> Small chains and franchisees, 2–20 locations.</p>
+          <p class="topic-card-desc"><strong>Signature:</strong> Push one maintenance standard to every site, and compare vendor rates across locations.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-card-title">Apartments</div>
+          <p class="topic-card-desc"><strong>For:</strong> Owner-operators running 10–50 doors.</p>
+          <p class="topic-card-desc"><strong>Signature:</strong> A unit-turn pipeline with sequenced checklists, and a multifamily compliance pack with evidence on file.</p>
+        </div>
+      </div>
+      <p style="color:var(--dim);font-size:12px;margin-top:24px;">Editions roll out one at a time, starting with Mission. Pricing is published as each edition launches.</p>
+    </div>
+  </section>
+
+  <!-- ── WAITLIST ── -->
+  <section class="support-section" id="waitlist">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Get early access</p>
+        <h2>Tell us what you run</h2>
+      </div>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:620px;margin-bottom:20px;">Whether it's a single storefront, a self-managed HOA, a church, or a small portfolio of doors, join the waitlist and we'll reach out as your edition opens up.</p>
+      <div style="max-width:620px;">
+        <form data-capture data-source="commercial-waitlist" data-success="Thanks — you're on the Eave Commercial list. We'll reach out as editions open up." novalidate>
+          <div class="wl-row">
+            <input class="wl-input" type="email" name="email" required autocomplete="email" placeholder="you@organization.org" aria-label="Email address">
+            <button type="submit" class="btn btn-jade wl-btn">Join the commercial waitlist</button>
+          </div>
+          <input class="wl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="wl-status" data-capture-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/#how-it-works">How it works</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+  <script src="/assets/capture.js" defer></script>
+
+</body>
+</html>

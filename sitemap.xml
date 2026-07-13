@@ -187,6 +187,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://eavehome.app/commercial</loc>
+    <lastmod>2026-07-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://eavehome.app/features/connected-sources</loc>
     <lastmod>2026-07-03</lastmod>
     <priority>0.6</priority>

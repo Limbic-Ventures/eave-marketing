@@ -1203,6 +1203,40 @@
     .home-faq-q { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-bottom: 8px; }
     .home-faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
     .home-faq-a a { color: var(--jade); text-decoration: none; }
+  
+/* ── PRODUCTS DROPDOWN ── */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted);
+  background: none; border: none; padding: 0; margin: 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 5px; transition: color .2s;
+}
+.nav-dropdown-toggle:hover, .nav-dropdown:focus-within .nav-dropdown-toggle { color: var(--ink); }
+.nav-caret { font-size: 9px; opacity: .7; }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 0; margin: 12px 0 0; padding: 8px;
+  min-width: 214px; list-style: none;
+  background: var(--surface, #fffdf9); border: 1px solid var(--stone);
+  border-radius: 12px; box-shadow: 0 12px 34px rgba(31,58,82,.12);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s; z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-menu li { margin: 0; }
+.nav-dropdown-menu a {
+  display: block; padding: 9px 12px; border-radius: 8px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted);
+  white-space: nowrap; text-decoration: none;
+}
+.nav-dropdown-menu a:hover { background: rgba(111,168,201,.14); color: var(--ink); }
+.mobile-menu-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--dim, #9a9384);
+  padding: 14px 0 6px; border-bottom: 1px solid var(--stone);
+}
+
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1222,6 +1256,15 @@
     <div class="nav-inner">
       <a href="/" class="wordmark">eave</a>
       <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/pricing">Eave Residential</a></li>
+            <li><a href="/commercial">Eave Commercial</a></li>
+            <li><a href="/features/guardian">Eave Guardian</a></li>
+            <li><a href="/pricing#pro">Home Audit &amp; Eave Pro</a></li>
+          </ul>
+        </li>
         <li><a href="#how-it-works">How it works</a></li>
         <li><a href="/features">Features</a></li>
         <li><a href="/pricing">Pricing</a></li>
@@ -1239,6 +1282,11 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-label">Products</div>
+    <a href="/pricing" onclick="closeMobile()">Eave Residential</a>
+    <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
+    <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
+    <a href="/pricing#pro" onclick="closeMobile()">Home Audit &amp; Eave Pro</a>
     <a href="#how-it-works" onclick="closeMobile()">How it works</a>
     <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
