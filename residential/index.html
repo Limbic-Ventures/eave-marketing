@@ -1227,7 +1227,7 @@
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Is Eave really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian ($24.99/mo) adds active protection on top."}},
+    {"@type":"Question","name":"Is Eave really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming this fall — will be an optional add-on on top."}},
     {"@type":"Question","name":"Do I need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon."}},
     {"@type":"Question","name":"How does Eave capture what my home needs?","acceptedAnswer":{"@type":"Answer","text":"Speak it, snap a photo, or type a few words. Eave turns it into a scoped project — the room, the category, the priority, and an estimated cost."}},
     {"@type":"Question","name":"Is my home data private?","acceptedAnswer":{"@type":"Answer","text":"Your data is yours. Nothing saves until you review it, it is stored with row-level security, and you can export or delete everything at any time."}},
@@ -1252,11 +1252,17 @@
             <li><a href="/pro">Eave Pro</a></li>
           </ul>
         </li>
-        <li><a href="#how-it-works">How it works</a></li>
         <li><a href="/features">Features</a></li>
         <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/guides">Guides</a></li>
-        <li><a href="/support">Support</a></li>
+        <li class="nav-dropdown nav-dropdown-right">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/support/getting-started">Getting started</a></li>
+            <li><a href="/support/data-privacy">Data &amp; privacy</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="nav-right">
         <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
@@ -1274,11 +1280,13 @@
     <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
     <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
     <a href="/pro" onclick="closeMobile()">Eave Pro</a>
-    <a href="#how-it-works" onclick="closeMobile()">How it works</a>
     <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <div class="mobile-menu-label">Resources</div>
     <a href="/guides" onclick="closeMobile()">Guides</a>
     <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="/support/getting-started" onclick="closeMobile()">Getting started</a>
+    <a href="/support/data-privacy" onclick="closeMobile()">Data &amp; privacy</a>
     <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
@@ -1767,6 +1775,53 @@
       <div class="tier-grid fade-in" style="transition-delay:.1s;">
 
         <!-- INTELLIGENCE -->
+        <div class="tier-card tier-free">
+          <div class="tier-eyebrow tier-eyebrow-free">EAVE — FREE</div>
+          <div class="tier-price-line">
+            <span class="tier-price-big">$0</span>
+          </div>
+          <div class="tier-price-note">free forever · 1 property · works in any browser</div>
+          <div class="tier-divider"></div>
+          <div class="tier-checklist">
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>AI Capture</strong> — snap a photo, speak, or type; Eave builds the record for you, no manual data entry</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Projects &amp; Tasks</strong> — capture, track, and close everything</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Systems &amp; Appliances</strong> — specs auto-researched, warranty alerts, service history</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Spaces</strong> — map every room with dimensions and finishes</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Budget Tracking</strong> — estimate vs. actual across every project</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Contractors</strong> — your trusted network, not cold leads</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Upkeep Score</strong> — your live 0–100 home health score</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail &amp; calendar today; store &amp; smart-home accounts rolling out</span>
+            </div>
+          </div>
+          <div class="tier-cta-wrap">
+            <a href="https://app.eavehome.app" class="tier-btn-free">START FREE →</a>
+          </div>
+        </div>
+
+        <!-- FREE -->
         <div class="tier-card tier-intel">
           <div class="tier-eyebrow tier-eyebrow-intel">EAVE INTELLIGENCE — OPTIONAL UPGRADE</div>
           <div class="tier-price-line">
@@ -1826,53 +1881,6 @@
           </div>
         </div>
 
-        <!-- FREE -->
-        <div class="tier-card tier-free">
-          <div class="tier-eyebrow tier-eyebrow-free">EAVE — FREE</div>
-          <div class="tier-price-line">
-            <span class="tier-price-big">$0</span>
-          </div>
-          <div class="tier-price-note">free forever · 1 property · works in any browser</div>
-          <div class="tier-divider"></div>
-          <div class="tier-checklist">
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>AI Capture</strong> — snap a photo, speak, or type; Eave builds the record for you, no manual data entry</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Projects &amp; Tasks</strong> — capture, track, and close everything</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Systems &amp; Appliances</strong> — specs auto-researched, warranty alerts, service history</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Spaces</strong> — map every room with dimensions and finishes</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Budget Tracking</strong> — estimate vs. actual across every project</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Contractors</strong> — your trusted network, not cold leads</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Upkeep Score</strong> — your live 0–100 home health score</span>
-            </div>
-            <div class="tier-check-item">
-              <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail &amp; calendar today; store &amp; smart-home accounts rolling out</span>
-            </div>
-          </div>
-          <div class="tier-cta-wrap">
-            <a href="https://app.eavehome.app" class="tier-btn-free">START FREE →</a>
-          </div>
-        </div>
-
       </div>
 
       <p class="fade-in" style="text-align:center;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:rgba(244,239,230,.75);">Want active protection for the home you already own? Eave Guardian is coming this fall — <a href="/features/guardian" style="color:#A9D2E8;text-decoration:none;border-bottom:1px solid rgba(169,210,232,.4);">see how it works &rarr;</a></p>
@@ -1890,7 +1898,7 @@
         <div class="section-head"><h2>Questions, answered.</h2></div>
       </div>
       <div class="home-faq-list fade-in" style="transition-delay:.1s;">
-        <div class="home-faq-item"><h3 class="home-faq-q">Is Eave really free?</h3><div class="home-faq-a">Yes &mdash; free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian ($24.99/mo) adds active protection on top. <a href="/pricing">See full pricing &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Is Eave really free?</h3><div class="home-faq-a">Yes &mdash; free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming this fall — will be an optional add-on on top. <a href="/pricing">See full pricing &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Do I need to download an app?</h3><div class="home-faq-a">No. Eave runs in any browser at app.eavehome.app &mdash; phone, tablet, or desktop. Native iOS and Android apps are coming soon. <a href="/support/getting-started">Getting started &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">How does Eave capture what my home needs?</h3><div class="home-faq-a">Speak it, snap a photo, or type a few words. Eave turns it into a scoped project &mdash; the room, the category, the priority, and an estimated cost. <a href="/features/capture">More on Capture &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is my home data private?</h3><div class="home-faq-a">Your data is yours. Nothing saves until you review it, it's stored with row-level security, and you can export or delete everything at any time. <a href="/support/data-privacy">Data &amp; privacy &rarr;</a></div></div>
@@ -1970,7 +1978,6 @@
           <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
         </div>
         <ul class="footer-links">
-          <li><a href="#how-it-works">How it works</a></li>
           <li><a href="/features">Features</a></li>
             <li><a href="/pricing">Pricing</a></li>
           <li><a href="/support">Support</a></li>

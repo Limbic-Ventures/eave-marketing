@@ -592,3 +592,5 @@ footer {
   text-transform: uppercase; color: var(--dim, #9a9384);
   padding: 14px 0 6px; border-bottom: 1px solid var(--stone);
 }
+
+.nav-dropdown-right .nav-dropdown-menu { left: auto; right: 0; }

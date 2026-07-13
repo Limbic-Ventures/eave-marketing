@@ -96,11 +96,17 @@
             <li><a href="/pro">Eave Pro</a></li>
           </ul>
         </li>
-        <li><a href="/#how-it-works">How it works</a></li>
         <li><a href="/features">Features</a></li>
         <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/guides">Guides</a></li>
-        <li><a href="/support">Support</a></li>
+        <li class="nav-dropdown nav-dropdown-right">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/support/getting-started">Getting started</a></li>
+            <li><a href="/support/data-privacy">Data &amp; privacy</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="nav-right">
         <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
@@ -118,11 +124,13 @@
     <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
     <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
     <a href="/pro" onclick="closeMobile()">Eave Pro</a>
-    <a href="/#how-it-works" onclick="closeMobile()">How it works</a>
     <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <div class="mobile-menu-label">Resources</div>
     <a href="/guides" onclick="closeMobile()">Guides</a>
     <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="/support/getting-started" onclick="closeMobile()">Getting started</a>
+    <a href="/support/data-privacy" onclick="closeMobile()">Data &amp; privacy</a>
     <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
@@ -301,7 +309,6 @@
           <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
         </div>
         <ul class="footer-links">
-          <li><a href="/#how-it-works">How it works</a></li>
           <li><a href="/features">Features</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/guides">Guides</a></li>
