@@ -1253,6 +1253,15 @@
     .product-soon { font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--jade); background:rgba(111,168,201,.14); padding:3px 9px; border-radius:20px; }
     @media (max-width:820px){ .hiw-grid{grid-template-columns:repeat(2,1fr);} .product-grid{grid-template-columns:1fr;} }
       .nav-dropdown-right .nav-dropdown-menu { left: auto; right: 0; }
+  
+    .products-section { position: relative; overflow: hidden; }
+    .products-bg-layer { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity .55s ease; z-index:0; pointer-events:none; }
+    .products-bg-layer.active { opacity:1; }
+    .products-bg-layer[data-product="residential"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-residential.webp'); }
+    .products-bg-layer[data-product="commercial"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-commercial.webp'); }
+    .products-bg-layer[data-product="guardian"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-guardian.webp'); }
+    .products-bg-layer[data-product="pro"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-pro.webp'); }
+    .products-section > .container { position:relative; z-index:1; }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1391,29 +1400,33 @@
   </section>
 
   <!-- ═══ PRODUCTS ═══ -->
-  <section id="products" class="alt">
+  <section id="products" class="alt products-section">
+    <div class="products-bg-layer active" data-product="residential"></div>
+    <div class="products-bg-layer" data-product="commercial"></div>
+    <div class="products-bg-layer" data-product="guardian"></div>
+    <div class="products-bg-layer" data-product="pro"></div>
     <div class="container">
       <div class="fade-in">
         <p class="label">The Eave family</p>
         <div class="section-head"><h2>One memory.<br>Use one, or all of them.</h2></div>
       </div>
       <div class="product-grid fade-in" style="transition-delay:.1s;">
-        <a class="product-card card" href="/residential">
+        <a class="product-card card" href="/residential" data-product="residential">
           <div class="product-name">Eave Residential</div>
           <p class="product-desc">The app for your home &mdash; or homes. Capture, a searchable memory of every system and appliance, an AI upkeep plan, and your Upkeep Score &mdash; free to start.</p>
           <span class="product-link">Explore Residential &rarr;</span>
         </a>
-        <a class="product-card card" href="/commercial">
+        <a class="product-card card" href="/commercial" data-product="commercial">
           <div class="product-name">Eave Commercial</div>
           <p class="product-desc">The same building memory for businesses, HOAs and condos, churches and nonprofits, and small multifamily operators &mdash; commercial from door one.</p>
           <span class="product-link">Explore Commercial &rarr;</span>
         </a>
-        <a class="product-card card" href="/features/guardian">
+        <a class="product-card card" href="/features/guardian" data-product="guardian">
           <div class="product-name">Eave Guardian <span class="product-soon">Coming this fall</span></div>
           <p class="product-desc">Active protection for the home you already own &mdash; an evidence vault, one-tap claim packets, and a 10-year forecast.</p>
           <span class="product-link">See how Guardian works &rarr;</span>
         </a>
-        <a class="product-card card" href="/pro">
+        <a class="product-card card" href="/pro" data-product="pro">
           <div class="product-name">Eave Pro</div>
           <p class="product-desc">Concierge services for when you&rsquo;d rather someone else handle it &mdash; starting with a licensed in-person Home Audit.</p>
           <span class="product-link">See Pro services &rarr;</span>
@@ -1694,5 +1707,18 @@
 
   <script src="/assets/capture.js" defer></script>
 
+  <script>
+  (function(){
+    var sec=document.querySelector('.products-section'); if(!sec) return;
+    var layers=sec.querySelectorAll('.products-bg-layer');
+    function activate(key){ layers.forEach(function(l){ l.classList.toggle('active', l.getAttribute('data-product')===key); }); }
+    sec.querySelectorAll('.product-card[data-product]').forEach(function(card){
+      var key=card.getAttribute('data-product');
+      card.addEventListener('mouseenter', function(){ activate(key); });
+      card.addEventListener('focus', function(){ activate(key); });
+      card.addEventListener('touchstart', function(){ activate(key); }, {passive:true});
+    });
+  })();
+  </script>
 </body>
 </html>
