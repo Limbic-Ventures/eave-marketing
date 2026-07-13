@@ -27,9 +27,16 @@
 - Eave Free: $0 forever, one property, works in any browser at
   https://app.eavehome.app — projects, tasks, systems & appliances, spaces,
   budget tracking, contractors, Upkeep Score.
-- Eave Intelligence: from $2.99/month ($24/year, $49 lifetime) — AI project
-  queue, 12-month upkeep plan, seasonal prep digest, materials estimates and
-  vendor research.
+- Eave Intelligence: $2.99/month ($24/year) — AI project queue, 12-month
+  upkeep plan, seasonal prep digest, materials estimates and vendor research.
+  (The $49 lifetime option is no longer sold; existing buyers are
+  grandfathered as Early Members and keep Intelligence forever.)
+- Eave Guardian: $24.99/month ($199/year), the flagship tier — active
+  protection layer with an evidence vault, one-tap insurance and warranty
+  claim packets, a 10-year capex forecast, and an annual virtual audit
+  review.
+- Eave Multi-Property: $7.99/property/month ($69/property/year) for 2–5
+  properties; Portfolio (6+ properties) available by talking to the team.
 - Eave Pro: professional services starting with licensed Home Audits
   ($499–$799 one-time by home size); seasonal coordination and full home
   management are on the waitlist.
@@ -45,7 +52,7 @@
 ## Key pages
 
 - https://eavehome.app/ — product overview, how it works, pricing
-- https://eavehome.app/pricing — full pricing: Free, Intelligence, Multi-Property & Eave Pro
+- https://eavehome.app/pricing — full pricing: Free, Guardian, Intelligence, Multi-Property & Eave Pro
 - https://eavehome.app/features — product overview hub
 - https://eavehome.app/features/home-knowledge-base — the home knowledge
   base: room inventory, appliance registry, contractors, receipts
