@@ -60,6 +60,7 @@
 - https://eavehome.app/features/capture — speak / snap / type project capture
 - https://eavehome.app/features/intelligence — seasonal prep + weekly action queue
 - https://eavehome.app/features/guardian — evidence vault, claim packets, capex forecast, protection tier (launching fall 2026)
+- https://eavehome.app/residential — Eave Residential: the homeowner app in depth — capture, home memory, intelligence, upkeep plan, and pricing
 - https://eavehome.app/commercial — Eave Commercial: editions for businesses, HOAs/condos, churches/nonprofits, and small multifamily (waitlist)
 - https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
 - https://eavehome.app/for/new-homeowners — for first-time / new homeowners
