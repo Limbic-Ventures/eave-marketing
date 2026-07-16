@@ -125,7 +125,7 @@
     <div class="container">
       <p class="label">Legal</p>
       <h1>Privacy Policy</h1>
-      <p>Effective Date: June 22, 2026</p>
+      <p>Effective Date: July 16, 2026</p>
     </div>
   </div>
 
@@ -164,7 +164,17 @@
       </ul>
 
       <h3>1.4 AI-Processed Information</h3>
-      <p>When you use our AI features (including Quick Capture, photo analysis, and project recommendations), your input—including text, images, and voice transcripts—is transmitted to Google LLC, which provides the underlying AI model (Google Gemini). Please review Google's privacy policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. We do not use your data to train AI models without your explicit consent.</p>
+      <p>When you use our AI features (including Quick Capture, photo analysis, document extraction, and project recommendations), your input—including text, images, voice transcripts, uploaded documents, and items you confirm from a connected account—is transmitted to Google LLC, which provides the underlying AI model (Google Gemini). This content is processed under our commercial API agreement with Google and is not used by Google to train its models under the API terms on which we operate. Please review Google's privacy policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>. We do not use your data to train AI models without your explicit consent.</p>
+      <p>Facts that Eave derives using AI are labeled with a confidence level. Anything uncertain is flagged for your review rather than saved silently. AI output is a recommendation and is not professional advice.</p>
+
+      <h3>1.5 Connected Accounts and Sources</h3>
+      <p>When you connect an account (such as Gmail or SmartThings), Eave accesses it only to find home-related information: purchase receipts, order confirmations, warranty emails, contractor invoices, and device inventories. We request read-only access wherever the provider allows it. <strong>Nothing found in a connected account is saved to your Eave records until you review and confirm it.</strong> You can disconnect any source at any time from the Sources page, which stops all further access.</p>
+      <p>What we do not do: we do not read, store, or analyze personal correspondence. Email content that is not home-related is discarded immediately after classification and is never stored. We do not sell or share connected-account data with anyone.</p>
+      <p>Eave's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+      <p>For SmartThings, the access token is used once to import your device inventory and is never stored.</p>
+
+      <h3>1.6 Documents You Upload</h3>
+      <p>You can upload documents—home inspection reports, appliance manuals, warranties, insurance declarations, and HOA rules—so that Eave can extract useful facts such as system ages, filter sizes, coverage amounts, and renewal dates. Extracted details are shown to you for confirmation before they are saved. Uploaded documents and the facts extracted from them are part of your home record, are visible only to you, and are deleted when you delete them or delete your account.</p>
 
       <h2>2. How We Use Your Information</h2>
       <p>We use the information we collect to:</p>
@@ -180,6 +190,7 @@
         <li>Aggregate and anonymize data for internal analytics and product improvement</li>
       </ul>
       <p>We do not sell your personal information, and we do not use your personal information to serve you targeted third-party advertising.</p>
+      <p>Push notifications (including task reminders, reorder suggestions, and recall and weather alerts) are delivered to your device via Expo's push notification service using a device token. You can disable them at any time in your device's system settings or in Eave's notification settings.</p>
 
       <h2>3. How We Share Your Information</h2>
 
@@ -187,10 +198,18 @@
       <p>We share information with third-party vendors who process data on our behalf under written agreements that restrict their use:</p>
       <ul>
         <li>Supabase, Inc. — database hosting, authentication, and file storage</li>
-        <li>Google LLC — AI language model processing (Google Gemini)</li>
-        <li>Third-party property data and mapping API providers</li>
-        <li>Cloud infrastructure, analytics, and monitoring providers</li>
+        <li>Vercel Inc. — application and website hosting</li>
+        <li>Google LLC — AI language model processing (Google Gemini), OAuth sign-in, and Calendar integration</li>
+        <li>Stripe, Inc. — payment processing</li>
+        <li>RevenueCat, Inc. — mobile subscription management</li>
+        <li>Expo (650 Industries, Inc.) — push notification delivery</li>
+        <li>Resend — transactional email delivery</li>
+        <li>Loops — product and marketing email delivery</li>
+        <li>PostHog — product analytics</li>
+        <li>Sentry (Functional Software, Inc.) — error monitoring</li>
+        <li>Cloudflare, Inc. — domain and network services</li>
       </ul>
+      <p>We also query public and ambient data sources on your behalf to enrich your property profile and to generate risk and weather alerts. These queries involve your property address but no account of yours: ATTOM Data Solutions, FEMA, NOAA and the National Weather Service, the US Census geocoder, the EPA, the USDA, the CPSC, and CAL FIRE.</p>
 
       <h3>3.2 Business Transfers</h3>
       <p>If Eave is involved in a merger, acquisition, financing, or sale of assets, your information may be transferred as part of that transaction. We will notify you via email or a prominent notice in the Services before your personal information becomes subject to a different privacy policy.</p>
@@ -231,8 +250,10 @@
         <li>Correction: Request correction of inaccurate or incomplete personal information</li>
         <li>Deletion: Request deletion of your personal information, subject to certain legal exceptions</li>
         <li>Portability: Receive your data in a structured, machine-readable format</li>
+        <li>Disconnection: Remove any connected account at any time from the Sources page, which stops all further access to it</li>
         <li>Opt out of sale or sharing: We do not sell or share your personal information for cross-context behavioral advertising, so this right is automatically honored</li>
       </ul>
+      <p>How to exercise these rights: you can delete your account and its associated data—including your properties, records, documents, and connected-source tokens—from within the app at any time. To request an export of your data, email <a href="mailto:support@eavehome.app">support@eavehome.app</a> and we will provide it in a structured, machine-readable format; a self-serve in-app export is on our roadmap. We do not charge for these requests and will respond within the timeframe required by applicable law.</p>
 
       <h3>7.2 California Residents (CCPA/CPRA)</h3>
       <p>California residents have additional rights under the California Consumer Privacy Act, as amended by the California Privacy Rights Act (effective January 1, 2023):</p>
