@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
+    // Cross-domain + conversion: fire a GA4 event on any click through to the app
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
+      if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buying a Home? Know What You're Taking On — Eave</title>
+  <meta name="description" content="Turn your home inspection into a prioritized plan, understand the real cost of ownership before you sign, and move in already set up. Start free.">
+  <link rel="canonical" href="https://eavehome.app/for/home-buyers">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/for/home-buyers">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Buying a Home? Know What You're Taking On — Eave">
+  <meta property="og:description" content="Turn your home inspection into a prioritized plan, understand the real cost of ownership before you sign, and move in already set up. Start free.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Buying a Home? Know What You're Taking On — Eave">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Buying a Home? Know What You're Taking On — Eave">
+  <meta name="twitter:description" content="Turn your home inspection into a prioritized plan, understand the real cost of ownership before you sign, and move in already set up. Start free.">
+  <meta name="twitter:image" content="https://eavehome.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Buying a Home? Know What You're Taking On",
+    "description": "Turn your home inspection into a prioritized plan, understand the real cost of ownership before you sign, and move in already set up. Start free.",
+    "url": "https://eavehome.app/for/home-buyers",
+    "isPartOf": { "@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/" },
+      { "@type": "ListItem", "position": 2, "name": "For Home Buyers", "item": "https://eavehome.app/for/home-buyers" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "I haven't closed yet — can Eave still help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Once you have a home under contract, Eave helps you understand its condition and plan ahead — so you walk into closing knowing what you're taking on, not guessing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I do with my inspection report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Import it. Eave turns the report into a prioritized upkeep plan — what's urgent, what's soon, and what's someday — with rough costs attached, so it becomes a plan instead of a PDF you never open again."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Eave free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Eave is free for one property, forever, and runs in any browser at app.eavehome.app. Upgrade to Eave Intelligence for $2.99 a month when you want the full plan — the ranked queue and 12-month schedule."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .quote-band {
+      border-left:3px solid var(--jade); padding:4px 0 4px 20px; margin:0 0 22px;
+    }
+    .quote-band p {
+      font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:21px;
+      color:var(--ink); line-height:1.4; margin:0;
+    }
+    .step-list { list-style:none; padding:0; margin:0; display:grid; gap:20px; }
+    .step-list li {
+      display:flex; gap:18px; align-items:flex-start;
+      background:var(--surface); border:1px solid var(--stone); border-radius:14px; padding:22px 24px;
+    }
+    .step-list .step-num {
+      font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;
+      color:var(--jade); line-height:1; flex:0 0 auto; min-width:28px;
+    }
+    .step-list h3 { margin:0 0 6px; }
+    .step-list p { margin:0; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/residential">Eave Residential</a></li>
+            <li><a href="/commercial">Eave Commercial</a></li>
+            <li><a href="/features/guardian">Eave Guardian</a></li>
+            <li><a href="/pro">Eave Pro</a></li>
+          </ul>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li class="nav-dropdown nav-dropdown-right">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/support/getting-started">Getting started</a></li>
+            <li><a href="/support/data-privacy">Data &amp; privacy</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-label">Products</div>
+    <a href="/residential" onclick="closeMobile()">Eave Residential</a>
+    <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
+    <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
+    <a href="/pro" onclick="closeMobile()">Eave Pro</a>
+    <a href="/features" onclick="closeMobile()">Features</a>
+    <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <div class="mobile-menu-label">Resources</div>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="/support/getting-started" onclick="closeMobile()">Getting started</a>
+    <a href="/support/data-privacy" onclick="closeMobile()">Data &amp; privacy</a>
+    <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">For Home Buyers</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">For home buyers</p>
+      <h1>Buying a home?<br>Know what you're actually taking on.</h1>
+      <p>Before you fall for the kitchen, understand the roof, the furnace, and everything the inspection is trying to tell you — and move in with a plan instead of a shoebox of PDFs.</p>
+    </div>
+  </div>
+
+  <!-- ── PAIN ── -->
+  <section class="support-section" id="pain">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The report you skimmed once</p>
+        <h2>The inspection told you. Then you forgot.</h2>
+      </div>
+      <div class="quote-band">
+        <p>"We got the inspection report, skimmed it, closed, and then spent two years rediscovering everything it already told us."</p>
+      </div>
+      <p>A home inspection is one of the most useful documents you'll ever be handed — and one of the most quickly filed away. In the rush of closing, it gets a skim and a signature, then disappears into a folder. Two years later you're paying for a water heater you were warned about on page nine.</p>
+      <p>It doesn't have to go that way. The report is a starting point, not a formality — and Eave is where it turns into something you'll actually use.</p>
+    </div>
+  </section>
+
+  <!-- ── HOW EAVE HELPS ── -->
+  <section class="support-section" id="how">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">From report to real plan</p>
+        <h2>How Eave helps you buy with your eyes open</h2>
+      </div>
+      <ol class="step-list">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <h3>Turn the inspection into a plan</h3>
+            <p>Import the report; Eave sorts what's urgent, what's soon, and what's someday — with rough costs. The <a href="/features/intelligence">ranked plan</a> replaces a PDF you'd never open twice.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <h3>Buy with your eyes open</h3>
+            <p>Understand the real cost of ownership before you sign, so surprises don't become regrets. When you know the roof has five years left, you can plan for it instead of being blindsided by it.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <h3>Move in already set up</h3>
+            <p>Your new home starts with its systems, ages, and to-dos in place — day one, not year two. The <a href="/features/home-knowledge-base">home knowledge base</a> is already built, waiting for you to walk in.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="support-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">The things buyers actually ask</p>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="qa-item">
+        <h3>I haven't closed yet — can Eave still help?</h3>
+        <p>Yes. Once you have a home under contract, Eave helps you understand its condition and plan ahead — so you walk into closing knowing what you're taking on, not guessing.</p>
+      </div>
+      <div class="qa-item">
+        <h3>What do I do with my inspection report?</h3>
+        <p>Import it; Eave turns it into a prioritized upkeep plan — urgent, soon, and someday, with rough costs attached.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Is it free?</h3>
+        <p>Start free; upgrade to <a href="/features/intelligence">Eave Intelligence</a> for $2.99 a month when you want the full plan — the ranked queue and 12-month schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEEP EXPLORING ── -->
+  <section class="support-section" id="explore">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Keep exploring</p>
+        <h2>Where to go next</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/for/new-homeowners">
+          <div class="xlink-title">For new homeowners</div>
+          <div class="xlink-desc">Just closed? The manual your house didn't come with — set up from your address and know what's next.</div>
+        </a>
+        <a class="xlink-card" href="/residential">
+          <div class="xlink-title">Eave Residential</div>
+          <div class="xlink-desc">The app that keeps up with your home — every record, system, and project in one place from day one.</div>
+        </a>
+        <a class="xlink-card" href="/guides/home-inspection-to-upkeep-plan">
+          <div class="xlink-title">Turn a home inspection into an upkeep plan</div>
+          <div class="xlink-desc">What the report is really telling you, urgent vs. soon vs. someday, and how to turn it into reminders.</div>
+        </a>
+      </div>
+      <div class="contact-strip" style="margin-top:32px;">
+        <p><strong>Start with your inspection report.</strong> Eave is free for one property and runs in any browser — import the report and watch it become a plan.</p>
+        <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+
+</body>
+</html>

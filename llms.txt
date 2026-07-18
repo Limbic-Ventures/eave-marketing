@@ -65,10 +65,12 @@
 - https://eavehome.app/pro — Eave Pro: concierge home services (licensed Home Audit $499–$799, Audit+Guardian bundle, Seasonal Manager waitlist)
 - https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
 - https://eavehome.app/for/new-homeowners — for first-time / new homeowners
+- https://eavehome.app/for/home-sellers — getting a home ready to sell: capture agent/inspector fixes, prioritize by value and effort, hand the buyer a documented home
+- https://eavehome.app/for/home-buyers — buying a home: turn the inspection into a prioritized plan, understand true cost of ownership, move in already set up
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
-- https://eavehome.app/support — help center hub (15 articles, 5 groups)
+- https://eavehome.app/support — help center hub (16 articles, 5 groups)
 - https://eavehome.app/support/getting-started
 - https://eavehome.app/support/capturing-your-home
 - https://eavehome.app/support/spaces-and-properties
@@ -78,6 +80,7 @@
 - https://eavehome.app/support/upkeep-score
 - https://eavehome.app/support/contractors-and-hire-it-out
 - https://eavehome.app/support/inspection-import
+- https://eavehome.app/support/transferring-your-home
 - https://eavehome.app/support/manuals-and-insurance-import
 - https://eavehome.app/support/connected-sources
 - https://eavehome.app/support/intelligence-vs-free
@@ -94,5 +97,8 @@
 - https://eavehome.app/guides/capturing-a-project-by-voice-or-text — AI capture
 - https://eavehome.app/guides/connecting-gmail-for-receipts — Gmail connection
 - https://eavehome.app/guides/seasonal-maintenance-setup — seasonal checklist
+- https://eavehome.app/guides/getting-your-home-ready-to-sell — calm, early pre-sale checklist
+- https://eavehome.app/guides/home-inspection-to-upkeep-plan — turn an inspection report into a prioritized upkeep plan
+- https://eavehome.app/guides/passing-your-home-record-to-the-buyer — what conveys with a house; transferring the home's record
 - https://eavehome.app/privacy — privacy policy
 - https://eavehome.app/terms — terms of service

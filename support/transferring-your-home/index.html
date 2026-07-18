@@ -8,7 +8,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
-    // Cross-domain + conversion: fire a GA4 event on any click through to the app
     document.addEventListener('click', function (e) {
       var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
       if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
@@ -17,27 +16,27 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Importing a home inspection report — Eave Support</title>
-  <meta name="description" content="Upload your inspection report and fold its systems and findings into your home&#x27;s memory.">
-  <link rel="canonical" href="https://eavehome.app/support/inspection-import">
+  <title>Transferring your home to a new owner — Eave Support</title>
+  <meta name="description" content="When you sell, your home's record can transfer to the new owner. Here's how the hand-off works, what carries over, and how your consent keeps it yours until you say so.">
+  <link rel="canonical" href="https://eavehome.app/support/transferring-your-home">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eavehome.app/support/inspection-import">
+  <meta property="og:url" content="https://eavehome.app/support/transferring-your-home">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Importing a home inspection report — Eave Support">
-  <meta property="og:description" content="Upload your inspection report and fold its systems and findings into your home&#x27;s memory.">
-  <meta property="og:image" content="https://eavehome.app/og/support-inspection-import.jpg">
+  <meta property="og:title" content="Transferring your home to a new owner — Eave Support">
+  <meta property="og:description" content="When you sell, your home's record can transfer to the new owner. Here's how the hand-off works, what carries over, and how your consent keeps it yours until you say so.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Importing a home inspection report — Eave Support">
+  <meta property="og:image:alt" content="Transferring your home to a new owner — Eave Support">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Importing a home inspection report — Eave Support">
-  <meta name="twitter:description" content="Upload your inspection report and fold its systems and findings into your home&#x27;s memory.">
-  <meta name="twitter:image" content="https://eavehome.app/og/support-inspection-import.jpg">
+  <meta name="twitter:title" content="Transferring your home to a new owner — Eave Support">
+  <meta name="twitter:description" content="When you sell, your home's record can transfer to the new owner. Here's how the hand-off works, what carries over, and how your consent keeps it yours until you say so.">
+  <meta name="twitter:image" content="https://eavehome.app/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,23 +44,21 @@
   <link rel="stylesheet" href="/assets/support.css">
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Importing a home inspection report — Eave Support","description":"Upload your inspection report and fold its systems and findings into your home&#x27;s memory.","url":"https://eavehome.app/support/inspection-import","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
+  {"@context":"https://schema.org","@type":"WebPage","name":"Transferring your home to a new owner — Eave Support","description":"When you sell, your home's record can transfer to the new owner. Here's how the hand-off works, what carries over, and how your consent keeps it yours until you say so.","url":"https://eavehome.app/support/transferring-your-home","isPartOf":{"@type":"WebSite","name":"Eave","url":"https://eavehome.app/"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://eavehome.app/"},
     {"@type":"ListItem","position":2,"name":"Support","item":"https://eavehome.app/support"},
-    {"@type":"ListItem","position":3,"name":"Importing a home inspection report","item":"https://eavehome.app/support/inspection-import"}
+    {"@type":"ListItem","position":3,"name":"Transferring your home to a new owner","item":"https://eavehome.app/support/transferring-your-home"}
   ]}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-      {"@type": "Question", "name": "Do I have to upload the whole report?", "acceptedAnswer": {"@type": "Answer", "text": "No. The summary pages usually hold everything Eave needs. Printing or photographing just those pages also keeps you under the size limit."}},
-      {"@type": "Question", "name": "Will importing overwrite what's already in my home?", "acceptedAnswer": {"@type": "Answer", "text": "No. You choose exactly which systems and findings to keep before anything is saved, so nothing lands in your home without your review."}},
-      {"@type": "Question", "name": "Does this cost anything?", "acceptedAnswer": {"@type": "Answer", "text": "Importing an inspection report is free. It's part of building out your home's memory, no membership required."}},
-      {"@type": "Question", "name": "Can I import more than one report?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can run the importer again anytime, for example if you have separate reports for the roof, sewer line, or a later inspection."}},
-      {"@type": "Question", "name": "Can I import a pre-listing inspection I ordered myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A pre-listing (pre-sale) inspection imports exactly like a buyer's report. It becomes an early, prioritized list of what to fix before you list, so issues get handled on your schedule instead of surfacing mid-deal."}},
-      {"@type": "Question", "name": "Where do the findings end up?", "acceptedAnswer": {"@type": "Answer", "text": "Systems appear under **Systems & Appliances**, and the findings you keep become projects in your **Projects** backlog. Need a hand? Reach us anytime at support@eavehome.app."}}
+      {"@type": "Question", "name": "Does my home's record transfer automatically when I sell?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nothing transfers unless you choose to hand it off. The record is yours; transferring it to a new owner is a deliberate step you take, not something that happens on its own."}},
+      {"@type": "Question", "name": "What carries over to the new owner?", "acceptedAnswer": {"@type": "Answer", "text": "The home's memory: systems and appliances with their specs and service history, projects and materials, contractors, and attached documents and manuals. It gives the new owner a maintenance head start instead of a blank slate."}},
+      {"@type": "Question", "name": "Does anything personal to me transfer?", "acceptedAnswer": {"@type": "Answer", "text": "The hand-off is about the home's records, not your account. Your login, billing, and any other properties stay with you. You can review what's included before you confirm."}},
+      {"@type": "Question", "name": "Do I still have my own copy?", "acceptedAnswer": {"@type": "Answer", "text": "You can export everything you've captured at any time, on any plan, as a single file — so you keep your own copy of the record independent of the transfer. Need a hand? Reach us at support@eavehome.app."}}
   ]}
   </script>
 </head>
@@ -124,7 +121,7 @@
       <ol>
         <li><a href="/">Home</a></li>
         <li><a href="/support">Support</a></li>
-        <li><span aria-current="page">Importing a home inspection report</span></li>
+        <li><span aria-current="page">Transferring your home to a new owner</span></li>
       </ol>
     </div>
   </div>
@@ -132,9 +129,9 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Support · Importing documents &amp; records</p>
-      <h1>Importing a home inspection report</h1>
-      <p>Upload your inspection report and fold its systems and findings into your home&#x27;s memory.</p>
+      <p class="label">Support · Privacy &amp; troubleshooting</p>
+      <h1>Transferring your home to a new owner</h1>
+      <p>When you sell, the memory you've built can go with the house. Here's how the hand-off works, what carries over, and how your consent keeps it yours until you say so.</p>
     </div>
   </div>
 
@@ -142,25 +139,21 @@
   <section class="support-section">
     <div class="container">
       <div class="doc">
-      <p>That inspection report from when you bought or sold your home is full of useful detail about your systems and what needs attention. Eave can read it and fold the important parts into your home's memory, so you don't have to retype anything.</p>
-      <h2>Before you start</h2>
-      <p>Head to <strong>Sources</strong> in the sidebar and find the <strong>Inspection Report</strong> importer.</p>
-      <p>You can upload your report as a <strong>PDF</strong> or as <strong>photos</strong> of the pages. Photos work well for long reports, and Eave handles the rest.</p>
-      <h2>File-size limits</h2>
-      <ul><li><strong>PDFs must be under about 3 MB.</strong> If your report is larger, Eave will let you know and suggest a fix: use your computer's "print to PDF" on just the summary pages, or snap photos of the key pages instead.</li><li><strong>Photos are handled for you.</strong> Eave automatically shrinks images before upload, so you don't need to resize anything. iPhone HEIC photos are converted automatically too.</li><li>If a single photo is still too large, you'll see a short message asking for a smaller image. Retaking the photo usually solves it.</li></ul>
-      <h2>What Eave pulls out</h2>
-      <p>Once you upload, Eave reads the report and extracts two things:</p>
-      <ol><li><strong>Systems</strong> — items like your roof, furnace, or water heater, along with the install year and condition noted in the report.</li><li><strong>Findings</strong> — issues the inspector flagged, each with a severity so you can see what's urgent and what can wait.</li></ol>
-      <h2>Reviewing and confirming</h2>
-      <p>Nothing is saved until you say so. After Eave reads the report, you'll see everything it found laid out for review.</p>
-      <ul><li><strong>Pick what to keep.</strong> Select the systems and findings you want, and leave out anything that no longer applies.</li><li><strong>Confirm.</strong> When you're happy with the list, confirm the import.</li></ul>
-      <p>Eave then adds the systems to your home graph and turns the findings you kept into projects in your backlog, ready to prioritize, schedule, or hand to a contractor whenever you're ready.</p>
-      <h2>Buying, or getting ready to sell?</h2>
-      <p>The importer works the same way for two different moments:</p>
+      <p>Everything you've captured about your home — its systems and their service history, projects, materials, contractors, and documents — is a record worth handing to whoever lives there next. When you sell, Eave lets that record transfer with the home, so the new owner starts with a maintenance head start instead of a blank slate.</p>
+      <h2>How the hand-off works</h2>
+      <p>Transferring is a deliberate step, tied to the sale — not something that happens automatically. You decide when to hand off the home's record, review what's included, and confirm. Until you do, the record stays entirely yours.</p>
+      <h2>What transfers</h2>
+      <p>The hand-off covers your <a href="/features/home-knowledge-base">home's memory</a>:</p>
       <ul>
-        <li><strong>Buying a home.</strong> Import the inspection you got under contract, and it becomes a prioritized upkeep plan before you even move in — so you understand what you're taking on. More on that in <a href="/guides/home-inspection-to-upkeep-plan">turning a home inspection into an upkeep plan</a>, or see <a href="/for/home-buyers">Eave for home buyers</a>.</li>
-        <li><strong>Selling a home.</strong> If you order a <strong>pre-listing (pre-sale) inspection</strong> of your own, import it the same way. Instead of a buyer's inspector surfacing issues mid-deal, you get an early, prioritized list of what to fix before the photos — see <a href="/guides/getting-your-home-ready-to-sell">getting your home ready to sell</a> and <a href="/for/home-sellers">Eave for home sellers</a>.</li>
+        <li><strong>Systems &amp; appliances</strong> — models, install dates, warranties, filter and consumable sizes, and service history.</li>
+        <li><strong>Projects &amp; materials</strong> — what's been done, what's outstanding, and the materials and costs attached to each.</li>
+        <li><strong>Contractors</strong> — who was used for what, so the new owner has a working list from day one.</li>
+        <li><strong>Documents</strong> — manuals, receipts, and reports you've attached to the home.</li>
       </ul>
+      <h2>What stays with you</h2>
+      <p>The transfer is about the home's records, not your account. Your login, your billing, and any other properties you manage stay with you. And because you can export everything you've captured at any time — on any plan — as a single file, you can keep your own copy of the record independent of the hand-off.</p>
+      <h2>Consent, start to finish</h2>
+      <p>Nothing about the transfer happens without your say-so. You review exactly what's included before anything moves, and you confirm the hand-off yourself. It's the same principle behind the rest of Eave: nothing saves — or moves — without your review. For the fuller picture of how your data is handled, see <a href="/support/data-privacy">your data and privacy</a>.</p>
       </div>
     </div>
   </section>
@@ -170,28 +163,20 @@
     <div class="container">
       <div class="section-header"><p class="label">Common questions</p><h2>Quick answers</h2></div>
       <div class="qa-item">
-        <h3>Do I have to upload the whole report?</h3>
-        <p>No. The summary pages usually hold everything Eave needs. Printing or photographing just those pages also keeps you under the size limit.</p>
+        <h3>Does my home's record transfer automatically when I sell?</h3>
+        <p>No. Nothing transfers unless you choose to hand it off. The record is yours; transferring it to a new owner is a deliberate step you take, not something that happens on its own.</p>
       </div>
       <div class="qa-item">
-        <h3>Will importing overwrite what&#x27;s already in my home?</h3>
-        <p>No. You choose exactly which systems and findings to keep before anything is saved, so nothing lands in your home without your review.</p>
+        <h3>What carries over to the new owner?</h3>
+        <p>The home's memory: systems and appliances with their specs and service history, projects and materials, contractors, and attached documents and manuals. It gives the new owner a maintenance head start instead of a blank slate.</p>
       </div>
       <div class="qa-item">
-        <h3>Does this cost anything?</h3>
-        <p>Importing an inspection report is free. It's part of building out your home's memory, no membership required.</p>
+        <h3>Does anything personal to me transfer?</h3>
+        <p>The hand-off is about the home's records, not your account. Your login, billing, and any other properties stay with you. You can review what's included before you confirm.</p>
       </div>
       <div class="qa-item">
-        <h3>Can I import more than one report?</h3>
-        <p>Yes. You can run the importer again anytime, for example if you have separate reports for the roof, sewer line, or a later inspection.</p>
-      </div>
-      <div class="qa-item">
-        <h3>Can I import a pre-listing inspection I ordered myself?</h3>
-        <p>Yes. A pre-listing (pre-sale) inspection imports exactly like a buyer's report. It becomes an early, prioritized list of what to fix before you list, so issues get handled on your schedule instead of surfacing mid-deal.</p>
-      </div>
-      <div class="qa-item">
-        <h3>Where do the findings end up?</h3>
-        <p>Systems appear under <strong>Systems & Appliances</strong>, and the findings you keep become projects in your <strong>Projects</strong> backlog. Need a hand? Reach us anytime at support@eavehome.app.</p>
+        <h3>Do I still have my own copy?</h3>
+        <p>You can export everything you've captured at any time, on any plan, as a single file — so you keep your own copy of the record independent of the transfer. Need a hand? Reach us at support@eavehome.app.</p>
       </div>
     </div>
   </section>
@@ -199,19 +184,19 @@
   <!-- ── RELATED ── -->
   <section class="support-section">
     <div class="container">
-      <div class="section-header"><p class="label">More in Importing documents &amp; records</p><h2>Keep reading</h2></div>
+      <div class="section-header"><p class="label">Related</p><h2>Keep reading</h2></div>
       <div class="xlink-grid">
-        <a class="xlink-card" href="/support/manuals-and-insurance-import">
-          <div class="xlink-title">Importing manuals, warranties &amp; insurance</div>
-          <div class="xlink-desc">Pull specs, maintenance schedules, and policy details out of your paperwork.</div>
+        <a class="xlink-card" href="/guides/passing-your-home-record-to-the-buyer">
+          <div class="xlink-title">Passing your home's record to the buyer</div>
+          <div class="xlink-desc">What "conveys" with a house, how a home's memory transfers, and why a documented home negotiates better.</div>
         </a>
-        <a class="xlink-card" href="/support/connected-sources">
-          <div class="xlink-title">Connected sources: email receipts</div>
-          <div class="xlink-desc">Connect Gmail so Eave reads your order emails — no store password ever required.</div>
+        <a class="xlink-card" href="/for/home-sellers">
+          <div class="xlink-title">Eave for home sellers</div>
+          <div class="xlink-desc">Get ready without the scramble, and hand the buyer a documented home at closing.</div>
         </a>
-        <a class="xlink-card" href="/support">
-          <div class="xlink-title">All help topics</div>
-          <div class="xlink-desc">Browse every article in the Eave help center.</div>
+        <a class="xlink-card" href="/support/data-privacy">
+          <div class="xlink-title">Your data and privacy</div>
+          <div class="xlink-desc">What Eave reads, how AI works, and how to export or delete — the fuller picture behind the hand-off.</div>
         </a>
       </div>
       <div class="contact-strip" style="margin-top:32px;">
