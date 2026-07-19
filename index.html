@@ -1262,6 +1262,20 @@
     .products-bg-layer[data-product="guardian"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-guardian.webp'); }
     .products-bg-layer[data-product="pro"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-pro.webp'); }
     .products-section > .container { position:relative; z-index:1; }
+
+    /* ── HOME MOMENTS (3-phase strip) ── */
+    .moments-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:44px; }
+    .moment-col { display:block; text-decoration:none; color:inherit; padding-top:22px; border-top:2px solid var(--jade); transition:transform .2s ease; }
+    .moment-col:hover { transform:translateY(-3px); }
+    .moment-step { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--jade); line-height:1; }
+    .moment-phase { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:14px; }
+    .moment-title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin:6px 0 12px; }
+    .moment-desc { font-size:14.5px; line-height:1.65; color:var(--muted); margin:0 0 18px; }
+    .moment-list { list-style:none; padding:0; margin:0 0 20px; display:grid; gap:9px; }
+    .moment-list li { position:relative; padding-left:22px; font-size:13.5px; line-height:1.5; color:var(--ink); }
+    .moment-list li::before { content:'\2713'; position:absolute; left:0; top:0; color:var(--jade); font-weight:700; }
+    .moment-link { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--jade); }
+    @media (max-width:900px){ .moments-grid{grid-template-columns:1fr; gap:0;} .moment-col{ border-top:none; border-left:2px solid var(--jade); padding-top:0; padding-left:22px; margin-bottom:32px; } .moment-col:hover{ transform:none; } }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1446,22 +1460,47 @@
           <p>Your home&rsquo;s biggest moments are exactly when its memory matters most.</p>
         </div>
       </div>
-      <div class="product-grid fade-in" style="transition-delay:.1s;">
-        <a class="product-card card" href="/for/home-buyers">
-          <div class="product-name">Buying a home</div>
-          <p class="product-desc">Know what you&rsquo;re taking on before you sign. Turn the inspection into a plan and move in already set up.</p>
-          <span class="product-link">For home buyers &rarr;</span>
+      <div class="moments-grid fade-in" style="transition-delay:.1s;">
+
+        <a class="moment-col" href="/for/home-sellers">
+          <div class="moment-step">01</div>
+          <div class="moment-phase">When you&rsquo;re selling</div>
+          <h3 class="moment-title">Selling a home</h3>
+          <p class="moment-desc">The months before you list are when small fixes are still cheap and quiet. Eave catches every recommendation your agent and inspector make and turns them into a plan you actually finish &mdash; before the photos, not during the scramble.</p>
+          <ul class="moment-list">
+            <li>Capture agent &amp; inspector notes the moment they&rsquo;re mentioned</li>
+            <li>A to-do list ranked by value and effort for your timeline</li>
+            <li>Hand the buyer a documented, cared-for home at closing</li>
+          </ul>
+          <span class="moment-link">For home sellers &rarr;</span>
         </a>
-        <a class="product-card card" href="/for/home-sellers">
-          <div class="product-name">Selling a home</div>
-          <p class="product-desc">Get ready without the last-minute scramble. Capture every fix your agent flags and hand the buyer a documented home.</p>
-          <span class="product-link">For home sellers &rarr;</span>
+
+        <a class="moment-col" href="/for/home-buyers">
+          <div class="moment-step">02</div>
+          <div class="moment-phase">When you&rsquo;re buying</div>
+          <h3 class="moment-title">Buying a home</h3>
+          <p class="moment-desc">Before you fall for the kitchen, understand the roof, the furnace, and everything the inspection is trying to tell you. Eave turns that report into a prioritized plan, so you buy with your eyes open and move in already set up.</p>
+          <ul class="moment-list">
+            <li>Import the inspection &mdash; urgent, soon, someday, with rough costs</li>
+            <li>See the real cost of ownership before you sign</li>
+            <li>Start day one with systems, ages, and to-dos in place</li>
+          </ul>
+          <span class="moment-link">For home buyers &rarr;</span>
         </a>
-        <a class="product-card card" href="/for/new-homeowners">
-          <div class="product-name">Just moved in</div>
-          <p class="product-desc">The manual your house didn&rsquo;t come with. Set up from your address and know what your new home needs next.</p>
-          <span class="product-link">For new homeowners &rarr;</span>
+
+        <a class="moment-col" href="/for/new-homeowners">
+          <div class="moment-step">03</div>
+          <div class="moment-phase">After you move in</div>
+          <h3 class="moment-title">Just moved in</h3>
+          <p class="moment-desc">The keys came with a mortgage, not a manual. Eave turns your new address into a living record of the home &mdash; what it has, what it needs, and what to do first &mdash; so the first year feels less like guessing.</p>
+          <ul class="moment-list">
+            <li>Set up from your address in a couple of minutes</li>
+            <li>Capture the backlog by voice, photo, or text</li>
+            <li>Get a weekly queue and a 12-month upkeep plan</li>
+          </ul>
+          <span class="moment-link">For new homeowners &rarr;</span>
         </a>
+
       </div>
     </div>
   </section>
