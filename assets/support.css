@@ -594,3 +594,13 @@ footer {
 }
 
 .nav-dropdown-right .nav-dropdown-menu { left: auto; right: 0; }
+
+/* ── PRODUCTS MENU: three worlds, subordinate add-ons ── */
+.nav-worlds a { color: var(--ink); }
+.nav-app { color: var(--muted); }
+.nav-worlds .nav-group {
+  margin-top: 5px; padding: 12px 12px 5px; border-top: 1px solid var(--stone);
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }

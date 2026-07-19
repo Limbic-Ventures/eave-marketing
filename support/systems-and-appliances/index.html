@@ -71,11 +71,13 @@
       <ul class="nav-links">
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
-          <ul class="nav-dropdown-menu">
-            <li><a href="/residential">Eave Residential</a></li>
-            <li><a href="/commercial">Eave Commercial</a></li>
-            <li><a href="/features/guardian">Eave Guardian</a></li>
-            <li><a href="/pro">Eave Pro</a></li>
+          <ul class="nav-dropdown-menu nav-worlds">
+            <li><a href="/residential">Homeowners<span class="nav-app"> &middot; Residential</span></a></li>
+            <li><a href="/commercial">Businesses &amp; nonprofits<span class="nav-app"> &middot; Commercial</span></a></li>
+            <!-- EAVE-GATE:PARTNERS-DESKTOP -->
+            <li class="nav-group">Add-ons</li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
         <li><a href="/features">Features</a></li>
@@ -100,10 +102,13 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Eave Residential</a>
-    <a href="/commercial" onclick="closeMobile()">Eave Commercial</a>
-    <a href="/features/guardian" onclick="closeMobile()">Eave Guardian</a>
-    <a href="/pro" onclick="closeMobile()">Eave Pro</a>
+    <a href="/residential" onclick="closeMobile()">Homeowners<span class="nav-app"> &middot; Residential</span></a>
+    <a href="/commercial" onclick="closeMobile()">Businesses &amp; nonprofits<span class="nav-app"> &middot; Commercial</span></a>
+    <!-- EAVE-GATE:PARTNERS-MOBILE -->
+    <div class="mobile-menu-label">Add-ons</div>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
+    <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
     <div class="mobile-menu-label">Resources</div>
