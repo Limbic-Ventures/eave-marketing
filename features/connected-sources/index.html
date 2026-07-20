@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Connected Sources — import your home's history — Eave</title>
-  <meta name="description" content="Connect Gmail to find home receipts and warranties automatically. Eave reads your inbox read-only — and nothing saves until you review it.">
+  <meta name="description" content="Eave builds your home record from connected accounts, photos, documents, and inspection reports. Read-only, nothing saves until you review it.">
   <link rel="canonical" href="https://eavehome.app/features/connected-sources">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -66,37 +66,29 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What can I connect to Eave today?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Today you can connect Gmail and your calendar. From there, Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in your inbox and schedule. Store accounts like Home Depot, Lowe's, and Amazon, along with smart-home connections, are rolling out and not live yet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does Eave read from my email?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Eave connects to Gmail with read-only access and looks only for home-related items — purchase receipts, warranty registrations, and contractor or service confirmations. It surfaces those for you rather than combing through personal mail. It never sends email on your behalf and never changes anything in your inbox."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does anything save automatically?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Nothing saves to your home records without your review first. Eave surfaces what it finds — a receipt, a warranty expiry, a contractor — and you decide what to keep and where it goes. Review-before-save is a core part of how Eave works: nothing saves without your say."
-        }
-      }
-    ]
-  }
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What can I connect right now?", "acceptedAnswer": {"@type": "Answer", "text": "Gmail and your calendar. Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in them. Store accounts like Home Depot, Lowe's, and Amazon, and smart-home connections, are coming and are not live yet."}}, {"@type": "Question", "name": "What if I don't want to connect anything?", "acceptedAnswer": {"@type": "Answer", "text": "Then don't. Everything in Eave can be built from local sources: photos, documents, receipts, and voice capture. Connecting an account saves you typing; it isn't required."}}, {"@type": "Question", "name": "What does Eave read from my email?", "acceptedAnswer": {"@type": "Answer", "text": "Read-only access, home items only: purchase receipts, warranty registrations, and contractor or service confirmations. It never sends email on your behalf and never changes anything in your inbox."}}, {"@type": "Question", "name": "Does anything save automatically?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything goes to a review queue first. You decide what's kept, what's corrected, and where it belongs."}}, {"@type": "Question", "name": "Can I upload my home inspection report?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Eave reads it and pulls out your systems with their install years and condition, plus every finding the inspector flagged with its severity."}}, {"@type": "Question", "name": "Do I need to pay to use connected sources?", "acceptedAnswer": {"@type": "Answer", "text": "No. Capture and your home record are free. Eave Intelligence — the upkeep plan, the ranked queue, and the Upkeep Score — is $2.99/month."}}]}
   </script>
+
+  <style>
+    .src-p{color:var(--muted);line-height:1.75;font-size:15px;margin:0 0 16px;max-width:760px}
+    .src-p a{color:var(--jade)}
+    .src-block{margin:0 0 22px}
+    .src-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+    .src-label-live{color:var(--jade)}
+    .src-label-soon{color:var(--dim)}
+    .src-label-intel{color:var(--jade)}
+    .src-list{list-style:none;padding:0;margin:0 0 18px;max-width:760px}
+    .src-list li{position:relative;padding-left:22px;margin-bottom:11px;color:var(--muted);
+      line-height:1.7;font-size:14.5px}
+    .src-list li::before{content:'';position:absolute;left:2px;top:9px;width:6px;height:6px;
+      border-radius:50%;background:var(--jade)}
+    .src-list strong{color:var(--ink);font-weight:700}
+    .src-links{font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:8px}
+    .src-links a{color:var(--jade)}
+    .src-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:8px}
+    @media(max-width:820px){.src-cols{grid-template-columns:1fr;gap:8px}}
+  </style>
 </head>
 <body>
 
@@ -175,32 +167,104 @@
   <div class="page-hero">
     <div class="container">
       <p class="label">Features · Connected Sources</p>
-      <h1>Your inbox already has your home's history. Eave finds it.</h1>
-      <p>The receipts, warranties, and contractor confirmations that make up your home's record are already scattered across your email and calendar. Connect Gmail and Eave surfaces the home-related pieces for you — read-only, and nothing saves until you review it.</p>
+      <h1>Your home's history already exists.<br>It's just scattered.</h1>
+      <p>The receipt for the water heater is in your inbox. The manual is in a drawer. The inspection report is a PDF you haven't opened since closing. The data plate is on the side of the furnace where nobody reads it. Eave pulls from all of it &mdash; connected accounts you link once, and the photos, documents, and receipts you hand over directly. Read-only where it connects. Nothing saves until you review it.</p>
     </div>
   </div>
 
-  <!-- ── WHAT YOU CAN CONNECT ── -->
-  <section class="support-section" id="connect-today">
+  <!-- ── CONNECTED ACCOUNTS ── -->
+  <section class="support-section" id="connected-accounts">
     <div class="container">
       <div class="section-header">
-        <p class="label">What connects today</p>
-        <h2>Gmail and calendar, live now</h2>
+        <p class="label">Connected accounts</p>
+        <h2>Link an account once.<br>Eave keeps reading it.</h2>
       </div>
       <div class="feature-split">
         <div>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Today you can connect Gmail and your calendar. That's usually all it takes to start filling in your home's history, because the important records tend to already be there — an appliance receipt, a warranty registration, a confirmation from the plumber you booked last spring.</p>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Once connected, Eave watches for the home-related items among them and pulls them out: a receipt gets matched to the right appliance, a warranty date gets logged, a contractor confirmation becomes a contact in your directory. The work of hunting through old email disappears.</p>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Store accounts — Home Depot, Lowe's, Amazon — and smart-home connections are rolling out. They're not live yet, so we won't pretend otherwise; when they land, they'll extend the same idea to your purchase and device history.</p>
+          <p class="src-p">A connected account is anything Eave reads on your behalf after you authorize it. You link it one time and it keeps working in the background &mdash; no re-uploading, no forwarding emails to yourself.</p>
+          <div class="src-block">
+            <div class="src-label src-label-live">Live today</div>
+            <ul class="src-list">
+              <li><strong>Gmail</strong> &mdash; home receipts, warranty registrations, and service confirmations, surfaced out of everything else</li>
+              <li><strong>Calendar</strong> &mdash; contractor appointments, service visits, and inspection dates</li>
+            </ul>
+          </div>
+          <div class="src-block">
+            <div class="src-label src-label-soon">Coming</div>
+            <ul class="src-list">
+              <li><strong>Store accounts</strong> &mdash; Home Depot, Lowe&rsquo;s, Amazon, for purchase history straight from the source</li>
+              <li><strong>Smart-home connections</strong> &mdash; read-only device and equipment details, never control</li>
+            </ul>
+          </div>
+          <p class="src-p">We list the second group as coming because it is. When store accounts land, a filter you bought in March shows up attached to the furnace it fits, without you doing anything. Until then, a receipt in your inbox gets you the same result.</p>
         </div>
         <div>
-          <img src="/images/opt/sources-desktop.webp"
-               class="shot"
-               loading="lazy" decoding="async"
-               alt="Eave connected sources on desktop showing linked Gmail and calendar and the home items found in them">
-          <p class="shot-caption">Connected sources on the desktop app: Gmail and calendar link today, with store and smart-home connections rolling out.</p>
+          <img src="/images/opt/sources-desktop.webp" class="shot" loading="lazy" decoding="async"
+               alt="Eave connected sources on desktop showing linked accounts and the home items found in them">
+          <p class="shot-caption">Connected sources on the desktop app: link an account once, and Eave keeps surfacing the home items in it.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── LOCAL SOURCES ── -->
+  <section class="support-section" id="local-sources">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Local sources</p>
+        <h2>Some things only you have.<br>Hand them over once.</h2>
+      </div>
+      <div class="feature-split reverse">
+        <div>
+          <p class="src-p">No inbox holds the model number stamped on the back of your dishwasher, and no account knows what the crawl space looks like. Local sources are the things you supply directly. Most take seconds, and each one you add makes the rest of the record more useful.</p>
+          <ul class="src-list">
+            <li><strong>Photos of data plates</strong> &mdash; snap the sticker on the furnace, water heater, or AC unit and Eave reads the make, model, and serial off it</li>
+            <li><strong>Photos of rooms and equipment</strong> &mdash; a walk-through builds the shape of the house: what&rsquo;s in each room, what condition it&rsquo;s in, what&rsquo;s due for attention</li>
+            <li><strong>Documents</strong> &mdash; inspection reports, appliance manuals, warranty paperwork, insurance declarations, HOA rules, permits, contractor quotes</li>
+            <li><strong>Receipts</strong> &mdash; a photo of the paper one, or a PDF, matched to the appliance or repair it belongs to</li>
+            <li><strong>Voice and text capture</strong> &mdash; say &ldquo;replaced the disposal, Badger 5, $340&rdquo; and it lands in the record; type it if you&rsquo;d rather</li>
+          </ul>
+          <p class="src-p">Local sources are free, and they stay free. Capturing what you own is memory, not intelligence &mdash; we don&rsquo;t charge you to write down your own house.</p>
+        </div>
+        <div>
+          <img src="/images/opt/connected-mobile.webp" class="shot shot-phone" loading="lazy" decoding="async"
+               alt="Eave on a phone showing home items found from connected and local sources, awaiting review">
+          <p class="shot-caption">On mobile, Eave surfaces what it found from every source &mdash; each item waiting for your review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INSPECTIONS & DISCLOSURES ── -->
+  <section class="support-section" id="inspections">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Inspections and disclosures</p>
+        <h2>You paid for the inspection.<br>Don&rsquo;t let it die in a PDF.</h2>
+      </div>
+      <div class="doc">
+        <p>A home inspection report is the densest record of your house that will ever exist &mdash; usually forty pages, usually read once, usually filed and forgotten. Disclosure documents are the same story from the other direction: what the last owner knew, written down and then abandoned. Upload either one and Eave takes it apart.</p>
+      </div>
+      <div class="src-block">
+        <div class="src-label">What Eave pulls out of an inspection report</div>
+        <ul class="src-list">
+          <li><strong>Systems</strong> &mdash; the roof, furnace, water heater, panel, and the rest, with install year and condition as the inspector recorded them</li>
+          <li><strong>Findings</strong> &mdash; each issue the inspector flagged, with its severity, so urgent separates from someday</li>
+          <li><strong>Photos and page references</strong> &mdash; kept with the item, so you can go back to the original wording</li>
+        </ul>
+      </div>
+      <div class="src-block">
+        <div class="src-label">What else is worth uploading</div>
+        <ul class="src-list">
+          <li><strong>Seller disclosure statements</strong> &mdash; known defects, past repairs, and what was never fixed</li>
+          <li><strong>Permits and closing documents</strong> &mdash; what work was done legally, and when</li>
+          <li><strong>Prior owners&rsquo; warranty paperwork</strong> &mdash; some of it transfers</li>
+        </ul>
+      </div>
+      <div class="doc">
+        <p>This matters most at the two ends of ownership. If you&rsquo;re buying, the report is your first upkeep plan, and you&rsquo;re getting it at the exact moment you can still act on it. If you&rsquo;re selling, the same record is the proof the house was cared for &mdash; the difference between &ldquo;I think we did the roof around 2019&rdquo; and a dated entry with a receipt attached.</p>
+      </div>
+      <p class="src-links">Step by step: <a href="/support/inspection-import">importing a home inspection report</a> &middot; Guide: <a href="/guides/home-inspection-to-upkeep-plan">turn a home inspection into an upkeep plan</a> &middot; <a href="/for/home-buyers">If you&rsquo;re buying</a> &middot; <a href="/for/home-sellers">If you&rsquo;re selling</a></p>
     </div>
   </section>
 
@@ -209,51 +273,75 @@
     <div class="container">
       <div class="section-header">
         <p class="label">What Eave reads</p>
-        <h2>Read-only, and only your home</h2>
+        <h2>Read-only, and only your home.</h2>
       </div>
-      <div class="feature-split reverse">
-        <div>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;">Access is read-only. Eave never sends email on your behalf and never changes anything in your inbox or calendar. It looks, it surfaces, and that's the extent of it.</p>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">It also looks for one thing: your home. Eave surfaces home-related receipts, warranty registrations, and contractor or service confirmations — not personal correspondence, not everything you've ever received. The goal is a fuller home record, not a full read of your mail.</p>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">If you want the specifics on how that access works and how your data is handled, our <a href="/support/data-privacy">data and privacy</a> page covers it in plain terms.</p>
-        </div>
-        <div>
-          <img src="/images/opt/connected-mobile.webp"
-               class="shot shot-phone"
-               loading="lazy" decoding="async"
-               alt="Eave connected sources on a phone showing home receipts and warranties surfaced from a linked inbox">
-          <p class="shot-caption">On mobile, Eave surfaces the home items it found — each one waiting for you to review before it's saved.</p>
-        </div>
-      </div>
+      <p class="src-p">Connected access runs one direction. Eave looks; it never writes, never sends, never changes anything on the other end.</p>
+      <ul class="src-list">
+        <li><strong>Read-only, always</strong> &mdash; Eave never sends email on your behalf and never edits your inbox or calendar</li>
+        <li><strong>Home items only</strong> &mdash; receipts, warranty registrations, contractor and service confirmations. Not personal correspondence</li>
+        <li><strong>No device control</strong> &mdash; smart-home connections, when they arrive, will read equipment details and nothing else. Eave will never turn anything on or off</li>
+        <li><strong>Disconnect anytime</strong> &mdash; unlinking stops the reading; what you already reviewed and saved stays yours</li>
+      </ul>
+      <p class="src-p">The specifics of how access works and how your data is handled are on the <a href="/support/data-privacy">data and privacy</a> page, in plain terms.</p>
     </div>
   </section>
 
-  <!-- ── NOTHING SAVES AUTOMATICALLY ── -->
+  <!-- ── YOU REVIEW FIRST ── -->
   <section class="support-section" id="review-first">
     <div class="container">
       <div class="section-header">
         <p class="label">You review first</p>
-        <h2>Nothing saves without your say</h2>
+        <h2>Nothing saves without your say.</h2>
       </div>
-      <div class="article-block">
-        <h3>Eave surfaces, you decide</h3>
-        <p>Connecting a source doesn't hand Eave the keys to your records. It surfaces what it finds — a receipt, a warranty expiry, a contractor's confirmation — and holds it for your review. You choose what to keep, correct anything that's off, and decide where it belongs. Nothing lands in your home knowledge base until you say so.</p>
-      </div>
-      <div class="article-block">
-        <h3>Why it works this way</h3>
-        <p>Your home's record is only useful if it's accurate, and the fastest way to erode trust in it is to let a system save things you never checked. Review-before-save keeps you in control and keeps the record clean — the same principle applies whether you capture something by voice, by photo, or from a connected inbox.</p>
-      </div>
+      <p class="src-p">Every source &mdash; connected or local &mdash; lands in the same place: a review queue. Eave surfaces what it found and holds it there.</p>
+      <ul class="src-list">
+        <li>You confirm what&rsquo;s right, correct what&rsquo;s off, and discard what doesn&rsquo;t belong</li>
+        <li>Nothing enters your home record until you approve it</li>
+        <li>The same rule applies to a photo, a voice note, a receipt, and an inbox find &mdash; no exceptions for automation</li>
+      </ul>
+      <p class="src-p">A record is only worth having if it&rsquo;s accurate, and the fastest way to ruin one is to fill it with things nobody checked. Review-before-save costs you a few seconds an item and buys you a record you can trust years later.</p>
     </div>
   </section>
 
-  <!-- ANECDOTE (placeholder illustration — swap for a real customer story when available) -->
+  <!-- ── WHERE IT ALL GOES ── -->
+  <section class="support-section" id="where-it-goes">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Where it all goes</p>
+        <h2>Memory is free.<br>The thinking is $2.99.</h2>
+      </div>
+      <p class="src-p">Everything above &mdash; connected accounts, photos, documents, receipts, voice capture &mdash; builds your home&rsquo;s memory, and that costs nothing. The memory is the raw material. Eave Intelligence is what turns it into a plan.</p>
+      <div class="src-cols">
+        <div class="src-block">
+          <div class="src-label src-label-live">Free, forever</div>
+          <ul class="src-list">
+            <li>Capture from every source, connected and local</li>
+            <li>Your searchable home record &mdash; rooms, systems, appliances, contractors, documents</li>
+            <li>Warranty dates, install years, model and serial numbers, receipts</li>
+          </ul>
+        </div>
+        <div class="src-block">
+          <div class="src-label src-label-intel">Eave Intelligence &middot; $2.99/month</div>
+          <ul class="src-list">
+            <li>Your <strong>upkeep plan</strong> &mdash; every task the record implies, scheduled against your actual equipment rather than a generic checklist</li>
+            <li>A <strong>ranked queue</strong> &mdash; what to do next, ordered by what it costs you to keep waiting</li>
+            <li>Your <strong>Upkeep Score</strong> &mdash; one number for how far ahead or behind the house is</li>
+            <li>Cost and risk estimates drawn from what your systems actually are, not averages</li>
+          </ul>
+        </div>
+      </div>
+      <p class="src-p">The math is the argument. The average deferred repair runs about $5,600 once it turns urgent, and 92% of homeowners are carrying at least one outstanding repair right now. Intelligence has to catch one thing to pay for a lifetime of itself. <a href="/pricing">See pricing</a>.</p>
+    </div>
+  </section>
+
+  <!-- ── IN PRACTICE ── -->
   <section class="support-section">
     <div class="container">
       <div class="anecdote">
         <div class="anecdote-label">In practice</div>
         <div class="anecdote-q">How do I keep track of home warranties?</div>
-        <p>The dishwasher receipt lands in your inbox and Eave notices it — the purchase date, the model, the warranty term. You confirm it once in the review queue, and that's the last time you think about it until it matters: a reminder <strong>before</strong> the warranty lapses, while a repair claim is still free.</p>
-        <p>No spreadsheet, no shoebox of receipts, no trying to remember which drawer the paperwork went in. The warranty tracks itself because the record filled in from the source.</p>
+        <p>The dishwasher receipt lands in your inbox and Eave notices it &mdash; purchase date, model, warranty term. You confirm it once in the review queue. Later that week you snap a photo of the data plate on the furnace while you&rsquo;re down there anyway, and upload the inspection PDF from closing. Three sources, four minutes total.</p>
+        <p>That&rsquo;s the memory. Turn on Intelligence and it becomes a plan: a reminder before the dishwasher warranty lapses, while a claim is still free. The furnace filter on the right interval for the model you actually own. The inspector&rsquo;s note about the water heater&rsquo;s age sitting in the queue with a number next to it.</p>
       </div>
     </div>
   </section>
@@ -265,23 +353,17 @@
         <p class="label">Questions</p>
         <h2>About connected sources</h2>
       </div>
-      <div class="qa-item">
-        <h3>What can I connect to Eave today?</h3>
-        <p>Today you can connect Gmail and your calendar. From there, Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in your inbox and schedule. Store accounts like Home Depot, Lowe's, and Amazon, along with smart-home connections, are rolling out and not live yet.</p>
-      </div>
-      <div class="qa-item">
-        <h3>What does Eave read from my email?</h3>
-        <p>Eave connects to Gmail with read-only access and looks only for home-related items — purchase receipts, warranty registrations, and contractor or service confirmations. It surfaces those for you rather than combing through personal mail. It never sends email on your behalf and never changes anything in your inbox.</p>
-      </div>
-      <div class="qa-item">
-        <h3>Does anything save automatically?</h3>
-        <p>No. Nothing saves to your home records without your review first. Eave surfaces what it finds — a receipt, a warranty expiry, a contractor — and you decide what to keep and where it goes. Review-before-save is a core part of how Eave works: nothing saves without your say.</p>
-      </div>
+      <div class="qa-item"><h3>What can I connect right now?</h3><p>Gmail and your calendar. Eave surfaces the home-related receipts, warranties, and contractor confirmations already sitting in them. Store accounts like Home Depot, Lowe&rsquo;s, and Amazon, and smart-home connections, are coming and are not live yet.</p></div>
+      <div class="qa-item"><h3>What if I don&rsquo;t want to connect anything?</h3><p>Then don&rsquo;t. Everything in Eave can be built from local sources: photos, documents, receipts, and voice capture. Connecting an account saves you typing; it isn&rsquo;t required.</p></div>
+      <div class="qa-item"><h3>What does Eave read from my email?</h3><p>Read-only access, home items only: purchase receipts, warranty registrations, and contractor or service confirmations. It never sends email on your behalf and never changes anything in your inbox.</p></div>
+      <div class="qa-item"><h3>Does anything save automatically?</h3><p>No. Everything goes to a review queue first. You decide what&rsquo;s kept, what&rsquo;s corrected, and where it belongs.</p></div>
+      <div class="qa-item"><h3>Can I upload my home inspection report?</h3><p>Yes. Eave reads it and pulls out your systems with their install years and condition, plus every finding the inspector flagged with its severity. See <a href="/support/inspection-import">importing a home inspection report</a>.</p></div>
+      <div class="qa-item"><h3>Do I need to pay to use connected sources?</h3><p>No. Capture and your home record are free. Eave Intelligence &mdash; the upkeep plan, the ranked queue, and the Upkeep Score &mdash; is $2.99/month.</p></div>
     </div>
   </section>
 
   <!-- ── KEEP EXPLORING ── -->
-  <section class="support-section" id="keep-exploring">
+  <section class="support-section" id="explore">
     <div class="container">
       <div class="section-header">
         <p class="label">Keep exploring</p>
@@ -289,21 +371,29 @@
       </div>
       <div class="xlink-grid">
         <a class="xlink-card" href="/features/home-knowledge-base">
-          <div class="xlink-title">Home Knowledge Base</div>
-          <div class="xlink-desc">The searchable record connected sources fill in — rooms, appliances, contractors, and repairs.</div>
+          <div class="xlink-title">The home knowledge base</div>
+          <div class="xlink-desc">The searchable record every source fills in: rooms, systems, appliances, contractors, and repairs.</div>
         </a>
-        <a class="xlink-card" href="/support/data-privacy">
-          <div class="xlink-title">Data and privacy</div>
-          <div class="xlink-desc">How read-only access works, what Eave looks at, and how your data is handled — in plain terms.</div>
+        <a class="xlink-card" href="/support/inspection-import">
+          <div class="xlink-title">Importing a home inspection report</div>
+          <div class="xlink-desc">What Eave pulls out of the PDF, and how to review it before anything saves.</div>
+        </a>
+        <a class="xlink-card" href="/guides/home-inspection-to-upkeep-plan">
+          <div class="xlink-title">Turn an inspection into an upkeep plan</div>
+          <div class="xlink-desc">Urgent vs. soon vs. someday, with rough costs attached.</div>
         </a>
         <a class="xlink-card" href="/guides/connecting-gmail-for-receipts">
           <div class="xlink-title">Connecting Gmail for receipts</div>
-          <div class="xlink-desc">A step-by-step walkthrough for linking Gmail and reviewing the home items Eave surfaces.</div>
+          <div class="xlink-desc">A step-by-step walkthrough of the connection and the first review.</div>
+        </a>
+        <a class="xlink-card" href="/support/data-privacy">
+          <div class="xlink-title">Data and privacy</div>
+          <div class="xlink-desc">How read-only access works and how your data is handled, in plain terms.</div>
         </a>
       </div>
       <div class="contact-strip" style="margin-top:32px;">
-        <p><strong>See it on your own home.</strong> Eave is free for one property and runs in any browser — your first capture takes about five seconds.</p>
-        <a href="https://app.eavehome.app" class="btn btn-jade">Start free →</a>
+        <p><strong>See it on your own home.</strong> Eave is free for one property and runs in any browser &mdash; your first capture takes about five seconds.</p>
+        <a href="https://app.eavehome.app" class="btn btn-jade">Start free &rarr;</a>
       </div>
     </div>
   </section>
