@@ -1399,41 +1399,6 @@
     @media(prefers-reduced-motion:reduce){.eng-card,.engine-bg-layer{transition:none!important}.eng-card:hover{transform:none}}
   </style>
 
-  <style>
-    /* ══ HERO CAPTURE DEMO — motion is additive; the markup is the settled state ══ */
-    .eave-demo{position:absolute;left:0;right:0;bottom:0;height:300px;padding:0 12px 12px;z-index:2;
-      pointer-events:none;background:linear-gradient(to top,var(--bg) 84%,rgba(244,239,230,0))}
-    .eave-demo-bar{height:40px;display:flex;align-items:center;padding:0 11px;margin-bottom:8px;
-      border:1px solid var(--stone);border-radius:10px;background:#FCFAF5;overflow:hidden;
-      font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
-      transition:border-color .45s ease}
-    .eave-demo-bar.is-resolving{border-color:rgba(111,168,201,.55)}
-    .eave-demo-typed{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
-    .eave-demo-caret{display:inline-block;width:1px;height:13px;background:var(--jade);flex:0 0 1px;margin-left:1px}
-    .eave-demo-caret.is-blinking{animation:eaveCaret 1.06s step-end infinite}
-    @keyframes eaveCaret{50%{opacity:0}}
-    .eave-demo-stack{position:relative;height:252px;overflow:hidden}
-    .eave-demo-card{position:absolute;left:0;right:0;height:76px;box-sizing:border-box;
-      background:#FCFAF5;border:1px solid var(--stone);border-radius:10px;padding:9px 11px;
-      transition:opacity .38s ease,transform .38s cubic-bezier(.22,.61,.36,1)}
-    .eave-demo-card[data-i="0"]{top:0;opacity:1}
-    .eave-demo-card[data-i="1"]{top:84px;opacity:.7}
-    .eave-demo-card[data-i="2"]{top:168px;opacity:.45}
-    .eave-demo-card.is-hidden{opacity:0;transform:translateY(10px)}
-    .eave-demo-title{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;color:var(--ink);
-      margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .eave-demo-row{display:flex;gap:8px;align-items:baseline;line-height:1.36}
-    .eave-demo-row .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;
-      text-transform:uppercase;color:var(--muted);flex:0 0 auto}
-    .eave-demo-row .v{font-family:'Space Grotesk',sans-serif;font-size:11px;color:var(--ink);
-      min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .eave-demo-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;
-      overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-    @media (prefers-reduced-motion:reduce){
-      .eave-demo-caret{display:none}
-      .eave-demo-card,.eave-demo-bar{transition:none!important;animation:none!important}
-    }
-  </style>
 </head>
 <body>
 
@@ -1445,8 +1410,8 @@
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
-            <li><a href="/residential">Homeowners<span class="nav-app"> &middot; Residential</span></a></li>
-            <li><a href="/commercial">Businesses &amp; nonprofits<span class="nav-app"> &middot; Commercial</span></a></li>
+            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <!-- EAVE-GATE:PARTNERS-DESKTOP -->
             <li class="nav-group">Add-ons</li>
             <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
@@ -1464,6 +1429,7 @@
             <li><a href="/support/data-privacy">Data &amp; privacy</a></li>
           </ul>
         </li>
+        <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
         <a href="https://app.eavehome.app" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
@@ -1477,8 +1443,8 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Homeowners<span class="nav-app"> &middot; Residential</span></a>
-    <a href="/commercial" onclick="closeMobile()">Businesses &amp; nonprofits<span class="nav-app"> &middot; Commercial</span></a>
+    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <!-- EAVE-GATE:PARTNERS-MOBILE -->
     <div class="mobile-menu-label">Add-ons</div>
     <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
@@ -1491,6 +1457,7 @@
     <a href="/support" onclick="closeMobile()">Support</a>
     <a href="/support/getting-started" onclick="closeMobile()">Getting started</a>
     <a href="/support/data-privacy" onclick="closeMobile()">Data &amp; privacy</a>
+    <a href="/about" onclick="closeMobile()">About</a>
     <a href="https://app.eavehome.app" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
@@ -1540,38 +1507,12 @@
               <img src="/images/opt/app-phone.webp" width="560" height="1218"
                    alt="Eave mobile app — home screen" decoding="async">
 
-              <!-- CAPTURE DEMO. The markup below IS the settled end state: it renders as-is for
-                   no-JS, prefers-reduced-motion, and before init. Do NOT reduce it to beat 1 only —
-                   the three-world signal depends on all three cards being present on first paint.
-                   COPY IS FROZEN (Partners hold). Beat 3 must stay a plain observation: no persona
-                   label, no client/seller/listing language, no economics. Adding "your listings" or
-                   "your clients" turns a capability demo into a solicitation to licensees. -->
-              <div class="eave-demo" aria-hidden="true" role="presentation">
-                <div class="eave-demo-bar">
-                  <span class="eave-demo-typed">furnace is a carrier, put in 2019 i think</span><span class="eave-demo-caret"></span>
-                </div>
-                <div class="eave-demo-stack">
-                  <article class="eave-demo-card" data-i="0">
-                    <div class="eave-demo-title">Furnace</div>
-                    <div class="eave-demo-row"><span class="k">Make</span><span class="v">Carrier</span></div>
-                    <div class="eave-demo-row"><span class="k">Installed</span><span class="v">2019 (approx.)</span></div>
-                    <div class="eave-demo-row"><span class="k">Next</span><span class="v">Filter change, Oct</span></div>
-                  </article>
-                  <article class="eave-demo-card" data-i="1">
-                    <div class="eave-demo-title">Boiler &mdash; Fellowship Hall</div>
-                    <div class="eave-demo-row"><span class="k">Where</span><span class="v">Fellowship hall</span></div>
-                    <div class="eave-demo-row"><span class="k">Reports</span><span class="v">3rd since Feb</span></div>
-                    <div class="eave-demo-row"><span class="k">Next</span><span class="v">Get two bids</span></div>
-                  </article>
-                  <article class="eave-demo-card" data-i="2">
-                    <div class="eave-demo-title">Gutters</div>
-                    <div class="eave-demo-row"><span class="k">Found</span><span class="v">Downspout missing</span></div>
-                    <div class="eave-demo-row"><span class="k">Where</span><span class="v">Back corner</span></div>
-                    <div class="eave-demo-row"><span class="k">Next</span><span class="v">Add a photo</span></div>
-                  </article>
-                </div>
-              </div>
-              <p class="eave-demo-sr">Eave turns a quick note into a record. &ldquo;Furnace is a Carrier, put in 2019 I think&rdquo; becomes a Furnace record: Carrier, installed 2019 (approximate), filter change due in October. &ldquo;Fellowship hall boiler is dripping again&rdquo; becomes a Boiler record for the fellowship hall: third report since February, next step get two bids. &ldquo;Walk-through today, no downspout on the back corner&rdquo; becomes a Gutters record: downspout missing on the back corner, next step add a photo.</p>
+              <!-- VIDEO/GIF SLOT — Garrett is supplying a screen recording of the real product.
+                   Drop it here inside .phone-screen, e.g.
+                   <video src="/images/opt/app-demo.mp4" autoplay muted loop playsinline
+                          poster="/images/opt/app-phone.webp" width="560" height="1218"
+                          style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></video>
+                   ...replacing the <img> above (keep the img as the poster/LCP fallback). -->
             </div>
           </div>
 
@@ -2050,61 +1991,5 @@
   })();
   </script>
 
-  <script>
-  /* Hero capture demo. Strictly additive: the authored markup is the settled state,
-     JS clears it and replays. Returns before scheduling anything under reduced-motion. */
-  (function(){
-    var demo=document.querySelector('.eave-demo'); if(!demo) return;
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if(!('IntersectionObserver' in window)) return;
-    var BEATS=[
-      {line:'furnace is a carrier, put in 2019 i think', pause:'carrier,'},
-      {line:'fellowship hall boiler is dripping again', pause:'boiler'},
-      {line:'walk-through today, no downspout on the back corner', pause:'today,'}
-    ];
-    var bar=demo.querySelector('.eave-demo-bar'),
-        typed=demo.querySelector('.eave-demo-typed'),
-        caret=demo.querySelector('.eave-demo-caret'),
-        cards=[].slice.call(demo.querySelectorAll('.eave-demo-card'));
-    var timers=[], loops=0, started=false;
-    function t(fn,ms){ timers.push(setTimeout(fn,ms)); }
-    function reset(){ typed.textContent=''; caret.classList.add('is-blinking');
-      cards.forEach(function(c){ c.classList.add('is-hidden'); }); }
-    function beat(i,done){
-      var b=BEATS[i], line=b.line, pauseAt=line.indexOf(b.pause)+b.pause.length, n=0;
-      t(function(){                                   /* GAP 0.5s */
-        caret.classList.remove('is-blinking');        /* caret stops blinking while typing */
-        (function step(){
-          typed.textContent=line.slice(0,++n);
-          if(n<line.length){ t(step, 55 + (n===pauseAt?260:0)); }
-          else {
-            t(function(){ caret.classList.add('is-blinking'); },400);
-            t(function(){                             /* HOLD 0.9s -> RESOLVE */
-              bar.classList.add('is-resolving');
-              t(function(){ bar.classList.remove('is-resolving'); },900);
-              t(function(){ typed.textContent=''; cards[i].classList.remove('is-hidden'); },220);
-              t(done, 600+4500);                      /* resolve + DWELL 4.5s */
-            },900);
-          }
-        })();
-      },500);
-    }
-    function loop(){
-      reset(); var i=0;
-      (function next(){
-        if(i<BEATS.length){ beat(i++, next); return; }
-        loops++;
-        if(loops>=3) return;                          /* settle on the full stack */
-        t(function(){                                  /* loop seam */
-          demo.style.transition='opacity .35s ease'; demo.style.opacity='.35';
-          t(function(){ demo.style.opacity='1'; loop(); },350);
-        },1400);
-      })();
-    }
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting && !started){ started=true; t(loop,1200); } });
-    },{threshold:0.3}).observe(demo);
-  })();
-  </script>
 </body>
 </html>
