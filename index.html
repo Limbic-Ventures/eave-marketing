@@ -1263,19 +1263,6 @@
     .products-bg-layer[data-product="pro"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-pro.webp'); }
     .products-section > .container { position:relative; z-index:1; }
 
-    /* ── HOME MOMENTS (3-phase strip) ── */
-    .moments-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:44px; }
-    .moment-col { display:block; text-decoration:none; color:inherit; padding-top:22px; border-top:2px solid var(--jade); transition:transform .2s ease; }
-    .moment-col:hover { transform:translateY(-3px); }
-    .moment-step { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--jade); line-height:1; }
-    .moment-phase { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:14px; }
-    .moment-title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin:6px 0 12px; }
-    .moment-desc { font-size:14.5px; line-height:1.65; color:var(--muted); margin:0 0 18px; }
-    .moment-list { list-style:none; padding:0; margin:0 0 20px; display:grid; gap:9px; }
-    .moment-list li { position:relative; padding-left:22px; font-size:13.5px; line-height:1.5; color:var(--ink); }
-    .moment-list li::before { content:'\2713'; position:absolute; left:0; top:0; color:var(--jade); font-weight:700; }
-    .moment-link { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--jade); }
-    @media (max-width:900px){ .moments-grid{grid-template-columns:1fr; gap:0;} .moment-col{ border-top:none; border-left:2px solid var(--jade); padding-top:0; padding-left:22px; margin-bottom:32px; } .moment-col:hover{ transform:none; } }
     /* ── PRODUCTS MENU: three worlds, subordinate add-ons ── */
   .nav-worlds a { color: var(--ink); }
   .nav-app { color: var(--muted); }
@@ -1289,14 +1276,66 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"What is Eave?","acceptedAnswer":{"@type":"Answer","text":"Eave is your building's memory. Capture anything about the place you own — a home, a business, an HOA, or a church — and Eave remembers it, then tells you what to do next."}},
-    {"@type":"Question","name":"What's the difference between Eave Residential, Commercial, Guardian, and Pro?","acceptedAnswer":{"@type":"Answer","text":"Eave Residential is the app for your home. Eave Commercial brings the same memory to businesses, HOAs, churches, and operators. Eave Guardian adds active protection, coming this fall. Eave Pro is hands-on concierge services, like a licensed Home Audit."}},
+    {"@type":"Question","name":"What's the difference between Eave Residential, Commercial, and Partners?","acceptedAnswer":{"@type":"Answer","text":"They are the three core apps — one for each kind of owner. Eave Residential is for homeowners, whether that is one home or several. Eave Commercial is for businesses and nonprofits: shops, HOAs and condos, churches and community centers, and small portfolios. Eave Partners, launching soon, is for the pros who help people through a home. Guardian and Pro are not separate apps — they are add-ons that layer onto Eave Residential."}},
     {"@type":"Question","name":"Is Eave free?","acceptedAnswer":{"@type":"Answer","text":"Yes — Eave Residential is free for one home, forever, with no credit card. Eave Intelligence ($2.99/mo) and Multi-Property are optional upgrades, Eave Guardian arrives this fall, and commercial editions have their own plans."}},
     {"@type":"Question","name":"Do I need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon."}},
-    {"@type":"Question","name":"Who is Eave for?","acceptedAnswer":{"@type":"Answer","text":"Homeowners, first and foremost — that's Eave Residential. Eave Commercial extends the same building memory to businesses, HOAs and condos, churches and nonprofits, and small multifamily operators."}},
+    {"@type":"Question","name":"Who is Eave for?","acceptedAnswer":{"@type":"Answer","text":"Three kinds of owner, with an app for each. Homeowners use Eave Residential. Businesses and nonprofits — shops, HOAs and condos, churches and community centers, and small multifamily operators — use Eave Commercial. Eave Partners, launching soon, is for the agents and inspectors who help people through a home."}},
     {"@type":"Question","name":"Is my data private?","acceptedAnswer":{"@type":"Answer","text":"Your data is yours. Nothing saves until you review it, it is stored with row-level security, and you can export or delete everything at any time."}},
     {"@type":"Question","name":"Can Eave help when I'm buying or selling?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's when it earns its keep. Sellers use Eave to get ready and hand the buyer a documented home. Buyers turn the inspection into a plan and move in already set up."}}
   ]}
   </script>
+
+  <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+
+  <style>
+    /* linkified engine cards */
+    a.hiw-card{text-decoration:none;color:inherit;display:block;transition:transform .2s ease,box-shadow .2s ease}
+    a.hiw-card:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(31,58,82,.10)}
+    .hiw-link{display:inline-block;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;
+      font-weight:600;letter-spacing:.04em;color:var(--jade)}
+    .hiw-more{margin-top:28px}
+    /* sneak-peek showcase */
+    .peek-band{background:var(--surface);border-top:1px solid var(--stone);border-bottom:1px solid var(--stone)}
+    .peek-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .peek-intro{color:var(--muted);line-height:1.75;font-size:15px;margin-bottom:22px;max-width:520px}
+    .peek-list{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:14px;max-width:520px}
+    .peek-list li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.6;color:var(--muted)}
+    .peek-list li::before{content:'\2713';position:absolute;left:0;top:0;color:var(--jade);font-weight:700}
+    .peek-list strong{color:var(--ink);font-weight:700}
+    .peek-media{border:1px solid var(--stone);border-radius:16px;overflow:hidden;background:#FCFAF5;
+      box-shadow:0 18px 50px rgba(31,58,82,.10)}
+    .peek-media img{display:block;width:100%;height:auto}
+    @media(max-width:900px){.peek-grid{grid-template-columns:1fr;gap:36px}}
+  </style>
+
+  <style>
+    /* ══ ENGINE (How Eave works) — hover-swapped blurred backdrops ══ */
+    .engine-section{position:relative;overflow:hidden}
+    .engine-bg-layer{position:absolute;inset:0;background-size:cover;background-position:center;
+      opacity:0;transition:opacity .55s ease;z-index:0;pointer-events:none}
+    .engine-bg-layer.active{opacity:1}
+    .engine-bg-layer[data-step="capture"]{background-image:linear-gradient(rgba(244,239,230,.80),rgba(244,239,230,.90)),url('/images/opt/product-residential.webp')}
+    .engine-bg-layer[data-step="memory"]{background-image:linear-gradient(rgba(244,239,230,.80),rgba(244,239,230,.90)),url('/images/opt/product-commercial.webp')}
+    .engine-bg-layer[data-step="intelligence"]{background-image:linear-gradient(rgba(244,239,230,.80),rgba(244,239,230,.90)),url('/images/opt/product-guardian.webp')}
+    .engine-bg-layer[data-step="upkeep"]{background-image:linear-gradient(rgba(244,239,230,.80),rgba(244,239,230,.90)),url('/images/opt/product-pro.webp')}
+    .engine-section>.container{position:relative;z-index:1}
+    .eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:44px}
+    .eng-card{display:block;text-decoration:none;color:inherit;background:rgba(252,250,245,.88);
+      border:1px solid var(--stone);border-radius:16px;padding:28px;
+      transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+    .eng-card:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(31,58,82,.12);background:rgba(252,250,245,.97)}
+    .eng-num{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+      text-transform:uppercase;color:var(--jade);margin-bottom:12px}
+    .eng-card h3{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;
+      line-height:1.2;color:var(--ink);margin:0 0 12px;letter-spacing:-.01em}
+    .eng-card p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0 0 18px}
+    .eng-shot{border:1px solid var(--stone);border-radius:12px;overflow:hidden;background:#FCFAF5;margin-bottom:16px}
+    .eng-shot img{display:block;width:100%;height:auto}
+    .eng-link{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--jade)}
+    @media(max-width:820px){.eng-grid{grid-template-columns:1fr}}
+    @media(prefers-reduced-motion:reduce){.eng-card,.engine-bg-layer{transition:none!important}.eng-card:hover{transform:none}}
+  </style>
+
 </head>
 <body>
 
@@ -1404,6 +1443,13 @@
             <div class="phone-screen">
               <img src="/images/opt/app-phone.webp" width="560" height="1218"
                    alt="Eave mobile app — home screen" decoding="async">
+
+              <!-- VIDEO/GIF SLOT — Garrett is supplying a screen recording of the real product.
+                   Drop it here inside .phone-screen, e.g.
+                   <video src="/images/opt/app-demo.mp4" autoplay muted loop playsinline
+                          poster="/images/opt/app-phone.webp" width="560" height="1218"
+                          style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block"></video>
+                   ...replacing the <img> above (keep the img as the poster/LCP fallback). -->
             </div>
           </div>
 
@@ -1411,8 +1457,74 @@
     </div>
   </section>
 
-  <!-- ═══ HOW IT WORKS (umbrella) ═══ -->
-  <section id="how-it-works">
+  <!-- ═══ TRIPTYCH — the single router (replaces #products) ═══ -->
+  <section id="worlds" class="tri-band" data-partners="held">
+    <div class="container">
+      <div class="tri-head fade-in">
+        <p class="label">Before you pick</p>
+        <div class="section-head">
+          <h2>Who&rsquo;s on the hook<br>when it breaks?</h2>
+          <p>Eave does the remembering: what&rsquo;s due, what&rsquo;s aging, what it&rsquo;ll cost.</p>
+        </div>
+      </div>
+      <p class="tri-prompt fade-in">Choose the door that&rsquo;s yours &rarr;</p>
+
+      <div class="triptych">
+
+        <a class="door" href="/residential" data-world="residential">
+          <div class="door-bg" style="background-image:url('/images/opt/product-residential.webp')"></div>
+          <div class="door-frost"></div>
+          <div class="door-inner">
+            <p class="door-eyebrow">Homeowners &middot; Eave Residential</p>
+            <h3 class="door-title">One home or many,<br>remembered.</h3>
+            <p class="door-value">Every system, appliance, and project in one memory that tells you what&rsquo;s next.</p>
+            <div class="door-editions">
+              <span class="chip">Single</span><span class="chip">Multi-property</span>
+              <span class="chip chip-addon">+ Guardian</span><span class="chip chip-addon">+ Pro</span>
+            </div>
+            <span class="door-enter">Enter &rarr;</span>
+          </div>
+        </a>
+
+        <a class="door" href="/commercial" data-world="commercial">
+          <div class="door-bg" style="background-image:url('/images/opt/product-commercial.webp')"></div>
+          <div class="door-frost"></div>
+          <div class="door-inner">
+            <p class="door-eyebrow">Businesses &amp; nonprofits &middot; Eave Commercial</p>
+            <h3 class="door-title">Storefronts, HOAs,<br>churches, portfolios.</h3>
+            <p class="door-value">The same building memory &mdash; priced by the door or the location, never per seat.</p>
+            <div class="door-editions">
+              <span class="chip">Mission</span><span class="chip">Associations</span><span class="chip">Business</span>
+              <span class="chip">Multi-Site</span><span class="chip">Apartments</span>
+            </div>
+            <span class="door-enter">Enter &rarr;</span>
+          </div>
+        </a>
+
+        <div class="door is-held" data-world="partners" role="group" aria-label="Eave Partners — launching soon">
+          <div class="door-frost"></div>
+          <div class="door-inner">
+            <p class="door-eyebrow">Pros &amp; agents &middot; Eave Partners</p>
+            <h3 class="door-title">Your clients&rsquo; homes,<br>documented.</h3>
+            <p class="door-value">Help sellers show up to listing day ready &mdash; and stay their go-to long after closing.</p>
+            <div class="door-editions">
+              <span class="chip">Real-estate agents</span><span class="chip">Home inspectors</span>
+            </div>
+            <span class="held-tag">By invitation &middot; launching soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ HOW EAVE WORKS — 4-step engine, hover-swapped backdrops ═══ -->
+  <section id="how-it-works" class="engine-section">
+    <div class="engine-bg-layer active" data-step="capture"></div>
+    <div class="engine-bg-layer" data-step="memory"></div>
+    <div class="engine-bg-layer" data-step="intelligence"></div>
+    <div class="engine-bg-layer" data-step="upkeep"></div>
     <div class="container">
       <div class="fade-in">
         <p class="label">How Eave works</p>
@@ -1421,102 +1533,66 @@
           <p>Every Eave product runs on the same four-step engine, whether it&rsquo;s your home, a storefront, an HOA, or a church.</p>
         </div>
       </div>
-      <div class="hiw-grid fade-in" style="transition-delay:.1s;">
-        <div class="hiw-card card"><div class="hiw-num">1</div><h3>Capture</h3><p>Snap a photo, speak, or type. Eave builds the record for you &mdash; no manual data entry.</p></div>
-        <div class="hiw-card card"><div class="hiw-num">2</div><h3>Memory</h3><p>Every system, appliance, project, and receipt in one place you&rsquo;ll actually find later.</p></div>
-        <div class="hiw-card card"><div class="hiw-num">3</div><h3>Intelligence</h3><p>Eave researches specs, tracks warranties, and ranks what actually needs you this week.</p></div>
-        <div class="hiw-card card"><div class="hiw-num">4</div><h3>Upkeep plan</h3><p>A 12-month plan and a live Upkeep Score, so nothing important slips through.</p></div>
+      <div class="eng-grid fade-in" style="transition-delay:.1s;">
+
+        <a class="eng-card" href="/features/capture" data-step="capture">
+          <div class="eng-num">01 &middot; Capture</div>
+          <h3>Say it, snap it, or type it.</h3>
+          <p>Whatever&rsquo;s fastest in the moment. Eave reads a data plate, a receipt, or a rambling voice note and turns it into a structured record &mdash; the room, the category, the priority, and a rough cost. No forms, no manual data entry, no deciding where it goes.</p>
+          <div class="eng-shot"><img src="/images/opt/capture.webp" alt="Eave capture — turning a photo or voice note into a scoped project" loading="lazy" decoding="async"></div>
+          <span class="eng-link">Learn more about Capture &rarr;</span>
+        </a>
+
+        <a class="eng-card" href="/features/home-knowledge-base" data-step="memory">
+          <div class="eng-num">02 &middot; Memory</div>
+          <h3>One record that stays put.</h3>
+          <p>Everything attaches to the property instead of scattering across notes and inboxes. Rooms and finishes, appliance models and filter sizes, warranties, the contractor you actually liked, every receipt &mdash; still findable two years later, when it&rsquo;s the only thing you need.</p>
+          <div class="eng-shot"><img src="/images/opt/projects-desktop.webp" alt="Eave home knowledge base — searchable record of projects and systems" loading="lazy" decoding="async"></div>
+          <span class="eng-link">Learn more about the knowledge base &rarr;</span>
+        </a>
+
+        <a class="eng-card" href="/features/intelligence" data-step="intelligence">
+          <div class="eng-num">03 &middot; Intelligence</div>
+          <h3>It fills in what you don&rsquo;t know.</h3>
+          <p>Eave researches the specs behind a model number, the real service interval for your equipment, and what a job should cost in your area. Then it ranks the pile: what needs you this week, what can wait until spring, and the reasoning behind both.</p>
+          <div class="eng-shot"><img src="/images/opt/intelligence-research.webp" alt="Eave Intelligence — automatic research on a Bosch dishwasher: active recall, lifespan, warranty terms, filter spec, and suggested maintenance" loading="lazy" decoding="async"></div>
+          <span class="eng-link">Learn more about Intelligence &rarr;</span>
+        </a>
+
+        <a class="eng-card" href="/features/upkeep-score" data-step="upkeep">
+          <div class="eng-num">04 &middot; Upkeep plan</div>
+          <h3>A plan, not another list.</h3>
+          <p>A 12-month schedule tuned to your building&rsquo;s age, systems, and climate. Seasonal prep lands before the season turns, reminders arrive with one-tap actions, and a live Upkeep Score tells you at a glance whether the place is actually being kept up.</p>
+          <div class="eng-shot"><img src="/images/opt/upkeep-plan.webp" alt="Eave upkeep plan — annual estimate, high-priority count, and a month-by-month schedule of tasks with costs" loading="lazy" decoding="async"></div>
+          <span class="eng-link">Learn more about the Upkeep Score &rarr;</span>
+        </a>
+
+      </div>
+      <div class="hiw-more fade-in" style="transition-delay:.15s;">
+        <a class="deep-link" href="/features">EXPLORE EVERY FEATURE &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ PRODUCTS ═══ -->
-  <section id="products" class="alt products-section">
-    <div class="products-bg-layer active" data-product="residential"></div>
-    <div class="products-bg-layer" data-product="commercial"></div>
-    <div class="products-bg-layer" data-product="guardian"></div>
-    <div class="products-bg-layer" data-product="pro"></div>
-    <div class="container">
-      <div class="fade-in">
-        <p class="label">The Eave family</p>
-        <div class="section-head"><h2>One memory.<br>Use one, or all of them.</h2></div>
-      </div>
-      <div class="product-grid fade-in" style="transition-delay:.1s;">
-        <a class="product-card card" href="/residential" data-product="residential">
-          <div class="product-name">Eave Residential</div>
-          <p class="product-desc">The app for your home &mdash; or homes. Capture, a searchable memory of every system and appliance, an AI upkeep plan, and your Upkeep Score &mdash; free to start.</p>
-          <span class="product-link">Explore Residential &rarr;</span>
-        </a>
-        <a class="product-card card" href="/commercial" data-product="commercial">
-          <div class="product-name">Eave Commercial</div>
-          <p class="product-desc">The same building memory for businesses, HOAs and condos, churches and nonprofits, and small multifamily operators &mdash; commercial from door one.</p>
-          <span class="product-link">Explore Commercial &rarr;</span>
-        </a>
-        <a class="product-card card" href="/features/guardian" data-product="guardian">
-          <div class="product-name">Eave Guardian <span class="product-soon">Coming this fall</span></div>
-          <p class="product-desc">Active protection for the home you already own &mdash; an evidence vault, one-tap claim packets, and a 10-year forecast.</p>
-          <span class="product-link">See how Guardian works &rarr;</span>
-        </a>
-        <a class="product-card card" href="/pro" data-product="pro">
-          <div class="product-name">Eave Pro</div>
-          <p class="product-desc">Concierge services for when you&rsquo;d rather someone else handle it &mdash; starting with a licensed in-person Home Audit.</p>
-          <span class="product-link">See Pro services &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══ HOME MOMENTS ═══ -->
-  <section id="moments">
+  <!-- ═══ SNEAK PEEK — Sources: the memory fills itself ═══ -->
+  <section id="peek" class="peek-band">
     <div class="container">
-      <div class="fade-in">
-        <p class="label">Right when you need it most</p>
-        <div class="section-head">
-          <h2>Right when you<br>need it most.</h2>
-          <p>Your home&rsquo;s biggest moments are exactly when its memory matters most.</p>
+      <div class="peek-grid">
+        <div class="peek-copy fade-in">
+          <p class="label">How the record fills</p>
+          <div class="section-head"><h2>The paperwork you kept.<br>Now in a useful place.</h2></div>
+          <p class="peek-intro">Receipts, warranties, model and serial numbers, service dates &mdash; pulled from mail you already have, sorted onto the thing they belong to. You review before it saves.</p>
+          <ul class="peek-list">
+            <li><strong>Email receipts &amp; warranties.</strong> Connect Gmail and Eave surfaces home purchases, warranties, and contractor threads &mdash; read-only, never a store password.</li>
+            <li><strong>Inspection reports &amp; manuals.</strong> Upload the PDF; Eave pulls out the systems, ages, and findings and turns them into projects.</li>
+            <li><strong>Nothing saves until you say so.</strong> Eave shows you everything it found and you choose what to keep. Your records, your call.</li>
+          </ul>
+          <a class="deep-link" href="/features/connected-sources">SEE HOW CONNECTED SOURCES WORK &rarr;</a>
         </div>
-      </div>
-      <div class="moments-grid fade-in" style="transition-delay:.1s;">
-
-        <a class="moment-col" href="/for/home-sellers">
-          <div class="moment-step">01</div>
-          <div class="moment-phase">When you&rsquo;re selling</div>
-          <h3 class="moment-title">Selling a home</h3>
-          <p class="moment-desc">The months before you list are when small fixes are still cheap and quiet. Eave catches every recommendation your agent and inspector make and turns them into a plan you actually finish &mdash; before the photos, not during the scramble.</p>
-          <ul class="moment-list">
-            <li>Capture agent &amp; inspector notes the moment they&rsquo;re mentioned</li>
-            <li>A to-do list ranked by value and effort for your timeline</li>
-            <li>Hand the buyer a documented, cared-for home at closing</li>
-          </ul>
-          <span class="moment-link">For home sellers &rarr;</span>
-        </a>
-
-        <a class="moment-col" href="/for/home-buyers">
-          <div class="moment-step">02</div>
-          <div class="moment-phase">When you&rsquo;re buying</div>
-          <h3 class="moment-title">Buying a home</h3>
-          <p class="moment-desc">Before you fall for the kitchen, understand the roof, the furnace, and everything the inspection is trying to tell you. Eave turns that report into a prioritized plan, so you buy with your eyes open and move in already set up.</p>
-          <ul class="moment-list">
-            <li>Import the inspection &mdash; urgent, soon, someday, with rough costs</li>
-            <li>See the real cost of ownership before you sign</li>
-            <li>Start day one with systems, ages, and to-dos in place</li>
-          </ul>
-          <span class="moment-link">For home buyers &rarr;</span>
-        </a>
-
-        <a class="moment-col" href="/for/new-homeowners">
-          <div class="moment-step">03</div>
-          <div class="moment-phase">After you move in</div>
-          <h3 class="moment-title">Just moved in</h3>
-          <p class="moment-desc">The keys came with a mortgage, not a manual. Eave turns your new address into a living record of the home &mdash; what it has, what it needs, and what to do first &mdash; so the first year feels less like guessing.</p>
-          <ul class="moment-list">
-            <li>Set up from your address in a couple of minutes</li>
-            <li>Capture the backlog by voice, photo, or text</li>
-            <li>Get a weekly queue and a 12-month upkeep plan</li>
-          </ul>
-          <span class="moment-link">For new homeowners &rarr;</span>
-        </a>
-
+        <div class="peek-media fade-in" style="transition-delay:.1s;">
+          <img src="/images/opt/sources-desktop.webp" alt="Eave connected sources — receipts and documents found for review" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </section>
@@ -1568,10 +1644,10 @@
       </div>
       <div class="home-faq-list fade-in" style="transition-delay:.1s;">
         <div class="home-faq-item"><h3 class="home-faq-q">What is Eave?</h3><div class="home-faq-a">Eave is your building&rsquo;s memory. Capture anything about the place you own &mdash; a home, a business, an HOA, or a church &mdash; and Eave remembers it, then tells you what to do next. <a href="/#how-it-works">How it works &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">What&rsquo;s the difference between Eave Residential, Commercial, Guardian, and Pro?</h3><div class="home-faq-a">Eave Residential is the app for your home. Eave Commercial brings the same memory to businesses, HOAs, churches, and operators. Eave Guardian adds active protection, coming this fall. Eave Pro is hands-on concierge services, like a licensed Home Audit. <a href="/pricing">Compare on the pricing page &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">What&rsquo;s the difference between Eave Residential, Commercial, and Partners?</h3><div class="home-faq-a">They&rsquo;re the three core apps &mdash; one for each kind of owner. <strong>Eave Residential</strong> is for homeowners, whether that&rsquo;s one home or several. <strong>Eave Commercial</strong> is for businesses and nonprofits: shops, HOAs and condos, churches and community centers, and small portfolios. <strong>Eave Partners</strong>, launching soon, is for the pros who help people through a home. Guardian and Pro aren&rsquo;t separate apps &mdash; they&rsquo;re add-ons that layer onto Eave Residential. <a href="/pricing">Compare on the pricing page &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is Eave free?</h3><div class="home-faq-a">Yes &mdash; Eave Residential is free for one home, forever, with no credit card. Eave Intelligence ($2.99/mo) and Multi-Property are optional upgrades, Eave Guardian arrives this fall, and commercial editions have their own plans. <a href="/pricing">See full pricing &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Do I need to download an app?</h3><div class="home-faq-a">No. Eave runs in any browser at app.eavehome.app &mdash; phone, tablet, or desktop. Native iOS and Android apps are coming soon. <a href="/support/getting-started">Getting started &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">Who is Eave for?</h3><div class="home-faq-a">Homeowners, first and foremost &mdash; that&rsquo;s Eave Residential. Eave Commercial extends the same building memory to businesses, HOAs and condos, churches and nonprofits, and small multifamily operators. <a href="/commercial">Explore Eave Commercial &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Who is Eave for?</h3><div class="home-faq-a">Three kinds of owner, with an app for each. Homeowners use <a href="/residential">Eave Residential</a>. Businesses and nonprofits &mdash; shops, HOAs and condos, churches and community centers, and small multifamily operators &mdash; use <a href="/commercial">Eave Commercial</a>. And Eave Partners, launching soon, is for the agents and inspectors who help people through a home.</div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is my data private?</h3><div class="home-faq-a">Your data is yours. Nothing saves until you review it, it&rsquo;s stored with row-level security, and you can export or delete everything at any time. <a href="/support/data-privacy">Data &amp; privacy &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Can Eave help when I&rsquo;m buying or selling?</h3><div class="home-faq-a">Yes &mdash; that&rsquo;s when it earns its keep. Sellers use Eave to get ready and hand the buyer a documented home. Buyers turn the inspection into a plan and move in already set up. <a href="/for/home-sellers">For sellers &rarr;</a> &middot; <a href="/for/home-buyers">For buyers &rarr;</a></div></div>
       </div>
@@ -1807,5 +1883,46 @@
     });
   })();
   </script>
+
+  <script>
+  /* Triptych — hover/focus fork with ambient cycle (Variant B) */
+  (function(){
+    var tri=document.querySelector('.triptych'); if(!tri) return;
+    var doors=[].slice.call(tri.querySelectorAll('.door'));
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var narrow=window.matchMedia('(max-width:900px)').matches;
+    if(reduce||narrow) return;
+    var timer=null, idx=0;
+    function setActive(i){
+      idx=i; tri.classList.add('has-active');
+      doors.forEach(function(d,n){ d.classList.toggle('active', n===i); });
+    }
+    function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+    function start(){ stop(); timer=setInterval(function(){ setActive((idx+1)%doors.length); }, 4200); }
+    doors.forEach(function(d,i){
+      d.addEventListener('mouseenter', function(){ stop(); setActive(i); });
+      d.addEventListener('focusin', function(){ stop(); setActive(i); });
+    });
+    tri.addEventListener('mouseleave', function(){ start(); });
+    setActive(0); start();
+  })();
+  </script>
+
+
+  <script>
+  /* Engine — hover/focus swaps the blurred backdrop behind the 4 steps */
+  (function(){
+    var sec=document.querySelector('.engine-section'); if(!sec) return;
+    var layers=[].slice.call(sec.querySelectorAll('.engine-bg-layer'));
+    var cards=[].slice.call(sec.querySelectorAll('.eng-card'));
+    function show(step){ layers.forEach(function(l){ l.classList.toggle('active', l.getAttribute('data-step')===step); }); }
+    cards.forEach(function(c){
+      var step=c.getAttribute('data-step');
+      c.addEventListener('mouseenter', function(){ show(step); });
+      c.addEventListener('focusin', function(){ show(step); });
+    });
+  })();
+  </script>
+
 </body>
 </html>
