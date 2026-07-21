@@ -69,6 +69,8 @@
 - https://eavehome.app/for/home-buyers — buying a home: turn the inspection into a prioritized plan, understand true cost of ownership, move in already set up
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
+- https://eavehome.app/partners — Eave Partners: for real-estate agents and home inspectors
+- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut)
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
 - https://eavehome.app/support — help center hub (16 articles, 5 groups)
 - https://eavehome.app/support/getting-started

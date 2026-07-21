@@ -282,4 +282,22 @@
     <priority>0.3</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://eavehome.app/partners</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/partners/real-estate-agents</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/partners/home-inspectors</loc>
+    <lastmod>2026-07-20</lastmod>
+    <priority>0.4</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

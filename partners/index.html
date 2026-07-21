@@ -8,7 +8,6 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
-    // Cross-domain + conversion: fire a GA4 event on any click through to the app
     document.addEventListener('click', function (e) {
       var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
       if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
@@ -17,92 +16,32 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eave Guides — Step-by-Step Walkthroughs</title>
-  <meta name="description" content="Short, practical walkthroughs for Eave: first-time setup, room scanning, voice capture, Gmail receipts, and seasonal maintenance.">
-  <link rel="canonical" href="https://eavehome.app/guides">
+  <title>Eave Partners — Eave</title>
+  <meta name="description" content="Eave for the professionals who help people through a home. Real estate agents and inspectors keep their clients ready before listing and useful long after closing.">
+  <link rel="canonical" href="https://eavehome.app/partners">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eavehome.app/guides">
+  <meta property="og:url" content="https://eavehome.app/partners">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Eave Guides — Step-by-Step Walkthroughs">
-  <meta property="og:description" content="Short, practical walkthroughs for Eave: first-time setup, room scanning, voice capture, Gmail receipts, and seasonal maintenance.">
-  <meta property="og:image" content="https://eavehome.app/og/guides.jpg">
+  <meta property="og:title" content="Eave Partners — Eave">
+  <meta property="og:description" content="Eave for the professionals who help people through a home. Real estate agents and inspectors keep their clients ready before listing and useful long after closing.">
+  <meta property="og:image" content="https://eavehome.app/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Eave Guides — Step-by-Step Walkthroughs">
+  <meta property="og:image:alt" content="Eave Partners — Eave">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eave Guides — Step-by-Step Walkthroughs">
-  <meta name="twitter:description" content="Short, practical walkthroughs for Eave: first-time setup, room scanning, voice capture, Gmail receipts, and seasonal maintenance.">
-  <meta name="twitter:image" content="https://eavehome.app/og/guides.jpg">
+  <meta name="twitter:title" content="Eave Partners — Eave">
+  <meta name="twitter:description" content="Eave for the professionals who help people through a home. Real estate agents and inspectors keep their clients ready before listing and useful long after closing.">
+  <meta name="twitter:image" content="https://eavehome.app/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/support.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Eave step-by-step guides",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Your first 10 minutes in Eave",
-        "url": "https://eavehome.app/guides/first-10-minutes-in-eave"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Turning a photo into a room record",
-        "url": "https://eavehome.app/guides/scanning-a-room-with-photos"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Capturing a project by voice or text",
-        "url": "https://eavehome.app/guides/capturing-a-project-by-voice-or-text"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "Connecting Gmail to auto-find receipts",
-        "url": "https://eavehome.app/guides/connecting-gmail-for-receipts"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "name": "Setting up seasonal maintenance",
-        "url": "https://eavehome.app/guides/seasonal-maintenance-setup"
-      }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://eavehome.app/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Guides",
-        "item": "https://eavehome.app/guides"
-      }
-    ]
-  }
-  </script>
 </head>
 <body>
 
@@ -166,25 +105,12 @@
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
 
-  <!-- ── SUB-NAV ── -->
-  <div class="sub-nav">
-    <div class="sub-nav-inner">
-      <a href="/guides" class="active">All Guides</a>
-      <a href="/guides/first-10-minutes-in-eave">First 10 Minutes</a>
-      <a href="/guides/scanning-a-room-with-photos">Room Scanning</a>
-      <a href="/guides/capturing-a-project-by-voice-or-text">Voice Capture</a>
-      <a href="/guides/connecting-gmail-for-receipts">Gmail Receipts</a>
-      <a href="/guides/seasonal-maintenance-setup">Seasonal Setup</a>
-      <a href="/support">Support</a>
-    </div>
-  </div>
-
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
     <div class="container">
       <ol>
         <li><a href="/">Home</a></li>
-        <li><span aria-current="page">Guides</span></li>
+        <li><span aria-current="page">Partners</span></li>
       </ol>
     </div>
   </div>
@@ -192,104 +118,42 @@
   <!-- ── HERO ── -->
   <div class="page-hero">
     <div class="container">
-      <p class="label">Guides</p>
-      <h1>Step-by-step guides</h1>
-      <p>Short, practical walkthroughs for getting the most out of Eave — from your first ten minutes to seasonal maintenance on autopilot.</p>
+      <p class="label">Eave Partners</p>
+      <h1>For the people who help others<br>through a home.</h1>
+      <p>Agents and inspectors give some of the most useful advice a homeowner ever gets — usually in passing, right before it's forgotten. Eave is where it sticks: clients show up to listing day ready, and keep a tool that remembers you long after closing.</p>
     </div>
   </div>
 
-  <!-- ── GUIDES ── -->
-  <section class="support-section" id="guides">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">All Guides</p>
-        <h2>Pick a walkthrough</h2>
-      </div>
-      <div class="topic-grid">
-        <a class="topic-card" href="/guides/first-10-minutes-in-eave">
-          <div class="topic-card-title">01&ensp;·&ensp;Your first 10 minutes in Eave</div>
-          <p class="topic-card-desc">Set up your property, add your first room, and capture your first project — a complete Eave setup in about ten minutes.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/scanning-a-room-with-photos">
-          <div class="topic-card-title">02&ensp;·&ensp;Turning a photo into a room record</div>
-          <p class="topic-card-desc">Snap one photo of a room and let Eave fill in the floor material, wall color, ceiling height, and any visible issues.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/capturing-a-project-by-voice-or-text">
-          <div class="topic-card-title">03&ensp;·&ensp;Capturing a project by voice or text</div>
-          <p class="topic-card-desc">Describe a home project in plain language — spoken or typed — and Eave structures it into a scoped, prioritized project.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/connecting-gmail-for-receipts">
-          <div class="topic-card-title">04&ensp;·&ensp;Connecting Gmail to auto-find receipts</div>
-          <p class="topic-card-desc">Give Eave read-only access to Gmail and it surfaces home-related receipts, warranties, and contractor emails for your review.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/seasonal-maintenance-setup">
-          <div class="topic-card-title">05&ensp;·&ensp;Setting up seasonal maintenance</div>
-          <p class="topic-card-desc">Let Eave generate a seasonal checklist for your property type and region, then log completions with one tap.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── HOME MOMENTS ── -->
-  <section class="support-section" id="home-moments">
-    <div class="container">
-      <div class="section-header">
-        <p class="label">Buying, selling &amp; moving</p>
-        <h2>For your home's big moments</h2>
-      </div>
-      <div class="topic-grid">
-        <a class="topic-card" href="/guides/getting-your-home-ready-to-sell">
-          <div class="topic-card-title">Getting your home ready to sell</div>
-          <p class="topic-card-desc">A calm, early checklist for the months before you list — capture what your agent flags, prioritize by value and effort, and hand the buyer a documented home.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/home-inspection-to-upkeep-plan">
-          <div class="topic-card-title">Turn a home inspection into an upkeep plan</div>
-          <p class="topic-card-desc">What the report is really telling you, urgent vs. soon vs. someday, rough costs, and how to turn findings into reminders.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-        <a class="topic-card" href="/guides/passing-your-home-record-to-the-buyer">
-          <div class="topic-card-title">Passing your home's record to the buyer</div>
-          <p class="topic-card-desc">What "conveys" with a house, how smart-home gear and records transfer, and why a documented home negotiates better.</p>
-          <span class="topic-card-more">Read the guide →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── MORE SUPPORT ── -->
+  <!-- ── PARTNER TYPES ── -->
   <section class="support-section">
     <div class="container">
       <div class="section-header">
-        <p class="label">More Support</p>
-        <h2>Questions instead?</h2>
+        <p class="label">Who it's for</p>
+        <h2>Pick your practice</h2>
       </div>
       <div class="xlink-grid">
-        <a class="xlink-card" href="/support/getting-started">
-          <div class="xlink-title">Getting Started</div>
-          <div class="xlink-desc">What Eave is, what it costs, and setting up your home.</div>
+        <a class="xlink-card" href="/partners/real-estate-agents">
+          <div class="xlink-title">Real estate agents</div>
+          <div class="xlink-desc">Turn your prep list into your seller's to-do list, stay useful after closing, and meet sellers early through homeowner-initiated Eave Leads. Flat pricing, never a cut of your commission.</div>
         </a>
-        <a class="xlink-card" href="/support/capturing-your-home">
-          <div class="xlink-title">Using Eave</div>
-          <div class="xlink-desc">AI Capture, room scanning, connected sources, and managing projects.</div>
-        </a>
-        <a class="xlink-card" href="/support/data-privacy">
-          <div class="xlink-title">Data &amp; Privacy</div>
-          <div class="xlink-desc">What Eave reads, how your data is protected, and how to export or delete it.</div>
-        </a>
-        <a class="xlink-card" href="/support/billing">
-          <div class="xlink-title">Billing</div>
-          <div class="xlink-desc">Plans, subscriptions, upgrades, and refunds.</div>
+        <a class="xlink-card" href="/partners/home-inspectors">
+          <div class="xlink-title">Home inspectors <span style="color:var(--dim);font-weight:400;">· coming soon</span></div>
+          <div class="xlink-desc">Hand clients a report that becomes a plan instead of a PDF they file away. More for inspectors is on the way.</div>
         </a>
       </div>
-      <div class="contact-strip" style="margin-top:32px;">
-        <p><strong>Still stuck?</strong> Eave is built and supported by a small crew — real humans read every message.</p>
-        <a href="/support#submit" class="btn btn-jade">Contact the team →</a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="support-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Get in touch</p>
+        <h2>Bring Eave to your clients</h2>
+      </div>
+      <div class="contact-strip">
+        <p><strong>Want to talk it through?</strong> Tell us about your practice — brokerage, market, and how you work with clients — and we'll follow up. Reach us at <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
+        <a href="mailto:support@eavehome.app?subject=Eave%20Partners%20—%20real%20estate" class="btn btn-jade">Email the team →</a>
       </div>
     </div>
   </section>
@@ -304,10 +168,10 @@
         </div>
         <ul class="footer-links">
           <li><a href="/features">Features</a></li>
-            <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/guides">Guides</a></li>
           <li><a href="/support">Support</a></li>
           <li><a href="/about">About</a></li>
-          <li><a href="/guides">Guides</a></li>
         </ul>
         <ul class="footer-links">
           <li><span style="color:var(--dim);">App Store — soon</span></li>
