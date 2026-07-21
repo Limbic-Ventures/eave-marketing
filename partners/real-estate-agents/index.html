@@ -74,6 +74,13 @@
     .p-photo .label { color:#A9D2E8; }
     .p-photo h2 { color:var(--bg); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(22px,2.6vw,32px); line-height:1.2; margin:8px 0 14px; }
     .p-photo p { color:rgba(244,239,230,.88); font-size:15px; line-height:1.7; max-width:600px; margin:0; }
+    .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+    .wl-input::placeholder { color: var(--dim); }
+    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-btn { flex: 0 0 auto; white-space: nowrap; }
+    .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
   </style>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let's talk."}}]}
@@ -312,9 +319,20 @@
   <!-- ── CTA ── -->
   <section class="support-section" id="contact">
     <div class="container">
-      <div class="contact-strip">
-        <p><strong>Bring Eave to your clients.</strong> Tell us a little about your practice &mdash; your market and how you work with clients &mdash; and we&rsquo;ll be in touch. Reach us at <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
-        <a href="mailto:support@eavehome.app?subject=Eave%20Partners%20—%20real%20estate" class="btn btn-jade">Get in touch →</a>
+      <div class="section-header">
+        <p class="label">Bring Eave to your clients</p>
+        <h2>Get in touch</h2>
+      </div>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:620px;margin-bottom:20px;">Tell us a little about your practice &mdash; your market and how you work with clients &mdash; and we&rsquo;ll be in touch. Reach us directly at <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
+      <div style="max-width:620px;">
+        <form data-capture data-source="agent-partner" data-success="Thanks — we'll be in touch." novalidate>
+          <div class="wl-row">
+            <input class="wl-input" type="email" name="email" required autocomplete="email" placeholder="you@brokerage.com" aria-label="Email address">
+            <button type="submit" class="btn btn-jade wl-btn">Get in touch →</button>
+          </div>
+          <input class="wl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="wl-status" data-capture-status role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -374,6 +392,7 @@
     });
     function closeMobile() { mobileMenu.classList.remove('open'); }
   </script>
+  <script src="/assets/capture.js" defer></script>
 
 </body>
 </html>
