@@ -57,6 +57,23 @@
     }
     .compliance-band p { margin:0 0 10px; font-size:14px; color:var(--muted); line-height:1.7; }
     .compliance-band p:last-child { margin-bottom:0; }
+    .quote-band { border-left:3px solid var(--jade); padding:4px 0 4px 20px; margin:0 0 24px; }
+    .quote-band p { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:20px; color:var(--ink); line-height:1.4; margin:0; }
+    .p-shot { border:1px solid var(--stone); border-radius:16px; overflow:hidden; background:#FCFAF5; box-shadow:0 16px 44px rgba(31,58,82,.10); }
+    .p-shot img { display:block; width:100%; height:auto; }
+    .fs-copy h3 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; color:var(--ink); margin:0 0 12px; }
+    .fs-copy p { font-size:15px; line-height:1.7; color:var(--muted); margin:0 0 14px; }
+    .fs-copy .deep-link { margin-top:4px; }
+    .stat-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; }
+    .stat-chip { background:var(--surface); border:1px solid var(--stone); border-radius:12px; padding:16px 20px; flex:1 1 200px; }
+    .stat-chip .stat-num { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px; color:var(--ink); line-height:1; }
+    .stat-chip .stat-label { color:var(--muted); font-size:13px; margin-top:8px; line-height:1.5; }
+    .p-photo { position:relative; border-radius:18px; overflow:hidden; margin-top:8px;
+      background:linear-gradient(180deg,rgba(31,58,82,.55),rgba(31,58,82,.72)),url('/images/opt/memory-bg-1400.jpg');
+      background-size:cover; background-position:center; padding:56px 40px; }
+    .p-photo .label { color:#A9D2E8; }
+    .p-photo h2 { color:var(--bg); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(22px,2.6vw,32px); line-height:1.2; margin:8px 0 14px; }
+    .p-photo p { color:rgba(244,239,230,.88); font-size:15px; line-height:1.7; max-width:600px; margin:0; }
   </style>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let's talk."}}]}
@@ -144,38 +161,93 @@
     </div>
   </div>
 
-  <!-- ── VALUE BLOCKS ── -->
-  <section class="support-section">
+  <!-- ── INTRO / THE GAP ── -->
+  <section class="support-section" id="intro">
     <div class="container">
       <div class="section-header">
-        <p class="label">Where Eave fits in your work</p>
-        <h2>Useful before the listing, and long after</h2>
+        <p class="label">The relationship that usually fades</p>
+        <h2>The closing gift ends up in a drawer.<br>The house doesn&rsquo;t.</h2>
       </div>
-      <ol class="val-list">
-        <li>
-          <h3>Before listing — turn your prep list into their to-do list</h3>
-          <p>Every recommendation you make gets tracked, so sellers show up to photo day ready instead of scrambling. The dozen easy wins you rattle off at the walkthrough stop evaporating before listing.</p>
-        </li>
-        <li>
-          <h3>After closing — stay useful, not just in touch</h3>
-          <p>Your buyers keep a tool you introduced them to, and you stay top-of-mind for the next move and the referral. It's a gift that keeps working long after the closing gift is forgotten.</p>
-        </li>
-        <li>
-          <h3>Eave Leads — meet sellers before they're on Zillow</h3>
-          <p>Homeowners on Eave getting ready to list can <em>choose</em> to send their home's packet to an agent. It's the earliest, highest-intent seller signal there is — and it's the homeowner who initiates it.</p>
-        </li>
-      </ol>
+      <div class="quote-band">
+        <p>&ldquo;I sold them a great house three years ago. I have no idea if they&rsquo;d think to call me next time.&rdquo;</p>
+      </div>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;">Most of a client relationship happens in a few intense weeks, and then it goes quiet. The magnet on the fridge fades; the closing gift gets re-gifted. What stays useful is the house itself &mdash; and the one tool that keeps helping with it is the one they&rsquo;ll remember you for. Eave is that tool: the home-memory app you hand your clients, working for them the whole time you&rsquo;re not in front of them.</p>
+      <div class="stat-row">
+        <div class="stat-chip"><div class="stat-num">70%+</div><div class="stat-label">of sellers say they&rsquo;d use their agent again &mdash; yet most don&rsquo;t, because they lose touch</div></div>
+        <div class="stat-chip"><div class="stat-num">2&ndash;3&times;</div><div class="stat-label">more likely to win the next referral when you stay genuinely useful, not just in touch</div></div>
+        <div class="stat-chip"><div class="stat-num">Day 1</div><div class="stat-label">clients start with a documented, cared-for home instead of a shoebox of PDFs</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BEFORE LISTING (feature-split) ── -->
+  <section class="support-section" id="before">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Before the listing</p>
+        <h2>Turn your prep list into their to-do list</h2>
+      </div>
+      <div class="feature-split">
+        <div class="fs-copy">
+          <h3>The easy wins stop evaporating</h3>
+          <p>You walk a house a year out and rattle off a dozen easy wins &mdash; regrout the guest bath, service the furnace, repaint the garage door. By listing day, half of them are forgotten. When your seller captures each one in Eave the moment you say it, they show up to photo day ready instead of scrambling.</p>
+          <p>Eave sorts the list by value and effort for the time before listing, so the work gets done on their schedule &mdash; not the week the sign goes up. Fewer surprises at inspection, fewer price chips at the table.</p>
+          <a class="deep-link" href="/for/home-sellers">SEE THE SELLER&rsquo;S SIDE &rarr;</a>
+        </div>
+        <div class="p-shot"><img src="/images/opt/app-maintenance.webp" alt="Eave&rsquo;s ranked upkeep queue — the prep list an agent flags, sorted by what to do first" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AFTER CLOSING (feature-split reverse) ── -->
+  <section class="support-section" id="after">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Long after closing</p>
+        <h2>Stay useful, not just in touch</h2>
+      </div>
+      <div class="feature-split reverse">
+        <div class="fs-copy">
+          <h3>The gift that keeps working</h3>
+          <p>Your buyers move in and keep a tool you introduced them to &mdash; the searchable record of every system, appliance, warranty, and project in their new home. Every time it reminds them to change a filter or flags an aging water heater, it&rsquo;s doing a small favor with your name on it.</p>
+          <p>When they&rsquo;re ready for the next move, you&rsquo;re not a name they have to dig for. You&rsquo;re the person who gave them the thing they still use.</p>
+          <a class="deep-link" href="/residential">SEE THE APP THEY KEEP &rarr;</a>
+        </div>
+        <div class="p-shot"><img src="/images/opt/projects-desktop.webp" alt="The home record your client keeps — systems, projects, and documents in one place" loading="lazy" decoding="async"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EAVE LEADS ── -->
+  <section class="support-section" id="leads">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Eave Leads</p>
+        <h2>Meet sellers before they&rsquo;re on Zillow</h2>
+      </div>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;">Homeowners getting ready to list can <em>choose</em> to send their home&rsquo;s packet to an agent &mdash; the projects, the records, the whole documented history. It&rsquo;s the earliest, highest-intent seller signal there is, and the homeowner is always the one who starts it. Eave is the conduit, never the broker: you never buy a name, and nothing is tied to a closing.</p>
+    </div>
+  </section>
+
+  <!-- ── STATEMENT PHOTO BAND ── -->
+  <section class="support-section" id="statement">
+    <div class="container">
+      <div class="p-photo">
+        <p class="label">Why it works</p>
+        <h2>Give your clients a home<br>that runs itself.</h2>
+        <p>A cared-for home is worth more, sells easier, and reflects well on the person who sold it. Eave is how you leave your clients with one &mdash; and how you stay the name attached to it.</p>
+      </div>
     </div>
   </section>
 
   <!-- ── PRICING FRAMING ── -->
-  <section class="support-section">
+  <section class="support-section" id="how-it-works">
     <div class="container">
       <div class="section-header">
         <p class="label">How it works for you</p>
         <h2>Flat and predictable, start to finish</h2>
       </div>
-      <p style="font-size:14px;color:var(--muted);line-height:1.75;max-width:760px;">Cover your clients' subscription through the sale; they take it over when they close. <strong style="color:var(--ink);">Eave Leads is a flat monthly subscription — never a cut of your commission.</strong></p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;max-width:760px;">Cover your clients&rsquo; subscription through the sale; they take it over when they close. <strong style="color:var(--ink);">Eave Leads is a flat monthly subscription &mdash; never a cut of your commission.</strong> No per-deal fee, nothing contingent on a closing, no rankings or &ldquo;preferred&rdquo; badges to buy.</p>
 
       <div class="compliance-band">
         <p>Eave never pays referral fees or shares commissions. If you have a financial interest in Eave, disclose it to your clients in writing.</p>
@@ -184,7 +256,7 @@
   </section>
 
   <!-- ── FAQ ── -->
-  <section class="support-section">
+  <section class="support-section" id="faq">
     <div class="container">
       <div class="section-header">
         <p class="label">For agents, answered</p>
@@ -192,25 +264,57 @@
       </div>
       <div class="qa-item">
         <h3>What does it cost me?</h3>
-        <p>Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing.</p>
+        <p>Flat and predictable. Cover your clients&rsquo; subscriptions and/or subscribe to Eave Leads. There&rsquo;s no per-deal fee and nothing tied to a closing.</p>
       </div>
       <div class="qa-item">
         <h3>Is this a referral-fee arrangement?</h3>
         <p>No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription.</p>
       </div>
       <div class="qa-item">
+        <h3>Does my client have to keep paying after closing?</h3>
+        <p>Their choice. If you cover Intelligence through the sale, they simply take the subscription over at closing if they want to keep it &mdash; and the free tier keeps their home&rsquo;s record either way. Nothing is ever held hostage.</p>
+      </div>
+      <div class="qa-item">
+        <h3>What does the client actually get?</h3>
+        <p>The full Eave Residential app: a searchable record of their home&rsquo;s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It&rsquo;s the same product a homeowner would sign up for on their own &mdash; you&rsquo;re just the reason they have it.</p>
+      </div>
+      <div class="qa-item">
         <h3>Can my brokerage roll this out?</h3>
-        <p>Let's talk.</p>
+        <p>Let&rsquo;s talk.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHERE TO GO NEXT ── -->
+  <section class="support-section" id="explore">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Keep exploring</p>
+        <h2>Where to go next</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/for/home-sellers">
+          <div class="xlink-title">Eave for home sellers</div>
+          <div class="xlink-desc">What your seller sees &mdash; capture your notes, prioritize by value and effort, and hand the buyer a documented home.</div>
+        </a>
+        <a class="xlink-card" href="/residential">
+          <div class="xlink-title">Eave Residential</div>
+          <div class="xlink-desc">The app your clients keep &mdash; every system, project, and record in one place, with an AI upkeep plan on top.</div>
+        </a>
+        <a class="xlink-card" href="/partners">
+          <div class="xlink-title">Eave Partners</div>
+          <div class="xlink-desc">The bigger picture for the pros who help people through a home, agents and inspectors alike.</div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ── CTA ── -->
-  <section class="support-section">
+  <section class="support-section" id="contact">
     <div class="container">
       <div class="contact-strip">
-        <p><strong>Bring Eave to your clients.</strong> Tell us a little about your practice and we'll be in touch.</p>
-        <a href="/partners#contact" class="btn btn-jade">Get in touch →</a>
+        <p><strong>Bring Eave to your clients.</strong> Tell us a little about your practice &mdash; your market and how you work with clients &mdash; and we&rsquo;ll be in touch. Reach us at <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
+        <a href="mailto:support@eavehome.app?subject=Eave%20Partners%20—%20real%20estate" class="btn btn-jade">Get in touch →</a>
       </div>
     </div>
   </section>
