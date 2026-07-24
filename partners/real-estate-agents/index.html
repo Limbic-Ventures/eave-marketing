@@ -81,6 +81,9 @@
     .wl-btn { flex: 0 0 auto; white-space: nowrap; }
     .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
+    .wl-textarea { width:100%; box-sizing:border-box; padding:13px 15px; border-radius:var(--chamfer); border:1px solid var(--stone); background:var(--bg); color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.6; resize:vertical; min-height:84px; margin-bottom:8px; }
+    .wl-textarea::placeholder { color:var(--dim); }
+    .wl-textarea:focus { outline:none; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
   </style>
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let's talk."}}]}
@@ -326,6 +329,7 @@
       <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:620px;margin-bottom:20px;">Tell us a little about your practice &mdash; your market and how you work with clients &mdash; and we&rsquo;ll be in touch. Reach us directly at <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
       <div style="max-width:620px;">
         <form data-capture data-source="agent-partner" data-success="Thanks — we'll be in touch." novalidate>
+          <textarea class="wl-textarea" name="message" rows="3" maxlength="600" placeholder="A little about your practice — your market, your brokerage, and how you work with clients (optional)." aria-label="About your practice"></textarea>
           <div class="wl-row">
             <input class="wl-input" type="email" name="email" required autocomplete="email" placeholder="you@brokerage.com" aria-label="Email address">
             <button type="submit" class="btn btn-jade wl-btn">Get in touch →</button>

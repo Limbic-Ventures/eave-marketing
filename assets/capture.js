@@ -66,7 +66,10 @@
       body.set('email', email);
       body.set('source', source);
       body.set('userGroup', source);
+      var msgEl = form.querySelector('textarea[name="message"], input[name="message"]');
+      var msg = (msgEl && msgEl.value || '').trim().slice(0, 600);
       var note = attribution();
+      if (msg) note = 'message: ' + msg + '  ||  ' + note;
       if (note) body.set('notes', note);
 
       fetch(LOOPS_ENDPOINT, {
