@@ -70,7 +70,7 @@
     .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
     .wl-input::placeholder { color: var(--dim); }
-    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-input:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
     .wl-btn { flex: 0 0 auto; white-space: nowrap; }
     .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
@@ -78,14 +78,14 @@
     html { scroll-behavior: smooth; }
     a.topic-card { display:block; text-decoration:none; color:inherit; transition:transform .2s ease, border-color .2s ease; }
     a.topic-card:hover { transform:translateY(-3px); border-color:var(--jade); }
-    .topic-card-more { font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:600; letter-spacing:.04em; color:var(--jade); margin-top:14px; }
+    .topic-card-more { font-family:'IBM Plex Mono', monospace; font-size: 12px; font-weight:600; letter-spacing:.04em; color:var(--jade-text); margin-top:14px; }
     .edition-section { scroll-margin-top: 84px; }
     .edition-price { display:inline-flex; align-items:baseline; gap:8px; margin-top:6px; }
-    .edition-price .amt { font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:30px; color:var(--jade); }
+    .edition-price .amt { font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:30px; color:var(--jade-text); }
     .edition-price .per { font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted); }
     .edition-feats { list-style:none; padding:0; margin:22px 0 0; max-width:720px; }
     .edition-feats li { position:relative; padding-left:22px; margin-bottom:14px; color:var(--muted); line-height:1.65; font-size:15px; }
-    .edition-feats li::before { content:"\2014"; position:absolute; left:0; color:var(--jade); }
+    .edition-feats li::before { content:"\2014"; position:absolute; left:0; color:var(--jade-text); }
     .edition-feats strong { color:var(--ink); font-weight:600; }
     .edition-anchor { color:var(--dim); font-size:13px; margin-top:20px; font-style:italic; max-width:720px; }
     .comm-price-table { border:1px solid var(--stone); border-radius:var(--chamfer); overflow:hidden; margin-top:10px; }
@@ -93,8 +93,8 @@
     .comm-price-row:last-child { border-bottom:none; }
     .comm-price-name { font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15px; color:var(--ink); }
     .comm-price-who { font-size:12px; color:var(--muted); }
-    .comm-price-amt { font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:18px; color:var(--jade); text-align:right; white-space:nowrap; }
-    .comm-price-amt span { font-family:'IBM Plex Mono', monospace; font-weight:400; font-size:11px; color:var(--muted); }
+    .comm-price-amt { font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:18px; color:var(--jade-text); text-align:right; white-space:nowrap; }
+    .comm-price-amt span { font-family:'IBM Plex Mono', monospace; font-weight:400; font-size: 12px; color:var(--muted); }
     @media (max-width:640px){ .comm-price-row{grid-template-columns:1fr auto;} .comm-price-who{grid-column:1/-1;order:3;} }
 
     .edition-section { background-size: cover; background-position: center; background-repeat: no-repeat; }
@@ -104,8 +104,10 @@
     #edition-multi-site { background-image: linear-gradient(rgba(244,239,230,.82), rgba(244,239,230,.90)), url('/images/opt/commercial-multi-site.webp'); }
     #edition-apartments { background-image: linear-gradient(rgba(244,239,230,.82), rgba(244,239,230,.90)), url('/images/opt/commercial-apartments.webp'); }
   </style>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -137,8 +139,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -166,6 +168,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -199,7 +202,7 @@
           <div class="topic-card-title">Mission</div>
           <p class="topic-card-desc"><strong>For:</strong> Tax-exempt organizations &mdash; churches, service nonprofits, community centers.</p>
           <p class="topic-card-desc"><strong>Signature:</strong> A stewardship report and a 990 occupancy-allocation report, plus donated-work and volunteer-hours capture.</p>
-          <p class="topic-card-desc" style="color:var(--jade);"><strong>Discount:</strong> Eligible nonprofits can apply for up to 100% off &mdash; a full donation of the subscription.</p>
+          <p class="topic-card-desc" style="color:var(--jade-text);"><strong>Discount:</strong> Eligible nonprofits can apply for up to 100% off &mdash; a full donation of the subscription.</p>
           <div class="topic-card-more">View details &darr;</div>
         </a>
         <a class="topic-card" href="#edition-associations">
@@ -240,7 +243,7 @@
       </div>
       <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:720px;"><strong style="color:var(--ink);">For</strong> trustees and volunteer facility teams at churches, service nonprofits (shelters, food banks, thrift), community centers, and fraternal halls &mdash; the aging, hard-used buildings that carry reporting no homeowner has.</p>
       <div class="edition-price"><span class="amt">$79</span><span class="per">/mo &middot; $790/yr &middot; up to 100% off &middot; launching soon</span></div>
-      <p style="color:var(--jade);font-size:13px;line-height:1.6;margin-top:10px;max-width:720px;">After signing up, eligible churches, nonprofits, and community centers can apply for a discount &mdash; up to 100% off, a full donation of the subscription. Eligibility is reviewed case by case.</p>
+      <p style="color:var(--jade-text);font-size:13px;line-height:1.6;margin-top:10px;max-width:720px;">After signing up, eligible churches, nonprofits, and community centers can apply for a discount &mdash; up to 100% off, a full donation of the subscription. Eligibility is reviewed case by case.</p>
       <ul class="edition-feats">
         <li><strong>Stewardship report</strong> &mdash; a year-in-review built from what actually happened in your building: what was maintained, what was fixed, what&rsquo;s coming. Ready to walk into a board or congregation meeting.</li>
         <li><strong>990 occupancy-allocation report</strong> &mdash; Eave already tracks square footage; add program-use tags and get a one-click occupancy-cost allocation for your Form 990. No other product does this.</li>
@@ -338,7 +341,7 @@
         <p class="label">How it works</p>
         <h2>One graph, however you steward property</h2>
       </div>
-      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;">Eave's data model <em>is</em> the building — rooms, systems, contractors, projects, and history, all tied to the structure itself. That means the same <a href="/features" style="color:var(--jade);">capture-to-intelligence layer</a> that serves a single-family home also serves a storefront, an HOA's clubhouse, a church, or a 20-unit building. Nothing about the underlying model changes; only the roles, reports, and reasoning layered on top do.</p>
+      <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;">Eave's data model <em>is</em> the building — rooms, systems, contractors, projects, and history, all tied to the structure itself. That means the same <a href="/features" style="color:var(--jade-text);">capture-to-intelligence layer</a> that serves a single-family home also serves a storefront, an HOA's clubhouse, a church, or a 20-unit building. Nothing about the underlying model changes; only the roles, reports, and reasoning layered on top do.</p>
       <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;margin-top:16px;">Seats are always free — Eave Commercial is priced by the door or the location, never per user. Invite your whole board, staff, or maintenance team without a per-seat bill.</p>
       <p style="color:var(--muted);line-height:1.75;font-size:15px;max-width:760px;margin-top:16px;">For leases, compliance, and tax questions, Eave documents and assembles the record — it never gives legal, tax, or insurance advice.</p>
     </div>
@@ -353,7 +356,7 @@
       </div>
       <p style="color:var(--muted);line-height:1.7;font-size:15px;max-width:640px;margin-bottom:6px;">Priced by the door or the location &mdash; never per seat. Editions roll out one at a time; join the waitlist and we&rsquo;ll reach out as yours opens.</p>
       <div class="comm-price-table">
-        <div class="comm-price-row"><div class="comm-price-name"><a href="#edition-mission" style="color:inherit;">Mission</a></div><div class="comm-price-who">Churches, nonprofits, community centers<br><span style="color:var(--jade);">Eligible nonprofits can apply for up to 100% off after signing up.</span></div><div class="comm-price-amt">$79<span>/mo &middot; up to 100% off</span></div></div>
+        <div class="comm-price-row"><div class="comm-price-name"><a href="#edition-mission" style="color:inherit;">Mission</a></div><div class="comm-price-who">Churches, nonprofits, community centers<br><span style="color:var(--jade-text);">Eligible nonprofits can apply for up to 100% off after signing up.</span></div><div class="comm-price-amt">$79<span>/mo &middot; up to 100% off</span></div></div>
         <div class="comm-price-row"><div class="comm-price-name"><a href="#edition-associations" style="color:inherit;">Associations</a></div><div class="comm-price-who">Self-managed HOA &amp; condo boards</div><div class="comm-price-amt">$149<span>/mo &middot; &le;50 doors</span></div></div>
         <div class="comm-price-row"><div class="comm-price-name"><a href="#edition-business" style="color:inherit;">Business</a></div><div class="comm-price-who">A single shop, caf&eacute;, clinic, or office</div><div class="comm-price-amt">$49<span>/location/mo</span></div></div>
         <div class="comm-price-row"><div class="comm-price-name"><a href="#edition-multi-site" style="color:inherit;">Business Multi-Site</a></div><div class="comm-price-who">Small chains &amp; franchisees, 2&ndash;20 sites</div><div class="comm-price-amt">$49<span>/location/mo</span></div></div>
@@ -400,31 +403,32 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>

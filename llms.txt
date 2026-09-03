@@ -129,4 +129,5 @@
 - https://eavehome.app/guides/home-inspection-to-upkeep-plan — turn an inspection report into a prioritized upkeep plan
 - https://eavehome.app/guides/passing-your-home-record-to-the-buyer — what conveys with a house; transferring the home's record
 - https://eavehome.app/privacy — privacy policy
+- https://eavehome.app/accessibility — accessibility statement (WCAG 2.2 AA target, 2.1 AA reported; support@eavehome.app, 3 business days)
 - https://eavehome.app/terms — terms of service

@@ -63,8 +63,10 @@
       {"@type": "Question", "name": "Why only three vendor options?", "acceptedAnswer": {"@type": "Answer", "text": "So you can actually decide. Eave surfaces a focused shortlist rather than a directory. If something isn't working the way you expect, reach out at support@eavehome.app."}}
   ]}
   </script>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -96,8 +98,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -123,6 +125,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -239,20 +242,21 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
-          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
-          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
-          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
-        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a></div>
       </div>
     </div>
   </footer>

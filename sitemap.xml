@@ -313,6 +313,12 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://eavehome.app/accessibility</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
     <loc>https://eavehome.app/terms</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.3</priority>
