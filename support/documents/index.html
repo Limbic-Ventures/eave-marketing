@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E28P3WD3XB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E28P3WD3XB', { linker: { domains: ['eavehome.app', 'app.eavehome.app'] } });
+    // Cross-domain + conversion: fire a GA4 event on any click through to the app
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[href*="app.eavehome.app"]') : null;
+      if (a) gtag('event', 'app_cta_click', { cta_text: (a.textContent || '').trim().slice(0, 80), page_path: location.pathname });
+    });
+  </script>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documents — Eave Support</title>
+  <meta name="description" content="Upload limits, storage per plan, what Eave reads from a document, privacy, and what delete actually does.">
+  <link rel="canonical" href="https://eavehome.app/support/documents">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eavehome.app/support/documents">
+  <meta property="og:site_name" content="Eave">
+  <meta property="og:title" content="Documents — Eave Support">
+  <meta property="og:description" content="Upload limits, storage per plan, what Eave reads from a document, privacy, and what delete actually does.">
+  <meta property="og:image" content="https://eavehome.app/og/support.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Documents — Eave Support">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Documents — Eave Support">
+  <meta name="twitter:description" content="Upload limits, storage per plan, what Eave reads from a document, privacy, and what delete actually does.">
+  <meta name="twitter:image" content="https://eavehome.app/og/support.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/support.css">
+
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "Documents — Eave Support", "description": "Upload limits, storage per plan, what Eave reads from a document, privacy, and what delete actually does.", "url": "https://eavehome.app/support/documents", "isPartOf": {"@type": "WebSite", "name": "Eave", "url": "https://eavehome.app/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/"}, {"@type": "ListItem", "position": 2, "name": "Support", "item": "https://eavehome.app/support"}, {"@type": "ListItem", "position": 3, "name": "Documents", "item": "https://eavehome.app/support/documents"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens when I hit the storage cap?", "acceptedAnswer": {"@type": "Answer", "text": "The upload is refused with a message saying how much room is left. Delete something you don't need, or move to Intelligence for 10 GB."}}, {"@type": "Question", "name": "Can I download my originals?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, from the document's row. Your full export includes them too."}}, {"@type": "Question", "name": "Does Guardian change this?", "acceptedAnswer": {"@type": "Answer", "text": "Eave Guardian is coming soon and adds more on top. Today's Documents page is standard storage, included on every plan."}}]}
+  </script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="wordmark">eave</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu nav-worlds">
+            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
+            <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
+            <li class="nav-group">Add-ons</li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
+            <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
+          </ul>
+        </li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li class="nav-dropdown nav-dropdown-right">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/support/getting-started">Getting started</a></li>
+            <li><a href="/support/data-privacy">Data &amp; privacy</a></li>
+          </ul>
+        </li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-label">Products</div>
+    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
+    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
+    <div class="mobile-menu-label">Add-ons</div>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
+    <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
+    <div class="mobile-menu-label">Explore</div>
+    <a href="/features" onclick="closeMobile()">Features</a>
+    <a href="/pricing" onclick="closeMobile()">Pricing</a>
+    <div class="mobile-menu-label">Resources</div>
+    <a href="/guides" onclick="closeMobile()">Guides</a>
+    <a href="/support" onclick="closeMobile()">Support</a>
+    <a href="/support/getting-started" onclick="closeMobile()">Getting started</a>
+    <a href="/support/data-privacy" onclick="closeMobile()">Data &amp; privacy</a>
+    <a href="/about" onclick="closeMobile()">About</a>
+    <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
+    <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
+  </div>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/support">Support</a></li>
+        <li><span aria-current="page">Documents</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="page-hero">
+    <div class="container">
+      <p class="label">Support · Importing documents &amp; records</p>
+      <h1>Documents</h1>
+      <p>Upload limits, storage per plan, what Eave reads from a document, privacy, and what delete actually does.</p>
+    </div>
+  </div>
+
+  <!-- ── ARTICLE ── -->
+  <section class="support-section">
+    <div class="container">
+      <div class="doc">
+      <h2>Where they live</h2>
+      <p>Under <strong>Memory → Documents</strong>: every inspection, manual, warranty registration, declarations page, permit, plan, and quote you've given Eave, with the storage meter at the top.</p>
+      <h2>Uploading</h2>
+      <p>Drag a file in, or add it during setup. Files up to 100 MB upload in one go, straight from your browser to private storage, with a progress bar for the big ones. Long documents are read in the background, so you can keep working.</p>
+      <h2>What Eave reads</h2>
+      <p>Systems and their ages, filter sizes, warranty end dates, renewal dates, and the companies a document names. You confirm what it found before anything is saved to your home. A document can be attached to the thing it's about, so the furnace manual sits with the furnace.</p>
+      <h2>Storage</h2>
+      <p>Every plan includes document storage: <strong>1 GB on Free</strong> and <strong>10 GB on Intelligence</strong>, counted across every home you own. Photos don't count against it. The meter on the Documents page shows what you've used, and deleting a document frees the space.</p>
+      <h2>Privacy</h2>
+      <p>Your files are yours. Documents and photos are private to your home: only you and the people you've shared your home with can open them; nothing is public. Eave reads a file only when you ask it to, during setup, when you tap <strong>Read it</strong>, or when you scan something.</p>
+      <h2>Deleting</h2>
+      <p>Deleting a document erases the stored file, not just its entry in the list. It's gone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="support-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Common questions</p>
+        <h2>Quick answers</h2>
+      </div>
+      <div class="qa-item">
+        <h3>What happens when I hit the storage cap?</h3>
+        <p>The upload is refused with a message saying how much room is left. Delete something you don't need, or move to Intelligence for 10 GB.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Can I download my originals?</h3>
+        <p>Yes, from the document's row. Your full export includes them too.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does Guardian change this?</h3>
+        <p>Eave Guardian is coming soon and adds more on top. Today's Documents page is standard storage, included on every plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KEEP EXPLORING ── -->
+  <section class="support-section" id="keep-exploring">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">More in Importing documents &amp; records</p>
+        <h2>Keep reading</h2>
+      </div>
+      <div class="xlink-grid">
+        <a class="xlink-card" href="/support/troubleshooting-uploads">
+          <div class="xlink-title">Troubleshooting uploads</div>
+          <div class="xlink-desc">If a file won't go through.</div>
+        </a>
+        <a class="xlink-card" href="/support/inspection-import">
+          <div class="xlink-title">Importing an inspection report</div>
+          <div class="xlink-desc">Turn the report into systems, findings, and a plan.</div>
+        </a>
+        <a class="xlink-card" href="/support/manuals-and-insurance-import">
+          <div class="xlink-title">Manuals and insurance</div>
+          <div class="xlink-desc">What Eave pulls out of a manual or a declarations page.</div>
+        </a>
+        <a class="xlink-card" href="/support/data-privacy">
+          <div class="xlink-title">Your data and privacy</div>
+          <div class="xlink-desc">What Eave reads, how AI works, and how to export or delete.</div>
+        </a>
+        <a class="xlink-card" href="/support">
+          <div class="xlink-title">All help topics</div>
+          <div class="xlink-desc">Browse every article in the Eave help center.</div>
+        </a>
+      </div>
+      <div class="contact-strip" style="margin-top:32px;">
+        <p><strong>Still stuck?</strong> Eave is built and supported by a small crew — real humans read every message. Email <a href="mailto:support@eavehome.app">support@eavehome.app</a>.</p>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade">Start free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="wordmark" style="font-size:24px;color:var(--bg);">eave</a>
+          <p class="footer-tagline">Home Upkeep Without the Overwhelm.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/features">Features</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/guides">Guides</a></li>
+          <li><a href="/support">Support</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="footer-links">
+          <li><span style="color:var(--dim);">App Store — soon</span></li>
+          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
+        </ul>
+        <div class="footer-social">
+          <div class="footer-social-label">FOLLOW</div>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) mobileMenu.classList.remove('open');
+    });
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+  </script>
+
+</body>
+</html>
