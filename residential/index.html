@@ -765,6 +765,10 @@
 
     /* How It Works tablet */
     .hiw-tablet-wrap { display: flex; justify-content: center; margin-top: 48px; }
+    @media (max-width: 560px) {
+      .hiw-tablet-wrap { max-width: 100%; overflow: hidden; }
+      .tablet-outer { transform: scale(.74); transform-origin: top center; margin-bottom: -26%; }
+    }
     .tablet-onboard-content { padding: 14px; }
     .tablet-onboard-header { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; color: var(--jade-text); margin-bottom: 2px; }
     .tablet-onboard-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
