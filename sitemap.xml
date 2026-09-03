@@ -97,6 +97,36 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://eavehome.app/support/intelligent-home-setup</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/structure-systems-and-appliances</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/utilities-and-providers</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/documents</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/support/household-sharing</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://eavehome.app/support/getting-started</loc>
     <lastmod>2026-09-03</lastmod>
     <priority>0.5</priority>
@@ -196,6 +226,12 @@
     <loc>https://eavehome.app/features/capture</loc>
     <lastmod>2026-09-03</lastmod>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/features/setup</loc>
+    <lastmod>2026-09-03</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
