@@ -33,7 +33,7 @@ PATTERNS=(
 )
 fail=0
 for p in "${PATTERNS[@]}"; do
-  hits=$(grep -rln --include='*.html' -e "$p" . 2>/dev/null | grep -v '/.claude/'; grep -l -e "$p" llms.txt 2>/dev/null)
+  hits=$(grep -rln --include='*.html' -e "$p" . 2>/dev/null | grep -v '\.claude/'; grep -l -e "$p" llms.txt 2>/dev/null)
   if [ -n "$hits" ]; then
     echo "RETIRED CLAIM '$p' still present in:"; echo "$hits"; fail=1
   fi
