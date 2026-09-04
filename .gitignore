@@ -15,3 +15,6 @@ eave-marketing-brief.md
 eave-homepage-*.md
 *.docx
 LAUNCH_ROADMAP.md
+
+# Session plans (docs/superpowers/plans) stay local like the other planning docs
+docs/
