@@ -1,0 +1,107 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>OG gen</title>
+<!-- Edit CARDS below, run scripts/og-save-server.py, open /scripts/og-cards.html on :3457, then `await saveAll()` in the console. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#ddd;font-family:'Space Grotesk',sans-serif}canvas{display:block;margin:12px auto;box-shadow:0 2px 12px rgba(0,0,0,.2)}#log{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:8px 16px;white-space:pre}
+.warm{position:absolute;left:-9999px;top:-9999px}</style>
+</head><body>
+<div class="warm"><span style="font-family:Sacramento">eave</span><span style="font-family:'Space Grotesk';font-weight:700">Aa</span><span style="font-family:'IBM Plex Mono';font-weight:600">Aa</span></div>
+<div id="log">loading…</div>
+<div id="cards"></div>
+<script>
+const NAVY = '#1F3A52', CREAM = '#F4EFE6', MUTED = '#5A6770';
+const W = 1200, H = 630, X = 80;
+
+const CARDS = [
+  { name: 'features-setup',                          eyebrow: 'Features · Intelligent Home Setup',        headline: 'You already have the paperwork. Let Eave read it.' },
+  { name: 'accessibility',                           eyebrow: 'Accessibility',                             headline: 'Built to be usable by everyone' },
+  { name: 'support-intelligent-home-setup',          eyebrow: 'Support · Getting started',                 headline: 'Intelligent Home Setup, explained' },
+  { name: 'support-household-sharing',               eyebrow: 'Support · Getting started',                 headline: 'Sharing your home with the people in it' },
+  { name: 'support-structure-systems-and-appliances',eyebrow: 'Support · Your home & capture',             headline: 'Structure, systems & appliances' },
+  { name: 'support-utilities-and-providers',         eyebrow: 'Support · Your home & capture',             headline: 'Utilities and services' },
+  { name: 'support-documents',                       eyebrow: 'Support · Importing documents & records',   headline: 'Documents: limits, storage, and privacy' },
+];
+
+function wrap(ctx, text, maxW) {
+  const words = text.split(' '), lines = []; let cur = '';
+  for (const w of words) {
+    const t = cur ? cur + ' ' + w : w;
+    if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+function draw(ctx, bg, card) {
+  // photo, cover-cropped to 1200x630 (source is 1200x655)
+  const sy = 0;
+  ctx.drawImage(bg, 0, sy, W, H, 0, 0, W, H);
+  // cream frost: light even wash, stronger toward the top-left where the text sits,
+  // letting the lawn stay green at the bottom right like the July cards
+  ctx.fillStyle = 'rgba(246,242,234,0.42)';
+  ctx.fillRect(0, 0, W, H);
+  const g = ctx.createLinearGradient(0, 0, W * 0.9, H);
+  g.addColorStop(0, 'rgba(248,245,238,0.55)');
+  g.addColorStop(0.5, 'rgba(248,245,238,0.22)');
+  g.addColorStop(1, 'rgba(248,245,238,0.02)');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+
+  // wordmark
+  ctx.fillStyle = NAVY; ctx.textBaseline = 'alphabetic';
+  ctx.font = '400 72px Sacramento';
+  ctx.fillText('eave', X - 2, 128);
+
+  // headline: fit to two lines
+  let size = 68, lines;
+  for (;;) {
+    ctx.font = `700 ${size}px "Space Grotesk"`;
+    lines = wrap(ctx, card.headline, 1040);
+    if (lines.length <= 2 || size <= 52) break;
+    size -= 2;
+  }
+  const lh = Math.round(size * 1.03);
+  const firstBase = 468;
+  // eyebrow
+  ctx.font = '500 20px "IBM Plex Mono"';
+  ctx.fillStyle = MUTED;
+  ctx.letterSpacing = '2.5px';
+  ctx.fillText(card.eyebrow.toUpperCase(), X, firstBase - size - 22);
+  ctx.letterSpacing = '0px';
+  // headline
+  ctx.fillStyle = NAVY;
+  ctx.font = `700 ${size}px "Space Grotesk"`;
+  lines.forEach((l, i) => ctx.fillText(l, X, firstBase + i * lh));
+}
+
+async function main() {
+  const log = document.getElementById('log');
+  await document.fonts.load('400 56px Sacramento');
+  await document.fonts.load('700 68px "Space Grotesk"');
+  await document.fonts.load('500 20px "IBM Plex Mono"');
+  await document.fonts.ready;
+  const bg = new Image();
+  await new Promise((res, rej) => { bg.onload = res; bg.onerror = () => rej(new Error('bg load failed')); bg.src = '/images/opt/hero-bg-blur-1200.webp'; });
+  const out = [];
+  for (const card of CARDS) {
+    const c = document.createElement('canvas'); c.width = W; c.height = H; c.dataset.name = card.name;
+    document.getElementById('cards').appendChild(c);
+    draw(c.getContext('2d'), bg, card);
+    out.push(card.name);
+  }
+  window.__ready = true;
+  log.textContent = 'rendered: ' + out.join(', ');
+}
+window.saveAll = async function () {
+  const res = [];
+  for (const c of document.querySelectorAll('canvas')) {
+    const r = await fetch('/save', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: c.dataset.name + '.jpg', dataUrl: c.toDataURL('image/jpeg', 0.86) }) });
+    res.push(await r.json());
+  }
+  return res;
+};
+main().catch(e => { document.getElementById('log').textContent = 'ERR ' + e; });
+</script>
+</body></html>
