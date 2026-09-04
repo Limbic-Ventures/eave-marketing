@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eavehome.app/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -206,13 +206,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/features</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/home-knowledge-base</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -248,7 +248,7 @@
   </url>
   <url>
     <loc>https://eavehome.app/residential</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -266,13 +266,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/features/connected-sources</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/new-homeowners</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -290,13 +290,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/for/landlords</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/diy-homeowners</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -332,7 +332,7 @@
   </url>
   <url>
     <loc>https://eavehome.app/partners/real-estate-agents</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
