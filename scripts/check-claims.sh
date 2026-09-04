@@ -28,6 +28,9 @@ PATTERNS=(
   'href="https://app.eavehome.app/" class="btn'
   'Installed</span><span class="mem2-field-v">2019'
   'wn-tl-seg now" data-season="summer"'
+  'smart-home accounts are coming'
+  'store &amp; smart-home accounts rolling out'
+  'Smart-home connections</strong> &mdash; read-only device'
 )
 fail=0
 for p in "${PATTERNS[@]}"; do
