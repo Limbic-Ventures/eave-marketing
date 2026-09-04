@@ -60,11 +60,13 @@
       {"@type": "Question", "name": "How many spaces can I have?", "acceptedAnswer": {"@type": "Answer", "text": "As many as you need. Add a space for every structure or zone on your property."}},
       {"@type": "Question", "name": "How many properties can I add?", "acceptedAnswer": {"@type": "Answer", "text": "One property on Free and on Intelligence. To manage more, Eave Multi-Property is a live plan for 2–5 properties at $7.99/property/mo ($69/property/yr), with full Eave for every property. For 6+ properties, Eave Portfolio is on the way — join the waitlist."}},
       {"@type": "Question", "name": "Do I have to assign every project to a space?", "acceptedAnswer": {"@type": "Answer", "text": "No. If you only have the Main House, Eave assigns it for you automatically."}},
-      {"@type": "Question", "name": "Where do I manage all this?", "acceptedAnswer": {"@type": "Answer", "text": "Under **Spaces & areas** in the sidebar; the property switcher lives in the top-left corner."}}
+      {"@type": "Question", "name": "Where do I manage all this?", "acceptedAnswer": {"@type": "Answer", "text": "Under **Spaces** in the sidebar; the property switcher lives in the top-left corner."}}
   ]}
   </script>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -78,7 +80,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -96,8 +98,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -109,7 +111,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -123,6 +125,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -152,15 +155,17 @@
       <h2>Properties vs. spaces</h2>
       <p>A <strong>property</strong> is a single address — your home. Today, every account has one property, and it's always the center of everything Eave tracks: your tasks, projects, appliances, and history all live under it.</p>
       <p>A <strong>space</strong> is a distinct part of that property. Your Main House is one space; a detached garage, a shed, an ADU, a pool house, or the yard can each be their own space too. Breaking your home into spaces lets you keep upkeep, inventory, and projects organized by where they actually happen, instead of one long undifferentiated list.</p>
-      <p>You'll find everything under <strong>Spaces & areas</strong> in the sidebar, in the <strong>Property</strong> group.</p>
+      <p>You'll find everything under <strong>Spaces</strong> in the sidebar, in the <strong>Property</strong> group.</p>
       <h2>Why Main House can&#x27;t be deleted</h2>
       <p>Every property starts with a Main House, and it's there to stay. It's the anchor that the rest of your home hangs off of, so Eave keeps it in place — you can't delete it. You can rename it and add details, but it will always be there as home base.</p>
       <p>Every other space is fully yours to manage. Add the ones that match your property, edit them, and remove any you no longer need. There's no wrong number of spaces — start with just the Main House, or map out every structure on the lot.</p>
       <h2>Adding and organizing spaces</h2>
-      <ol><li>Open <strong>Spaces & areas</strong> from the sidebar.</li><li>Add a space for each structure or zone you want to track separately (garage, shed, yard, ADU, and so on).</li><li>Give it a clear name and any details you'd like to remember.</li></ol>
+      <ol><li>Open <strong>Spaces</strong> from the sidebar.</li><li>Add a space for each structure or zone you want to track separately (garage, shed, yard, ADU, and so on).</li><li>Give it a clear name and any details you'd like to remember.</li></ol>
       <p>When you create a project or task, Eave ties it to the right space. If your home has only the Main House, that happens quietly in the background — you don't have to think about it.</p>
+      <h2>Sharing one home</h2>
+      <p>One property can have several people in it. Invite a co-owner, a helper, or a time-boxed house sitter from <strong>Property settings → People with access</strong>; seats are free on every plan. See <a href="/support/household-sharing">Sharing your home</a>.</p>
       <h2>Managing multiple properties</h2>
-      <p>Free and Intelligence each cover one property, which is all most homeowners need. To manage more, <strong>Eave Multi-Property</strong> is a live plan for 2–5 properties at $7.99/property/mo ($69/property/yr), with full Eave for every property, move-in/out condition reports, and a tenant issue-intake link. Seats stay free — add co-owners or a property manager at no extra cost. For 6+ properties, Eave Portfolio is on the way — join the waitlist.</p>
+      <p>Free and Intelligence each cover one property, which is all most homeowners need. To manage more, <strong>Eave Multi-Property</strong> is a live plan for 2–5 properties at $7.99/property/mo ($69/property/yr), with full Eave for every property. Condition reports and a tenant issue link are on the roadmap. Seats stay free — add co-owners or a property manager at no extra cost. For 6+ properties, Eave Portfolio is on the way — join the waitlist.</p>
       <p>The property switcher in the top-left corner is always there — tapping <strong>Add property</strong> shows you the multi-property option.</p>
       </div>
     </div>
@@ -188,7 +193,7 @@
       </div>
       <div class="qa-item">
         <h3>Where do I manage all this?</h3>
-        <p>Under <strong>Spaces & areas</strong> in the sidebar; the property switcher lives in the top-left corner.</p>
+        <p>Under <strong>Spaces</strong> in the sidebar; the property switcher lives in the top-left corner.</p>
       </div>
     </div>
   </section>
@@ -234,20 +239,21 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
-          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
-          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
-          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
-        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a></div>
       </div>
     </div>
   </footer>

@@ -62,8 +62,10 @@
       {"@type": "Question", "name": "Who do I contact with a privacy question?", "acceptedAnswer": {"@type": "Answer", "text": "Email us at support@eavehome.app and we'll help."}}
   ]}
   </script>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -77,7 +79,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -95,8 +97,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -108,7 +110,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -122,6 +124,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -151,6 +154,8 @@
       <h2>What Eave reads</h2>
       <p>Eave works with the things you connect or upload:</p>
       <ul><li><strong>Email receipts</strong> — when you connect Gmail from the Sources tab, Eave scans for appliance receipts, contractor invoices, warranty emails, and purchase history. Scans run only when you start them, and each detected receipt is shown for you to confirm or skip before anything is saved.</li><li><strong>Documents</strong> — inspection reports, appliance manuals, warranties, and insurance declaration pages that you upload. Eave pulls out the useful details (specs, warranty terms, renewal dates) and shows you a review step first.</li><li><strong>Photos</strong> — pictures you snap to capture a project, a spec plate, or a room.</li></ul>
+      <h2>Where your files live</h2>
+      <p>Your files are yours. Documents and photos are private to your home &mdash; only you and the people you've shared your home with can open them; nothing is public. Eave reads a file only when you ask it to: during setup, when you tap <strong>Read it</strong>, or when you scan something. Deleting a document erases the stored file. Every plan includes document storage (1 GB on Free, 10 GB on Intelligence), and the Documents page shows how much you've used.</p>
       <p>Nothing from a connected source is written to your home without you seeing a summary and confirming it.</p>
       <h2>How AI processing works</h2>
       <p>Eave uses <strong>Google Gemini</strong> to read your receipts, documents, and photos and turn them into organized records. That's the only AI provider Eave uses. For some tasks — like checking an appliance for active recalls or researching local pros — Eave also runs a live Google Search to bring back current information.</p>
@@ -162,7 +167,7 @@
       <h2>Deleting your account</h2>
       <p>You can delete your account whenever you want:</p>
       <ol><li>Go to <strong>My Account</strong> from the profile menu.</li><li>Choose to delete your account and type to confirm.</li></ol>
-      <p>This removes your stored photos and cascades through everything tied to your home — projects, spaces, tasks, appliances, inventory, purchases, connected sources, and your sign-in itself. Deletion is permanent and can't be undone, so export your data first if you'd like to keep a copy.</p>
+      <p>This erases your stored photos and documents and cascades through everything tied to your home — projects, spaces, tasks, appliances, inventory, purchases, connected sources, and your sign-in itself. Deletion is permanent and can't be undone, so export your data first if you'd like to keep a copy.</p>
       <h2>Retention basics</h2>
       <p>Eave holds onto your records so your home's history is there when you need it — that's the whole point of a home's memory. Your data stays in your account until you remove it, either by deleting individual items or by deleting your account. Connected-source access (like Gmail) stays in place until you disconnect that source.</p>
       </div>
@@ -229,20 +234,21 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
-          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
-          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
-          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
-        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a></div>
       </div>
     </div>
   </footer>

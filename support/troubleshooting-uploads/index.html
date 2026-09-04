@@ -56,14 +56,16 @@
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-      {"@type": "Question", "name": "What's the exact PDF limit?", "acceptedAnswer": {"@type": "Answer", "text": "About 3 MB. Anything larger is stopped before it uploads."}},
+      {"@type": "Question", "name": "What's the exact PDF limit?", "acceptedAnswer": {"@type": "Answer", "text": "100 MB per file. Anything larger is stopped before it uploads, so split a very large scan into two files."}},
       {"@type": "Question", "name": "Is there a limit on photos?", "acceptedAnswer": {"@type": "Answer", "text": "Not one you need to think about — Eave shrinks photos automatically before uploading."}},
       {"@type": "Question", "name": "My report is 40 pages. What should I do?", "acceptedAnswer": {"@type": "Answer", "text": "Print-to-PDF only the summary pages, or photograph the pages you want to keep."}},
       {"@type": "Question", "name": "Still stuck?", "acceptedAnswer": {"@type": "Answer", "text": "Email us at support@eavehome.app and we'll help you get it in."}}
   ]}
   </script>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -77,7 +79,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -95,8 +97,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -108,7 +110,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -122,6 +124,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -150,8 +153,8 @@
       <p>When a photo or PDF won't upload, it's almost always a size issue — and it's usually a quick fix. Here's what's going on and how to get your document into Eave.</p>
       <h2>Why an upload fails</h2>
       <p>Eave has a few limits in place to keep uploads fast and reliable:</p>
-      <ul><li><strong>PDFs must be under about 3 MB.</strong> If a PDF is larger, Eave stops it before it uploads and shows a message asking you to shrink it. This limit exists because of how documents travel to our servers, and it's the most common reason a PDF won't go through.</li><li><strong>Photos are handled for you.</strong> When you upload a photo, Eave automatically shrinks it to a sensible size before sending it — so most photos just work, even straight from your phone. iPhone HEIC photos are converted to JPEG for you, too.</li></ul>
-      <h2>How to fix a PDF that&#x27;s too large</h2>
+      <ul><li><strong>Files up to 100 MB upload in one go.</strong> A full inspection report or a scanned closing packet fits. Files go straight from your browser to private storage, and you'll see a progress bar for the big ones. Anything over 100 MB is stopped before it uploads with a message saying so.</li><li><strong>Storage has a cap per plan.</strong> Free homes get 1 GB of document storage and Intelligence homes get 10 GB, counted across every home you own. Photos don't count. The Documents page shows how much you've used, and deleting a document frees the space.</li><li><strong>Photos are handled for you.</strong> When you upload a photo, Eave automatically shrinks it to a sensible size before sending it — so most photos just work, even straight from your phone. iPhone HEIC photos are converted to JPEG for you, too.</li></ul>
+      <h2>If a file is over 100 MB</h2>
       <p>Pick whichever is easiest:</p>
       <ol><li><strong>Print-to-PDF just the pages that matter.</strong> Most home inspection reports and manuals are long. Open the file, use your device's "Save as PDF" or "Print to PDF" option, and select only the summary or key pages. A shorter PDF is a smaller PDF.</li><li><strong>Photograph the key pages instead.</strong> Snap clear photos of the pages you care about and upload those. Eave reads photos of documents just as well as a PDF, and photos are resized for you automatically — so there's no size worry.</li></ol>
       <p>Both approaches work anywhere Eave accepts documents, including the <strong>Inspection Report</strong> and <strong>Manuals, Warranties & Insurance</strong> importers under <strong>Sources</strong>.</p>
@@ -167,7 +170,7 @@
       <div class="section-header"><p class="label">Common questions</p><h2>Quick answers</h2></div>
       <div class="qa-item">
         <h3>What&#x27;s the exact PDF limit?</h3>
-        <p>About 3 MB. Anything larger is stopped before it uploads.</p>
+        <p>100 MB per file. Anything larger is stopped before it uploads, so split a very large scan into two files.</p>
       </div>
       <div class="qa-item">
         <h3>Is there a limit on photos?</h3>
@@ -221,20 +224,21 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
-          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
-          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
-          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+          <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
-        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
+        <div class="footer-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a></div>
       </div>
     </div>
   </footer>

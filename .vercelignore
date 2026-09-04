@@ -1,0 +1,6 @@
+# Internal docs and tooling never deploy. Pages, assets, sitemap, llms.txt and robots.txt do.
+docs/
+scripts/
+.claude/
+*.md
+!llms.txt

@@ -91,11 +91,14 @@
       --surface: #EAE2D2;
       --stone:   #DCD2BD;
       --jade:    #6FA8C9;
+  --jade-text: #2B6A8E;
+  --footer-text: #AEB9C3;
+  --amber-text: #7F5E10;
       --amber:   #E0A83D;
       --palace:  #A8442F;
       --ink:     #1F3A52;
-      --muted:   #5C6A73;
-      --dim:     #8A8480;
+      --muted:   #5A6770;
+      --dim:     #696461;
       --radius:  16px;
       --scanline: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.018) 2px 3px);
     }
@@ -117,7 +120,7 @@
     }
     .label {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .15em;
       color: var(--ink);
       text-transform: uppercase;
@@ -149,7 +152,7 @@
     section { padding: 70px 0; }
     section.alt { background: var(--surface); }
     /* Deep link to a capability page */
-    .deep-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--jade); text-decoration: none; transition: gap .2s; }
+    .deep-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--jade-text); text-decoration: none; transition: gap .2s; }
     .deep-link:hover { gap: 11px; }
 
     .fade-in {
@@ -166,7 +169,7 @@
       gap: 8px;
       padding: 12px 24px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: .1em;
       text-decoration: none;
       cursor: pointer;
@@ -176,7 +179,7 @@
     .btn:hover { opacity: .85; }
     .btn-jade {
       background: var(--jade);
-      color: var(--bg);
+      color: var(--ink);
       border-radius: 16px;
     }    .btn-outline {
       background: transparent;
@@ -285,7 +288,7 @@
     }
     .hero-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .18em;
       color: var(--ink);
       margin-bottom: 20px;
@@ -319,10 +322,10 @@
     }
     .store-badge svg { width: 20px; height: 20px; flex-shrink: 0; }
     .store-badge-text { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
-    .store-badge-soon { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .08em; color: rgba(244,239,230,.55); text-transform: uppercase; }
+    .store-badge-soon { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .08em; color: rgba(244,239,230,.55); text-transform: uppercase; }
     .store-badge-name { font-size: 13px; font-weight: 600; color: var(--bg); }
     .store-badges-dark .store-badge { background: rgba(255,255,255,.1); border: 1px solid rgba(244,239,230,.18); }
-    .cta-fine { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--slate); margin-top: 10px; }
+    .cta-fine { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--slate); margin-top: 10px; }
     .waitlist-input {
       flex: 1;
       font-family: 'IBM Plex Mono', monospace;
@@ -332,7 +335,6 @@
       border: 1.5px solid var(--stone);
       border-radius: 10px;
       color: var(--ink);
-      outline: none;
       transition: border-color .2s;
       min-width: 0;
     }
@@ -345,7 +347,7 @@
     }
     .waitlist-input-dark:focus { border-color: rgba(244,239,230,.4); }
     .waitlist-input-dark::placeholder { color: rgba(244,239,230,.35); }
-    .waitlist-success { font-size: 13px; color: var(--jade); margin-top: 12px; display: none; }
+    .waitlist-success { font-size: 13px; color: var(--jade-text); margin-top: 12px; display: none; }
     .waitlist-success-dark { color: #A9D2E8; }
     @media (max-width: 560px) {
       .waitlist-row { flex-direction: column; }
@@ -360,7 +362,7 @@
       padding-bottom: 1px;
       transition: color .2s, border-color .2s;
     }
-    .hero-web-link:hover { color: var(--jade); border-color: var(--jade); }
+    .hero-web-link:hover { color: var(--jade-text); border-color: var(--jade); }
 
     /* Device Group */
     .device-group {
@@ -461,11 +463,11 @@
     }
     .stat-desc {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--muted);
       line-height: 1.4;
     }
-    .stat-source { font-size: 10px; color: var(--dim); margin-top: 24px; font-style: italic; }
+    .stat-source { font-size: 12px; color: var(--dim); margin-top: 24px; font-style: italic; }
 
     /* ─────────────────────────────────────────────
        PROBLEM compact
@@ -502,7 +504,7 @@
     }
     .pro-pricing-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .16em;
       color: rgba(244,239,230,.4);
       margin-bottom: 10px;
@@ -524,17 +526,17 @@
     }
     #pricing .pro-card-title { color: var(--bg); }
     #pricing .pro-price-row { color: rgba(244,239,230,.45); }
-    #pricing .pro-price-amount { color: var(--jade); }
-    #pricing .pro-commitment { background: rgba(111,168,201,.18); color: var(--jade); }
+    #pricing .pro-price-amount { color: var(--jade-text); }
+    #pricing .pro-commitment { background: rgba(111,168,201,.18); color: var(--jade-text); }
     #pricing .pro-desc { color: rgba(244,239,230,.5); }
     #pricing .pro-arrives-strip {
       background: rgba(244,239,230,.03);
       border-left-color: rgba(111,168,201,.6);
       border-radius: 16px;
     }
-    #pricing .pro-arrives-heading { color: var(--jade); }
+    #pricing .pro-arrives-heading { color: var(--jade-text); }
     #pricing .pro-arrives-body { color: rgba(244,239,230,.5); }
-    #pricing .pro-tag { color: var(--jade); border-color: rgba(111,168,201,.25); background: rgba(111,168,201,.1); }
+    #pricing .pro-tag { color: var(--jade-text); border-color: rgba(111,168,201,.25); background: rgba(111,168,201,.1); }
     #pricing .pro-cta-wrap { text-align: center; margin-top: 40px; }
 
     /* ── ADA contrast overrides for #pricing dark section ──
@@ -561,13 +563,13 @@
     #pricing .tier-check-text strong { color: rgba(244,239,230,.95); }
 
     /* Intelligence sub-options */
-    #pricing .intel-option-label { color: rgba(244,239,230,.8); font-size: 11px; }
-    #pricing .intel-option-note  { color: rgba(244,239,230,.7); font-size: 11px; }
+    #pricing .intel-option-label { color: rgba(244,239,230,.8); font-size: 12px; }
+    #pricing .intel-option-note  { color: rgba(244,239,230,.7); font-size: 12px; }
     #pricing .intel-option-price { color: rgba(244,239,230,.95); }
     #pricing .intel-option-flag-jade  { background: #A9D2E8; color: #1F3A52; }
 
     /* Pro divider header */
-    #pricing .pro-pricing-eyebrow { color: rgba(244,239,230,.7); font-size: 10px; }
+    #pricing .pro-pricing-eyebrow { color: rgba(244,239,230,.7); font-size: 12px; }
     #pricing .pro-pricing-desc    { color: rgba(244,239,230,.8); }
 
     /* Pro cards */
@@ -602,18 +604,18 @@
     }
     .tier-badge-featured {
       position: absolute; top: -11px; left: 24px;
-      font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; text-transform: uppercase;
+      font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
       padding: 4px 10px; border-radius: 4px;
-      background: var(--jade); color: var(--bg);
+      background: var(--jade); color: var(--ink);
     }
     .tier-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 9px;
+      font-size: 12px;
       letter-spacing: .16em;
       margin-bottom: 10px;
     }
-    .tier-eyebrow-free { color: var(--jade); }
-    .tier-eyebrow-intel { color: var(--amber); }
+    .tier-eyebrow-free { color: var(--jade-text); }
+    .tier-eyebrow-intel { color: var(--amber-text); }
     .tier-price-line {
       display: flex;
       align-items: baseline;
@@ -633,7 +635,7 @@
     }
     .tier-price-note {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: rgba(244,239,230,.55);
       margin-bottom: 24px;
     }
@@ -644,8 +646,8 @@
     }
     .tier-checklist { display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .tier-check-item { display: flex; align-items: flex-start; gap: 8px; }
-    .tier-check-icon-free { color: var(--jade); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
-    .tier-check-icon-intel { color: var(--amber); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+    .tier-check-icon-free { color: var(--jade-text); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+    .tier-check-icon-intel { color: var(--amber-text); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
     .tier-check-text {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
@@ -656,8 +658,8 @@
     .tier-cta-wrap { margin-top: 28px; }
     .tier-btn-free {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
-      background: var(--jade); color: var(--bg); text-decoration: none;
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em;
+      background: var(--jade); color: var(--ink); text-decoration: none;
       border-radius: 12px;
       transition: opacity .2s; cursor: pointer; border: none;
     }
@@ -667,7 +669,7 @@
       text-align: center;
       margin-top: 10px;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: rgba(244,239,230,.5);
       text-decoration: none;
       transition: color .2s;
@@ -676,15 +678,15 @@
 
     .tier-btn-disabled {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em;
       background: rgba(202,196,188,.08); color: rgba(244,239,230,.25);
       border-radius: 12px;
       cursor: not-allowed; border: none;
     }
     .tier-btn-intel {
       display: block; width: 100%; text-align: center;
-      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .1em;
-      background: var(--amber); color: var(--bg); text-decoration: none;
+      padding: 12px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em;
+      background: var(--amber); color: var(--ink); text-decoration: none;
       border-radius: 12px;
       transition: opacity .2s; cursor: pointer; border: none;
     }
@@ -693,7 +695,7 @@
       display: flex; justify-content: center; gap: 20px; margin-top: 10px;
     }
     .tier-plan-alts a {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 12px;
       color: rgba(244,239,230,.45); text-decoration: none; transition: color .2s;
     }
     .tier-plan-alts a:hover { color: rgba(244,239,230,.8); }
@@ -710,18 +712,18 @@
       background: rgba(111,168,201,.12);
       border-color: rgba(111,168,201,.3);
     }
-    .intel-option-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; color: rgba(244,239,230,.45); }
+    .intel-option-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; color: rgba(244,239,230,.45); }
     .intel-option-price { font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: var(--bg); }
-    .intel-option-note { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: rgba(244,239,230,.3); }
+    .intel-option-note { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: rgba(244,239,230,.3); }
     .intel-option-flag {
       position: absolute; top: -1px; right: 8px;
-      font-family: 'Space Grotesk', sans-serif; font-size: 6px; padding: 2px 6px; letter-spacing: .05em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 12px; padding: 2px 6px; letter-spacing: .05em;
     }
-    .intel-option-flag-jade { background: var(--jade); color: var(--bg); }
+    .intel-option-flag-jade { background: var(--jade); color: var(--ink); }
 
     .pricing-fine {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       color: rgba(244,239,230,.28);
       margin-top: 32px;
       line-height: 1.7;
@@ -748,7 +750,7 @@
     .step-num {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 28px;
-      color: var(--jade);
+      color: var(--jade-text);
       line-height: 1;
       margin-bottom: 16px;
       position: relative;
@@ -758,14 +760,18 @@
       padding: 0 8px;
     }
     .alt .step-num { background: var(--surface); }
-    .step-title { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 10px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
+    .step-title { font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .08em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px; }
     .step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
     /* How It Works tablet */
     .hiw-tablet-wrap { display: flex; justify-content: center; margin-top: 48px; }
+    @media (max-width: 560px) {
+      .hiw-tablet-wrap { max-width: 100%; overflow: hidden; }
+      .tablet-outer { transform: scale(.74); transform-origin: top center; margin-bottom: -26%; }
+    }
     .tablet-onboard-content { padding: 14px; }
-    .tablet-onboard-header { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); margin-bottom: 2px; }
-    .tablet-onboard-sub { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted); margin-bottom: 10px; }
+    .tablet-onboard-header { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; color: var(--jade-text); margin-bottom: 2px; }
+    .tablet-onboard-sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
     .tablet-address-field {
       display: flex;
       align-items: center;
@@ -776,17 +782,17 @@
       border: 1px solid var(--stone);
       margin-bottom: 10px;
     }
-    .tablet-address-icon { font-size: 10px; color: var(--jade); }
-    .tablet-address-text { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--ink); }
+    .tablet-address-icon { font-size: 12px; color: var(--jade-text); }
+    .tablet-address-text { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink); }
     .tablet-auto-badge {
       display: inline-flex;
       align-items: center;
       gap: 4px;
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 7px;
+      font-size: 12px;
       padding: 2px 7px;
       background: rgba(111,168,201,.1);
-      color: var(--jade);
+      color: var(--jade-text);
       letter-spacing: .06em;
       margin-bottom: 8px;
     }
@@ -799,13 +805,13 @@
     .tablet-property-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
     .tablet-property-item { text-align: center; }
     .tablet-property-val { font-family: 'Space Grotesk', sans-serif; font-size: 12px; color: var(--ink); line-height: 1; margin-bottom: 2px; }
-    .tablet-property-key { font-family: 'IBM Plex Mono', monospace; font-size: 7px; color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
+    .tablet-property-key { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .05em; }
     .tablet-cta-btn {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 9px;
+      font-size: 12px;
       padding: 8px;
       background: var(--jade);
-      color: var(--bg);
+      color: var(--ink);
       display: block; text-align: center; letter-spacing: .08em;
       border-radius: 10px;
     }
@@ -825,17 +831,17 @@
       padding: 28px 24px;
       box-shadow: 0 4px 20px rgba(31,58,82,.06);
     }
-    .pro-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; margin-bottom: 14px; }
+    .pro-card-title { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; color: var(--ink); text-transform: uppercase; margin-bottom: 14px; }
     .pro-price-rows { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
-    .pro-price-row { display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
-    .pro-price-amount { color: var(--jade); font-weight: 700; }
+    .pro-price-row { display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
+    .pro-price-amount { color: var(--jade-text); font-weight: 700; }
     .pro-commitment {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 7px;
+      font-size: 12px;
       letter-spacing: .06em;
       padding: 2px 7px;
       background: rgba(111,168,201,.1);
-      color: var(--jade);
+      color: var(--jade-text);
       display: inline-block;
       margin-bottom: 14px;
     }
@@ -851,13 +857,13 @@
       border-left: 3px solid var(--jade);
       border-radius: 16px;
     }
-    .pro-arrives-heading { font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--jade); text-transform: uppercase; margin-bottom: 12px; }
+    .pro-arrives-heading { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; color: var(--jade-text); text-transform: uppercase; margin-bottom: 12px; }
     .pro-arrives-body { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; max-width: 700px; }
     .pro-tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .pro-tag {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--jade);
+      font-size: 12px;
+      color: var(--jade-text);
       padding: 4px 10px;
       border: 1px solid rgba(111,168,201,.22);
       background: rgba(111,168,201,.06);
@@ -885,19 +891,19 @@
     .cta-phone { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .cta-phone-frame { width: 150px; height: 326px; flex: none; border-radius: 22px; overflow: hidden; border: 3px solid rgba(255,255,255,.14); box-shadow: 0 20px 44px rgba(0,0,0,.40); background: #0E1520; }
     .cta-phone-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-    .cta-phone-cap { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,239,230,.55); }
+    .cta-phone-cap { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,239,230,.55); }
     #download .label { color: rgba(244,239,230,.55); }
     #download h2 { color: var(--bg); }
     #download p { color: rgba(244,239,230,.6); }
     .download-inner { text-align: center; max-width: 640px; margin: 0 auto; }
-    .download-fine { font-size: 11px; color: rgba(244,239,230,.35); margin-top: 28px; line-height: 1.7; }
+    .download-fine { font-size: 12px; color: rgba(244,239,230,.35); margin-top: 28px; line-height: 1.7; }
     /* iOS launch waitlist */
     .waitlist { max-width: 470px; margin: 30px auto 0; }
     .waitlist-kicker { font-size: 13px; color: rgba(244,239,230,.78); margin-bottom: 12px; }
     .wl-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
     .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid rgba(244,239,230,.28); background: rgba(244,239,230,.96); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
     .wl-input::placeholder { color: var(--dim); }
-    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-input:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
     .wl-btn { flex: 0 0 auto; white-space: nowrap; }
     .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .wl-status { font-size: 12px; color: rgba(244,239,230,.9); margin-top: 11px; min-height: 1em; }
@@ -930,7 +936,7 @@
       margin-bottom: 32px;
     }
     .footer-social { display: flex; flex-direction: column; gap: 12px; }
-    .footer-social-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--dim); margin-bottom: 4px; }
+    .footer-social-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .12em; color: var(--muted); margin-bottom: 4px; }
     .footer-social a {
       display: flex;
       align-items: center;
@@ -942,7 +948,7 @@
     }
     .footer-social a:hover { color: var(--jade); }
     .footer-social a:hover svg { stroke: var(--jade); }
-    .footer-tagline { font-size: 12px; color: var(--dim); margin-top: 8px; }
+    .footer-tagline { font-size: 12px; color: var(--muted); margin-top: 8px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--jade); }
@@ -955,9 +961,9 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-    .footer-copy { font-size: 11px; color: var(--dim); }
+    .footer-copy { font-size: 12px; color: var(--muted); }
     .footer-legal { display: flex; gap: 20px; }
-    .footer-legal a { font-size: 11px; color: var(--dim); text-decoration: none; transition: color .2s; }
+    .footer-legal a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color .2s; }
     .footer-legal a:hover { color: var(--muted); }
 
     /* ─────────────────────────────────────────────
@@ -1004,13 +1010,13 @@
     .cap2-chips { display: flex; gap: 8px; justify-content: center; margin-bottom: 22px; flex-wrap: wrap; }
     .cap2-chip {
       display: inline-flex; align-items: center; gap: 7px;
-      font-family: 'Space Grotesk', sans-serif; font-size: 11px; letter-spacing: .06em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .06em;
       text-transform: uppercase; padding: 9px 16px; border-radius: 12px;
       border: 1.5px solid var(--stone); background: transparent; color: var(--muted);
       cursor: pointer; transition: background .2s, border-color .2s, color .2s;
     }
     .cap2-chip svg { stroke: currentColor; }
-    .cap2-chip.active { background: var(--jade); border-color: var(--jade); color: var(--bg); }
+    .cap2-chip.active { background: var(--jade); border-color: var(--jade); color: var(--ink); }
     .cap2-chip:hover:not(.active) { border-color: var(--jade); color: var(--ink); }
 
     .cap2-panel { display: none; }
@@ -1021,7 +1027,7 @@
       background: var(--surface); border: 1.5px solid var(--stone); border-radius: 14px;
       padding: 15px 18px; display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
     }
-    .cap2-input-icon { flex: none; color: var(--jade); display: flex; }
+    .cap2-input-icon { flex: none; color: var(--jade-text); display: flex; }
     .cap2-input-text { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink); line-height: 1.5; flex: 1; }
     .cap2-caret { display: inline-block; width: 1.5px; height: 14px; background: var(--jade); vertical-align: middle; margin-left: 1px; animation: cap2blink 1s step-end infinite; }
     @keyframes cap2blink { 50% { opacity: 0; } }
@@ -1030,7 +1036,7 @@
     .cap2-photo {
       flex: 1; height: 40px; border-radius: 8px; background: var(--ink);
       display: flex; align-items: center; justify-content: center; gap: 8px;
-      font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .12em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .12em;
       color: #A9D2E8; text-transform: uppercase;
     }
 
@@ -1039,18 +1045,18 @@
     .cap2-plan { background: var(--bg); border: 1.5px solid var(--stone); border-radius: 16px; overflow: hidden; filter: drop-shadow(1px 2px 8px rgba(31,58,82,.08)); }
     .cap2-plan-head { background: var(--ink); padding: 13px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .cap2-plan-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: var(--bg); }
-    .cap2-plan-cat { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #A9D2E8; border: 1px solid rgba(169,210,232,.35); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
+    .cap2-plan-cat { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #A9D2E8; border: 1px solid rgba(169,210,232,.35); border-radius: 20px; padding: 3px 10px; white-space: nowrap; }
     .cap2-plan-body { padding: 15px 18px; display: flex; flex-direction: column; gap: 12px; }
     .cap2-prow { display: flex; gap: 12px; align-items: flex-start; }
-    .cap2-plabel { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); min-width: 68px; flex: none; padding-top: 2px; }
+    .cap2-plabel { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); min-width: 68px; flex: none; padding-top: 2px; }
     .cap2-pval { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink); line-height: 1.5; flex: 1; }
-    .cap2-pill { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .04em; padding: 2px 7px; border-radius: 10px; margin-left: 4px; text-transform: uppercase; vertical-align: middle; }
+    .cap2-pill { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .04em; padding: 2px 7px; border-radius: 10px; margin-left: 4px; text-transform: uppercase; vertical-align: middle; }
     .cap2-pill-diy { background: rgba(79,140,107,.14); color: #3F7357; }
     .cap2-pill-high { background: rgba(168,68,47,.12); color: var(--palace); }
     .cap2-plan-foot { border-top: 1px solid var(--stone); background: var(--surface); padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; }
-    .cap2-foot-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+    .cap2-foot-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
     .cap2-foot-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); line-height: 1; margin-top: 3px; }
-    .cap2-save { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; background: var(--jade); color: var(--bg); padding: 9px 15px; border-radius: 12px; }
+    .cap2-save { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; background: var(--jade); color: var(--ink); padding: 9px 15px; border-radius: 12px; }
     .cap2-kicker { text-align: center; margin: 22px auto 0; max-width: 420px; font-size: 12px; color: var(--muted); font-family: 'IBM Plex Mono', monospace; line-height: 1.6; }
 
     /* ── Memory v2: a central record screen surrounded by four callout points ── */
@@ -1070,9 +1076,9 @@
     }
     .mem2-node:hover { border-color: var(--jade); }
     .mem2-node.active { border-color: var(--jade); background: var(--bg); filter: drop-shadow(1px 3px 10px rgba(31,58,82,.10)); transform: translateY(-2px); }
-    .mem2-node-num { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .12em; color: var(--jade); margin-bottom: 6px; }
+    .mem2-node-num { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .12em; color: var(--jade-text); margin-bottom: 6px; }
     .mem2-node-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 5px; }
-    .mem2-node-desc { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.55; }
+    .mem2-node-desc { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.55; }
     .mem2-node.nw { grid-column: 1; grid-row: 1; }
     .mem2-node.ne { grid-column: 3; grid-row: 1; }
     .mem2-node.sw { grid-column: 1; grid-row: 2; }
@@ -1096,15 +1102,15 @@
     .mem2-device::before { content: ''; position: absolute; inset: 0; background-image: var(--scanline); pointer-events: none; }
     .mem2-rec { display: none; position: relative; }
     .mem2-rec.active { display: block; animation: cap2fade .3s ease; }
-    .mem2-rec-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .14em; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
+    .mem2-rec-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .14em; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
     .mem2-rec-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: 14px; line-height: 1.25; }
-    .mem2-field { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--stone); font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
+    .mem2-field { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--stone); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
     .mem2-field:last-of-type { border-bottom: none; }
     .mem2-field-k { color: var(--dim); white-space: nowrap; }
     .mem2-field-v { color: var(--ink); text-align: right; }
-    .mem2-chip { display: inline-block; margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 20px; }
-    .mem2-chip-amber { background: rgba(224,168,61,.16); color: #9A6B1E; }
-    .mem2-chip-sky { background: rgba(111,168,201,.16); color: #2E6B93; }
+    .mem2-chip { display: inline-block; margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 11px; border-radius: 20px; }
+    .mem2-chip-amber { background: rgba(224,168,61,.16); color: var(--amber-text); }
+    .mem2-chip-sky { background: rgba(111,168,201,.16); color: var(--jade-text); }
     .mem2-chip-moss { background: rgba(79,140,107,.16); color: #3F7357; }
     .mem2-swatch { display: inline-block; width: 11px; height: 11px; border-radius: 3px; vertical-align: middle; margin-right: 5px; border: 1px solid rgba(31,58,82,.15); }
 
@@ -1116,19 +1122,19 @@
     }
 
     /* ── What's Next: score + action-queue dashboard, season timeline below ── */
-    .wn-tag { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
-    .wn-tag-free { background: rgba(79,140,107,.16); color: #3F7357; }
-    .wn-tag-intel { background: rgba(111,168,201,.16); color: #2E6B93; }
+    .wn-tag { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+    .wn-tag-free { background: rgba(79,140,107,.16); color: #8FC7A6; }
+    .wn-tag-intel { background: rgba(111,168,201,.16); color: var(--jade-text); }
 
     .wn-hero { display: grid; grid-template-columns: 320px 1fr; gap: 18px; max-width: 940px; margin: 0 auto; align-items: stretch; }
     .wn-score { background: var(--ink); border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
     .wn-score::before { content: ''; position: absolute; inset: 0; background-image: var(--scanline); opacity: .5; pointer-events: none; }
     .wn-score > * { position: relative; }
     .wn-score-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 72px; line-height: 1; color: #C8E89A; margin-top: 14px; }
-    .wn-score-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,239,230,.6); margin-top: 4px; }
-    .wn-score-delta { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #C8E89A; margin-top: 14px; }
+    .wn-score-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: rgba(244,239,230,.6); margin-top: 4px; }
+    .wn-score-delta { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C8E89A; margin-top: 14px; }
     .wn-score-div { height: 1px; background: rgba(244,239,230,.12); margin: 16px 0; }
-    .wn-score-proj-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,239,230,.45); margin-bottom: 6px; }
+    .wn-score-proj-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: rgba(244,239,230,.45); margin-bottom: 6px; }
     .wn-score-proj { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--bg); line-height: 1.55; }
     .wn-score-proj b { color: #C8E89A; font-weight: 700; }
 
@@ -1137,10 +1143,10 @@
     .wn-queue-title { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 15px; color: var(--ink); }
     .wn-qitem { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--stone); }
     .wn-qitem:last-child { border-bottom: none; }
-    .wn-qrank { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--jade); min-width: 18px; }
+    .wn-qrank { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; color: var(--jade-text); min-width: 18px; }
     .wn-qbody { flex: 1; }
     .wn-qname { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink); font-weight: 500; margin-bottom: 3px; }
-    .wn-qwhy { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); line-height: 1.5; }
+    .wn-qwhy { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); line-height: 1.5; }
     .wn-qwhy b { color: var(--palace); font-weight: 700; }
 
     .wn-timeline { max-width: 940px; margin: 18px auto 0; background: var(--bg); border: 1.5px solid var(--stone); border-radius: 20px; padding: 22px 24px 24px; }
@@ -1153,17 +1159,17 @@
     .wn-tl-seg.next { border-color: var(--amber); }
     .wn-tl-seg.active { border-color: var(--ink); background: var(--bg); box-shadow: 0 6px 18px rgba(31,58,82,.10); }
     .wn-tl-prep { transition: opacity .18s; }
-    .wn-tl-season { font-family: 'Space Grotesk', sans-serif; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
-    .wn-tl-months { font-family: 'IBM Plex Mono', monospace; font-size: 8px; color: var(--dim); margin-top: 3px; }
-    .wn-tl-badge { display: inline-block; margin-top: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 7px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; }
-    .wn-tl-badge-now { background: rgba(111,168,201,.16); color: #2E6B93; }
-    .wn-tl-badge-next { background: rgba(224,168,61,.18); color: #9A6B1E; }
+    .wn-tl-season { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+    .wn-tl-months { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--dim); margin-top: 3px; }
+    .wn-tl-badge { display: inline-block; margin-top: 7px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; }
+    .wn-tl-badge-now { background: rgba(111,168,201,.16); color: var(--jade-text); }
+    .wn-tl-badge-next { background: rgba(224,168,61,.18); color: var(--amber-text); }
     .wn-tl-prep { margin-top: 18px; background: var(--surface); border-radius: 14px; padding: 14px 16px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .wn-tl-prep-photo { width: 92px; height: 92px; border-radius: 12px; object-fit: cover; flex: none; display: block; }
     .wn-tl-prep-body { flex: 1; min-width: 220px; }
-    .wn-tl-prep-label { font-family: 'Space Grotesk', sans-serif; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber); white-space: nowrap; display: block; margin-bottom: 6px; }
+    .wn-tl-prep-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--amber-text); white-space: nowrap; display: block; margin-bottom: 6px; }
     .wn-tl-prep-list { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--ink); line-height: 1.7; }
-    .wn-tl-foot { margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); }
+    .wn-tl-foot { margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted); }
 
     @media (max-width: 760px) {
       .wn-hero { grid-template-columns: 1fr; }
@@ -1176,20 +1182,20 @@
     .founder-note p { font-size: 16px; color: var(--muted); line-height: 1.8; }
     .founder-note p + p { margin-top: 14px; }
     .founder-sign { font-family: 'Sacramento', cursive; font-size: 30px; color: var(--ink); margin-top: 18px; }
-    .founder-link { display: inline-block; margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .04em; color: var(--jade); text-decoration: none; }
+    .founder-link { display: inline-block; margin-top: 14px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .04em; color: var(--jade-text); text-decoration: none; }
     .founder-link:hover { text-decoration: underline; }
     .trust-badges { display: flex; flex-wrap: wrap; gap: 14px 28px; margin-top: 36px; }
     .trust-badge { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: .04em; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
-    .trust-badge .tb-check { color: var(--jade); font-weight: 700; }
+    .trust-badge .tb-check { color: var(--jade-text); font-weight: 700; }
     .trust-fine { max-width: 720px; margin-top: 24px; font-size: 12px; color: var(--dim); line-height: 1.7; }
-    .trust-fine a { color: var(--jade); text-decoration: none; }
+    .trust-fine a { color: var(--jade-text); text-decoration: none; }
     /* ── HOME FAQ ── */
     .home-faq-list { max-width: 780px; margin-top: 8px; }
     .home-faq-item { border-top: 1px solid var(--stone); padding: 22px 0; }
     .home-faq-item:last-child { border-bottom: 1px solid var(--stone); }
     .home-faq-q { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 16px; color: var(--ink); margin-bottom: 8px; }
     .home-faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
-    .home-faq-a a { color: var(--jade); text-decoration: none; }
+    .home-faq-a a { color: var(--jade-text); text-decoration: none; }
   
 /* ── PRODUCTS DROPDOWN ── */
 .nav-dropdown { position: relative; }
@@ -1199,7 +1205,7 @@
   display: inline-flex; align-items: center; gap: 5px; transition: color .2s;
 }
 .nav-dropdown-toggle:hover, .nav-dropdown:focus-within .nav-dropdown-toggle { color: var(--ink); }
-.nav-caret { font-size: 9px; opacity: .7; }
+.nav-caret { font-size: 12px; opacity: .7; }
 .nav-dropdown-menu {
   position: absolute; top: 100%; left: 0; margin: 12px 0 0; padding: 8px;
   min-width: 214px; list-style: none;
@@ -1219,7 +1225,7 @@
 }
 .nav-dropdown-menu a:hover { background: rgba(111,168,201,.14); color: var(--ink); }
 .mobile-menu-label {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em;
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;
   text-transform: uppercase; color: var(--dim, #9a9384);
   padding: 14px 0 6px; border-bottom: 1px solid var(--stone);
 }
@@ -1229,21 +1235,13 @@
   .nav-app { color: var(--muted); }
   .nav-worlds .nav-group {
     margin-top: 5px; padding: 12px 12px 5px; border-top: 1px solid var(--stone);
-    font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .1em;
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .1em;
     text-transform: uppercase; color: var(--muted);
   }
   .nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }
   </style>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Is Eave really free?","acceptedAnswer":{"@type":"Answer","text":"Yes — free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming this fall — will be an optional add-on on top."}},
-    {"@type":"Question","name":"Do I need to download an app?","acceptedAnswer":{"@type":"Answer","text":"No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon."}},
-    {"@type":"Question","name":"How does Eave capture what my home needs?","acceptedAnswer":{"@type":"Answer","text":"Speak it, snap a photo, or type a few words. Eave turns it into a scoped project — the room, the category, the priority, and an estimated cost."}},
-    {"@type":"Question","name":"Is my home data private?","acceptedAnswer":{"@type":"Answer","text":"Your data is yours. Nothing saves until you review it, it is stored with row-level security, and you can export or delete everything at any time."}},
-    {"@type":"Question","name":"What does Eave Intelligence add?","acceptedAnswer":{"@type":"Answer","text":"A 12-month upkeep plan built for your home, a ranked why-now queue, and seasonal prep — the planning layer on top of your free records."}},
-    {"@type":"Question","name":"Can I manage more than one home?","acceptedAnswer":{"@type":"Answer","text":"Yes. Eave Multi-Property is $7.99/property/mo (or $69/property/yr) for 2–5 properties, and Portfolio (6+ properties) is available by talking to our team."}},
-    {"@type":"Question","name":"Can I pass my home's record to the buyer when I sell?","acceptedAnswer":{"@type":"Answer","text":"Yes — your home's memory can transfer with the sale, so the new owner starts with the full history instead of a blank slate."}}
-  ]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Eave really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming soon — will be an optional add-on on top."}}, {"@type": "Question", "name": "Do I need to download an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon."}}, {"@type": "Question", "name": "How does Eave capture what my home needs?", "acceptedAnswer": {"@type": "Answer", "text": "Speak it, snap a photo, or type a few words. Eave turns it into a scoped project — the room, the category, the priority, and an estimated cost."}}, {"@type": "Question", "name": "Is my home data private?", "acceptedAnswer": {"@type": "Answer", "text": "Your data is yours. Nothing saves until you review it, it is stored with row-level security, and you can export or delete everything at any time."}}, {"@type": "Question", "name": "What does Eave Intelligence add?", "acceptedAnswer": {"@type": "Answer", "text": "A 12-month upkeep plan built for your home, a ranked why-now queue, and seasonal prep — the planning layer on top of your free records."}}, {"@type": "Question", "name": "Can I manage more than one home?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Eave Multi-Property is $7.99/property/mo (or $69/property/yr) for 2–5 properties, and Portfolio (6+ properties) is coming — join the waitlist on the landlords page."}}, {"@type": "Question", "name": "Can my partner use it too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Invite them as a co-owner from Property settings and you both see and edit the same home. A helper can add and tick things off; a house sitter gets access that ends on its own. Seats are free on every plan."}}, {"@type": "Question", "name": "Can I pass my home's record to the buyer when I sell?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — your home's memory can transfer with the sale, so the new owner starts with the full history instead of a blank slate."}}]}
   </script>
 
   <style>
@@ -1252,15 +1250,15 @@
     .moment-col { display:block; text-decoration:none; color:inherit; padding-top:22px;
       border-top:2px solid var(--jade); transition:transform .2s ease; }
     .moment-col:hover { transform:translateY(-3px); }
-    .moment-step { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--jade); line-height:1; }
-    .moment-phase { font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:600; letter-spacing:.1em;
+    .moment-step { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:var(--jade-text); line-height:1; }
+    .moment-phase { font-family:'IBM Plex Mono',monospace; font-size: 12px; font-weight:600; letter-spacing:.1em;
       text-transform:uppercase; color:var(--muted); margin-top:14px; }
     .moment-title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:var(--ink); margin:6px 0 12px; }
     .moment-desc { font-size:14.5px; line-height:1.65; color:var(--muted); margin:0 0 18px; }
     .moment-list { list-style:none; padding:0; margin:0 0 20px; display:grid; gap:9px; }
     .moment-list li { position:relative; padding-left:22px; font-size:13.5px; line-height:1.5; color:var(--ink); }
-    .moment-list li::before { content:'\2713'; position:absolute; left:0; top:0; color:var(--jade); font-weight:700; }
-    .moment-link { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--jade); }
+    .moment-list li::before { content:'\2713'; position:absolute; left:0; top:0; color:var(--jade-text); font-weight:700; }
+    .moment-link { font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; letter-spacing:.04em; color:var(--jade-text); }
     @media (max-width:900px){
       .moments-grid{ grid-template-columns:1fr; gap:0; }
       .moment-col{ border-top:none; border-left:2px solid var(--jade); padding-top:0; padding-left:22px; margin-bottom:32px; }
@@ -1275,8 +1273,10 @@
       color:var(--ink);margin:0 0 8px}
     .agent-nudge p{margin:0;font-size:14.5px;line-height:1.7;color:var(--muted)}
   </style>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ═══ NAV ═══ -->
   <nav>
@@ -1290,7 +1290,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -1308,8 +1308,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -1323,7 +1323,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -1337,6 +1337,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ═══ HERO ═══ -->
   <section id="hero">
@@ -1433,8 +1434,8 @@
       <div class="steps fade-in" style="transition-delay:.1s;">
         <div class="step">
           <div class="step-num">01</div>
-          <h3 class="step-title">Eave learns your home</h3>
-          <div class="step-desc">Give Eave your address. It pulls your home's age, size, and structure automatically, then tailors the plan to your climate and local maintenance windows.</div>
+          <h3 class="step-title">Start with your paperwork</h3>
+          <div class="step-desc">Give Eave your address and drop in the closing folder, a bill, the manuals, the inspection. It reads them and files what it finds, with undo on every item. Just moved in? Nothing shows as overdue for ninety days.</div>
         </div>
         <div class="step">
           <div class="step-num">02</div>
@@ -1444,12 +1445,12 @@
         <div class="step">
           <div class="step-num">03</div>
           <h3 class="step-title">Connect your accounts</h3>
-          <div class="step-desc">Link your email, home improvement store accounts, or smart home platforms. Eave surfaces what it finds for your review — nothing saves without your say.</div>
+          <div class="step-desc">Link Gmail and your calendar today; store and smart-home accounts are coming. Eave surfaces what it finds for your review — nothing saves without your say.</div>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <h3 class="step-title">Follow your action queue</h3>
-          <div class="step-desc">Each week, Eave tells you what to handle — ranked by urgency, with a one-liner on why each item matters now. Each season, a prep plan built from your home's specifics.</div>
+          <div class="step-desc">Each week, one ranked list of what needs you, each with the reason it's there and a check to mark it done, with undo. Each season, a prep plan built from your home's specifics. If you only have time for one thing, Eave picks it and says why.</div>
         </div>
       </div>
 
@@ -1504,7 +1505,7 @@
       <div class="fade-in" style="text-align:center;max-width:640px;margin:0 auto 40px;">
         <p class="label">Capture</p>
         <h2>Noticed something? Get a plan, not just a reminder.</h2>
-        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">Say it, snap it, or type a half-sentence. In seconds Eave scopes the whole job: the tools you already own versus the few to buy, a materials list with prices and where to get them, and how to tackle it — DIY with tutorials, or three local pros to call. Plus an all-in budget. A note becomes something you can act on this afternoon.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">Say it, snap it, or type a half-sentence. In seconds Eave scopes the whole job: the tools you already own versus the few to buy, a materials list with prices and where to get them, and how to tackle it — DIY with tutorials, or three local pros to call. Plus an all-in budget. A note becomes something you can act on this afternoon. Typing works on every plan; voice and photo reading are part of Eave Intelligence.</p>
         <a href="/features/capture" class="deep-link">LEARN MORE ABOUT CAPTURE →</a>
       </div>
 
@@ -1632,14 +1633,14 @@
 
         <div class="mem2-node nw active" data-mem2="spaces">
           <div class="mem2-node-num">01</div>
-          <h3 class="mem2-node-title">Spaces &amp; Areas</h3>
-          <div class="mem2-node-desc">Structures, yards, and every room inside them. Snap a room and Eave fills in the materials, wall color, ceiling height — and flags visible issues.</div>
+          <h3 class="mem2-node-title">Spaces</h3>
+          <div class="mem2-node-desc">Every room, plus the yard and the outbuildings. Snap a room and Eave fills in the materials, wall color, ceiling height — and flags visible issues.</div>
         </div>
 
         <div class="mem2-node ne" data-mem2="appliances">
           <div class="mem2-node-num">02</div>
-          <h3 class="mem2-node-title">Systems &amp; Appliances</h3>
-          <div class="mem2-node-desc">Snap a data plate: specs auto-researched (down to the filter size), warranty alerts, service history, and a replacement forecast.</div>
+          <h3 class="mem2-node-title">Structure, Systems &amp; Appliances</h3>
+          <div class="mem2-node-desc">The roof and the envelope, the systems that run the house, the appliances you'll replace. Snap a data plate: specs auto-researched (down to the filter size), warranty alerts, service history, and a replacement forecast.</div>
         </div>
 
         <div class="mem2-screen">
@@ -1658,7 +1659,7 @@
             <div class="mem2-rec" data-mem2-rec="appliances">
               <div class="mem2-rec-label">System record · Utility closet</div>
               <div class="mem2-rec-title">Furnace — Carrier 59TP6</div>
-              <div class="mem2-field"><span class="mem2-field-k">Installed</span><span class="mem2-field-v">2019</span></div>
+              <div class="mem2-field"><span class="mem2-field-k">Installed</span><span class="mem2-field-v">2015</span></div>
               <div class="mem2-field"><span class="mem2-field-k">Warranty</span><span class="mem2-field-v">through 2029</span></div>
               <div class="mem2-field"><span class="mem2-field-k">Last service</span><span class="mem2-field-v">Oct 2025</span></div>
               <div class="mem2-field"><span class="mem2-field-k">Filter</span><span class="mem2-field-v">16×25×1 · MERV 11</span></div>
@@ -1702,9 +1703,11 @@
 
       </div>
 
+      <p class="fade-in" style="margin-top:28px;font-size:14px;color:var(--muted);line-height:1.7;max-width:720px;">Also in the record: your documents, stored privately and up to 100 MB each; your utilities and services with the dates that matter; and the people with access &mdash; a co-owner, a helper, a house sitter, with no per-person charge. <a href="/features/home-knowledge-base" style="color:var(--jade-text);">See the whole record &rarr;</a></p>
+
       <a class="fade-in" href="/for/home-sellers" style="display:block;margin-top:44px;background:var(--surface);border:1px solid var(--stone);border-radius:14px;padding:24px 28px;text-decoration:none;color:inherit;transition-delay:.15s;">
         <h3 style="margin:0 0 6px;">Selling someday? Your home&rsquo;s whole memory can go with it.</h3>
-        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.7;">Hand the next owner a documented, cared-for home &mdash; and give yourself an edge at the table. <span style="color:var(--jade);white-space:nowrap;">For home sellers &rarr;</span></p>
+        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.7;">Hand the next owner a documented, cared-for home &mdash; and give yourself an edge at the table. <span style="color:var(--jade-text);white-space:nowrap;">For home sellers &rarr;</span></p>
       </a>
 
     </div>
@@ -1716,7 +1719,7 @@
       <div class="fade-in" style="text-align:center;max-width:640px;margin:0 auto 44px;">
         <p class="label">What's Next</p>
         <h2>Eave tells you what to do next, and why it matters now.</h2>
-        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">A live Upkeep Score tracks how your home is really doing across maintenance, backlog, and prevention. Underneath it, a ranked queue gives you the one thing to handle this week — with the reason attached, so you're never guessing whether it can wait.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;">A live Upkeep Score tracks how your home is really doing across maintenance, backlog, and readiness &mdash; and adding tasks can never lower it. Underneath it, a ranked queue gives you the one thing to handle this week — with the reason attached, so you're never guessing whether it can wait.</p>
         <a href="/features/intelligence" class="deep-link">SEE HOW INTELLIGENCE WORKS →</a>
       </div>
 
@@ -1772,19 +1775,19 @@
             <div class="wn-tl-season">Spring</div>
             <div class="wn-tl-months">Mar–May</div>
           </div>
-          <div class="wn-tl-seg now" data-season="summer" role="button" tabindex="0" aria-label="Show summer prep">
+          <div class="wn-tl-seg" data-season="summer" role="button" tabindex="0" aria-label="Show summer prep">
             <div class="wn-tl-season">Summer</div>
             <div class="wn-tl-months">Jun–Aug</div>
-            <span class="wn-tl-badge wn-tl-badge-now">You are here</span>
           </div>
-          <div class="wn-tl-seg next active" data-season="fall" role="button" tabindex="0" aria-label="Show fall prep">
+          <div class="wn-tl-seg now active" data-season="fall" role="button" tabindex="0" aria-label="Show fall prep">
             <div class="wn-tl-season">Fall</div>
             <div class="wn-tl-months">Sep–Nov</div>
-            <span class="wn-tl-badge wn-tl-badge-next">Prep in ~2 wks</span>
+            <span class="wn-tl-badge wn-tl-badge-now">You are here</span>
           </div>
-          <div class="wn-tl-seg" data-season="winter" role="button" tabindex="0" aria-label="Show winter prep">
+          <div class="wn-tl-seg next" data-season="winter" role="button" tabindex="0" aria-label="Show winter prep">
             <div class="wn-tl-season">Winter</div>
             <div class="wn-tl-months">Dec–Feb</div>
+            <span class="wn-tl-badge wn-tl-badge-next">Prep in ~10 wks</span>
           </div>
         </div>
         <div class="wn-tl-prep" id="wn-tl-prep">
@@ -1801,16 +1804,6 @@
   </section>
 
   <!-- ═══ SOLUTION ═══ -->
-  <section id="solution">
-    <div class="container">
-      <div class="fade-in">
-        <div class="section-head" style="text-align:center;max-width:760px;margin:0 auto;">
-          <p style="font-size:clamp(18px,2.2vw,24px);color:var(--ink);line-height:1.5;">Eave is one place for your projects, your home's records, and what needs doing next. Here's how it works.</p>
-          <a href="/features" class="deep-link" style="margin-top:24px;">EXPLORE ALL FIVE CAPABILITIES →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ═══ HOME MOMENTS (relocated from the homepage) ═══ -->
   <section id="moments">
@@ -1884,7 +1877,7 @@
         <p class="label">Pricing</p>
         <div class="section-head">
           <h2>Start free.<br>Upgrade to Intelligence when you want more.</h2>
-          <p>Eave is free for one property — mobile, desktop, and web. Want the AI upkeep plan? Eave Intelligence is $2.99/mo. Want active protection on top of that? Eave Guardian is coming this fall.</p>
+          <p>Eave is free for one property — mobile, desktop, and web. Want the AI upkeep plan? Eave Intelligence is $2.99/mo. Want active protection on top of that? Eave Guardian is coming soon.</p>
         </div>
       </div>
 
@@ -1902,7 +1895,8 @@
           <div class="tier-checklist">
             <div class="tier-check-item">
               <span class="tier-check-icon-free">✓</span>
-              <span class="tier-check-text"><strong>AI Capture</strong> — snap a photo, speak, or type; Eave builds the record for you, no manual data entry</span>
+              <!-- D1: capture gating. Variant (a) live. Variant (b) in Eave_Marketing_Site_Update_Brief.md §5.1 -->
+              <span class="tier-check-text"><strong>Capture</strong> — type it and Eave builds the record; snap a photo and file it yourself. Voice and photo reading are part of Intelligence</span>
             </div>
             <div class="tier-check-item">
               <span class="tier-check-icon-free">✓</span>
@@ -1932,9 +1926,17 @@
               <span class="tier-check-icon-free">✓</span>
               <span class="tier-check-text"><strong>Connected Sources</strong> — Gmail &amp; calendar today; store &amp; smart-home accounts rolling out</span>
             </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Documents</strong> — up to 100 MB each, 1 GB included, stored privately</span>
+            </div>
+            <div class="tier-check-item">
+              <span class="tier-check-icon-free">✓</span>
+              <span class="tier-check-text"><strong>Household sharing</strong> — a co-owner, a helper, or a house sitter, no per-person charge</span>
+            </div>
           </div>
           <div class="tier-cta-wrap">
-            <a href="https://app.eavehome.app" class="tier-btn-free">START FREE →</a>
+            <a href="https://app.eavehome.app/login?mode=signup" class="tier-btn-free">START FREE →</a>
           </div>
         </div>
 
@@ -1953,7 +1955,7 @@
                 <div class="intel-option-label">MONTHLY</div>
                 <div class="intel-option-note">cancel anytime</div>
               </div>
-              <div class="intel-option-price">$2.99<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
+              <div class="intel-option-price">$2.99<span style="font-size: 12px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/mo</span></div>
             </div>
             <div class="intel-option intel-option-best">
               <div class="intel-option-flag intel-option-flag-jade">BEST VALUE</div>
@@ -1961,7 +1963,7 @@
                 <div class="intel-option-label">ANNUAL</div>
                 <div class="intel-option-note">~$2/month</div>
               </div>
-              <div class="intel-option-price">$24<span style="font-size:10px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
+              <div class="intel-option-price">$24<span style="font-size: 12px;color:rgba(244,239,230,.55);font-family:'IBM Plex Mono',monospace;">/yr</span></div>
             </div>
           </div>
           <div class="tier-checklist">
@@ -1987,7 +1989,7 @@
             </div>
             <div class="tier-check-item">
               <span class="tier-check-icon-intel">✦</span>
-              <span class="tier-check-text"><strong>Video walkthrough &amp; seasonal recapture</strong> <span style="font-family:'Space Grotesk',sans-serif;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#EABE6B;border:1px solid rgba(234,190,107,.5);border-radius:4px;padding:1px 5px;">Coming soon</span> — narrate a walk through your home and Eave builds the inventory; each season it flags what changed</span>
+              <span class="tier-check-text"><strong>Video walkthrough &amp; seasonal recapture</strong> <span style="font-family:'Space Grotesk',sans-serif;font-size: 12px;letter-spacing:.08em;text-transform:uppercase;color:#EABE6B;border:1px solid rgba(234,190,107,.5);border-radius:4px;padding:1px 5px;">Coming soon</span> — narrate a walk through your home and Eave builds the inventory; each season it flags what changed</span>
             </div>
           </div>
           <div class="tier-cta-wrap">
@@ -2000,9 +2002,9 @@
 
       </div>
 
-      <p class="fade-in" style="text-align:center;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:rgba(244,239,230,.75);">Want active protection for the home you already own? Eave Guardian is coming this fall — <a href="/features/guardian" style="color:#A9D2E8;text-decoration:none;border-bottom:1px solid rgba(169,210,232,.4);">see how it works &rarr;</a></p>
+      <p class="fade-in" style="text-align:center;margin-top:32px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:rgba(244,239,230,.75);">Want active protection for the home you already own? Eave Guardian is coming soon — <a href="/features/guardian" style="color:#A9D2E8;text-decoration:none;border-bottom:1px solid rgba(169,210,232,.4);">see how it works &rarr;</a></p>
 
-      <p class="pricing-fine fade-in" style="transition-delay:.15s;">All core features are free forever — no credit card required, no trial expiry. Eave Intelligence is an optional upgrade, and <a href="/features/guardian" style="color:#A9D2E8;">Eave Guardian</a> — active protection — is coming this fall. Eave Pro services are on the way — <a href="/pricing" style="color:var(--jade);">see full pricing &amp; Pro services</a>.</p>
+      <p class="pricing-fine fade-in" style="transition-delay:.15s;">All core features are free forever — no credit card required, no trial expiry. Eave Intelligence is an optional upgrade, and <a href="/features/guardian" style="color:#A9D2E8;">Eave Guardian</a> — active protection — is coming soon. Eave Pro services are on the way — <a href="/pricing" style="color:#A9D2E8;">see full pricing &amp; Pro services</a>.</p>
 
     </div>
   </section>
@@ -2015,12 +2017,13 @@
         <div class="section-head"><h2>Questions, answered.</h2></div>
       </div>
       <div class="home-faq-list fade-in" style="transition-delay:.1s;">
-        <div class="home-faq-item"><h3 class="home-faq-q">Is Eave really free?</h3><div class="home-faq-a">Yes &mdash; free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming this fall — will be an optional add-on on top. <a href="/pricing">See full pricing &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Is Eave really free?</h3><div class="home-faq-a">Yes &mdash; free for one home, forever, with no credit card. Eave Intelligence is an optional upgrade at $2.99/mo, and Eave Guardian — active protection, coming soon — will be an optional add-on on top. <a href="/pricing">See full pricing &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Do I need to download an app?</h3><div class="home-faq-a">No. Eave runs in any browser at app.eavehome.app &mdash; phone, tablet, or desktop. Native iOS and Android apps are coming soon. <a href="/support/getting-started">Getting started &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">How does Eave capture what my home needs?</h3><div class="home-faq-a">Speak it, snap a photo, or type a few words. Eave turns it into a scoped project &mdash; the room, the category, the priority, and an estimated cost. <a href="/features/capture">More on Capture &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is my home data private?</h3><div class="home-faq-a">Your data is yours. Nothing saves until you review it, it's stored with row-level security, and you can export or delete everything at any time. <a href="/support/data-privacy">Data &amp; privacy &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">What does Eave Intelligence add?</h3><div class="home-faq-a">A 12-month upkeep plan built for your home, a ranked &ldquo;why-now&rdquo; queue, and seasonal prep &mdash; the planning layer on top of your free records. <a href="/features/intelligence">More on Intelligence &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">Can I manage more than one home?</h3><div class="home-faq-a">Yes. Eave Multi-Property is $7.99/property/mo (or $69/property/yr) for 2&ndash;5 properties, and Portfolio (6+ properties) is available by talking to our team. <a href="/support/spaces-and-properties">Spaces &amp; properties &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Can I manage more than one home?</h3><div class="home-faq-a">Yes. Eave Multi-Property is $7.99/property/mo (or $69/property/yr) for 2&ndash;5 properties, and Portfolio (6+ properties) is coming — join the waitlist on the landlords page. <a href="/support/spaces-and-properties">Spaces &amp; properties &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Can my partner use it too?</h3><div class="home-faq-a">Yes. Invite them as a co-owner from Property settings and you both see and edit the same home. A helper can add and tick things off; a house sitter gets access that ends on its own. Seats are free on every plan. <a href="/support/household-sharing">How sharing works &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Can I pass my home&rsquo;s record to the buyer when I sell?</h3><div class="home-faq-a">Yes &mdash; your home&rsquo;s memory can transfer with the sale, so the new owner starts with the full history instead of a blank slate. <a href="/for/home-sellers">Getting ready to sell &rarr;</a></div></div>
       </div>
     </div>
@@ -2103,31 +2106,32 @@
           <li><a href="/guides">Guides</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--muted);">App Store — soon</span></li>
+          <li><span style="color:var(--muted);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--muted);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>

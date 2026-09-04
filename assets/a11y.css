@@ -1,0 +1,11 @@
+/* Shared accessibility floor — loaded on every page after the page's own styles. */
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 1000; padding: 10px 14px; background: var(--ink, #1F3A52); color: #F4EFE6; font-family: 'IBM Plex Mono', monospace; font-size: 13px; border-radius: 8px; text-decoration: none; transition: top .15s; }
+.skip-link:focus { top: 12px; outline: 2px solid #F4EFE6; outline-offset: 2px; }
+#content:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--jade-text, #2B6A8E); outline-offset: 3px; }
+footer :focus-visible, .mobile-menu :focus-visible { outline-color: #F4EFE6; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .fade-in, .fade-in.visible, .fade-in.in { opacity: 1 !important; transform: none !important; }
+}

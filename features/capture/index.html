@@ -75,7 +75,7 @@
         "name": "How does AI capture work?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You describe what you noticed in plain language — spoken, photographed, or typed — and Eave's AI structures it into a project. It fills in the title, room, category, priority, estimated cost, and a permit flag, then shows you the result to review before anything saves. Nothing is added without your say."
+          "text": "You describe what you noticed in plain language — spoken, photographed, or typed — and Eave's AI structures it into a project. It fills in the title, room, category, priority, estimated cost, and, where it matters, a note about permits, then shows you the result to review before anything saves. Nothing is added without your say."
         }
       },
       {
@@ -91,7 +91,7 @@
         "name": "What does Eave figure out from a photo?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Snap a photo and vision AI diagnoses what it sees — for example, detecting cracked caulk and setting a medium priority. It drafts the project fields from the image so you're not typing out what the camera can already tell. As always, you review the result before it's saved."
+          "text": "With Eave Intelligence, snap a photo and Eave reads what it sees — for example, detecting cracked caulk and setting a medium priority — and drafts the project fields from the image. On the free plan the photo is saved to the project and you fill in the room and category yourself. As always, you review the result before it's saved."
         }
       }
     ]
@@ -114,11 +114,11 @@
     }
     .capture-mode .mode-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .08em;
-      color: var(--jade);
+      color: var(--jade-text);
       margin-bottom: 10px;
     }
     .capture-mode .mode-quote {
@@ -160,13 +160,15 @@
       font-family: 'IBM Plex Mono', monospace;
       text-transform: uppercase;
       letter-spacing: .05em;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--dim);
     }
     .result-field .rf-val { color: var(--ink); font-weight: 500; text-align: right; }
   </style>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -180,7 +182,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -198,8 +200,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -213,7 +215,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -227,6 +229,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -264,7 +267,7 @@
         <div class="capture-mode">
           <div class="mode-label">Snap</div>
           <p class="mode-quote">A photo of the tub surround.</p>
-          <p class="mode-result">Vision AI diagnoses what it sees — <strong>cracked caulk detected</strong> — and drafts the project at <strong>medium priority</strong> from the image alone.</p>
+          <p class="mode-result">With Intelligence, Eave reads the photo — <strong>cracked caulk detected</strong> — and drafts the project at <strong>medium priority</strong> from the image alone. On the free plan the photo is saved and you pick the room and category.</p>
         </div>
         <div class="capture-mode">
           <div class="mode-label">Type</div>
@@ -285,7 +288,7 @@
       <div class="feature-split">
         <div>
           <p style="color:var(--muted);line-height:1.75;font-size:15px;">However you capture it, Eave returns the same thing: a clean project card with the fields already filled in. You didn't pick a room from a dropdown or guess at a category — the AI read your description and did it.</p>
-          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Every result card carries a title, room, category, priority, estimated cost, and a permit flag — so you know at a glance whether it's a five-minute fix or something that needs a licensed contractor and a pulled permit before anyone starts.</p>
+          <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Every result card carries a title, room, category, priority, estimated cost, and, where it matters, a note about permits — so you know at a glance whether it's a five-minute fix or something that needs a licensed contractor and a pulled permit before anyone starts.</p>
           <p style="color:var(--muted);line-height:1.75;font-size:15px;margin-top:16px;">Nothing saves without your say. You review the card, correct anything that's off, and add it to your queue when it's right.</p>
           <div class="result-card" style="margin-top:24px;">
             <div class="result-title">Running toilet — Master Bath</div>
@@ -316,7 +319,7 @@
       </div>
       <div class="qa-item">
         <h3>How does AI capture work?</h3>
-        <p>You describe what you noticed in plain language — spoken, photographed, or typed — and Eave's AI structures it into a project. It fills in the title, room, category, priority, estimated cost, and a permit flag, then shows you the result to review before anything saves. Nothing is added without your say.</p>
+        <p>You describe what you noticed in plain language — spoken, photographed, or typed — and Eave's AI structures it into a project. It fills in the title, room, category, priority, estimated cost, and, where it matters, a note about permits, then shows you the result to review before anything saves. Nothing is added without your say.</p>
       </div>
       <div class="qa-item">
         <h3>Can I capture by voice?</h3>
@@ -324,7 +327,7 @@
       </div>
       <div class="qa-item">
         <h3>What does Eave figure out from a photo?</h3>
-        <p>Snap a photo and vision AI diagnoses what it sees — for example, detecting cracked caulk and setting a medium priority. It drafts the project fields from the image so you're not typing out what the camera can already tell. As always, you review the result before it's saved.</p>
+        <p>With Eave Intelligence, snap a photo and Eave reads what it sees — for example, detecting cracked caulk and setting a medium priority — and drafts the project fields from the image. On the free plan the photo is saved to the project and you fill in the room and category yourself. As always, you review the result before it's saved.</p>
       </div>
     </div>
   </section>
@@ -337,6 +340,10 @@
         <h2>What happens after you capture</h2>
       </div>
       <div class="xlink-grid">
+        <a class="xlink-card" href="/features/setup">
+          <div class="xlink-title">Intelligent Home Setup</div>
+          <div class="xlink-desc">Before you capture anything, let Eave read the paperwork you already have.</div>
+        </a>
         <a class="xlink-card" href="/features/home-knowledge-base">
           <div class="xlink-title">Home Knowledge Base</div>
           <div class="xlink-desc">Every captured project, room, appliance, and contractor in one searchable record of your home.</div>
@@ -373,31 +380,32 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>

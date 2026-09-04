@@ -74,7 +74,7 @@
         "name": "Can I manage more than one property?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Eave is free for one property and keeps a complete record for that home — projects, maintenance, appliances, and contractors. Eave Multi-Property extends that across 2–5 properties for $7.99/property/mo, and Portfolio (6+ properties) is available by talking to our team."
+          "text": "Yes. Eave is free for one property and keeps a complete record for that home — projects, maintenance, appliances, and contractors. Eave Multi-Property extends that across 2–5 properties for $7.99/property/mo, and Portfolio (6+ properties) is coming — join the waitlist on the landlords page."
         }
       },
       {
@@ -82,7 +82,7 @@
         "name": "How much is multi-property?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Eave Multi-Property is $7.99/property/mo or $69/property/yr, for 2–5 properties. Your first property is free, and Eave Intelligence is $2.99 a month. Portfolio (6+ properties) is available by talking to our team."
+          "text": "Eave Multi-Property is $7.99/property/mo or $69/property/yr, for 2–5 properties. Your first property is free, and Eave Intelligence is $2.99 a month. Portfolio (6+ properties) is coming — join the waitlist on the landlords page."
         }
       }
     ]
@@ -96,7 +96,7 @@
     }
     .soon-panel .soon-tag {
       display:inline-block; font-family:'IBM Plex Mono',monospace; font-weight:500;
-      font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber);
+      font-size: 12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--amber-text);
       margin-bottom:10px;
     }
     .soon-panel h3 { margin-top:0; }
@@ -114,13 +114,15 @@
     .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: 8px; border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
     .wl-input::placeholder { color: var(--dim); }
-    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-input:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
     .wl-btn { flex: 0 0 auto; white-space: nowrap; }
     .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
   </style>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -134,7 +136,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -152,8 +154,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -167,7 +169,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -181,6 +183,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -242,9 +245,9 @@
         <h2>Managing several properties at once</h2>
       </div>
       <div class="soon-panel" style="border-left-color:var(--jade);">
-        <span class="soon-tag" style="color:var(--jade);">Available now</span>
+        <span class="soon-tag" style="color:var(--jade-text);">Available now</span>
         <h3>Multi-Property: 2&ndash;5 properties</h3>
-        <p>Eave Multi-Property extends the full Eave — capture, protection, and forecasting — across every home you own, plus move-in/out condition reports, a tenant issue-intake link, and free seats for co-owners or a property manager.</p>
+        <p>Eave Multi-Property extends the full Eave — capture, memory, and the upkeep plan — across every home you own. Each home keeps its own record, and you can share any of them with a co-owner or a helper at no extra charge. Condition reports and a tenant issue link are on the roadmap, not in the product yet.</p>
         <ul class="price-list">
           <li><span>First property</span> <strong>Free, forever</strong></li>
           <li><span>Eave Intelligence</span> <strong>$2.99/mo</strong></li>
@@ -283,11 +286,11 @@
       </div>
       <div class="qa-item">
         <h3>Can I manage more than one property?</h3>
-        <p>Yes. Eave is free for one property and keeps a complete record for that home — projects, maintenance, appliances, and contractors. Eave Multi-Property extends that across 2&ndash;5 properties for $7.99/property/mo, and Portfolio (6+ properties) is available by talking to our team.</p>
+        <p>Yes. Eave is free for one property and keeps a complete record for that home — projects, maintenance, appliances, and contractors. Eave Multi-Property extends that across 2&ndash;5 properties for $7.99/property/mo, and Portfolio (6+ properties) is coming — join the waitlist on the landlords page.</p>
       </div>
       <div class="qa-item">
         <h3>How much is multi-property?</h3>
-        <p>Eave Multi-Property is $7.99/property/mo or $69/property/yr, for 2&ndash;5 properties. Your first property is free, and Eave Intelligence is $2.99 a month. Portfolio (6+ properties) is available by talking to our team.</p>
+        <p>Eave Multi-Property is $7.99/property/mo or $69/property/yr, for 2&ndash;5 properties. Your first property is free, and Eave Intelligence is $2.99 a month. Portfolio (6+ properties) is coming — join the waitlist on the landlords page.</p>
       </div>
     </div>
   </section>
@@ -336,31 +339,32 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>

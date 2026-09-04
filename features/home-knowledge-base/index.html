@@ -67,35 +67,51 @@
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a home knowledge base?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A home knowledge base is a single, searchable record of everything about your home — every room, appliance, contractor, and repair, with the details attached. In Eave it holds finishes and fixtures room by room, appliance models with their warranty and service history, your trusted contractors, and the receipts that tie it all together. It is the memory of your home, so the questions you can never answer later have answers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Eave research appliance specs automatically?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. When you add an appliance, Eave researches the model and fills in the details you would otherwise dig through a manual to find — things like filter size, service intervals, and warranty term. For a Carrier furnace, for example, that can mean a 16×25×1 filter, a warranty running through 2029, and a rough replacement forecast around 2038. Everything it suggests is editable before you save."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is my home data private?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your home data is yours. Nothing saves without your say — Eave shows you what it found and you review it before it is stored. For the full picture of how your data is handled, see our data privacy page at https://eavehome.app/support/data-privacy."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a home knowledge base?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A home knowledge base is a single, searchable record of everything about your home — every room, appliance, contractor, and repair, with the details attached. In Eave it holds finishes and fixtures room by room, appliance models with their warranty and service history, your trusted contractors, and the receipts that tie it all together. It is the memory of your home, so the questions you can never answer later have answers."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Eave research appliance specs automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When you add an appliance, Eave researches the model and fills in the details you would otherwise dig through a manual to find — things like filter size, service intervals, and warranty term. For a Carrier furnace, for example, that can mean a 16×25×1 filter, a warranty running through 2029, and a rough replacement forecast around 2038. Everything it suggests is editable before you save."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my home data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your home data is yours. Nothing saves without your say — Eave shows you what it found and you review it before it is stored. For the full picture of how your data is handled, see our data privacy page at https://eavehome.app/support/data-privacy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do my documents live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In private storage tied to your home. Only you and the people you've shared your home with can open them; nothing is public. Deleting a document erases the file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my partner use the same home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Invite them as a co-owner from Property settings and you both see and edit the same record. Seats are free."
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -119,11 +135,13 @@
       color: var(--ink);
     }
     .spec-card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 16px; }
-    .spec-card dt { color: var(--dim); text-transform: uppercase; font-size: 10px; letter-spacing: 0.06em; align-self: center; }
+    .spec-card dt { color: var(--dim); text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em; align-self: center; }
     .spec-card dd { margin: 0; color: var(--ink); }
   </style>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -137,7 +155,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -155,8 +173,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -170,7 +188,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -184,6 +202,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -201,7 +220,7 @@
     <div class="container">
       <p class="label">Features · Home Knowledge Base</p>
       <h1>Everything about your home, in one place you'll actually find later.</h1>
-      <p>Most people can't answer basic questions about the home they live in — the furnace filter size, when the water heater went in, who fixed the roof, what paint is in the hallway. The home knowledge base is where those answers live: a complete, searchable record of your rooms, appliances, contractors, and repairs.</p>
+      <p>Most people can't answer basic questions about the home they live in — the furnace filter size, when the water heater went in, who fixed the roof, which company to call when the power goes out. The home knowledge base is where those answers live: a complete, searchable record of your spaces, structure, systems, appliances, documents, and the people who look after the place.</p>
     </div>
   </div>
 
@@ -254,6 +273,55 @@
     </div>
   </section>
 
+  <!-- ── STRUCTURE & SYSTEMS ── -->
+  <section class="support-section" id="structure-systems">
+    <div class="container">
+      <div class="feature-split">
+        <div>
+          <div class="section-header">
+            <p class="label">Structure &amp; Systems</p>
+            <h2>The house, and the things that run it.</h2>
+          </div>
+          <p>Appliances get replaced. Systems get serviced. The structure — the roof, the windows, the foundation, the fences — gets watched. They're different jobs, so Eave keeps them apart.</p>
+          <p><strong>Structure</strong> covers the envelope: roof, foundation, windows, exterior and garage doors, siding, chimney, gutters and drainage, retaining walls, fences and gates, driveway, decks and patios, insulation.</p>
+          <p><strong>Systems</strong> covers more than the furnace: heating, cooling, water heater, electrical panel, plumbing, sewer or septic, solar, generator, security and alarm, audio and media, lighting control, network, irrigation, fire and life safety, water treatment, EV charging, pool and spa equipment, sump pump. <a href="/support/structure-systems-and-appliances">Where each one lives &rarr;</a></p>
+        </div>
+        <div>
+          <!-- W2 shots #6 #7: Structure page (desktop), Systems page (mobile) -->
+          <div class="article-block">
+            <h3>Why the split matters</h3>
+            <p>A roof has a lifespan and a last-inspected date. A furnace has a service interval and a filter size. A dishwasher has a warranty and a replacement cost. Keeping them on separate pages means each one carries the fields that actually matter for it, and the reminders that follow are the right ones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DOCUMENTS ── -->
+  <section class="support-section" id="documents">
+    <div class="container">
+      <div class="feature-split reverse">
+        <div>
+          <div class="section-header">
+            <p class="label">Documents</p>
+            <h2>Every document about your house, in one place.</h2>
+          </div>
+          <p>The inspection, the manuals, the warranty registrations, the insurance declarations page, the permits, the site plan, the quotes. Upload them once and they stay with the house.</p>
+          <p><strong>Read, not just stored.</strong> Eave pulls the useful parts out — the systems and their ages, the filter sizes, the warranty end date, the renewal — and attaches them to the right thing in your home.</p>
+          <p><strong>Stored privately.</strong> Your documents are kept in private storage and reached through links that only work for you and the people you've shared your home with. Delete one and the file is actually gone, not just hidden.</p>
+          <p><strong>Big files are fine.</strong> Up to 100 MB each, so a full inspection report uploads in one go. Every plan includes storage: 1 GB on Free, 10 GB on Intelligence. <a href="/support/documents">How documents work &rarr;</a></p>
+        </div>
+        <div>
+          <!-- W2 shot #5: Documents page with storage meter -->
+          <div class="article-block">
+            <h3>Start with the folder</h3>
+            <p>Most of a home's documents arrive on one day, in one folder, at closing. <a href="/features/setup">Intelligent Home Setup</a> reads that folder and files what it finds, so the Documents page is usually full before you've opened it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ANECDOTE (placeholder illustration — swap for a real customer story when available) -->
   <section class="support-section">
     <div class="container">
@@ -281,19 +349,24 @@
   </section>
 
   <!-- ── CONNECTED SOURCES ── -->
-  <section class="support-section">
+  <section class="support-section" id="utilities-services">
     <div class="container">
       <div class="section-header">
-        <p class="label">Connected Sources</p>
-        <h2>Records that fill in on their own</h2>
+        <p class="label">Utilities, services &amp; sources</p>
+        <h2>Who's on the hook when it breaks?</h2>
+      </div>
+      <!-- W2 shots #8 #9: Utilities (desktop), Services (mobile) -->
+      <div class="article-block">
+        <h3>Utilities, found from your address</h3>
+        <p>The power, the gas, the water, the sewer, the trash, the internet. Eave finds who serves your address, or reads it off a photo of a bill, and keeps the account number and the support line where you'll find them at 9pm on a Sunday. And it knows what they serve: your panel, your water heater, your yard.</p>
       </div>
       <div class="article-block">
-        <h3>Gmail and calendar today</h3>
-        <p>Connect Gmail and your calendar and Eave surfaces the home-related receipts, warranties, and contractor emails already sitting in your inbox — so your knowledge base grows without you typing it all in. Access is read-only, and nothing is saved until you review it.</p>
+        <h3>And everyone else who looks after the place</h3>
+        <p>The lawn crew, the pool service, the pest plan, the septic pumping, the chimney sweep, the HVAC contract. Your insurance carrier and your agent. The HOA. Each with the date that matters: the renewal, the next visit, the inspection that's due. Your paperwork fills most of it in — a closing folder names your lender and your insurer, a declarations page names your carrier, a service contract names the company and the day it renews. Eave reads them and offers them up; you just say yes. <a href="/support/utilities-and-providers">Utilities and services, explained &rarr;</a></p>
       </div>
       <div class="article-block">
-        <h3>Store accounts and smart home — rolling out</h3>
-        <p>Connections to store accounts and smart-home devices are on the way, not live yet. When they arrive, purchases and device details will flow in the same way — found for you, reviewed by you.</p>
+        <h3>Gmail and calendar today; store accounts and smart home coming</h3>
+        <p>Connect Gmail and Google Calendar and Eave surfaces the home-related receipts, warranties, and contractor emails already sitting in your inbox, and pushes your maintenance schedule to the calendar you already use. Access is read-only, and nothing is saved until you review it. Store accounts and smart-home connections are on the way, not live yet.</p>
       </div>
     </div>
   </section>
@@ -331,8 +404,32 @@
         <h3>Is my home data private?</h3>
         <p>Your home data is yours. Nothing saves without your say — Eave shows you what it found and you review it before it is stored. For the full picture of how your data is handled, see our <a href="/support/data-privacy">data privacy page</a>.</p>
       </div>
+      <div class="qa-item">
+        <h3>Where do my documents live?</h3>
+        <p>In private storage tied to your home. Only you and the people you've shared your home with can open them; nothing is public. Deleting a document erases the file.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Can my partner use the same home?</h3>
+        <p>Yes. Invite them as a co-owner from Property settings and you both see and edit the same record. Seats are free.</p>
+      </div>
     </div>
   </section>
+
+  <!-- ── HOUSEHOLD ── -->
+  <section class="support-section" id="household">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Household</p>
+        <h2>One home, everyone who lives in it.</h2>
+      </div>
+      <!-- W2 shot #15: People with access card -->
+      <div class="article-block">
+        <h3>Share it with the people who share it</h3>
+        <p>Invite a co-owner and they see the same home you do. Give a helper the ability to add and tick things off. Hand a house sitter access for two weeks and it ends on its own. No per-person charge, ever — the house is the unit, not the seat. <a href="/support/household-sharing">How sharing works →</a></p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ── KEEP EXPLORING ── -->
   <section class="support-section">
@@ -342,6 +439,10 @@
         <h2>Related reading</h2>
       </div>
       <div class="xlink-grid">
+        <a class="xlink-card" href="/features/setup">
+          <div class="xlink-title">Intelligent Home Setup</div>
+          <div class="xlink-desc">Drop in your paperwork and Eave builds most of this record for you.</div>
+        </a>
         <a class="xlink-card" href="/features/connected-sources">
           <div class="xlink-title">Connected Sources</div>
           <div class="xlink-desc">How Gmail and calendar fill your records for you — and what's rolling out next.</div>
@@ -382,31 +483,32 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>

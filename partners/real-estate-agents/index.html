@@ -77,19 +77,21 @@
     .wl-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .wl-input { flex: 1 1 220px; min-width: 0; padding: 13px 15px; border-radius: var(--chamfer); border: 1px solid var(--stone); background: var(--bg); color: var(--ink); font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
     .wl-input::placeholder { color: var(--dim); }
-    .wl-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
+    .wl-input:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(111,168,201,.3); }
     .wl-btn { flex: 0 0 auto; white-space: nowrap; }
     .wl-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
     .wl-status { font-size: 12px; color: var(--muted); margin-top: 11px; min-height: 1em; }
     .wl-textarea { width:100%; box-sizing:border-box; padding:13px 15px; border-radius:var(--chamfer); border:1px solid var(--stone); background:var(--bg); color:var(--ink); font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.6; resize:vertical; min-height:84px; margin-bottom:8px; }
     .wl-textarea::placeholder { color:var(--dim); }
-    .wl-textarea:focus { outline:none; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
+    .wl-textarea:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
   </style>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let's talk."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients' subscriptions and/or subscribe to Eave Leads. There's no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let's talk."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you're told. That control is theirs by design."}}]}
   </script>
+  <link rel="stylesheet" href="/assets/a11y.css">
 </head>
 <body>
+<a class="skip-link" href="#content">Skip to content</a>
 
   <!-- ── NAV ── -->
   <nav>
@@ -103,7 +105,7 @@
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -121,8 +123,8 @@
         <li><a href="/about">About</a></li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size:10px;">Sign in</a>
-        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size:10px;">Start free →</a>
+        <a href="https://app.eavehome.app/login" class="btn btn-outline" style="padding:9px 18px;font-size: 12px;">Sign in</a>
+        <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="padding:9px 18px;font-size: 12px;">Start free →</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -136,7 +138,7 @@
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming this fall</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -150,6 +152,7 @@
     <a href="https://app.eavehome.app/login" onclick="closeMobile()">Sign in</a>
     <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="margin-top:16px;display:inline-block;" onclick="closeMobile()">Start free →</a>
   </div>
+  <div id="content" tabindex="-1"></div>
 
   <!-- ── BREADCRUMB ── -->
   <div class="breadcrumb">
@@ -219,12 +222,26 @@
       <div class="feature-split reverse">
         <div class="fs-copy">
           <h3>The gift that keeps working</h3>
-          <p>Your buyers move in and keep a tool you introduced them to &mdash; the searchable record of every system, appliance, warranty, and project in their new home. Every time it reminds them to change a filter or flags an aging water heater, it&rsquo;s doing a small favor with your name on it.</p>
+          <p>Your buyers move in and keep a tool you introduced them to &mdash; the searchable record of every system, appliance, warranty, and project in their new home. Every time it reminds them to change a filter or flags an aging water heater, it&rsquo;s doing a small favor with your name on it. It&rsquo;s literal, too: your card sits on their Home page under &ldquo;From your agent,&rdquo; and you&rsquo;re listed under People &rarr; Agents in their app.</p>
           <p>When they&rsquo;re ready for the next move, you&rsquo;re not a name they have to dig for. You&rsquo;re the person who gave them the thing they still use.</p>
           <a class="deep-link" href="/residential">SEE THE APP THEY KEEP &rarr;</a>
         </div>
         <div class="p-shot"><img src="/images/opt/projects-desktop.webp" alt="The home record your client keeps — systems, projects, and documents in one place" loading="lazy" decoding="async"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── CLIENT BOOK ── -->
+  <section class="support-section" id="client-book">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Your client book</p>
+        <h2>A workspace, not a funnel</h2>
+      </div>
+      <!-- W2 shot #16: client-side "From your agent" card belongs in #after --><!-- W2 shot #17: partner clients book -->
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;">Your clients live in one book with five columns &mdash; Leads, Selling, Looking, Just bought, Forever client. You arrange them; most never move, and a relationship can start at Forever client with no transaction in sight.</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;margin-top:14px;">A &ldquo;Needs you&rdquo; card at the top shows what&rsquo;s waiting: an invite to accept, a seat to fund, a handover coming up. Everything else stays quiet.</p>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;margin-top:14px;">It runs in a phone browser today, so you can work your book from the car between showings.</p>
     </div>
   </section>
 
@@ -257,7 +274,7 @@
         <p class="label">How it works for you</p>
         <h2>Flat and predictable, start to finish</h2>
       </div>
-      <p style="font-size:15px;color:var(--muted);line-height:1.75;max-width:760px;">Cover your clients&rsquo; subscription through the sale; they take it over when they close. <strong style="color:var(--ink);">Eave Leads is a flat monthly subscription &mdash; never a cut of your commission.</strong> No per-deal fee, nothing contingent on a closing, no rankings or &ldquo;preferred&rdquo; badges to buy.</p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;max-width:760px;">Cover a client&rsquo;s Intelligence for as long as you like, through a sale or long after it. When your funding ends, they keep Intelligence for 30 more days and then choose: take it over, or stay on the free plan with everything intact. <strong style="color:var(--ink);">Eave Leads is a flat monthly subscription &mdash; never a cut of your commission.</strong> No per-deal fee, nothing contingent on a closing, no rankings or &ldquo;preferred&rdquo; badges to buy.</p>
 
       <div class="compliance-band">
         <p>Eave never pays referral fees or shares commissions. If you have a financial interest in Eave, disclose it to your clients in writing.</p>
@@ -282,11 +299,15 @@
       </div>
       <div class="qa-item">
         <h3>Does my client have to keep paying after closing?</h3>
-        <p>Their choice. If you cover Intelligence through the sale, they simply take the subscription over at closing if they want to keep it &mdash; and the free tier keeps their home&rsquo;s record either way. Nothing is ever held hostage.</p>
+        <p>Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home&rsquo;s whole record either way. Nothing is ever held hostage.</p>
       </div>
       <div class="qa-item">
         <h3>What does the client actually get?</h3>
         <p>The full Eave Residential app: a searchable record of their home&rsquo;s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It&rsquo;s the same product a homeowner would sign up for on their own &mdash; you&rsquo;re just the reason they have it.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Can a client disconnect from me?</h3>
+        <p>Yes, any time, from their Membership settings. The seat returns to your pool and you&rsquo;re told. That control is theirs by design.</p>
       </div>
       <div class="qa-item">
         <h3>Can my brokerage roll this out?</h3>
@@ -357,31 +378,32 @@
           <li><a href="/about">About</a></li>
         </ul>
         <ul class="footer-links">
-          <li><span style="color:var(--dim);">App Store — soon</span></li>
-          <li><span style="color:var(--dim);">Google Play — soon</span></li>
+          <li><span style="color:var(--footer-text);">App Store — soon</span></li>
+          <li><span style="color:var(--footer-text);">Google Play — soon</span></li>
           <li><a href="https://app.eavehome.app">app.eavehome.app</a></li>
         </ul>
         <div class="footer-social">
           <div class="footer-social-label">FOLLOW</div>
           <a href="https://www.instagram.com/eavehomeupkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             Instagram
           </a>
           <a href="https://www.facebook.com/eavehomeupkeep" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             Facebook
           </a>
           <a href="https://www.linkedin.com/company/eave-home-upkeep/" target="_blank" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--footer-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             LinkedIn
           </a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--dim);text-decoration:none;">support@eavehome.app</a></p>
+        <p class="footer-copy">© 2026 Eave · <a href="mailto:support@eavehome.app" style="color:var(--footer-text);text-decoration:none;">support@eavehome.app</a></p>
         <div class="footer-legal">
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
+          <a href="/accessibility">Accessibility</a>
         </div>
       </div>
     </div>
