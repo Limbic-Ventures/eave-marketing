@@ -22,6 +22,12 @@ const CARDS = [
   { name: 'support-structure-systems-and-appliances',eyebrow: 'Support · Your home & capture',             headline: 'Structure, systems & appliances' },
   { name: 'support-utilities-and-providers',         eyebrow: 'Support · Your home & capture',             headline: 'Utilities and services' },
   { name: 'support-documents',                       eyebrow: 'Support · Importing documents & records',   headline: 'Documents: limits, storage, and privacy' },
+  { name: 'buyers',                                  eyebrow: 'Eave for Buyers',                           headline: 'Know the house before you own it.' },
+  { name: 'support-buying-with-eave',                eyebrow: 'Support · Buying a home',                   headline: 'Estimates, documents, and fair housing' },
+  { name: 'fair-housing',                            eyebrow: 'Fair housing',                              headline: 'What Eave shows, and what it never will' },
+  { name: 'guides-what-a-listing-never-tells-you',   eyebrow: 'Guides · Buying',                           headline: 'What a listing never tells you' },
+  { name: 'guides-how-to-read-a-seller-disclosure-packet', eyebrow: 'Guides · Buying',                    headline: 'How to read a seller disclosure packet' },
+  { name: 'guides-comparing-two-houses-on-what-they-really-cost', eyebrow: 'Guides · Buying',             headline: 'What two houses really cost' },
 ];
 
 function wrap(ctx, text, maxW) {
@@ -84,7 +90,7 @@ async function main() {
   const bg = new Image();
   await new Promise((res, rej) => { bg.onload = res; bg.onerror = () => rej(new Error('bg load failed')); bg.src = '/images/opt/hero-bg-blur-1200.webp'; });
   const out = [];
-  for (const card of CARDS) {
+  for (const card of (new URLSearchParams(location.search).get("only")==="new" ? CARDS.slice(-6) : CARDS)) {
     const c = document.createElement('canvas'); c.width = W; c.height = H; c.dataset.name = card.name;
     document.getElementById('cards').appendChild(c);
     draw(c.getContext('2d'), bg, card);
