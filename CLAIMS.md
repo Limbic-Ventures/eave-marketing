@@ -48,3 +48,17 @@ Before a product release is called done, walk this file: every row the release t
 | Badges shown as earned; streak shown on the score card, weight 0 | /features/upkeep-score | `components/score/BadgeGallery.tsx` · d976135 earned-only | verified | 2026-09-03 |
 | Recent activity on the Tasks page (completion history) | /residential step 04 | QA-2b 9fe8185 · `/api/tasks/history` | verified | 2026-09-03 |
 | Utilities and services shown as a memory node on /residential (electric account, support line, serves, renewal) | /residential #memory | PRV-5/7 · SVC-2 | verified | 2026-09-03 |
+| Add a home by address, listing link, or PDF; no MLS feed, no scraping | /buyers · /partners/real-estate-agents#buyers · /support/buying-with-eave | FR-2 HUNT-1 (prod 9/4) | verified | 2026-09-08 |
+| Passing keeps the reason; passed homes count toward the 30-address cap | /buyers how-it-works | FR-3 HUNT-1 | verified | 2026-09-08 |
+| Flood, fire, seismic, weather, air, soil, school district, electric territory, broadband, tax-rate estimate, each with source and date; blanks are a dash | /buyers · guides/what-a-listing-never-tells-you | FR-7 HUNT-1b | verified | 2026-09-08 |
+| No vendor risk score presented as fact; district name and official link only | /buyers FAQ · /fair-housing · /support/buying-with-eave | FR-8, BRD §6 fair housing | verified | 2026-09-08 |
+| 46 document kinds, three-band classifier; reads metered 2 per address in the hunt, 10 in escrow | /buyers · /pricing#buyers · guides/how-to-read-a-seller-disclosure-packet | FR-10, FR-15 DOCX-1 / HUNT-1c | verified | 2026-09-08 |
+| Documents put facts on the candidate; versions keep both and show what changed; disagreement becomes Needs a decision | /buyers · /support/buying-with-eave · /support/data-privacy | FR-11 P4 · FR-12 DOCX-2 · FR-13 DOCX-3 (prod 0e43082) | verified | 2026-09-08 |
+| Cost bands from a curated regional table; the model never invents a dollar figure; Compare the top three; PDF export | /buyers · guides/comparing-two-houses · /pricing#buyers | FR-16/17 HUNT-2 (prod 0e43082); lib/cost-bands.ts | verified | 2026-09-08 |
+| "Rough ranges from photos and documents. Not an inspection. Not an appraisal." on every cost surface | /buyers · /pricing#buyers · /support/buying-with-eave · guides | FR-18; components/hunt/CandidatePage.tsx | verified | 2026-09-08 |
+| Asks resolved with a reply and a status; recommendations; no chat | /buyers#asks · agents #buyers | FR-19 P3 (prod 8327569) | verified | 2026-09-08 |
+| Escrow: checklist by stage, contingency reminders, daily digest; close seeds the home; fell-through keeps everything | /buyers · /pricing#buyers · agents #buyers | FR-22/23/25 P6 (prod 06c3d91) | verified | 2026-09-08 |
+| Agent starts a search before the buyer has an account; claim moves it to the buyer | agents #buyers + FAQ · /pricing#buyers | FR-4/5 P1 (prod 51144ab) | verified | 2026-09-08 |
+| Buyers prices: $6.99/mo hunt · $10.99/mo escrow · $19.99 close · $79.99 upfront (12 mo, close included) · $0.99 per 5 reads | /buyers#pricing · /pricing#buyers · agents #buyers + FAQ | BRD §8 decided 9/4; Stripe prices created (Garrett 9/8); billing code feature/gtm-billing | needs-check | 2026-09-08 |
+| Free try: 3 homes, facts only, no reads | /buyers · /pricing#buyers | FR-29 HUNT_FREE_TRY_ADDRESSES (feature/gtm-billing) | needs-check | 2026-09-08 |
+| Search documents do not count against home storage until close | /pricing#buyers footnote | BRD §7 storage (250 MB per purchase inside every tier) | needs-check | 2026-09-08 |

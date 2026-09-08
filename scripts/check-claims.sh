@@ -39,5 +39,34 @@ for p in "${PATTERNS[@]}"; do
     echo "RETIRED CLAIM '$p' still present in:"; echo "$hits"; fail=1
   fi
 done
+# Buyers no-say list (BRD §9 W5). Case-insensitive; these are phrasings, not prices.
+NOSAY=(
+  'off zillow'
+  'off of zillow'
+  'get your buyers off'
+  'on zillow'
+  'ai-verified'
+  'ai verified'
+  'ai-confirmed'
+  'guaranteed accurate'
+  'browse the mls'
+  'search the mls'
+  'search every listing'
+  'mls data'
+  'listing feed'
+  'pulls listings'
+  'great schools'
+  'good schools'
+  'safe neighbo'
+  'up-and-coming'
+  'family-friendly neighbo'
+)
+for p in "${NOSAY[@]}"; do
+  hits=$(grep -rlin --include='*.html' -e "$p" . 2>/dev/null | grep -v '\.claude/'; grep -li -e "$p" llms.txt 2>/dev/null)
+  if [ -n "$hits" ]; then
+    echo "BANNED PHRASE '$p' found in:"; echo "$hits"; fail=1
+  fi
+done
+
 [ $fail -eq 0 ] && echo "OK: no retired claims found."
 exit $fail

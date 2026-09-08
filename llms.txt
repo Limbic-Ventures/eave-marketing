@@ -82,6 +82,7 @@
 - https://eavehome.app/features/intelligence — seasonal prep + weekly action queue
 - https://eavehome.app/features/guardian — evidence vault, claim packets, capex forecast, protection tier (coming soon)
 - https://eavehome.app/residential — Eave Residential: the homeowner app in depth — capture, home memory, intelligence, upkeep plan, and pricing
+- https://eavehome.app/buyers — Eave for Buyers: the pre-close product. Line up candidate homes, see the facts a listing leaves out (sourced and dated), read the seller’s documents into decisions, compare on the all-in range, run escrow with version control, close into a home that is already set up. $6.99/mo hunt · $10.99/mo escrow · $19.99 close · $79.99 upfront; agent-paid or buyer-paid; free try on 3 homes
 - https://eavehome.app/commercial — Eave Commercial: editions for businesses, HOAs/condos, churches/nonprofits, and small multifamily (waitlist)
 - https://eavehome.app/pro — Eave Pro: concierge home services (licensed Home Audit $499–$799, Audit+Guardian bundle, Seasonal Manager waitlist)
 - https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
@@ -91,10 +92,11 @@
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
 - https://eavehome.app/partners — Eave Partners: for real-estate agents and home inspectors
-- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut)
+- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut); run a buyer’s search from the first showing to close
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
-- https://eavehome.app/support — help center hub (21 articles, 5 groups)
+- https://eavehome.app/support — help center hub (22 articles, 5 groups)
 - https://eavehome.app/support/getting-started
+- https://eavehome.app/support/buying-with-eave — estimates are not inspections; how cost ranges are made; what happens to the seller’s documents; fair housing; we read what you give us (no MLS feed)
 - https://eavehome.app/support/capturing-your-home
 - https://eavehome.app/support/spaces-and-properties
 - https://eavehome.app/support/systems-and-appliances
@@ -131,3 +133,7 @@
 - https://eavehome.app/privacy — privacy policy
 - https://eavehome.app/accessibility — accessibility statement (WCAG 2.2 AA target, 2.1 AA reported; support@eavehome.app, 3 business days)
 - https://eavehome.app/terms — terms of service
+- https://eavehome.app/fair-housing — fair-housing statement: district name and official links only; Eave never rates schools, neighbourhoods, or people
+- https://eavehome.app/guides/what-a-listing-never-tells-you
+- https://eavehome.app/guides/how-to-read-a-seller-disclosure-packet
+- https://eavehome.app/guides/comparing-two-houses-on-what-they-really-cost

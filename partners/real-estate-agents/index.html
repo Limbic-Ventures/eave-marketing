@@ -86,7 +86,7 @@
     .wl-textarea:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
   </style>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover your clients’ subscriptions and/or subscribe to Eave Leads. There’s no per-deal fee and nothing tied to a closing."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover a client’s subscription, run a buyer’s search ($6.99 a month while they look, $10.99 in escrow, $19.99 at close, or $79.99 up front), and/or subscribe to Eave Leads. Nothing is a cut of anything."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}, {"@type": "Question", "name": "Can I start a search before my client signs up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it."}}, {"@type": "Question", "name": "Who owns the search?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, at close. Your fee never buys their private notes."}}, {"@type": "Question", "name": "Does this replace my MLS tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn’t. No feed, no scraping."}}]}
   </script>
   <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -102,6 +102,7 @@
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
             <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
             <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
             <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
             <li class="nav-group">Add-ons</li>
@@ -135,6 +136,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-label">Products</div>
     <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/buyers" onclick="closeMobile()">Buyers<span class="nav-app"> &middot; before you own it</span></a>
     <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
     <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
     <div class="mobile-menu-label">Add-ons</div>
@@ -212,6 +214,37 @@
     </div>
   </section>
 
+  <!-- ── BUYER'S SEARCH ── -->
+  <section class="support-section" id="buyers">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Running a buyer&rsquo;s search</p>
+        <h2>Every buyer you&rsquo;re working with, in one place.<br>And a record of what you did for them.</h2>
+      </div>
+      <div class="feature-split">
+        <div class="fs-copy">
+          <h3>Run every buyer in one place</h3>
+          <p>Start a search for a client before they have an account. Line up the candidates, drop the seller&rsquo;s packet on each one, and see at a glance who needs you today: three homes, one touring, two asks. When the client claims the invite, everything moves to them.</p>
+          <h3>Show what you did, in writing</h3>
+          <p>Buyer&rsquo;s agents now work under a written agreement and need to show what it bought. Every recommendation you made, every document you sourced, every question you answered is on the record, on the house it is about. It is the buyer&rsquo;s record to keep.</p>
+          <h3>Hand them a home that&rsquo;s already set up</h3>
+          <p>At close, the house you helped them buy becomes their Eave home, seeded from the search. Your name is on it: the From your agent card on their Home page, and your card under People. If the deal falls through, nothing is lost and you are both back on the shortlist.</p>
+          <h3>Keep the relationship after close</h3>
+          <p>The buyer keeps Eave. You can gift the first year of Intelligence, and every reminder it sends for the next decade is a small reminder of who introduced them to it.</p>
+          <p style="margin-top:14px;"><strong>What you don&rsquo;t get.</strong> Eave never grades neighbourhoods or schools, never turns a photo estimate into an inspection, and never scrapes a listing. You bring the listing material; Eave reads what you give it.</p>
+          <a class="deep-link" href="/buyers">SEE THE BUYER&rsquo;S SIDE &rarr;</a>
+        </div>
+        <div>
+          <div class="p-shot"><img src="/images/opt/house-hunting-desktop.webp" width="1000" height="884" alt="The homes a buyer is considering, one with its inspection read into findings" loading="lazy" decoding="async"></div>
+          <!-- B9: partner Searches page with a buyer row "3 homes · 1 touring · 2 asks" (desktop) · B10: client detail, Search tab -->
+        </div>
+      </div>
+      <div style="margin-top:36px;max-width:760px;">
+        <p style="font-size:15px;line-height:1.75;color:var(--muted);">Two ways to bring a client into Eave: fund a seat for a homeowner you already serve, or run a search for a buyer you are helping find one. A search is $6.99 a month while they look, $10.99 a month in escrow, and $19.99 at close. Or $79.99 up front per client, twelve months, close included. Two document reads per home in the hunt, ten in escrow, top-ups at $0.99 for five. At close the search converts to Eave for the buyer, free or $2.99 a month, or the year you gift them. <a href="/pricing#buyers" style="color:var(--jade-text);">Buyers pricing &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
   <!-- ── AFTER CLOSING (feature-split reverse) ── -->
   <section class="support-section" id="after">
     <div class="container">
@@ -250,7 +283,7 @@
     <div class="container">
       <div class="section-header">
         <p class="label">Eave Leads</p>
-        <h2>Meet sellers before they&rsquo;re on Zillow</h2>
+        <h2>Meet sellers before they list</h2>
       </div>
       <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;">Homeowners getting ready to list can <em>choose</em> to send their home&rsquo;s packet to an agent &mdash; the projects, the records, the whole documented history. It&rsquo;s the earliest, highest-intent seller signal there is, and the homeowner is always the one who starts it. Eave is the conduit, never the broker: you never buy a name, and nothing is tied to a closing.</p>
     </div>
@@ -291,7 +324,7 @@
       </div>
       <div class="qa-item">
         <h3>What does it cost me?</h3>
-        <p>Flat and predictable. Cover your clients&rsquo; subscriptions and/or subscribe to Eave Leads. There&rsquo;s no per-deal fee and nothing tied to a closing.</p>
+        <p>Flat and predictable. Cover a client&rsquo;s subscription, run a buyer&rsquo;s search ($6.99 a month while they look, $10.99 in escrow, $19.99 at close, or $79.99 up front), and/or subscribe to Eave Leads. Nothing is a cut of anything.</p>
       </div>
       <div class="qa-item">
         <h3>Is this a referral-fee arrangement?</h3>
@@ -308,6 +341,18 @@
       <div class="qa-item">
         <h3>Can a client disconnect from me?</h3>
         <p>Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Can I start a search before my client signs up?</h3>
+        <p>Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Who owns the search?</h3>
+        <p>The buyer, at close. Your fee never buys their private notes.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does this replace my MLS tools?</h3>
+        <p>No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn&rsquo;t. No feed, no scraping.</p>
       </div>
       <div class="qa-item">
         <h3>Can my brokerage roll this out?</h3>
