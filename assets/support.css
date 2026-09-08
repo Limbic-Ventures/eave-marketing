@@ -607,3 +607,24 @@ footer {
   text-transform: uppercase; color: var(--muted);
 }
 .nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }
+
+/* ── Device frames for app screenshots (Sept 2026) ──
+   .device-browser = whole desktop screen, .device-phone = mobile screen,
+   .device-crop = one control at readable size, tagged with its screen. */
+.device { margin: 28px 0 8px; }
+.device-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; align-items: start; margin: 28px 0 8px; }
+.device-row .device { margin: 0; }
+.device-browser { border: 1px solid var(--stone); border-radius: 12px; overflow: hidden; background: #FCFAF5; box-shadow: 0 16px 44px rgba(31,58,82,.12); }
+.device-browser .bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--stone); }
+.device-browser .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--stone); display: block; }
+.device-browser .bar .url { margin: 0 auto; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--dim); background: #FCFAF5; border: 1px solid var(--stone); border-radius: 6px; padding: 2px 28px; }
+.device-browser img { display: block; width: 100%; height: auto; }
+.device-phone { width: min(260px, 100%); margin: 0 auto; background: #0E1520; border-radius: 34px; border: 3px solid #2A3040; padding: 3px; position: relative; box-shadow: 0 30px 60px rgba(31,58,82,.20); }
+.device-phone::before { content: ''; position: absolute; top: 3px; left: 50%; transform: translateX(-50%); width: 90px; height: 22px; background: #0E1520; border-radius: 0 0 16px 16px; z-index: 2; }
+.device-phone .screen { border-radius: 30px; overflow: hidden; background: #F4EFE6; }
+.device-phone img { display: block; width: 100%; height: auto; }
+.device-crop { display: inline-block; max-width: 100%; border: 1px solid var(--stone); border-radius: 10px; overflow: hidden; background: #FCFAF5; box-shadow: 0 8px 24px rgba(31,58,82,.10); }
+.device-crop .tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--jade-text); padding: 5px 12px; border-bottom: 1px solid var(--stone); background: var(--bg); }
+.device-crop img { display: block; max-width: 100%; height: auto; }
+.device-crop.wide img { width: 100%; }
+.device .shot-caption { margin-top: 10px; }

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eavehome.app/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -20,49 +20,49 @@
   </url>
   <url>
     <loc>https://eavehome.app/support/capturing-your-home</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/spaces-and-properties</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/systems-and-appliances</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/reminders-and-buy-links</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/care-plan</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/upkeep-score</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/contractors-and-hire-it-out</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/inspection-import</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -74,13 +74,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/support/manuals-and-insurance-import</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/connected-sources</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -98,25 +98,25 @@
   </url>
   <url>
     <loc>https://eavehome.app/support/intelligent-home-setup</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/structure-systems-and-appliances</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/utilities-and-providers</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/documents</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -128,13 +128,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/support/getting-started</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/support/data-privacy</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -152,7 +152,7 @@
   </url>
   <url>
     <loc>https://eavehome.app/guides/first-10-minutes-in-eave</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -164,31 +164,31 @@
   </url>
   <url>
     <loc>https://eavehome.app/guides/capturing-a-project-by-voice-or-text</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/guides/connecting-gmail-for-receipts</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/guides/seasonal-maintenance-setup</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/guides/getting-your-home-ready-to-sell</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/guides/home-inspection-to-upkeep-plan</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -206,103 +206,103 @@
   </url>
   <url>
     <loc>https://eavehome.app/features</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/home-knowledge-base</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/upkeep-score</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/capture</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/setup</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/intelligence</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/guardian</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/residential</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/commercial</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/pro</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/connected-sources</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/new-homeowners</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/home-sellers</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/home-buyers</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/landlords</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/for/diy-homeowners</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/why-eave</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -326,19 +326,19 @@
   </url>
   <url>
     <loc>https://eavehome.app/partners</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/partners/real-estate-agents</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/partners/home-inspectors</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <priority>0.4</priority>
     <changefreq>monthly</changefreq>
   </url>
