@@ -1261,11 +1261,12 @@
     .products-bg-layer.active { opacity:1; }
     .products-bg-layer[data-product="residential"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-residential.webp'); }
     .products-bg-layer[data-product="commercial"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-commercial.webp'); }
+    .products-bg-layer[data-product="buyers"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-buyers.webp'); }
     .products-bg-layer[data-product="guardian"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-guardian.webp'); }
     .products-bg-layer[data-product="pro"] { background-image: linear-gradient(rgba(244,239,230,.74), rgba(244,239,230,.84)), url('/images/opt/product-pro.webp'); }
     .products-section > .container { position:relative; z-index:1; }
 
-    /* ── PRODUCTS MENU: three worlds, subordinate add-ons ── */
+    /* ── PRODUCTS MENU: two families, subordinate add-ons ── */
   .nav-worlds a { color: var(--ink); }
   .nav-app { color: var(--muted); }
   .nav-worlds .nav-group {
@@ -1274,9 +1275,12 @@
     text-transform: uppercase; color: var(--muted);
   }
   .nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }
+  .nav-worlds .nav-group:first-child { border-top: 0; margin-top: 0; padding-top: 6px; }
+  .nav-worlds .nav-item a { padding-left: 26px; }
+
   </style>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Eave?", "acceptedAnswer": {"@type": "Answer", "text": "Eave is your building’s memory. Capture anything about the place you own — a home, a business, an HOA, or a church — and Eave remembers it, then tells you what to do next. How it works →"}}, {"@type": "Question", "name": "What’s the difference between Eave Residential, Commercial, and Partners?", "acceptedAnswer": {"@type": "Answer", "text": "They’re the three core apps — one for each kind of owner. Eave Residential is for homeowners, whether that’s one home or several. Eave for Buyers is the same app for the stretch before you own one: the search, the escrow, the close. Eave Commercial is for businesses and nonprofits: shops, HOAs and condos, churches and community centers, and small portfolios. Eave Partners is for the pros who help people through a home. Guardian and Pro aren’t separate apps — they’re add-ons that layer onto Eave Residential. Compare on the pricing page →"}}, {"@type": "Question", "name": "Is Eave free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Eave Residential is free for one home, forever, with no credit card. Eave Intelligence ($2.99/mo) and Multi-Property are optional upgrades, Eave Guardian is coming soon, and commercial editions have their own plans. See full pricing →"}}, {"@type": "Question", "name": "Do I need to download an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon. Getting started →"}}, {"@type": "Question", "name": "How long does setup take?", "acceptedAnswer": {"@type": "Answer", "text": "About ten minutes if the closing folder is handy. Drop in the paperwork, Eave reads it and files what it finds, and you review the rest when you have time. Nothing shows as overdue in your first ninety days. You can also skip setup and capture the first thing that’s bugging you. How setup works →"}}, {"@type": "Question", "name": "Who is Eave for?", "acceptedAnswer": {"@type": "Answer", "text": "Three kinds of owner, with an app for each. Homeowners use Eave Residential. Businesses and nonprofits — shops, HOAs and condos, churches and community centers, and small multifamily operators — use Eave Commercial. And Eave Partners is for the agents and inspectors who help people through a home."}}, {"@type": "Question", "name": "Is my data private?", "acceptedAnswer": {"@type": "Answer", "text": "Your data is yours. Nothing saves until you review it, it’s stored with row-level security, and you can export or delete everything at any time. Data & privacy →"}}, {"@type": "Question", "name": "Can Eave help when I’m buying or selling?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — that’s when it earns its keep. Sellers use Eave to get ready and hand the buyer a documented home. Buyers can start before they’ve found the house: line up every home you’re considering, see what the listing never says, read the seller’s documents, and close into a home that’s already set up. For sellers → · Eave for Buyers →"}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Eave?", "acceptedAnswer": {"@type": "Answer", "text": "Eave is your building’s memory. Capture anything about the place you own — a home, a business, an HOA, or a church — and Eave remembers it, then tells you what to do next. How it works →"}}, {"@type": "Question", "name": "What’s the difference between Residential, Commercial, Buyers, and Partners?", "acceptedAnswer": {"@type": "Answer", "text": "Two families. Property upkeep is for keeping a place up: Eave Residential for homeowners, one home or several, and Eave Commercial for businesses and nonprofits. Property transactions is for getting through a sale: Eave for Buyers for the stretch before you own a home, and Eave Partners for the agents and inspectors who help people through one. Guardian and Pro are add-ons that layer onto Residential. Compare on the pricing page →"}}, {"@type": "Question", "name": "Is Eave free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Eave Residential is free for one home, forever, with no credit card. Eave Intelligence ($2.99/mo) and Multi-Property are optional upgrades, Eave Guardian is coming soon, and commercial editions have their own plans. See full pricing →"}}, {"@type": "Question", "name": "Do I need to download an app?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave runs in any browser at app.eavehome.app — phone, tablet, or desktop. Native iOS and Android apps are coming soon. Getting started →"}}, {"@type": "Question", "name": "How long does setup take?", "acceptedAnswer": {"@type": "Answer", "text": "About ten minutes if the closing folder is handy. Drop in the paperwork, Eave reads it and files what it finds, and you review the rest when you have time. Nothing shows as overdue in your first ninety days. You can also skip setup and capture the first thing that’s bugging you. How setup works →"}}, {"@type": "Question", "name": "Who is Eave for?", "acceptedAnswer": {"@type": "Answer", "text": "Two jobs, with an app for each. Keeping a property up: homeowners use Eave Residential, and businesses and nonprofits use Eave Commercial. Getting through a transaction: buyers use Eave for Buyers before they own the house, and agents and inspectors use Eave Partners."}}, {"@type": "Question", "name": "Is my data private?", "acceptedAnswer": {"@type": "Answer", "text": "Your data is yours. Nothing saves until you review it, it’s stored with row-level security, and you can export or delete everything at any time. Data & privacy →"}}, {"@type": "Question", "name": "Can Eave help when I’m buying or selling?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — that’s when it earns its keep. Sellers use Eave to get ready and hand the buyer a documented home. Buyers can start before they’ve found the house: line up every home you’re considering, see what the listing never says, read the seller’s documents, and close into a home that’s already set up. For sellers → · Eave for Buyers →"}}]}
   </script>
 
   <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
@@ -1337,6 +1341,9 @@
     .tri-prompt{font-family:'IBM Plex Mono',monospace;font-size: 12px;letter-spacing:.16em;
       text-transform:uppercase;color:var(--muted);margin-bottom:22px}
     .triptych{display:flex;gap:14px;min-height:540px}
+    .tri-rows{display:grid;gap:22px;margin-top:8px}
+    .tri-row-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--jade-text);margin:0 0 10px}
+    .tri-row .triptych{min-height:400px}
     .door{position:relative;flex:1 1 0;border:1px solid var(--stone);border-radius:16px;overflow:hidden;
       text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:flex-end;
       padding:30px;transition:flex .55s cubic-bezier(.2,.7,.2,1),filter .45s ease,box-shadow .45s ease;min-width:0}
@@ -1370,7 +1377,8 @@
       transform:translateX(-100%);animation:heldsweep 3.2s ease-in-out infinite}
     @keyframes heldsweep{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
     @media(max-width:900px){
-      .triptych{flex-direction:column;min-height:0}
+      .triptych,.tri-row .triptych{flex-direction:column;min-height:0}
+      .tri-rows{gap:28px}
       .door{min-height:270px;flex:1 1 auto!important}
       .door.active{flex:1 1 auto!important;box-shadow:none}
       .triptych.has-active .door:not(.active){filter:none}
@@ -1397,12 +1405,14 @@
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
-            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
-            <li><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
-            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
-            <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
+            <li class="nav-group">Property upkeep</li>
+            <li class="nav-item"><a href="/residential">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li class="nav-item"><a href="/commercial">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
+            <li class="nav-group">Property transactions</li>
+            <li class="nav-item"><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
+            <li class="nav-item"><a href="/partners">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -1430,13 +1440,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <div class="mobile-menu-label">Property upkeep</div>
+    <a href="/residential" onclick="closeMobile()">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
+    <div class="mobile-menu-label">Property transactions</div>
     <a href="/buyers" onclick="closeMobile()">Buyers<span class="nav-app"> &middot; before you own it</span></a>
-    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
-    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
+    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -1516,19 +1527,21 @@
       <div class="tri-head fade-in">
         <p class="label">Before you pick</p>
         <div class="section-head">
-          <h2>Who&rsquo;s on the hook<br>when it breaks?</h2>
-          <p>Eave does the remembering: what&rsquo;s due, what&rsquo;s aging, what it&rsquo;ll cost.</p>
+          <h2>Keep it up,<br>or get through the sale.</h2>
+          <p>Two families of product. Eave does the remembering either way: what&rsquo;s due, what&rsquo;s aging, what it&rsquo;ll cost.</p>
         </div>
       </div>
       <p class="tri-prompt fade-in">Choose the door that&rsquo;s yours &rarr;</p>
 
-      <div class="triptych">
-
+      <div class="tri-rows">
+        <div class="tri-row">
+          <p class="tri-row-label">Property upkeep &middot; keep it up</p>
+          <div class="triptych">
         <a class="door" href="/residential" data-world="residential">
           <div class="door-bg" style="background-image:url('/images/opt/product-residential.webp')"></div>
           <div class="door-frost"></div>
           <div class="door-inner">
-            <p class="door-eyebrow">Homeowners &middot; Eave Residential</p>
+            <p class="door-eyebrow">Homeowners &middot; Residential Upkeep</p>
             <h3 class="door-title">One home or many,<br>remembered.</h3>
             <p class="door-value">Every system, appliance, and project in one memory that tells you what&rsquo;s next.</p>
             <div class="door-editions">
@@ -1543,7 +1556,7 @@
           <div class="door-bg" style="background-image:url('/images/opt/product-commercial.webp')"></div>
           <div class="door-frost"></div>
           <div class="door-inner">
-            <p class="door-eyebrow">Businesses &amp; nonprofits &middot; Eave Commercial</p>
+            <p class="door-eyebrow">Businesses &amp; nonprofits &middot; Commercial Upkeep</p>
             <h3 class="door-title">Storefronts, HOAs,<br>churches, portfolios.</h3>
             <p class="door-value">The same building memory &mdash; priced by the door or the location, never per seat.</p>
             <div class="door-editions">
@@ -1553,12 +1566,30 @@
             <span class="door-enter">Enter &rarr;</span>
           </div>
         </a>
+          </div>
+        </div>
+        <div class="tri-row">
+          <p class="tri-row-label">Property transactions &middot; buy it, sell it</p>
+          <div class="triptych">
+        <a class="door" href="/buyers" data-world="buyers">
+          <div class="door-bg" style="background-image:url('/images/opt/product-buyers.webp')"></div>
+          <div class="door-frost"></div>
+          <div class="door-inner">
+            <p class="door-eyebrow">Buying a home &middot; Eave for Buyers</p>
+            <h3 class="door-title">Know the house<br>before you own it.</h3>
+            <p class="door-value">Line up the homes you&rsquo;re considering, see what the listing never says, and close into a home that&rsquo;s already set up.</p>
+            <div class="door-editions">
+              <span class="chip">The hunt</span><span class="chip">Escrow</span><span class="chip">Close</span>
+            </div>
+            <span class="door-enter">Enter &rarr;</span>
+          </div>
+        </a>
 
         <a class="door" href="/partners" data-world="partners">
           <div class="door-bg" style="background-image:url('/images/opt/product-partners.webp')"></div>
           <div class="door-frost"></div>
           <div class="door-inner">
-            <p class="door-eyebrow">Pros &amp; agents &middot; Eave Partners</p>
+            <p class="door-eyebrow">Agents &amp; inspectors &middot; Eave Partners</p>
             <h3 class="door-title">Your clients&rsquo; homes,<br>documented.</h3>
             <p class="door-value">Help sellers show up to listing day ready &mdash; and stay their go-to long after closing.</p>
             <div class="door-editions">
@@ -1567,7 +1598,8 @@
             <span class="door-enter">Enter &rarr;</span>
           </div>
         </a>
-
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1698,11 +1730,11 @@
       </div>
       <div class="home-faq-list fade-in" style="transition-delay:.1s;">
         <div class="home-faq-item"><h3 class="home-faq-q">What is Eave?</h3><div class="home-faq-a">Eave is your building&rsquo;s memory. Capture anything about the place you own &mdash; a home, a business, an HOA, or a church &mdash; and Eave remembers it, then tells you what to do next. <a href="/#how-it-works">How it works &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">What&rsquo;s the difference between Eave Residential, Commercial, and Partners?</h3><div class="home-faq-a">They&rsquo;re the three core apps &mdash; one for each kind of owner. <strong>Eave Residential</strong> is for homeowners, whether that&rsquo;s one home or several. <strong>Eave for Buyers</strong> is the same app for the stretch before you own one: the search, the escrow, the close. <strong>Eave Commercial</strong> is for businesses and nonprofits: shops, HOAs and condos, churches and community centers, and small portfolios. <strong>Eave Partners</strong> is for the pros who help people through a home. Guardian and Pro aren&rsquo;t separate apps &mdash; they&rsquo;re add-ons that layer onto Eave Residential. <a href="/pricing">Compare on the pricing page &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">What&rsquo;s the difference between Residential, Commercial, Buyers, and Partners?</h3><div class="home-faq-a">Two families. <strong>Property upkeep</strong> is for keeping a place up: <strong>Eave Residential</strong> for homeowners, one home or several, and <strong>Eave Commercial</strong> for businesses and nonprofits. <strong>Property transactions</strong> is for getting through a sale: <strong>Eave for Buyers</strong> for the stretch before you own a home, and <strong>Eave Partners</strong> for the agents and inspectors who help people through one. Guardian and Pro are add-ons that layer onto Residential. <a href="/pricing">Compare on the pricing page &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is Eave free?</h3><div class="home-faq-a">Yes &mdash; Eave Residential is free for one home, forever, with no credit card. Eave Intelligence ($2.99/mo) and Multi-Property are optional upgrades, Eave Guardian is coming soon, and commercial editions have their own plans. <a href="/pricing">See full pricing &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Do I need to download an app?</h3><div class="home-faq-a">No. Eave runs in any browser at app.eavehome.app &mdash; phone, tablet, or desktop. Native iOS and Android apps are coming soon. <a href="/support/getting-started">Getting started &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">How long does setup take?</h3><div class="home-faq-a">About ten minutes if the closing folder is handy. Drop in the paperwork, Eave reads it and files what it finds, and you review the rest when you have time. Nothing shows as overdue in your first ninety days. You can also skip setup and capture the first thing that&rsquo;s bugging you. <a href="/features/setup">How setup works &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">Who is Eave for?</h3><div class="home-faq-a">Three kinds of owner, with an app for each. Homeowners use <a href="/residential">Eave Residential</a>. Businesses and nonprofits &mdash; shops, HOAs and condos, churches and community centers, and small multifamily operators &mdash; use <a href="/commercial">Eave Commercial</a>. And <a href="/partners">Eave Partners</a> is for the agents and inspectors who help people through a home.</div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">Who is Eave for?</h3><div class="home-faq-a">Two jobs, with an app for each. Keeping a property up: homeowners use <a href="/residential">Eave Residential</a>, and businesses and nonprofits use <a href="/commercial">Eave Commercial</a>. Getting through a transaction: buyers use <a href="/buyers">Eave for Buyers</a> before they own the house, and agents and inspectors use <a href="/partners">Eave Partners</a>.</div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is my data private?</h3><div class="home-faq-a">Your data is yours. Nothing saves until you review it, it&rsquo;s stored with row-level security, and you can export or delete everything at any time. <a href="/support/data-privacy">Data &amp; privacy &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Can Eave help when I&rsquo;m buying or selling?</h3><div class="home-faq-a">Yes &mdash; that&rsquo;s when it earns its keep. Sellers use Eave to get ready and hand the buyer a documented home. Buyers can start before they&rsquo;ve found the house: line up every home you&rsquo;re considering, see what the listing never says, read the seller&rsquo;s documents, and close into a home that&rsquo;s already set up. <a href="/for/home-sellers">For sellers &rarr;</a> &middot; <a href="/buyers">Eave for Buyers &rarr;</a></div></div>
       </div>
@@ -1943,11 +1975,12 @@
   <script>
   /* Triptych — hover/focus fork with ambient cycle (Variant B) */
   (function(){
-    var tri=document.querySelector('.triptych'); if(!tri) return;
-    var doors=[].slice.call(tri.querySelectorAll('.door'));
+    var tris=[].slice.call(document.querySelectorAll('.triptych')); if(!tris.length) return;
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var narrow=window.matchMedia('(max-width:900px)').matches;
     if(reduce||narrow) return;
+    tris.forEach(function(tri, row){
+    var doors=[].slice.call(tri.querySelectorAll('.door')); if(!doors.length) return;
     var timer=null, idx=0;
     function setActive(i){
       idx=i; tri.classList.add('has-active');
@@ -1960,7 +1993,9 @@
       d.addEventListener('focusin', function(){ stop(); setActive(i); });
     });
     tri.addEventListener('mouseleave', function(){ start(); });
-    setActive(0); start();
+    setActive(0);
+    setTimeout(start, row*2100);
+    });
   })();
   </script>
 

@@ -1198,7 +1198,7 @@
   padding: 14px 0 6px; border-bottom: 1px solid var(--stone);
 }
 
-    /* ── PRODUCTS MENU: three worlds, subordinate add-ons ── */
+    /* ── PRODUCTS MENU: two families, subordinate add-ons ── */
   .nav-worlds a { color: var(--ink); }
   .nav-app { color: var(--muted); }
   .nav-worlds .nav-group {
@@ -1207,6 +1207,9 @@
     text-transform: uppercase; color: var(--muted);
   }
   .nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }
+  .nav-worlds .nav-group:first-child { border-top: 0; margin-top: 0; padding-top: 6px; }
+  .nav-worlds .nav-item a { padding-left: 26px; }
+
   </style>
   <style>
     /* ── HOME MOMENTS (3-phase strip, relocated from the homepage) ── */
@@ -1294,12 +1297,14 @@
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
-            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
-            <li><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
-            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
-            <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
+            <li class="nav-group">Property upkeep</li>
+            <li class="nav-item"><a href="/residential">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li class="nav-item"><a href="/commercial">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
+            <li class="nav-group">Property transactions</li>
+            <li class="nav-item"><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
+            <li class="nav-item"><a href="/partners">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -1327,13 +1332,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <div class="mobile-menu-label">Property upkeep</div>
+    <a href="/residential" onclick="closeMobile()">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
+    <div class="mobile-menu-label">Property transactions</div>
     <a href="/buyers" onclick="closeMobile()">Buyers<span class="nav-app"> &middot; before you own it</span></a>
-    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
-    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
+    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -1362,7 +1368,7 @@
       <div class="hero-grid">
 
         <div class="fade-in">
-          <p class="hero-eyebrow">Eave for Buyers</p>
+          <p class="hero-eyebrow">Property transactions &middot; Eave for Buyers</p>
           <h1 class="hero-headline">Buying a home?<br>Know it before<br>you own it.</h1>
           <p class="hero-sub">The listing tells you the square footage and the kitchen. It doesn&rsquo;t tell you the flood zone, the tax rate, what the disclosures actually say, or what the roof will cost. Eave does, for every house you&rsquo;re considering, side by side. When you close, the one you chose arrives in Eave already known.</p>
           <div style="margin-top:28px;">
