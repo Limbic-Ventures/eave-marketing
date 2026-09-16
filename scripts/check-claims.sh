@@ -31,6 +31,10 @@ PATTERNS=(
   'smart-home accounts are coming'
   'store &amp; smart-home accounts rolling out'
   'Smart-home connections</strong> &mdash; read-only device'
+  'three core apps'
+  'Three kinds of owner'
+  'for pros &amp; agents'
+  'three worlds, subordinate'
 )
 fail=0
 for p in "${PATTERNS[@]}"; do

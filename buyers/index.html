@@ -50,7 +50,7 @@
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://eavehome.app/"}, {"@type": "ListItem", "position": 2, "name": "Eave for Buyers", "item": "https://eavehome.app/buyers"}]}
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I haven’t picked a house yet. Is this for me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. That is exactly when it helps. Line up the homes you are considering and Eave answers the same questions about each of them: what the ground and the county say, what the documents say, and what it will roughly cost to bring the house up."}}, {"@type": "Question", "name": "Do I need my agent to use Eave?", "acceptedAnswer": {"@type": "Answer", "text": "No. If your agent runs their buyers in Eave, they will invite you and your search is waiting when you sign in. If they don’t, start one yourself."}}, {"@type": "Question", "name": "Where do the flood, fire, and tax numbers come from?", "acceptedAnswer": {"@type": "Answer", "text": "Official zone maps and county records, each labelled with its source and date. Eave shows the official designation and links the model behind it. It never presents a vendor’s risk score as a fact, and an estimate always says estimate."}}, {"@type": "Question", "name": "Is the cost estimate an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a range from photos and documents, with the evidence shown beside it. Rough ranges from photos and documents. Not an inspection. Not an appraisal. Get a licensed inspection before you rely on a number to make an offer."}}, {"@type": "Question", "name": "What happens to the seller’s documents?", "acceptedAnswer": {"@type": "Answer", "text": "They stay on the house they are about. Eave reads a document only when you ask, keeps every original, and shows what changed when a newer version arrives. Your notes are private unless you share one, and the search is yours at close. How documents are handled →"}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free to try on three homes, facts only. Then $6.99 a month while you look, $10.99 a month once you are under contract, and $19.99 at close. Or $79.99 up front for the whole purchase, twelve months, close included. If your agent runs the search, they cover it. See Buyers pricing →"}}, {"@type": "Question", "name": "What about after I close?", "acceptedAnswer": {"@type": "Answer", "text": "Your home is in Eave, already set up from everything the search learned. Free for one property; Intelligence is $2.99 a month."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I haven’t picked a house yet. Is this for me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. That is exactly when it helps. Line up the homes you are considering and Eave answers the same questions about each of them: what the ground and the county say, what the documents say, and what it will roughly cost to bring the house up."}}, {"@type": "Question", "name": "Do I need my agent to use Eave?", "acceptedAnswer": {"@type": "Answer", "text": "No. If your agent runs their buyers in Eave, they will invite you and your search is waiting when you sign in. If they don’t, start one yourself."}}, {"@type": "Question", "name": "Where do the flood, fire, and tax numbers come from?", "acceptedAnswer": {"@type": "Answer", "text": "Official zone maps and county records, each labelled with its source and date. Eave shows the official designation and links the model behind it. It never presents a vendor’s risk score as a fact, and an estimate always says estimate."}}, {"@type": "Question", "name": "Is the cost estimate an inspection?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is a range from photos and documents, with the evidence shown beside it. Rough ranges from photos and documents. Not an inspection. Not an appraisal. Get a licensed inspection before you rely on a number to make an offer."}}, {"@type": "Question", "name": "What happens to the seller’s documents?", "acceptedAnswer": {"@type": "Answer", "text": "They stay on the house they are about. Eave reads a document only when you ask, keeps every original, and shows what changed when a newer version arrives. Your notes are private unless you share one, and the search is yours at close. How documents are handled →"}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Free to try on three homes, facts only. Then $3.99 a month for the whole process, hunt through escrow, or $39.99 up front for as long as it takes to close. Either way, $19.99 at close converts the search into your home in Residential Upkeep. If your agent runs the search, they cover it. See Buyers pricing →"}}, {"@type": "Question", "name": "What about after I close?", "acceptedAnswer": {"@type": "Answer", "text": "Your home is in Eave, already set up from everything the search learned. Free for one property; Intelligence is $2.99 a month."}}]}
   </script>
 
   <style>
@@ -1198,7 +1198,7 @@
   padding: 14px 0 6px; border-bottom: 1px solid var(--stone);
 }
 
-    /* ── PRODUCTS MENU: three worlds, subordinate add-ons ── */
+    /* ── PRODUCTS MENU: two families, subordinate add-ons ── */
   .nav-worlds a { color: var(--ink); }
   .nav-app { color: var(--muted); }
   .nav-worlds .nav-group {
@@ -1207,6 +1207,9 @@
     text-transform: uppercase; color: var(--muted);
   }
   .nav-addon a, a.nav-addon { padding-left: 26px; color: var(--muted); }
+  .nav-worlds .nav-group:first-child { border-top: 0; margin-top: 0; padding-top: 6px; }
+  .nav-worlds .nav-item a { padding-left: 26px; }
+
   </style>
   <style>
     /* ── HOME MOMENTS (3-phase strip, relocated from the homepage) ── */
@@ -1294,12 +1297,14 @@
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
-            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
-            <li><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
-            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
-            <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
+            <li class="nav-group">Property upkeep</li>
+            <li class="nav-item"><a href="/residential">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li class="nav-item"><a href="/commercial">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
+            <li class="nav-group">Property transactions</li>
+            <li class="nav-item"><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
+            <li class="nav-item"><a href="/partners">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -1327,13 +1332,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <div class="mobile-menu-label">Property upkeep</div>
+    <a href="/residential" onclick="closeMobile()">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
+    <div class="mobile-menu-label">Property transactions</div>
     <a href="/buyers" onclick="closeMobile()">Buyers<span class="nav-app"> &middot; before you own it</span></a>
-    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
-    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
+    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -1362,7 +1368,7 @@
       <div class="hero-grid">
 
         <div class="fade-in">
-          <p class="hero-eyebrow">Eave for Buyers</p>
+          <p class="hero-eyebrow">Property transactions &middot; Eave for Buyers</p>
           <h1 class="hero-headline">Buying a home?<br>Know it before<br>you own it.</h1>
           <p class="hero-sub">The listing tells you the square footage and the kitchen. It doesn&rsquo;t tell you the flood zone, the tax rate, what the disclosures actually say, or what the roof will cost. Eave does, for every house you&rsquo;re considering, side by side. When you close, the one you chose arrives in Eave already known.</p>
           <div style="margin-top:28px;">
@@ -1599,7 +1605,7 @@
           <p class="moment-desc">Start a search yourself. Add three homes and see the ground and county facts free. Reads and documents when you are ready. It runs in any browser, so there is nothing to install.</p>
           <ul class="moment-list">
             <li>Three homes and their facts, free</li>
-            <li>$6.99 a month while you look, when you want reads</li>
+            <li>$3.99 a month when you want reads, for the whole process</li>
             <li>Invite your agent later, or never</li>
           </ul>
           <span class="moment-link">Start your search &rarr;</span>
@@ -1626,47 +1632,45 @@
       <div class="fade-in">
         <p class="label">Pricing</p>
         <div class="section-head">
-          <h2>Cheap to start.<br>Weighted to the close.</h2>
-          <p>Free to try on three homes. Then a monthly line while you look, a monthly line in escrow, and a fee at close. Or one price for the whole purchase. If your agent runs the search, they cover it.</p>
+          <h2>One price, hunt through escrow.<br>A conversion at close.</h2>
+          <p>Free to try on three homes. Then $3.99 a month for the whole process, or $39.99 up front for as long as it takes to close. At close, $19.99 converts the search into your home in Residential Upkeep. If your agent runs the search, they cover it.</p>
         </div>
       </div>
       <div class="tier-grid fade-in" style="transition-delay:.1s;">
 
         <div class="tier-card tier-free">
           <div class="tier-eyebrow tier-eyebrow-buyers">EAVE FOR BUYERS</div>
-          <div class="tier-price-line"><span class="tier-price-big">$6.99</span><span class="tier-price-small">/mo while you look</span></div>
+          <div class="tier-price-line"><span class="tier-price-big">$3.99</span><span class="tier-price-small">/mo for the whole process</span></div>
           <div class="tier-price-note">free to try on 3 homes &middot; no card &middot; any browser</div>
           <div class="tier-divider"></div>
           <dl class="tier-rows">
-            <dt>While you look</dt><dd>$6.99/mo</dd>
-            <dt>Under contract</dt><dd>$10.99/mo</dd>
-            <dt>At close</dt><dd>$19.99</dd>
-            <dt>Or one price, close included</dt><dd>$79.99</dd>
+            <dt>Hunt through escrow, one line</dt><dd>$3.99/mo</dd>
+            <dt>Or up front, until it closes</dt><dd>$39.99</dd>
+            <dt>Conversion at close, either plan</dt><dd>$19.99</dd>
             <dt>Five more document reads</dt><dd>$0.99</dd>
           </dl>
           <div class="tier-checklist">
             <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Free try</strong> &mdash; 3 homes and their facts, no document reads</span></div>
             <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>The shortlist</strong> &mdash; flood, fire, seismic, school district, tax rate, broadband on every home, sourced and dated</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Reads</strong> &mdash; 2 per home while you look, 10 in escrow</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Homes and reads</strong> &mdash; up to 30 homes per search, compared side by side or top three; 2 reads per home while you look, 10 in escrow</span></div>
             <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Costs and Compare</strong> &mdash; ranges from photos and documents, the top three on the all-in, PDF export</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Escrow</strong> &mdash; checklist by stage, contingency dates, daily digest, version control</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>At close</strong> &mdash; your home in Eave, already set up. Free, or Intelligence at $2.99/mo</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>Escrow</strong> &mdash; the same search at the same price: checklist by stage, contingency dates, daily digest, version control</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-free">&#10003;</span><span class="tier-check-text"><strong>At close</strong> &mdash; $19.99 converts the search into your home in Residential Upkeep, already set up. Free, or Intelligence at $2.99/mo</span></div>
           </div>
           <div style="margin-top:24px;"><a href="https://app.eavehome.app/welcome/buying" class="btn btn-jade" style="width:100%;text-align:center;">Start your search &rarr;</a></div>
         </div>
 
         <div class="tier-card tier-intel">
-          <div class="tier-eyebrow tier-eyebrow-agents">FOR BUYER&rsquo;S AGENTS</div>
-          <div class="tier-price-line"><span class="tier-price-big">$79.99</span><span class="tier-price-small">per client, up front</span></div>
-          <div class="tier-price-note">or the same monthly lines, on your firm&rsquo;s account</div>
+          <div class="tier-eyebrow tier-eyebrow-agents">WITH YOUR AGENT</div>
+          <div class="tier-price-line"><span class="tier-price-big">Same price</span><span class="tier-price-small">they cover it</span></div>
+          <div class="tier-price-note">$3.99/mo or $39.99 up front, on your agent&rsquo;s account</div>
           <div class="tier-divider"></div>
           <div class="tier-checklist">
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Start before they sign up</strong> &mdash; add the buyer, line up homes, send one invite; everything moves to them when they claim it</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Per active search</strong> &mdash; $6.99/mo in the hunt, $10.99/mo in escrow, $19.99 at close</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Or one price per client</strong> &mdash; $79.99, twelve months, close included</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Top-ups</strong> &mdash; 5 more document reads for $0.99, shared across both phases</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>At close</strong> &mdash; gift the buyer their first year of Intelligence, or they choose free or $2.99/mo</span></div>
-            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Seats</strong> for homeowners you already serve are separate</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Your search is waiting</strong> &mdash; your agent starts it before you have an account; one invite moves it to you</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>The same search, the same prices</strong> &mdash; nothing changes except who pays; they can pick the upfront option for you</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>At close</strong> &mdash; the $19.99 conversion carries you into Residential Upkeep; your agent can gift your first year of Intelligence</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>Your notes stay yours</strong> &mdash; private unless you share one; the search is yours at close</span></div>
+            <div class="tier-check-item"><span class="tier-check-icon-intel">&#10003;</span><span class="tier-check-text"><strong>For agents</strong> &mdash; the Eave Partners console is free to set up; you pay only for the seats and searches you bring clients</span></div>
           </div>
           <div style="margin-top:24px;"><a href="/partners/real-estate-agents#buyers" class="btn btn-outline" style="width:100%;text-align:center;color:var(--bg);border-color:rgba(244,239,230,.35);">For buyer&rsquo;s agents &rarr;</a></div>
         </div>
@@ -1689,7 +1693,7 @@
         <div class="home-faq-item"><h3 class="home-faq-q">Where do the flood, fire, and tax numbers come from?</h3><div class="home-faq-a">Official zone maps and county records, each labelled with its source and date. Eave shows the official designation and links the model behind it. It never presents a vendor&rsquo;s risk score as a fact, and an estimate always says estimate.</div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">Is the cost estimate an inspection?</h3><div class="home-faq-a">No. It is a range from photos and documents, with the evidence shown beside it. Rough ranges from photos and documents. Not an inspection. Not an appraisal. Get a licensed inspection before you rely on a number to make an offer.</div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">What happens to the seller&rsquo;s documents?</h3><div class="home-faq-a">They stay on the house they are about. Eave reads a document only when you ask, keeps every original, and shows what changed when a newer version arrives. Your notes are private unless you share one, and the search is yours at close. <a href="/support/buying-with-eave">How documents are handled &rarr;</a></div></div>
-        <div class="home-faq-item"><h3 class="home-faq-q">What does it cost?</h3><div class="home-faq-a">Free to try on three homes, facts only. Then $6.99 a month while you look, $10.99 a month once you are under contract, and $19.99 at close. Or $79.99 up front for the whole purchase, twelve months, close included. If your agent runs the search, they cover it. <a href="/pricing#buyers">See Buyers pricing &rarr;</a></div></div>
+        <div class="home-faq-item"><h3 class="home-faq-q">What does it cost?</h3><div class="home-faq-a">Free to try on three homes, facts only. Then $3.99 a month for the whole process, hunt through escrow, or $39.99 up front for as long as it takes to close. Either way, $19.99 at close converts the search into your home in Residential Upkeep. If your agent runs the search, they cover it. <a href="/pricing#buyers">See Buyers pricing &rarr;</a></div></div>
         <div class="home-faq-item"><h3 class="home-faq-q">What about after I close?</h3><div class="home-faq-a">Your home is in Eave, already set up from everything the search learned. Free for one property; Intelligence is $2.99 a month.</div></div>
       </div>
     </div>

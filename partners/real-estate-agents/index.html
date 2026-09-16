@@ -86,7 +86,7 @@
     .wl-textarea:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
   </style>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Flat and predictable. Cover a client’s subscription, run a buyer’s search ($6.99 a month while they look, $10.99 in escrow, $19.99 at close, or $79.99 up front), and/or subscribe to Eave Leads. Nothing is a cut of anything."}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}, {"@type": "Question", "name": "Can I start a search before my client signs up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it."}}, {"@type": "Question", "name": "Who owns the search?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, at close. Your fee never buys their private notes."}}, {"@type": "Question", "name": "Does this replace my MLS tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn’t. No feed, no scraping."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Setting up Eave Partners is free; it is part of your own Eave account. What you pay for is flat and predictable. A client seat is $2.99 per client per month, bought one at a time or five at a time, and a one-time 12-month gift is also available. A buyer’s search is $3.99 a month for the whole process, hunt through escrow, or $39.99 up front until it closes, with a $19.99 conversion at close on either plan. Eave Leads is a flat subscription. Nothing is a cut of anything. Partner pricing →"}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}, {"@type": "Question", "name": "Can I start a search before my client signs up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it."}}, {"@type": "Question", "name": "Who owns the search?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, at close. Your fee never buys their private notes."}}, {"@type": "Question", "name": "Does this replace my MLS tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn’t. No feed, no scraping."}}]}
   </script>
   <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -101,12 +101,14 @@
         <li class="nav-dropdown">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Products <span class="nav-caret">&#9662;</span></button>
           <ul class="nav-dropdown-menu nav-worlds">
-            <li><a href="/residential">Residential<span class="nav-app"> &middot; for homeowners</span></a></li>
-            <li><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
-            <li><a href="/commercial">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
-            <li><a href="/partners">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a></li>
+            <li class="nav-group">Property upkeep</li>
+            <li class="nav-item"><a href="/residential">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a></li>
+            <li class="nav-item"><a href="/commercial">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a></li>
+            <li class="nav-group">Property transactions</li>
+            <li class="nav-item"><a href="/buyers">Buyers<span class="nav-app"> &middot; before you own it</span></a></li>
+            <li class="nav-item"><a href="/partners">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a></li>
             <li class="nav-group">Add-ons</li>
-            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a></li>
+            <li class="nav-addon"><a href="/features/guardian">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a></li>
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
@@ -134,13 +136,14 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-label">Products</div>
-    <a href="/residential" onclick="closeMobile()">Residential<span class="nav-app"> &middot; for homeowners</span></a>
+    <div class="mobile-menu-label">Property upkeep</div>
+    <a href="/residential" onclick="closeMobile()">Residential Upkeep<span class="nav-app"> &middot; for homeowners</span></a>
+    <a href="/commercial" onclick="closeMobile()">Commercial Upkeep<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
+    <div class="mobile-menu-label">Property transactions</div>
     <a href="/buyers" onclick="closeMobile()">Buyers<span class="nav-app"> &middot; before you own it</span></a>
-    <a href="/commercial" onclick="closeMobile()">Commercial<span class="nav-app"> &middot; for businesses &amp; nonprofits</span></a>
-    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for pros &amp; agents</span></a>
+    <a href="/partners" onclick="closeMobile()">Partners<span class="nav-app"> &middot; for agents &amp; inspectors</span></a>
     <div class="mobile-menu-label">Add-ons</div>
-    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection, coming soon</span></a>
+    <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
     <div class="mobile-menu-label">Explore</div>
     <a href="/features" onclick="closeMobile()">Features</a>
@@ -242,7 +245,7 @@
         </div>
       </div>
       <div style="margin-top:36px;max-width:760px;">
-        <p style="font-size:15px;line-height:1.75;color:var(--muted);">Two ways to bring a client into Eave: fund a seat for a homeowner you already serve, or run a search for a buyer you are helping find one. A search is $6.99 a month while they look, $10.99 a month in escrow, and $19.99 at close. Or $79.99 up front per client, twelve months, close included. Two document reads per home in the hunt, ten in escrow, top-ups at $0.99 for five. At close the search converts to Eave for the buyer, free or $2.99 a month, or the year you gift them. <a href="/pricing#buyers" style="color:var(--jade-text);">Buyers pricing &rarr;</a></p>
+        <p style="font-size:15px;line-height:1.75;color:var(--muted);">Eave Partners is free to set up, and your whole team works in it at no charge. Two ways to bring a client into Eave: fund a seat for a homeowner you already serve ($2.99 per client per month, one at a time or five at a time), or run a search for a buyer you are helping find one. A search is $3.99 a month for the whole process, hunt through escrow on one line, or $39.99 up front per client until it closes. At close, $19.99 converts the search into the buyer&rsquo;s home in Residential Upkeep, free or $2.99 a month, or the year you gift them. Two document reads per home in the hunt, ten in escrow, top-ups at $0.99 for five. <a href="/pricing#buyers" style="color:var(--jade-text);">Buyers pricing &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -326,7 +329,7 @@
       </div>
       <div class="qa-item">
         <h3>What does it cost me?</h3>
-        <p>Flat and predictable. Cover a client&rsquo;s subscription, run a buyer&rsquo;s search ($6.99 a month while they look, $10.99 in escrow, $19.99 at close, or $79.99 up front), and/or subscribe to Eave Leads. Nothing is a cut of anything.</p>
+        <p>Setting up Eave Partners is free; it is part of your own Eave account. What you pay for is flat and predictable. A client seat is $2.99 per client per month, bought one at a time or five at a time, and a one-time 12-month gift is also available. A buyer&rsquo;s search is $3.99 a month for the whole process, hunt through escrow, or $39.99 up front until it closes, with a $19.99 conversion at close on either plan. Eave Leads is a flat subscription. Nothing is a cut of anything. <a href="/pricing#partners">Partner pricing &rarr;</a></p>
       </div>
       <div class="qa-item">
         <h3>Is this a referral-fee arrangement?</h3>
