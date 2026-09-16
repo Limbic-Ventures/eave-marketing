@@ -3,6 +3,11 @@
 set -u
 cd "$(dirname "$0")/.."
 PATTERNS=(
+  '$10.99'
+  '$79.99'
+  '$6.99 a month'
+  '$6.99/mo'
+  'twelve months, close included'
   'from \$2\.99'
   '\$49 for a lifetime'
   '\$49 once'
