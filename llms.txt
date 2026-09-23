@@ -82,7 +82,7 @@ Property upkeep: keep a property up.
 - https://eavehome.app/commercial — Commercial Upkeep (Eave Commercial): editions for businesses, HOAs/condos, churches/nonprofits, and small multifamily (waitlist)
 Property transactions: get through a sale, on either side.
 - https://eavehome.app/buyers — Eave for Buyers: the pre-close product. Line up candidate homes, see the facts a listing leaves out (sourced and dated), read the seller’s documents into decisions, compare on the all-in range, run escrow with version control, close into a home that is already set up. $3.99/mo per search for the whole process (hunt through escrow) · $19.99 conversion at close on either plan · $39.99 upfront until it closes; up to 30 homes per search, 2 reads per home in the hunt, 10 in escrow; agent-paid or buyer-paid; free try on 3 homes
-- https://eavehome.app/partners — Eave Partners: for real-estate agents and home inspectors
+- https://eavehome.app/partners — Eave Partners, for real estate agents: a free console for the whole client book (Needs you, Searches, team); buyer searches from first showing to close; Escrow Desk add-on per transaction side (escrow timeline from the executed agreement, client timeline and calendar, document versions and what changed, send for review; pricing TBA); client seats $2.99/client/mo; Eave Leads in a closed pilot; flat pricing, never a commission cut. Home inspectors: coming soon.
 Add-ons to Residential Upkeep: Guardian (coming soon), Pro (home concierge).
 
 - https://eavehome.app/features/upkeep-score — the live 0–100 home health score
@@ -97,7 +97,6 @@ Add-ons to Residential Upkeep: Guardian (coming soon), Pro (home concierge).
 - https://eavehome.app/for/home-buyers — buying a home: turn the inspection into a prioritized plan, understand true cost of ownership, move in already set up
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
-- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut); run a buyer’s search from the first showing to close; Escrow Desk add-on per transaction side (escrow timeline from the executed agreement that moves with extensions, client timeline and calendar, document versions and what changed, send for review; pricing TBA)
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
 - https://eavehome.app/support — help center hub (22 articles, 5 groups)
 - https://eavehome.app/support/getting-started
