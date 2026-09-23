@@ -3,7 +3,17 @@
 set -u
 cd "$(dirname "$0")/.."
 PATTERNS=(
-  '$10.99'
+  'about ten months'
+  'pricing is on the way'
+  'pricing on the way'
+  'Pricing is on the way'
+  'comes off their monthly bill'
+  'escrow is covered while'
+  '<dd>soon</dd>'
+  '$10.99/mo'
+  '$10.99 a month'
+  '$10.99 in escrow'
+  '$10.99/mo in escrow'
   '$79.99'
   '$6.99 a month'
   '$6.99/mo'
