@@ -72,5 +72,25 @@ for p in "${NOSAY[@]}"; do
   fi
 done
 
+# Escrow Desk copy is ministerial (eave spec AD-10). Checked only between
+# <!-- ESCROW-DESK:START --> and <!-- ESCROW-DESK:END --> markers.
+ministerial=$(python3 - <<'PY'
+import glob, re
+bad = re.compile(r"\b(default(s|ed)?|breach|in danger of|you should|recommend\w*|waiv(e|ing)|protects you|must be corrected|credited in full|verified|risk score)\b", re.I)
+out = []
+for f in glob.glob('**/*.html', recursive=True):
+    if '.claude' in f: continue
+    s = open(f, encoding='utf-8').read()
+    for m in re.finditer(r'<!-- ESCROW-DESK:START -->(.*?)<!-- ESCROW-DESK:END -->', s, re.S):
+        text = re.sub(r'<[^>]+>', ' ', m.group(1))
+        for h in bad.finditer(text):
+            out.append(f"{f}: '{h.group(0)}'")
+print('\n'.join(out))
+PY
+)
+if [ -n "$ministerial" ]; then
+  echo "MINISTERIAL: banned word in Escrow Desk copy:"; echo "$ministerial"; fail=1
+fi
+
 [ $fail -eq 0 ] && echo "OK: no retired claims found."
 exit $fail
