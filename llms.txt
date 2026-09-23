@@ -97,7 +97,7 @@ Add-ons to Residential Upkeep: Guardian (coming soon), Pro (home concierge).
 - https://eavehome.app/for/home-buyers — buying a home: turn the inspection into a prioritized plan, understand true cost of ownership, move in already set up
 - https://eavehome.app/for/landlords — multi-property owners and landlords
 - https://eavehome.app/for/diy-homeowners — hands-on DIY homeowners
-- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut); run a buyer’s search from the first showing to close
+- https://eavehome.app/partners/real-estate-agents — Eave for real estate agents (flat pricing, homeowner-initiated Eave Leads; never a commission cut); run a buyer’s search from the first showing to close; Escrow Desk add-on per transaction side (escrow timeline from the executed agreement that moves with extensions, client timeline and calendar, document versions and what changed, send for review; pricing TBA)
 - https://eavehome.app/why-eave — why a home knowledge base is worth it
 - https://eavehome.app/support — help center hub (22 articles, 5 groups)
 - https://eavehome.app/support/getting-started

@@ -64,6 +64,20 @@
     .fs-copy h3 { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; color:var(--ink); margin:0 0 12px; }
     .fs-copy p { font-size:15px; line-height:1.7; color:var(--muted); margin:0 0 14px; }
     .fs-copy .deep-link { margin-top:4px; }
+.ed-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px; }
+.ed-card { background:#FCFAF5; border:1px solid var(--stone); border-radius:14px; padding:20px 22px; }
+.ed-num { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); margin-bottom:8px; }
+.ed-card h3 { font-family:'Space Grotesk',sans-serif; font-size:17px; color:var(--ink); margin:0 0 8px; }
+.ed-card p { font-size:14px; line-height:1.65; color:var(--muted); margin:0; }
+.ed-split { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:28px; }
+.ed-split > div { border:1px solid var(--stone); border-radius:14px; padding:18px 22px; background:var(--bg); }
+.ed-split h4 { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); margin:0 0 10px; }
+.ed-split ul { margin:0; padding-left:18px; font-size:14px; line-height:1.7; color:var(--muted); }
+.ed-note { border-left:3px solid var(--jade); background:#FCFAF5; padding:14px 18px; border-radius:0 10px 10px 0; margin-top:24px; max-width:760px; font-size:14px; line-height:1.7; color:var(--muted); }
+.ed-note strong { color:var(--ink); }
+.ed-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+@media (max-width:900px) { .ed-grid, .ed-split { grid-template-columns:1fr; } }
+
     .stat-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; }
     .stat-chip { background:var(--surface); border:1px solid var(--stone); border-radius:12px; padding:16px 20px; flex:1 1 200px; }
     .stat-chip .stat-num { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px; color:var(--ink); line-height:1; }
@@ -86,7 +100,7 @@
     .wl-textarea:focus { outline: 2px solid var(--jade-text); outline-offset: 2px; border-color:var(--jade); box-shadow:0 0 0 3px rgba(111,168,201,.3); }
   </style>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Setting up Eave Partners is free; it is part of your own Eave account. What you pay for is flat and predictable. A client seat is $2.99 per client per month, bought one at a time or five at a time, and a one-time 12-month gift is also available. A buyer’s search is $3.99 a month for the whole process, hunt through escrow, or $39.99 up front until it closes, with a $19.99 conversion at close on either plan. Eave Leads is a flat subscription. Nothing is a cut of anything. Partner pricing →"}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}, {"@type": "Question", "name": "Can I start a search before my client signs up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it."}}, {"@type": "Question", "name": "Who owns the search?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, at close. Your fee never buys their private notes."}}, {"@type": "Question", "name": "Does this replace my MLS tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn’t. No feed, no scraping."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does it cost me?", "acceptedAnswer": {"@type": "Answer", "text": "Setting up Eave Partners is free; it is part of your own Eave account. What you pay for is flat and predictable. A client seat is $2.99 per client per month, bought one at a time or five at a time, and a one-time 12-month gift is also available. A buyer’s search is $3.99 a month for the whole process, hunt through escrow, or $39.99 up front until it closes, with a $19.99 conversion at close on either plan. Eave Leads is a flat subscription. Nothing is a cut of anything. Partner pricing →"}}, {"@type": "Question", "name": "Is this a referral-fee arrangement?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave never pays you for referrals. Eave Leads is homeowner-initiated and priced as a flat subscription."}}, {"@type": "Question", "name": "Does my client have to keep paying after closing?", "acceptedAnswer": {"@type": "Answer", "text": "Their choice. When your funding ends, they keep Intelligence for 30 days, then either take the subscription over or stay on the free plan. The free plan keeps their home’s whole record either way."}}, {"@type": "Question", "name": "What does the client actually get?", "acceptedAnswer": {"@type": "Answer", "text": "The full Eave Residential app: a searchable record of their home’s systems and appliances, an AI upkeep plan, reminders, and their Upkeep Score. It’s the same product a homeowner would sign up for on their own — you’re just the reason they have it."}}, {"@type": "Question", "name": "Can a client disconnect from me?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, any time, from their Membership settings. The seat returns to your pool and you get a note that it happened."}}, {"@type": "Question", "name": "Can my brokerage roll this out?", "acceptedAnswer": {"@type": "Answer", "text": "Let’s talk."}}, {"@type": "Question", "name": "Can I start a search before my client signs up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add the buyer, line up homes, and send one invite. Everything moves to them when they claim it."}}, {"@type": "Question", "name": "Who owns the search?", "acceptedAnswer": {"@type": "Answer", "text": "The buyer, at close. Your fee never buys their private notes."}}, {"@type": "Question", "name": "Does this replace my MLS tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn’t. No feed, no scraping."}}, {"@type": "Question", "name": "What is Escrow Desk?", "acceptedAnswer": {"@type": "Answer", "text": "The add-on for the stretch from accepted offer to close. Eave builds the escrow timeline from your executed agreement, moves it when an extension lands, shares it with your client, and keeps every version of every document on the transaction. The console stays free; Escrow Desk is added one transaction side at a time."}}, {"@type": "Question", "name": "What will Escrow Desk cost?", "acceptedAnswer": {"@type": "Answer", "text": "A flat price per transaction side, charged to your firm’s account. Never a cut of your commission and never a referral fee. Pricing is on the way."}}, {"@type": "Question", "name": "Does my client pay anything for their escrow?", "acceptedAnswer": {"@type": "Answer", "text": "Not while your transaction is open. A buyer’s search comes off their monthly bill for as long as you have Escrow Desk open on it."}}, {"@type": "Question", "name": "Does it replace my transaction coordinator?", "acceptedAnswer": {"@type": "Answer", "text": "It takes over the timeline, the document wrangling, and the “did you read it” chase. Your coordinator still talks to escrow and chases signatures."}}, {"@type": "Question", "name": "Does Eave tell my client what to do about a deadline?", "acceptedAnswer": {"@type": "Answer", "text": "No. Eave counts days and shows where each date came from. What to do about a date is yours to advise."}}]}
   </script>
   <link rel="stylesheet" href="/assets/a11y.css">
 </head>
@@ -175,7 +189,7 @@
     <div class="container">
       <p class="label">Eave Partners · Real estate agents</p>
       <h1>Give your clients a home that runs itself.<br>And a reason to remember who sold it to them.</h1>
-      <p>Eave is the home-memory app your clients keep long after closing. Help them show up to listing day ready, and stay their go-to for years.</p>
+      <p>Eave is the home-memory app your clients keep long after closing. Help them show up to listing day ready, run every buyer&rsquo;s search in one place, add Escrow Desk when a client goes under contract, and stay their go-to for years.</p>
     </div>
   </div>
 
@@ -249,6 +263,57 @@
       </div>
     </div>
   </section>
+
+  <!-- ── ESCROW DESK (expansion add-on) ── -->
+  <!-- ESCROW-DESK:START -->
+  <section class="support-section" id="escrow-desk">
+    <div class="container">
+      <div class="section-header">
+        <p class="label">Expansion add-on &middot; Escrow Desk</p>
+        <h2>Under contract, the file becomes a desk.<br>Kept current, and shared with your client.</h2>
+      </div>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:760px;">Eave Partners is free because it&rsquo;s how you bring clients in. Escrow Desk is the add-on for the deal itself: from the accepted offer to the keys, the work a transaction coordinator does today, kept current and in front of your client instead of in a document that&rsquo;s out of date by the first extension. You add it one transaction side at a time.</p>
+      <div class="ed-grid">
+        <div class="ed-card"><div class="ed-num">01</div><h3>Open a transaction</h3><p>At the accepted offer, one sheet opens the transaction on that home and previews the key dates before you commit.</p></div>
+        <div class="ed-card"><div class="ed-num">02</div><h3>A timeline from the contract</h3><p>Eave reads the executed agreement and every counter, addendum, and extension that follows, counts the days the way the form counts them, and lays out every date and whose it is.</p></div>
+        <div class="ed-card"><div class="ed-num">03</div><h3>Moves when the dates move</h3><p>An extension lands, Eave proposes the shift, you confirm it in one tap, and the dates that depend on it follow. Every shift keeps the original date, the new one, the document that moved it, and who confirmed.</p></div>
+        <div class="ed-card"><div class="ed-num">04</div><h3>Shared with your client</h3><p>Your buyer sees the same timeline in their search: days out, what&rsquo;s due, and what&rsquo;s theirs to do. A calendar feed for each person, and email notices they opt into that stop at close.</p></div>
+        <div class="ed-card"><div class="ed-num">05</div><h3>Versions, and what changed</h3><p>Every document filed to the transaction, packets split into their forms, duplicates recognised. When a new version arrives, see the fields that changed: close of escrow Oct 14 &rarr; Oct 21.</p></div>
+        <div class="ed-card"><div class="ed-num">06</div><h3>Send it, and know it was read</h3><p>Send a document for review and see when it was opened and which pages were seen, in Eave rather than guessed from an email. Your client can leave a note on the page it&rsquo;s about.</p></div>
+      </div>
+      <!-- Captures still needed: E1 open-a-transaction sheet, E2 Partner timeline (original vs actual), E3 client timeline (mobile), E4 Needs you with this week's dates, E7 what changed, E8 send for review with receipt -->
+      <p style="font-size:14px;color:var(--muted);margin-top:18px;max-width:760px;"><strong style="color:var(--ink);">Coming to Escrow Desk:</strong> the listing side, a digest that sets the disclosure beside the inspection, and a close packet with the final timeline and every shift.</p>
+      <div class="ed-split">
+        <div>
+          <h4>Free, with Eave Partners</h4>
+          <ul>
+            <li>Your client book, every stage, selling and buying</li>
+            <li>Needs you, Searches, and your team</li>
+            <li>Seller prep lists and buyer searches</li>
+            <li>Documents filed and classified</li>
+            <li>Handoff at close, with everything intact</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Added with Escrow Desk, per transaction side</h4>
+          <ul>
+            <li>The escrow timeline, moving with every extension</li>
+            <li>Original dates beside actual, with each shift explained</li>
+            <li>Your client&rsquo;s timeline, calendar feed, and email notices</li>
+            <li>Every version of every document, and what changed</li>
+            <li>Send for review, with pages seen and notes on the page</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ed-note"><strong>Eave counts days; it doesn&rsquo;t advise.</strong> Every date carries the same label in the app, &ldquo;Computed reference dates, from the dates as written,&rdquo; with the document it came from. What to do about a date is between you, your client, and their attorney. And keep your forms software: Eave starts where the executed PDF ends, and never fills or reproduces a form.</div>
+      <div class="ed-note"><strong>Your client&rsquo;s escrow is covered.</strong> While your transaction is open, your buyer&rsquo;s search comes off their monthly bill. <strong>Pricing:</strong> a flat price per transaction side, on your firm&rsquo;s account, never a cut of your commission or a referral fee. Pricing is on the way.</div>
+      <div class="ed-ctas">
+        <a href="https://app.eavehome.app/welcome?entry=self&amp;actor=agent" class="btn btn-jade">Set up your firm, free &rarr;</a>
+        <a href="#contact" class="btn btn-outline">Talk to us about Escrow Desk</a>
+      </div>
+    </div>
+  </section>
+  <!-- ESCROW-DESK:END -->
 
   <!-- ── AFTER CLOSING (feature-split reverse) ── -->
   <section class="support-section" id="after">
@@ -359,6 +424,28 @@
         <h3>Does this replace my MLS tools?</h3>
         <p>No. Eave takes the listing material you already have, a link, a PDF, an address, and does the work the MLS doesn&rsquo;t. No feed, no scraping.</p>
       </div>
+<!-- ESCROW-DESK:START -->
+      <div class="qa-item">
+        <h3>What is Escrow Desk?</h3>
+        <p>The add-on for the stretch from accepted offer to close. Eave builds the escrow timeline from your executed agreement, moves it when an extension lands, shares it with your client, and keeps every version of every document on the transaction. The console stays free; Escrow Desk is added one transaction side at a time.</p>
+      </div>
+      <div class="qa-item">
+        <h3>What will Escrow Desk cost?</h3>
+        <p>A flat price per transaction side, charged to your firm&rsquo;s account. Never a cut of your commission and never a referral fee. Pricing is on the way.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does my client pay anything for their escrow?</h3>
+        <p>Not while your transaction is open. A buyer&rsquo;s search comes off their monthly bill for as long as you have Escrow Desk open on it.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does it replace my transaction coordinator?</h3>
+        <p>It takes over the timeline, the document wrangling, and the &ldquo;did you read it&rdquo; chase. Your coordinator still talks to escrow and chases signatures.</p>
+      </div>
+      <div class="qa-item">
+        <h3>Does Eave tell my client what to do about a deadline?</h3>
+        <p>No. Eave counts days and shows where each date came from. What to do about a date is yours to advise.</p>
+      </div>
+<!-- ESCROW-DESK:END -->
       <div class="qa-item">
         <h3>Can my brokerage roll this out?</h3>
         <p>Let&rsquo;s talk.</p>
@@ -381,6 +468,10 @@
         <a class="xlink-card" href="/residential">
           <div class="xlink-title">Eave Residential</div>
           <div class="xlink-desc">The app your clients keep &mdash; every system, project, and record in one place, with an AI upkeep plan on top.</div>
+        </a>
+        <a class="xlink-card" href="/pricing#partners">
+          <div class="xlink-title">Partner pricing</div>
+          <div class="xlink-desc">The console is free. Seats, searches, and Escrow Desk, flat and predictable.</div>
         </a>
         <a class="xlink-card" href="/partners">
           <div class="xlink-title">Eave Partners</div>
