@@ -17,8 +17,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eave — one record for the life of a property</title>
-  <meta name="description" content="Buy it, live in it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next, and the record goes with the house to the next owner. Free for one home.">
+  <title>Eave — every stage of a property, without the overwhelm</title>
+  <meta name="description" content="Buy it, own it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next at whichever stage you’re in. The record goes with the house. Free for one home.">
   <link rel="canonical" href="https://eavehome.app/">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -27,16 +27,16 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://eavehome.app/">
   <meta property="og:site_name" content="Eave">
-  <meta property="og:title" content="Eave — one record for the life of a property">
-  <meta property="og:description" content="Buy it, live in it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next, and the record goes with the house to the next owner. Free for one home.">
+  <meta property="og:title" content="Eave — every stage of a property, without the overwhelm">
+  <meta property="og:description" content="Buy it, own it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next at whichever stage you’re in. The record goes with the house. Free for one home.">
   <meta property="og:image" content="https://eavehome.app/og/home.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Eave — one record for the life of a property">
+  <meta property="og:image:alt" content="Eave — every stage of a property, without the overwhelm">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eave — one record for the life of a property">
-  <meta name="twitter:description" content="Buy it, live in it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next, and the record goes with the house to the next owner. Free for one home.">
+  <meta name="twitter:title" content="Eave — every stage of a property, without the overwhelm">
+  <meta name="twitter:description" content="Buy it, own it, sell it, or run it: Eave keeps a property’s record, reads its paperwork, and tells you what’s next at whichever stage you’re in. The record goes with the house. Free for one home.">
   <meta name="twitter:image" content="https://eavehome.app/og/home.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1385,50 +1385,81 @@
     @media (max-width:600px) { .door-row, .cap-mini { grid-template-columns:1fr; } }
   </style>
   <style>
-    /* ── Homepage: stage picker, journey strip, product row, price table ── */
-    .stage-wrap { margin-top: 44px; position: relative; z-index: 2; }
-    .stage-label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--jade-text); margin:0 0 12px; }
-    .stage-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-    .stage-door { display:block; text-decoration:none; color:inherit; background:rgba(252,250,245,.82); border:1px solid var(--stone); border-radius:10px; padding:13px 14px 12px; transition:transform .18s ease, border-color .18s ease, background .18s ease; }
-    .stage-door:hover { transform:translateY(-2px); border-color:var(--jade); background:#FCFAF5; }
-    .stage-door strong { display:block; font-family:'Space Grotesk',sans-serif; font-size:14px; line-height:1.25; color:var(--ink); margin-bottom:4px; }
-    .stage-door span { display:block; font-size:12px; line-height:1.5; color:var(--muted); }
-    .stage-door em { display:inline-block; margin-top:8px; font-style:normal; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600; letter-spacing:.08em; color:var(--jade-text); }
-    .stage-fine { font-size:12.5px; color:var(--muted); margin-top:14px; }
+    /* ── Homepage v2 ── */
+    #hero { padding-bottom: 56px; }
+    .hero-copy { max-width: 720px; }
+    .stage-label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--jade-text); margin:44px 0 6px; position:relative; z-index:2; }
+    .stage-hint { font-size:13px; color:var(--muted); margin:0 0 4px; position:relative; z-index:2; }
+    .tl-wrap { position:relative; z-index:2; margin-top:4px; }
+    .tl { width:100%; height:auto; display:block; overflow:visible; }
+    .tword { font-family:'Sacramento',cursive; font-size:76px; fill:#1F3A52; }
+    .tp { fill:none; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:100; stroke-dashoffset:100; animation:tdraw 1.6s cubic-bezier(.4,0,.2,1) forwards; }
+    .tp-record { stroke:#1F3A52; stroke-width:2.5; animation-delay:.1s; }
+    .tp-own { stroke:#1F3A52; stroke-width:5; animation-delay:.9s; }
+    .tp-buy { stroke:#6FA8C9; stroke-width:4; animation-delay:.4s; }
+    .tp-sell { stroke:#E0A83D; stroke-width:4; animation-delay:.5s; }
+    .tp-again { animation-delay:1.5s; }
+    .tp-dash { stroke-dasharray:6 6; stroke-dashoffset:0; animation:tfade 1s ease 1.9s both; }
+    .tp-lane { stroke:#9A9590; stroke-width:1.5; stroke-dasharray:3 6; stroke-dashoffset:0; animation:tfade 1s ease 1.6s both; }
+    .tnode, .tmark { animation:tfade .6s ease both; }
+    .tnode { animation-delay:1.4s; cursor:pointer; }
+    .tmark { animation-delay:1.0s; }
+    .tmark circle { fill:#F4EFE6; stroke:#1F3A52; stroke-width:3; }
+    .tdot { fill:#FCFAF5; stroke:#1F3A52; stroke-width:2.5; transition:fill .15s; }
+    .tring { fill:none; stroke:#6FA8C9; stroke-width:2; opacity:0; transition:opacity .15s; }
+    .tlabel { font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600; fill:#1F3A52; }
+    .tsub { font-family:'IBM Plex Mono',monospace; font-size:10.5px; fill:#5A6770; }
+    .tgo { font-family:'Space Grotesk',sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.06em; fill:#2B6A8E; opacity:0; transition:opacity .15s; }
+    .tnode:hover .tdot, .tnode:focus .tdot { fill:#6FA8C9; }
+    .tnode:hover .tring, .tnode:focus .tring, .tnode:hover .tgo, .tnode:focus .tgo { opacity:1; }
+    .tnode:hover .tlabel, .tnode:focus .tlabel { fill:#2B6A8E; }
+    .tnode:focus { outline:none; }
+    @keyframes tdraw { to { stroke-dashoffset:0; } }
+    @keyframes tfade { from { opacity:0; } to { opacity:1; } }
+    @media (prefers-reduced-motion: reduce) { .tp, .tnode, .tmark, .tp-lane, .tp-dash { animation:none; stroke-dashoffset:0; opacity:1; } .tp-dash { stroke-dasharray:6 6; } .tp-lane { stroke-dasharray:3 6; } .loopdot { display:none; } }
+    .stage-grid { display:none; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px; position:relative; z-index:2; }
+    .stage-door { display:block; text-decoration:none; color:inherit; background:rgba(252,250,245,.85); border:1px solid var(--stone); border-radius:10px; padding:11px 12px 10px; }
+    .stage-door strong { display:block; font-family:'Space Grotesk',sans-serif; font-size:13px; line-height:1.25; color:var(--ink); }
+    .stage-door em { display:inline-block; margin-top:6px; font-style:normal; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600; letter-spacing:.08em; color:var(--jade-text); }
+    .stage-fine { font-size:12.5px; color:var(--muted); margin-top:16px; position:relative; z-index:2; }
     .stage-fine a { color:var(--jade-text); }
-    #hero .hero-grid { align-items:start; }
-    .hero-float.hf2 { left:auto; right:-22px; top:-26px; width:52%; }
-    /* journey strip */
-    .jstrip { display:grid; grid-template-columns:repeat(6,1fr); gap:18px; margin-top:48px; position:relative; }
-    .jstrip::before { content:''; position:absolute; top:14px; left:6%; right:6%; height:1px; background:var(--stone); }
-    .jstep { position:relative; }
-    .jnum { display:inline-block; position:relative; z-index:1; background:var(--bg); padding:0 8px 0 0; font-family:'Space Grotesk',sans-serif; font-size:22px; line-height:1.3; color:var(--jade-text); margin-bottom:10px; }
-    .alt .jnum { background:var(--surface); }
-    .jstep h3 { font-family:'Space Grotesk',sans-serif; font-size:15px; line-height:1.25; color:var(--ink); margin:0 0 6px; }
-    .jstep p { font-size:12.5px; line-height:1.6; color:var(--muted); margin:0 0 10px; }
-    .jchip { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--jade-text); border:1px solid rgba(111,168,201,.45); border-radius:999px; padding:2px 8px; margin-bottom:10px; }
-    .jlinks a { display:block; font-family:'Space Grotesk',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.06em; color:var(--jade-text); text-decoration:none; margin-top:4px; }
-    .jlinks a.soft { color:var(--muted); font-weight:500; }
-    .jthreads { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:44px; }
-    .jthread { background:var(--surface); border-left:3px solid var(--jade); padding:18px 20px; }
-    .jthread .k { font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); }
-    .jthread h3 { font-family:'Space Grotesk',sans-serif; font-size:17px; color:var(--ink); margin:6px 0 6px; }
-    .jthread p { font-size:13px; color:var(--muted); line-height:1.65; margin:0 0 8px; }
-    /* product row */
-    .prod-row { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:36px; }
-    .prod { display:flex; flex-direction:column; background:#FCFAF5; border:1px solid var(--stone); border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(31,58,82,.08); }
-    .prod img { display:block; width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; }
-    .prod .pb { padding:14px 16px 16px; display:flex; flex-direction:column; flex:1; }
-    .prod .k { font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); }
-    .prod h3 { font-family:'Space Grotesk',sans-serif; font-size:16px; line-height:1.25; color:var(--ink); margin:4px 0 6px; }
-    .prod p { font-size:12.5px; color:var(--muted); line-height:1.55; margin:0; flex:1; }
-    .prod .price { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink); margin-top:12px; line-height:1.5; }
-    .prod .pl { display:flex; gap:12px; margin-top:10px; }
-    .prod .pl a { font-family:'Space Grotesk',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.06em; color:var(--jade-text); text-decoration:none; }
-    .prod .pl a.soft { color:var(--muted); font-weight:500; }
-    .addons { font-size:13px; color:var(--muted); margin-top:22px; }
-    .addons a { color:var(--jade-text); }
-    /* price table, on the dark pricing band */
+    @media (max-width:760px) { .tl-wrap { display:none; } .stage-grid { display:grid; } #hero .btn.btn-outline { margin-left:0 !important; margin-top:10px; } }
+    /* what eave is */
+    .what-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
+    .what { background:#FCFAF5; border:1px solid var(--stone); border-radius:12px; padding:20px 22px; }
+    .what .k { font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); }
+    .what h3 { font-family:'Space Grotesk',sans-serif; font-size:19px; line-height:1.25; color:var(--ink); margin:6px 0 8px; }
+    .what h3 .script { font-family:'Sacramento',cursive; font-weight:400; font-size:34px; line-height:1; vertical-align:-4px; margin-right:6px; }
+    .what .wm { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#E6E3D4; border-radius:8px; margin:0 0 14px; }
+    .what p { font-size:13.5px; color:var(--muted); line-height:1.7; margin:0 0 8px; }
+    /* editions */
+    .ed-row { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-top:28px; }
+    .edn { background:var(--bg); border-left:3px solid var(--jade); padding:14px 14px 12px; }
+    .edn .k { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); }
+    .edn strong { display:block; font-family:'Space Grotesk',sans-serif; font-size:15px; color:var(--ink); margin:4px 0 4px; }
+    .edn span { font-size:12.5px; color:var(--muted); line-height:1.5; }
+    /* transactions: three seats */
+    .tx-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; align-items:start; }
+    .tx { background:#FCFAF5; border:1px solid var(--stone); border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(31,58,82,.08); }
+    .tx .device-browser { border:0; border-radius:0; box-shadow:none; border-bottom:1px solid var(--stone); }
+    .tx .tb { padding:16px 18px 18px; }
+    .tx .k { font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--jade-text); }
+    .tx h3 { font-family:'Space Grotesk',sans-serif; font-size:19px; line-height:1.25; color:var(--ink); margin:5px 0 8px; }
+    .tx ul { margin:0 0 12px; padding-left:18px; }
+    .tx li { font-size:13px; color:var(--muted); line-height:1.6; margin:0 0 4px; }
+    .tx .price { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink); margin-bottom:10px; }
+    .tx .pl { display:flex; gap:12px; }
+    .tx .pl a { font-family:'Space Grotesk',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.06em; color:var(--jade-text); text-decoration:none; }
+    .tx .pl a.soft { color:var(--muted); font-weight:500; }
+    .relate { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px; }
+    .relate div { font-size:12.5px; color:var(--muted); line-height:1.6; border-top:2px solid var(--jade); padding-top:10px; }
+    .relate strong { display:block; font-family:'Space Grotesk',sans-serif; font-size:12.5px; color:var(--ink); margin-bottom:2px; }
+    /* loop motif */
+    .loop { width:min(320px,100%); height:auto; display:block; margin:0 0 8px; overflow:visible; }
+    .loop path { fill:none; stroke:#1F3A52; stroke-width:2; }
+    .loopdot { fill:#6FA8C9; }
+    .loopt { font-family:'IBM Plex Mono',monospace; font-size:10px; fill:#5A6770; }
+    /* pricing table */
     .price-table { width:100%; max-width:820px; margin:36px auto 0; border-collapse:collapse; font-size:13.5px; }
     .price-table th { text-align:left; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; color:rgba(244,239,230,.55); padding:0 12px 10px; }
     .price-table td { padding:12px 12px; border-top:1px solid rgba(244,239,230,.14); vertical-align:top; color:rgba(244,239,230,.85); }
@@ -1437,17 +1468,22 @@
     .price-table td:last-child { text-align:right; white-space:nowrap; }
     .price-table a.m { display:none; margin-top:6px; }
     .price-table a { color:#A9D2E8; text-decoration:none; font-family:'Space Grotesk',sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.06em; }
-    /* closing band chips */
+    /* founder */
+    .founder { display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; margin-top:8px; }
+    .founder p { font-size:14px; color:var(--muted); line-height:1.75; margin:0 0 12px; }
+    .founder .sig { font-family:'Sacramento',cursive; font-size:30px; color:var(--ink); margin:14px 0 0; }
+    .beliefs { display:grid; gap:12px; }
+    .belief { background:var(--bg); border-left:3px solid var(--jade); padding:12px 16px; }
+    .belief strong { display:block; font-family:'Space Grotesk',sans-serif; font-size:14px; color:var(--ink); margin-bottom:2px; }
+    .belief span { font-size:12.5px; color:var(--muted); line-height:1.55; }
+    /* closing */
     .stage-chips { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin:26px auto 0; max-width:760px; }
     .stage-chips a { font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#A9D2E8; text-decoration:none; border:1px solid rgba(169,210,232,.45); border-radius:999px; padding:5px 12px; }
     .stage-chips a:hover { background:rgba(169,210,232,.14); }
     .store-line { font-size:12.5px; color:rgba(244,239,230,.7); margin-top:26px; }
     .wl-form { max-width:440px; margin:14px auto 0; }
-    .wl-row { display:flex; gap:8px; }
-    .wl-hp { position:absolute; left:-9999px; }
-    .wl-status { font-size:12.5px; color:#A9D2E8; margin-top:8px; min-height:1em; }
-    @media (max-width:1000px) { .stage-grid { grid-template-columns:repeat(2,1fr); } .jstrip { grid-template-columns:repeat(3,1fr); } .jstrip::before { display:none; } .prod-row { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:600px) { #hero .btn.btn-outline { margin-left:0 !important; margin-top:10px; } .stage-grid { grid-template-columns:1fr 1fr; gap:8px; } .stage-door { padding:11px 12px 10px; } .stage-door span { display:none; } .stage-door strong { font-size:13px; } .stage-door em { margin-top:6px; } .jstrip, .prod-row, .jthreads { grid-template-columns:1fr; } .hero-float.hf2 { display:none; } .price-table td:first-child, .price-table td:last-child { white-space:normal; } .price-table th:last-child, .price-table td:last-child { display:none; } .price-table a.m { display:inline-block; } }
+    @media (max-width:1000px) { .what-grid, .tx-grid, .relate { grid-template-columns:1fr; } .ed-row { grid-template-columns:repeat(2,1fr); } .founder { grid-template-columns:1fr; } }
+    @media (max-width:600px) { .ed-row { grid-template-columns:1fr; } .price-table td:first-child, .price-table td:last-child { white-space:normal; } .price-table th:last-child, .price-table td:last-child { display:none; } .price-table a.m { display:inline-block; } }
   </style>
   <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
   <link rel="stylesheet" href="/assets/a11y.css">
@@ -1553,48 +1589,99 @@
     <div class="hero-bg"><img src="/images/opt/hero-bg-blur-1920.webp" srcset="/images/opt/hero-bg-blur-1200.webp 1200w, /images/opt/hero-bg-blur-1920.webp 1920w" sizes="100vw" width="1920" height="1047" alt="" aria-hidden="true" fetchpriority="high" decoding="async"></div>
     <div class="hero-frost"></div>
     <div class="container">
-      <div class="hero-grid">
-        <div class="fade-in">
-          <p class="hero-eyebrow">For the whole life of a property</p>
-          <h1 class="hero-headline">One record<br>for the life<br>of a property.</h1>
-          <p class="hero-sub">Buying it, living in it, selling it, running it, and the people who help along the way. Eave keeps the property&rsquo;s record, reads its paperwork, and tells you what&rsquo;s next. When the house changes hands, the record goes with it.</p>
-          <div style="margin-top:28px;">
-            <a href="#start" class="btn btn-jade" style="font-size:14px;padding:14px 28px;">Start where you are &rarr;</a>
-            <a href="#journey" class="btn btn-outline" style="font-size:14px;padding:14px 24px;margin-left:8px;">See the whole story</a>
-            <p class="cta-fine">Free for one home. No card. Runs in any browser.</p>
-          </div>
-        </div>
-        <div class="device-group fade-in" style="transition-delay:.15s;">
-          <div class="browser-card"><img src="/images/opt/home-desktop.webp" width="1000" height="619" alt="The Eave Home page: a property with its Upkeep Score, the one thing to do this week, and projects by room" decoding="async" fetchpriority="high"></div>
-          <div class="hero-float hf2"><div class="device-crop"><div class="tag">Partners &middot; needs you</div><img src="/images/opt/crop-partner-one-thing.webp" width="1200" height="233" alt="An agent&rsquo;s one thing to do first: confirm a Saturday showing and answer a client&rsquo;s roof question" decoding="async"></div></div>
-          <div class="hero-float"><div class="device-crop"><div class="tag">Buyers &middot; where this stands</div><img src="/images/opt/crop-buyers-stands.webp" width="1200" height="207" alt="A buyer&rsquo;s shortlist note: which home to see Saturday, and which one sits in a flood zone" decoding="async"></div></div>
+      <div class="hero-copy fade-in">
+        <p class="hero-eyebrow">Upkeep without the overwhelm &middot; at every stage</p>
+        <h1 class="hero-headline">Every stage of a property,<br>without the overwhelm.</h1>
+        <p class="hero-sub">Buying it, owning it, selling it, or running it: Eave keeps the property&rsquo;s record, reads the paperwork, and tells you what&rsquo;s next, at whichever stage you&rsquo;re in. When the house changes hands, the record goes with it.</p>
+        <div style="margin-top:26px;">
+          <a href="https://app.eavehome.app/login?mode=signup" class="btn btn-jade" style="font-size:14px;padding:14px 28px;">Start free &rarr;</a>
+          <a href="#what" class="btn btn-outline" style="font-size:14px;padding:14px 24px;margin-left:8px;">What Eave is</a>
+          <p class="cta-fine">Free for one home. No card. Runs in any browser.</p>
         </div>
       </div>
-      <div class="stage-wrap fade-in" id="start" style="transition-delay:.2s;">
+      <div class="fade-in" id="start" style="transition-delay:.15s;">
         <p class="stage-label">Where are you right now?</p>
-        <div class="stage-grid"><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer"><strong>Just starting to look</strong><span>Line up the homes you&rsquo;re considering, side by side, on the facts a listing leaves out.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dunder_contract%26actor%3Dbuyer"><strong>Made an offer, or under contract</strong><span>Your dates, your checklist, and every document version, shared with your agent.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dmoved_in%26actor%3Downer"><strong>Just got the keys</strong><span>Drop the closing folder and the home sets itself up from its own paperwork.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer"><strong>Lived here a while</strong><span>Add what you know at your own pace. The score and the plan build from there.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer"><strong>Getting ready to sell</strong><span>Every fix ranked by what moves the price, with the proof kept for the buyer.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling_and_buying%26actor%3Downer"><strong>Selling and buying</strong><span>The home you&rsquo;re leaving and the one you&rsquo;re after, with one invite for your agent.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26actor%3Dagent"><strong>I help people buy and sell</strong><span>A free console for your whole client book, and Escrow Desk when a client goes under contract.</span><em>START HERE &rarr;</em></a><a class="stage-door" href="/commercial#waitlist"><strong>I run a building</strong><span>A business, a nonprofit, an association, or apartments: the same record for the buildings you answer for.</span><em>START HERE &rarr;</em></a></div>
+        <p class="stage-hint">Pick your stage on the line and Eave opens on the right door.</p>
+        <div class="tl-wrap"><svg class="tl" viewBox="0 0 1000 340" role="img" aria-labelledby="tl-title tl-desc"><title id="tl-title">Where are you right now?</title><desc id="tl-desc">A timeline of a property&rsquo;s life. Buying and selling threads converge at closing, where the record changes hands, then run through owning the home and back toward the next sale. Each stage is a link into Eave.</desc>
+  <text class="tword" x="34" y="200">eave</text>
+  <path class="tp tp-record" d="M152 184 C 240 184 300 184 430 184" pathLength="100"/>
+  <path class="tp tp-buy" d="M178 104 C 330 104 360 184 430 184" pathLength="100"/>
+  <path class="tp tp-sell" d="M178 264 C 330 264 360 184 430 184" pathLength="100"/>
+  <path class="tp tp-own" d="M430 184 L 770 184" pathLength="100"/>
+  <path class="tp tp-sell tp-again" d="M770 184 C 830 184 850 252 910 252" pathLength="100"/>
+  <path class="tp tp-buy tp-dash" d="M910 116 C 850 116 830 184 770 184" pathLength="100"/>
+  <path class="tp tp-lane" d="M178 306 L 430 306 M 770 306 L 910 306" pathLength="100"/>
+  <path class="tp tp-lane" d="M500 236 L 910 236" pathLength="100"/>
+  <g class="tmark"><circle cx="430" cy="184" r="9"/><text class="tsub" x="430" y="208" text-anchor="middle">Closing &middot; the record changes hands</text></g>
+  <text class="tsub" x="910" y="100" text-anchor="end">the next buyer arrives</text>
+  <text class="tsub" x="910" y="292" text-anchor="end">selling again, with the record intact</text>
+  <text class="tsub" x="178" y="330">Agents and inspectors, alongside every transaction</text>
+  <text class="tsub" x="510" y="230">A building runs the same line, longer</text>
+  <text class="tlabel" x="770" y="164" text-anchor="middle">Ready to sell</text>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer"><title>Just starting to look: Line up the homes you’re considering on the facts a listing leaves out.</title><circle class="tring" cx="239" cy="109" r="14"/><circle class="tdot" cx="239" cy="109" r="7"/><text class="tlabel" x="239" y="89" text-anchor="middle">Just starting to look</text><text class="tgo" x="239" y="73" text-anchor="middle">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dunder_contract%26actor%3Dbuyer"><title>Made an offer, or under contract: Your dates, your checklist, and every document version, shared with your agent.</title><circle class="tring" cx="334" cy="144" r="14"/><circle class="tdot" cx="334" cy="144" r="7"/><text class="tlabel" x="350" y="148" text-anchor="start">Offer or under contract</text><text class="tgo" x="350" y="162" text-anchor="start">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer"><title>Getting ready to sell: Every fix ranked by what moves the price, with the proof kept for the buyer.</title><circle class="tring" cx="239" cy="259" r="14"/><circle class="tdot" cx="239" cy="259" r="7"/><text class="tlabel" x="239" y="239" text-anchor="middle">Getting ready to sell</text><text class="tgo" x="239" y="223" text-anchor="middle">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling_and_buying%26actor%3Downer"><title>Selling and buying: The home you’re leaving and the one you’re after, one invite for your agent.</title><circle class="tring" cx="335" cy="224" r="14"/><circle class="tdot" cx="335" cy="224" r="7"/><text class="tlabel" x="351" y="244" text-anchor="start">Selling and buying</text><text class="tgo" x="351" y="258" text-anchor="start">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dmoved_in%26actor%3Downer"><title>Just got the keys: Drop the closing folder and the home sets itself up from its own paperwork.</title><circle class="tring" cx="575" cy="184" r="14"/><circle class="tdot" cx="575" cy="184" r="7"/><text class="tlabel" x="575" y="164" text-anchor="middle">Just got the keys</text><text class="tgo" x="575" y="148" text-anchor="middle">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer"><title>Lived here a while: Add what you know at your own pace. The score and the plan build from there.</title><circle class="tring" cx="680" cy="184" r="14"/><circle class="tdot" cx="680" cy="184" r="7"/><text class="tlabel" x="680" y="214" text-anchor="middle">Lived here a while</text><text class="tgo" x="680" y="230" text-anchor="middle">Start here &rarr;</text></a>
+  <a class="tnode" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26actor%3Dagent"><title>I help people buy and sell: A free console for your client book, and Escrow Desk when a client goes under contract.</title><circle class="tring" cx="300" cy="306" r="14"/><circle class="tdot" cx="300" cy="306" r="7"/><text class="tlabel" x="316" y="310" text-anchor="start">I help people buy and sell</text><text class="tgo" x="482" y="310" text-anchor="start">Start here &rarr;</text></a>
+  <a class="tnode" href="/commercial#waitlist"><title>I run a building: A business, a nonprofit, an association, or apartments: the same record for a building.</title><circle class="tring" cx="840" cy="236" r="14"/><circle class="tdot" cx="840" cy="236" r="7"/><text class="tlabel" x="840" y="266" text-anchor="middle">I run a building</text><text class="tgo" x="856" y="240" text-anchor="middle">Start here &rarr;</text></a>
+</svg></div>
+        <div class="stage-grid"><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer"><strong>Just starting to look</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dunder_contract%26actor%3Dbuyer"><strong>Made an offer, or under contract</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dmoved_in%26actor%3Downer"><strong>Just got the keys</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer"><strong>Lived here a while</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer"><strong>Getting ready to sell</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling_and_buying%26actor%3Downer"><strong>Selling and buying</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26actor%3Dagent"><strong>I help people buy and sell</strong><em>START HERE &rarr;</em></a><a class="stage-door" href="/commercial#waitlist"><strong>I run a building</strong><em>START HERE &rarr;</em></a></div>
         <p class="stage-fine">Not sure yet? <a href="https://app.eavehome.app/login?mode=signup">Start free and pick inside &rarr;</a> Nothing here locks you in.</p>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THE PROPERTY'S LIFE ═══ -->
-  <section id="journey" class="alt section-photo">
-    <div class="section-photo-bg" aria-hidden="true"><img src="/images/opt/problem-bg-1400.jpg" alt="" loading="lazy" decoding="async"></div>
-    <div class="section-frost"></div>
+  <section id="what">
     <div class="container">
-      <div class="fade-in"><p class="label">The property&rsquo;s life</p><div class="section-head"><h2>Six moments.<br>One record that follows the house.</h2><p>Every Eave product is one moment in the same story. What you capture while you live there is what the buyer&rsquo;s agent asks for later. What a buyer learns before the offer is what the home already knows on move-in day. Start at any moment; the record carries the rest.</p></div></div>
-      <div class="jstrip"><div class="jstep fade-in" style="transition-delay:.0s;"><div class="jnum">01</div><h3>Looking</h3><p>Compare the homes you&rsquo;re considering on the facts a listing leaves out: the zones, the taxes, what the disclosures say.</p><span class="jchip">Buyers</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer">START HERE &rarr;</a><a class="soft" href="/buyers">Learn more &rarr;</a></div></div><div class="jstep fade-in" style="transition-delay:.1s;"><div class="jnum">02</div><h3>Under contract</h3><p>The dates, the checklist, and every document version, shared with your agent, moving when the dates move.</p><span class="jchip">Buyers &middot; Partners</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dunder_contract%26actor%3Dbuyer">START HERE &rarr;</a><a class="soft" href="/buyers#journey">Learn more &rarr;</a></div></div><div class="jstep fade-in" style="transition-delay:.2s;"><div class="jnum">03</div><h3>Just got the keys</h3><p>Drop the closing folder. Eave reads it into the home: systems and their ages, warranties, the inspection as a first plan.</p><span class="jchip">Residential</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dmoved_in%26actor%3Downer">START HERE &rarr;</a><a class="soft" href="/residential">Learn more &rarr;</a></div></div><div class="jstep fade-in" style="transition-delay:.3s;"><div class="jnum">04</div><h3>Living there</h3><p>One record, a score, this week&rsquo;s short list with the reason on each item, and a plan for the year.</p><span class="jchip">Residential</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer">START HERE &rarr;</a><a class="soft" href="/residential">Learn more &rarr;</a></div></div><div class="jstep fade-in" style="transition-delay:.4s;"><div class="jnum">05</div><h3>Getting ready to sell</h3><p>Every fix your agent mentions, ranked by what moves the price, with the receipt and the date kept.</p><span class="jchip">Sellers &middot; Partners</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer">START HERE &rarr;</a><a class="soft" href="/sellers">Learn more &rarr;</a></div></div><div class="jstep fade-in" style="transition-delay:.4s;"><div class="jnum">06</div><h3>Handing it over</h3><p>The record goes with the house when you choose. The next owner starts known, not blank.</p><span class="jchip">Sellers &rarr; Buyers</span><div class="jlinks"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer">START HERE &rarr;</a><a class="soft" href="/sellers">Learn more &rarr;</a></div></div></div>
-      <div class="jthreads fade-in" style="transition-delay:.15s;">
-        <div class="jthread"><span class="k">Alongside every transaction</span><h3>Agents and inspectors</h3><p>A free console for the whole client book: buyer searches from the first showing, sellers&rsquo; prep lists, and Escrow Desk from the accepted offer to the keys. Flat pricing, never a cut of the commission.</p><a class="deep-link" href="/partners" style="margin-top:0;">EAVE PARTNERS &rarr;</a></div>
-        <div class="jthread"><span class="k">The same story, for a building</span><h3>Businesses, nonprofits, and associations</h3><p>A storefront, a church, an HOA, a small apartment building: the same record and the same plan, for the people who answer to a board or an owner, and for whoever holds the role next.</p><a class="deep-link" href="/commercial" style="margin-top:0;">COMMERCIAL UPKEEP &rarr;</a></div>
+      <div class="fade-in"><p class="label">What Eave is</p><div class="section-head"><h2>A soft name, on purpose.</h2><p></p></div></div><div class="what-grid fade-in" style="transition-delay:.1s;">
+        <div class="what"><video class="wm" autoplay muted loop playsinline preload="metadata" poster="/images/video/eave-wordmark-poster.jpg" aria-label="The Eave wordmark drawn in one stroke, then the line settling from a jitter into a calm flat stroke"><source src="/images/video/eave-wordmark.webm" type="video/webm"><source src="/images/video/eave-wordmark.mp4" type="video/mp4"></video><span class="k">The name</span><h3><span class="script">eave</span>the part of the roof that shelters the rest</h3><p>An eave is the overhang that keeps the weather off the walls: the quiet part of a house that protects everything under it. It&rsquo;s also a soft name for a reason. Eave is intelligence that removes the overwhelm without manual work, and without anything that feels like the scary kind of AI. Approachable, like the assistants people already talk to.</p></div>
+        <div class="what"><span class="k">What it is</span><h3>The record of a property, and the thinking on top of it</h3><p>Eave reads the paperwork, remembers what it finds, and tells you what&rsquo;s next: the filter size before it&rsquo;s overdue, the deadline before it passes, the fix worth doing before you list. It works for the home you own, the building you run, the house you&rsquo;re buying, and the one you&rsquo;re selling.</p></div>
+        <div class="what"><span class="k">Who built it</span><h3>One person who was tired of forgetting what his house needed</h3><p>Eave is independent and self-funded, built by a founder who grew up in a construction family and spent fifteen years in software. It answers to the people who use it, not to a growth chart. <a href="/about" style="color:var(--jade-text);">The story behind Eave &rarr;</a></p></div>
       </div>
     </div>
   </section>
 
-  <section id="products">
+  <section id="residential">
     <div class="container">
-      <div class="fade-in"><p class="label">Five products</p><div class="section-head"><h2>Pick the one that matches<br>where you are.</h2><p>Each product is built for one moment, and they all share the same record, so moving from one to the next is nothing to set up.</p></div></div><div class="prod-row"><div class="prod fade-in" style="transition-delay:.0s;"><img src="/images/opt/door-residential.webp" width="960" height="600" loading="lazy" decoding="async" alt=""><div class="pb"><span class="k">Property upkeep</span><h3>Residential Upkeep</h3><p><strong style="color:var(--ink);font-weight:500;">For homeowners.</strong> The easy way to keep up with your home: one record, a score, this week&rsquo;s list, and a plan for the year.</p><div class="price">Free for one home &middot; Intelligence $2.99/mo</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer">START FREE &rarr;</a><a class="soft" href="/residential">Learn more</a></div></div></div><div class="prod fade-in" style="transition-delay:.1s;"><img src="/images/opt/door-commercial.webp" width="960" height="600" loading="lazy" decoding="async" alt=""><div class="pb"><span class="k">Property upkeep</span><h3>Commercial Upkeep</h3><p><strong style="color:var(--ink);font-weight:500;">For businesses &amp; nonprofits.</strong> The building&rsquo;s memory, for the people who run buildings and the people they report to.</p><div class="price">Priced by edition</div><div class="pl"><a href="/commercial#waitlist">JOIN THE WAITLIST &rarr;</a><a class="soft" href="/commercial">Learn more</a></div></div></div><div class="prod fade-in" style="transition-delay:.2s;"><img src="/images/opt/door-buyers.webp" width="960" height="600" loading="lazy" decoding="async" alt=""><div class="pb"><span class="k">Property transactions</span><h3>Eave for Buyers</h3><p><strong style="color:var(--ink);font-weight:500;">Before you own it.</strong> Know the house before you own it: every candidate on the facts, the seller&rsquo;s documents read, escrow run in the same place.</p><div class="price">$3.99/mo &middot; or $39.99 once</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer">START YOUR SEARCH &rarr;</a><a class="soft" href="/buyers">Learn more</a></div></div></div><div class="prod fade-in" style="transition-delay:.3s;"><img src="/images/opt/door-sellers.webp" width="960" height="600" loading="lazy" decoding="async" alt=""><div class="pb"><span class="k">Property transactions</span><h3>Eave for Sellers</h3><p><strong style="color:var(--ink);font-weight:500;">Getting ready to sell.</strong> Sell the one you took care of: a prep list ranked by what moves the price, and a record that goes with the house.</p><div class="price">Free on Residential</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer">START YOUR PREP LIST &rarr;</a><a class="soft" href="/sellers">Learn more</a></div></div></div><div class="prod fade-in" style="transition-delay:.4s;"><img src="/images/opt/door-partners.webp" width="960" height="600" loading="lazy" decoding="async" alt=""><div class="pb"><span class="k">Property transactions</span><h3>Eave Partners</h3><p><strong style="color:var(--ink);font-weight:500;">For agents &amp; inspectors.</strong> A free console for your whole client book, and Escrow Desk when a client goes under contract.</p><div class="price">$0 console &middot; seats $2.99 &middot; escrow $10.99</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26actor%3Dagent">SET UP YOUR FIRM &rarr;</a><a class="soft" href="/partners">Learn more</a></div></div></div></div><p class="addons fade-in">Add-ons to Residential Upkeep: <a href="/features/guardian">Guardian</a>, active protection for the home you already have, coming soon &middot; <a href="/pro">Pro</a>, the hands-on home concierge.</p>
+      <div class="fade-in"><p class="label">Property upkeep &middot; Residential Upkeep</p><div class="section-head"><h2>The easy way to keep up<br>with your home.</h2><p>One record for the house, a score you can read at a glance, this week&rsquo;s short list with the reason on each item, and a plan for the year. Capture takes five seconds; the remembering is Eave&rsquo;s job.</p></div></div><div class="proof fade-in"><div><p class="label">This week</p><h3>Three things, and why each one</h3><p>Home opens on what needs you now, ranked by fixed rules: overdue safety first, then what&rsquo;s due, warranties about to lapse, and the season&rsquo;s tasks. Each item says why it made the list, and one card picks the single thing to start with.</p><p style="margin-top:12px;">Nothing nags. Things surface when they&rsquo;re due, and you decide what happens.</p><a class="deep-link" href="/residential">RESIDENTIAL UPKEEP &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/home-desktop.webp" width="1000" height="619" loading="lazy" decoding="async" alt="The Eave Home page: the Upkeep Score, the one thing to do first, and this week&rsquo;s three tasks with their reasons"></div><figcaption class="shot-caption">Home: the score, the one thing, and this week&rsquo;s three.</figcaption></figure></div></div><div class="proof reverse fade-in" style="transition-delay:.1s;"><div><p class="label">The record</p><h3>Set up from the paperwork you already have</h3><p>Drop in the closing folder, a utility bill, the manuals, the inspection. Eave works out what each document is, reads it into the systems it describes, and files the rest for later. Anything it filed on its own shows where it came from, with an undo.</p><p style="margin-top:12px;">Free for one home, forever. Eave Intelligence adds the 12-month plan, voice and photo capture, and guided project plans for $2.99 a month.</p><a class="deep-link" href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dsettled%26actor%3Downer">START FREE &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/documents-desktop.webp" width="1000" height="476" loading="lazy" decoding="async" alt="The Eave Documents page: files grouped by kind, each showing the parts of the home it was read into"></div><figcaption class="shot-caption">Documents, each read into the parts of the home they describe.</figcaption></figure></div></div><div class="crop-row fade-in" style="transition-delay:.15s;"><figure class="device"><div class="device-crop"><div class="tag">Home &middot; one thing</div><img src="/images/opt/crop-one-thing.webp" width="508" height="222" loading="lazy" decoding="async" alt="A card headed If you only have time for one thing, pointing to the gutters, with a Start with the gutters button"></div><figcaption class="shot-caption">If you only have time for one thing.</figcaption></figure><figure class="device"><div class="device-crop"><div class="tag">Tasks &middot; one fix, scoped</div><img src="/images/opt/crop-expanded-task.webp" width="840" height="396" loading="lazy" decoding="async" alt="An expanded task: subtasks, a reminder, $0 DIY or $180 pro, a guide, and the tools you already have"></div><figcaption class="shot-caption">Every job costed both ways, with the tools you own.</figcaption></figure><figure class="device"><div class="device-crop"><div class="tag">Home &middot; Upkeep Score</div><img src="/images/opt/crop-score-card.webp" width="510" height="190" loading="lazy" decoding="async" alt="The Upkeep Score card at 78, Good shape, with the note that clearing the two overdue tasks moves it the most"></div><figcaption class="shot-caption">A score, and the one change that moves it most.</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section id="commercial" class="alt">
+    <div class="container">
+      <div class="fade-in"><p class="label">Property upkeep &middot; Commercial Upkeep</p><div class="section-head"><h2>The same record,<br>for a building.</h2><p>A storefront, a church, an HOA, a small apartment building: the same capture, the same record, and the same plan, for the people who answer to a board or an owner, and for whoever holds the role next. Five editions, launching soon.</p></div></div><div class="ed-row fade-in" style="transition-delay:.1s;"><div class="edn"><span class="k">Edition</span><strong>Mission</strong><span>For churches, nonprofits, community centers. Tax-exempt buildings with reporting no homeowner has, and a stewardship report at year end.</span></div><div class="edn"><span class="k">Edition</span><strong>Associations</strong><span>For self-managed HOA and condo boards. A living reserve study, board roles with term dates, and owner request intake.</span></div><div class="edn"><span class="k">Edition</span><strong>Business</strong><span>For one shop, caf&eacute;, clinic, or office. A lease responsibility matrix, a compliance calendar, and an evidence vault.</span></div><div class="edn"><span class="k">Edition</span><strong>Multi-Site</strong><span>For 2&ndash;20 locations. One maintenance standard pushed to every site, and an exception rollup.</span></div><div class="edn"><span class="k">Edition</span><strong>Apartments</strong><span>For 10&ndash;50 doors. A unit-turn pipeline, a multifamily compliance pack, and per-unit assets.</span></div></div><p style="margin-top:22px;"><a class="deep-link" href="/commercial" style="margin-top:0;">COMMERCIAL UPKEEP AND THE EDITIONS &rarr;</a> &nbsp; <a class="deep-link" href="/commercial#waitlist" style="margin-top:0;">JOIN THE WAITLIST &rarr;</a></p>
+    </div>
+  </section>
+
+  <section id="transactions" class="section-photo">
+    <div class="section-photo-bg" aria-hidden="true"><img src="/images/opt/buyers-band-bg-1400.jpg" alt="" loading="lazy" decoding="async"></div>
+    <div class="section-frost"></div>
+    <div class="container">
+      <div class="fade-in"><p class="label">Property transactions</p><div class="section-head"><h2>Seller, agent, buyer.<br>Three seats at the same table.</h2><p>A sale has three people in it, and each one sees a different part of the same house. Eave gives each a product built for their seat, on one record, so what the seller kept, what the agent flagged, and what the buyer learned all end up in the same place.</p></div></div><div class="tx-grid"><div class="tx fade-in"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/tasks-desktop.webp" width="1000" height="621" loading="lazy" decoding="async" alt="The Eave punch list: what is overdue, what is due before the season turns, and what each task is connected to"></div><div class="tb"><span class="k">On the left &middot; Eave for Sellers</span><h3>Sell the one you took care of</h3><ul><li>Every fix your agent and inspector mention, captured as it&rsquo;s said</li><li>A prep list ranked by what moves the price</li><li>The record of every fix, ready to go with the house</li></ul><div class="price">Free on Residential &middot; Intelligence $2.99/mo</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dselling%26actor%3Downer">START YOUR PREP LIST &rarr;</a><a class="soft" href="/sellers">Learn more</a></div></div></div><div class="tx fade-in"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/partner-clients.webp" width="1000" height="636" loading="lazy" decoding="async" alt="The Eave Partners client list: buyers and sellers by stage, each with what they need next"></div><div class="tb"><span class="k">In the middle &middot; Eave Partners</span><h3>One console for the whole client book</h3><ul><li>Seller prep lists and buyer searches, selling and buying</li><li>Needs you: the one thing to do first, with why</li><li>Escrow Desk when a client goes under contract</li></ul><div class="price">$0 console &middot; seats $2.99/client/mo</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26actor%3Dagent">SET UP YOUR FIRM &rarr;</a><a class="soft" href="/partners">Learn more</a></div></div></div><div class="tx fade-in"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/buyers-compare.webp" width="1000" height="627" loading="lazy" decoding="async" alt="Eave for Buyers compare view: three homes side by side on price, cost to bring up, zones, and the ages of the roof and water heater"></div><div class="tb"><span class="k">On the right &middot; Eave for Buyers</span><h3>Know the house before you own it</h3><ul><li>Every candidate on the facts a listing leaves out</li><li>The seller&rsquo;s documents, read into decisions</li><li>Escrow in the same place, then a home that arrives known</li></ul><div class="price">$3.99/mo &middot; or $39.99 once until it closes</div><div class="pl"><a href="https://app.eavehome.app/login?mode=signup&next=%2Fwelcome%3Fentry%3Dself%26stage%3Dhunting%26actor%3Dbuyer">START YOUR SEARCH &rarr;</a><a class="soft" href="/buyers">Learn more</a></div></div></div></div><div class="relate fade-in" style="transition-delay:.15s;">
+        <div><strong>Seller &rarr; agent</strong>What the agent points out on the walkthrough lands in the seller&rsquo;s list, and the agent sees how ready the house is getting.</div>
+        <div><strong>Agent &rarr; buyer</strong>The agent runs the search and the escrow timeline from one console; the buyer sees the same dates, the same documents, the same versions.</div>
+        <div><strong>Seller &rarr; buyer</strong>At closing the seller hands the record to the buyer, and the home arrives with its history instead of a blank slate.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ESCROW DESK ═══ -->
+  <!-- ESCROW-DESK:START -->
+  <section id="escrow-desk" class="alt">
+    <div class="container">
+      <div class="fade-in"><p class="label">Expansion add-on for agents &middot; Escrow Desk</p><div class="section-head"><h2>Under contract,<br>the file becomes a desk.</h2><p>Eave Partners is free because it&rsquo;s how you bring clients in. Escrow Desk is the add-on for the deal itself: from the accepted offer to the keys, the work a transaction coordinator does today, kept current and in front of your client instead of in a document that&rsquo;s out of date by the first extension.</p></div></div>
+      <div class="ed-grid fade-in" style="transition-delay:.1s;"><div class="ed-card"><div class="ed-num">01</div><h3>A timeline from the contract</h3><p>Eave reads the executed agreement and every counter, addendum, and extension that follows, counts the days the way the form counts them, and lays out every date and whose it is.</p></div><div class="ed-card"><div class="ed-num">02</div><h3>Moves when the dates move</h3><p>An extension lands, Eave proposes the shift, you confirm it in one tap, and the dates that depend on it follow, with the original kept beside the new one.</p></div><div class="ed-card"><div class="ed-num">03</div><h3>Shared with your client</h3><p>Your buyer sees the same timeline in their search: days out, what&rsquo;s due, and what&rsquo;s theirs to do, with a calendar feed for each person.</p></div><div class="ed-card"><div class="ed-num">04</div><h3>Versions, and what changed</h3><p>Every document filed to the transaction. When a new version arrives, see the fields that changed: close of escrow Oct 14 &rarr; Oct 21.</p></div><div class="ed-card"><div class="ed-num">05</div><h3>Send it, and know it was read</h3><p>Send a document for review and see when it was opened and which pages were seen. Your client can leave a note on the page it&rsquo;s about.</p></div><div class="ed-card"><div class="ed-num">06</div><h3>The listing side too</h3><p>Open the seller&rsquo;s side at acceptance for what the seller owes the buyer and by when, from the same executed agreement.</p></div></div>
+      <div class="ed-note fade-in"><strong>Eave counts days; it doesn&rsquo;t advise.</strong> Every date carries the same label in the app, &ldquo;Computed reference dates, from the dates as written,&rdquo; with the document it came from. What to do about a date is between you, your client, and their attorney.</div>
+      <div class="ed-note fade-in"><strong>$10.99 once per home, per side.</strong> Launch price, the same whether you turn escrow on or your client does, charged when escrow is turned on and never at close. Never a cut of your commission. <a href="/partners#escrow-desk" style="color:var(--jade-text);">Escrow Desk in full &rarr;</a></div>
+    </div>
+  </section>
+  <!-- ESCROW-DESK:END -->
+
+  <section id="engine">
+    <div class="container">
+      <div class="fade-in"><p class="label">The engine underneath</p><div class="section-head"><h2>One engine<br>under every product.</h2><p>The reader that files a homeowner&rsquo;s closing folder is the same one that reads a buyer&rsquo;s disclosure packet and an agent&rsquo;s purchase agreement. Eight capabilities, shared by all five products. <a href="/features" style="color:var(--jade-text);">See how they fit together &rarr;</a></p></div></div><div class="cap-mini fade-in" style="transition-delay:.1s;"><a href="/features/connected-sources"><span class="k">Bring it in</span><strong>Sources</strong><span class="d">Accounts you link and things you hand over, read into the record, with you reviewing what gets saved.</span></a><a href="/features/capture"><span class="k">Bring it in</span><strong>Capture</strong><span class="d">Say it, snap it, or type it.</span></a><a href="/features/documents"><span class="k">Bring it in</span><strong>Document intelligence</strong><span class="d">Any document, recognized and read into facts filed where they belong, with every version kept.</span></a><a href="/features/home-knowledge-base"><span class="k">Know the home</span><strong>Home knowledge graph</strong><span class="d">One record per property where spaces, systems, documents, projects, and people all connect.</span></a><a href="/features/product-knowledge"><span class="k">Know the home</span><strong>Product knowledge graph</strong><span class="d">What the maker says about your exact model: its upkeep schedule, known issues by age, and parts.</span></a><a href="/features/place"><span class="k">Know the home</span><strong>Place intelligence</strong><span class="d">The ground and the county for any address: flood, fire, and seismic zones, soil, utilities, and taxes, each with its source.</span></a><a href="/features/intelligence"><span class="k">Decide what&rsquo;s next</span><strong>Plans and priorities</strong><span class="d">The Upkeep Score, a 12-month plan, and one ranked list of what needs you this week.</span></a><a href="/features/diy-or-pro"><span class="k">Decide what&rsquo;s next</span><strong>DIY or pro</strong><span class="d">Do it yourself, learn how, or hire it out: materials, tutorials, and local pros for every job.</span></a></div>
     </div>
   </section>
 
@@ -1602,13 +1689,7 @@
     <div class="section-photo-bg" aria-hidden="true"><img src="/images/opt/sellers-band-bg-1400.jpg" alt="" loading="lazy" decoding="async"></div>
     <div class="section-frost"></div>
     <div class="container">
-      <div class="fade-in"><p class="label">The record follows the house</p><div class="section-head"><h2>What the seller kept<br>becomes what the buyer knows.</h2><p>This is the part no single product can do alone. A documented home gives a buyer less to take on faith, and a buyer who closes in Eave starts with the home&rsquo;s history instead of a blank slate.</p></div></div><div class="proof fade-in"><div><p class="label">The seller&rsquo;s side</p><h3>A home with its receipts attached</h3><p>Systems with their ages and service dates, projects with what they cost and who did them, the contractors who actually show up, and the documents behind all of it, read into the things they describe.</p><p style="margin-top:12px;">At closing the seller chooses what goes with the house, reviews it, and confirms. Nothing moves on its own.</p><a class="deep-link" href="/sellers#transfer">WHAT CONVEYS &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/systems-home-desktop.webp" width="1000" height="625" loading="lazy" decoding="async" alt="Eave Home systems: electrical panel, heating, plumbing, and sewer with age, condition, the utility that serves each, and suggested upkeep"></div><figcaption class="shot-caption">The seller&rsquo;s systems, with ages, service dates, and who serves them.</figcaption></figure></div></div><div class="proof reverse fade-in" style="transition-delay:.1s;"><div><p class="label">The buyer&rsquo;s side</p><h3>A home that arrives already known</h3><p>A buyer who searched in Eave closes into a home that already carries what they learned: the zones, the disclosures, the inspection findings, and the rough costs they compared.</p><p style="margin-top:12px;">Add the closing folder and the record fills in the rest. Nothing shows as overdue in the first ninety days.</p><a class="deep-link" href="/buyers">EAVE FOR BUYERS &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/setup-closing-folder.webp" width="1000" height="851" loading="lazy" decoding="async" alt="Eave setup: upload your closing folder and Eave reads the inspection, disclosures, and warranties into the home"></div><figcaption class="shot-caption">Move-in day: the closing folder, read into the home.</figcaption></figure></div></div>
-    </div>
-  </section>
-
-  <section id="engine">
-    <div class="container">
-      <div class="fade-in"><p class="label">The engine underneath</p><div class="section-head"><h2>One engine<br>under every product.</h2><p>The reader that files a homeowner&rsquo;s closing folder is the same one that reads a buyer&rsquo;s disclosure packet and an agent&rsquo;s purchase agreement. Eight capabilities, shared by all five products. <a href="/features" style="color:var(--jade-text);">See how they fit together &rarr;</a></p></div></div><div class="cap-mini fade-in" style="transition-delay:.1s;"><a href="/features/connected-sources"><span class="k">Bring it in</span><strong>Sources</strong><span class="d">Accounts you link and things you hand over, read into the record, with you reviewing what gets saved.</span></a><a href="/features/capture"><span class="k">Bring it in</span><strong>Capture</strong><span class="d">Say it, snap it, or type it.</span></a><a href="/features/documents"><span class="k">Bring it in</span><strong>Document intelligence</strong><span class="d">Any document, recognized and read into facts filed where they belong, with every version kept.</span></a><a href="/features/home-knowledge-base"><span class="k">Know the home</span><strong>Home knowledge graph</strong><span class="d">One record per property where spaces, systems, documents, projects, and people all connect.</span></a><a href="/features/product-knowledge"><span class="k">Know the home</span><strong>Product knowledge graph</strong><span class="d">What the maker says about your exact model: its upkeep schedule, known issues by age, and parts.</span></a><a href="/features/place"><span class="k">Know the home</span><strong>Place intelligence</strong><span class="d">The ground and the county for any address: flood, fire, and seismic zones, soil, utilities, and taxes, each with its source.</span></a><a href="/features/intelligence"><span class="k">Decide what&rsquo;s next</span><strong>Plans and priorities</strong><span class="d">The Upkeep Score, a 12-month plan, and one ranked list of what needs you this week.</span></a><a href="/features/diy-or-pro"><span class="k">Decide what&rsquo;s next</span><strong>DIY or pro</strong><span class="d">Do it yourself, learn how, or hire it out: materials, tutorials, and local pros for every job.</span></a></div>
+      <div class="fade-in"><svg class="loop" viewBox="0 0 320 170" aria-hidden="true"><path id="loopPath" d="M160 85 C 110 20 25 35 40 95 S 110 160 160 85 C 210 20 295 35 280 95 S 210 160 160 85 Z"/><circle class="loopdot" r="4"><animateMotion dur="10s" repeatCount="indefinite"><mpath href="#loopPath"/></animateMotion></circle><text class="loopt" x="88" y="90" text-anchor="middle">the sale</text><text class="loopt" x="232" y="90" text-anchor="middle">the years between</text></svg></div><div class="fade-in"><p class="label">The record follows the house</p><div class="section-head"><h2>What the seller kept<br>becomes what the buyer knows.</h2><p>The sale and the years between are one loop, and every closing is where it crosses. A documented home gives a buyer less to take on faith, and a buyer who closes in Eave starts with the home&rsquo;s history instead of a blank slate.</p></div></div><div class="proof fade-in"><div><p class="label">The seller&rsquo;s side</p><h3>A home with its receipts attached</h3><p>Systems with their ages and service dates, projects with what they cost and who did them, the contractors who actually show up, and the documents behind all of it.</p><p style="margin-top:12px;">At closing the seller chooses what goes with the house, reviews it, and confirms. Nothing moves on its own.</p><a class="deep-link" href="/sellers#transfer">WHAT CONVEYS &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/systems-home-desktop.webp" width="1000" height="625" loading="lazy" decoding="async" alt="Eave Home systems: electrical panel, heating, plumbing, and sewer with age, condition, the utility that serves each, and suggested upkeep"></div><figcaption class="shot-caption">The seller&rsquo;s systems, with ages, service dates, and who serves them.</figcaption></figure></div></div><div class="proof reverse fade-in" style="transition-delay:.1s;"><div><p class="label">The buyer&rsquo;s side</p><h3>A home that arrives already known</h3><p>A buyer who searched in Eave closes into a home that already carries what they learned: the zones, the disclosures, the inspection findings, and the rough costs they compared.</p><p style="margin-top:12px;">Add the closing folder and the record fills in the rest. Nothing shows as overdue in the first ninety days.</p><a class="deep-link" href="/buyers">EAVE FOR BUYERS &rarr;</a></div><div><figure class="device"><div class="device-browser"><div class="bar"><i></i><i></i><i></i><span class="url">app.eavehome.app</span></div><img src="/images/opt/setup-closing-folder.webp" width="1000" height="851" loading="lazy" decoding="async" alt="Eave setup: upload your closing folder and Eave reads the inspection, disclosures, and warranties into the home"></div><figcaption class="shot-caption">Move-in day: the closing folder, read into the home.</figcaption></figure></div></div>
     </div>
   </section>
 
@@ -1623,7 +1704,21 @@
 
   <section id="why" class="alt">
     <div class="container">
-      <div class="fade-in"><p class="label">Why we built Eave</p><div class="section-head"><h2>Nobody hands you a manual<br>for your home.</h2><p>A home is the biggest thing most of us will ever own, and it comes with no instructions. We built Eave because we were tired of the mental backlog: the filter size you can never remember, the warranty you can&rsquo;t find, the repair you keep putting off until it gets expensive. And when a house changes hands, all of that walks out the door with the seller.</p><p style="margin-top:14px;">Eave is the memory we wanted. Capture anything in a few seconds and it comes back exactly when it matters, with the specs, the schedule, and what to do next. When you sell, it can go with the house.</p></div></div><p style="font-family:'Sacramento',cursive;font-size:26px;color:var(--ink);margin:10px 0 0;">Garrett, founder</p><a class="deep-link" href="/about">READ THE FULL STORY &rarr;</a><div class="stat-grid fade-in" style="transition-delay:.1s;"><div class="stat-card card"><div class="stat-num">Your say</div><div class="stat-desc">Eave shows you what it finds before anything is saved, and every save has an undo.</div></div><div class="stat-card card"><div class="stat-num">Yours to take</div><div class="stat-desc">Export everything, on any plan: every project, appliance, and document, as one file.</div></div><div class="stat-card card"><div class="stat-num">Free, forever</div><div class="stat-desc">One home on Residential, with no card. <a href="/support/data-privacy" style="color:var(--jade-text);">How your data is handled &rarr;</a></div></div></div>
+      <div class="fade-in"><p class="label">Why I built Eave</p><div class="section-head"><h2>Nobody hands you a manual<br>for your home.</h2><p></p></div></div><div class="founder fade-in">
+        <div>
+          <p>For me it started the year we bought our house. We&rsquo;d done the inspection, waived our contingencies, and moved in knowing there was work ahead. I knocked out the big move-in projects fast, and then my mind went blank. The hundred smaller things the inspection had flagged lived in a notes app, in contractor quotes buried in my inbox, and in the little jolt of <em>I&rsquo;ve got to get to that</em> every time I passed them on the way out the door.</p>
+          <p>When I finally sat down to tackle something, I couldn&rsquo;t tell whether it was over my head or completely doable with a bit of guidance. The AI I asked had no memory of my house. The apps I found all wanted endless data entry. The idea for Eave clicked one night, elbow-deep in a garbage-disposal wiring job that dragged past 2 a.m., the kind of job I could have finished in an hour with the right help instead of a dozen open tabs.</p>
+          <p>I grew up in a construction family, spent my teenage years on job sites, and then fifteen years building software. Eave sits at that intersection, and it&rsquo;s the app I need: something that simply remembers, hands me the right specific help, and never overwhelms. And when a house changes hands, all of that shouldn&rsquo;t walk out the door with the seller.</p>
+          <p class="sig">Garrett</p>
+          <a class="deep-link" href="/about">THE FULL STORY &rarr;</a>
+        </div>
+        <div class="beliefs">
+          <div class="belief"><strong>Memory first</strong><span>The records of your property are yours to keep, free, forever. That&rsquo;s the foundation, not the upsell.</span></div>
+          <div class="belief"><strong>Nothing without your say</strong><span>Eave shows you what it finds and waits for you to confirm. Never sold, never shared, and you can export or delete all of it anytime.</span></div>
+          <div class="belief"><strong>Memory that acts</strong><span>Remembering isn&rsquo;t enough. Eave turns the record into a plan: what needs doing this week, and why it matters now.</span></div>
+          <div class="belief"><strong>No nagging</strong><span>Things surface when they&rsquo;re due; you decide what happens. Calm by design.</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1715,6 +1810,7 @@
     </div>
   </footer>
 
+  <script>if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { document.querySelectorAll("video[autoplay]").forEach(v => { v.removeAttribute("autoplay"); v.pause(); }); }</script>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

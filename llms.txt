@@ -72,7 +72,7 @@
 
 ## Key pages
 
-- https://eavehome.app/ — the homepage: one record for the life of a property. A stage picker (looking · under contract · just got the keys · lived here a while · getting ready to sell · selling and buying · agent · building) that opens the matching door in the app, the six-moment journey, all five products with price anchors, and the record that transfers from seller to buyer
+- https://eavehome.app/ — the homepage: every stage of a property, without the overwhelm. A timeline of the property’s life whose stages are doors into the app (looking · offer or under contract · just got the keys · lived here a while · getting ready to sell · selling and buying · agent · building), what Eave is and why it’s called Eave, Residential Upkeep, Commercial Upkeep with its five editions, the three seats of a transaction (seller, agent, buyer), Escrow Desk, the engine, the record that transfers, pricing for all five products, and the founder’s story
 - https://eavehome.app/pricing — full pricing: Free, Guardian, Intelligence, Multi-Property & Eave Pro
 ## Products (two families)
 Property upkeep: keep a property up.
