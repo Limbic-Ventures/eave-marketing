@@ -1300,6 +1300,8 @@
 .ed-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
 @media (max-width:900px) { .ed-grid, .ed-split { grid-template-columns:1fr; } }
     .ed-card { background:var(--bg); }
+    .phone-shot { border-radius:30px; overflow:hidden; aspect-ratio:9/19.5; background:#F4EFE6; }
+    .phone-shot img { display:block; width:100%; height:100%; object-fit:cover; object-position:top center; }
     .pull { font-family:'Space Grotesk',sans-serif; font-size:clamp(18px,2vw,22px); line-height:1.45; color:var(--ink); border-left:3px solid var(--jade); padding:4px 0 4px 18px; margin:22px 0 0; max-width:680px; }
     .soon-chip { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--jade-text); border:1px solid rgba(111,168,201,.45); border-radius:999px; padding:3px 10px; margin-bottom:12px; }
   </style>
@@ -1442,7 +1444,7 @@
           <p>Typing is free on every plan: Eave builds the project from a few words. With Eave Intelligence, say it out loud or snap a photo and Eave drafts the record for you. Either way it lands with a room, a category, and a rough cost.</p>
           <figure class="device"><div class="device-crop"><div class="tag">Home · Capture</div><img src="/images/opt/crop-capture-bar.webp" width="510" height="67" loading="lazy" decoding="async" alt="The capture bar on the Home page: What is nagging you? Talk, Photo, Type"></div></figure>
         </div>
-        <div><figure class="device"><div style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div style="border-radius:30px;overflow:hidden;"><img src="/images/opt/projects-mobile.webp" width="530" height="1162" loading="lazy" decoding="async" alt="Eave Projects on a phone: projects by room, each with a priority, a status, and an estimate"></div></div><figcaption class="shot-caption" style="text-align:center;">Projects by room, each with a priority and a rough cost.</figcaption></figure></div>
+        <div><figure class="device"><div style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div class="phone-shot"><img src="/images/opt/projects-mobile.webp" width="530" height="1162" loading="lazy" decoding="async" alt="Eave Projects on a phone: projects by room, each with a priority, a status, and an estimate"></div></div><figcaption class="shot-caption" style="text-align:center;">Projects by room, each with a priority and a rough cost.</figcaption></figure></div>
       </div>
     </div>
   </section>
@@ -1488,7 +1490,7 @@
           <p style="margin-top:12px;">It&rsquo;s still your record. You choose what to share and when, and your agent can cover Eave Intelligence for you while you get ready.</p>
           <a class="deep-link" href="/partners#before">FOR LISTING AGENTS &rarr;</a>
         </div>
-        <div><figure class="device"><div style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div style="border-radius:30px;overflow:hidden;"><img src="/images/opt/tasks-mobile.webp" width="532" height="1158" loading="lazy" decoding="async" alt="A seller&rsquo;s punch list on a phone: the prep an agent flagged, sorted by what to do first"></div></div><figcaption class="shot-caption" style="text-align:center;">The prep your agent flagged, sorted by what to do first.</figcaption></figure></div>
+        <div><figure class="device"><div style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div class="phone-shot"><img src="/images/opt/tasks-mobile.webp" width="532" height="1158" loading="lazy" decoding="async" alt="A seller&rsquo;s punch list on a phone: the prep an agent flagged, sorted by what to do first"></div></div><figcaption class="shot-caption" style="text-align:center;">The prep your agent flagged, sorted by what to do first.</figcaption></figure></div>
       </div>
       <div class="fade-in" style="margin-top:56px;">
         <p class="label">The pre-listing punch list</p>
