@@ -28,6 +28,7 @@ const CARDS = [
   { name: 'guides-what-a-listing-never-tells-you',   eyebrow: 'Guides · Buying',                           headline: 'What a listing never tells you' },
   { name: 'guides-how-to-read-a-seller-disclosure-packet', eyebrow: 'Guides · Buying',                    headline: 'How to read a seller disclosure packet' },
   { name: 'guides-comparing-two-houses-on-what-they-really-cost', eyebrow: 'Guides · Buying',             headline: 'What two houses really cost' },
+  { name: 'sellers',                                 eyebrow: 'Eave for Sellers',                          headline: 'Sell the one you took care of.' },
 ];
 
 function wrap(ctx, text, maxW) {
@@ -90,7 +91,7 @@ async function main() {
   const bg = new Image();
   await new Promise((res, rej) => { bg.onload = res; bg.onerror = () => rej(new Error('bg load failed')); bg.src = '/images/opt/hero-bg-blur-1200.webp'; });
   const out = [];
-  for (const card of (new URLSearchParams(location.search).get("only")==="new" ? CARDS.slice(-6) : CARDS)) {
+  for (const card of (new URLSearchParams(location.search).get("only")==="new" ? CARDS.slice(-7) : CARDS)) {
     const c = document.createElement('canvas'); c.width = W; c.height = H; c.dataset.name = card.name;
     document.getElementById('cards').appendChild(c);
     draw(c.getContext('2d'), bg, card);
