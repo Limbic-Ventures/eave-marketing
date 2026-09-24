@@ -1300,6 +1300,8 @@
 .ed-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
 @media (max-width:900px) { .ed-grid, .ed-split { grid-template-columns:1fr; } }
     .ed-card { background:var(--bg); }
+    .phone-shot { border-radius:30px; overflow:hidden; aspect-ratio:9/19.5; background:#F4EFE6; }
+    .phone-shot img { display:block; width:100%; height:100%; object-fit:cover; object-position:top center; }
     #escrow-desk .ed-split > div { background:var(--bg); }
     .fine { font-size:12px; color:var(--dim); margin-top:16px; line-height:1.6; }
     .pull { font-family:'Space Grotesk',sans-serif; font-size:clamp(18px,2vw,22px); line-height:1.45; color:var(--ink); border-left:3px solid var(--jade); padding:4px 0 4px 18px; margin:22px 0 0; max-width:680px; }
@@ -1475,7 +1477,7 @@
           <p style="margin-top:12px;">Eave sorts the list by value and effort for the time before listing, so the work gets done on their schedule, not the week the sign goes up. Fewer surprises at inspection, fewer price chips at the table.</p>
           <a class="deep-link" href="/sellers">SEE THE SELLER&rsquo;S SIDE &rarr;</a>
         </div>
-        <div><figure class="device"><div class="device-phone" style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div style="border-radius:30px;overflow:hidden;"><img src="/images/opt/tasks-mobile.webp" width="532" height="1158" loading="lazy" decoding="async" alt="A seller&rsquo;s punch list on a phone: the prep an agent flagged, sorted by what to do first"></div></div></figure></div>
+        <div><figure class="device"><div class="device-phone" style="width:min(260px,100%);margin:0 auto;background:#0E1520;border-radius:34px;border:3px solid #2A3040;padding:3px;box-shadow:0 30px 60px rgba(31,58,82,.20);"><div class="phone-shot"><img src="/images/opt/tasks-mobile.webp" width="532" height="1158" loading="lazy" decoding="async" alt="A seller&rsquo;s punch list on a phone: the prep an agent flagged, sorted by what to do first"></div></div></figure></div>
       </div>
     </div>
   </section>
