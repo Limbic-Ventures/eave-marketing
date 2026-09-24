@@ -50,6 +50,16 @@
       "source": "/partners/home-inspectors/",
       "destination": "/partners#inspectors",
       "permanent": true
+    },
+    {
+      "source": "/for/home-sellers",
+      "destination": "/sellers",
+      "permanent": true
+    },
+    {
+      "source": "/for/home-sellers/",
+      "destination": "/sellers",
+      "permanent": true
     }
   ]
 }
