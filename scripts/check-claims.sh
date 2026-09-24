@@ -35,6 +35,12 @@ PATTERNS=(
   'Three kinds of owner'
   'for pros &amp; agents'
   'three worlds, subordinate'
+  'prep digest'
+  'seasonal digest'
+  'Intelligent Upkeep Score'
+  'sharpened by your home'
+  'two-way sync'
+  'Two-way sync'
 )
 fail=0
 for p in "${PATTERNS[@]}"; do

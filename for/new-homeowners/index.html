@@ -65,7 +65,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I just bought a home — where do I start?", "acceptedAnswer": {"@type": "Answer", "text": "With the closing folder. Drop it in and Eave reads it: the systems and their ages, the warranty dates, who your lender and insurer are. Confident finds file themselves with an undo, and the rest wait for you. Then capture the first thing that's bugging you."}}, {"@type": "Question", "name": "Do I need to know anything technical?", "acceptedAnswer": {"@type": "Answer", "text": "No. That's the point. You describe things in plain language — speak, snap a photo, or type — and Eave figures out the room, category, likely cause, priority, and a rough cost. You don't need to know the difference between a flapper and a fill valve; you just need to notice the toilet keeps running."}}, {"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Eave is free for one property, forever, and runs in any browser at app.eavehome.app. Eave Intelligence — the ranked weekly queue, 12-month upkeep plan, and seasonal prep digest — is an optional upgrade at $2.99 a month. Native iOS and Android apps are coming soon."}}]}
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "I just bought a home — where do I start?", "acceptedAnswer": {"@type": "Answer", "text": "With the closing folder. Drop it in and Eave reads it: the systems and their ages, the warranty dates, who your lender and insurer are. Confident finds file themselves with an undo, and the rest wait for you. Then capture the first thing that's bugging you."}}, {"@type": "Question", "name": "Do I need to know anything technical?", "acceptedAnswer": {"@type": "Answer", "text": "No. That's the point. You describe things in plain language — speak, snap a photo, or type — and Eave figures out the room, category, likely cause, priority, and a rough cost. You don't need to know the difference between a flapper and a fill valve; you just need to notice the toilet keeps running."}}, {"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Eave is free for one property, forever, and runs in any browser at app.eavehome.app. Eave Intelligence — the 12-month upkeep plan, the ranked project queue, and guided project plans — is an optional upgrade at $2.99 a month. Native iOS and Android apps are coming soon."}}]}
   </script>
 
   <style>
@@ -112,7 +112,23 @@
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
-        <li><a href="/features">Features</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Features <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu nav-worlds">
+            <li class="nav-group">Bring it in</li>
+            <li class="nav-item"><a href="/features/connected-sources">Sources<span class="nav-app"> &middot; accounts you link, things you hand over</span></a></li>
+            <li class="nav-item"><a href="/features/capture">Capture<span class="nav-app"> &middot; say it, snap it, and the project builds itself</span></a></li>
+            <li class="nav-item"><a href="/features/documents">Document intelligence<span class="nav-app"> &middot; any paper, read into facts</span></a></li>
+            <li class="nav-group">Know the home</li>
+            <li class="nav-item"><a href="/features/home-knowledge-base">Home knowledge graph<span class="nav-app"> &middot; the whole property, connected</span></a></li>
+            <li class="nav-item"><a href="/features/product-knowledge">Product knowledge graph<span class="nav-app"> &middot; what the maker knows about your model</span></a></li>
+            <li class="nav-item"><a href="/features/place">Place intelligence<span class="nav-app"> &middot; the ground and the county</span></a></li>
+            <li class="nav-group">Decide what&rsquo;s next</li>
+            <li class="nav-item"><a href="/features/intelligence">Plans and priorities<span class="nav-app"> &middot; the score, the plan, this week</span></a></li>
+            <li class="nav-item"><a href="/features/diy-or-pro">DIY or pro<span class="nav-app"> &middot; every job planned both ways</span></a></li>
+            <li class="nav-item" style="border-top:1px solid var(--stone);margin-top:6px;padding-top:4px;"><a href="/features">All features &rarr;</a></li>
+          </ul>
+        </li>
         <li><a href="/pricing">Pricing</a></li>
         <li class="nav-dropdown nav-dropdown-right">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
@@ -146,8 +162,17 @@
     <div class="mobile-menu-label">Add-ons</div>
     <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
+    <div class="mobile-menu-label">Features</div>
+    <a href="/features/connected-sources" onclick="closeMobile()">Sources</a>
+    <a href="/features/capture" onclick="closeMobile()">Capture</a>
+    <a href="/features/documents" onclick="closeMobile()">Document intelligence</a>
+    <a href="/features/home-knowledge-base" onclick="closeMobile()">Home knowledge graph</a>
+    <a href="/features/product-knowledge" onclick="closeMobile()">Product knowledge graph</a>
+    <a href="/features/place" onclick="closeMobile()">Place intelligence</a>
+    <a href="/features/intelligence" onclick="closeMobile()">Plans and priorities</a>
+    <a href="/features/diy-or-pro" onclick="closeMobile()">DIY or pro</a>
+    <a href="/features" onclick="closeMobile()">All features &rarr;</a>
     <div class="mobile-menu-label">Explore</div>
-    <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
     <div class="mobile-menu-label">Resources</div>
     <a href="/guides" onclick="closeMobile()">Guides</a>
@@ -233,7 +258,7 @@
           <h3>Build the knowledge base</h3>
           <p>As you go, your home writes its own record. Rooms, appliances, contractors, and repairs collect into a searchable <a href="/features/home-knowledge-base">home knowledge base</a> — the furnace model and filter size, the water heater's install date, who you called and what it cost. It's the manual the house never came with, and it's the same record that makes insuring, refinancing, or selling far less painful later. Share it with whoever shares the house. A co-owner sees the same record you do, at no extra charge.</p>
           <h3>Get the weekly queue</h3>
-          <p>Once there's something to work with, <a href="/features/intelligence">Eave Intelligence</a> turns the pile into a plan: a ranked weekly action queue of what needs attention now, a 12-month upkeep schedule tuned to your home, and a seasonal prep digest before each season lands. You stop wondering what's next — Eave tells you, and tells you why.</p>
+          <p>Once there's something to work with, <a href="/features/intelligence">Eave Intelligence</a> turns the pile into a plan: a ranked weekly action queue of what needs attention now, a 12-month upkeep schedule tuned to your home, and a guided plan for each project you take on. You stop wondering what's next — Eave tells you, and tells you why.</p>
         </div>
         <img class="shot-phone" src="/images/opt/maintenance-mobile.webp" alt="Eave seasonal maintenance view showing upkeep tasks for a new home" loading="lazy" decoding="async">
       </div>
@@ -262,7 +287,7 @@
       </div>
       <div class="qa-item">
         <h3>Is it free?</h3>
-        <p>Yes. Eave is free for one property, forever, and runs in any browser at app.eavehome.app. Eave Intelligence — the ranked weekly queue, 12-month upkeep plan, and seasonal prep digest — is an optional upgrade at $2.99 a month. Native iOS and Android apps are coming soon.</p>
+        <p>Yes. Eave is free for one property, forever, and runs in any browser at app.eavehome.app. Eave Intelligence — the 12-month upkeep plan, the ranked project queue, and guided project plans — is an optional upgrade at $2.99 a month. Native iOS and Android apps are coming soon.</p>
       </div>
     </div>
   </section>

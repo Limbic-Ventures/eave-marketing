@@ -49,8 +49,9 @@
   structure, systems and appliances, budget tracking, contractors,
   documents (1 GB), Upkeep Score, household sharing, full export.
 - Eave Intelligence: $2.99/month ($24/year) — voice capture and photo
-  reading, AI project queue, 12-month upkeep plan, seasonal prep digest,
-  materials estimates and vendor research, 10 GB document storage.
+  reading, AI project queue, 12-month upkeep plan, guided project plans,
+  Equipment Watch and manufacturer lookups, materials estimates and vendor
+  research, reading any document, 10 GB document storage.
 - Eave Guardian: $24.99/month ($199/year), coming soon — active protection
   with an evidence vault, one-tap insurance and warranty claim packets, a
   10-year capex forecast, and an annual virtual audit review.
@@ -73,9 +74,6 @@
 
 - https://eavehome.app/ — product overview, how it works, pricing
 - https://eavehome.app/pricing — full pricing: Free, Guardian, Intelligence, Multi-Property & Eave Pro
-- https://eavehome.app/features — product overview hub
-- https://eavehome.app/features/home-knowledge-base — the home knowledge
-  base: spaces, structure, systems, appliances, documents, utilities and services, contractors
 ## Products (two families)
 Property upkeep: keep a property up.
 - https://eavehome.app/residential — Residential Upkeep (Eave Residential): the homeowner app in depth — capture, home memory, intelligence, upkeep plan, and pricing
@@ -86,13 +84,25 @@ Property transactions: get through a sale, on either side.
 - https://eavehome.app/partners — Eave Partners, for real estate agents: a free console for the whole client book (Needs you, Searches, team); buyer searches from first showing to close; Escrow Desk, turned on per home under contract for a one-time $10.99 escrow activation per side at launch price, the same price whether the buyer or the agent pays (shared escrow timeline from the executed agreement that moves with extensions, client timeline and calendar, every document version with what changed, send for review with read receipts, a digest of what the documents say; first activation free per new firm; included in the $39.99 paid-once search); client seats $2.99/client/mo; Eave Leads in a closed pilot; flat pricing, never a commission cut. Home inspectors: coming soon.
 Add-ons to Residential Upkeep: Guardian (coming soon), Pro (home concierge).
 
-- https://eavehome.app/features/upkeep-score — the live 0–100 home health score
-- https://eavehome.app/features/capture — speak / snap / type project capture
+## Features (the engine under every product)
+One engine runs under Residential, Commercial, Buyers, Sellers, and Partners. Each capability has its own page.
+- https://eavehome.app/features — the capability hub: which capability powers which product, and one receipt followed through the whole engine
+Bring it in:
+- https://eavehome.app/features/connected-sources — Sources: Gmail (read-only receipt and order scan), receipt photos, Amazon order-history import, pro profiles from Thumbtack/Angi/Yelp/Houzz, SmartThings device import, upkeep tasks to Google Calendar or .ics; things you hand over (inspection, manuals, policies, business cards, room photos); public property data pulled automatically
+- https://eavehome.app/features/capture — Capture and automatic project building: say it, snap it, or type it; Eave fills room, category, priority, and cost, then builds a plan; guided plans for five kinds of project (fix, install, maintain, hire, plan) on Intelligence
+- https://eavehome.app/features/documents — Document intelligence: 46 kinds of property document recognized on upload, 10 readers, facts filed where they belong, every version kept with what changed, "Needs a decision" when two sources disagree
 - https://eavehome.app/features/setup — Intelligent Home Setup: set up a home from its paperwork (closing folder, bills, manuals, inspection)
-- https://eavehome.app/features/intelligence — seasonal prep + weekly action queue
+Know the home:
+- https://eavehome.app/features/home-knowledge-base — Home knowledge graph: one connected record per property (spaces, structure, systems, appliances, utilities, services, documents, projects, contractors), a house manual for tenants and sitters, full export, and hand-off to a buyer
+- https://eavehome.app/features/product-knowledge — Product knowledge graph: a shared library of what manufacturers say about specific models (maintenance schedules, known issues by age, parts), used for model-specific upkeep
+- https://eavehome.app/features/place — Place intelligence: flood, fire, seismic, soil, air, school district boundaries, utilities, broadband, and tax for any address, each with its source; never ratings of an area or its schools
+Decide what's next:
+- https://eavehome.app/features/intelligence — Plans and priorities: the Upkeep Score, this week's ranked list with reasons, the season ahead, and the 12-month Upkeep Plan (Eave Intelligence)
+- https://eavehome.app/features/upkeep-score — the live 0–100 home upkeep score, in depth
+- https://eavehome.app/features/diy-or-pro — DIY or pro: do it yourself, learn how, or hire it out; materials estimates, tutorials picked for the job, local pro search, and a quote tracker
+
 - https://eavehome.app/features/guardian — evidence vault, claim packets, capex forecast, protection tier (coming soon)
 - https://eavehome.app/pro — Eave Pro: concierge home services (licensed Home Audit $499–$799, Audit+Guardian bundle, Seasonal Manager waitlist)
-- https://eavehome.app/features/connected-sources — Gmail/calendar import, receipts
 - https://eavehome.app/for/new-homeowners — for first-time / new homeowners
 - https://eavehome.app/for/home-buyers — buying a home: turn the inspection into a prioritized plan, understand true cost of ownership, move in already set up
 - https://eavehome.app/for/landlords — multi-property owners and landlords

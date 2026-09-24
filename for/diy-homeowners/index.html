@@ -136,7 +136,23 @@
             <li class="nav-addon"><a href="/pro">Pro<span class="nav-app"> &middot; home concierge</span></a></li>
           </ul>
         </li>
-        <li><a href="/features">Features</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Features <span class="nav-caret">&#9662;</span></button>
+          <ul class="nav-dropdown-menu nav-worlds">
+            <li class="nav-group">Bring it in</li>
+            <li class="nav-item"><a href="/features/connected-sources">Sources<span class="nav-app"> &middot; accounts you link, things you hand over</span></a></li>
+            <li class="nav-item"><a href="/features/capture">Capture<span class="nav-app"> &middot; say it, snap it, and the project builds itself</span></a></li>
+            <li class="nav-item"><a href="/features/documents">Document intelligence<span class="nav-app"> &middot; any paper, read into facts</span></a></li>
+            <li class="nav-group">Know the home</li>
+            <li class="nav-item"><a href="/features/home-knowledge-base">Home knowledge graph<span class="nav-app"> &middot; the whole property, connected</span></a></li>
+            <li class="nav-item"><a href="/features/product-knowledge">Product knowledge graph<span class="nav-app"> &middot; what the maker knows about your model</span></a></li>
+            <li class="nav-item"><a href="/features/place">Place intelligence<span class="nav-app"> &middot; the ground and the county</span></a></li>
+            <li class="nav-group">Decide what&rsquo;s next</li>
+            <li class="nav-item"><a href="/features/intelligence">Plans and priorities<span class="nav-app"> &middot; the score, the plan, this week</span></a></li>
+            <li class="nav-item"><a href="/features/diy-or-pro">DIY or pro<span class="nav-app"> &middot; every job planned both ways</span></a></li>
+            <li class="nav-item" style="border-top:1px solid var(--stone);margin-top:6px;padding-top:4px;"><a href="/features">All features &rarr;</a></li>
+          </ul>
+        </li>
         <li><a href="/pricing">Pricing</a></li>
         <li class="nav-dropdown nav-dropdown-right">
           <button type="button" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources <span class="nav-caret">&#9662;</span></button>
@@ -170,8 +186,17 @@
     <div class="mobile-menu-label">Add-ons</div>
     <a href="/features/guardian" class="nav-addon" onclick="closeMobile()">Guardian<span class="nav-app"> &middot; protection for Residential, coming soon</span></a>
     <a href="/pro" class="nav-addon" onclick="closeMobile()">Pro<span class="nav-app"> &middot; home concierge</span></a>
+    <div class="mobile-menu-label">Features</div>
+    <a href="/features/connected-sources" onclick="closeMobile()">Sources</a>
+    <a href="/features/capture" onclick="closeMobile()">Capture</a>
+    <a href="/features/documents" onclick="closeMobile()">Document intelligence</a>
+    <a href="/features/home-knowledge-base" onclick="closeMobile()">Home knowledge graph</a>
+    <a href="/features/product-knowledge" onclick="closeMobile()">Product knowledge graph</a>
+    <a href="/features/place" onclick="closeMobile()">Place intelligence</a>
+    <a href="/features/intelligence" onclick="closeMobile()">Plans and priorities</a>
+    <a href="/features/diy-or-pro" onclick="closeMobile()">DIY or pro</a>
+    <a href="/features" onclick="closeMobile()">All features &rarr;</a>
     <div class="mobile-menu-label">Explore</div>
-    <a href="/features" onclick="closeMobile()">Features</a>
     <a href="/pricing" onclick="closeMobile()">Pricing</a>
     <div class="mobile-menu-label">Resources</div>
     <a href="/guides" onclick="closeMobile()">Guides</a>
