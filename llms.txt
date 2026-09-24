@@ -55,8 +55,8 @@
 - Eave Guardian: $24.99/month ($199/year), coming soon — active protection
   with an evidence vault, one-tap insurance and warranty claim packets, a
   10-year capex forecast, and an annual virtual audit review.
-- Eave Multi-Property: $7.99/property/month ($69/property/year) for 2–5
-  properties. Portfolio (6+ properties) is coming; waitlist on the landlords
+- Eave Multi-Property: an add-on to Eave Intelligence covering 2–5 properties, $4.99/month or $39/year ($7.99/month or $63/year with
+  Intelligence). Portfolio (6+ properties) is coming; waitlist on the landlords
   page.
 - Eave Pro: professional services starting with licensed Home Audits
   ($499–$799 one-time by home size); seasonal coordination and full home

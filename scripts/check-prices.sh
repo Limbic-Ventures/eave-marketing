@@ -3,6 +3,11 @@
 set -u
 cd "$(dirname "$0")/.."
 PATTERNS=(
+  '/property/mo'
+  '/property/month'
+  '/property/yr'
+  '/property/year'
+  'not an Intelligence add-on'
   'about ten months'
   'pricing is on the way'
   'pricing on the way'
@@ -30,7 +35,7 @@ PATTERNS=(
 # lifetime option are retired.
 fail=0
 for p in "${PATTERNS[@]}"; do
-  hits=$(grep -rln "$p" --include='*.html' . 2>/dev/null; grep -l "$p" llms.txt 2>/dev/null)
+  hits=$(grep -rln "$p" --include='*.html' . 2>/dev/null | grep -v '\.claude/'; grep -l "$p" llms.txt 2>/dev/null)
   if [ -n "$hits" ]; then
     echo "RETIRED STRING '$p' still present in:"; echo "$hits"; fail=1
   fi
