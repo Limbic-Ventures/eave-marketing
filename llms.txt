@@ -72,7 +72,7 @@
 
 ## Key pages
 
-- https://eavehome.app/ — product overview, how it works, pricing
+- https://eavehome.app/ — the homepage: one record for the life of a property. A stage picker (looking · under contract · just got the keys · lived here a while · getting ready to sell · selling and buying · agent · building) that opens the matching door in the app, the six-moment journey, all five products with price anchors, and the record that transfers from seller to buyer
 - https://eavehome.app/pricing — full pricing: Free, Guardian, Intelligence, Multi-Property & Eave Pro
 ## Products (two families)
 Property upkeep: keep a property up.
