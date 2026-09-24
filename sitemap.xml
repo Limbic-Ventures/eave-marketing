@@ -206,13 +206,13 @@
   </url>
   <url>
     <loc>https://eavehome.app/features</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://eavehome.app/features/home-knowledge-base</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://eavehome.app/features/capture</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -236,7 +236,31 @@
   </url>
   <url>
     <loc>https://eavehome.app/features/intelligence</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/features/documents</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/features/product-knowledge</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/features/place</loc>
+    <lastmod>2026-09-24</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://eavehome.app/features/diy-or-pro</loc>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -266,7 +290,7 @@
   </url>
   <url>
     <loc>https://eavehome.app/features/connected-sources</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-24</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
